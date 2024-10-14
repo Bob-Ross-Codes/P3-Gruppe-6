@@ -597,10 +597,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 0
-  HasPlatforms: 0
+  HasSourceProject: 1
+  HasPlatforms: 1
   sourceProjectPath: Assets/FMOD/FMOD_P3_Horror/FMOD_P3_Horror.fspro
-  sourceBankPath: Assets/FMOD
+  sourceBankPath: Assets/FMOD/FMOD_P3_Horror/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
