@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{fda06725-70fd-4a42-95d6-0b8c7579d6cd}">
+		<property name="name">
+			<value>Glass Breaking</value>
+		</property>
+		<relationship name="folder">
+			<destination>{2c0c7a75-3816-4c18-82ad-838c1af7f791}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{347e44fa-e2c6-49b8-b016-a98029363c5e}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{347e44fa-e2c6-49b8-b016-a98029363c5e}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>7</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Glass Breaking 1</value>
+			<value>Glass Breaking 2</value>
+			<value>Glass Breaking 3</value>
+			<value>Glass Breaking 4</value>
+			<value>Glass Breaking 5</value>
+			<value>Glass Breaking 6</value>
+			<value>Glass Breaking 7</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
