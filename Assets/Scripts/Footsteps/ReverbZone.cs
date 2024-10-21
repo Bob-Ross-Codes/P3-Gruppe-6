@@ -3,14 +3,14 @@ using FMODUnity;
 
 public class ReverbZone : MonoBehaviour
 {
-    [SerializeField] [FMODUnity.EventRef] public string snapshotPath; // Path to the FMOD snapshot
+    public FMODUnity.EventReference MyEvent;
 
     private FMOD.Studio.EventInstance snapshotInstance;
 
     void Start()
     {
         // Create the snapshot instance
-        snapshotInstance = FMODUnity.RuntimeManager.CreateInstance(snapshotPath);
+        snapshotInstance = RuntimeManager.CreateInstance(MyEvent);
     }
 
     void OnTriggerEnter(Collider other)

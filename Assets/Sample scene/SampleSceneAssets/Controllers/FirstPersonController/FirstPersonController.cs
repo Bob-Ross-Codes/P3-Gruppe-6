@@ -68,6 +68,8 @@ namespace StarterAssets
 
 		private const float _threshold = 0.01f;
 
+		public static bool isPaused = false;
+
 		private bool IsCurrentDeviceMouse
 		{
 			get
@@ -98,6 +100,11 @@ namespace StarterAssets
 
 		private void Update()
 		{
+			if (isPaused)
+			{
+				return;
+			}
+
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
@@ -105,6 +112,11 @@ namespace StarterAssets
 
 		private void LateUpdate()
 		{
+			if (isPaused)
+			{
+				return;
+			}
+
 			CameraRotation();
 		}
 
