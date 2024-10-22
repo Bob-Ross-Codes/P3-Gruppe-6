@@ -4,31 +4,47 @@ using UnityEngine;
 
 public class Swing : MonoBehaviour
 {
-    // Maximum swing angle (degrees)
-    public float swingAngle = 30f;
-    
-    // Speed of the swinging motion
-    public float swingSpeed = 2f;
+    // Range for the maximum swing angle (degrees)
+    [SerializeField, Range(10f, 30f)] private float swingAngleMin = 10f;
+    [SerializeField, Range(10f, 30f)] private float swingAngleMax = 30f;
 
-    // Maximum twist angle (degrees)
-    public float twistAngle = 10f;
+    // Range for the speed of the swinging motion
+    [SerializeField, Range(1f, 3f)] private float swingSpeedMin = 1f;
+    [SerializeField, Range(1f, 3f)] private float swingSpeedMax = 3f;
 
-    // Speed of the twisting motion
-    public float twistSpeed = 1f;
+    // Range for the maximum twist angle (degrees)
+    [SerializeField, Range(10f, 30f)] private float twistAngleMin = 10f;
+    [SerializeField, Range(10f, 30f)] private float twistAngleMax = 30f;
+
+    // Range for the speed of the twisting motion
+    [SerializeField, Range(1f, 3f)] private float twistSpeedMin = 1f;
+    [SerializeField, Range(1f, 3f)] private float twistSpeedMax = 3f;
 
     // Swing axis (around which the light will swing)
-    public Vector3 swingAxis = Vector3.forward;
+    [SerializeField] private Vector3 swingAxis = Vector3.forward;
 
     // Twist axis (around which the light will twist)
-    public Vector3 twistAxis = Vector3.up;
+    [SerializeField] private Vector3 twistAxis = Vector3.up;
 
     // Starting rotation of the light
     private Quaternion initialRotation;
+
+    // Actual swing and twist values
+    private float swingAngle;
+    private float swingSpeed;
+    private float twistAngle;
+    private float twistSpeed;
 
     void Start()
     {
         // Store the initial rotation of the object
         initialRotation = transform.localRotation;
+
+        // Apply random values to the swing and twist angles and speeds within the specified ranges
+        swingAngle = Random.Range(swingAngleMin, swingAngleMax);
+        swingSpeed = Random.Range(swingSpeedMin, swingSpeedMax);
+        twistAngle = Random.Range(twistAngleMin, twistAngleMax);
+        twistSpeed = Random.Range(twistSpeedMin, twistSpeedMax);
     }
 
     void Update()
@@ -47,5 +63,3 @@ public class Swing : MonoBehaviour
         transform.localRotation = initialRotation * swingRotation * twistRotation;
     }
 }
-
-
