@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{757583EA-7A83-42D2-9FA2-3F0890DCD34C}" SchemaVersion="119">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{757583EA-7A83-42D2-9FA2-3F0890DCD34C}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="RTPC_Distance" ID="{FC3A718F-693C-4820-AA47-CAD6AEB38D71}">
+					<PropertyList>
+						<Property Name="BindToBuiltInParam" Type="int16" Value="1"/>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_PlayerSpeed" ID="{FBD767F5-4783-4BC2-8570-A764CD7F7BB8}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0.5"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_TimeOfDay" ID="{E94874E9-3903-4457-B8FD-1118C0CBB1F2}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="1"/>
+						<Property Name="Max" Type="Real64" Value="24"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_RainAmount" ID="{2B97FCAE-19E2-467C-95C3-BE73290C462F}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_FlyCount" ID="{42F219D8-C583-4B99-A689-21B03966AAF1}"/>
+				<GameParameter Name="RTPC_GroundWetness" ID="{BD8DEFE4-8CC3-4380-9C6F-8BBFE2F05E6B}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="0.3"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="0.1"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>
