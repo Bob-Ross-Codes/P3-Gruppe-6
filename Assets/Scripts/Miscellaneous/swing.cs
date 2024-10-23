@@ -5,20 +5,20 @@ using UnityEngine;
 public class Swing : MonoBehaviour
 {
     // Range for the maximum swing angle (degrees)
-    [SerializeField, Range(10f, 30f)] private float swingAngleMin = 10f;
-    [SerializeField, Range(10f, 30f)] private float swingAngleMax = 30f;
+    [SerializeField, Range(1f, 5f)] private float swingAngleMin;
+    [SerializeField, Range(1f, 5f)] private float swingAngleMax;
 
     // Range for the speed of the swinging motion
-    [SerializeField, Range(1f, 3f)] private float swingSpeedMin = 1f;
-    [SerializeField, Range(1f, 3f)] private float swingSpeedMax = 3f;
+    [SerializeField, Range(1f, 3f)] private float swingSpeedMin;
+    [SerializeField, Range(1f, 3f)] private float swingSpeedMax;
 
     // Range for the maximum twist angle (degrees)
-    [SerializeField, Range(10f, 30f)] private float twistAngleMin = 10f;
-    [SerializeField, Range(10f, 30f)] private float twistAngleMax = 30f;
+    [SerializeField, Range(1f, 5f)] private float twistAngleMin;
+    [SerializeField, Range(1f, 5f)] private float twistAngleMax;
 
     // Range for the speed of the twisting motion
-    [SerializeField, Range(1f, 3f)] private float twistSpeedMin = 1f;
-    [SerializeField, Range(1f, 3f)] private float twistSpeedMax = 3f;
+    [SerializeField, Range(1f, 3f)] private float twistSpeedMin;
+    [SerializeField, Range(1f, 3f)] private float twistSpeedMax;
 
     // Swing axis (around which the light will swing)
     [SerializeField] private Vector3 swingAxis = Vector3.forward;
