@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 namespace StarterAssets
 {
 	[RequireComponent(typeof(CharacterController))]

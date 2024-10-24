@@ -141,7 +141,7 @@ Material:
     - _AffectAO: 0
     - _AffectAlbedo: 1
     - _AffectEmission: 0
-    - _AffectMetal: 1
+    - _AffectMetal: 0
     - _AffectNormal: 0
     - _AffectSmoothness: 1
     - _AlbedoAffectEmissive: 0
@@ -163,8 +163,8 @@ Material:
     - _DecalBlend: 0.982
     - _DecalColorMask0: 15
     - _DecalColorMask1: 0
-    - _DecalColorMask2: 11
-    - _DecalColorMask3: 8
+    - _DecalColorMask2: 3
+    - _DecalColorMask3: 0
     - _DecalMaskMapBlueScale: 1
     - _DecalMeshBiasType: 0
     - _DecalMeshDepthBias: 0

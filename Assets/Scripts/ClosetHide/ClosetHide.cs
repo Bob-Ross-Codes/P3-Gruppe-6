@@ -1,66 +1,88 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using StarterAssets; // Include the namespace for FirstPersonController
 public class ClosetHide : MonoBehaviour
+
 {
-    public Animator leftDoorAnimator; // Animator for the left door
-    public Animator rightDoorAnimator; // Animator for the right door
-    public Transform hidePosition; // The target position for the player camera
-    public float cameraTransitionSpeed = 2f; // Speed at which the camera moves
-    public KeyCode hideKey = KeyCode.E; // The key to trigger hiding
-
-    private Transform playerCamera; // Reference to the player's camera
+    public Animator leftDoorAnimator;
+    public Animator rightDoorAnimator;
+    public Transform targetPosition;
+    public float animationDelay = 1.0f;
     private bool isHiding = false;
-    private bool canHide = false;
+    private GameObject player;
 
-    private void Start()
+    void Start()
     {
-        playerCamera = Camera.main.transform;
-    }
-
-    private void Update()
-    {
-        if (canHide && Input.GetKeyDown(hideKey))
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (leftDoorAnimator == null || rightDoorAnimator == null)
         {
-            ToggleHide();
+            Debug.LogError("Door Animators are not assigned.");
         }
 
-        // Move the camera to the target position if hiding
-        if (isHiding)
+        if (targetPosition == null)
         {
-            playerCamera.position = Vector3.Lerp(playerCamera.position, hidePosition.position, Time.deltaTime * cameraTransitionSpeed);
+            Debug.LogError("Target Position is not assigned.");
         }
     }
 
-    private void ToggleHide()
+    void Update()
     {
-        isHiding = !isHiding;
-
-        // Play door animations based on hiding state
-        leftDoorAnimator.SetBool("isOpen", isHiding);
-        rightDoorAnimator.SetBool("isOpen", isHiding);
-
-        if (!isHiding)
+        if (Input.GetKeyDown(KeyCode.E) && !isHiding && IsPlayerNear())
         {
-            // If the player stops hiding, return the camera to its original position
-            playerCamera.position = transform.position; // Adjust this as needed to return the camera
+            StartCoroutine(HidePlayer());
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private bool IsPlayerNear()
     {
-        if (other.CompareTag("Player"))
-        {
-            canHide = true;
-        }
+        float distance = Vector3.Distance(player.transform.position, transform.position);
+        return distance <= 2.0f;
     }
 
-    private void OnTriggerExit(Collider other)
+    private IEnumerator HidePlayer()
     {
-        if (other.CompareTag("Player"))
+        isHiding = true;
+
+        // Play the door animations
+        leftDoorAnimator.SetTrigger("isOpen");
+        rightDoorAnimator.SetTrigger("isOpen");
+
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(animationDelay);
+
+        // Move player to the target position inside the closet
+        player.transform.position = targetPosition.position;
+
+        // Get the FirstPersonController component and disable movement
+        FirstPersonController playerMovement = player.GetComponent<FirstPersonController>();
+        if (playerMovement != null)
         {
-            canHide = false;
+            playerMovement.enabled = false; // Disable movement
         }
+
+        // Optional: wait for the player to press 'E' again to exit
+        while (!Input.GetKeyDown(KeyCode.E))
+        {
+            yield return null;
+        }
+
+        // Play the door animations again (to close the doors)
+        leftDoorAnimator.SetTrigger("isOpen");
+        rightDoorAnimator.SetTrigger("isOpen");
+
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(animationDelay);
+
+        // Move the player back outside the closet
+        player.transform.position = targetPosition.position + Vector3.forward * 2.0f;
+
+        // Enable player movement again
+        if (playerMovement != null)
+        {
+            playerMovement.enabled = true; // Enable movement
+        }
+
+        isHiding = false;
     }
 }
