@@ -3892,7 +3892,25 @@
 								</GroupingBehaviorList>
 								<GroupingList>
 									<Grouping>
+										<SwitchRef Name="Soaked" ID="{AAAC242B-1941-4177-8F58-51E397A5AB69}"/>
+										<ItemList>
+											<ItemRef Name="Dry" ID="{DF410EDC-BCAD-4F54-A862-A56494889067}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
 										<SwitchRef Name="Dry" ID="{CCF86448-9208-4769-9571-E0DF3966B47F}"/>
+										<ItemList>
+											<ItemRef Name="Dry" ID="{DF410EDC-BCAD-4F54-A862-A56494889067}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Damp" ID="{845C7171-7141-48F3-B525-881F25069749}"/>
+										<ItemList>
+											<ItemRef Name="Dry" ID="{DF410EDC-BCAD-4F54-A862-A56494889067}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Wet" ID="{58BEE4AA-7223-40A2-9396-725B99795769}"/>
 										<ItemList>
 											<ItemRef Name="Dry" ID="{DF410EDC-BCAD-4F54-A862-A56494889067}"/>
 										</ItemList>
@@ -3915,15 +3933,15 @@
 						</GroupingBehaviorList>
 						<GroupingList>
 							<Grouping>
-								<SwitchRef Name="Stone" ID="{E0CE004B-FA50-419D-9EE4-F3345A726725}"/>
+								<SwitchRef Name="Tile" ID="{E0CE004B-FA50-419D-9EE4-F3345A726725}"/>
 								<ItemList>
-									<ItemRef Name="Carpet_WetnessSwitch" ID="{79E38E3F-FFD7-4D43-A704-FDB1A4AD2E27}"/>
+									<ItemRef Name="Tile_WetnessSwitch" ID="{33058673-2BBA-42C1-9E45-5C4D5937C834}"/>
 								</ItemList>
 							</Grouping>
 							<Grouping>
-								<SwitchRef Name="Dirt" ID="{16295B59-B691-4C58-BC0A-7078B6FB1DC2}"/>
+								<SwitchRef Name="Carpet" ID="{16295B59-B691-4C58-BC0A-7078B6FB1DC2}"/>
 								<ItemList>
-									<ItemRef Name="Tile_WetnessSwitch" ID="{33058673-2BBA-42C1-9E45-5C4D5937C834}"/>
+									<ItemRef Name="Carpet_WetnessSwitch" ID="{79E38E3F-FFD7-4D43-A704-FDB1A4AD2E27}"/>
 								</ItemList>
 							</Grouping>
 							<Grouping>

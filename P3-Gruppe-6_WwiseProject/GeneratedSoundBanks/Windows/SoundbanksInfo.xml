@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{3081BD7E-C0E1-DDBC-5DED-6C291964BE17}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{EB6228CB-98CA-EF37-3E0D-DEE0F2E4B907}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -606,36 +606,7 @@
 				<Event Id="673033979" Name="Play_PLYR_Footsteps" DurationType="OneShot" DurationMin="0.5" DurationMax="2.4746666">
 					<SwitchContainers>
 						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1044534455" Id="1216965916"/>
-							<Children>
-								<SwitchContainer>
-									<SwitchValue GroupType="Switch" GroupId="3968804893" Id="630539344"/>
-									<MediaRefs>
-										<MediaRef Id="13458082"/>
-										<MediaRef Id="82192208"/>
-										<MediaRef Id="186207855"/>
-										<MediaRef Id="197609614"/>
-										<MediaRef Id="231017545"/>
-										<MediaRef Id="355449397"/>
-										<MediaRef Id="364409498"/>
-										<MediaRef Id="382282033"/>
-										<MediaRef Id="426107513"/>
-										<MediaRef Id="440973520"/>
-										<MediaRef Id="447069284"/>
-										<MediaRef Id="448436406"/>
-										<MediaRef Id="607681600"/>
-										<MediaRef Id="658304763"/>
-										<MediaRef Id="748061079"/>
-										<MediaRef Id="803048296"/>
-										<MediaRef Id="855545933"/>
-										<MediaRef Id="901376300"/>
-										<MediaRef Id="981343641"/>
-									</MediaRefs>
-								</SwitchContainer>
-							</Children>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1044534455" Id="2195636714"/>
+							<SwitchValue GroupType="Switch" GroupId="1044534455" Id="2637588553"/>
 							<Children>
 								<SwitchContainer>
 									<SwitchValue GroupType="Switch" GroupId="3968804893" Id="1905651656"/>
@@ -741,6 +712,35 @@
 							</Children>
 						</SwitchContainer>
 						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1044534455" Id="2412606308"/>
+							<Children>
+								<SwitchContainer>
+									<SwitchValue GroupType="Switch" GroupId="3968804893" Id="630539344"/>
+									<MediaRefs>
+										<MediaRef Id="13458082"/>
+										<MediaRef Id="82192208"/>
+										<MediaRef Id="186207855"/>
+										<MediaRef Id="197609614"/>
+										<MediaRef Id="231017545"/>
+										<MediaRef Id="355449397"/>
+										<MediaRef Id="364409498"/>
+										<MediaRef Id="382282033"/>
+										<MediaRef Id="426107513"/>
+										<MediaRef Id="440973520"/>
+										<MediaRef Id="447069284"/>
+										<MediaRef Id="448436406"/>
+										<MediaRef Id="607681600"/>
+										<MediaRef Id="658304763"/>
+										<MediaRef Id="748061079"/>
+										<MediaRef Id="803048296"/>
+										<MediaRef Id="855545933"/>
+										<MediaRef Id="901376300"/>
+										<MediaRef Id="981343641"/>
+									</MediaRefs>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1044534455" Id="2058049674" Default="true"/>
 							<Children>
 								<SwitchContainer>
@@ -841,10 +841,9 @@
 			<SwitchGroups>
 				<SwitchGroup Id="1044534455" Name="GroundMaterialSwitch">
 					<Switches>
-						<Switch Id="1216965916" Name="Stone"/>
-						<Switch Id="2003927601" Name="Puddle"/>
 						<Switch Id="2058049674" Name="Wood"/>
-						<Switch Id="2195636714" Name="Dirt"/>
+						<Switch Id="2412606308" Name="Carpet"/>
+						<Switch Id="2637588553" Name="Tile"/>
 					</Switches>
 				</SwitchGroup>
 				<SwitchGroup Id="3968804893" Name="GroundWetnessSwitch">
@@ -944,10 +943,9 @@
 				</SwitchGroup>
 				<SwitchGroup Id="1044534455" Name="GroundMaterialSwitch">
 					<Switches>
-						<Switch Id="1216965916" Name="Stone"/>
-						<Switch Id="2003927601" Name="Puddle"/>
 						<Switch Id="2058049674" Name="Wood"/>
-						<Switch Id="2195636714" Name="Dirt"/>
+						<Switch Id="2412606308" Name="Carpet"/>
+						<Switch Id="2637588553" Name="Tile"/>
 					</Switches>
 				</SwitchGroup>
 				<SwitchGroup Id="2051106367" Name="PlayerSpeedSwitch">
@@ -971,5 +969,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{2E467FD6-8228-7096-5077-A827C7FFAFA0}</FileHash>
+	<FileHash>{89B4A265-5E40-3A45-4436-D5DCD73D5702}</FileHash>
 </SoundBanksInfo>

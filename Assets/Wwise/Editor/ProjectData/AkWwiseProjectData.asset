@@ -343,8 +343,22 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 95272e37ee2ea749a4f4ba5abfa5dea7
     GuidInternal: 
-    m_lastTime: -8584721119280836795
-    List: []
+    m_lastTime: -8584719244142701112
+    List:
+    - name: Player
+      guid: 9f2bb2b9341e844782020395c3073a42
+      id: 1069431850
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 95272e37ee2ea749a4f4ba5abfa5dea7
+      - ElementName: Player
+        ObjectType: 7
+        guid: 9f2bb2b9341e844782020395c3073a42
+      Path: SoundBanks/Default Work Unit/Player
   EventWwu:
   - PhysicalPath: Events/Default Work Unit.wwu
     PathAndIcons:
@@ -413,8 +427,8 @@ MonoBehaviour:
         guid: ed202411db5a4141bcb0d37d3376673c
       Path: Events/Player/Play_PLYR_Footsteps
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 2.4746666
+      minDuration: 0.5
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     PathAndIcons:
@@ -427,7 +441,7 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: ea837575837ad2429fa23f0890dcd34c
     GuidInternal: 
-    m_lastTime: -8584720216879807896
+    m_lastTime: -8584718528373248086
     List:
     - name: RTPC_Distance
       guid: 8f713afc3c692048aa47cad6aeb38d71
@@ -771,7 +785,7 @@ MonoBehaviour:
     ParentPath: Switches/Default Work Unit
     guid: f26415a28a873a438edb3ff2f246b1ad
     GuidInternal: 
-    m_lastTime: -8584720216879851025
+    m_lastTime: -8584718533553046492
     List:
     - name: GroundMaterialSwitch
       guid: 122e763026649644a2bcb71121a2e2f1
@@ -788,9 +802,9 @@ MonoBehaviour:
         guid: 122e763026649644a2bcb71121a2e2f1
       Path: Switches/Default Work Unit/GroundMaterialSwitch
       values:
-      - name: Dirt
+      - name: Carpet
         guid: 595b291691b6584cbc0a7078b6fb1dc2
-        id: 2195636714
+        id: 2412606308
         PathAndIcons:
         - ElementName: Switches
           ObjectType: 5
@@ -801,28 +815,12 @@ MonoBehaviour:
         - ElementName: GroundMaterialSwitch
           ObjectType: 11
           guid: 122e763026649644a2bcb71121a2e2f1
-        - ElementName: Dirt
+        - ElementName: Carpet
           ObjectType: 10
           guid: 595b291691b6584cbc0a7078b6fb1dc2
-      - name: Puddle
-        guid: a153e9fc55a8944c9dea339a10e9536a
-        id: 2003927601
-        PathAndIcons:
-        - ElementName: Switches
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: f26415a28a873a438edb3ff2f246b1ad
-        - ElementName: GroundMaterialSwitch
-          ObjectType: 11
-          guid: 122e763026649644a2bcb71121a2e2f1
-        - ElementName: Puddle
-          ObjectType: 10
-          guid: a153e9fc55a8944c9dea339a10e9536a
-      - name: Stone
+      - name: Tile
         guid: 4b00cee050fa9d419ee4f3345a726725
-        id: 1216965916
+        id: 2637588553
         PathAndIcons:
         - ElementName: Switches
           ObjectType: 5
@@ -833,7 +831,7 @@ MonoBehaviour:
         - ElementName: GroundMaterialSwitch
           ObjectType: 11
           guid: 122e763026649644a2bcb71121a2e2f1
-        - ElementName: Stone
+        - ElementName: Tile
           ObjectType: 10
           guid: 4b00cee050fa9d419ee4f3345a726725
       - name: Wood
@@ -1100,7 +1098,7 @@ MonoBehaviour:
     m_lastTime: -8584721119280828267
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 05000000090000000d00000011000000
+  ExpandedWaapiItemIds: 0100000005000000090000000d000000110000001200000013000000140000001500000016000000170000001e0000001f000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0
