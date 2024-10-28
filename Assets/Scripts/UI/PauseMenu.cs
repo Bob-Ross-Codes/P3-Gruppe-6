@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public FMODUnity.EventReference MyEvent;  // FMOD event reference
     private FMOD.Studio.EventInstance eventInstance;  // Event instance to control play and stop
-
+    public bool isPaused = false;
     void Start()
     {
         // Create the event instance at the start of the script
