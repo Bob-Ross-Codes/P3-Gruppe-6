@@ -1,0 +1,572 @@
+{
+  "assetCategories": {
+    "decal": {
+      "trim": {
+        "wall": {}
+      }
+    }
+  },
+  "averageColor": "#000000",
+  "categories": [
+    "atlas",
+    "decals",
+    "wall"
+  ],
+  "comp_version": 1,
+  "description": "",
+  "displacementBias": 0.131787,
+  "displacementCalibrationAccuracy": 0.981923,
+  "displacementScale": 4.521528,
+  "environment": {
+    "biome": "urban",
+    "region": "Asia"
+  },
+  "highest_available_res": 8192,
+  "id": "udnnbj3dy",
+  "json": {
+    "contentLength": 12324,
+    "uri": "udnnbj3dy.json"
+  },
+  "maps": [
+    {
+      "averageColor": "#EBEBEB",
+      "bitDepth": 32,
+      "colorSpace": "sRGB",
+      "contentLength": 50158085,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 197,
+      "name": "AO",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "ao",
+      "uri": "udnnbj3dy_8K_AO.exr"
+    },
+    {
+      "averageColor": "#EBEBEB",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 6337788,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 197,
+      "name": "AO",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "ao",
+      "uri": "udnnbj3dy_8K_AO.jpg"
+    },
+    {
+      "averageColor": "#8D7C6C",
+      "bitDepth": 16,
+      "colorSpace": "sRGB",
+      "contentLength": 51340668,
+      "maxIntensity": 156,
+      "mimeType": "image/x-exr",
+      "minIntensity": 96,
+      "name": "Basecolor",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "basecolor",
+      "uri": "udnnbj3dy_8K_Basecolor.exr"
+    },
+    {
+      "averageColor": "#8D7C6C",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 7391305,
+      "maxIntensity": 156,
+      "mimeType": "image/jpeg",
+      "minIntensity": 96,
+      "name": "Basecolor",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "basecolor",
+      "uri": "udnnbj3dy_8K_Basecolor.jpg"
+    },
+    {
+      "averageColor": "#808080",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 46806102,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 0,
+      "name": "Bump",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "bump",
+      "uri": "udnnbj3dy_8K_Bump.exr"
+    },
+    {
+      "averageColor": "#808080",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 2606405,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 0,
+      "name": "Bump",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "bump",
+      "uri": "udnnbj3dy_8K_Bump.jpg"
+    },
+    {
+      "averageColor": "#FFFFFF",
+      "bitDepth": 32,
+      "colorSpace": "sRGB",
+      "contentLength": 51680758,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 255,
+      "name": "Cavity",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "cavity",
+      "uri": "udnnbj3dy_8K_Cavity.exr"
+    },
+    {
+      "averageColor": "#FFFFFF",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 10467049,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 255,
+      "name": "Cavity",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "cavity",
+      "uri": "udnnbj3dy_8K_Cavity.jpg"
+    },
+    {
+      "averageColor": "#7D7D7D",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 64414254,
+      "maxIntensity": 181,
+      "mimeType": "image/x-exr",
+      "minIntensity": 93,
+      "name": "Displacement",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "displacement",
+      "uri": "udnnbj3dy_8K_Displacement.exr"
+    },
+    {
+      "averageColor": "#7D7D7D",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 1264677,
+      "maxIntensity": 181,
+      "mimeType": "image/jpeg",
+      "minIntensity": 93,
+      "name": "Displacement",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "displacement",
+      "uri": "udnnbj3dy_8K_Displacement.jpg"
+    },
+    {
+      "averageColor": "#5E5E5E",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 51679958,
+      "maxIntensity": 113,
+      "mimeType": "image/x-exr",
+      "minIntensity": 76,
+      "name": "Gloss",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "gloss",
+      "uri": "udnnbj3dy_8K_Gloss.exr"
+    },
+    {
+      "averageColor": "#5E5E5E",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 6373286,
+      "maxIntensity": 113,
+      "mimeType": "image/jpeg",
+      "minIntensity": 76,
+      "name": "Gloss",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "gloss",
+      "uri": "udnnbj3dy_8K_Gloss.jpg"
+    },
+    {
+      "averageColor": "#8186F5",
+      "bitDepth": 16,
+      "colorSpace": "Linear",
+      "contentLength": 46952651,
+      "maxIntensity": 172,
+      "mimeType": "image/x-exr",
+      "minIntensity": 111,
+      "name": "Normal",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "normal",
+      "uri": "udnnbj3dy_8K_Normal.exr"
+    },
+    {
+      "averageColor": "#8186F5",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 15190684,
+      "maxIntensity": 172,
+      "mimeType": "image/jpeg",
+      "minIntensity": 111,
+      "name": "Normal",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "normal",
+      "uri": "udnnbj3dy_8K_Normal.jpg"
+    },
+    {
+      "averageColor": "#FBFBFB",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 214047,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 0,
+      "name": "Opacity",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "opacity",
+      "uri": "udnnbj3dy_8K_Opacity.exr"
+    },
+    {
+      "averageColor": "#FBFBFB",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 233888,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 0,
+      "name": "Opacity",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "opacity",
+      "uri": "udnnbj3dy_8K_Opacity.jpg"
+    },
+    {
+      "averageColor": "#A1A1A1",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 49659162,
+      "maxIntensity": 179,
+      "mimeType": "image/x-exr",
+      "minIntensity": 142,
+      "name": "Roughness",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "roughness",
+      "uri": "udnnbj3dy_8K_Roughness.exr"
+    },
+    {
+      "averageColor": "#A1A1A1",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 6233143,
+      "maxIntensity": 179,
+      "mimeType": "image/jpeg",
+      "minIntensity": 142,
+      "name": "Roughness",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "roughness",
+      "uri": "udnnbj3dy_8K_Roughness.jpg"
+    },
+    {
+      "averageColor": "#383838",
+      "bitDepth": 16,
+      "colorSpace": "sRGB",
+      "contentLength": 55506687,
+      "maxIntensity": 56,
+      "mimeType": "image/x-exr",
+      "minIntensity": 56,
+      "name": "Specular",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "specular",
+      "uri": "udnnbj3dy_8K_Specular.exr"
+    },
+    {
+      "averageColor": "#383838",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 6039700,
+      "maxIntensity": 56,
+      "mimeType": "image/jpeg",
+      "minIntensity": 56,
+      "name": "Specular",
+      "physicalSize": "2x0.5",
+      "resolution": "8192x2048",
+      "type": "specular",
+      "uri": "udnnbj3dy_8K_Specular.jpg"
+    }
+  ],
+  "meta": [
+    {
+      "key": "scanArea",
+      "name": "Scan Area",
+      "value": "2x0.5 m"
+    },
+    {
+      "key": "height",
+      "name": "Height",
+      "value": "0.017 m"
+    },
+    {
+      "key": "tileable",
+      "name": "Tileable",
+      "value": true
+    },
+    {
+      "key": "texelDensity",
+      "name": "Texel Density",
+      "value": "4096 px/m"
+    },
+    {
+      "key": "calibration",
+      "name": "Calibration",
+      "value": "GretagMacbeth ColorChecker Color Rendition Chart"
+    },
+    {
+      "key": "scanner",
+      "name": "Scanner",
+      "value": "MKX"
+    }
+  ],
+  "models": [],
+  "name": "Decorative Marble Trim",
+  "pack": null,
+  "physicalSize": null,
+  "points": 1,
+  "previews": {
+    "images": [
+      {
+        "contentLength": 180716,
+        "resolution": "360x360",
+        "tags": [
+          "thumb"
+        ],
+        "uri": "udnnbj3dy_Grid_360.png"
+      },
+      {
+        "contentLength": 237847,
+        "resolution": "420x420",
+        "tags": [
+          "thumb"
+        ],
+        "uri": "udnnbj3dy_Grid_420.png"
+      },
+      {
+        "contentLength": 651527,
+        "resolution": "720x720",
+        "tags": [
+          "thumb",
+          "retina"
+        ],
+        "uri": "udnnbj3dy_Grid_720.png"
+      },
+      {
+        "contentLength": 866621,
+        "resolution": "840x840",
+        "tags": [
+          "thumb",
+          "retina"
+        ],
+        "uri": "udnnbj3dy_Grid_840.png"
+      },
+      {
+        "contentLength": 2217678,
+        "resolution": "1440x768",
+        "tags": [
+          "preview",
+          "clay"
+        ],
+        "uri": "udnnbj3dy_PopupClay_1440.png"
+      },
+      {
+        "contentLength": 4081403,
+        "resolution": "1920x1080",
+        "tags": [
+          "preview",
+          "clay"
+        ],
+        "uri": "udnnbj3dy_PopupClay_1920.png"
+      },
+      {
+        "contentLength": 8651816,
+        "resolution": "2880x1536",
+        "tags": [
+          "preview",
+          "clay",
+          "retina"
+        ],
+        "uri": "udnnbj3dy_PopupClay_2880.png"
+      },
+      {
+        "contentLength": 15499526,
+        "resolution": "3840x2160",
+        "tags": [
+          "preview",
+          "clay",
+          "retina"
+        ],
+        "uri": "udnnbj3dy_PopupClay_3840.png"
+      },
+      {
+        "contentLength": 2212871,
+        "resolution": "1440x768",
+        "tags": [
+          "preview"
+        ],
+        "uri": "udnnbj3dy_Popup_1440.png"
+      },
+      {
+        "contentLength": 4094075,
+        "resolution": "1920x1080",
+        "tags": [
+          "preview"
+        ],
+        "uri": "udnnbj3dy_Popup_1920.png"
+      },
+      {
+        "contentLength": 8705013,
+        "resolution": "2880x1536",
+        "tags": [
+          "preview",
+          "retina"
+        ],
+        "uri": "udnnbj3dy_Popup_2880.png"
+      },
+      {
+        "contentLength": 15987292,
+        "resolution": "3840x2160",
+        "tags": [
+          "preview",
+          "retina"
+        ],
+        "uri": "udnnbj3dy_Popup_3840.png"
+      }
+    ],
+    "relativeSize": "1x1",
+    "scaleReferences": []
+  },
+  "process_date": "2024-04-17 05:10:02",
+  "properties": [],
+  "referencePreviews": {
+    "maps": [],
+    "models": []
+  },
+  "references": [],
+  "revised": false,
+  "revision": 0,
+  "semanticTags": {
+    "architectural_style": {},
+    "asset_type": "decal",
+    "contains": [
+      "Marble",
+      "design",
+      "pattern",
+      "carving"
+    ],
+    "country": "Pakistan",
+    "descriptive": [
+      "patterned",
+      " floral",
+      " ornate",
+      " decorative",
+      " worn",
+      " weathered"
+    ],
+    "environment": [
+      "rural",
+      "medieval"
+    ],
+    "industry": [
+      "archviz",
+      "games",
+      "VFX"
+    ],
+    "interior_exterior": [
+      "exterior"
+    ],
+    "locations": {
+      "Asia": {
+        "Pakistan": {}
+      }
+    },
+    "maxSize": 2,
+    "minSize": 0.5,
+    "name": "Decorative Marble Trim",
+    "orientation": [
+      "wall"
+    ],
+    "region": "Asia",
+    "resolution": 8192,
+    "state": [
+      "old"
+    ],
+    "subject_matter": "manmade",
+    "theme": [
+      "Decorative",
+      " interiors",
+      " walls",
+      " over-door",
+      "indoors"
+    ]
+  },
+  "tags": [
+    "decal",
+    "decorative",
+    "exteriors",
+    "marble",
+    "design",
+    "flower",
+    "decor",
+    "rough"
+  ],
+  "texelDensity": 4096,
+  "texture_type": "basic",
+  "ue_plugin_archives": [
+    {
+      "contentLength": 67855937,
+      "gltfVersion": "2.0",
+      "tier": 0,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_0/udnnbj3dy_tier_0.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 21083279,
+      "gltfVersion": "2.0",
+      "tier": 1,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_1/udnnbj3dy_tier_1.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 5431226,
+      "gltfVersion": "2.0",
+      "tier": 2,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_2/udnnbj3dy_tier_2.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 703387,
+      "gltfVersion": "2.0",
+      "tier": 3,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_3/udnnbj3dy_tier_3.zip",
+      "version": 1
+    }
+  ],
+  "version": 2
+}
