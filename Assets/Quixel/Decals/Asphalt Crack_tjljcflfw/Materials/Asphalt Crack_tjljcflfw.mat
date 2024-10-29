@@ -30,7 +30,6 @@ Material:
   m_ValidKeywords:
   - _COLORMAP
   - _MASKMAP
-  - _MATERIAL_AFFECTS_MASKMAP
   - _MATERIAL_AFFECTS_NORMAL
   - _NORMALMAP
   m_InvalidKeywords:
@@ -192,9 +191,9 @@ Material:
     - _AffectAO: 0
     - _AffectAlbedo: 0
     - _AffectEmission: 0
-    - _AffectMetal: 1
+    - _AffectMetal: 0
     - _AffectNormal: 1
-    - _AffectSmoothness: 1
+    - _AffectSmoothness: 0
     - _AlbedoAffectEmissive: 0
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 0
@@ -212,11 +211,11 @@ Material:
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
-    - _DecalBlend: 1
+    - _DecalBlend: 0.772
     - _DecalColorMask0: 0
     - _DecalColorMask1: 15
-    - _DecalColorMask2: 11
-    - _DecalColorMask3: 8
+    - _DecalColorMask2: 0
+    - _DecalColorMask3: 0
     - _DecalMaskMapBlueScale: 1
     - _DecalMeshBiasType: 0
     - _DecalMeshDepthBias: 0
@@ -330,7 +329,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.691}
+    - _BaseColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}

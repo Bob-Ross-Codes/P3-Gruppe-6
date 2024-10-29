@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{ecb08633-4ad4-4786-b822-3e9a334a3217}">
+		<property name="name">
+			<value>Music</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{3afd2e8b-ba0c-4398-813b-ac5dd6cdfeb8}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{9a23f207-9906-4c72-a13d-996e6990a579}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{b793a224-bb38-4a1a-ac94-589bd98f262e}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{3afd2e8b-ba0c-4398-813b-ac5dd6cdfeb8}">
+		<relationship name="effects">
+			<destination>{a069df26-6cfa-47a7-95d7-386edbf2112a}</destination>
+			<destination>{3918ba63-dbaf-428d-bd76-769d79487847}</destination>
+			<destination>{272b102f-25f1-478f-917c-d9451cbffed4}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{9a23f207-9906-4c72-a13d-996e6990a579}" />
+	<object class="MixerBusFader" id="{a069df26-6cfa-47a7-95d7-386edbf2112a}" />
+	<object class="PitchShifterEffect" id="{3918ba63-dbaf-428d-bd76-769d79487847}" />
+	<object class="SFXReverbEffect" id="{272b102f-25f1-478f-917c-d9451cbffed4}" />
+</objects>

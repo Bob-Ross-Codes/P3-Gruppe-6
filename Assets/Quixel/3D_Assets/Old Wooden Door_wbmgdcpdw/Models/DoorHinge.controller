@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0227dd0cce890c040b15a850d5d1a011, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2e6f2a4a8fe2b7740ae76f7d3dca1ab2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -41,14 +41,15 @@ AnimatorStateMachine:
     m_Position: {x: 410, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7724640817436061854}
-    m_Position: {x: 170, y: -70, z: 0}
+    m_Position: {x: 410, y: -60, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -406374017004960301}
-  m_EntryTransitions: []
+  m_EntryTransitions:
+  - {fileID: 9057882794320128153}
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_AnyStatePosition: {x: 10, y: -50, z: 0}
   m_EntryPosition: {x: 20, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -70,7 +71,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.5067082
+  m_TransitionDuration: 1.0084056
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 1
@@ -151,9 +152,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.6333154
+  m_TransitionDuration: 0.99031293
   m_TransitionOffset: 0
-  m_ExitTime: 0.0142109115
+  m_ExitTime: 0.014210911
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -180,9 +181,23 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2e6f2a4a8fe2b7740ae76f7d3dca1ab2, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0227dd0cce890c040b15a850d5d1a011, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1109 &9057882794320128153
+AnimatorTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 7724640817436061854}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 1
