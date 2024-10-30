@@ -51,9 +51,69 @@
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
-								<AuxBus Name="LargeRoom" ID="{BB70C6AC-7C53-432A-AF5F-7D099A0A5227}"/>
+								<AuxBus Name="LargeRoom" ID="{BB70C6AC-7C53-432A-AF5F-7D099A0A5227}">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="BusVolume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
+										<Property Name="CenterPercentage" Type="int32">
+											<ValueList>
+												<Value>0</Value>
+											</ValueList>
+										</Property>
+										<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+										<Property Name="ListenerRelativeRouting" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList/>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{DD4D46D8-710F-46D6-8FE0-AA9D31B8304B}" ShortID="452662145">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+																<ObjectRef Name="Hall_Small" ID="{D65B5F04-B83B-412C-9434-34A13A477E24}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AuxBus>
 								<AuxBus Name="SmallRoom" ID="{596C6D81-6F70-457C-8469-B766FEC1913C}"/>
-								<AuxBus Name="SilentRoom" ID="{7147A64B-D23D-4BCE-B5EA-0870C1F7C8B9}"/>
+								<AuxBus Name="SilentRoom" ID="{7147A64B-D23D-4BCE-B5EA-0870C1F7C8B9}">
+									<PropertyList>
+										<Property Name="BusVolume" Type="Real64">
+											<ValueList>
+												<Value>7</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OutputBusVolume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{DE1068A8-D0A4-4016-AFBB-0E9C8E5F587E}" ShortID="745355497">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+																<ObjectRef Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AuxBus>
 							</ChildrenList>
 						</AuxBus>
 					</ChildrenList>

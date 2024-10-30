@@ -13,7 +13,9 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
         static const AkUniqueID PLAY_PLYR_FOOTSTEPS = 673033979U;
+        static const AkUniqueID STARTKNOCKINGEVENT = 152670193U;
     } // namespace EVENTS
 
     namespace STATES
@@ -125,8 +127,10 @@ namespace AK
         static const AkUniqueID RTPC_DISTANCE = 262290038U;
         static const AkUniqueID RTPC_FLYCOUNT = 1318719891U;
         static const AkUniqueID RTPC_GROUNDWETNESS = 870672907U;
+        static const AkUniqueID RTPC_KNOCKINGINTENSITY = 2692556666U;
         static const AkUniqueID RTPC_PLAYERSPEED = 2653406601U;
         static const AkUniqueID RTPC_RAINAMOUNT = 1294084109U;
+        static const AkUniqueID RTPC_REVERB = 4143461479U;
         static const AkUniqueID RTPC_TIMEOFDAY = 257272959U;
     } // namespace GAME_PARAMETERS
 

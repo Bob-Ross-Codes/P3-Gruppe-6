@@ -37,6 +37,22 @@
 						<Property Name="SlewRateUp" Type="Real64" Value="0"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="RTPC_Reverb" ID="{5DC95B86-F729-4893-BF2D-617F99820246}">
+					<PropertyList>
+						<Property Name="BindToBuiltInParam" Type="int16" Value="1"/>
+						<Property Name="InitialValue" Type="Real64" Value="0.5"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="0.5"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="0.5"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_KnockingIntensity" ID="{80BAFBEC-BE3B-4C32-B2CD-A531E5FE22BA}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="30"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

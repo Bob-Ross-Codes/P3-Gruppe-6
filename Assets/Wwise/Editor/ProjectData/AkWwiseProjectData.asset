@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics/Default Work Unit
     guid: dff32b0ad9afd04ea95d396192fb97ba
     GuidInternal: 
-    m_lastTime: -8584721119280826244
+    m_lastTime: -8584715037713652916
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 8f74c11f6ba88142833ff2a081eb0f2f
     GuidInternal: 
-    m_lastTime: -8584721059028255830
+    m_lastTime: -8584714025643624068
     List:
     - name: 2DAmbience
       guid: 47c5d0fb2456804fad814c18859c1d1d
@@ -343,7 +343,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 95272e37ee2ea749a4f4ba5abfa5dea7
     GuidInternal: 
-    m_lastTime: -8584719244142701112
+    m_lastTime: -8584715004412800677
     List:
     - name: Player
       guid: 9f2bb2b9341e844782020395c3073a42
@@ -371,8 +371,55 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ece3f43672e3594588fdf363796094af
     GuidInternal: 
-    m_lastTime: -8584721119323795444
+    m_lastTime: -8584713942160527444
     List: []
+  - PhysicalPath: Events/Enviroment.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Enviroment
+      ObjectType: 12
+      guid: dfdd45dc075dd0439b42b35985878514
+    ParentPath: Events/Enviroment
+    guid: dfdd45dc075dd0439b42b35985878514
+    GuidInternal: 
+    m_lastTime: -8584713275463351365
+    List:
+    - name: Enter_Reverb_Zone
+      guid: 80cddb6464b5f54cba5b89c405ffb213
+      id: 3483129277
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Enviroment
+        ObjectType: 12
+        guid: dfdd45dc075dd0439b42b35985878514
+      - ElementName: Enter_Reverb_Zone
+        ObjectType: 3
+        guid: 80cddb6464b5f54cba5b89c405ffb213
+      Path: Events/Enviroment/Enter_Reverb_Zone
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: startKnockingEvent
+      guid: 2135013517563d4cb5a6971c7021e29a
+      id: 152670193
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Enviroment
+        ObjectType: 12
+        guid: dfdd45dc075dd0439b42b35985878514
+      - ElementName: startKnockingEvent
+        ObjectType: 3
+        guid: 2135013517563d4cb5a6971c7021e29a
+      Path: Events/Enviroment/startKnockingEvent
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   - PhysicalPath: Events/Locomotion.wwu
     PathAndIcons:
     - ElementName: Events
@@ -384,7 +431,7 @@ MonoBehaviour:
     ParentPath: Events/Locomotion
     guid: 5d12444c80736d4aa4183b439461e315
     GuidInternal: 
-    m_lastTime: -8584721092395208462
+    m_lastTime: -8584715037716898062
     List: []
   - PhysicalPath: Events/NPC.wwu
     PathAndIcons:
@@ -397,7 +444,7 @@ MonoBehaviour:
     ParentPath: Events/NPC
     guid: 02ecd6ad61d6b64281cc12bfd98682a1
     GuidInternal: 
-    m_lastTime: -8584721092469200735
+    m_lastTime: -8584715037716894597
     List: []
   - PhysicalPath: Events/Player.wwu
     PathAndIcons:
@@ -410,7 +457,7 @@ MonoBehaviour:
     ParentPath: Events/Player
     guid: 2b7de7ded8cfaf4f903d6114676b19ae
     GuidInternal: 
-    m_lastTime: -8584720216880102662
+    m_lastTime: -8584715037716892188
     List:
     - name: Play_PLYR_Footsteps
       guid: ed202411db5a4141bcb0d37d3376673c
@@ -441,7 +488,7 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: ea837575837ad2429fa23f0890dcd34c
     GuidInternal: 
-    m_lastTime: -8584718528373248086
+    m_lastTime: -8584713265159051025
     List:
     - name: RTPC_Distance
       guid: 8f713afc3c692048aa47cad6aeb38d71
@@ -485,6 +532,20 @@ MonoBehaviour:
         ObjectType: 13
         guid: e4ef8dbdc38c80439c6f8bbfe2f05e6b
       Path: Game Parameters/Default Work Unit/RTPC_GroundWetness
+    - name: RTPC_KnockingIntensity
+      guid: ecfbba803bbe324cb2cda531e5fe22ba
+      id: 2692556666
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ea837575837ad2429fa23f0890dcd34c
+      - ElementName: RTPC_KnockingIntensity
+        ObjectType: 13
+        guid: ecfbba803bbe324cb2cda531e5fe22ba
+      Path: Game Parameters/Default Work Unit/RTPC_KnockingIntensity
     - name: RTPC_PlayerSpeed
       guid: f567d7fb8347c24b8570a764cd7f7bb8
       id: 2653406601
@@ -513,6 +574,20 @@ MonoBehaviour:
         ObjectType: 13
         guid: aefc972be2197c4695c3be73290c462f
       Path: Game Parameters/Default Work Unit/RTPC_RainAmount
+    - name: RTPC_Reverb
+      guid: 865bc95d29f79348bf2d617f99820246
+      id: 4143461479
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ea837575837ad2429fa23f0890dcd34c
+      - ElementName: RTPC_Reverb
+        ObjectType: 13
+        guid: 865bc95d29f79348bf2d617f99820246
+      Path: Game Parameters/Default Work Unit/RTPC_Reverb
     - name: RTPC_TimeOfDay
       guid: e97448e903395744b8fd1118c0cbb1f2
       id: 257272959
@@ -539,7 +614,7 @@ MonoBehaviour:
     ParentPath: States/Default Work Unit
     guid: 84cae74749a41b4cafaecbed2d4b0e7f
     GuidInternal: 
-    m_lastTime: -8584721059028165081
+    m_lastTime: -8584715037713664005
     List:
     - name: AreaState
       guid: 5a385b9de0b5714f9a552b09a52084ef
@@ -785,7 +860,7 @@ MonoBehaviour:
     ParentPath: Switches/Default Work Unit
     guid: f26415a28a873a438edb3ff2f246b1ad
     GuidInternal: 
-    m_lastTime: -8584718533553046492
+    m_lastTime: -8584715037713661844
     List:
     - name: GroundMaterialSwitch
       guid: 122e763026649644a2bcb71121a2e2f1
@@ -1095,10 +1170,10 @@ MonoBehaviour:
     ParentPath: Triggers/Default Work Unit
     guid: 06448c3d07cb8d4c89714159dd6e5e14
     GuidInternal: 
-    m_lastTime: -8584721119280828267
+    m_lastTime: -8584715037713659013
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0100000005000000090000000d000000110000001200000013000000140000001500000016000000170000001e0000001f000000
+  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001e0000001f000000200000002100000022000000230000002e0000003400000035000000be070000362700004427000045270000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0

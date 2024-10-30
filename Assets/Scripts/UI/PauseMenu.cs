@@ -1,17 +1,13 @@
 using UnityEngine;
 using StarterAssets;  // Import the StarterAssets namespace
-using FMODUnity;     // Import FMODUnity for event control
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
-    public FMODUnity.EventReference MyEvent;  // FMOD event reference
-    private FMOD.Studio.EventInstance eventInstance;  // Event instance to control play and stop
 
     void Start()
     {
-        // Create the event instance at the start of the script
-        eventInstance = RuntimeManager.CreateInstance(MyEvent);
+       
     }
 
     void Update()
@@ -39,8 +35,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        // Stop the FMOD event
-        eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+       
     }
 
     void Pause()
@@ -52,9 +47,6 @@ public class PauseMenu : MonoBehaviour
         // Show and unlock the cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-
-        // Start the FMOD event
-        eventInstance.start();
     }
 
     public void QuitGame()
@@ -63,9 +55,5 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Game Closed");
     }
 
-    void OnDestroy()
-    {
-        // Release the event instance when the object is destroyed
-        eventInstance.release();
-    }
+    
 }
