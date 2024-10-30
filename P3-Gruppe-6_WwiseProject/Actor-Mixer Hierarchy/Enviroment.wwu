@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}" SchemaVersion="119">
+	<AudioObjects>
+		<WorkUnit Name="Enviroment" ID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}" PersistMode="Standalone">
+			<ChildrenList>
+				<BlendContainer Name="MonsterKnock" ID="{F5501E51-C5D0-4041-A904-45AB6B5396C3}" ShortID="152805079">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="LowKnock" ID="{08A8E4B9-CF6D-46BE-9AF2-B57431904C99}" ShortID="208615589">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Gentle Knock Wooden Door" ID="{C08D7B32-7D4D-424D-8AF2-AB7FFCB5DD4D}">
+									<Language>SFX</Language>
+									<AudioFile>Gentle Knock Wooden Door.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="945887105"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Gentle Knock Wooden Door" ID="{C08D7B32-7D4D-424D-8AF2-AB7FFCB5DD4D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="MediumKnock" ID="{ECC81499-82FD-4A1F-8358-1E08349F104D}" ShortID="4059649">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Wood Door Knock" ID="{137F5636-AF1B-4F11-8699-2C34758A3A8E}">
+									<Language>SFX</Language>
+									<AudioFile>Wood Door Knock.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="268669544"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Wood Door Knock" ID="{137F5636-AF1B-4F11-8699-2C34758A3A8E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="HighKnock" ID="{5CC16092-C986-45BE-A005-468F070AD57F}" ShortID="523627403">
+							<PropertyList>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="HighKnock_1" ID="{B69E9DF9-F958-4CBC-978C-ADA1228F134F}" ShortID="25606085">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Door Knocking Slight Rattle" ID="{6480253E-8A5C-4CBB-8451-C593EDA07FD3}">
+											<PropertyList>
+												<Property Name="LoopEnd" Type="Real64" Value="1.94660811999073"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.95504536331722"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Door Knocking Slight Rattle.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="220019224"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Door Knocking Slight Rattle" ID="{6480253E-8A5C-4CBB-8451-C593EDA07FD3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="HighKnock_2" ID="{6C302439-C751-46E7-81EC-ADC562532F1B}" ShortID="950171562">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>13</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>180</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Hard With Fist" ID="{8C7CD10E-BA30-498E-9B57-C94F6CB0E57A}">
+											<Language>SFX</Language>
+											<AudioFile>Hard With Fist.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="889004069"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Hard With Fist" ID="{8C7CD10E-BA30-498E-9B57-C94F6CB0E57A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="HighKnock_3" ID="{D3BB4AE9-1CD3-4F42-AADB-6EC1F570E4C9}" ShortID="662607237">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Door Knocking Slight Rattle" ID="{00A72F71-C766-4F82-B56B-1A57DB38DFD9}">
+											<PropertyList>
+												<Property Name="LoopEnd" Type="Real64" Value="1.94660811999073"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.29493018480492"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.09206301334702"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Door Knocking Slight Rattle.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="582011132"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Door Knocking Slight Rattle" ID="{00A72F71-C766-4F82-B56B-1A57DB38DFD9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="HighKnock_4" ID="{DA4E8928-4C4A-4221-8C4A-5BB9CC4C7CEA}" ShortID="898945969">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>13</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>180</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Hard With Fist" ID="{832C57EB-0C84-4AEF-BC96-C1162F8C5751}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.74738588723477"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Hard With Fist.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="199820693"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Hard With Fist" ID="{832C57EB-0C84-4AEF-BC96-C1162F8C5751}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="HighKnock_5" ID="{ED1B2A4C-D6CA-4254-8D4E-DAEF65CC400B}" ShortID="667433250">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>13</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>180</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Hard With Fist" ID="{E5B0BED9-ADDF-49D9-9B2A-5C4151FF8DCA}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.95580826488706"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.81266217488023"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Hard With Fist.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="505184733"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Hard With Fist" ID="{E5B0BED9-ADDF-49D9-9B2A-5C4151FF8DCA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="HighKnock_6" ID="{08751532-9352-4D2A-974A-38A1523F7942}" ShortID="67938014">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>13</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>180</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Hard With Fist" ID="{C8C7AAAE-5B44-4B21-894F-4B4E352C1278}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.85055715263518"/>
+												<Property Name="TrimEnd" Type="Real64" Value="7.14320330681041"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Hard With Fist.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="491737182"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Hard With Fist" ID="{C8C7AAAE-5B44-4B21-894F-4B4E352C1278}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="HighKnock_7" ID="{2DCF9748-DE49-437E-AFB6-E76DAF2BA9BE}" ShortID="729613079">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>13</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>180</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Hard With Fist" ID="{B3919A4A-B1F2-4715-90A4-C3FCFF14C682}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.50320559548255"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Hard With Fist.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="161921007"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Hard With Fist" ID="{B3919A4A-B1F2-4715-90A4-C3FCFF14C682}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<BlendTrackList>
+						<BlendTrack Name="New Blend Track" ID="{4CD734C9-79AF-4C2A-9FAA-7EE025EC7008}" ShortID="599395515">
+							<PropertyList>
+								<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="LayerCrossFadeControlInput">
+									<ObjectRef Name="RTPC_KnockingIntensity" ID="{80BAFBEC-BE3B-4C32-B2CD-A531E5FE22BA}" WorkUnitID="{757583EA-7A83-42D2-9FA2-3F0890DCD34C}"/>
+								</Reference>
+							</ReferenceList>
+							<BlendTrackAssocList>
+								<BlendTrackAssoc>
+									<ItemRef Name="LowKnock" ID="{08A8E4B9-CF6D-46BE-9AF2-B57431904C99}"/>
+									<CrossfadingInfo>
+										<LeftEdgePos>5.8753709198813</LeftEdgePos>
+										<LeftFadingMode>Automatic</LeftFadingMode>
+										<RightEdgePos>11.1595398218707</RightEdgePos>
+										<RightFadingMode>Automatic</RightFadingMode>
+									</CrossfadingInfo>
+								</BlendTrackAssoc>
+								<BlendTrackAssoc>
+									<ItemRef Name="MediumKnock" ID="{ECC81499-82FD-4A1F-8358-1E08349F104D}"/>
+									<CrossfadingInfo>
+										<LeftEdgePos>10.8553994065282</LeftEdgePos>
+										<LeftFadingMode>Automatic</LeftFadingMode>
+										<RightEdgePos>18.0089020771513</RightEdgePos>
+										<RightFadingMode>Automatic</RightFadingMode>
+									</CrossfadingInfo>
+								</BlendTrackAssoc>
+								<BlendTrackAssoc>
+									<ItemRef Name="HighKnock" ID="{5CC16092-C986-45BE-A005-468F070AD57F}"/>
+									<CrossfadingInfo>
+										<LeftEdgePos>17.7755399807736</LeftEdgePos>
+										<LeftFadingMode>Automatic</LeftFadingMode>
+										<RightEdgePos>30</RightEdgePos>
+										<RightFadingMode>Automatic</RightFadingMode>
+									</CrossfadingInfo>
+								</BlendTrackAssoc>
+							</BlendTrackAssocList>
+						</BlendTrack>
+					</BlendTrackList>
+				</BlendContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
