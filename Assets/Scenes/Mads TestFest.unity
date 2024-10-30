@@ -8279,6 +8279,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6328893955437262484, guid: e3206c9c442f260438e02ca353eaf317, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1915890220}
+    - targetCorrespondingSourceObject: {fileID: 6328893955437262484, guid: e3206c9c442f260438e02ca353eaf317, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1915890223}
+    - targetCorrespondingSourceObject: {fileID: 6328893955437262484, guid: e3206c9c442f260438e02ca353eaf317, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1915890222}
     - targetCorrespondingSourceObject: {fileID: 6328893954451151411, guid: e3206c9c442f260438e02ca353eaf317, type: 3}
       insertIndex: 2
       addedObject: {fileID: 866186866}
@@ -16425,6 +16431,63 @@ MonoBehaviour:
   rightDoorAnimator: {fileID: 0}
   targetPosition: {fileID: 0}
   animationDelay: 1
+--- !u!1 &1299511263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1299511265}
+  - component: {fileID: 1299511264}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1299511264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299511263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a5a608ded7149b68ac817aa796bdec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: e22e2c70b88d149c6a221dd8afa4eaf8, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &1299511265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299511263}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1307015646
 GameObject:
   m_ObjectHideFlags: 0
@@ -19935,7 +19998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19d9143a39eb3b46bc4563e9889cfbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: caf2d1537f20fe74ab2debbecd8e0fe0, type: 2}
+  m_Material: {fileID: 2100000, guid: 500e733574922d04ea961553b1b26a63, type: 2}
   m_DrawDistance: 100
   m_FadeScale: 0.809
   m_StartAngleFade: 123.97625
@@ -23811,6 +23874,48 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &1915890222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854972720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab509cf0b86074cad93d750c0f93e212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  akGameObjectID: 18446744073709551615
+  EmittersToStartListeningTo: []
+  EmittersToStopListeningTo: []
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &1915890223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854972720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4bd3bf23fe784302b2770470b8d5019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_Collider: {fileID: 0}
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  isRegistered: 0
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &1920721545
 GameObject:
   m_ObjectHideFlags: 0
@@ -27000,3 +27105,4 @@ SceneRoots:
   - {fileID: 1812956482}
   - {fileID: 786662416}
   - {fileID: 16819715}
+  - {fileID: 1299511265}
