@@ -4,19 +4,7 @@ using StarterAssets;  // Import the StarterAssets namespace
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
-<<<<<<< HEAD
- 
     public bool isPaused = false;
-    void Start()
-    {
- 
-=======
-
-    void Start()
-    {
-       
->>>>>>> Wwise
-    }
 
     void Update()
     {
@@ -42,11 +30,6 @@ public class PauseMenu : MonoBehaviour
         // Hide and lock the cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
-<<<<<<< HEAD
-=======
-       
->>>>>>> Wwise
     }
 
     void Pause()
@@ -58,11 +41,6 @@ public class PauseMenu : MonoBehaviour
         // Show and unlock the cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> Wwise
     }
 
     public void QuitGame()
