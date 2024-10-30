@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{DC45DDDF-5D07-43D0-9B42-B35985878514}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Enviroment" ID="{DC45DDDF-5D07-43D0-9B42-B35985878514}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Enter_Reverb_Zone" ID="{64DBCD80-B564-4CF5-BA5B-89C405FFB213}">
+					<ChildrenList>
+						<Action Name="" ID="{5F3BBD64-978F-4C52-A3F2-C010790E025F}" ShortID="23595307">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_Reverb" ID="{5DC95B86-F729-4893-BF2D-617F99820246}" WorkUnitID="{757583EA-7A83-42D2-9FA2-3F0890DCD34C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="startKnockingEvent" ID="{35013521-5617-4C3D-B5A6-971C7021E29A}">
+					<ChildrenList>
+						<Action Name="" ID="{0E404A5E-D7E6-4F2D-B841-31AB6836EA7F}" ShortID="114038232">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MonsterKnock" ID="{F5501E51-C5D0-4041-A904-45AB6B5396C3}" WorkUnitID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
