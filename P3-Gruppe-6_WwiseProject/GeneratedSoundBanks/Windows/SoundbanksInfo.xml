@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{49C6514D-2326-5471-BD39-2B62E9EEFDA3}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{1F430E16-923F-311B-05AE-34BA100FE16C}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -956,6 +956,7 @@
 						<MediaRef Id="945887105"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1856817241" Name="Stop_Knocking_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="870672907" Name="RTPC_GroundWetness"/>
@@ -1108,5 +1109,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8863F22C-9DA4-027D-DECD-1D75EDBC4C3B}</FileHash>
+	<FileHash>{1398D6EC-DF72-CA02-A565-5355DB5CE236}</FileHash>
 </SoundBanksInfo>

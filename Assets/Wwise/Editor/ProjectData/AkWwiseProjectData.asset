@@ -384,7 +384,7 @@ MonoBehaviour:
     ParentPath: Events/Enviroment
     guid: dfdd45dc075dd0439b42b35985878514
     GuidInternal: 
-    m_lastTime: -8584712923459375108
+    m_lastTime: -8584712228004334836
     List:
     - name: Enter_Reverb_Zone
       guid: 80cddb6464b5f54cba5b89c405ffb213
@@ -420,6 +420,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Stop_Knocking_Event
+      guid: 118e2219c9ffed498c66a9b415e54937
+      id: 1856817241
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Enviroment
+        ObjectType: 12
+        guid: dfdd45dc075dd0439b42b35985878514
+      - ElementName: Stop_Knocking_Event
+        ObjectType: 3
+        guid: 118e2219c9ffed498c66a9b415e54937
+      Path: Events/Enviroment/Stop_Knocking_Event
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   - PhysicalPath: Events/Locomotion.wwu
     PathAndIcons:
     - ElementName: Events
