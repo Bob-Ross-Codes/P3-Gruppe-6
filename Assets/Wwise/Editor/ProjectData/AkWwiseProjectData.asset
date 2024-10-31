@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: dff32b0ad9afd04ea95d396192fb97ba
     GuidInternal: 
-    m_lastTime: -8584712316606441770
+    m_lastTime: -8584712247478520342
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 8f74c11f6ba88142833ff2a081eb0f2f
     GuidInternal: 
-    m_lastTime: -8584712316613858358
+    m_lastTime: -8584712247493958881
     List:
     - name: 2DAmbience
       guid: 47c5d0fb2456804fad814c18859c1d1d
@@ -343,7 +343,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 95272e37ee2ea749a4f4ba5abfa5dea7
     GuidInternal: 
-    m_lastTime: -8584712316606476967
+    m_lastTime: -8584712247478570388
     List:
     - name: Player
       guid: 9f2bb2b9341e844782020395c3073a42
@@ -371,7 +371,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: ece3f43672e3594588fdf363796094af
     GuidInternal: 
-    m_lastTime: -8584712316618175075
+    m_lastTime: -8584712247497859281
     List: []
   - PhysicalPath: Events\Enviroment.wwu
     PathAndIcons:
@@ -384,7 +384,7 @@ MonoBehaviour:
     ParentPath: Events\Enviroment
     guid: dfdd45dc075dd0439b42b35985878514
     GuidInternal: 
-    m_lastTime: -8584712316618165058
+    m_lastTime: -8584712247497835046
     List:
     - name: Enter_Reverb_Zone
       guid: 80cddb6464b5f54cba5b89c405ffb213
@@ -420,6 +420,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Stop_Knocking_Event
+      guid: 118e2219c9ffed498c66a9b415e54937
+      id: 1856817241
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Enviroment
+        ObjectType: 12
+        guid: dfdd45dc075dd0439b42b35985878514
+      - ElementName: Stop_Knocking_Event
+        ObjectType: 3
+        guid: 118e2219c9ffed498c66a9b415e54937
+      Path: Events\Enviroment\Stop_Knocking_Event
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   - PhysicalPath: Events\Locomotion.wwu
     PathAndIcons:
     - ElementName: Events
@@ -431,7 +448,7 @@ MonoBehaviour:
     ParentPath: Events\Locomotion
     guid: 5d12444c80736d4aa4183b439461e315
     GuidInternal: 
-    m_lastTime: -8584712316618154721
+    m_lastTime: -8584712247497822091
     List: []
   - PhysicalPath: Events\NPC.wwu
     PathAndIcons:
@@ -444,7 +461,7 @@ MonoBehaviour:
     ParentPath: Events\NPC
     guid: 02ecd6ad61d6b64281cc12bfd98682a1
     GuidInternal: 
-    m_lastTime: -8584712316618154721
+    m_lastTime: -8584712247497822091
     List: []
   - PhysicalPath: Events\Player.wwu
     PathAndIcons:
@@ -457,7 +474,7 @@ MonoBehaviour:
     ParentPath: Events\Player
     guid: 2b7de7ded8cfaf4f903d6114676b19ae
     GuidInternal: 
-    m_lastTime: -8584712316618154721
+    m_lastTime: -8584712247497807058
     List:
     - name: Play_PLYR_Footsteps
       guid: ed202411db5a4141bcb0d37d3376673c
@@ -488,7 +505,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: ea837575837ad2429fa23f0890dcd34c
     GuidInternal: 
-    m_lastTime: -8584712316618138406
+    m_lastTime: -8584712247497796975
     List:
     - name: RTPC_Distance
       guid: 8f713afc3c692048aa47cad6aeb38d71
@@ -614,7 +631,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 84cae74749a41b4cafaecbed2d4b0e7f
     GuidInternal: 
-    m_lastTime: -8584712316606461858
+    m_lastTime: -8584712247478550355
     List:
     - name: AreaState
       guid: 5a385b9de0b5714f9a552b09a52084ef
@@ -860,7 +877,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: f26415a28a873a438edb3ff2f246b1ad
     GuidInternal: 
-    m_lastTime: -8584712316606451752
+    m_lastTime: -8584712247478530329
     List:
     - name: GroundMaterialSwitch
       guid: 122e763026649644a2bcb71121a2e2f1
@@ -1170,7 +1187,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 06448c3d07cb8d4c89714159dd6e5e14
     GuidInternal: 
-    m_lastTime: -8584712316606441770
+    m_lastTime: -8584712247478520342
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 05000000070000000c00000021000000
