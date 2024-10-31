@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
         static const AkUniqueID PLAY_PLYR_FOOTSTEPS = 673033979U;
         static const AkUniqueID STARTKNOCKINGEVENT = 152670193U;
+        static const AkUniqueID STOP_KNOCKING_EVENT = 1856817241U;
     } // namespace EVENTS
 
     namespace STATES

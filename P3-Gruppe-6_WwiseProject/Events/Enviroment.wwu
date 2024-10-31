@@ -28,6 +28,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Stop_Knocking_Event" ID="{19228E11-FFC9-49ED-8C66-A9B415E54937}">
+					<ChildrenList>
+						<Action Name="" ID="{A65E5DCE-5F0C-455D-A6E0-049ADC28408A}" ShortID="820117651">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MonsterKnock" ID="{F5501E51-C5D0-4041-A904-45AB6B5396C3}" WorkUnitID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
