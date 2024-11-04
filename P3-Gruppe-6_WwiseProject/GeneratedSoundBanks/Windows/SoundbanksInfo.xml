@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{256E0498-0125-86BE-36FA-F8B38930D25C}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{209945A3-8CA8-9FEA-2197-8683A5FAA473}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -981,7 +981,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1093999139" Name="Play_RainAndThunder" MaxAttenuation="10" DurationType="Infinite">
+				<Event Id="1093999139" Name="Play_RainAndThunder" MaxAttenuation="20" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="2028515"/>
 						<MediaRef Id="48546062"/>
@@ -999,7 +999,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="152670193" Name="startKnockingEvent" DurationType="Infinite">
+				<Event Id="152670193" Name="startKnockingEvent" MaxAttenuation="10" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="161921007"/>
 						<MediaRef Id="199820693"/>
@@ -1178,5 +1178,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{51EA9E6E-BECC-6AAB-008D-81AA5A1C9A0C}</FileHash>
+	<FileHash>{A7C2D379-1FE0-0C54-B0BD-692DE6B78E66}</FileHash>
 </SoundBanksInfo>

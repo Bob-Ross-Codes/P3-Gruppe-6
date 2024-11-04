@@ -67,6 +67,22 @@
 										<Property Name="EnableDiffraction" Type="bool" Value="True"/>
 										<Property Name="ListenerRelativeRouting" Type="bool" Value="True"/>
 									</PropertyList>
+									<PositioningInfo>
+										<Position Name="" ID="{8D3018D7-14A9-4256-8E58-55C22D57150F}">
+											<ChildrenList>
+												<Path2D Name="LargeRoom_Path" ID="{A18BF130-AD56-4C74-8949-C445FDA03410}">
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>50</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+											</ChildrenList>
+										</Position>
+									</PositioningInfo>
 									<ObjectLists>
 										<ObjectList Name="Effects">
 											<Reference>
