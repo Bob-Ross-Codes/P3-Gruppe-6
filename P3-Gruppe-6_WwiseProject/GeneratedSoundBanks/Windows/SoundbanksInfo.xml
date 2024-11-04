@@ -9,10 +9,14 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{1F430E16-923F-311B-05AE-34BA100FE16C}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{256E0498-0125-86BE-36FA-F8B38930D25C}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
+				<File Id="2028515" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Rain On Surfaces_2.wav</ShortName>
+					<CachePath>SFX/KS_Rain On Surfaces_2_0D5EE4C7.wem</CachePath>
+				</File>
 				<File Id="6699438" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_1.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_1_818F3B66.wem</CachePath>
@@ -44,6 +48,10 @@
 				<File Id="35673001" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (5).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (5)_00225573.wem</CachePath>
+				</File>
+				<File Id="48546062" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Distant Thunder No Rain.wav</ShortName>
+					<CachePath>SFX/Distant Thunder No Rain_818F3B66.wem</CachePath>
 				</File>
 				<File Id="59023378" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (16).wav</ShortName>
@@ -297,6 +305,14 @@
 					<ShortName>Footsteps_PLYR_Wood_Soaked_3.wav</ShortName>
 					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_3_00225573.wem</CachePath>
 				</File>
+				<File Id="397420369" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Thunder Clap Heavy Impact Sound Effect (1).wav</ShortName>
+					<CachePath>SFX/Thunder Clap Heavy Impact Sound Effect (1)_818F3B66.wem</CachePath>
+				</File>
+				<File Id="398871403" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Thunder Clap Sound Effect.wav</ShortName>
+					<CachePath>SFX/Thunder Clap Sound Effect_818F3B66.wem</CachePath>
+				</File>
 				<File Id="423372344" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_17.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_17_818F3B66.wem</CachePath>
@@ -321,6 +337,10 @@
 					<ShortName>KS_Concrete Urban Boots_02_33.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_33_818F3B66.wem</CachePath>
 				</File>
+				<File Id="464104037" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Thunder Sound Effects.wav</ShortName>
+					<CachePath>SFX/Thunder Sound Effects_818F3B66.wem</CachePath>
+				</File>
 				<File Id="466382625" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_41.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_41_818F3B66.wem</CachePath>
@@ -328,6 +348,10 @@
 				<File Id="477133610" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_7.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_7_818F3B66.wem</CachePath>
+				</File>
+				<File Id="483948221" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Thunder Clap Heavy Impact Explosive (1).wav</ShortName>
+					<CachePath>SFX/Thunder Clap Heavy Impact Explosive (1)_818F3B66.wem</CachePath>
 				</File>
 				<File Id="491737182" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hard With Fist.wav</ShortName>
@@ -368,6 +392,10 @@
 				<File Id="510470499" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_31.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_31_818F3B66.wem</CachePath>
+				</File>
+				<File Id="528004408" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Thunder Clap Heavy Impact Sound Effect.wav</ShortName>
+					<CachePath>SFX/Thunder Clap Heavy Impact Sound Effect_818F3B66.wem</CachePath>
 				</File>
 				<File Id="573153200" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (19).wav</ShortName>
@@ -513,6 +541,10 @@
 					<ShortName>KS_Concrete Urban Boots_02_39.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_39_818F3B66.wem</CachePath>
 				</File>
+				<File Id="789622552" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Thunder Clap Heavy Impact Explosive.wav</ShortName>
+					<CachePath>SFX/Thunder Clap Heavy Impact Explosive_818F3B66.wem</CachePath>
+				</File>
 				<File Id="790808487" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_40.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_40_818F3B66.wem</CachePath>
@@ -638,6 +670,12 @@
 					<CachePath>SFX/KS_Concrete Urban Boots_02_6_818F3B66.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="1008402193" Name="Low_Pass_20KHz" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="2995775460" Name="Room_Small" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
 				<Event Id="3483129277" Name="Enter_Reverb_Zone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="673033979" Name="Play_PLYR_Footsteps" DurationType="OneShot" DurationMin="0.5" DurationMax="2.4746666">
@@ -943,6 +981,24 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="1093999139" Name="Play_RainAndThunder" MaxAttenuation="10" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="2028515"/>
+						<MediaRef Id="48546062"/>
+						<MediaRef Id="397420369"/>
+						<MediaRef Id="398871403"/>
+						<MediaRef Id="464104037"/>
+						<MediaRef Id="483948221"/>
+						<MediaRef Id="528004408"/>
+						<MediaRef Id="789622552"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="1008402193"/>
+							<PluginRef Id="2995775460"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
 				<Event Id="152670193" Name="startKnockingEvent" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="161921007"/>
@@ -981,10 +1037,13 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{144373E7-7E91-B7CF-0D9B-8CCCE89CE710}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{0319508F-E3BC-98C6-9FA5-3D64DF7576E1}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
+				<Custom>
+					<Plugin Id="362604868" Name="Wwise_RoomVerb_(Custom)" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</Custom>
 				<ShareSets>
 					<Plugin Id="2791153688" Name="Hall_Small" LibName="Wwise RoomVerb" LibId="7733251"/>
 					<Plugin Id="2995775460" Name="Room_Small" LibName="Wwise RoomVerb" LibId="7733251"/>
@@ -1023,6 +1082,16 @@
 						<ShareSets>
 							<PluginRef Id="2995775460"/>
 						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3545700988" Name="Reverbs"/>
+					</AuxBusRefs>
+				</AuxBus>
+				<AuxBus Id="1649376139" Name="Smalle">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="362604868"/>
+						</Custom>
 					</PluginRefs>
 					<AuxBusRefs>
 						<AuxBusRef Id="3545700988" Name="Reverbs"/>
@@ -1109,5 +1178,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1398D6EC-DF72-CA02-A565-5355DB5CE236}</FileHash>
+	<FileHash>{51EA9E6E-BECC-6AAB-008D-81AA5A1C9A0C}</FileHash>
 </SoundBanksInfo>

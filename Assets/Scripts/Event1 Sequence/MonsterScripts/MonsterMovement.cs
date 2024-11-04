@@ -7,13 +7,11 @@ public class MonsterMovement : MonoBehaviour
     private int currentWaypointIndex = 0; // Tracks the current waypoint
     private float speed;               // Speed of movement
     private bool isWaiting = false;    // To check if the monster is in idle mode
-    [SerializeField] private int timer = 20;            // Time to wait before resuming movement
     private float idleTimeAtFirstWaypoint;
     private float idleTimeAtLastWaypoint;
     private int lastWaypointIndex = 1;
-    private int BacktrackIndex = 2;
+    private int idleWaypointIndex = 1; // Index of the waypoint where the monster should idle
     private float PositionIndex = 0.1f;
-   
 
     public void Initialize(Transform[] pathWaypoints, float movementSpeed, float idleTimeAtFirstWaypoint, float idleTimeAtLastWaypoint)
     {
@@ -23,6 +21,7 @@ public class MonsterMovement : MonoBehaviour
         this.idleTimeAtLastWaypoint = idleTimeAtLastWaypoint;
         transform.position = waypoints[currentWaypointIndex].position;
     }
+
     void Update()
     {
         if (waypoints == null || waypoints.Length == currentWaypointIndex || isWaiting) return;
@@ -33,15 +32,13 @@ public class MonsterMovement : MonoBehaviour
         // Check if the monster reached the current waypoint
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < PositionIndex)
         {
-            currentWaypointIndex = 0;
-            
-            if (currentWaypointIndex >= waypoints.Length)
-            {
-                StartCoroutine(IdleAtWaypoint(idleTimeAtFirstWaypoint));
-            }
-            else if (currentWaypointIndex == waypoints.Length - lastWaypointIndex)
+            if (currentWaypointIndex == waypoints.Length - 1)
             {
                 StartCoroutine(IdleAtWaypoint(idleTimeAtLastWaypoint, true));
+            }
+            else if (currentWaypointIndex == idleWaypointIndex)
+            {
+                StartCoroutine(IdleAtWaypoint(idleTimeAtFirstWaypoint));
             }
             else
             {
@@ -58,7 +55,6 @@ public class MonsterMovement : MonoBehaviour
 
         if (isLastWaypoint)
         {
-            // Move backwards along the waypoints
             StartCoroutine(MoveBackwards());
         }
         else
@@ -69,7 +65,7 @@ public class MonsterMovement : MonoBehaviour
 
     private IEnumerator MoveBackwards()
     {
-        for (int i = waypoints.Length - BacktrackIndex; i >= currentWaypointIndex; i--)  // Skip last waypoint
+        for (int i = waypoints.Length - 2; i >= 0; i--)
         {
             while (Vector3.Distance(transform.position, waypoints[i].position) > PositionIndex)
             {
@@ -78,7 +74,7 @@ public class MonsterMovement : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);  // Destroy the monster after it exits the room
+        Destroy(gameObject);
     }
 }
 
