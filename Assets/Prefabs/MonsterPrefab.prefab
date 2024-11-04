@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2129009882833643443}
   - component: {fileID: 6513748740142243385}
   - component: {fileID: 541135561553425745}
-  - component: {fileID: 7562193940867753507}
   - component: {fileID: 2145594384710990058}
   m_Layer: 0
   m_Name: MonsterPrefab
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3645309420975060564}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.76, y: 0, z: 4.21}
+  m_LocalPosition: {x: 19.618683, y: 2.9699998, z: -5.877308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,27 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7562193940867753507
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3645309420975060564}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2145594384710990058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,4 +96,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd79ac2638976141a91a585fa8b0154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 20
