@@ -8,6 +8,9 @@
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="att_Generic_10m" ID="{F8F8E3F7-3660-43BA-ABAE-F4304371F83E}" WorkUnitID="{1F542FE1-08B3-4235-A78D-0E1B87E0581B}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
 						</Reference>
@@ -21,7 +24,7 @@
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-7</Value>
+										<Value>-9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -82,7 +85,7 @@
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>1</Value>
+										<Value>-6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -169,7 +172,6 @@
 									<ChildrenList>
 										<AudioFileSource Name="Door Knocking Slight Rattle" ID="{00A72F71-C766-4F82-B56B-1A57DB38DFD9}">
 											<PropertyList>
-												<Property Name="LoopEnd" Type="Real64" Value="1.94660811999073"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="2.29493018480492"/>
 												<Property Name="TrimEnd" Type="Real64" Value="4.09206301334702"/>
@@ -384,6 +386,272 @@
 										<RightEdgePos>30</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
+								</BlendTrackAssoc>
+							</BlendTrackAssocList>
+						</BlendTrack>
+					</BlendTrackList>
+				</BlendContainer>
+				<BlendContainer Name="Outdoor" ID="{9512DFBF-3D90-4F4F-B8C9-EB352C246B3B}" ShortID="583701251">
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="WinddowRainAndThunder" ID="{6FA10C1D-C1B9-40B8-A68A-D82D7EABC65F}" WorkUnitID="{8D56214F-7323-40FF-8E6C-95340781873A}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="ThunderAmbience" ID="{FFE2EA72-DEF0-45DB-88F4-F0DB676CF7F3}" ShortID="815547158">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-16</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Distant Thunder No Rain" ID="{54BA2EF1-E359-4315-B218-65D5E3D1B5A2}" ShortID="443985355">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Distant Thunder No Rain" ID="{36ED731D-5D7C-4A0B-85B6-10481C8D3AE4}">
+											<Language>SFX</Language>
+											<AudioFile>Distant Thunder No Rain.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="48546062"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Distant Thunder No Rain" ID="{36ED731D-5D7C-4A0B-85B6-10481C8D3AE4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Clap Heavy Impact Explosive (1)" ID="{53ED4B0D-002F-4CFA-B226-7BA1A2FF16AA}" ShortID="247637594">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Clap Heavy Impact Explosive (1)" ID="{FD3F7CDB-1E3A-499A-BFB0-F17BD77C2D84}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Clap Heavy Impact Explosive (1).wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="483948221"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Clap Heavy Impact Explosive (1)" ID="{FD3F7CDB-1E3A-499A-BFB0-F17BD77C2D84}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Clap Heavy Impact Explosive" ID="{91B633C9-965B-4A27-8FA4-25D842279624}" ShortID="982924939">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Clap Heavy Impact Explosive" ID="{390DEC98-903D-454B-AC49-58C70A3C005A}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Clap Heavy Impact Explosive.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="789622552"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Clap Heavy Impact Explosive" ID="{390DEC98-903D-454B-AC49-58C70A3C005A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Clap Heavy Impact Sound Effect (1)" ID="{0A3CCEC8-8227-45E6-B400-ED0FAF7E7705}" ShortID="40741905">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Clap Heavy Impact Sound Effect (1)" ID="{2A7D9F4F-EE13-48DE-B350-CF9FA54BF1E0}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Clap Heavy Impact Sound Effect (1).wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="397420369"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Clap Heavy Impact Sound Effect (1)" ID="{2A7D9F4F-EE13-48DE-B350-CF9FA54BF1E0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Clap Heavy Impact Sound Effect" ID="{4195D75F-70C9-4ED2-A817-37E03087083B}" ShortID="418101240">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Clap Heavy Impact Sound Effect" ID="{6CE6DBA5-2B1C-4416-9065-F8624607A42C}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Clap Heavy Impact Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="528004408"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Clap Heavy Impact Sound Effect" ID="{6CE6DBA5-2B1C-4416-9065-F8624607A42C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Clap Sound Effect" ID="{0CF59755-E75A-4CD7-9040-3BB059C911DC}" ShortID="923540349">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Clap Sound Effect" ID="{B75A91E5-FF61-4407-A219-C12BDF9E0F0D}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Clap Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="398871403"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Clap Sound Effect" ID="{B75A91E5-FF61-4407-A219-C12BDF9E0F0D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Sound Effects" ID="{9D405624-DCB6-4ACA-AF3A-222BAEBD3444}" ShortID="878555713">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Sound Effects" ID="{195E86DA-E2ED-421A-88D4-9BBCE780C4A9}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Sound Effects.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="464104037"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Sound Effects" ID="{195E86DA-E2ED-421A-88D4-9BBCE780C4A9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{1C4028E0-5DDA-40A1-85A2-E59E6757DA30}" ShortID="988986793">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+														<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{461798B2-B9A6-45B6-9BE6-D37FCFCC74D4}" ShortID="74459127">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+														<ObjectRef Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</RandomSequenceContainer>
+						<Sound Name="KS_Rain On Surfaces_2" ID="{94C33517-2D66-4BA0-AA0E-E1BB824CB82D}" ShortID="780533443">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KS_Rain On Surfaces_2" ID="{DAC998F2-0904-42DB-905C-496B02A9EF66}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="4.32842105263158"/>
+										<Property Name="TrimEnd" Type="Real64" Value="39.3615789473684"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>KS_Rain On Surfaces_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="2028515"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KS_Rain On Surfaces_2" ID="{DAC998F2-0904-42DB-905C-496B02A9EF66}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<BlendTrackList>
+						<BlendTrack Name="New Blend Track" ID="{858F044F-EB1A-4D1E-AFCD-4345919226C4}" ShortID="914126553">
+							<BlendTrackAssocList>
+								<BlendTrackAssoc>
+									<ItemRef Name="KS_Rain On Surfaces_2" ID="{94C33517-2D66-4BA0-AA0E-E1BB824CB82D}"/>
+								</BlendTrackAssoc>
+								<BlendTrackAssoc>
+									<ItemRef Name="ThunderAmbience" ID="{FFE2EA72-DEF0-45DB-88F4-F0DB676CF7F3}"/>
 								</BlendTrackAssoc>
 							</BlendTrackAssocList>
 						</BlendTrack>

@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
         static const AkUniqueID PLAY_PLYR_FOOTSTEPS = 673033979U;
+        static const AkUniqueID PLAY_RAINANDTHUNDER = 1093999139U;
         static const AkUniqueID STARTKNOCKINGEVENT = 152670193U;
         static const AkUniqueID STOP_KNOCKING_EVENT = 1856817241U;
     } // namespace EVENTS
@@ -161,6 +162,7 @@ namespace AK
         static const AkUniqueID LARGEROOM = 187046019U;
         static const AkUniqueID REVERBS = 3545700988U;
         static const AkUniqueID SILENTROOM = 845761135U;
+        static const AkUniqueID SMALLE = 1649376139U;
         static const AkUniqueID SMALLROOM = 2933838247U;
     } // namespace AUX_BUSSES
 

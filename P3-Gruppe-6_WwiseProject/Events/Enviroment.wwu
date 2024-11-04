@@ -42,6 +42,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_RainAndThunder" ID="{C8811F90-4302-42E8-A58C-6357E332627C}">
+					<ChildrenList>
+						<Action Name="" ID="{CF2A16DC-F48B-427E-BE2F-EC2E9231CB1E}" ShortID="135092545">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Outdoor" ID="{9512DFBF-3D90-4F4F-B8C9-EB352C246B3B}" WorkUnitID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
