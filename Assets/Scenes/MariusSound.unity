@@ -2826,6 +2826,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60de82085d5a9134e83d09856efca235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetLight: {fileID: 0}
+  flashlightRange: 10
 --- !u!1 &390195857
 GameObject:
   m_ObjectHideFlags: 0
