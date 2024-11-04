@@ -6,6 +6,20 @@
 				<BlendContainer Name="MonsterKnock" ID="{F5501E51-C5D0-4041-A904-45AB6B5396C3}" ShortID="152805079">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Color" Type="int16" Value="24"/>
+						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -392,6 +406,11 @@
 					</BlendTrackList>
 				</BlendContainer>
 				<BlendContainer Name="Outdoor" ID="{9512DFBF-3D90-4F4F-B8C9-EB352C246B3B}" ShortID="583701251">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Color" Type="int16" Value="20"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
 							<ObjectRef Name="WinddowRainAndThunder" ID="{6FA10C1D-C1B9-40B8-A68A-D82D7EABC65F}" WorkUnitID="{8D56214F-7323-40FF-8E6C-95340781873A}"/>
@@ -644,6 +663,9 @@
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
+					<PositioningInfo>
+						<Position Name="" ID="{7FA123AB-1D06-498B-8E61-06F2C594E442}"/>
+					</PositioningInfo>
 					<BlendTrackList>
 						<BlendTrack Name="New Blend Track" ID="{858F044F-EB1A-4D1E-AFCD-4345919226C4}" ShortID="914126553">
 							<BlendTrackAssocList>

@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics/Default Work Unit
     guid: dff32b0ad9afd04ea95d396192fb97ba
     GuidInternal: 
-    m_lastTime: -8584712923455934497
+    m_lastTime: -8584713205381691921
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 8f74c11f6ba88142833ff2a081eb0f2f
     GuidInternal: 
-    m_lastTime: -8584708856485922820
+    m_lastTime: -8584708983853422024
     List:
     - name: 2DAmbience
       guid: 47c5d0fb2456804fad814c18859c1d1d
@@ -363,7 +363,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 95272e37ee2ea749a4f4ba5abfa5dea7
     GuidInternal: 
-    m_lastTime: -8584712923455941555
+    m_lastTime: -8584713205381713722
     List:
     - name: Player
       guid: 9f2bb2b9341e844782020395c3073a42
@@ -391,7 +391,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ece3f43672e3594588fdf363796094af
     GuidInternal: 
-    m_lastTime: -8584712923459376045
+    m_lastTime: -8584713205385794770
     List: []
   - PhysicalPath: Events/Enviroment.wwu
     PathAndIcons:
@@ -404,7 +404,7 @@ MonoBehaviour:
     ParentPath: Events/Enviroment
     guid: dfdd45dc075dd0439b42b35985878514
     GuidInternal: 
-    m_lastTime: -8584708856489335719
+    m_lastTime: -8584708953853647415
     List:
     - name: Enter_Reverb_Zone
       guid: 80cddb6464b5f54cba5b89c405ffb213
@@ -437,7 +437,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 901f81c80243e842a58c6357e332627c
       Path: Events/Enviroment/Play_RainAndThunder
-      maxAttenuation: 10
+      maxAttenuation: 20
       maxDuration: -1
       minDuration: -1
     - name: startKnockingEvent
@@ -454,7 +454,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 2135013517563d4cb5a6971c7021e29a
       Path: Events/Enviroment/startKnockingEvent
-      maxAttenuation: 0
+      maxAttenuation: 10
       maxDuration: -1
       minDuration: -1
     - name: Stop_Knocking_Event
@@ -485,7 +485,7 @@ MonoBehaviour:
     ParentPath: Events/Locomotion
     guid: 5d12444c80736d4aa4183b439461e315
     GuidInternal: 
-    m_lastTime: -8584712923459374374
+    m_lastTime: -8584713205385790329
     List: []
   - PhysicalPath: Events/NPC.wwu
     PathAndIcons:
@@ -498,7 +498,7 @@ MonoBehaviour:
     ParentPath: Events/NPC
     guid: 02ecd6ad61d6b64281cc12bfd98682a1
     GuidInternal: 
-    m_lastTime: -8584712923459373689
+    m_lastTime: -8584713205385789082
     List: []
   - PhysicalPath: Events/Player.wwu
     PathAndIcons:
@@ -511,7 +511,7 @@ MonoBehaviour:
     ParentPath: Events/Player
     guid: 2b7de7ded8cfaf4f903d6114676b19ae
     GuidInternal: 
-    m_lastTime: -8584712923459372997
+    m_lastTime: -8584713205385787380
     List:
     - name: Play_PLYR_Footsteps
       guid: ed202411db5a4141bcb0d37d3376673c
@@ -542,7 +542,7 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: ea837575837ad2429fa23f0890dcd34c
     GuidInternal: 
-    m_lastTime: -8584712923459371776
+    m_lastTime: -8584713205385784359
     List:
     - name: RTPC_Distance
       guid: 8f713afc3c692048aa47cad6aeb38d71
@@ -668,7 +668,7 @@ MonoBehaviour:
     ParentPath: States/Default Work Unit
     guid: 84cae74749a41b4cafaecbed2d4b0e7f
     GuidInternal: 
-    m_lastTime: -8584712923455939319
+    m_lastTime: -8584713205381706531
     List:
     - name: AreaState
       guid: 5a385b9de0b5714f9a552b09a52084ef
@@ -914,7 +914,7 @@ MonoBehaviour:
     ParentPath: Switches/Default Work Unit
     guid: f26415a28a873a438edb3ff2f246b1ad
     GuidInternal: 
-    m_lastTime: -8584712923455938005
+    m_lastTime: -8584713205381697893
     List:
     - name: GroundMaterialSwitch
       guid: 122e763026649644a2bcb71121a2e2f1
@@ -1224,10 +1224,10 @@ MonoBehaviour:
     ParentPath: Triggers/Default Work Unit
     guid: 06448c3d07cb8d4c89714159dd6e5e14
     GuidInternal: 
-    m_lastTime: -8584712923455936799
+    m_lastTime: -8584713205381694863
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 02000000030000000400000005000000060000000f000000110000001200000017000000180000001b0000002200000024000000250000002f000000310000003200000037000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
