@@ -11845,7 +11845,7 @@ Transform:
   m_GameObject: {fileID: 967051098}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 45.65, y: 15.84, z: 5.555}
+  m_LocalPosition: {x: 45.65, y: 15.84, z: 5.57}
   m_LocalScale: {x: 4.93, y: 2.8947368, z: 2.8947368}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19353,7 +19353,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1291204640}
   targetObject: {fileID: 305604495}
   fadeSpeed: 2
-  maxDistance: 4
+  maxDistance: 2
 --- !u!212 &1471336875
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23299,7 +23299,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1291204640}
   targetObject: {fileID: 305604495}
   fadeSpeed: 2
-  maxDistance: 4
+  maxDistance: 2
 --- !u!212 &1740286953
 SpriteRenderer:
   m_ObjectHideFlags: 0
