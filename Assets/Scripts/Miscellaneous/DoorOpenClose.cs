@@ -9,16 +9,19 @@ public class DoorOpenClose : MonoBehaviour
     public Animator doorAnimator; // Reference to the door's Animator
     private bool isOpen = false; // Track whether the door is open or closed
     private bool isInRange = false;
-    private bool canPress = true; // Track if player can press the key
+   
 
     void Update()
     {
         CheckPlayerDistance();
 
-        if (isInRange && Input.GetKeyDown(KeyCode.E) && canPress)
+        if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
-            StartCoroutine(ToggleDoorWithDelay());
+             doorAnimator.SetTrigger("Toggle");
+              
         }
+
+       
     }
 
     // Check if the player is within interaction range
@@ -29,35 +32,15 @@ public class DoorOpenClose : MonoBehaviour
         if (distanceToPlayer <= interactionRange)
         {
             isInRange = true;
-            // Display UI text like "Press E to Open/Close"
         }
         else
         {
             isInRange = false;
-            // Hide UI text
         }
     }
 
-    // Toggle the door between open and closed states with a delay
-    IEnumerator ToggleDoorWithDelay()
-    {
-        canPress = false; // Disable key presses
 
-        if (isOpen)
-        {
-            doorAnimator.SetTrigger("Open");
-            isOpen = false;
-        }
-        else
-        {
-            doorAnimator.SetTrigger("Close");
-            isOpen = true;
-        }
-
-        // Wait for 1 second before allowing the next key press
-        yield return new WaitForSeconds(0.5f);
-        canPress = true; // Re-enable key presses after delay
-    }
+   
 }
 
 
