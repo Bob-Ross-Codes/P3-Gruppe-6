@@ -23294,6 +23294,7 @@ MonoBehaviour:
   rightDoorAnimator: {fileID: 467862723}
   player: {fileID: 875882299}
   interactionRange: 3
+  sequenceController: {fileID: 1820765064}
 --- !u!65 &1749728457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24221,7 +24222,7 @@ MonoBehaviour:
   - {fileID: 1159636519}
   - {fileID: 804059156}
   - {fileID: 309932591}
-  monsterSpeed: 0.5
+  monsterSpeed: 0.7
   doorBustSound: {fileID: 0}
 --- !u!65 &1820765065
 BoxCollider:
