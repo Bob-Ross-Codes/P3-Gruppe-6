@@ -14,10 +14,13 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
+        static const AkUniqueID HORROR_AMBIENCE = 967859696U;
+        static const AkUniqueID PLAY_MONSTER_SOUNDS = 324561159U;
         static const AkUniqueID PLAY_PLYR_FOOTSTEPS = 673033979U;
         static const AkUniqueID PLAY_RAINANDTHUNDER = 1093999139U;
         static const AkUniqueID STARTKNOCKINGEVENT = 152670193U;
         static const AkUniqueID STOP_KNOCKING_EVENT = 1856817241U;
+        static const AkUniqueID STOP_MONSTER_SOUNDS = 2630587137U;
     } // namespace EVENTS
 
     namespace STATES
@@ -96,6 +99,17 @@ namespace AK
                 static const AkUniqueID WET = 1181096339U;
             } // namespace SWITCH
         } // namespace GROUNDWETNESSSWITCH
+
+        namespace MONSTERSTATE
+        {
+            static const AkUniqueID GROUP = 687366024U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID MONSTERCHASING = 155822580U;
+                static const AkUniqueID MONSTERWALKING = 2362879642U;
+            } // namespace SWITCH
+        } // namespace MONSTERSTATE
 
         namespace PLAYERHEALTH
         {

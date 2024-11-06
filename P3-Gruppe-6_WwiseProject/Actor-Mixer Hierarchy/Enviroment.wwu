@@ -6,24 +6,15 @@
 				<BlendContainer Name="MonsterKnock" ID="{F5501E51-C5D0-4041-A904-45AB6B5396C3}" ShortID="152805079">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="BlendBehavior" Type="int16" Value="1"/>
 						<Property Name="Color" Type="int16" Value="24"/>
-						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
 						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
-						<Property Name="MaxSoundPerInstance" Type="int16">
-							<ValueList>
-								<Value>1</Value>
-							</ValueList>
-						</Property>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
-						<Property Name="UseMaxSoundPerInstance" Type="bool">
-							<ValueList>
-								<Value>True</Value>
-							</ValueList>
-						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
-							<ObjectRef Name="att_Generic_10m" ID="{F8F8E3F7-3660-43BA-ABAE-F4304371F83E}" WorkUnitID="{1F542FE1-08B3-4235-A78D-0E1B87E0581B}"/>
+							<ObjectRef Name="att_Generic_50" ID="{73340AAB-4178-445D-8CC1-37DDF61FF025}" WorkUnitID="{1F542FE1-08B3-4235-A78D-0E1B87E0581B}"/>
 						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
@@ -95,6 +86,7 @@
 						</Sound>
 						<RandomSequenceContainer Name="HighKnock" ID="{5CC16092-C986-45BE-A005-468F070AD57F}" ShortID="523627403">
 							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
@@ -377,18 +369,18 @@
 								<BlendTrackAssoc>
 									<ItemRef Name="LowKnock" ID="{08A8E4B9-CF6D-46BE-9AF2-B57431904C99}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>5.8753709198813</LeftEdgePos>
+										<LeftEdgePos>2.4812030075188</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>11.1595398218707</RightEdgePos>
+										<RightEdgePos>9.45710123281646</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
 								<BlendTrackAssoc>
 									<ItemRef Name="MediumKnock" ID="{ECC81499-82FD-4A1F-8358-1E08349F104D}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>10.8553994065282</LeftEdgePos>
+										<LeftEdgePos>8.48697835389662</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>18.0089020771513</RightEdgePos>
+										<RightEdgePos>18.7983757613618</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
@@ -632,7 +624,7 @@
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-2</Value>
+										<Value>-9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -678,6 +670,140 @@
 							</BlendTrackAssocList>
 						</BlendTrack>
 					</BlendTrackList>
+				</BlendContainer>
+				<BlendContainer Name="HorrorAmbience" ID="{96463A1F-F7E0-48F2-9BDE-6AD38120688A}" ShortID="340543898">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="HorrorDrones" ID="{2256BAC7-5DCE-4651-8318-88E62010D0E0}" ShortID="814625291">
+							<PropertyList>
+								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>60</Value>
+									</ValueList>
+								</Property>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="KS_Eerie Transition_1" ID="{F24A2E38-F6E9-48CF-870E-5F9A1E080039}" ShortID="637681099">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>21</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-13</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="KS_Eerie Transition_1" ID="{6ADC9E32-5B9F-4103-9B84-D3F141155F62}">
+											<Language>SFX</Language>
+											<AudioFile>KS_Eerie Transition_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="973496908"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="KS_Eerie Transition_1" ID="{6ADC9E32-5B9F-4103-9B84-D3F141155F62}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="KS_Eerie Transition_2" ID="{534FA07B-00B8-4504-B58D-91FF1F26E323}" ShortID="290605462">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>27</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-14</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="KS_Eerie Transition_2" ID="{244BDB94-0F9E-45E8-9B9F-ACE9A8E826EE}">
+											<Language>SFX</Language>
+											<AudioFile>KS_Eerie Transition_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="755327924"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="KS_Eerie Transition_2" ID="{244BDB94-0F9E-45E8-9B9F-ACE9A8E826EE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Knock on wood" ID="{EB18AB7E-7CB6-43E5-ABAC-62F9973CCD0A}" ShortID="25840269">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Knock on wood" ID="{507E3958-962D-4D5C-ABEF-A522D02B2F9C}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="13.9171261574074"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Knock on wood.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="454425690"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Knock on wood" ID="{507E3958-962D-4D5C-ABEF-A522D02B2F9C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
 				</BlendContainer>
 			</ChildrenList>
 		</WorkUnit>

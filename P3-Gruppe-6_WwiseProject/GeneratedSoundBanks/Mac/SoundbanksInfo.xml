@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{209945A3-8CA8-9FEA-2197-8683A5FAA473}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{C85CF0D0-6526-D64C-D514-B3EBC8C054F9}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -160,6 +160,10 @@
 				<File Id="226653637" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (18).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (18)_818F3B66.wem</CachePath>
+				</File>
+				<File Id="227180245" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Monster Demo Dallas.wav</ShortName>
+					<CachePath>SFX/Monster Demo Dallas_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="230173218" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_16.wav</ShortName>
@@ -333,6 +337,10 @@
 					<ShortName>Foorstep_walking_Carpet_Dry (2).wav</ShortName>
 					<CachePath>SFX/Foorstep_walking_Carpet_Dry (2)_00225573.wem</CachePath>
 				</File>
+				<File Id="454425690" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Knock on wood.wav</ShortName>
+					<CachePath>SFX/Knock on wood_A6BD9C50.wem</CachePath>
+				</File>
 				<File Id="456146811" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_33.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_33_818F3B66.wem</CachePath>
@@ -412,6 +420,10 @@
 				<File Id="588335916" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_PLYR_Wood_Soaked_9.wav</ShortName>
 					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_9_00225573.wem</CachePath>
+				</File>
+				<File Id="595643602" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Breathy Rhythmic Tonal Growl 03.wav</ShortName>
+					<CachePath>SFX/Breathy Rhythmic Tonal Growl 03_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="600309618" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_28.wav</ShortName>
@@ -508,6 +520,10 @@
 				<File Id="748061079" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Foorstep_walking_Carpet_Dry (6).wav</ShortName>
 					<CachePath>SFX/Foorstep_walking_Carpet_Dry (6)_00225573.wem</CachePath>
+				</File>
+				<File Id="755327924" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Eerie Transition_2.wav</ShortName>
+					<CachePath>SFX/KS_Eerie Transition_2_818F3B66.wem</CachePath>
 				</File>
 				<File Id="767248591" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_PLYR_Wood_Wet_10.wav</ShortName>
@@ -633,6 +649,10 @@
 					<ShortName>Footstep_Walking_Wood_03.wav</ShortName>
 					<CachePath>SFX/Footstep_Walking_Wood_03_818F3B66.wem</CachePath>
 				</File>
+				<File Id="973496908" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Eerie Transition_1.wav</ShortName>
+					<CachePath>SFX/KS_Eerie Transition_1_818F3B66.wem</CachePath>
+				</File>
 				<File Id="981343641" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Foorstep_walking_Carpet_Dry (10).wav</ShortName>
 					<CachePath>SFX/Foorstep_walking_Carpet_Dry (10)_00225573.wem</CachePath>
@@ -678,6 +698,24 @@
 			</Plugins>
 			<Events>
 				<Event Id="3483129277" Name="Enter_Reverb_Zone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="967859696" Name="Horror_Ambience" DurationType="OneShot" DurationMin="64.121544" DurationMax="73.91713">
+					<MediaRefs>
+						<MediaRef Id="454425690"/>
+						<MediaRef Id="755327924"/>
+						<MediaRef Id="973496908"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="324561159" Name="Play_Monster_Sounds" MaxAttenuation="10" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="687366024" Id="2362879642" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="227180245"/>
+								<MediaRef Id="595643602"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="673033979" Name="Play_PLYR_Footsteps" DurationType="OneShot" DurationMin="0.5" DurationMax="2.4746666">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -981,7 +1019,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1093999139" Name="Play_RainAndThunder" MaxAttenuation="20" DurationType="Infinite">
+				<Event Id="1093999139" Name="Play_RainAndThunder" MaxAttenuation="10" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="2028515"/>
 						<MediaRef Id="48546062"/>
@@ -999,7 +1037,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="152670193" Name="startKnockingEvent" MaxAttenuation="10" DurationType="Infinite">
+				<Event Id="152670193" Name="startKnockingEvent" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="161921007"/>
 						<MediaRef Id="199820693"/>
@@ -1013,12 +1051,19 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="1856817241" Name="Stop_Knocking_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2630587137" Name="Stop_Monster_Sounds" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="870672907" Name="RTPC_GroundWetness"/>
 				<GameParameter Id="2692556666" Name="RTPC_KnockingIntensity"/>
 			</GameParameters>
 			<SwitchGroups>
+				<SwitchGroup Id="687366024" Name="MonsterState">
+					<Switches>
+						<Switch Id="155822580" Name="MonsterChasing"/>
+						<Switch Id="2362879642" Name="MonsterWalking"/>
+					</Switches>
+				</SwitchGroup>
 				<SwitchGroup Id="1044534455" Name="GroundMaterialSwitch">
 					<Switches>
 						<Switch Id="2058049674" Name="Wood"/>
@@ -1150,6 +1195,12 @@
 						<Switch Id="2429688720" Name="FullHealth"/>
 					</Switches>
 				</SwitchGroup>
+				<SwitchGroup Id="687366024" Name="MonsterState">
+					<Switches>
+						<Switch Id="155822580" Name="MonsterChasing"/>
+						<Switch Id="2362879642" Name="MonsterWalking"/>
+					</Switches>
+				</SwitchGroup>
 				<SwitchGroup Id="1044534455" Name="GroundMaterialSwitch">
 					<Switches>
 						<Switch Id="2058049674" Name="Wood"/>
@@ -1178,5 +1229,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F47187AC-1149-E263-729A-5DB669C77FA4}</FileHash>
+	<FileHash>{16698C44-563E-AA64-7EC7-5A02B6D770B3}</FileHash>
 </SoundBanksInfo>

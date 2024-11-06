@@ -15,7 +15,7 @@ public class ClosetHide : MonoBehaviour
     public Transform player; // Reference to the player's transform
     public float interactionRange = 2.0f; // Set the interaction range
     public MonsterSequenceController sequenceController; // Reference to the MonsterSequenceController script
-    private bool isHiding = false;
+    public bool isHiding = false;
 
     void Update()
     {
