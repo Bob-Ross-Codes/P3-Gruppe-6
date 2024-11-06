@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class GazeActivation : MonoBehaviour
 {
     private float lookTime;
+    private bool isActivated = false;
 
     // Abstract property for activation time
     public abstract float ActivationTime { get; }
@@ -17,6 +18,7 @@ public abstract class GazeActivation : MonoBehaviour
         if (lookTime >= ActivationTime)
         {
             OnLookedAt();
+            isActivated = true;
             lookTime = 0.0f;
         }
     }
@@ -24,5 +26,6 @@ public abstract class GazeActivation : MonoBehaviour
     public void ResetLookTime()
     {
         lookTime = 0.0f;
+       // isActivated = false;
     }
 }
