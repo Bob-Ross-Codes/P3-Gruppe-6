@@ -22,7 +22,7 @@ public class RayCastAtSight : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 // Log the hit object
-                Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
+                //Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
 
                 // Check if the hit object has a GazeActivation component
                 GazeActivation gazeActivation = hit.collider.GetComponent<GazeActivation>();
