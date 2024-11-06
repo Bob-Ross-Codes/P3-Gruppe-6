@@ -1,3 +1,5 @@
+//made using ChatGPT and Copilot
+
 using System.Collections;
 using UnityEngine;
 
@@ -12,6 +14,7 @@ public class MonsterMovement : MonoBehaviour
     private int lastWaypointIndex = 1;
     private int idleWaypointIndex = 1; // Index of the waypoint where the monster should idle
     private float PositionIndex = 0.1f;
+    private float slowdownFactor = 0.5f; // Factor to slow down the movement speed
 
     public void Initialize(Transform[] pathWaypoints, float movementSpeed, float idleTimeAtFirstWaypoint, float idleTimeAtLastWaypoint)
     {
@@ -26,8 +29,11 @@ public class MonsterMovement : MonoBehaviour
     {
         if (waypoints == null || waypoints.Length == currentWaypointIndex || isWaiting) return;
 
+        // Calculate the current movement speed with slowdown effect
+        float currentSpeed = isSlowingDown() ? speed * slowdownFactor : speed;
+
         // Move the monster towards the current waypoint
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, currentSpeed * Time.deltaTime);
 
         // Check if the monster reached the current waypoint
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < PositionIndex)
@@ -45,6 +51,17 @@ public class MonsterMovement : MonoBehaviour
                 currentWaypointIndex++;
             }
         }
+    }
+
+    private bool isSlowingDown()
+    {
+        // Check if the monster is close to the idle waypoint
+        if (currentWaypointIndex == idleWaypointIndex - 1)
+        {
+            float distanceToIdleWaypoint = Vector3.Distance(transform.position, waypoints[idleWaypointIndex].position);
+            return distanceToIdleWaypoint <= PositionIndex;
+        }
+        return false;
     }
 
     private IEnumerator IdleAtWaypoint(float idleTime, bool isLastWaypoint = false)
