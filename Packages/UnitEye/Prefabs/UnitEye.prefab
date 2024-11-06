@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3485875271603776584}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3128903029877491951
 MonoBehaviour:
@@ -93,10 +93,10 @@ MonoBehaviour:
   gazeLocation: {x: 0, y: 0}
   dot: {fileID: 2800000, guid: eb5d38b489ce2d54c905340366bccf6b, type: 3}
   drawDot: 1
-  showEyes: 1
+  showEyes: 0
   visualizeAOI: 0
-  showGazeUI: 1
-  _calibrations: 2
+  showGazeUI: 0
+  _calibrations: 0
   _filtering: 5
   easefactor: 0.4
   Q: 0.00001
