@@ -8,17 +8,23 @@ public class DoorOpenClose : MonoBehaviour
     public Animator doorAnimator; // Reference to the door's Animator
     private bool isOpen = false; // Track whether the door is open or closed
     private bool isInRange = false;
-   
+    public bool isLocked = false;
 
     void Update()
     {
         CheckPlayerDistance();
 
-        if (isInRange && Input.GetKeyDown(KeyCode.E))
+        if (isInRange && Input.GetKeyDown(KeyCode.E) && !isLocked)
         {
             doorAnimator.SetTrigger("Toggle");
             doorAnimator.SetBool("IsOpen", true);
               
+        }
+
+        if (isInRange && Input.GetKeyDown(KeyCode.E) && isLocked)
+        {
+            AkSoundEngine.SetRTPCValue("RTPC_DoorState", 2); // 2 for locked
+            AkSoundEngine.PostEvent("Door_Locked_SFX_Event", gameObject);
         }
     }
 
