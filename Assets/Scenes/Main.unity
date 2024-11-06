@@ -4692,6 +4692,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eb96b06d91701034dad8f6c8d81d5363, type: 3}
       insertIndex: -1
       addedObject: {fileID: 305604497}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eb96b06d91701034dad8f6c8d81d5363, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 305604500}
   m_SourcePrefab: {fileID: 100100000, guid: eb96b06d91701034dad8f6c8d81d5363, type: 3}
 --- !u!4 &305604495 stripped
 Transform:
@@ -4719,11 +4722,32 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.8287248, y: 2.2491398, z: 0.67443013}
   m_Center: {x: 0.000004102658, y: 1.1245708, z: 0}
+--- !u!65 &305604500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305604496}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.82872474, y: 2, z: 0.1006121}
+  m_Center: {x: 0.000004127623, y: 1.1245703, z: -0.08424683}
 --- !u!1 &309932590
 GameObject:
   m_ObjectHideFlags: 0
@@ -10517,8 +10541,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734967602}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06959195, y: -0.14661661, z: 0.010340991, w: 0.98668826}
-  m_LocalPosition: {x: 0.366, y: 1.792, z: -0.663}
+  m_LocalRotation: {x: 0.06846986, y: -0.14401047, z: 0.009988691, w: 0.98715407}
+  m_LocalPosition: {x: 0.3645, y: 1.792, z: -0.7885}
   m_LocalScale: {x: 0.5617978, y: 0.5617978, z: 0.5617978}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10541,7 +10565,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 9
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 305604495}
   m_Follow: {fileID: 0}
@@ -20862,7 +20886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1461127158
 Transform:
   m_ObjectHideFlags: 0
@@ -21058,7 +21082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1471336872
 Transform:
   m_ObjectHideFlags: 0
@@ -28681,6 +28705,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46094d3916c26ad4d93bcf5f3f8cf2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swingAngleMin: 0
+  swingAngleMax: 0
+  swingSpeedMin: 0
+  swingSpeedMax: 0
+  twistAngleMin: 0
+  twistAngleMax: 0
+  twistSpeedMin: 0
+  twistSpeedMax: 0
+  swingAxis: {x: 0, y: 0, z: 1}
+  twistAxis: {x: 0, y: 1, z: 0}
 --- !u!1 &1999189412
 GameObject:
   m_ObjectHideFlags: 0

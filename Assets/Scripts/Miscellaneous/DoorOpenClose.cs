@@ -17,12 +17,21 @@ public class DoorOpenClose : MonoBehaviour
 
         if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
-             doorAnimator.SetTrigger("Toggle");
+            doorAnimator.SetTrigger("Toggle");
+            doorAnimator.SetBool("IsOpen", true);
               
         }
 
        
     }
+
+
+    public void ResetDoorToggle()
+    {
+        doorAnimator.SetBool("IsOpen", false);
+    }
+
+
 
     // Check if the player is within interaction range
     void CheckPlayerDistance()
