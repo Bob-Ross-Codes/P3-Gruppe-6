@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124145052}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f8fd7546874f5648a662c9934a3efbf, type: 3}
   m_Name: 
@@ -15729,6 +15729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitEye
       objectReference: {fileID: 0}
+    - target: {fileID: 7042655480039037268, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1915890225}
     - target: {fileID: 8148365448440035643, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
