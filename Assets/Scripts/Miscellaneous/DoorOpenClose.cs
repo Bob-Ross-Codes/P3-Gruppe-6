@@ -24,7 +24,7 @@ public class DoorOpenClose : MonoBehaviour
         if (isInRange && Input.GetKeyDown(KeyCode.E) && isLocked)
         {
             AkSoundEngine.SetRTPCValue("RTPC_DoorState", 2); // 2 for locked
-            AkSoundEngine.PostEvent("Door_Locked_SFX_Event", gameObject);
+            AkSoundEngine.PostEvent("Door_SFX_Event", gameObject);
         }
     }
 
