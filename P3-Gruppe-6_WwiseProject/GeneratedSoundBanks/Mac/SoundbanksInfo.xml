@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{F59978D8-9CDD-ACC4-5F42-3F81E655A16B}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{2F3FA93B-37C3-BBDC-8C01-23F4D2249A40}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -317,6 +317,10 @@
 					<ShortName>Footsteps_PLYR_Wood_Soaked_3.wav</ShortName>
 					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_3_00225573.wem</CachePath>
 				</File>
+				<File Id="388144728" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS__4.wav</ShortName>
+					<CachePath>SFX/KS__4_818F3B66.wem</CachePath>
+				</File>
 				<File Id="397420369" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Thunder Clap Heavy Impact Sound Effect (1).wav</ShortName>
 					<CachePath>SFX/Thunder Clap Heavy Impact Sound Effect (1)_818F3B66.wem</CachePath>
@@ -449,6 +453,10 @@
 					<ShortName>Player_Footstel_Tile_Damp (8).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (8)_818F3B66.wem</CachePath>
 				</File>
+				<File Id="617992626" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS__6.wav</ShortName>
+					<CachePath>SFX/KS__6_818F3B66.wem</CachePath>
+				</File>
 				<File Id="622247894" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_34.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_34_818F3B66.wem</CachePath>
@@ -528,6 +536,10 @@
 				<File Id="748061079" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Foorstep_walking_Carpet_Dry (6).wav</ShortName>
 					<CachePath>SFX/Foorstep_walking_Carpet_Dry (6)_00225573.wem</CachePath>
+				</File>
+				<File Id="754791402" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS__5.wav</ShortName>
+					<CachePath>SFX/KS__5_818F3B66.wem</CachePath>
 				</File>
 				<File Id="755327924" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Eerie Transition_2.wav</ShortName>
@@ -705,8 +717,16 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
-				<Event Id="842992288" Name="Door_SFX_Event" DurationType="OneShot" DurationMin="1.5466666" DurationMax="1.5893333">
+				<Event Id="842992288" Name="Door_SFX_Event" DurationType="OneShot" DurationMin="1.5466666" DurationMax="1.632">
 					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2168380830" Id="136945955"/>
+							<MediaRefs>
+								<MediaRef Id="388144728"/>
+								<MediaRef Id="617992626"/>
+								<MediaRef Id="754791402"/>
+							</MediaRefs>
+						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="2168380830" Id="3072142513" Default="true"/>
 							<MediaRefs>
@@ -722,7 +742,7 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="3483129277" Name="Enter_Reverb_Zone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="967859696" Name="Horror_Ambience" DurationType="OneShot" DurationMin="64.121544" DurationMax="73.91713">
+				<Event Id="967859696" Name="Horror_Ambience" DurationType="OneShot" DurationMin="4.121542" DurationMax="13.917126">
 					<MediaRefs>
 						<MediaRef Id="454425690"/>
 						<MediaRef Id="755327924"/>
@@ -1271,5 +1291,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{68043DCB-69C4-0A12-1675-DFE94F11B650}</FileHash>
+	<FileHash>{AFD4DF6A-C27A-6A0A-F78A-DC0C4290A776}</FileHash>
 </SoundBanksInfo>
