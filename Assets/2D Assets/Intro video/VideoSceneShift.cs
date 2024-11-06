@@ -6,30 +6,24 @@ using UnityEngine.SceneManagement;
 
 public class VideoSceneShift : MonoBehaviour
 {
-    public VideoPlayer videoPlayer; // Reference to the VideoPlayer component
-    public string sceneToLoad; // Name of the scene to load after the video ends
+    // Time in seconds to wait before loading the next scene
+    public float delayTime = 30f;
+    
+    // The name or index of the scene to load
+    public string sceneName;
 
-    void Start()
+    private void Start()
     {
-        // Make sure we have a reference to the VideoPlayer component
-        if (videoPlayer == null)
-        {
-            videoPlayer = GetComponent<VideoPlayer>();
-        }
-
-        // Register for the video end event
-        videoPlayer.loopPointReached += OnVideoEnd;
+        // Start the coroutine when the script runs
+        StartCoroutine(LoadSceneAfterDelay());
     }
 
-    // This function will be called when the video finishes playing
-    void OnVideoEnd(VideoPlayer vp)
+    private IEnumerator LoadSceneAfterDelay()
     {
-        SceneManager.LoadScene(sceneToLoad);
-    }
+        // Wait for the specified amount of time
+        yield return new WaitForSeconds(delayTime);
 
-    void OnDestroy()
-    {
-        // Unregister the event when the object is destroyed
-        videoPlayer.loopPointReached -= OnVideoEnd;
+        // Load the scene
+        SceneManager.LoadScene(sceneName);
     }
 }
