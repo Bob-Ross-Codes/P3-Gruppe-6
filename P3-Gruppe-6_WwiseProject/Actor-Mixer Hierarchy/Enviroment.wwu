@@ -960,6 +960,12 @@
 						</GroupingBehaviorList>
 						<GroupingList>
 							<Grouping>
+								<SwitchRef Name="Locked" ID="{D6CAB819-3ED5-412F-8A86-125000BA3D13}"/>
+								<ItemList>
+									<ItemRef Name="DoorLocked" ID="{A0E170BB-2F7D-465A-95A1-1D87E4CCC237}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
 								<SwitchRef Name="Open" ID="{9A5B8C33-A785-4BDE-AE5F-28DC41ABACD1}"/>
 								<ItemList>
 									<ItemRef Name="DoorOpen" ID="{40AE290E-BF24-469D-A182-547A3DF35104}"/>

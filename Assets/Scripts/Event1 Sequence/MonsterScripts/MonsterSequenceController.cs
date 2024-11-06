@@ -51,8 +51,8 @@ public class MonsterSequenceController : MonoBehaviour
         MonsterMovement monsterMovement = monster.AddComponent<MonsterMovement>();
 
         // Set idle times at waypoints
-        float idleTimeAtFirstWaypoint = 7f;  // Set idle time at the first waypoint
-        float idleTimeAtLastWaypoint = 5f;   // Set idle time at the last waypoint
+        float idleTimeAtFirstWaypoint = 2f;  // Set idle time at the first waypoint
+        float idleTimeAtLastWaypoint = 2f;   // Set idle time at the last waypoint
 
         // Initialize monster movement with waypoints, speed, and idle times
         monsterMovement.Initialize(waypoints, monsterSpeed, idleTimeAtFirstWaypoint, idleTimeAtLastWaypoint);
