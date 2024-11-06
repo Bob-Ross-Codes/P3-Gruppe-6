@@ -10,6 +10,8 @@ public class Gaze : MonoBehaviour
 
     #region Private values
 
+    private float calibrateY = 0.5f;
+
     private AOIManager _aoiManager = new AOIManager();
     private List<string> aoiNameList = new List<string>();
 
@@ -222,6 +224,9 @@ public class Gaze : MonoBehaviour
         //Apply filtering
         Vector2 unfilteredGaze = gazeLocation;
         gazeLocation = SmoothGazeLocation(gazeLocation, _filtering);
+
+        // Apply custom multiplier to the gaze location on the Y axis
+        gazeLocation.y *= calibrateY;
 
         //Update last gaze location timestamp
         var now = System.DateTime.Now;
