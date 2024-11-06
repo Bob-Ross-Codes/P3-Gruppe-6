@@ -64,6 +64,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Door_SFX_Event" ID="{49A58FC0-59C6-4CAA-9B5E-1D1105274359}">
+					<ChildrenList>
+						<Action Name="" ID="{C089E832-44FE-453A-A4C2-A743A01CA737}" ShortID="76295040">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DoorSounds" ID="{8EECA336-7799-49FE-AB03-B2CF1C7C4617}" WorkUnitID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

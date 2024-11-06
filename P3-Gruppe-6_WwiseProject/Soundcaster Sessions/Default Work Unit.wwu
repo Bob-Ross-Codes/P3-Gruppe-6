@@ -12,6 +12,10 @@
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
+							<GameParameterRef Name="RTPC_DoorState" ID="{F786D0A8-6F03-4169-B275-27224B242582}"/>
+							<Value>0.696356275303644</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="RTPC_GroundWetness" ID="{BD8DEFE4-8CC3-4380-9C6F-8BBFE2F05E6B}"/>
 							<Value>0.43</Value>
 						</RTPCValue>
@@ -30,6 +34,7 @@
 						<CurrentSwitchRef Name="FullHealth" ID="{BB6D41EB-9253-495D-B848-37730597BD4C}"/>
 						<CurrentSwitchRef Name="Run" ID="{1F37710A-51D0-4375-82EC-AD7D95265948}"/>
 						<CurrentSwitchRef Name="Wet" ID="{58BEE4AA-7223-40A2-9396-725B99795769}"/>
+						<CurrentSwitchRef Name="Open" ID="{9A5B8C33-A785-4BDE-AE5F-28DC41ABACD1}"/>
 						<CurrentSwitchRef Name="Carpet" ID="{16295B59-B691-4C58-BC0A-7078B6FB1DC2}"/>
 						<CurrentSwitchRef Name="MonsterWalking" ID="{FD101D2B-A22D-4E17-AFCD-43C345EDD538}"/>
 					</CurrentSwitchList>

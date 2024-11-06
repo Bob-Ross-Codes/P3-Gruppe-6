@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{C85CF0D0-6526-D64C-D514-B3EBC8C054F9}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{F59978D8-9CDD-ACC4-5F42-3F81E655A16B}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -108,6 +108,10 @@
 				<File Id="125274872" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_PLYR_Wood_Wet_13.wav</ShortName>
 					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_13_818F3B66.wem</CachePath>
+				</File>
+				<File Id="139150290" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Bedroom Door_2.wav</ShortName>
+					<CachePath>SFX/KS_Bedroom Door_2_818F3B66.wem</CachePath>
 				</File>
 				<File Id="140296482" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_20.wav</ShortName>
@@ -248,6 +252,10 @@
 				<File Id="325718814" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_5.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_5_818F3B66.wem</CachePath>
+				</File>
+				<File Id="328603660" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Bedroom Door_1.wav</ShortName>
+					<CachePath>SFX/KS_Bedroom Door_1_818F3B66.wem</CachePath>
 				</File>
 				<File Id="331117371" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (15).wav</ShortName>
@@ -697,6 +705,22 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
+				<Event Id="842992288" Name="Door_SFX_Event" DurationType="OneShot" DurationMin="1.5466666" DurationMax="1.5893333">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2168380830" Id="3072142513" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="328603660"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2168380830" Id="3012222945"/>
+							<MediaRefs>
+								<MediaRef Id="139150290"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="3483129277" Name="Enter_Reverb_Zone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="967859696" Name="Horror_Ambience" DurationType="OneShot" DurationMin="64.121544" DurationMax="73.91713">
 					<MediaRefs>
@@ -1055,6 +1079,7 @@
 			</Events>
 			<GameParameters>
 				<GameParameter Id="870672907" Name="RTPC_GroundWetness"/>
+				<GameParameter Id="1863449742" Name="RTPC_DoorState"/>
 				<GameParameter Id="2692556666" Name="RTPC_KnockingIntensity"/>
 			</GameParameters>
 			<SwitchGroups>
@@ -1071,6 +1096,14 @@
 						<Switch Id="2637588553" Name="Tile"/>
 					</Switches>
 				</SwitchGroup>
+				<SwitchGroup Id="2168380830" Name="DoorSFXSwitch">
+					<GameParameterRef Id="1863449742"/>
+					<Switches>
+						<Switch Id="136945955" Name="Locked"/>
+						<Switch Id="3012222945" Name="Closed"/>
+						<Switch Id="3072142513" Name="Open"/>
+					</Switches>
+				</SwitchGroup>
 				<SwitchGroup Id="3968804893" Name="GroundWetnessSwitch">
 					<GameParameterRef Id="870672907"/>
 					<Switches>
@@ -1082,7 +1115,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{3E51CD6E-4877-CEE0-0398-42481DFF7539}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CCD8A1B6-79E2-156C-C589-BDCBE9294B0D}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -1155,6 +1188,7 @@
 				<GameParameter Id="870672907" Name="RTPC_GroundWetness"/>
 				<GameParameter Id="1294084109" Name="RTPC_RainAmount"/>
 				<GameParameter Id="1318719891" Name="RTPC_FlyCount"/>
+				<GameParameter Id="1863449742" Name="RTPC_DoorState"/>
 				<GameParameter Id="2653406601" Name="RTPC_PlayerSpeed"/>
 				<GameParameter Id="2692556666" Name="RTPC_KnockingIntensity"/>
 				<GameParameter Id="4143461479" Name="RTPC_Reverb"/>
@@ -1217,6 +1251,14 @@
 						<Switch Id="2884887403" Name="Sneak"/>
 					</Switches>
 				</SwitchGroup>
+				<SwitchGroup Id="2168380830" Name="DoorSFXSwitch">
+					<GameParameterRef Id="1863449742"/>
+					<Switches>
+						<Switch Id="136945955" Name="Locked"/>
+						<Switch Id="3012222945" Name="Closed"/>
+						<Switch Id="3072142513" Name="Open"/>
+					</Switches>
+				</SwitchGroup>
 				<SwitchGroup Id="3968804893" Name="GroundWetnessSwitch">
 					<GameParameterRef Id="870672907"/>
 					<Switches>
@@ -1229,5 +1271,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{16698C44-563E-AA64-7EC7-5A02B6D770B3}</FileHash>
+	<FileHash>{68043DCB-69C4-0A12-1675-DFE94F11B650}</FileHash>
 </SoundBanksInfo>

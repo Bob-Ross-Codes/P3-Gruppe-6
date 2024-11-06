@@ -805,6 +805,99 @@
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</BlendContainer>
+				<SwitchContainer Name="DoorSounds" ID="{8EECA336-7799-49FE-AB03-B2CF1C7C4617}" ShortID="739220371">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Open" ID="{9A5B8C33-A785-4BDE-AE5F-28DC41ABACD1}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="DoorSFXSwitch" ID="{613819E5-4F72-4424-A084-B729641B5D08}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="DoorOpen" ID="{40AE290E-BF24-469D-A182-547A3DF35104}" ShortID="348580872">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KS_Bedroom Door_1" ID="{D1FD5489-36C8-473B-AABF-1916EF615860}">
+									<Language>SFX</Language>
+									<AudioFile>KS_Bedroom Door_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="328603660"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KS_Bedroom Door_1" ID="{D1FD5489-36C8-473B-AABF-1916EF615860}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="DoorClose" ID="{C451ED11-8066-4134-AB50-45F9C927AE08}" ShortID="548948052">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KS_Bedroom Door_2" ID="{A3CCEF66-60E1-4E8C-842C-AB82A893FFEC}">
+									<Language>SFX</Language>
+									<AudioFile>KS_Bedroom Door_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="139150290"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KS_Bedroom Door_2" ID="{A3CCEF66-60E1-4E8C-842C-AB82A893FFEC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="DoorOpen" ID="{40AE290E-BF24-469D-A182-547A3DF35104}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="DoorClose" ID="{C451ED11-8066-4134-AB50-45F9C927AE08}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Open" ID="{9A5B8C33-A785-4BDE-AE5F-28DC41ABACD1}"/>
+								<ItemList>
+									<ItemRef Name="DoorOpen" ID="{40AE290E-BF24-469D-A182-547A3DF35104}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Closed" ID="{87A6C4A0-8B06-4540-932C-26E94592EA5E}"/>
+								<ItemList>
+									<ItemRef Name="DoorClose" ID="{C451ED11-8066-4134-AB50-45F9C927AE08}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

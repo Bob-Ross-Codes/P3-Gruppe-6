@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class DoorOpenClose : MonoBehaviour
 {
     public float interactionRange = 5f; // Range within which the player can interact with the door
@@ -21,8 +20,6 @@ public class DoorOpenClose : MonoBehaviour
             doorAnimator.SetBool("IsOpen", true);
               
         }
-
-       
     }
 
 
@@ -31,7 +28,18 @@ public class DoorOpenClose : MonoBehaviour
         doorAnimator.SetBool("IsOpen", false);
     }
 
+    public void PlayOpenSound()
+    {
+        AkSoundEngine.SetRTPCValue("RTPC_DoorState", 0); // 0 for open
+        AkSoundEngine.PostEvent("Door_SFX_Event", gameObject);
+    }
 
+    // Called at the start of the closing phase of the animation
+    public void PlayCloseSound()
+    {
+        AkSoundEngine.SetRTPCValue("RTPC_DoorState", 1); // 1 for closed
+        AkSoundEngine.PostEvent("Door_SFX_Event", gameObject);
+    }
 
     // Check if the player is within interaction range
     void CheckPlayerDistance()

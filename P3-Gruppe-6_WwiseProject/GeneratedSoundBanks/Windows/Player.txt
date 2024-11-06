@@ -2,6 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	152670193	startKnockingEvent			\Enviroment\startKnockingEvent	
 	324561159	Play_Monster_Sounds			\Player\Play_Monster_Sounds	
 	673033979	Play_PLYR_Footsteps			\Player\Play_PLYR_Footsteps	
+	842992288	Door_SFX_Event			\Enviroment\Door_SFX_Event	
 	967859696	Horror_Ambience			\Enviroment\Horror_Ambience	
 	1093999139	Play_RainAndThunder			\Enviroment\Play_RainAndThunder	
 	1856817241	Stop_Knocking_Event			\Enviroment\Stop_Knocking_Event	
@@ -11,6 +12,7 @@ Event	ID	Name			Wwise Object Path	Notes
 Switch Group	ID	Name			Wwise Object Path	Notes
 	687366024	MonsterState			\Default Work Unit\MonsterState	
 	1044534455	GroundMaterialSwitch			\Default Work Unit\GroundMaterialSwitch	
+	2168380830	DoorSFXSwitch			\Default Work Unit\DoorSFXSwitch	
 	3968804893	GroundWetnessSwitch			\Default Work Unit\GroundWetnessSwitch	
 
 Switch	ID	Name	Switch Group			Notes
@@ -19,6 +21,9 @@ Switch	ID	Name	Switch Group			Notes
 	2058049674	Wood	GroundMaterialSwitch			
 	2412606308	Carpet	GroundMaterialSwitch			
 	2637588553	Tile	GroundMaterialSwitch			
+	136945955	Locked	DoorSFXSwitch			
+	3012222945	Closed	DoorSFXSwitch			
+	3072142513	Open	DoorSFXSwitch			
 	630539344	Dry	GroundWetnessSwitch			
 	1181096339	Wet	GroundWetnessSwitch			
 	1842026663	Damp	GroundWetnessSwitch			
@@ -26,6 +31,7 @@ Switch	ID	Name	Switch Group			Notes
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	870672907	RTPC_GroundWetness			\Default Work Unit\RTPC_GroundWetness	
+	1863449742	RTPC_DoorState			\Default Work Unit\RTPC_DoorState	
 	2692556666	RTPC_KnockingIntensity			\Default Work Unit\RTPC_KnockingIntensity	
 
 Effect plug-ins	ID	Name	Type				Notes
@@ -57,6 +63,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	121099714	Footsteps_PLYR_Wood_Soaked_2	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Footsteps_PLYR_Wood_Soaked_2_00225573.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Wood_WetnessSwitch\Soaked\Footsteps_PLYR_Wood_Soaked_2		96096
 	121458811	Player_Footstep_Tile_Dry (11)	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Player_Footstep_Tile_Dry (11)_00225573.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Dry\Player_Footstep_Tile_Dry (11)		96096
 	125274872	Footsteps_PLYR_Wood_Wet_13	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Footsteps_PLYR_Wood_Wet_13_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Wood_WetnessSwitch\Wet\Footsteps_PLYR_Wood_Wet_13		303200
+	139150290	DoorClose	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Bedroom Door_2_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\DoorSounds\DoorClose		297056
 	140296482	Player_Footstep_Tile_Wet_20	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Concrete Urban Boots_02_20_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Wet\Player_Footstep_Tile_Wet_20		299616
 	156896936	Footstep_Walking_Wood_07	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Footstep_Walking_Wood_07_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Wood_WetnessSwitch\Dry_Sweetener\Footstep_Walking_Wood_07		88296
 	161921007	HighKnock_7	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Hard With Fist_E9E08B95.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\HighKnock\HighKnock_7		331144
@@ -92,6 +99,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	323272262	Player_Footstep_Tile_Dry (12)	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Player_Footstep_Tile_Dry (12)_00225573.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Dry\Player_Footstep_Tile_Dry (12)		96096
 	324244334	Player_Footstel_Tile_Damp_16	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Player_Footstel_Tile_Damp (16)_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Damp\Player_Footstel_Tile_Damp_16		307296
 	325718814	Player_Footstep_Tile_Wet_5	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Concrete Urban Boots_02_5_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Wet\Player_Footstep_Tile_Wet_5		309216
+	328603660	DoorOpen	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Bedroom Door_1_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\DoorSounds\DoorOpen		305248
 	331117371	Player_Footstel_Tile_Damp_15	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Player_Footstel_Tile_Damp (15)_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Damp\Player_Footstel_Tile_Damp_15		299616
 	336920738	Player_Footstep_Tile_Wet_11	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Concrete Urban Boots_02_11_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Wet\Player_Footstep_Tile_Wet_11		301536
 	338966987	Player_Footstep_Tile_Soaked_27	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Concrete Urban Boots_02_27_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Soaked\Player_Footstep_Tile_Soaked_27		301536
