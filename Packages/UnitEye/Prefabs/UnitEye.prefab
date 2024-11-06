@@ -96,15 +96,13 @@ MonoBehaviour:
   showEyes: 0
   visualizeAOI: 0
   showGazeUI: 0
-  calibatreY: 1
-  calibrateX: 1
   _calibrations: 0
   _filtering: 5
   easefactor: 0.4
   Q: 0.00001
   R: 0.0001
-  beta: 0.001
-  mincutoff: 0.001
+  beta: 0.0025
+  mincutoff: 0.016
   dcutoff: 1
 --- !u!114 &3128903029877491945
 MonoBehaviour:
