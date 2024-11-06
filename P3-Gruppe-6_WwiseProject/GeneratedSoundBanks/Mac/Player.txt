@@ -8,6 +8,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1856817241	Stop_Knocking_Event			\Enviroment\Stop_Knocking_Event	
 	2630587137	Stop_Monster_Sounds			\Player\Stop_Monster_Sounds	
 	3483129277	Enter_Reverb_Zone			\Enviroment\Enter_Reverb_Zone	
+	3781801840	PlayIntroMusic			\Music\PlayIntroMusic	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	687366024	MonsterState			\Default Work Unit\MonsterState	
@@ -175,6 +176,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	767248591	Footsteps_PLYR_Wood_Wet_10	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Footsteps_PLYR_Wood_Wet_10_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Wood_WetnessSwitch\Wet\Footsteps_PLYR_Wood_Wet_10		319584
 	767999004	Player_Footstel_Tile_Damp_4	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Player_Footstel_Tile_Damp (4)_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Damp\Player_Footstel_Tile_Damp_4		303456
 	772367830	Player_Footstep_Tile_Wet_9	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\KS_Concrete Urban Boots_02_9_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Wet\Player_Footstep_Tile_Wet_9		307296
+	774821730	Intro Audio	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Intro Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Music\Intro Audio		5958240
 	780659638	Footsteps_PLYR_Wood_Wet_12	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Footsteps_PLYR_Wood_Wet_12_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Wood_WetnessSwitch\Wet\Footsteps_PLYR_Wood_Wet_12		299104
 	782123406	Player_Footstel_Tile_Damp_17	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Player_Footstel_Tile_Damp (17)_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Damp\Player_Footstel_Tile_Damp_17		303456
 	782554550	Player_Footstep_Tile_Soaked_22	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\KS_Concrete Urban Boots_02_22_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Soaked\Player_Footstep_Tile_Soaked_22		307296
