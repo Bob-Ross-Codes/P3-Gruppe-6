@@ -43,8 +43,6 @@ public class Gaze : MonoBehaviour
     private Calibrations _calibrationBackup;
     private bool _backupped;
 
-    private float calibatreY = 0.5f;
-
     #endregion
 
     #region Public accessors
@@ -60,8 +58,6 @@ public class Gaze : MonoBehaviour
     public bool PauseCSVLogging { get; set; }
     public long LastGazeLocationTimeUnix { get; private set; }
 
-    
-
     #endregion
 
     #region Serialized values
@@ -76,8 +72,6 @@ public class Gaze : MonoBehaviour
     public bool showEyes = true;
     public bool visualizeAOI = false;
     public bool showGazeUI = false;
-
-  
 
     [System.NonSerialized]
     public bool gazeUIActivated;
@@ -228,9 +222,6 @@ public class Gaze : MonoBehaviour
         //Apply filtering
         Vector2 unfilteredGaze = gazeLocation;
         gazeLocation = SmoothGazeLocation(gazeLocation, _filtering);
-
-        //Apply custom multplier to filty for more accurate real life representation.
-        gazeLocation.y *= calibatreY;
 
         //Update last gaze location timestamp
         var now = System.DateTime.Now;
