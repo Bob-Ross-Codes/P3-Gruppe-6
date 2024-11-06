@@ -683,11 +683,6 @@
 					<ChildrenList>
 						<RandomSequenceContainer Name="HorrorDrones" ID="{2256BAC7-5DCE-4651-8318-88E62010D0E0}" ShortID="814625291">
 							<PropertyList>
-								<Property Name="InitialDelay" Type="Real64">
-									<ValueList>
-										<Value>60</Value>
-									</ValueList>
-								</Property>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 							</PropertyList>
 							<ReferenceList>
@@ -771,7 +766,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-7</Value>
+												<Value>-6</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -809,7 +804,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-8</Value>
+								<Value>-13</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -872,6 +867,84 @@
 								<ActiveSource Name="KS_Bedroom Door_2" ID="{A3CCEF66-60E1-4E8C-842C-AB82A893FFEC}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<RandomSequenceContainer Name="DoorLocked" ID="{A0E170BB-2F7D-465A-95A1-1D87E4CCC237}" ShortID="813865967">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="KS__4" ID="{D3F47B7D-0A33-451C-A6C0-CB4A8CB8435C}" ShortID="229164448">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="KS__4" ID="{FEED8820-A260-4F03-9B31-1AE951968354}">
+											<Language>SFX</Language>
+											<AudioFile>KS__4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="388144728"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="KS__4" ID="{FEED8820-A260-4F03-9B31-1AE951968354}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="KS__5" ID="{BBE6A932-6AF4-468D-91A5-0DCBB481CE4B}" ShortID="846180859">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="KS__5" ID="{0D370630-76F8-4DB3-AB17-7A649FECB1B4}">
+											<Language>SFX</Language>
+											<AudioFile>KS__5.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="754791402"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="KS__5" ID="{0D370630-76F8-4DB3-AB17-7A649FECB1B4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="KS__6" ID="{F8CFF40A-C112-4D6A-8F37-E8BDD9059847}" ShortID="983276509">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="KS__6" ID="{050FED50-827D-40AE-BE9D-27E843A3EF37}">
+											<Language>SFX</Language>
+											<AudioFile>KS__6.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="617992626"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="KS__6" ID="{050FED50-827D-40AE-BE9D-27E843A3EF37}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<GroupingInfo>
 						<GroupingBehaviorList>
@@ -880,6 +953,9 @@
 							</GroupingBehavior>
 							<GroupingBehavior>
 								<ItemRef Name="DoorClose" ID="{C451ED11-8066-4134-AB50-45F9C927AE08}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="DoorLocked" ID="{A0E170BB-2F7D-465A-95A1-1D87E4CCC237}"/>
 							</GroupingBehavior>
 						</GroupingBehaviorList>
 						<GroupingList>
