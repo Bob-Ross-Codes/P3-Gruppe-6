@@ -114,6 +114,52 @@
 						</Curve>
 					</SwitchOnRTPC>
 				</SwitchGroup>
+				<SwitchGroup Name="MonsterState" ID="{981F2EC9-290F-48CB-B188-E8DB5996CA58}">
+					<ChildrenList>
+						<Switch Name="MonsterWalking" ID="{FD101D2B-A22D-4E17-AFCD-43C345EDD538}"/>
+						<Switch Name="MonsterChasing" ID="{CF442881-A432-4F4B-9424-C13FBD0CD797}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="DoorSFXSwitch" ID="{613819E5-4F72-4424-A084-B729641B5D08}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Open" ID="{9A5B8C33-A785-4BDE-AE5F-28DC41ABACD1}"/>
+						<Switch Name="Closed" ID="{87A6C4A0-8B06-4540-932C-26E94592EA5E}"/>
+						<Switch Name="Locked" ID="{D6CAB819-3ED5-412F-8A86-125000BA3D13}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_DoorState" ID="{F786D0A8-6F03-4169-B275-27224B242582}"/>
+						<Curve Name="" ID="{136B52F0-7F25-4E72-A149-2C107A014C3B}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>2</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>3</XPos>
+									<YPos>3</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>

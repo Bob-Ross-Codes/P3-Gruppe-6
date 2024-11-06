@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class DoorOpenClose : MonoBehaviour
 {
     public float interactionRange = 5f; // Range within which the player can interact with the door
@@ -9,16 +8,43 @@ public class DoorOpenClose : MonoBehaviour
     public Animator doorAnimator; // Reference to the door's Animator
     private bool isOpen = false; // Track whether the door is open or closed
     private bool isInRange = false;
-    private bool canPress = true; // Track if player can press the key
+    public bool isLocked = false;
 
     void Update()
     {
         CheckPlayerDistance();
 
-        if (isInRange && Input.GetKeyDown(KeyCode.E) && canPress)
+        if (isInRange && Input.GetKeyDown(KeyCode.E) && !isLocked)
         {
-            StartCoroutine(ToggleDoorWithDelay());
+            doorAnimator.SetTrigger("Toggle");
+            doorAnimator.SetBool("IsOpen", true);
+              
         }
+
+        if (isInRange && Input.GetKeyDown(KeyCode.E) && isLocked)
+        {
+            AkSoundEngine.SetRTPCValue("RTPC_DoorState", 2); // 2 for locked
+            AkSoundEngine.PostEvent("Door_Locked_SFX_Event", gameObject);
+        }
+    }
+
+
+    public void ResetDoorToggle()
+    {
+        doorAnimator.SetBool("IsOpen", false);
+    }
+
+    public void PlayOpenSound()
+    {
+        AkSoundEngine.SetRTPCValue("RTPC_DoorState", 0); // 0 for open
+        AkSoundEngine.PostEvent("Door_SFX_Event", gameObject);
+    }
+
+    // Called at the start of the closing phase of the animation
+    public void PlayCloseSound()
+    {
+        AkSoundEngine.SetRTPCValue("RTPC_DoorState", 1); // 1 for closed
+        AkSoundEngine.PostEvent("Door_SFX_Event", gameObject);
     }
 
     // Check if the player is within interaction range
@@ -29,35 +55,15 @@ public class DoorOpenClose : MonoBehaviour
         if (distanceToPlayer <= interactionRange)
         {
             isInRange = true;
-            // Display UI text like "Press E to Open/Close"
         }
         else
         {
             isInRange = false;
-            // Hide UI text
         }
     }
 
-    // Toggle the door between open and closed states with a delay
-    IEnumerator ToggleDoorWithDelay()
-    {
-        canPress = false; // Disable key presses
 
-        if (isOpen)
-        {
-            doorAnimator.SetTrigger("Open");
-            isOpen = false;
-        }
-        else
-        {
-            doorAnimator.SetTrigger("Close");
-            isOpen = true;
-        }
-
-        // Wait for 1 second before allowing the next key press
-        yield return new WaitForSeconds(0.5f);
-        canPress = true; // Re-enable key presses after delay
-    }
+   
 }
 
 

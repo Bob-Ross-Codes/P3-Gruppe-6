@@ -92,6 +92,7 @@ public class MonsterMovement : MonoBehaviour
         }
 
         Destroy(gameObject);
+        AkSoundEngine.PostEvent("Stop_Monster_Sounds", gameObject);
     }
 }
 

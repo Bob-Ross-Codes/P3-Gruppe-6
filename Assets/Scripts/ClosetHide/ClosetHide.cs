@@ -15,16 +15,18 @@ public class ClosetHide : MonoBehaviour
     public Transform player; // Reference to the player's transform
     public float interactionRange = 2.0f; // Set the interaction range
     public MonsterSequenceController sequenceController; // Reference to the MonsterSequenceController script
-    private bool isHiding = false;
+    public bool isHiding = false;
+    private bool canToggleHiding = true; // Flag to control the cooldown
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && canToggleHiding)
         {
             if (isNearCloset()) // Check if player is near the closet
             {
                 ToggleHiding();
-            }
+                StartCoroutine(HidingCooldown()); // Start the cooldown coroutine
+            } 
         }
     }
 
@@ -64,5 +66,12 @@ public class ClosetHide : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(player.position, transform.position);
         return distanceToPlayer <= interactionRange;
+    }
+
+    private IEnumerator HidingCooldown()
+    {
+        canToggleHiding = false;
+        yield return new WaitForSeconds(20);
+        canToggleHiding = true;
     }
 }

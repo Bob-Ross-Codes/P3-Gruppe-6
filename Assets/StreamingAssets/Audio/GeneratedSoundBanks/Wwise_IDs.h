@@ -13,11 +13,15 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID DOOR_SFX_EVENT = 842992288U;
         static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
+        static const AkUniqueID HORROR_AMBIENCE = 967859696U;
+        static const AkUniqueID PLAY_MONSTER_SOUNDS = 324561159U;
         static const AkUniqueID PLAY_PLYR_FOOTSTEPS = 673033979U;
         static const AkUniqueID PLAY_RAINANDTHUNDER = 1093999139U;
         static const AkUniqueID STARTKNOCKINGEVENT = 152670193U;
         static const AkUniqueID STOP_KNOCKING_EVENT = 1856817241U;
+        static const AkUniqueID STOP_MONSTER_SOUNDS = 2630587137U;
     } // namespace EVENTS
 
     namespace STATES
@@ -72,6 +76,18 @@ namespace AK
 
     namespace SWITCHES
     {
+        namespace DOORSFXSWITCH
+        {
+            static const AkUniqueID GROUP = 2168380830U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID CLOSED = 3012222945U;
+                static const AkUniqueID LOCKED = 136945955U;
+                static const AkUniqueID OPEN = 3072142513U;
+            } // namespace SWITCH
+        } // namespace DOORSFXSWITCH
+
         namespace GROUNDMATERIALSWITCH
         {
             static const AkUniqueID GROUP = 1044534455U;
@@ -96,6 +112,17 @@ namespace AK
                 static const AkUniqueID WET = 1181096339U;
             } // namespace SWITCH
         } // namespace GROUNDWETNESSSWITCH
+
+        namespace MONSTERSTATE
+        {
+            static const AkUniqueID GROUP = 687366024U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID MONSTERCHASING = 155822580U;
+                static const AkUniqueID MONSTERWALKING = 2362879642U;
+            } // namespace SWITCH
+        } // namespace MONSTERSTATE
 
         namespace PLAYERHEALTH
         {
@@ -127,6 +154,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID RTPC_DISTANCE = 262290038U;
+        static const AkUniqueID RTPC_DOORSTATE = 1863449742U;
         static const AkUniqueID RTPC_FLYCOUNT = 1318719891U;
         static const AkUniqueID RTPC_GROUNDWETNESS = 870672907U;
         static const AkUniqueID RTPC_KNOCKINGINTENSITY = 2692556666U;

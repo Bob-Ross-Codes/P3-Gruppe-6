@@ -12,12 +12,16 @@
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
+							<GameParameterRef Name="RTPC_DoorState" ID="{F786D0A8-6F03-4169-B275-27224B242582}"/>
+							<Value>0.696356275303644</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="RTPC_GroundWetness" ID="{BD8DEFE4-8CC3-4380-9C6F-8BBFE2F05E6B}"/>
 							<Value>0.43</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_KnockingIntensity" ID="{80BAFBEC-BE3B-4C32-B2CD-A531E5FE22BA}"/>
-							<Value>7.3</Value>
+							<Value>30</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
@@ -30,7 +34,9 @@
 						<CurrentSwitchRef Name="FullHealth" ID="{BB6D41EB-9253-495D-B848-37730597BD4C}"/>
 						<CurrentSwitchRef Name="Run" ID="{1F37710A-51D0-4375-82EC-AD7D95265948}"/>
 						<CurrentSwitchRef Name="Wet" ID="{58BEE4AA-7223-40A2-9396-725B99795769}"/>
+						<CurrentSwitchRef Name="Closed" ID="{87A6C4A0-8B06-4540-932C-26E94592EA5E}"/>
 						<CurrentSwitchRef Name="Carpet" ID="{16295B59-B691-4C58-BC0A-7078B6FB1DC2}"/>
+						<CurrentSwitchRef Name="MonsterWalking" ID="{FD101D2B-A22D-4E17-AFCD-43C345EDD538}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

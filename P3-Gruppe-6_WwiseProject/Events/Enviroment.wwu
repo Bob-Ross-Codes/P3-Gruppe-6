@@ -53,6 +53,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Horror_Ambience" ID="{10B81DA4-C880-441D-A911-AABA9F72794F}">
+					<ChildrenList>
+						<Action Name="" ID="{B9807BA3-3D6F-4162-A757-768A41A30EB7}" ShortID="571190057">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HorrorDrones" ID="{2256BAC7-5DCE-4651-8318-88E62010D0E0}" WorkUnitID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Door_SFX_Event" ID="{49A58FC0-59C6-4CAA-9B5E-1D1105274359}">
+					<ChildrenList>
+						<Action Name="" ID="{C089E832-44FE-453A-A4C2-A743A01CA737}" ShortID="76295040">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DoorSounds" ID="{8EECA336-7799-49FE-AB03-B2CF1C7C4617}" WorkUnitID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

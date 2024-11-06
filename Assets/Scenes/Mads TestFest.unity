@@ -181,6 +181,75 @@ MonoBehaviour:
   m_Size: {x: 6.76, y: 4.76, z: 1.14}
   m_FadeFactor: 1
   m_Version: 2
+--- !u!1001 &5748661
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858420907421578186, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333901101273393587, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
+      propertyPath: m_Name
+      value: GazeReaction
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb7c85d6b1055d64d86c590ab5453328, type: 3}
 --- !u!1 &6077242
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,12 +1101,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124145052}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f8fd7546874f5648a662c9934a3efbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gazeScript: {fileID: 188974505}
+  gazeScript: {fileID: 0}
   mainCamera: {fileID: 1915890225}
 --- !u!1001 &128602613
 PrefabInstance:
@@ -2591,6 +2660,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLight: {fileID: 1536237300}
   flashlightRange: 5
+  playerCamera: {fileID: 0}
+  swerveAmount: 5
+  swerveSpeed: 2
 --- !u!1 &390195857
 GameObject:
   m_ObjectHideFlags: 0
@@ -15710,14 +15782,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 124145053}
     m_Modifications:
+    - target: {fileID: 3128903029877491936, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
+      propertyPath: holisticInferenceType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128903029877491944, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
+      propertyPath: beta
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128903029877491944, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
+      propertyPath: showEyes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128903029877491944, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
+      propertyPath: mincutoff
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 3128903029877491944, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
       propertyPath: _calibrations
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128903029877491951, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
+      propertyPath: webCamName
+      value: HD Webcam
       objectReference: {fileID: 0}
     - target: {fileID: 3485875271603776584, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
       propertyPath: m_Name
       value: UnitEye
       objectReference: {fileID: 0}
+    - target: {fileID: 7042655480039037268, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
+      propertyPath: gazeScript
+      value: 
+      objectReference: {fileID: 188974505}
+    - target: {fileID: 7042655480039037268, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1915890225}
     - target: {fileID: 8148365448440035643, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -17558,6 +17658,8 @@ MonoBehaviour:
   rightDoorAnimator: {fileID: 0}
   player: {fileID: 0}
   interactionRange: 2
+  sequenceController: {fileID: 0}
+  isHiding: 0
 --- !u!1 &1307015646
 GameObject:
   m_ObjectHideFlags: 0
@@ -29160,6 +29262,8 @@ MonoBehaviour:
   rightDoorAnimator: {fileID: 1297410624}
   player: {fileID: 0}
   interactionRange: 2
+  sequenceController: {fileID: 0}
+  isHiding: 0
 --- !u!65 &2130350211
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29397,3 +29501,4 @@ SceneRoots:
   - {fileID: 786662416}
   - {fileID: 1355032925}
   - {fileID: 1837032974}
+  - {fileID: 5748661}

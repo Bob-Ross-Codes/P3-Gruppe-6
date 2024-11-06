@@ -1,5 +1,6 @@
 Switch Group	ID	Name			Wwise Object Path	Notes
 	2051106367	PlayerSpeedSwitch			\Default Work Unit\PlayerSpeedSwitch	
+	2168380830	DoorSFXSwitch			\Default Work Unit\DoorSFXSwitch	
 	3968804893	GroundWetnessSwitch			\Default Work Unit\GroundWetnessSwitch	
 
 Switch	ID	Name	Switch Group			Notes
@@ -7,6 +8,9 @@ Switch	ID	Name	Switch Group			Notes
 	1296465089	Sprint	PlayerSpeedSwitch			
 	2108779966	Walk	PlayerSpeedSwitch			
 	2884887403	Sneak	PlayerSpeedSwitch			
+	136945955	Locked	DoorSFXSwitch			
+	3012222945	Closed	DoorSFXSwitch			
+	3072142513	Open	DoorSFXSwitch			
 	630539344	Dry	GroundWetnessSwitch			
 	1181096339	Wet	GroundWetnessSwitch			
 	1842026663	Damp	GroundWetnessSwitch			

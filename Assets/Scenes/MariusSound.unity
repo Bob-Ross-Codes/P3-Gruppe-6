@@ -2859,6 +2859,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60de82085d5a9134e83d09856efca235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetLight: {fileID: 0}
+  flashlightRange: 10
+  playerCamera: {fileID: 0}
+  swerveAmount: 5
+  swerveSpeed: 2
 --- !u!1 &390195857
 GameObject:
   m_ObjectHideFlags: 0
@@ -17062,6 +17067,7 @@ MonoBehaviour:
   rightDoorAnimator: {fileID: 0}
   player: {fileID: 0}
   interactionRange: 2
+  sequenceController: {fileID: 0}
 --- !u!1 &1307015646
 GameObject:
   m_ObjectHideFlags: 0
@@ -27772,6 +27778,7 @@ MonoBehaviour:
   rightDoorAnimator: {fileID: 1297410624}
   player: {fileID: 0}
   interactionRange: 2
+  sequenceController: {fileID: 0}
 --- !u!65 &2130350211
 BoxCollider:
   m_ObjectHideFlags: 0
