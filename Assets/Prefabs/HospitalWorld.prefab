@@ -10997,6 +10997,7 @@ GameObject:
   - component: {fileID: 264480499623774360}
   - component: {fileID: 344264337296448674}
   - component: {fileID: 7092030238169801776}
+  - component: {fileID: 649013204025395059}
   m_Layer: 0
   m_Name: PatientJournal1
   m_TagString: Untagged
@@ -11091,6 +11092,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &649013204025395059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7214054107273389679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c634d4b3a9ab6ec46a312c67015645dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  journalEyeDetector: {fileID: 0}
+  blurMaterial: {fileID: 0}
 --- !u!1 &8485842352475449251
 GameObject:
   m_ObjectHideFlags: 0
