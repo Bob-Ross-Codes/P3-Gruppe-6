@@ -13434,6 +13434,7 @@ GameObject:
   - component: {fileID: 903242801}
   - component: {fileID: 903242800}
   - component: {fileID: 903242799}
+  - component: {fileID: 903242802}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -13506,6 +13507,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &903242802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903242798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b98942bf46b48558ebad72f5723c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d0b3e5deeedf842b8bd8f4dfa52b07fc, type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1001 &904050907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27867,6 +27893,7 @@ MonoBehaviour:
   - {fileID: 309932591}
   monsterSpeed: 2
   doorBustSound: {fileID: 0}
+  SpawnRotation: 270
 --- !u!65 &1820765065
 BoxCollider:
   m_ObjectHideFlags: 0
