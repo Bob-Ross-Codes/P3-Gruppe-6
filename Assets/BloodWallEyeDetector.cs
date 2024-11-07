@@ -37,6 +37,7 @@ public class BloodWallEyeDetector : GazeActivation
 
             // Update the elapsed time
             elapsedTime += flickerInterval;
+            flickerInterval = Random.Range(0.05f, 1f);
         }
 
         // Ensure the light is on when the flickering stops (optional)
