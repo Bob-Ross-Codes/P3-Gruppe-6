@@ -16,9 +16,11 @@ namespace AK
         static const AkUniqueID DOOR_SFX_EVENT = 842992288U;
         static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
         static const AkUniqueID HORROR_AMBIENCE = 967859696U;
+        static const AkUniqueID PLAY_INTROMUSIC = 3582431873U;
         static const AkUniqueID PLAY_MONSTER_SOUNDS = 324561159U;
         static const AkUniqueID PLAY_PLYR_FOOTSTEPS = 673033979U;
         static const AkUniqueID PLAY_RAINANDTHUNDER = 1093999139U;
+        static const AkUniqueID PLAY_WOMANAMBIENCE = 2870446976U;
         static const AkUniqueID STARTKNOCKINGEVENT = 152670193U;
         static const AkUniqueID STOP_KNOCKING_EVENT = 1856817241U;
         static const AkUniqueID STOP_MONSTER_SOUNDS = 2630587137U;
@@ -149,6 +151,17 @@ namespace AK
             } // namespace SWITCH
         } // namespace PLAYERSPEEDSWITCH
 
+        namespace WOMANSTATE
+        {
+            static const AkUniqueID GROUP = 83357616U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID HITDOOR = 3782157712U;
+                static const AkUniqueID IDLE = 1874288895U;
+            } // namespace SWITCH
+        } // namespace WOMANSTATE
+
     } // namespace SWITCHES
 
     namespace GAME_PARAMETERS
@@ -162,11 +175,13 @@ namespace AK
         static const AkUniqueID RTPC_RAINAMOUNT = 1294084109U;
         static const AkUniqueID RTPC_REVERB = 4143461479U;
         static const AkUniqueID RTPC_TIMEOFDAY = 257272959U;
+        static const AkUniqueID RTPC_WOMANSTATE = 3666827266U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID AMBIENCE = 85412153U;
         static const AkUniqueID PLAYER = 1069431850U;
     } // namespace BANKS
 
