@@ -12,7 +12,7 @@ public class Gaze : MonoBehaviour
     #region Private values
     // Mads' super ændringer
     private float timer = 0;
-    private float updateInterval = 0.3f;
+    private float updateInterval = 0.1f;
     private float calibrateY = 0.5f;
 
     private AOIManager _aoiManager = new AOIManager();
