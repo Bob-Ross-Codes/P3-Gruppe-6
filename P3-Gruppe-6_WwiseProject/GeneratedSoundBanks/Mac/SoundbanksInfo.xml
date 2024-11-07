@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{6BBBF9C1-AB80-1185-5EAA-DE4A4EB0A42C}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{2F3FA93B-37C3-BBDC-8C01-23F4D2249A40}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -557,10 +557,6 @@
 					<ShortName>KS_Concrete Urban Boots_02_9.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_9_818F3B66.wem</CachePath>
 				</File>
-				<File Id="774821730" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Intro Audio.wav</ShortName>
-					<CachePath>SFX/Intro Audio_818F3B66.wem</CachePath>
-				</File>
 				<File Id="780659638" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_PLYR_Wood_Wet_12.wav</ShortName>
 					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_12_818F3B66.wem</CachePath>
@@ -1085,11 +1081,6 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="3781801840" Name="PlayIntroMusic" DurationType="OneShot" DurationMin="31.032" DurationMax="31.032">
-					<MediaRefs>
-						<MediaRef Id="774821730"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="152670193" Name="startKnockingEvent" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="161921007"/>
@@ -1300,5 +1291,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B6C1038B-E629-D221-662E-6F1C246A71D4}</FileHash>
+	<FileHash>{AFD4DF6A-C27A-6A0A-F78A-DC0C4290A776}</FileHash>
 </SoundBanksInfo>

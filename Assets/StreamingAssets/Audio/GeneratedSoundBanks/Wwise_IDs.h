@@ -19,7 +19,6 @@ namespace AK
         static const AkUniqueID PLAY_MONSTER_SOUNDS = 324561159U;
         static const AkUniqueID PLAY_PLYR_FOOTSTEPS = 673033979U;
         static const AkUniqueID PLAY_RAINANDTHUNDER = 1093999139U;
-        static const AkUniqueID PLAYINTROMUSIC = 3781801840U;
         static const AkUniqueID STARTKNOCKINGEVENT = 152670193U;
         static const AkUniqueID STOP_KNOCKING_EVENT = 1856817241U;
         static const AkUniqueID STOP_MONSTER_SOUNDS = 2630587137U;
