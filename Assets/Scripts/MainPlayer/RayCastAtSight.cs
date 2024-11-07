@@ -34,7 +34,7 @@ public class RayCastAtSight : MonoBehaviour
             }
 
             // Draw the ray in the scene view for debugging
-            Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
+          Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
         }
     }
 }
