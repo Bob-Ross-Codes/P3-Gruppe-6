@@ -31,6 +31,12 @@ public class LookAtObjectFadeSprite : MonoBehaviour
     {
         CheckIfLookingAtTarget();
         HandleSpriteFade();
+
+           //when the player presses E, destroy the object
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void CheckIfLookingAtTarget()
@@ -68,6 +74,8 @@ public class LookAtObjectFadeSprite : MonoBehaviour
         // Set the sprite's color with the new alpha value
         SetSpriteAlpha(currentAlpha);
     }
+
+
 
     // Helper method to set the alpha of the sprite's color
     private void SetSpriteAlpha(float alpha)
