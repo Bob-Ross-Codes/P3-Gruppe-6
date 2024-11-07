@@ -15,9 +15,9 @@ public class BedEyeDetector : GazeActivation
 
     public override void OnLookedAt()
     {
-        journalEyeDetector.spinBed = false;
+        /*journalEyeDetector.spinBed = false;
         journalEyeDetector.rotationSpeed = 1f;  
-        journalEyeDetector.accelerationRate = 1f;
+        journalEyeDetector.accelerationRate = 1f;*/
         Debug.Log("spinBed = false");
 
 
