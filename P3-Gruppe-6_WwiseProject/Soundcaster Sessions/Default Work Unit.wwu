@@ -20,6 +20,10 @@
 							<Value>0.43</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="RTPC_WomanState" ID="{D5457012-A6A7-4434-9A8D-178E1F3929A8}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="RTPC_KnockingIntensity" ID="{80BAFBEC-BE3B-4C32-B2CD-A531E5FE22BA}"/>
 							<Value>30</Value>
 						</RTPCValue>
@@ -31,6 +35,7 @@
 						<CurrentStateRef Name="None" ID="{BB4238FF-9FF1-4EA6-B22B-2B821C39DFD6}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Idle" ID="{B119DB1A-DACF-4018-BB21-6DFC0C8F35C3}"/>
 						<CurrentSwitchRef Name="FullHealth" ID="{BB6D41EB-9253-495D-B848-37730597BD4C}"/>
 						<CurrentSwitchRef Name="Run" ID="{1F37710A-51D0-4375-82EC-AD7D95265948}"/>
 						<CurrentSwitchRef Name="Wet" ID="{58BEE4AA-7223-40A2-9396-725B99795769}"/>

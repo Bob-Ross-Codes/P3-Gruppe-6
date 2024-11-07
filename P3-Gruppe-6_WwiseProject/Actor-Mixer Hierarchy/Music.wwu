@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{12AF9D7E-3CA7-476C-ADBC-19C22B268385}" SchemaVersion="119">
+	<AudioObjects>
+		<WorkUnit Name="Music" ID="{12AF9D7E-3CA7-476C-ADBC-19C22B268385}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Intro Audio" ID="{9CBCAD41-6D1C-48BA-9275-421DB20507A1}" ShortID="730645797">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Intro Audio" ID="{9E8753FD-4082-4866-BAC9-51EFE50C81BE}">
+							<Language>SFX</Language>
+							<AudioFile>Intro Audio.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="517767576"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Intro Audio" ID="{9E8753FD-4082-4866-BAC9-51EFE50C81BE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

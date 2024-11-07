@@ -1,9 +1,12 @@
 Switch Group	ID	Name			Wwise Object Path	Notes
+	83357616	WomanState			\Default Work Unit\WomanState	
 	2051106367	PlayerSpeedSwitch			\Default Work Unit\PlayerSpeedSwitch	
 	2168380830	DoorSFXSwitch			\Default Work Unit\DoorSFXSwitch	
 	3968804893	GroundWetnessSwitch			\Default Work Unit\GroundWetnessSwitch	
 
 Switch	ID	Name	Switch Group			Notes
+	1874288895	Idle	WomanState			
+	3782157712	HitDoor	WomanState			
 	712161704	Run	PlayerSpeedSwitch			
 	1296465089	Sprint	PlayerSpeedSwitch			
 	2108779966	Walk	PlayerSpeedSwitch			

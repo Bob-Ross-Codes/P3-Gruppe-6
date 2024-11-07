@@ -95,3 +95,35 @@ fmod_editor.log
 /Assets/FMODStudioCache.meta
 Assets/Quixel/support/plugins/unity/4.0/Megascans_Importer.unitypackage.meta
 Assets/CSVLogs/UnitEyeLog_20241107_101615.csv.meta
+
+# WWISE Ignored Files
+
+.wavFile.txt
+
+# Validation Cache
+
+# WWISE Version Control_WwiseProject.cyber.validationcache
+
+*.validationcache
+
+*.wsettings
+
+*.akd
+
+SoundbanksInfo.xml
+
+PluginInfo.xml
+
+# Optional and may be integrated into WWISE workflow. Talk to audio programmer
+
+# NameOfSoundBank.txt
+
+# Cache folder
+
+#.cache
+
+CacheVersion
+
+SoundBankInfoCache.dat
+
+Wwise.dat
