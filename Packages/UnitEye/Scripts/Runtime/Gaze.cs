@@ -1,5 +1,6 @@
 using MediaPipe.Holistic;
 using System.Collections.Generic;
+using System.Threading;
 using UnitEye;
 using UnityEngine;
 
@@ -9,7 +10,9 @@ public class Gaze : MonoBehaviour
     const int CROSSHAIR_SIZE = 80;
 
     #region Private values
-
+    // Mads' super ændringer
+    private float timer = 0;
+    private float updateInterval = 0.3f;
     private float calibrateY = 0.5f;
 
     private AOIManager _aoiManager = new AOIManager();
@@ -206,8 +209,21 @@ public class Gaze : MonoBehaviour
         }
     }
 
-    public virtual void LateUpdate()
+    public virtual void FixedUpdate()
     {
+        timer += Time.fixedDeltaTime;
+        if (timer > updateInterval)
+        {
+            timer = 0;
+            PerformGazeUpdate();
+        }
+    }
+
+
+    public virtual void PerformGazeUpdate()
+    {
+        // late update is used to ensure that the gaze location is updated after the EyeMU model has been run
+
         //If no holistic pipeline abort
         if (_holisticPipeline == null) return;
 
