@@ -2178,6 +2178,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 338383567517357317, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -77.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1526607448800714260, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -54.98004
@@ -2218,6 +2222,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3043939302110457184, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218847339216046711, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.5400124
+      objectReference: {fileID: 0}
     - target: {fileID: 5885695840291986587, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_Name
       value: Floor
@@ -2235,7 +2247,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: d8ef6cdee455f2144a28ee9deebc20b4, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7552636411315960476, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
+    - {fileID: 7907330637272771537, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
+    - {fileID: 1118372994848312759, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
+    - {fileID: 640849458099706144, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
@@ -7463,8 +7479,8 @@ SceneRoots:
   - {fileID: 1040887318}
   - {fileID: 523280850}
   - {fileID: 2114514620}
-  - {fileID: 1997536066}
   - {fileID: 1980151115}
   - {fileID: 1931648397}
+  - {fileID: 1997536066}
   - {fileID: 304216310}
   - {fileID: 582652006}
