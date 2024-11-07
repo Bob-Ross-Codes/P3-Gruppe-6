@@ -363,8 +363,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 95272e37ee2ea749a4f4ba5abfa5dea7
     GuidInternal: 
-    m_lastTime: -8584706312573308145
+    m_lastTime: -8584706175138361148
     List:
+    - name: Ambience
+      guid: 869d7f5182692b4185e08f8b92ecc8f8
+      id: 85412153
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 95272e37ee2ea749a4f4ba5abfa5dea7
+      - ElementName: Ambience
+        ObjectType: 7
+        guid: 869d7f5182692b4185e08f8b92ecc8f8
+      Path: SoundBanks\Default Work Unit\Ambience
     - name: Player
       guid: 9f2bb2b9341e844782020395c3073a42
       id: 1069431850
@@ -404,7 +418,7 @@ MonoBehaviour:
     ParentPath: Events\Enviroment
     guid: dfdd45dc075dd0439b42b35985878514
     GuidInternal: 
-    m_lastTime: -8584707163109049823
+    m_lastTime: -8584706175168374010
     List:
     - name: Door_SFX_Event
       guid: c08fa549c659aa4c9b5e1d1105274359
@@ -455,8 +469,8 @@ MonoBehaviour:
         guid: a41db81080c81d44a911aaba9f72794f
       Path: Events\Enviroment\Horror_Ambience
       maxAttenuation: 0
-      maxDuration: 13.917126
-      minDuration: 4.121542
+      maxDuration: 180.18
+      minDuration: 4.0793147
     - name: Play_RainAndThunder
       guid: 901f81c80243e842a58c6357e332627c
       id: 1093999139
@@ -474,6 +488,23 @@ MonoBehaviour:
       maxAttenuation: 10
       maxDuration: -1
       minDuration: -1
+    - name: Play_WomanAmbience
+      guid: f1218fcaefdbfb4d905a584274c213c6
+      id: 2870446976
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Enviroment
+        ObjectType: 12
+        guid: dfdd45dc075dd0439b42b35985878514
+      - ElementName: Play_WomanAmbience
+        ObjectType: 3
+        guid: f1218fcaefdbfb4d905a584274c213c6
+      Path: Events\Enviroment\Play_WomanAmbience
+      maxAttenuation: 0
+      maxDuration: Infinity
+      minDuration: 3.7151978
     - name: startKnockingEvent
       guid: 2135013517563d4cb5a6971c7021e29a
       id: 152670193
@@ -521,6 +552,36 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584712247497822091
     List: []
+  - PhysicalPath: Events\Music.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Music
+      ObjectType: 12
+      guid: 338cc34d50efa449ad2c2d8b0d0854a8
+    ParentPath: Events\Music
+    guid: 338cc34d50efa449ad2c2d8b0d0854a8
+    GuidInternal: 
+    m_lastTime: -8584706175168363071
+    List:
+    - name: Play_IntroMusic
+      guid: b344ce14837a7049990177cf79f920a2
+      id: 3582431873
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Music
+        ObjectType: 12
+        guid: 338cc34d50efa449ad2c2d8b0d0854a8
+      - ElementName: Play_IntroMusic
+        ObjectType: 3
+        guid: b344ce14837a7049990177cf79f920a2
+      Path: Events\Music\Play_IntroMusic
+      maxAttenuation: 0
+      maxDuration: 31.032
+      minDuration: 31.032
   - PhysicalPath: Events\NPC.wwu
     PathAndIcons:
     - ElementName: Events
@@ -610,7 +671,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: ea837575837ad2429fa23f0890dcd34c
     GuidInternal: 
-    m_lastTime: -8584707163109039824
+    m_lastTime: -8584706175168352917
     List:
     - name: RTPC_Distance
       guid: 8f713afc3c692048aa47cad6aeb38d71
@@ -738,6 +799,20 @@ MonoBehaviour:
         ObjectType: 13
         guid: e97448e903395744b8fd1118c0cbb1f2
       Path: Game Parameters\Default Work Unit\RTPC_TimeOfDay
+    - name: RTPC_WomanState
+      guid: 127045d5a7a634449a8d178e1f3929a8
+      id: 3666827266
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ea837575837ad2429fa23f0890dcd34c
+      - ElementName: RTPC_WomanState
+        ObjectType: 13
+        guid: 127045d5a7a634449a8d178e1f3929a8
+      Path: Game Parameters\Default Work Unit\RTPC_WomanState
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -996,7 +1071,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: f26415a28a873a438edb3ff2f246b1ad
     GuidInternal: 
-    m_lastTime: -8584707163099505036
+    m_lastTime: -8584706175138341062
     List:
     - name: DoorSFXSwitch
       guid: e5193861724f2444a084b729641b5d08
@@ -1407,6 +1482,56 @@ MonoBehaviour:
         - ElementName: Walk
           ObjectType: 10
           guid: c0badfe3db4fba4083e25c0d04c70dc3
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: WomanState
+      guid: be01ebea032c2a41a466be2e8c0e380a
+      id: 83357616
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f26415a28a873a438edb3ff2f246b1ad
+      - ElementName: WomanState
+        ObjectType: 11
+        guid: be01ebea032c2a41a466be2e8c0e380a
+      Path: Switches\Default Work Unit\WomanState
+      values:
+      - name: HitDoor
+        guid: a8c6ecbf7eb1fa4a9eb688c9e27ca880
+        id: 3782157712
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f26415a28a873a438edb3ff2f246b1ad
+        - ElementName: WomanState
+          ObjectType: 11
+          guid: be01ebea032c2a41a466be2e8c0e380a
+        - ElementName: HitDoor
+          ObjectType: 10
+          guid: a8c6ecbf7eb1fa4a9eb688c9e27ca880
+      - name: Idle
+        guid: 1adb19b1cfda1840bb216dfc0c8f35c3
+        id: 1874288895
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f26415a28a873a438edb3ff2f246b1ad
+        - ElementName: WomanState
+          ObjectType: 11
+          guid: be01ebea032c2a41a466be2e8c0e380a
+        - ElementName: Idle
+          ObjectType: 10
+          guid: 1adb19b1cfda1840bb216dfc0c8f35c3
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
