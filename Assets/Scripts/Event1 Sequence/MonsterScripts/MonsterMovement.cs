@@ -1,20 +1,20 @@
 //made using ChatGPT and Copilot
 
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class MonsterMovement : MonoBehaviour
 {
-    private Transform[] waypoints;     // Array of waypoints for the path
-    private int currentWaypointIndex = 0; // Tracks the current waypoint
-    private float speed;               // Speed of movement
-    private bool isWaiting = false;    // To check if the monster is in idle mode
+    private Transform[] waypoints;
+    private int currentWaypointIndex = 0;
+    private float speed;
+    private bool isWaiting = false;
     private float idleTimeAtFirstWaypoint;
     private float idleTimeAtLastWaypoint;
-    private int lastWaypointIndex = 1;
-    private int idleWaypointIndex = 1; // Index of the waypoint where the monster should idle
+    private int idleWaypointIndex = 1;
     private float PositionIndex = 0.1f;
-    private float slowdownFactor = 0.5f; // Factor to slow down the movement speed
+    private float slowdownFactor = 0.5f;
 
     public void Initialize(Transform[] pathWaypoints, float movementSpeed, float idleTimeAtFirstWaypoint, float idleTimeAtLastWaypoint)
     {
@@ -29,13 +29,18 @@ public class MonsterMovement : MonoBehaviour
     {
         if (waypoints == null || waypoints.Length == currentWaypointIndex || isWaiting) return;
 
-        // Calculate the current movement speed with slowdown effect
         float currentSpeed = isSlowingDown() ? speed * slowdownFactor : speed;
 
-        // Move the monster towards the current waypoint
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, currentSpeed * Time.deltaTime);
 
-        // Check if the monster reached the current waypoint
+        Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
+        if (direction != Vector3.zero)
+        {
+            // Create a rotation towards the waypoint, with an offset of 90 degrees on Y
+            Quaternion toRotation = Quaternion.LookRotation(direction) * Quaternion.Euler(0, 90, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * 5f);
+        }
+
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < PositionIndex)
         {
             if (currentWaypointIndex == waypoints.Length - 1)
@@ -49,13 +54,13 @@ public class MonsterMovement : MonoBehaviour
             else
             {
                 currentWaypointIndex++;
+                RotateTowardsNextWaypoint();
             }
         }
     }
 
     private bool isSlowingDown()
     {
-        // Check if the monster is close to the idle waypoint
         if (currentWaypointIndex == idleWaypointIndex - 1)
         {
             float distanceToIdleWaypoint = Vector3.Distance(transform.position, waypoints[idleWaypointIndex].position);
@@ -77,6 +82,7 @@ public class MonsterMovement : MonoBehaviour
         else
         {
             currentWaypointIndex++;
+            RotateTowardsNextWaypoint();
         }
     }
 
@@ -94,5 +100,19 @@ public class MonsterMovement : MonoBehaviour
         Destroy(gameObject);
         AkSoundEngine.PostEvent("Stop_Monster_Sounds", gameObject);
     }
+
+    private void RotateTowardsNextWaypoint()
+    {
+        if (currentWaypointIndex < waypoints.Length - 1)
+        {
+            Vector3 direction = waypoints[currentWaypointIndex + 1].position - transform.position;
+            if (direction != Vector3.zero)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(direction) * Quaternion.Euler(0, 90, 0); // Add Y offset here as well
+                transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, Time.deltaTime * 5f);
+            }
+        }
+    }
 }
+
 
