@@ -24,12 +24,17 @@ public class RayCastAtSight : MonoBehaviour
                 // Log the hit object
                 Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
 
-                // Optionally, you can do something with the hit object
-                // For example, highlight it, interact with it, etc.
+                // Check if the hit object has a GazeActivation component
+                GazeActivation gazeActivation = hit.collider.GetComponent<GazeActivation>();
+                if (gazeActivation != null)
+                {
+                    // Update the look time for the gaze activation
+                    gazeActivation.UpdateLookTime(Time.deltaTime);
+                }
             }
 
             // Draw the ray in the scene view for debugging
-            Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
+          Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
         }
     }
 }

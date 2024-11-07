@@ -105,7 +105,7 @@ public class GazeCalibration : MonoBehaviour
         stopAfterPoints = _stop;
         ResetPoints(0);
 
-        DrawPath(points);
+        //DrawPath(points);
     }
 
     private void ResetPoints(int currentPreset)

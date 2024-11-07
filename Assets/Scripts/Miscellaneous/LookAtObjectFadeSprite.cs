@@ -9,13 +9,16 @@ public class LookAtObjectFadeSprite : MonoBehaviour
     public float fadeSpeed = 2f; // Speed of fading in and out
     public float maxDistance = 10f; // Maximum distance for the ray to detect the object
 
-    private CanvasGroup spriteCanvasGroup; // CanvasGroup for fading
+    private SpriteRenderer spriteRenderer; // SpriteRenderer for changing color alpha
     private bool isLookingAtTarget;
 
     void Start()
     {
-        // Get the CanvasGroup component attached to this object
-        spriteCanvasGroup = GetComponent<CanvasGroup>();
+        // Get the SpriteRenderer component attached to this object
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // Ensure the sprite starts fully transparent
+        SetSpriteAlpha(0f);
         
         // If no camera is assigned, automatically find the main camera
         if (mainCamera == null)
@@ -32,6 +35,12 @@ public class LookAtObjectFadeSprite : MonoBehaviour
 
     private void CheckIfLookingAtTarget()
     {
+        if (targetObject == null || spriteRenderer == null)
+        {
+            isLookingAtTarget = false;
+            return;
+        }
+
         Ray ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
 
@@ -44,19 +53,27 @@ public class LookAtObjectFadeSprite : MonoBehaviour
         {
             isLookingAtTarget = false;
         }
+
+        Debug.DrawRay(ray.origin, ray.direction * maxDistance, Color.red);
     }
 
     private void HandleSpriteFade()
     {
-        if (isLookingAtTarget)
-        {
-            // Fade in
-            spriteCanvasGroup.alpha = Mathf.MoveTowards(spriteCanvasGroup.alpha, 1f, fadeSpeed * Time.deltaTime);
-        }
-        else
-        {
-            // Fade out
-            spriteCanvasGroup.alpha = Mathf.MoveTowards(spriteCanvasGroup.alpha, 0f, fadeSpeed * Time.deltaTime);
-        }
+        // Determine target alpha based on whether looking at the target
+        float targetAlpha = isLookingAtTarget ? 1f : 0f;
+
+        // Smoothly transition to the target alpha value
+        float currentAlpha = Mathf.MoveTowards(spriteRenderer.color.a, targetAlpha, fadeSpeed * Time.deltaTime);
+        
+        // Set the sprite's color with the new alpha value
+        SetSpriteAlpha(currentAlpha);
+    }
+
+    // Helper method to set the alpha of the sprite's color
+    private void SetSpriteAlpha(float alpha)
+    {
+        Color color = spriteRenderer.color;
+        color.a = alpha;
+        spriteRenderer.color = color;
     }
 }

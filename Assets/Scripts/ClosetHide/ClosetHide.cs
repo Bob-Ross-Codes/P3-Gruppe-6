@@ -6,27 +6,28 @@ using StarterAssets; // for FirstPersonController
 
 public class ClosetHide : MonoBehaviour
 {
-    public CinemachineVirtualCamera mainCamera;
-    public CinemachineVirtualCamera closetCamera;
+    [SerializeField] private CinemachineVirtualCamera mainCamera;
+    [SerializeField] private CinemachineVirtualCamera closetCamera;
     public FirstPersonController playerController; // Reference to the FirstPersonController script
-
-      public GameObject objectToDisable; // Reference to the GameObject to disable when hiding
-
+    public GameObject objectToDisableHallwayOne; // Reference to the GameObject to disable when hiding
+    public GameObject objectToEnableHallwayOne;
     public Animator leftDoorAnimator; // Animator for the left door
     public Animator rightDoorAnimator; // Animator for the right door
     public Transform player; // Reference to the player's transform
     public float interactionRange = 2.0f; // Set the interaction range
-
-    private bool isHiding = false;
+    public MonsterSequenceController sequenceController; // Reference to the MonsterSequenceController script
+    public bool isHiding = false;
+    private bool canToggleHiding = true; // Flag to control the cooldown
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && canToggleHiding)
         {
             if (isNearCloset()) // Check if player is near the closet
             {
                 ToggleHiding();
-            }
+                StartCoroutine(HidingCooldown()); // Start the cooldown coroutine
+            } 
         }
     }
 
@@ -38,23 +39,29 @@ public class ClosetHide : MonoBehaviour
         {
             // Switch to ClosetCamera, disable player movement, and open the doors
             mainCamera.Priority = 0;
-            closetCamera.Priority = 1;
+            closetCamera.Priority = 10;
             playerController.enabled = false;
 
             leftDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the left door
             rightDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the right door
 
             // Disable the specified GameObject (only once)
-             objectToDisable.SetActive(false);
+            objectToDisableHallwayOne.SetActive(false);
+
+            //enable objects
+            
+
+            // Player entered the closet
+            sequenceController.OnPlayerHidden();
         }
         else
         {
             // Return to MainCamera, enable player movement, and close the doors
-            mainCamera.Priority = 1;
+            mainCamera.Priority = 10;
             closetCamera.Priority = 0;
             playerController.enabled = true;
 
-           leftDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the left door
+            leftDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the left door
             rightDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the right door
         }
     }
@@ -63,5 +70,12 @@ public class ClosetHide : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(player.position, transform.position);
         return distanceToPlayer <= interactionRange;
+    }
+
+    private IEnumerator HidingCooldown()
+    {
+        canToggleHiding = false;
+        yield return new WaitForSeconds(20);
+        canToggleHiding = true;
     }
 }

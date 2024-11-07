@@ -10,6 +10,11 @@
 				<SwitchContainer Name="PLYR_Footsteps_MaterialSwitch" ID="{97CC2B17-2B03-478B-A752-21A279EA3A31}" ShortID="910535539">
 					<PropertyList>
 						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">

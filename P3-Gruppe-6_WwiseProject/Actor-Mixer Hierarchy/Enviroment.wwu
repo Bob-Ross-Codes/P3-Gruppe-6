@@ -6,8 +6,16 @@
 				<BlendContainer Name="MonsterKnock" ID="{F5501E51-C5D0-4041-A904-45AB6B5396C3}" ShortID="152805079">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="BlendBehavior" Type="int16" Value="1"/>
+						<Property Name="Color" Type="int16" Value="24"/>
+						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="att_Generic_50" ID="{73340AAB-4178-445D-8CC1-37DDF61FF025}" WorkUnitID="{1F542FE1-08B3-4235-A78D-0E1B87E0581B}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
 						</Reference>
@@ -21,7 +29,7 @@
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-7</Value>
+										<Value>-9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -78,11 +86,12 @@
 						</Sound>
 						<RandomSequenceContainer Name="HighKnock" ID="{5CC16092-C986-45BE-A005-468F070AD57F}" ShortID="523627403">
 							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>1</Value>
+										<Value>-6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -169,7 +178,6 @@
 									<ChildrenList>
 										<AudioFileSource Name="Door Knocking Slight Rattle" ID="{00A72F71-C766-4F82-B56B-1A57DB38DFD9}">
 											<PropertyList>
-												<Property Name="LoopEnd" Type="Real64" Value="1.94660811999073"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="2.29493018480492"/>
 												<Property Name="TrimEnd" Type="Real64" Value="4.09206301334702"/>
@@ -361,18 +369,18 @@
 								<BlendTrackAssoc>
 									<ItemRef Name="LowKnock" ID="{08A8E4B9-CF6D-46BE-9AF2-B57431904C99}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>5.8753709198813</LeftEdgePos>
+										<LeftEdgePos>2.4812030075188</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>11.1595398218707</RightEdgePos>
+										<RightEdgePos>9.45710123281646</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
 								<BlendTrackAssoc>
 									<ItemRef Name="MediumKnock" ID="{ECC81499-82FD-4A1F-8358-1E08349F104D}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>10.8553994065282</LeftEdgePos>
+										<LeftEdgePos>8.48697835389662</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>18.0089020771513</RightEdgePos>
+										<RightEdgePos>18.7983757613618</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
@@ -389,6 +397,906 @@
 						</BlendTrack>
 					</BlendTrackList>
 				</BlendContainer>
+				<BlendContainer Name="Outdoor" ID="{9512DFBF-3D90-4F4F-B8C9-EB352C246B3B}" ShortID="583701251">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Color" Type="int16" Value="20"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="WinddowRainAndThunder" ID="{6FA10C1D-C1B9-40B8-A68A-D82D7EABC65F}" WorkUnitID="{8D56214F-7323-40FF-8E6C-95340781873A}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="ThunderAmbience" ID="{FFE2EA72-DEF0-45DB-88F4-F0DB676CF7F3}" ShortID="815547158">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-16</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Distant Thunder No Rain" ID="{54BA2EF1-E359-4315-B218-65D5E3D1B5A2}" ShortID="443985355">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Distant Thunder No Rain" ID="{36ED731D-5D7C-4A0B-85B6-10481C8D3AE4}">
+											<Language>SFX</Language>
+											<AudioFile>Distant Thunder No Rain.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="48546062"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Distant Thunder No Rain" ID="{36ED731D-5D7C-4A0B-85B6-10481C8D3AE4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Clap Heavy Impact Explosive (1)" ID="{53ED4B0D-002F-4CFA-B226-7BA1A2FF16AA}" ShortID="247637594">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Clap Heavy Impact Explosive (1)" ID="{FD3F7CDB-1E3A-499A-BFB0-F17BD77C2D84}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Clap Heavy Impact Explosive (1).wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="483948221"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Clap Heavy Impact Explosive (1)" ID="{FD3F7CDB-1E3A-499A-BFB0-F17BD77C2D84}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Clap Heavy Impact Explosive" ID="{91B633C9-965B-4A27-8FA4-25D842279624}" ShortID="982924939">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Clap Heavy Impact Explosive" ID="{390DEC98-903D-454B-AC49-58C70A3C005A}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Clap Heavy Impact Explosive.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="789622552"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Clap Heavy Impact Explosive" ID="{390DEC98-903D-454B-AC49-58C70A3C005A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Clap Heavy Impact Sound Effect (1)" ID="{0A3CCEC8-8227-45E6-B400-ED0FAF7E7705}" ShortID="40741905">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Clap Heavy Impact Sound Effect (1)" ID="{2A7D9F4F-EE13-48DE-B350-CF9FA54BF1E0}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Clap Heavy Impact Sound Effect (1).wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="397420369"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Clap Heavy Impact Sound Effect (1)" ID="{2A7D9F4F-EE13-48DE-B350-CF9FA54BF1E0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Clap Heavy Impact Sound Effect" ID="{4195D75F-70C9-4ED2-A817-37E03087083B}" ShortID="418101240">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Clap Heavy Impact Sound Effect" ID="{6CE6DBA5-2B1C-4416-9065-F8624607A42C}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Clap Heavy Impact Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="528004408"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Clap Heavy Impact Sound Effect" ID="{6CE6DBA5-2B1C-4416-9065-F8624607A42C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Clap Sound Effect" ID="{0CF59755-E75A-4CD7-9040-3BB059C911DC}" ShortID="923540349">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Clap Sound Effect" ID="{B75A91E5-FF61-4407-A219-C12BDF9E0F0D}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Clap Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="398871403"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Clap Sound Effect" ID="{B75A91E5-FF61-4407-A219-C12BDF9E0F0D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Thunder Sound Effects" ID="{9D405624-DCB6-4ACA-AF3A-222BAEBD3444}" ShortID="878555713">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thunder Sound Effects" ID="{195E86DA-E2ED-421A-88D4-9BBCE780C4A9}">
+											<Language>SFX</Language>
+											<AudioFile>Thunder Sound Effects.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="464104037"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thunder Sound Effects" ID="{195E86DA-E2ED-421A-88D4-9BBCE780C4A9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{1C4028E0-5DDA-40A1-85A2-E59E6757DA30}" ShortID="988986793">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+														<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{461798B2-B9A6-45B6-9BE6-D37FCFCC74D4}" ShortID="74459127">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+														<ObjectRef Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</RandomSequenceContainer>
+						<Sound Name="KS_Rain On Surfaces_2" ID="{94C33517-2D66-4BA0-AA0E-E1BB824CB82D}" ShortID="780533443">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KS_Rain On Surfaces_2" ID="{DAC998F2-0904-42DB-905C-496B02A9EF66}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="4.32842105263158"/>
+										<Property Name="TrimEnd" Type="Real64" Value="39.3615789473684"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>KS_Rain On Surfaces_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="2028515"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KS_Rain On Surfaces_2" ID="{DAC998F2-0904-42DB-905C-496B02A9EF66}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<PositioningInfo>
+						<Position Name="" ID="{7FA123AB-1D06-498B-8E61-06F2C594E442}"/>
+					</PositioningInfo>
+					<BlendTrackList>
+						<BlendTrack Name="New Blend Track" ID="{858F044F-EB1A-4D1E-AFCD-4345919226C4}" ShortID="914126553">
+							<BlendTrackAssocList>
+								<BlendTrackAssoc>
+									<ItemRef Name="KS_Rain On Surfaces_2" ID="{94C33517-2D66-4BA0-AA0E-E1BB824CB82D}"/>
+								</BlendTrackAssoc>
+								<BlendTrackAssoc>
+									<ItemRef Name="ThunderAmbience" ID="{FFE2EA72-DEF0-45DB-88F4-F0DB676CF7F3}"/>
+								</BlendTrackAssoc>
+							</BlendTrackAssocList>
+						</BlendTrack>
+					</BlendTrackList>
+				</BlendContainer>
+				<BlendContainer Name="HorrorAmbience" ID="{96463A1F-F7E0-48F2-9BDE-6AD38120688A}" ShortID="340543898">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="HorrorDrones" ID="{2256BAC7-5DCE-4651-8318-88E62010D0E0}" ShortID="814625291">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="KS_Eerie Transition_1" ID="{F24A2E38-F6E9-48CF-870E-5F9A1E080039}" ShortID="637681099">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>21</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-13</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="KS_Eerie Transition_1" ID="{6ADC9E32-5B9F-4103-9B84-D3F141155F62}">
+											<Language>SFX</Language>
+											<AudioFile>KS_Eerie Transition_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="973496908"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="KS_Eerie Transition_1" ID="{6ADC9E32-5B9F-4103-9B84-D3F141155F62}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="KS_Eerie Transition_2" ID="{534FA07B-00B8-4504-B58D-91FF1F26E323}" ShortID="290605462">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>27</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-14</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="KS_Eerie Transition_2" ID="{244BDB94-0F9E-45E8-9B9F-ACE9A8E826EE}">
+											<Language>SFX</Language>
+											<AudioFile>KS_Eerie Transition_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="755327924"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="KS_Eerie Transition_2" ID="{244BDB94-0F9E-45E8-9B9F-ACE9A8E826EE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Knock on wood" ID="{EB18AB7E-7CB6-43E5-ABAC-62F9973CCD0A}" ShortID="25840269">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Knock on wood" ID="{507E3958-962D-4D5C-ABEF-A522D02B2F9C}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="13.9171261574074"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Knock on wood.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="454425690"/>
+											</MediaIDList>
+										</AudioFileSource>
+										<AudioFileSource Name="Horror Sound Effects - Resonating Wires (1)" ID="{CDE5B263-4D5D-4270-A90C-CBF1E9838942}">
+											<Language>SFX</Language>
+											<AudioFile>Horror Sound Effects - Resonating Wires (1).wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="683363416"/>
+											</MediaIDList>
+										</AudioFileSource>
+										<AudioFileSource Name="Horror Sound Effects - Resonating Wires" ID="{94EA94E2-8811-44AB-80F8-F119F39772CC}">
+											<Language>SFX</Language>
+											<AudioFile>Horror Sound Effects - Resonating Wires.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="100479089"/>
+											</MediaIDList>
+										</AudioFileSource>
+										<AudioFileSource Name="Metal Bangs Sound Effect" ID="{6DAC1100-1322-4837-A376-9C726EF0107A}">
+											<Language>SFX</Language>
+											<AudioFile>Metal Bangs Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="659808192"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Metal Bangs Sound Effect" ID="{6DAC1100-1322-4837-A376-9C726EF0107A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Horror Sound Effects - Resonating Wires (1)" ID="{493A1AC5-7853-484F-A570-A0DE8A66B5C3}" ShortID="320107927">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Horror Sound Effects - Resonating Wires (1)" ID="{128CB0DB-15C1-43F4-A427-0A637BBC6770}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.56466060499058"/>
+												<Property Name="TrimEnd" Type="Real64" Value="10.5281688147364"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Horror Sound Effects - Resonating Wires (1).wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="658070560"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{924D2BCC-D165-4C99-90D5-10A9E9C8D50C}" ShortID="583509162">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{50EDA537-4E84-4E9A-BE5B-35F6048E02E7}" ShortID="457000240">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+																<ObjectRef Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+									<ActiveSourceList>
+										<ActiveSource Name="Horror Sound Effects - Resonating Wires (1)" ID="{128CB0DB-15C1-43F4-A427-0A637BBC6770}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Horror Sound Effects - Resonating Wires" ID="{331B5734-D7FE-48D6-99B7-0087585315B0}" ShortID="468660470">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Horror Sound Effects - Resonating Wires" ID="{1D7377D4-5DE2-43AE-93F5-2AF9AB3BABC6}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="8.65096018714689"/>
+												<Property Name="TrimEnd" Type="Real64" Value="12.7302747469397"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Horror Sound Effects - Resonating Wires.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="958601778"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{0AA12B77-9821-46C3-B329-6DF3C6903FAC}" ShortID="986125821">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{11A2868C-09E3-4687-A0B2-F987AE720200}" ShortID="671368657">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+																<ObjectRef Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+									<ActiveSourceList>
+										<ActiveSource Name="Horror Sound Effects - Resonating Wires" ID="{1D7377D4-5DE2-43AE-93F5-2AF9AB3BABC6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Metal Bangs Sound Effect" ID="{AC0D671F-DFB7-4CC3-A995-2E380B6CCEE6}" ShortID="603618795">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Metal Bangs Sound Effect" ID="{1D8766CA-0805-4039-946C-05C08FC0E6FA}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="18.8323728813559"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Metal Bangs Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="971489578"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{E64DD7F2-8DA8-4A45-87AD-16B7D86211BB}" ShortID="1033408886">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+																<ObjectRef Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{1CD5C9B7-9A4E-428A-838D-F29CAE7C6B21}" ShortID="1071432115">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+									<ActiveSourceList>
+										<ActiveSource Name="Metal Bangs Sound Effect" ID="{1D8766CA-0805-4039-946C-05C08FC0E6FA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<SwitchContainer Name="WomanAmbience" ID="{64253AC3-5EEF-451C-A613-5949A044CAD6}" ShortID="712347149">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Idle" ID="{B119DB1A-DACF-4018-BB21-6DFC0C8F35C3}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="WomanState" ID="{EAEB01BE-2C03-412A-A466-BE2E8C0E380A}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="WomanCrying" ID="{ECE484E9-22B7-44B1-A858-E8893B04CCA6}" ShortID="864895740">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-13</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="BehindDoor" ID="{4E74BB2A-5086-4CB3-A12E-7C12EC62A31C}" WorkUnitID="{8D56214F-7323-40FF-8E6C-95340781873A}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Distant Crying Sound Effect" ID="{FA94958B-A6A6-4C67-92B7-FF5894A038F8}">
+											<Language>SFX</Language>
+											<AudioFile>Distant Crying Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="41071332"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Distant Crying Sound Effect" ID="{FA94958B-A6A6-4C67-92B7-FF5894A038F8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Female Scream Intense 03" ID="{52BC2E6B-E24C-4D0A-9D78-F8F8D24E2E8D}" ShortID="566337909">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Female Scream Intense 03" ID="{EA4C9B85-D528-416C-9741-DFC7132624DE}">
+											<Language>SFX</Language>
+											<AudioFile>Female Scream Intense 03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="13641386"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{65D31481-EB6F-4087-99CF-0444411BB3BC}" ShortID="724331330">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{C4E7CC7F-7C64-44E4-ADB9-6CEB7A820567}" ShortID="840647727">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+																<ObjectRef Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+									<ActiveSourceList>
+										<ActiveSource Name="Female Scream Intense 03" ID="{EA4C9B85-D528-416C-9741-DFC7132624DE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Female Scream Intense 03" ID="{52BC2E6B-E24C-4D0A-9D78-F8F8D24E2E8D}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="WomanCrying" ID="{ECE484E9-22B7-44B1-A858-E8893B04CCA6}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Idle" ID="{B119DB1A-DACF-4018-BB21-6DFC0C8F35C3}"/>
+										<ItemList>
+											<ItemRef Name="WomanCrying" ID="{ECE484E9-22B7-44B1-A858-E8893B04CCA6}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="HitDoor" ID="{BFECC6A8-B17E-4AFA-9EB6-88C9E27CA880}"/>
+										<ItemList>
+											<ItemRef Name="Female Scream Intense 03" ID="{52BC2E6B-E24C-4D0A-9D78-F8F8D24E2E8D}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+					</ChildrenList>
+				</BlendContainer>
+				<SwitchContainer Name="DoorSounds" ID="{8EECA336-7799-49FE-AB03-B2CF1C7C4617}" ShortID="739220371">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-13</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Open" ID="{9A5B8C33-A785-4BDE-AE5F-28DC41ABACD1}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="DoorSFXSwitch" ID="{613819E5-4F72-4424-A084-B729641B5D08}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="DoorOpen" ID="{40AE290E-BF24-469D-A182-547A3DF35104}" ShortID="348580872">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KS_Bedroom Door_1" ID="{D1FD5489-36C8-473B-AABF-1916EF615860}">
+									<Language>SFX</Language>
+									<AudioFile>KS_Bedroom Door_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="328603660"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KS_Bedroom Door_1" ID="{D1FD5489-36C8-473B-AABF-1916EF615860}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="DoorClose" ID="{C451ED11-8066-4134-AB50-45F9C927AE08}" ShortID="548948052">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KS_Bedroom Door_2" ID="{A3CCEF66-60E1-4E8C-842C-AB82A893FFEC}">
+									<Language>SFX</Language>
+									<AudioFile>KS_Bedroom Door_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="139150290"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KS_Bedroom Door_2" ID="{A3CCEF66-60E1-4E8C-842C-AB82A893FFEC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="DoorLocked" ID="{A0E170BB-2F7D-465A-95A1-1D87E4CCC237}" ShortID="813865967">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="KS__4" ID="{D3F47B7D-0A33-451C-A6C0-CB4A8CB8435C}" ShortID="229164448">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="KS__4" ID="{FEED8820-A260-4F03-9B31-1AE951968354}">
+											<Language>SFX</Language>
+											<AudioFile>KS__4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="388144728"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="KS__4" ID="{FEED8820-A260-4F03-9B31-1AE951968354}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="KS__5" ID="{BBE6A932-6AF4-468D-91A5-0DCBB481CE4B}" ShortID="846180859">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="KS__5" ID="{0D370630-76F8-4DB3-AB17-7A649FECB1B4}">
+											<Language>SFX</Language>
+											<AudioFile>KS__5.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="754791402"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="KS__5" ID="{0D370630-76F8-4DB3-AB17-7A649FECB1B4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="KS__6" ID="{F8CFF40A-C112-4D6A-8F37-E8BDD9059847}" ShortID="983276509">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="KS__6" ID="{050FED50-827D-40AE-BE9D-27E843A3EF37}">
+											<Language>SFX</Language>
+											<AudioFile>KS__6.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="617992626"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="KS__6" ID="{050FED50-827D-40AE-BE9D-27E843A3EF37}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="DoorOpen" ID="{40AE290E-BF24-469D-A182-547A3DF35104}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="DoorClose" ID="{C451ED11-8066-4134-AB50-45F9C927AE08}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="DoorLocked" ID="{A0E170BB-2F7D-465A-95A1-1D87E4CCC237}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Locked" ID="{D6CAB819-3ED5-412F-8A86-125000BA3D13}"/>
+								<ItemList>
+									<ItemRef Name="DoorLocked" ID="{A0E170BB-2F7D-465A-95A1-1D87E4CCC237}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Open" ID="{9A5B8C33-A785-4BDE-AE5F-28DC41ABACD1}"/>
+								<ItemList>
+									<ItemRef Name="DoorOpen" ID="{40AE290E-BF24-469D-A182-547A3DF35104}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Closed" ID="{87A6C4A0-8B06-4540-932C-26E94592EA5E}"/>
+								<ItemList>
+									<ItemRef Name="DoorClose" ID="{C451ED11-8066-4134-AB50-45F9C927AE08}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

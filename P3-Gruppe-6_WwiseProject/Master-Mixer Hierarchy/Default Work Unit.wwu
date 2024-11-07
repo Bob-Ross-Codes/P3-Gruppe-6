@@ -67,7 +67,22 @@
 										<Property Name="EnableDiffraction" Type="bool" Value="True"/>
 										<Property Name="ListenerRelativeRouting" Type="bool" Value="True"/>
 									</PropertyList>
-									<ReferenceList/>
+									<PositioningInfo>
+										<Position Name="" ID="{8D3018D7-14A9-4256-8E58-55C22D57150F}">
+											<ChildrenList>
+												<Path2D Name="LargeRoom_Path" ID="{A18BF130-AD56-4C74-8949-C445FDA03410}">
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>50</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+											</ChildrenList>
+										</Position>
+									</PositioningInfo>
 									<ObjectLists>
 										<ObjectList Name="Effects">
 											<Reference>
@@ -106,6 +121,31 @@
 														<ReferenceList>
 															<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 																<ObjectRef Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AuxBus>
+								<AuxBus Name="Smalle" ID="{B3A74DDE-FE9D-4A7F-ACD5-75A573525C24}">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+										<Property Name="ListenerRelativeRouting" Type="bool" Value="True"/>
+										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+									</PropertyList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{F13F61AD-30D5-4CE4-8DA2-D01ABB0B2CB9}" ShortID="585370319">
+														<ReferenceList>
+															<Reference Name="Effect">
+																<Custom>
+																	<Effect Name="Wwise_RoomVerb_(Custom)" ID="{A9F2D937-8D96-4D6F-BC41-20964B9F03CB}" ShortID="362604868" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3"/>
+																</Custom>
 															</Reference>
 														</ReferenceList>
 													</EffectSlot>

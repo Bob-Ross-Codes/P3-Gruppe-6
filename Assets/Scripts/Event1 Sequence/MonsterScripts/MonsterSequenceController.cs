@@ -11,7 +11,7 @@ public class MonsterSequenceController : MonoBehaviour
     private AudioSource audioSource;        // AudioSource for playing sounds
 
     private bool playerIsHidden = false;
-
+    [SerializeField] private float SpawnRotation = 270f;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -47,12 +47,12 @@ public class MonsterSequenceController : MonoBehaviour
 
     private void SpawnMonster()
     {
-        GameObject monster = Instantiate(monsterPrefab, waypoints[0].position, Quaternion.identity);
+        GameObject monster = Instantiate(monsterPrefab, waypoints[0].position, Quaternion.Euler(0f, SpawnRotation, 0f));
         MonsterMovement monsterMovement = monster.AddComponent<MonsterMovement>();
 
         // Set idle times at waypoints
         float idleTimeAtFirstWaypoint = 7f;  // Set idle time at the first waypoint
-        float idleTimeAtLastWaypoint = 5f;   // Set idle time at the last waypoint
+        float idleTimeAtLastWaypoint = 2f;   // Set idle time at the last waypoint
 
         // Initialize monster movement with waypoints, speed, and idle times
         monsterMovement.Initialize(waypoints, monsterSpeed, idleTimeAtFirstWaypoint, idleTimeAtLastWaypoint);

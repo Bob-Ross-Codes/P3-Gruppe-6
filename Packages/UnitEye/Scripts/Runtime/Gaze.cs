@@ -1,5 +1,6 @@
 using MediaPipe.Holistic;
 using System.Collections.Generic;
+using System.Threading;
 using UnitEye;
 using UnityEngine;
 
@@ -9,6 +10,10 @@ public class Gaze : MonoBehaviour
     const int CROSSHAIR_SIZE = 80;
 
     #region Private values
+    // Mads' super ændringer
+    private float timer = 0;
+    private float updateInterval = 0.3f;
+    private float calibrateY = 0.5f;
 
     private AOIManager _aoiManager = new AOIManager();
     private List<string> aoiNameList = new List<string>();
@@ -43,8 +48,6 @@ public class Gaze : MonoBehaviour
     private Calibrations _calibrationBackup;
     private bool _backupped;
 
-    private float calibatreY = 0.5f;
-
     #endregion
 
     #region Public accessors
@@ -60,8 +63,6 @@ public class Gaze : MonoBehaviour
     public bool PauseCSVLogging { get; set; }
     public long LastGazeLocationTimeUnix { get; private set; }
 
-    
-
     #endregion
 
     #region Serialized values
@@ -76,8 +77,6 @@ public class Gaze : MonoBehaviour
     public bool showEyes = true;
     public bool visualizeAOI = false;
     public bool showGazeUI = false;
-
-  
 
     [System.NonSerialized]
     public bool gazeUIActivated;
@@ -210,8 +209,21 @@ public class Gaze : MonoBehaviour
         }
     }
 
-    public virtual void LateUpdate()
+    public virtual void FixedUpdate()
     {
+        timer += Time.fixedDeltaTime;
+        if (timer > updateInterval)
+        {
+            timer = 0;
+            PerformGazeUpdate();
+        }
+    }
+
+
+    public virtual void PerformGazeUpdate()
+    {
+        // late update is used to ensure that the gaze location is updated after the EyeMU model has been run
+
         //If no holistic pipeline abort
         if (_holisticPipeline == null) return;
 
@@ -229,8 +241,8 @@ public class Gaze : MonoBehaviour
         Vector2 unfilteredGaze = gazeLocation;
         gazeLocation = SmoothGazeLocation(gazeLocation, _filtering);
 
-        //Apply custom multplier to filty for more accurate real life representation.
-        gazeLocation.y *= calibatreY;
+        // Apply custom multiplier to the gaze location on the Y axis
+        gazeLocation.y *= calibrateY;
 
         //Update last gaze location timestamp
         var now = System.DateTime.Now;
