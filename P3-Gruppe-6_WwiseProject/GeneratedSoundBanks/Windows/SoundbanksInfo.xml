@@ -1216,7 +1216,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{6A7BF05C-8F08-9B39-3B0F-06984F279DC5}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{188A42B8-AB78-8637-E8F3-D52C1975A6B7}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -1224,7 +1224,7 @@
 					<Plugin Id="362604868" Name="Wwise_RoomVerb_(Custom)" LibName="Wwise RoomVerb" LibId="7733251"/>
 				</Custom>
 				<ShareSets>
-					<Plugin Id="2791153688" Name="Hall_Small" LibName="Wwise RoomVerb" LibId="7733251"/>
+					<Plugin Id="602546716" Name="Room_Large" LibName="Wwise RoomVerb" LibId="7733251"/>
 					<Plugin Id="2995775460" Name="Room_Small" LibName="Wwise RoomVerb" LibId="7733251"/>
 				</ShareSets>
 				<AudioDevices>
@@ -1249,7 +1249,7 @@
 				<AuxBus Id="187046019" Name="LargeRoom">
 					<PluginRefs>
 						<ShareSets>
-							<PluginRef Id="2791153688"/>
+							<PluginRef Id="602546716"/>
 						</ShareSets>
 					</PluginRefs>
 					<AuxBusRefs>
@@ -1380,5 +1380,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{2DF86427-6AA0-7404-5268-32D42852B9D6}</FileHash>
+	<FileHash>{8E191424-BB75-59FF-C791-B197E2A80632}</FileHash>
 </SoundBanksInfo>
