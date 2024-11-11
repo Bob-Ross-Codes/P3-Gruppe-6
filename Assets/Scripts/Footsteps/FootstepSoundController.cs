@@ -16,10 +16,19 @@ public class FootstepSoundController : MonoBehaviour
     private float stepTimer = 0f;
     private CharacterController characterController;
 
+    private ClosetHide closetHide; // Reference to the ClosetHide script
+
+    void Awake()
+    {
+        closetHide = GetComponent<ClosetHide>();
+    }
+
     // Variables to store RTPC and switch values
     private float playerSpeed;
     private float groundWetness = 0f;  // Default dry
     private string currentGroundType = "Tile";  // Default ground type
+
+    private bool isHiding;
 
     void Start()
     {
@@ -28,6 +37,10 @@ public class FootstepSoundController : MonoBehaviour
 
     void Update()
     {
+        if (closetHide != null)
+        {
+            isHiding = closetHide.isHiding;
+        }
         // Update player speed based on movement
         playerSpeed = characterController.velocity.magnitude;
         AkSoundEngine.SetRTPCValue(speedRTPC, playerSpeed);
@@ -91,6 +104,9 @@ public class FootstepSoundController : MonoBehaviour
 
     private void PlayFootstep()
     {
-        AkSoundEngine.PostEvent(footstepEvent, gameObject);
+        if(isHiding == false)
+        {
+            AkSoundEngine.PostEvent(footstepEvent, gameObject);
+        }
     }
 }

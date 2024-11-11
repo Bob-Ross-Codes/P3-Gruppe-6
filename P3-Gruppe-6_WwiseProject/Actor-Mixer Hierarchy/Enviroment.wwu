@@ -402,6 +402,11 @@
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="Color" Type="int16" Value="20"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -766,7 +771,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-6</Value>
+												<Value>3</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -791,35 +796,19 @@
 												<MediaID ID="454425690"/>
 											</MediaIDList>
 										</AudioFileSource>
-										<AudioFileSource Name="Horror Sound Effects - Resonating Wires (1)" ID="{CDE5B263-4D5D-4270-A90C-CBF1E9838942}">
-											<Language>SFX</Language>
-											<AudioFile>Horror Sound Effects - Resonating Wires (1).wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="683363416"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="Horror Sound Effects - Resonating Wires" ID="{94EA94E2-8811-44AB-80F8-F119F39772CC}">
-											<Language>SFX</Language>
-											<AudioFile>Horror Sound Effects - Resonating Wires.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="100479089"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="Metal Bangs Sound Effect" ID="{6DAC1100-1322-4837-A376-9C726EF0107A}">
-											<Language>SFX</Language>
-											<AudioFile>Metal Bangs Sound Effect.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="659808192"/>
-											</MediaIDList>
-										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="Metal Bangs Sound Effect" ID="{6DAC1100-1322-4837-A376-9C726EF0107A}" Platform="Linked"/>
+										<ActiveSource Name="Knock on wood" ID="{507E3958-962D-4D5C-ABEF-A522D02B2F9C}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Horror Sound Effects - Resonating Wires (1)" ID="{493A1AC5-7853-484F-A570-A0DE8A66B5C3}" ShortID="320107927">
 									<PropertyList>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-18</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -876,6 +865,11 @@
 								<Sound Name="Horror Sound Effects - Resonating Wires" ID="{331B5734-D7FE-48D6-99B7-0087585315B0}" ShortID="468660470">
 									<PropertyList>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-16</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -932,6 +926,11 @@
 								<Sound Name="Metal Bangs Sound Effect" ID="{AC0D671F-DFB7-4CC3-A995-2E380B6CCEE6}" ShortID="603618795">
 									<PropertyList>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1010,7 +1009,7 @@
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-13</Value>
+												<Value>5</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{3DED0711-B93B-D181-83ED-3289328789A6}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{A3E16A5D-407B-C704-17A8-578F52F26A96}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -65,6 +65,10 @@
 					<ShortName>Thunder Clap Sound Effect.wav</ShortName>
 					<CachePath>SFX/Thunder Clap Sound Effect_818F3B66.wem</CachePath>
 				</File>
+				<File Id="454425690" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Knock on wood.wav</ShortName>
+					<CachePath>SFX/Knock on wood_A6BD9C50.wem</CachePath>
+				</File>
 				<File Id="464104037" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Thunder Sound Effects.wav</ShortName>
 					<CachePath>SFX/Thunder Sound Effects_818F3B66.wem</CachePath>
@@ -99,11 +103,7 @@
 				</File>
 				<File Id="658070560" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Horror Sound Effects - Resonating Wires (1).wav</ShortName>
-					<CachePath>SFX/Horror Sound Effects - Resonating Wires (1)_85CF3A10.wem</CachePath>
-				</File>
-				<File Id="659808192" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Metal Bangs Sound Effect.wav</ShortName>
-					<CachePath>SFX/Metal Bangs Sound Effect_818F3B66.wem</CachePath>
+					<CachePath>SFX/Horror Sound Effects - Resonating Wires (1)_38E6A96D.wem</CachePath>
 				</File>
 				<File Id="754791402" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS__5.wav</ShortName>
@@ -127,11 +127,11 @@
 				</File>
 				<File Id="958601778" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Horror Sound Effects - Resonating Wires.wav</ShortName>
-					<CachePath>SFX/Horror Sound Effects - Resonating Wires_D88D33C9.wem</CachePath>
+					<CachePath>SFX/Horror Sound Effects - Resonating Wires_E6869E5F.wem</CachePath>
 				</File>
 				<File Id="971489578" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Metal Bangs Sound Effect.wav</ShortName>
-					<CachePath>SFX/Metal Bangs Sound Effect_44E47D6B.wem</CachePath>
+					<CachePath>SFX/Metal Bangs Sound Effect_B3251DE5.wem</CachePath>
 				</File>
 				<File Id="973496908" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Eerie Transition_1.wav</ShortName>
@@ -171,10 +171,10 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="3483129277" Name="Enter_Reverb_Zone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="967859696" Name="Horror_Ambience" DurationType="OneShot" DurationMin="4.0793147" DurationMax="180.18">
+				<Event Id="967859696" Name="Horror_Ambience" DurationType="OneShot" DurationMin="4.0793147" DurationMax="18.832373">
 					<MediaRefs>
+						<MediaRef Id="454425690"/>
 						<MediaRef Id="658070560"/>
-						<MediaRef Id="659808192"/>
 						<MediaRef Id="755327924"/>
 						<MediaRef Id="958601778"/>
 						<MediaRef Id="971489578"/>
@@ -1380,5 +1380,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5A155EE4-1903-64F9-3A1C-2603E14FDA38}</FileHash>
+	<FileHash>{E6C4B25C-2DDC-995A-576E-C728AACF7124}</FileHash>
 </SoundBanksInfo>

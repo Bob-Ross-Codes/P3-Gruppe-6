@@ -18,11 +18,6 @@ public class DoorOpenClose : MonoBehaviour
         {
             doorAnimator.SetTrigger("Toggle");
             doorAnimator.SetBool("IsOpen", true);
-
-            if (gameObject.CompareTag("Girl"))
-            {
-                AkSoundEngine.SetRTPCValue("RTPC_WomanState", 1);
-            }
         }
 
         if (isInRange && Input.GetKeyDown(KeyCode.E) && isLocked)

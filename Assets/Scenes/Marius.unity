@@ -12824,6 +12824,7 @@ GameObject:
   - component: {fileID: 875882308}
   - component: {fileID: 875882307}
   - component: {fileID: 875882306}
+  - component: {fileID: 875882313}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -13104,6 +13105,35 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &875882313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875882298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8968169988d6a45db8cb9545c12b08ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b5e25893e30fb4cda874d0cd915e6a85, type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
 --- !u!1 &876801112
 GameObject:
   m_ObjectHideFlags: 0
@@ -26820,7 +26850,8 @@ MonoBehaviour:
   mainCamera: {fileID: 1968876638}
   closetCamera: {fileID: 734967604}
   playerController: {fileID: 875882303}
-  objectToDisable: {fileID: 945199269}
+  objectToDisableHallwayOne: {fileID: 0}
+  objectToEnableHallwayOne: {fileID: 0}
   leftDoorAnimator: {fileID: 1520288245}
   rightDoorAnimator: {fileID: 467862723}
   player: {fileID: 875882299}
@@ -30780,6 +30811,8 @@ GameObject:
   - component: {fileID: 2045352664}
   - component: {fileID: 2045352663}
   - component: {fileID: 2045352665}
+  - component: {fileID: 2045352667}
+  - component: {fileID: 2045352666}
   m_Layer: 0
   m_Name: WomanScreaming
   m_TagString: Untagged
@@ -30796,7 +30829,7 @@ Transform:
   m_GameObject: {fileID: 2045352661}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.064, y: 15.836, z: 8.89}
+  m_LocalPosition: {x: -26.064, y: 15.836, z: 10.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30885,6 +30918,40 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &2045352666
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045352661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2045352667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045352661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788757f04ff9a4fc6aaae4232646b969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Collider: {fileID: 0}
 --- !u!1 &2047561937
 GameObject:
   m_ObjectHideFlags: 0
