@@ -9,7 +9,7 @@ public class RunHallwayChanger : MonoBehaviour
     private GameObject currentObject; // Reference to the currently instantiated object
     private int currentIndex = 0; // Index to track the current object in the list
     private bool isCooldownActive = false; // Track if delay is active
-
+  private bool isFirstSpawn = true; // Track if it's the first spawn
 
 
 // instantiate the first object in the list
@@ -19,10 +19,7 @@ public class RunHallwayChanger : MonoBehaviour
         {
             currentObject = Instantiate(objectsToSpawn[currentIndex], spawnPoint.position, spawnPoint.rotation);
             currentIndex++;
-        }
-        else
-        {
-            Debug.Log("No objects to spawn.");
+            isFirstSpawn = false; // Track if it's the first spawn
         }
     }
 
@@ -45,20 +42,30 @@ public class RunHallwayChanger : MonoBehaviour
             Destroy(currentObject);
         }
 
-        // Wait for 5 seconds
-        yield return new WaitForSeconds(2f);
+        // Wait for 4 seconds
+        yield return new WaitForSeconds(4f);
 
-        // Instantiate the next object in the list if it exists
-        if (currentIndex < objectsToSpawn.Count)
+        // Check if it's the first spawn
+        if (isFirstSpawn)
         {
-            currentObject = Instantiate(objectsToSpawn[currentIndex], spawnPoint.position, spawnPoint.rotation);
-            currentIndex++;
+            currentObject = Instantiate(objectsToSpawn[0], spawnPoint.position, spawnPoint.rotation);
+            isFirstSpawn = false; // Set to false after the first spawn
         }
         else
         {
-            Debug.Log("No more objects to spawn.");
+            // Instantiate a random object from the list, excluding the first one
+            if (objectsToSpawn.Count > 1)
+            {
+                int randomIndex = Random.Range(1, objectsToSpawn.Count); // Only from index 1 and up
+                currentObject = Instantiate(objectsToSpawn[randomIndex], spawnPoint.position, spawnPoint.rotation);
+            }
+            else
+            {
+                Debug.Log("No objects to spawn.");
+            }
         }
 
         isCooldownActive = false; // Reset cooldown
     }
 }
+
