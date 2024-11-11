@@ -37,10 +37,14 @@ public class ClosetHide : MonoBehaviour
 
         if (isHiding)
         {
+
+
             // Switch to ClosetCamera, disable player movement, and open the doors
             mainCamera.Priority = 0;
             closetCamera.Priority = 10;
-            playerController.enabled = false;
+            // the following line sets the first person controller to be speed to be 0
+            playerController.MoveSpeed = 0;
+
 
             leftDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the left door
             rightDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the right door
@@ -48,7 +52,6 @@ public class ClosetHide : MonoBehaviour
             // Disable the specified GameObject (only once)
             objectToDisableHallwayOne.SetActive(false);
 
-            //enable objects
             
 
             // Player entered the closet
@@ -59,7 +62,8 @@ public class ClosetHide : MonoBehaviour
             // Return to MainCamera, enable player movement, and close the doors
             mainCamera.Priority = 10;
             closetCamera.Priority = 0;
-            playerController.enabled = true;
+
+            playerController.MoveSpeed = 3.5f;
 
             leftDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the left door
             rightDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the right door
