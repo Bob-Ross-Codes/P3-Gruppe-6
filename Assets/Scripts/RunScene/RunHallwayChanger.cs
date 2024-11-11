@@ -10,6 +10,23 @@ public class RunHallwayChanger : MonoBehaviour
     private int currentIndex = 0; // Index to track the current object in the list
     private bool isCooldownActive = false; // Track if delay is active
 
+
+
+// instantiate the first object in the list
+    private void Start()
+    {
+        if (objectsToSpawn.Count > 0)
+        {
+            currentObject = Instantiate(objectsToSpawn[currentIndex], spawnPoint.position, spawnPoint.rotation);
+            currentIndex++;
+        }
+        else
+        {
+            Debug.Log("No objects to spawn.");
+        }
+    }
+
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player") && !isCooldownActive) // Check if player exits and cooldown is not active
@@ -29,7 +46,7 @@ public class RunHallwayChanger : MonoBehaviour
         }
 
         // Wait for 5 seconds
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
 
         // Instantiate the next object in the list if it exists
         if (currentIndex < objectsToSpawn.Count)

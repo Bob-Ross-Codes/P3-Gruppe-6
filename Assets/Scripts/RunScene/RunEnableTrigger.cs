@@ -11,6 +11,7 @@ public class RunEnableTrigger : MonoBehaviour
     public float newWalkSpeed = 2.0f;
     public CinemachineVirtualCamera camera; 
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -18,7 +19,7 @@ public class RunEnableTrigger : MonoBehaviour
             var controller = other.GetComponent<FirstPersonController>();
             if (controller != null)
             {
-                controller.MoveSpeed = newWalkSpeed;
+                controller.MoveSpeed = newWalkSpeed; // Ensure FirstPersonController has a MoveSpeed property
                 StartCoroutine(SmoothTransition(camera.m_Lens.FieldOfView, 90, 1.0f)); // 1 second transition
             }
         }
@@ -36,5 +37,26 @@ public class RunEnableTrigger : MonoBehaviour
         camera.m_Lens.FieldOfView = to;
     }
 
+
+    //destroy a set object when player exits the trigger
+    public GameObject objectToDestroy;
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(DestroyObjectWithDelay(4.0f));
+        }
+    }
+
+    private IEnumerator DestroyObjectWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (objectToDestroy != null)
+        {
+            Destroy(objectToDestroy);
+        }
+    }
+   
 
 }
