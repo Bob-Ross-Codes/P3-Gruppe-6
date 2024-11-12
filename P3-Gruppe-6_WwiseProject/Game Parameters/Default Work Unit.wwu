@@ -65,6 +65,12 @@
 						<Property Name="Max" Type="Real64" Value="1"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="RTPC_LightState" ID="{239B8FB2-A4ED-4BA7-9F24-E061174CCF4A}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

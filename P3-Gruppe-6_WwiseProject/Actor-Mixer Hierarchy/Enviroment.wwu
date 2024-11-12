@@ -1296,6 +1296,92 @@
 						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
+				<SwitchContainer Name="LightSwitch" ID="{1FAA47EC-7995-4CF8-AC44-30FED172EA0A}" ShortID="768677205">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="On" ID="{F7F12C57-BB5B-4DE1-90F4-DB530A499080}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="LightSwitch" ID="{7DE852A0-39EA-48CB-AF01-73FDF8C363DD}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Light_Off" ID="{DF17CD59-B2FC-4060-90CE-AA2C31FB56D0}" ShortID="400882587">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Large Switch Sound Effect" ID="{6AA048A8-2D79-4495-8A6E-471DEB29E4C8}">
+									<Language>SFX</Language>
+									<AudioFile>Large Switch Sound Effect.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="819551825"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Large Switch Sound Effect" ID="{6AA048A8-2D79-4495-8A6E-471DEB29E4C8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Light_On" ID="{7A7C624D-8100-4B5F-B053-741E437EC85D}" ShortID="700391465">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Light Switch On Reverb Warehouse" ID="{EDB69795-AA7C-432E-AD79-F220B8DC2062}">
+									<Language>SFX</Language>
+									<AudioFile>Light Switch On Reverb Warehouse.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="625393619"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Light Switch On Reverb Warehouse" ID="{EDB69795-AA7C-432E-AD79-F220B8DC2062}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Light_On" ID="{7A7C624D-8100-4B5F-B053-741E437EC85D}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Light_Off" ID="{DF17CD59-B2FC-4060-90CE-AA2C31FB56D0}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="On" ID="{F7F12C57-BB5B-4DE1-90F4-DB530A499080}"/>
+								<ItemList>
+									<ItemRef Name="Light_On" ID="{7A7C624D-8100-4B5F-B053-741E437EC85D}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Off" ID="{9D9C3ADC-EDE8-44D7-84D9-E2E7B71E46E4}"/>
+								<ItemList>
+									<ItemRef Name="Light_Off" ID="{DF17CD59-B2FC-4060-90CE-AA2C31FB56D0}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
