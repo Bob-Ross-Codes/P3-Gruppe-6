@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID DOOR_SFX_EVENT = 842992288U;
         static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
         static const AkUniqueID HORROR_AMBIENCE = 967859696U;
+        static const AkUniqueID LIGHT_ONOFF_EVENT = 1006235157U;
         static const AkUniqueID PLAY_INTROMUSIC = 3582431873U;
         static const AkUniqueID PLAY_MONSTER_SOUNDS = 324561159U;
         static const AkUniqueID PLAY_PLYR_FOOTSTEPS = 673033979U;
@@ -115,6 +116,17 @@ namespace AK
             } // namespace SWITCH
         } // namespace GROUNDWETNESSSWITCH
 
+        namespace LIGHTSWITCH
+        {
+            static const AkUniqueID GROUP = 1504742439U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID OFF = 930712164U;
+                static const AkUniqueID ON = 1651971902U;
+            } // namespace SWITCH
+        } // namespace LIGHTSWITCH
+
         namespace MONSTERSTATE
         {
             static const AkUniqueID GROUP = 687366024U;
@@ -171,6 +183,7 @@ namespace AK
         static const AkUniqueID RTPC_FLYCOUNT = 1318719891U;
         static const AkUniqueID RTPC_GROUNDWETNESS = 870672907U;
         static const AkUniqueID RTPC_KNOCKINGINTENSITY = 2692556666U;
+        static const AkUniqueID RTPC_LIGHTSTATE = 191147360U;
         static const AkUniqueID RTPC_PLAYERSPEED = 2653406601U;
         static const AkUniqueID RTPC_RAINAMOUNT = 1294084109U;
         static const AkUniqueID RTPC_REVERB = 4143461479U;

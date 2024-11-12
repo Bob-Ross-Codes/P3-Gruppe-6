@@ -199,6 +199,40 @@
 						</Curve>
 					</SwitchOnRTPC>
 				</SwitchGroup>
+				<SwitchGroup Name="LightSwitch" ID="{7DE852A0-39EA-48CB-AF01-73FDF8C363DD}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="On" ID="{F7F12C57-BB5B-4DE1-90F4-DB530A499080}"/>
+						<Switch Name="Off" ID="{9D9C3ADC-EDE8-44D7-84D9-E2E7B71E46E4}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_LightState" ID="{239B8FB2-A4ED-4BA7-9F24-E061174CCF4A}"/>
+						<Curve Name="" ID="{C6D26020-1B41-4CD5-AB06-A8D61E9BC9D9}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>0.5</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>2</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>
