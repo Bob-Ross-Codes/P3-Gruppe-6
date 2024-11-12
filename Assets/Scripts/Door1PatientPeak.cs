@@ -55,9 +55,8 @@ public class Door1PatientPeak : MonoBehaviour
         yield return new WaitForSeconds(time);                  //Wait
         patient.SetActive(false);                               //Patient dissapears
         patient.transform.localPosition = newPosition;
-
         foreach (var light in lightsToFlicker)
-        {
+        {   if(light != null)
             light.enabled = true;                               //Turn on lights
         }
     }

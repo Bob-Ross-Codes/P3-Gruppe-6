@@ -15,61 +15,70 @@ public class TurnWorld : MonoBehaviour
     [SerializeField] private GameObject exitSign;
 
     private Quaternion initialRotation = Quaternion.Euler(0f, 0f, 0f);
-    private Quaternion newRotation = Quaternion.Euler(90f, 0f, 0f);
+    private Quaternion targetRotation = Quaternion.Euler(90f, 0f, 0f);
+    private Vector3 initialPosition; // Store initial position
+    private Vector3 targetPosition; // Target position down and back
     private float interactionRange = 6f; // Set the interaction range
     private bool triggered;
     private bool triggeredToNormal; // Flag for TurnToNormal coroutine
 
-    void Start()
-    {
-        triggered = false;
-        triggeredToNormal = false;
-        hallway.transform.localRotation = initialRotation;
-        exitSign.SetActive(false);
-        SetLightsEnabled(RedLights, false);
-        SetLightsEnabled(AllLights, true);
-    }
+void Start()
+{
+    triggered = false;
+    triggeredToNormal = false;
+    hallway.transform.localRotation = initialRotation;
+    exitSign.SetActive(false);
+    SetLightsEnabled(RedLights, false);
+    SetLightsEnabled(AllLights, true);
+
+    // Set the class-level initialPosition and targetPosition (not local variables)
+    initialPosition = hallway.transform.localPosition; // Store initial position
+    targetPosition = initialPosition + new Vector3(0f, -12f, -25f); // Target position down and back
+}
+
 
     private void FixedUpdate()
     {
         float distanceToPlayer = Vector3.Distance(player.position, trigger.position);
-        Debug.Log("Distance to Player: " + distanceToPlayer);
+        Debug.Log("Distance to trigger 1: " + distanceToPlayer);
+        //Debug.Log("Distance to Player: " + distanceToPlayer);
 
         // Start TurnToRed coroutine if within range and not triggered
         if (distanceToPlayer < interactionRange && !triggered)
         {
             StartCoroutine(TurnToRed(4f)); // Start TurnToRed coroutine
+            Debug.Log("TurningRed");
             triggered = true;
         }
 
         float distanceToPlayer2 = Vector3.Distance(player.position, trigger2.position);
+        Debug.Log("Distance to trigger 2: " + distanceToPlayer2);
         // Start TurnToNormal coroutine if within range and not triggered to normal
         if (distanceToPlayer2 < interactionRange && !triggeredToNormal)
         {
-            StartCoroutine(TurnToNormal(4f)); // Start TurnToNormal coroutine
+            Debug.Log("TurningToNormal");
+            StartCoroutine(TurnToNormal(2f)); // Start TurnToNormal coroutine
             triggeredToNormal = true;
         }
     }
 
     private IEnumerator TurnToRed(float duration)
     {
-        Destroy(handLight);
-
         float elapsedTime = 0f;
-        Vector3 initialPosition = hallway.transform.localPosition; // Store initial position
-        Vector3 targetPosition = initialPosition + new Vector3(0f, -12f, -25f); // Target position down and back
 
-        // Smooth rotation and movement
+        // Smooth rotation and movement over time
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration; // Normalized time (0 to 1)
-            hallway.transform.localRotation = Quaternion.Lerp(initialRotation, newRotation, t);
+
+            // Smoothly interpolate the rotation and position
+            hallway.transform.localRotation = Quaternion.Lerp(initialRotation, targetRotation, t);
             hallway.transform.localPosition = Vector3.Lerp(initialPosition, targetPosition, t);
 
             elapsedTime += Time.deltaTime;
             yield return null;
 
-            // Destroy journals and manage flickering lights
+            // Destroy journals and manage flickering lights during the transition
             if (elapsedTime >= 0.3f && elapsedTime <= 0.5f)
             {
                 foreach (var journal in Journals)
@@ -87,17 +96,32 @@ public class TurnWorld : MonoBehaviour
             else if (elapsedTime > 3.2f && elapsedTime <= 3.4f) { SetLightsEnabled(AllLights, true); AkSoundEngine.PostEvent("Flickering_Lights", gameObject); }
             else if (elapsedTime > 3.4f && elapsedTime <= 3.9f) { SetLightsEnabled(AllLights, false); }
         }
+
+        // Ensure hallway finishes at the final target position and rotation
+        hallway.transform.localRotation = targetRotation;
+        hallway.transform.localPosition = targetPosition;
+
+        yield return new WaitForSeconds(duration);
+
+        AkSoundEngine.PostEvent("Light_OnOff_Event", gameObject);
+        SetLightsEnabled(RedLights, true);
+        exitSign.SetActive(true);
+        Destroy(handLight);
     }
+
 
     private IEnumerator TurnToNormal(float duration)
     {
-        Vector3 initialPosition = hallway.transform.localPosition; // Store initial position
-        Vector3 targetPosition = initialPosition + new Vector3(0f, 12f, 25f); // Target position up and forward
+        yield return new WaitForSeconds(duration / 4);
 
-        yield return new WaitForSeconds(duration / 2);
+        hallway.transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
+        hallway.transform.localPosition = initialPosition;
 
-        hallway.transform.localRotation = Quaternion.Lerp(newRotation, initialRotation, 0.1f);
-        hallway.transform.localPosition = Vector3.Lerp(hallway.transform.localPosition, targetPosition, 0.1f);
+        yield return new WaitForSeconds(duration / 4);
+
+
+        player.transform.localPosition = trigger2.transform.localPosition;
+
 
         AkSoundEngine.PostEvent("Light_OnOff_Event", gameObject);
         SetLightsEnabled(RedLights, false);
@@ -117,3 +141,4 @@ public class TurnWorld : MonoBehaviour
         }
     }
 }
+//TRigger 2 virker ikke
