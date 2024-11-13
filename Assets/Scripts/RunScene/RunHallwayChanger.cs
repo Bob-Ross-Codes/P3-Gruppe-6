@@ -74,6 +74,7 @@ public class RunHallwayChanger : MonoBehaviour
                 Debug.Log("No objects to spawn.");
             }
         }
+        
 
         isCooldownActive = false; // Reset cooldown
     }
