@@ -11,11 +11,15 @@ public class ClosetHide : MonoBehaviour
     public FirstPersonController playerController; // Reference to the FirstPersonController script
     public GameObject objectToDisableHallwayOne; // Reference to the GameObject to disable when hiding
     public GameObject objectToEnableHallwayOne;
+
     public Animator leftDoorAnimator; // Animator for the left door
     public Animator rightDoorAnimator; // Animator for the right door
+    public Animator doorHingeAnimator;
     public Transform player; // Reference to the player's transform
     public float interactionRange = 2.0f; // Set the interaction range
     public MonsterSequenceController sequenceController; // Reference to the MonsterSequenceController script
+
+    // Måske den mest GOATede bool i hele spillet
     public bool isHiding = false;
     private bool canToggleHiding = true; // Flag to control the cooldown
 
@@ -52,8 +56,9 @@ public class ClosetHide : MonoBehaviour
             // Disable the specified GameObject (only once)
             objectToDisableHallwayOne.SetActive(false);
 
+            // indset logic der timer det ordenligt
 
-
+            doorHingeAnimator.SetTrigger("broken");
             // Player entered the closet
             sequenceController.OnPlayerHidden();
             Debug.Log("Player is hiding in the closet");
