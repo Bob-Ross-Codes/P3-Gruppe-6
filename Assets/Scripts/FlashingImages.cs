@@ -9,7 +9,8 @@ public class FlashingImages : MonoBehaviour
 {
     [SerializeField] private Image canvasImage;
     [SerializeField] private Sprite[] images;
-    [SerializeField] private float flashSpeed = 0.5f;
+    [SerializeField] private float minFlashSpeed = 0.1f;
+    [SerializeField] private float maxFlashSpeed = 0.5f;
     [SerializeField] private int currentImage = 0;
 
     private Coroutine flashCoroutine;
@@ -35,7 +36,7 @@ public class FlashingImages : MonoBehaviour
                 canvasImage.enabled = true;
                 // Start the coroutine
                 flashCoroutine = StartCoroutine(FlashImages());
-              
+
             }
         }
     }
@@ -62,7 +63,8 @@ public class FlashingImages : MonoBehaviour
             yield return null;
             // Wait for the specified flash speed
             canvasImage.enabled = false;
-            yield return new WaitForSeconds(flashSpeed);
+
+            yield return new WaitForSeconds(UnityEngine.Random.Range(minFlashSpeed, maxFlashSpeed));
             canvasImage.enabled = true;
         }
     }
