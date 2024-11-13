@@ -1,9 +1,7 @@
 //made using ChatGPT and Copilot
 
-using System;
-using System.Collections;
 using UnityEngine;
-
+using System.Collections;
 public class MonsterMovement : MonoBehaviour
 {
     private Transform[] waypoints;
@@ -30,7 +28,6 @@ public class MonsterMovement : MonoBehaviour
         if (waypoints == null || waypoints.Length == currentWaypointIndex || isWaiting) return;
 
         float currentSpeed = isSlowingDown() ? speed * slowdownFactor : speed;
-
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, currentSpeed * Time.deltaTime);
 
         Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
@@ -114,5 +111,7 @@ public class MonsterMovement : MonoBehaviour
         }
     }
 }
+
+
 
 

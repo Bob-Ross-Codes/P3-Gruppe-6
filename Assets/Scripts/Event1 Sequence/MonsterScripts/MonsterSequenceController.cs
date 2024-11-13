@@ -1,63 +1,76 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI; // For NavMeshAgent (if using pathfinding)
 
 public class MonsterSequenceController : MonoBehaviour
 {
-    public GameObject monsterPrefab;        // Prefab of the monster to spawn
-    public Transform[] waypoints;           // Waypoints for the monster to follow
-    public float monsterSpeed = 2f;         // Speed of the monster movement
+    public GameObject monsterPrefab; // Assign the monster prefab in the Inspector
+    public Transform[] waypoints; // Array of waypoints for the monster to follow
+    public float idleDuration = 2.0f; // Idle duration at specified waypoints
+    private GameObject spawnedMonster; // Reference to the spawned monster
 
-    public AudioClip doorBustSound;         // AudioClip for door bust sound
-    private AudioSource audioSource;        // AudioSource for playing sounds
-
-    private bool playerIsHidden = false;
-    [SerializeField] private float SpawnRotation = 270f;
-    void Start()
+    private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
+        if (waypoints.Length != 4)
         {
-            // Add AudioSource component if not already attached
-            audioSource = gameObject.AddComponent<AudioSource>();
+            Debug.LogError("Please assign exactly 4 waypoints in the Inspector.");
         }
     }
 
     public void OnPlayerHidden()
     {
-        if (!playerIsHidden)
+        if (spawnedMonster == null)
         {
-            playerIsHidden = true;
-            StartCoroutine(StartMonsterSequence());
+            StartCoroutine(SpawnAndControlMonster());
         }
     }
 
-    private IEnumerator StartMonsterSequence()
+    private IEnumerator SpawnAndControlMonster()
     {
-        // Wait a few seconds for suspense
-        yield return new WaitForSeconds(3);
+        // Spawn the monster at the first waypoint
+        spawnedMonster = Instantiate(monsterPrefab, waypoints[0].position, Quaternion.identity);
 
-        // Play the door bust sound
-        audioSource.PlayOneShot(doorBustSound);
+        // Get a NavMeshAgent component (if using pathfinding), or any movement component on the monster prefab
+        NavMeshAgent agent = spawnedMonster.GetComponent<NavMeshAgent>();
 
-        // Wait for a short time, then spawn the monster
-        yield return new WaitForSeconds(1);
+        if (agent == null)
+        {
+            Debug.LogError("Monster prefab must have a NavMeshAgent component.");
+            yield break;
+        }
 
-        SpawnMonster();
-    }
+        // Move the monster to each waypoint
+        for (int i = 0; i < waypoints.Length; i++)
+        {
+            agent.SetDestination(waypoints[i].position);
 
-    private void SpawnMonster()
-    {
-        GameObject monster = Instantiate(monsterPrefab, waypoints[0].position, Quaternion.Euler(0f, SpawnRotation, 0f));
-        MonsterMovement monsterMovement = monster.AddComponent<MonsterMovement>();
+            // Wait until the monster reaches the current waypoint
+            while (Vector3.Distance(spawnedMonster.transform.position, waypoints[i].position) > 0.2f)
+            {
+                yield return null;
+            }
 
-        // Set idle times at waypoints
-        float idleTimeAtFirstWaypoint = 7f;  // Set idle time at the first waypoint
-        float idleTimeAtLastWaypoint = 2f;   // Set idle time at the last waypoint
+            // Idle at waypoint 2 and waypoint 4
+            if (i == 1 || i == 3)
+            {
+                yield return new WaitForSeconds(idleDuration);
+            }
+        }
 
-        // Initialize monster movement with waypoints, speed, and idle times
-        monsterMovement.Initialize(waypoints, monsterSpeed, idleTimeAtFirstWaypoint, idleTimeAtLastWaypoint);
+        // Destroy the monster after reaching the last waypoint
+        Destroy(spawnedMonster);
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 

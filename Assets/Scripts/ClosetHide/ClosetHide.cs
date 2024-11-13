@@ -27,7 +27,7 @@ public class ClosetHide : MonoBehaviour
             {
                 ToggleHiding();
                 StartCoroutine(HidingCooldown()); // Start the cooldown coroutine
-            } 
+            }
         }
     }
 
@@ -52,10 +52,11 @@ public class ClosetHide : MonoBehaviour
             // Disable the specified GameObject (only once)
             objectToDisableHallwayOne.SetActive(false);
 
-            
+
 
             // Player entered the closet
             sequenceController.OnPlayerHidden();
+            Debug.Log("Player is hiding in the closet");
         }
         else
         {
@@ -83,3 +84,4 @@ public class ClosetHide : MonoBehaviour
         canToggleHiding = true;
     }
 }
+

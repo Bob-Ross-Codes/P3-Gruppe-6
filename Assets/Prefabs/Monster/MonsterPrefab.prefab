@@ -587,7 +587,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3352479908097210098}
   - component: {fileID: 2529008814720106450}
-  - component: {fileID: 2645717495975723565}
   - component: {fileID: 2102999302876407794}
   m_Layer: 0
   m_Name: MonsterPrefab
@@ -634,18 +633,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2645717495975723565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2724033573697154120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddd79ac2638976141a91a585fa8b0154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2102999302876407794
 MonoBehaviour:
   m_ObjectHideFlags: 0
