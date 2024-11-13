@@ -8,14 +8,10 @@ public class ClosetHide : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera mainCamera;
     [SerializeField] private CinemachineVirtualCamera closetCamera;
-<<<<<<< HEAD
     public FirstPersonController playerController; // Reference to the FirstPersonController script
     public GameObject objectToDisableHallwayOne; // Reference to the GameObject to disable when hiding
     public GameObject objectToEnableHallwayOne;
-=======
-    public FirstPersonController playerController; // Reference to the FirstPersonController scriptCloset
-    public GameObject objectToDisable; // Reference to the GameObject to disable when hiding
->>>>>>> BackUpTestingNicolai3
+
     public Animator leftDoorAnimator; // Animator for the left door
     public Animator rightDoorAnimator; // Animator for the right door
     public Transform player; // Reference to the player's transform
