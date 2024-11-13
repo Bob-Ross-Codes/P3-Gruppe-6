@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID DOOR_SFX_EVENT = 842992288U;
         static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
+        static const AkUniqueID FLASHLIGHT_ONOFF_EVENT = 1510976581U;
         static const AkUniqueID HORROR_AMBIENCE = 967859696U;
         static const AkUniqueID LIGHT_ONOFF_EVENT = 1006235157U;
         static const AkUniqueID PLAY_INTROMUSIC = 3582431873U;
@@ -91,6 +92,17 @@ namespace AK
             } // namespace SWITCH
         } // namespace DOORSFXSWITCH
 
+        namespace FLASHLIGHTSWITCH
+        {
+            static const AkUniqueID GROUP = 423758775U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID OFF = 930712164U;
+                static const AkUniqueID ON = 1651971902U;
+            } // namespace SWITCH
+        } // namespace FLASHLIGHTSWITCH
+
         namespace GROUNDMATERIALSWITCH
         {
             static const AkUniqueID GROUP = 1044534455U;
@@ -122,6 +134,7 @@ namespace AK
 
             namespace SWITCH
             {
+                static const AkUniqueID FLICK = 1558276990U;
                 static const AkUniqueID OFF = 930712164U;
                 static const AkUniqueID ON = 1651971902U;
             } // namespace SWITCH

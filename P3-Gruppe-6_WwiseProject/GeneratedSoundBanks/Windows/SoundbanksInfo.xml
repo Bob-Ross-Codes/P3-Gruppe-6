@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{B24473EC-1008-6570-9679-4E0411568D44}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{8D9A085B-2D26-5EC3-5AE3-2CE5C6E9E0D8}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -93,6 +93,10 @@
 					<ShortName>Thunder Clap Heavy Impact Sound Effect.wav</ShortName>
 					<CachePath>SFX/Thunder Clap Heavy Impact Sound Effect_818F3B66.wem</CachePath>
 				</File>
+				<File Id="548334567" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Flashlight Sound Effect.wav</ShortName>
+					<CachePath>SFX/Flashlight Sound Effect_818F3B66.wem</CachePath>
+				</File>
 				<File Id="582011132" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Door Knocking Slight Rattle.wav</ShortName>
 					<CachePath>SFX/Door Knocking Slight Rattle_80EFC830.wem</CachePath>
@@ -120,6 +124,10 @@
 				<File Id="889004069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hard With Fist.wav</ShortName>
 					<CachePath>SFX/Hard With Fist_818F3B66.wem</CachePath>
+				</File>
+				<File Id="934252715" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Flashlight Sound Effect (1).wav</ShortName>
+					<CachePath>SFX/Flashlight Sound Effect (1)_818F3B66.wem</CachePath>
 				</File>
 				<File Id="945887105" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gentle Knock Wooden Door.wav</ShortName>
@@ -171,6 +179,22 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="3483129277" Name="Enter_Reverb_Zone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1510976581" Name="Flashlight_OnOff_Event" DurationType="OneShot" DurationMin="0.386375" DurationMax="0.42504168">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="423758775" Id="930712164" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="934252715"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="423758775" Id="1651971902"/>
+							<MediaRefs>
+								<MediaRef Id="548334567"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="967859696" Name="Horror_Ambience" DurationType="OneShot" DurationMin="4.0793147" DurationMax="18.832373">
 					<MediaRefs>
 						<MediaRef Id="454425690"/>
@@ -261,6 +285,12 @@
 						<Switch Id="3782157712" Name="HitDoor"/>
 					</Switches>
 				</SwitchGroup>
+				<SwitchGroup Id="423758775" Name="FlashlightSwitch">
+					<Switches>
+						<Switch Id="930712164" Name="Off"/>
+						<Switch Id="1651971902" Name="On"/>
+					</Switches>
+				</SwitchGroup>
 				<SwitchGroup Id="2168380830" Name="DoorSFXSwitch">
 					<GameParameterRef Id="1863449742"/>
 					<Switches>
@@ -271,7 +301,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{584E1CA5-A217-C6C3-7BF4-F0678B25C726}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{F04FB085-EE43-740C-E47D-F795B2EA02AC}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -431,6 +461,14 @@
 					<ShortName>KS_Concrete Urban Boots_02_37.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_37_818F3B66.wem</CachePath>
 				</File>
+				<File Id="247214371" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Basic Cloth_1.wav</ShortName>
+					<CachePath>SFX/KS_Basic Cloth_1_00225573.wem</CachePath>
+				</File>
+				<File Id="252771747" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Basic Cloth_12.wav</ShortName>
+					<CachePath>SFX/KS_Basic Cloth_12_00225573.wem</CachePath>
+				</File>
 				<File Id="256643354" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_24.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_24_818F3B66.wem</CachePath>
@@ -446,6 +484,10 @@
 				<File Id="289147205" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_13.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_13_818F3B66.wem</CachePath>
+				</File>
+				<File Id="290359522" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Basic Cloth_10.wav</ShortName>
+					<CachePath>SFX/KS_Basic Cloth_10_00225573.wem</CachePath>
 				</File>
 				<File Id="291790555" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footstep_Walking_Wood_04.wav</ShortName>
@@ -611,6 +653,18 @@
 					<ShortName>KS_Concrete Urban Boots_02_31.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_31_818F3B66.wem</CachePath>
 				</File>
+				<File Id="550945558" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Basic Cloth_11.wav</ShortName>
+					<CachePath>SFX/KS_Basic Cloth_11_00225573.wem</CachePath>
+				</File>
+				<File Id="556473669" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Basic Cloth_7.wav</ShortName>
+					<CachePath>SFX/KS_Basic Cloth_7_00225573.wem</CachePath>
+				</File>
+				<File Id="566132583" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Basic Cloth_5.wav</ShortName>
+					<CachePath>SFX/KS_Basic Cloth_5_00225573.wem</CachePath>
+				</File>
 				<File Id="573153200" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (19).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (19)_00225573.wem</CachePath>
@@ -622,6 +676,10 @@
 				<File Id="588335916" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_PLYR_Wood_Soaked_9.wav</ShortName>
 					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_9_00225573.wem</CachePath>
+				</File>
+				<File Id="588982511" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Basic Cloth_3.wav</ShortName>
+					<CachePath>SFX/KS_Basic Cloth_3_00225573.wem</CachePath>
 				</File>
 				<File Id="595643602" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Breathy Rhythmic Tonal Growl 03.wav</ShortName>
@@ -719,6 +777,10 @@
 					<ShortName>Footsteps_PLYR_Wood_Soaked_8.wav</ShortName>
 					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_8_00225573.wem</CachePath>
 				</File>
+				<File Id="742058496" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Basic Cloth_6.wav</ShortName>
+					<CachePath>SFX/KS_Basic Cloth_6_00225573.wem</CachePath>
+				</File>
 				<File Id="748061079" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Foorstep_walking_Carpet_Dry (6).wav</ShortName>
 					<CachePath>SFX/Foorstep_walking_Carpet_Dry (6)_00225573.wem</CachePath>
@@ -730,6 +792,10 @@
 				<File Id="767999004" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (4).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (4)_818F3B66.wem</CachePath>
+				</File>
+				<File Id="772142962" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Basic Cloth_9.wav</ShortName>
+					<CachePath>SFX/KS_Basic Cloth_9_00225573.wem</CachePath>
 				</File>
 				<File Id="772367830" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_9.wav</ShortName>
@@ -859,6 +925,10 @@
 					<ShortName>Player_Footstep_Tile_Dry (7).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (7)_00225573.wem</CachePath>
 				</File>
+				<File Id="1025191512" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Basic Cloth_8.wav</ShortName>
+					<CachePath>SFX/KS_Basic Cloth_8_00225573.wem</CachePath>
+				</File>
 				<File Id="1038067072" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (1).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (1)_00225573.wem</CachePath>
@@ -870,6 +940,10 @@
 				<File Id="1066712174" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_6.wav</ShortName>
 					<CachePath>SFX/KS_Concrete Urban Boots_02_6_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1070261709" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Basic Cloth_4.wav</ShortName>
+					<CachePath>SFX/KS_Basic Cloth_4_00225573.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -896,22 +970,33 @@
 										<MediaRef Id="105063444"/>
 										<MediaRef Id="164302814"/>
 										<MediaRef Id="245985132"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
 										<MediaRef Id="256643354"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="338966987"/>
 										<MediaRef Id="350301638"/>
 										<MediaRef Id="456146811"/>
 										<MediaRef Id="466382625"/>
 										<MediaRef Id="498835283"/>
 										<MediaRef Id="510470499"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
+										<MediaRef Id="588982511"/>
 										<MediaRef Id="600309618"/>
 										<MediaRef Id="622247894"/>
 										<MediaRef Id="633873879"/>
 										<MediaRef Id="693068841"/>
+										<MediaRef Id="742058496"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="782554550"/>
 										<MediaRef Id="784577032"/>
 										<MediaRef Id="790808487"/>
 										<MediaRef Id="848390862"/>
 										<MediaRef Id="865189581"/>
+										<MediaRef Id="1025191512"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 								<SwitchContainer>
@@ -924,20 +1009,31 @@
 										<MediaRef Id="116568329"/>
 										<MediaRef Id="121458811"/>
 										<MediaRef Id="170153259"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="323272262"/>
 										<MediaRef Id="382763038"/>
 										<MediaRef Id="503163526"/>
 										<MediaRef Id="507202270"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
 										<MediaRef Id="573153200"/>
+										<MediaRef Id="588982511"/>
 										<MediaRef Id="652941499"/>
 										<MediaRef Id="671508290"/>
 										<MediaRef Id="687770181"/>
+										<MediaRef Id="742058496"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="824672086"/>
 										<MediaRef Id="855700326"/>
 										<MediaRef Id="895441352"/>
 										<MediaRef Id="999859697"/>
 										<MediaRef Id="1011246108"/>
+										<MediaRef Id="1025191512"/>
 										<MediaRef Id="1038067072"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 								<SwitchContainer>
@@ -948,21 +1044,32 @@
 										<MediaRef Id="111280179"/>
 										<MediaRef Id="191088120"/>
 										<MediaRef Id="226653637"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="314059817"/>
 										<MediaRef Id="324244334"/>
 										<MediaRef Id="331117371"/>
 										<MediaRef Id="359313372"/>
 										<MediaRef Id="504477640"/>
 										<MediaRef Id="504767028"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
 										<MediaRef Id="578815000"/>
+										<MediaRef Id="588982511"/>
 										<MediaRef Id="614057529"/>
 										<MediaRef Id="732568592"/>
+										<MediaRef Id="742058496"/>
 										<MediaRef Id="767999004"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="782123406"/>
 										<MediaRef Id="799158447"/>
 										<MediaRef Id="830929974"/>
 										<MediaRef Id="920286750"/>
 										<MediaRef Id="995827658"/>
+										<MediaRef Id="1025191512"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 								<SwitchContainer>
@@ -975,19 +1082,30 @@
 										<MediaRef Id="231573665"/>
 										<MediaRef Id="239619982"/>
 										<MediaRef Id="244850067"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
 										<MediaRef Id="275401289"/>
 										<MediaRef Id="289147205"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="325718814"/>
 										<MediaRef Id="336920738"/>
 										<MediaRef Id="423372344"/>
 										<MediaRef Id="477133610"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
+										<MediaRef Id="588982511"/>
 										<MediaRef Id="667477372"/>
 										<MediaRef Id="734629008"/>
+										<MediaRef Id="742058496"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="772367830"/>
 										<MediaRef Id="783193596"/>
 										<MediaRef Id="969174434"/>
 										<MediaRef Id="992924945"/>
+										<MediaRef Id="1025191512"/>
 										<MediaRef Id="1066712174"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 							</Children>
@@ -1003,6 +1121,9 @@
 										<MediaRef Id="186207855"/>
 										<MediaRef Id="197609614"/>
 										<MediaRef Id="231017545"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="355449397"/>
 										<MediaRef Id="364409498"/>
 										<MediaRef Id="382282033"/>
@@ -1010,13 +1131,21 @@
 										<MediaRef Id="440973520"/>
 										<MediaRef Id="447069284"/>
 										<MediaRef Id="448436406"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
+										<MediaRef Id="588982511"/>
 										<MediaRef Id="607681600"/>
 										<MediaRef Id="658304763"/>
+										<MediaRef Id="742058496"/>
 										<MediaRef Id="748061079"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="803048296"/>
 										<MediaRef Id="855545933"/>
 										<MediaRef Id="901376300"/>
 										<MediaRef Id="981343641"/>
+										<MediaRef Id="1025191512"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 								<SwitchContainer>
@@ -1027,6 +1156,9 @@
 										<MediaRef Id="186207855"/>
 										<MediaRef Id="197609614"/>
 										<MediaRef Id="231017545"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="355449397"/>
 										<MediaRef Id="364409498"/>
 										<MediaRef Id="382282033"/>
@@ -1034,13 +1166,21 @@
 										<MediaRef Id="440973520"/>
 										<MediaRef Id="447069284"/>
 										<MediaRef Id="448436406"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
+										<MediaRef Id="588982511"/>
 										<MediaRef Id="607681600"/>
 										<MediaRef Id="658304763"/>
+										<MediaRef Id="742058496"/>
 										<MediaRef Id="748061079"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="803048296"/>
 										<MediaRef Id="855545933"/>
 										<MediaRef Id="901376300"/>
 										<MediaRef Id="981343641"/>
+										<MediaRef Id="1025191512"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 								<SwitchContainer>
@@ -1051,6 +1191,9 @@
 										<MediaRef Id="186207855"/>
 										<MediaRef Id="197609614"/>
 										<MediaRef Id="231017545"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="355449397"/>
 										<MediaRef Id="364409498"/>
 										<MediaRef Id="382282033"/>
@@ -1058,13 +1201,21 @@
 										<MediaRef Id="440973520"/>
 										<MediaRef Id="447069284"/>
 										<MediaRef Id="448436406"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
+										<MediaRef Id="588982511"/>
 										<MediaRef Id="607681600"/>
 										<MediaRef Id="658304763"/>
+										<MediaRef Id="742058496"/>
 										<MediaRef Id="748061079"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="803048296"/>
 										<MediaRef Id="855545933"/>
 										<MediaRef Id="901376300"/>
 										<MediaRef Id="981343641"/>
+										<MediaRef Id="1025191512"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 								<SwitchContainer>
@@ -1075,6 +1226,9 @@
 										<MediaRef Id="186207855"/>
 										<MediaRef Id="197609614"/>
 										<MediaRef Id="231017545"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="355449397"/>
 										<MediaRef Id="364409498"/>
 										<MediaRef Id="382282033"/>
@@ -1082,13 +1236,21 @@
 										<MediaRef Id="440973520"/>
 										<MediaRef Id="447069284"/>
 										<MediaRef Id="448436406"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
+										<MediaRef Id="588982511"/>
 										<MediaRef Id="607681600"/>
 										<MediaRef Id="658304763"/>
+										<MediaRef Id="742058496"/>
 										<MediaRef Id="748061079"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="803048296"/>
 										<MediaRef Id="855545933"/>
 										<MediaRef Id="901376300"/>
 										<MediaRef Id="981343641"/>
+										<MediaRef Id="1025191512"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 							</Children>
@@ -1106,6 +1268,9 @@
 										<MediaRef Id="83530304"/>
 										<MediaRef Id="121099714"/>
 										<MediaRef Id="156896936"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="291790555"/>
 										<MediaRef Id="304242188"/>
 										<MediaRef Id="346498203"/>
@@ -1113,17 +1278,25 @@
 										<MediaRef Id="368225329"/>
 										<MediaRef Id="384067176"/>
 										<MediaRef Id="507200884"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
 										<MediaRef Id="588335916"/>
+										<MediaRef Id="588982511"/>
 										<MediaRef Id="601902653"/>
 										<MediaRef Id="653855659"/>
 										<MediaRef Id="728129499"/>
 										<MediaRef Id="734722867"/>
+										<MediaRef Id="742058496"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="812104707"/>
 										<MediaRef Id="901321490"/>
 										<MediaRef Id="918618391"/>
 										<MediaRef Id="969195855"/>
 										<MediaRef Id="1006303981"/>
+										<MediaRef Id="1025191512"/>
 										<MediaRef Id="1054813035"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 								<SwitchContainer>
@@ -1131,12 +1304,23 @@
 									<MediaRefs>
 										<MediaRef Id="156896936"/>
 										<MediaRef Id="208235474"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="291790555"/>
 										<MediaRef Id="316398608"/>
 										<MediaRef Id="346498203"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
+										<MediaRef Id="588982511"/>
+										<MediaRef Id="742058496"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="969195855"/>
 										<MediaRef Id="1006303981"/>
+										<MediaRef Id="1025191512"/>
 										<MediaRef Id="1054813035"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 								<SwitchContainer>
@@ -1144,12 +1328,23 @@
 									<MediaRefs>
 										<MediaRef Id="156896936"/>
 										<MediaRef Id="208235474"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="291790555"/>
 										<MediaRef Id="316398608"/>
 										<MediaRef Id="346498203"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
+										<MediaRef Id="588982511"/>
+										<MediaRef Id="742058496"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="969195855"/>
 										<MediaRef Id="1006303981"/>
+										<MediaRef Id="1025191512"/>
 										<MediaRef Id="1054813035"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 								<SwitchContainer>
@@ -1158,7 +1353,10 @@
 										<MediaRef Id="125274872"/>
 										<MediaRef Id="156896936"/>
 										<MediaRef Id="218395995"/>
+										<MediaRef Id="247214371"/>
+										<MediaRef Id="252771747"/>
 										<MediaRef Id="263279070"/>
+										<MediaRef Id="290359522"/>
 										<MediaRef Id="291790555"/>
 										<MediaRef Id="301961315"/>
 										<MediaRef Id="305296248"/>
@@ -1167,20 +1365,28 @@
 										<MediaRef Id="363358676"/>
 										<MediaRef Id="377797308"/>
 										<MediaRef Id="493854963"/>
+										<MediaRef Id="550945558"/>
+										<MediaRef Id="556473669"/>
+										<MediaRef Id="566132583"/>
+										<MediaRef Id="588982511"/>
 										<MediaRef Id="635873838"/>
 										<MediaRef Id="641470713"/>
 										<MediaRef Id="680130858"/>
 										<MediaRef Id="683537340"/>
 										<MediaRef Id="684835219"/>
 										<MediaRef Id="688941080"/>
+										<MediaRef Id="742058496"/>
 										<MediaRef Id="767248591"/>
+										<MediaRef Id="772142962"/>
 										<MediaRef Id="780659638"/>
 										<MediaRef Id="889931974"/>
 										<MediaRef Id="911109294"/>
 										<MediaRef Id="923483898"/>
 										<MediaRef Id="969195855"/>
 										<MediaRef Id="1006303981"/>
+										<MediaRef Id="1025191512"/>
 										<MediaRef Id="1054813035"/>
+										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
 							</Children>
@@ -1217,7 +1423,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{3D9EC1F0-1105-1CB8-7554-D0313C69BE9C}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A3FA4AC3-B0BE-08D6-0F83-9E7B6D0696BA}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -1340,6 +1546,12 @@
 						<Switch Id="2429688720" Name="FullHealth"/>
 					</Switches>
 				</SwitchGroup>
+				<SwitchGroup Id="423758775" Name="FlashlightSwitch">
+					<Switches>
+						<Switch Id="930712164" Name="Off"/>
+						<Switch Id="1651971902" Name="On"/>
+					</Switches>
+				</SwitchGroup>
 				<SwitchGroup Id="687366024" Name="MonsterState">
 					<Switches>
 						<Switch Id="155822580" Name="MonsterChasing"/>
@@ -1357,6 +1569,7 @@
 					<GameParameterRef Id="191147360"/>
 					<Switches>
 						<Switch Id="930712164" Name="Off"/>
+						<Switch Id="1558276990" Name="Flick"/>
 						<Switch Id="1651971902" Name="On"/>
 					</Switches>
 				</SwitchGroup>
@@ -1389,5 +1602,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{64CE140E-70E4-CA33-7FC8-B1A7B02952EB}</FileHash>
+	<FileHash>{236FD419-269D-D2C0-7CCA-EBB1A1B2FDAE}</FileHash>
 </SoundBanksInfo>

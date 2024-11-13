@@ -26,11 +26,15 @@ public class FlashlightToggle : MonoBehaviour
             //turn light on
             if (isOn)
             {
+                AkSoundEngine.SetSwitch("FlashlightSwitch", "On", gameObject);
+                AkSoundEngine.PostEvent("Flashlight_OnOff_Event", gameObject);
                 lightGO.SetActive(true);
             }
             //turn light off
             else
             {
+                AkSoundEngine.SetSwitch("FlashlightSwitch", "Off", gameObject);
+                AkSoundEngine.PostEvent("Flashlight_OnOff_Event", gameObject);
                 lightGO.SetActive(false);
 
             }

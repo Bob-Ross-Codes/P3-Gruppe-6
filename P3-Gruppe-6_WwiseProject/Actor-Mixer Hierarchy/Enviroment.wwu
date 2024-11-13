@@ -422,6 +422,11 @@
 					<ChildrenList>
 						<RandomSequenceContainer Name="ThunderAmbience" ID="{FFE2EA72-DEF0-45DB-88F4-F0DB676CF7F3}" ShortID="815547158">
 							<PropertyList>
+								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>5.5</Value>
+									</ValueList>
+								</Property>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
@@ -1297,6 +1302,9 @@
 					</GroupingInfo>
 				</SwitchContainer>
 				<SwitchContainer Name="LightSwitch" ID="{1FAA47EC-7995-4CF8-AC44-30FED172EA0A}" ShortID="768677205">
+					<PropertyList>
+						<Property Name="SwitchBehavior" Type="int16" Value="1"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
@@ -1313,6 +1321,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="Light_Off" ID="{DF17CD59-B2FC-4060-90CE-AA2C31FB56D0}" ShortID="400882587">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
@@ -1335,6 +1350,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Light_On" ID="{7A7C624D-8100-4B5F-B053-741E437EC85D}" ShortID="700391465">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
@@ -1356,6 +1378,463 @@
 								<ActiveSource Name="Light Switch On Reverb Warehouse" ID="{EDB69795-AA7C-432E-AD79-F220B8DC2062}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<RandomSequenceContainer Name="Light_Flick" ID="{285BF093-82A8-4EC7-AB33-30190BD20784}" ShortID="798583486">
+							<PropertyList>
+								<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Flick_01" ID="{7A3AF367-1EE7-4143-B15B-3C50772436AD}" ShortID="522273019">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{7149BEFA-897A-4FB8-A21D-7D24BDD7A159}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.8080848655676"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.46954613398314"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1058052366"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{7149BEFA-897A-4FB8-A21D-7D24BDD7A159}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_02" ID="{66269794-BB4A-4DB2-B4FE-801018E7A942}" ShortID="446182499">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{C3C518CE-8B6A-44C6-BABE-EAEFD67E1179}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.47399272171641"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.04147975996437"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="702419230"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{C3C518CE-8B6A-44C6-BABE-EAEFD67E1179}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_03" ID="{5EBFCFB6-644C-4865-B1A4-989844CAD772}" ShortID="768141647">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{447CA13E-97C0-468A-BFB4-BDAF718EA34A}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.04670218265442"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.54697787304333"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="788948668"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{447CA13E-97C0-468A-BFB4-BDAF718EA34A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_04" ID="{21D82B12-34C4-4F8D-910D-116BE346B97E}" ShortID="196859391">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{63251109-38F5-4E88-AEE9-E2F32D90D5D7}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.46430433228847"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.99326705515828"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="534559345"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{63251109-38F5-4E88-AEE9-E2F32D90D5D7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_05" ID="{89993989-661A-49E5-8E67-591AC542442B}" ShortID="595930906">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{4CBDE875-F990-4DD2-A908-902DC3190D7A}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.98872910784873"/>
+												<Property Name="TrimEnd" Type="Real64" Value="5.51315388340899"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="545541678"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{4CBDE875-F990-4DD2-A908-902DC3190D7A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_06" ID="{8F03352D-BA9A-4599-B708-F30019808F53}" ShortID="827156123">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{BA41C5C3-FEF2-4E3D-92B8-138D32FD2C44}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.39499283600167"/>
+												<Property Name="TrimEnd" Type="Real64" Value="7.97193326205003"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="813595595"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{BA41C5C3-FEF2-4E3D-92B8-138D32FD2C44}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_07" ID="{85824E50-D0FF-4BC7-AB28-5C3A1219EAEA}" ShortID="801622379">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{8E84F431-A8DE-4B46-81FB-6DAE515DEA51}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.89269845018897"/>
+												<Property Name="TrimEnd" Type="Real64" Value="8.48994518721373"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="802834040"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{8E84F431-A8DE-4B46-81FB-6DAE515DEA51}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_08" ID="{29B54169-7D8E-4BF2-9215-B6254E35E12E}" ShortID="884143087">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{93BD2832-C418-4486-B688-4694F8DED511}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="8.51098154450672"/>
+												<Property Name="TrimEnd" Type="Real64" Value="9.39424310781779"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="293863672"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{93BD2832-C418-4486-B688-4694F8DED511}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_09" ID="{51DBFEBC-C68D-41A8-9FE3-E0E156E11664}" ShortID="770702809">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{96D1280F-C81C-4916-AC60-67C5303030F6}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="9.9643367815275"/>
+												<Property Name="TrimEnd" Type="Real64" Value="10.7869906892751"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="279398897"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{96D1280F-C81C-4916-AC60-67C5303030F6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_10" ID="{C749BE54-283D-4B12-A17C-6DA8739864EE}" ShortID="852805842">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{978C5452-7790-428A-88F1-95BE41EAC8EB}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="9.9643367815275"/>
+												<Property Name="TrimEnd" Type="Real64" Value="10.7869906892751"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="279398897"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{978C5452-7790-428A-88F1-95BE41EAC8EB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_11" ID="{96EEB9A2-9698-444F-A339-7E8A3E08279A}" ShortID="69471871">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{DFEF41BA-8C02-410A-9CE2-260E608DC226}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="12.6652192478506"/>
+												<Property Name="TrimEnd" Type="Real64" Value="13.2126954234566"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="264251318"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{DFEF41BA-8C02-410A-9CE2-260E608DC226}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_12" ID="{40F391CF-FA14-462A-8094-8901127DDE25}" ShortID="1065274742">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{6A5B24E7-90DE-4A6D-9E72-82F75F1B1DC7}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="13.1629248620379"/>
+												<Property Name="TrimEnd" Type="Real64" Value="13.7601715990627"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="177655080"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{6A5B24E7-90DE-4A6D-9E72-82F75F1B1DC7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_13" ID="{66D5DC1A-AC7E-4DAD-9A39-FD85AB34469B}" ShortID="845195676">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{D135B136-5106-4F1C-A8EC-7780C5515EDF}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="14.2597967390347"/>
+												<Property Name="TrimEnd" Type="Real64" Value="14.8904980683079"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="597176862"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{D135B136-5106-4F1C-A8EC-7780C5515EDF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_14" ID="{68EDFDD5-F93C-4DA4-82EA-4DDA70BF3AA0}" ShortID="1066597259">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{F3570AF9-DFF8-49E6-B172-F5FE6158B00C}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="16.8274740874591"/>
+												<Property Name="TrimEnd" Type="Real64" Value="17.5753412763206"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="407529346"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{F3570AF9-DFF8-49E6-B172-F5FE6158B00C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Flick_15" ID="{E2B2458C-3ECA-4CF6-B19B-95CE0603E82A}" ShortID="596280899">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Flickering Sound Effect" ID="{533B1602-9913-47D3-AE4A-60248A1A984E}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="19.1159245014923"/>
+												<Property Name="TrimEnd" Type="Real64" Value="20.3605203407034"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Flickering Sound Effect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="174929362"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Flickering Sound Effect" ID="{533B1602-9913-47D3-AE4A-60248A1A984E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<Sound Name="Light_Flick_Sweetener" ID="{A3166AA8-0913-47F5-A3E1-A2CF38842EEB}" ShortID="314456414">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Fluorescent Light Buzz Soft" ID="{31F93E77-BCAB-4913-B9A0-801C82F0FA11}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="3.1261744966443"/>
+										<Property Name="TrimEnd" Type="Real64" Value="51.3060402684564"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Fluorescent Light Buzz Soft.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="27212775"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Fluorescent Light Buzz Soft" ID="{31F93E77-BCAB-4913-B9A0-801C82F0FA11}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<GroupingInfo>
 						<GroupingBehaviorList>
@@ -1365,8 +1844,21 @@
 							<GroupingBehavior>
 								<ItemRef Name="Light_Off" ID="{DF17CD59-B2FC-4060-90CE-AA2C31FB56D0}"/>
 							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Light_Flick" ID="{285BF093-82A8-4EC7-AB33-30190BD20784}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Light_Flick_Sweetener" ID="{A3166AA8-0913-47F5-A3E1-A2CF38842EEB}"/>
+							</GroupingBehavior>
 						</GroupingBehaviorList>
 						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Flick" ID="{956BDD2F-A3A7-4F03-9463-033B4926D275}"/>
+								<ItemList>
+									<ItemRef Name="Light_Flick_Sweetener" ID="{A3166AA8-0913-47F5-A3E1-A2CF38842EEB}"/>
+									<ItemRef Name="Light_Flick" ID="{285BF093-82A8-4EC7-AB33-30190BD20784}"/>
+								</ItemList>
+							</Grouping>
 							<Grouping>
 								<SwitchRef Name="On" ID="{F7F12C57-BB5B-4DE1-90F4-DB530A499080}"/>
 								<ItemList>

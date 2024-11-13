@@ -1367,9 +1367,302 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="PLYR_Cloth_Wood" ID="{00460269-DD5D-4303-8642-B5B74CC73157}" ShortID="537250659">
+									<PropertyList>
+										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="PlayerFootsteps" ID="{9FBE93F7-E3B2-4BE8-BDE0-E49E1F18433D}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="KS_Basic Cloth_1" ID="{328DC06B-A3E5-4A37-8196-65C91CB0D487}" ShortID="601900836">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_1" ID="{43EFD4D6-8C2F-40C2-A0A3-E41663F6878F}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="247214371"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_1" ID="{43EFD4D6-8C2F-40C2-A0A3-E41663F6878F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_3" ID="{25B62B47-64F9-4293-B9A2-2B63DF32258B}" ShortID="216215525">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_3" ID="{D56F635B-4C07-4E11-B6C7-D238F6778632}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="588982511"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_3" ID="{D56F635B-4C07-4E11-B6C7-D238F6778632}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_4" ID="{DFF38472-86F0-4107-89BD-365C071812A5}" ShortID="858373147">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_4" ID="{4AD42F63-5917-4A57-BC9B-822E3FD2848E}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1070261709"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_4" ID="{4AD42F63-5917-4A57-BC9B-822E3FD2848E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_5" ID="{CAE54090-CD81-4FB9-9D39-DD2D44618839}" ShortID="588202367">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_5" ID="{A31603BA-4916-4C71-85F7-7084A2A1AD01}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="566132583"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_5" ID="{A31603BA-4916-4C71-85F7-7084A2A1AD01}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_6" ID="{F29BE577-4954-4545-B267-FFA25CD491D9}" ShortID="320841963">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_6" ID="{18C3217A-C7B8-4283-AEE1-C41F2BDFA2BB}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="742058496"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_6" ID="{18C3217A-C7B8-4283-AEE1-C41F2BDFA2BB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_7" ID="{34A8780B-30E4-4BE7-9A5D-4598DC9B2AC0}" ShortID="427413527">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_7" ID="{0EE586ED-F2A9-40D8-8FCE-FF14EF1E675C}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="556473669"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_7" ID="{0EE586ED-F2A9-40D8-8FCE-FF14EF1E675C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_8" ID="{37A38E57-D884-416C-9D57-A0DCA05FDCFB}" ShortID="539161765">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_8" ID="{EEA158AD-C13B-4208-A185-E9354503097C}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1025191512"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_8" ID="{EEA158AD-C13B-4208-A185-E9354503097C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_9" ID="{0C392F76-8F72-4CFF-BB55-A8CE6F34A048}" ShortID="1063160439">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_9" ID="{669E52E8-497D-4031-9284-2A6C2D5A2EF4}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="772142962"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_9" ID="{669E52E8-497D-4031-9284-2A6C2D5A2EF4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_10" ID="{E2C5B6F9-8519-40F7-BE25-7052DDB7873A}" ShortID="597412959">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_10" ID="{F76C650C-75DE-4173-BA99-3849429373D3}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="290359522"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_10" ID="{F76C650C-75DE-4173-BA99-3849429373D3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_11" ID="{D03AF29A-062E-4F61-837D-2922F4A08846}" ShortID="201619848">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_11" ID="{1DE8E524-BEB5-473E-9FD1-3FE37ACB0D0A}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="550945558"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_11" ID="{1DE8E524-BEB5-473E-9FD1-3FE37ACB0D0A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_12" ID="{1D29F633-B735-488A-8575-32B965F11BAF}" ShortID="819914868">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_12" ID="{AD2EDE3A-0001-43BB-B5B5-6D2D51640248}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="252771747"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_12" ID="{AD2EDE3A-0001-43BB-B5B5-6D2D51640248}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
 							<GroupingInfo>
 								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="PLYR_Cloth_Wood" ID="{00460269-DD5D-4303-8642-B5B74CC73157}"/>
+									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="Soaked" ID="{2401E372-8A85-4545-8DA9-B9FDE5D4E042}"/>
 									</GroupingBehavior>
@@ -1387,6 +1680,7 @@
 									<Grouping>
 										<SwitchRef Name="Soaked" ID="{AAAC242B-1941-4177-8F58-51E397A5AB69}"/>
 										<ItemList>
+											<ItemRef Name="PLYR_Cloth_Wood" ID="{00460269-DD5D-4303-8642-B5B74CC73157}"/>
 											<ItemRef Name="Soaked" ID="{2401E372-8A85-4545-8DA9-B9FDE5D4E042}"/>
 											<ItemRef Name="Dry_Sweetener" ID="{99C7D979-B2F8-47DB-9099-E822D637B596}"/>
 										</ItemList>
@@ -1395,17 +1689,20 @@
 										<SwitchRef Name="Dry" ID="{CCF86448-9208-4769-9571-E0DF3966B47F}"/>
 										<ItemList>
 											<ItemRef Name="Dry" ID="{3216ACEE-F2D4-4B24-BB71-10FD53E96F14}"/>
+											<ItemRef Name="PLYR_Cloth_Wood" ID="{00460269-DD5D-4303-8642-B5B74CC73157}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
 										<SwitchRef Name="Damp" ID="{845C7171-7141-48F3-B525-881F25069749}"/>
 										<ItemList>
 											<ItemRef Name="Dry" ID="{3216ACEE-F2D4-4B24-BB71-10FD53E96F14}"/>
+											<ItemRef Name="PLYR_Cloth_Wood" ID="{00460269-DD5D-4303-8642-B5B74CC73157}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
 										<SwitchRef Name="Wet" ID="{58BEE4AA-7223-40A2-9396-725B99795769}"/>
 										<ItemList>
+											<ItemRef Name="PLYR_Cloth_Wood" ID="{00460269-DD5D-4303-8642-B5B74CC73157}"/>
 											<ItemRef Name="Dry_Sweetener" ID="{99C7D979-B2F8-47DB-9099-E822D637B596}"/>
 											<ItemRef Name="Wet" ID="{135351A1-76E2-4CA1-80DD-3A96A5F6C208}"/>
 										</ItemList>
@@ -3339,9 +3636,302 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="PLYR_Cloth_Tile" ID="{F6E97745-B41C-4216-B01D-3DDFECEDAFE7}" ShortID="170683195">
+									<PropertyList>
+										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="PlayerFootsteps" ID="{9FBE93F7-E3B2-4BE8-BDE0-E49E1F18433D}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="KS_Basic Cloth_1" ID="{2E11909B-DEA4-44A8-8ABE-C38C80B250ED}" ShortID="12058468">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_1" ID="{1D899CF1-0EE1-41A2-A568-5BF10B2770EC}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="247214371"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_1" ID="{1D899CF1-0EE1-41A2-A568-5BF10B2770EC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_3" ID="{06E55C17-CC6C-4F52-9788-4BC7335C3C39}" ShortID="731694439">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_3" ID="{3E08672C-40D1-4911-92F7-C7C25D8E2402}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="588982511"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_3" ID="{3E08672C-40D1-4911-92F7-C7C25D8E2402}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_4" ID="{90FD6D12-E7B8-492F-9D27-29C9EFD7DFA8}" ShortID="395240765">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_4" ID="{9E26A711-A78B-4503-B1A2-141051D15CA2}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1070261709"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_4" ID="{9E26A711-A78B-4503-B1A2-141051D15CA2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_5" ID="{8791635F-420B-498A-BB05-553E6415CB20}" ShortID="608492297">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_5" ID="{BAB948CB-0D65-4489-8465-FA2043200775}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="566132583"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_5" ID="{BAB948CB-0D65-4489-8465-FA2043200775}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_6" ID="{394A538A-4A1E-471B-BF62-1AA9FF722D76}" ShortID="179429086">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_6" ID="{4DE839DF-3F24-4F0E-BC7C-A9F4D6C02495}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="742058496"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_6" ID="{4DE839DF-3F24-4F0E-BC7C-A9F4D6C02495}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_7" ID="{53895D88-0253-41F7-9321-8259504776CA}" ShortID="89325572">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_7" ID="{F3CEA218-7B6A-432D-933F-5F69357C6B99}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="556473669"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_7" ID="{F3CEA218-7B6A-432D-933F-5F69357C6B99}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_8" ID="{C81CA2D6-440F-4944-B4DC-350CA6A96AFD}" ShortID="625977864">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_8" ID="{F1694683-BDF0-4A46-A889-EDC19BD50C0E}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1025191512"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_8" ID="{F1694683-BDF0-4A46-A889-EDC19BD50C0E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_9" ID="{661774C9-AE10-4801-868D-CC4C56383156}" ShortID="399728452">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_9" ID="{3BE3BC2E-20DF-4F60-8967-A78478BB11CC}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="772142962"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_9" ID="{3BE3BC2E-20DF-4F60-8967-A78478BB11CC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_10" ID="{3B15A2E4-FEE1-44BA-BD0B-C7B0613F623D}" ShortID="148130230">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_10" ID="{1E5B050A-4ED5-4D4A-99B5-C0982660652B}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="290359522"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_10" ID="{1E5B050A-4ED5-4D4A-99B5-C0982660652B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_11" ID="{7D78090F-D08F-499D-909A-F9D892109C9E}" ShortID="926365955">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_11" ID="{B66263C0-05FB-4F8E-B496-743BF32414C7}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="550945558"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_11" ID="{B66263C0-05FB-4F8E-B496-743BF32414C7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_12" ID="{0189D086-DA07-4E2A-A023-074332E01849}" ShortID="461919834">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_12" ID="{667BED52-F062-41F0-9B0C-228008745F79}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="252771747"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_12" ID="{667BED52-F062-41F0-9B0C-228008745F79}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
 							<GroupingInfo>
 								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="PLYR_Cloth_Tile" ID="{F6E97745-B41C-4216-B01D-3DDFECEDAFE7}"/>
+									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="Dry" ID="{39A4285B-3068-464D-AEE2-F57504D0785B}"/>
 									</GroupingBehavior>
@@ -3359,6 +3949,7 @@
 									<Grouping>
 										<SwitchRef Name="Soaked" ID="{AAAC242B-1941-4177-8F58-51E397A5AB69}"/>
 										<ItemList>
+											<ItemRef Name="PLYR_Cloth_Tile" ID="{F6E97745-B41C-4216-B01D-3DDFECEDAFE7}"/>
 											<ItemRef Name="Soaked" ID="{B12EF499-5B64-4611-B573-E1E7E6A8961C}"/>
 										</ItemList>
 									</Grouping>
@@ -3366,17 +3957,20 @@
 										<SwitchRef Name="Dry" ID="{CCF86448-9208-4769-9571-E0DF3966B47F}"/>
 										<ItemList>
 											<ItemRef Name="Dry" ID="{39A4285B-3068-464D-AEE2-F57504D0785B}"/>
+											<ItemRef Name="PLYR_Cloth_Tile" ID="{F6E97745-B41C-4216-B01D-3DDFECEDAFE7}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
 										<SwitchRef Name="Damp" ID="{845C7171-7141-48F3-B525-881F25069749}"/>
 										<ItemList>
 											<ItemRef Name="Damp" ID="{C4DDC0F4-4D39-49A2-9D0D-097542780FBF}"/>
+											<ItemRef Name="PLYR_Cloth_Tile" ID="{F6E97745-B41C-4216-B01D-3DDFECEDAFE7}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
 										<SwitchRef Name="Wet" ID="{58BEE4AA-7223-40A2-9396-725B99795769}"/>
 										<ItemList>
+											<ItemRef Name="PLYR_Cloth_Tile" ID="{F6E97745-B41C-4216-B01D-3DDFECEDAFE7}"/>
 											<ItemRef Name="Wet" ID="{BE2CFE5E-B5CA-4D40-A1DF-E8BCCDE1891F}"/>
 										</ItemList>
 									</Grouping>
@@ -3891,9 +4485,302 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="PLYR_Cloth_Carpet" ID="{B7EF27A6-2DED-4C4B-8553-148D42CCB0B8}" ShortID="981309303">
+									<PropertyList>
+										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="PlayerFootsteps" ID="{9FBE93F7-E3B2-4BE8-BDE0-E49E1F18433D}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="KS_Basic Cloth_1" ID="{9C436642-6B0F-4649-8469-3E0FD8BECD78}" ShortID="21977287">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_1" ID="{FF927293-1619-4EAF-850E-FC3EE0436B8E}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="247214371"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_1" ID="{FF927293-1619-4EAF-850E-FC3EE0436B8E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_3" ID="{3EE47877-1CFC-4D33-A5D0-720D5F4BC5ED}" ShortID="1004778687">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_3" ID="{AD01D5E8-DF12-4D9C-B1FD-E8FE58F81CDD}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="588982511"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_3" ID="{AD01D5E8-DF12-4D9C-B1FD-E8FE58F81CDD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_4" ID="{C1BCD9E9-5705-40E6-B7C9-33147A215C4A}" ShortID="771967708">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_4" ID="{F071E045-147D-4447-BFEA-BC114FEF823D}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1070261709"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_4" ID="{F071E045-147D-4447-BFEA-BC114FEF823D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_5" ID="{CD2294E5-6679-4D61-B3C7-91A6AB11A85F}" ShortID="234057342">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_5" ID="{9B445B15-18DE-43C5-A9F9-E113541B8762}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="566132583"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_5" ID="{9B445B15-18DE-43C5-A9F9-E113541B8762}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_6" ID="{D4D89CD4-4DC9-4D5D-9F27-DADFECE38DA9}" ShortID="1053673459">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_6" ID="{0E8947A8-3B81-495A-BDF8-03327C6A5403}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="742058496"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_6" ID="{0E8947A8-3B81-495A-BDF8-03327C6A5403}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_7" ID="{7844AF93-E6C2-4726-9E11-81A2894CA61F}" ShortID="404426451">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_7" ID="{D057C6CD-4F85-40E0-B7D0-4DFA4C8E97E2}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="556473669"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_7" ID="{D057C6CD-4F85-40E0-B7D0-4DFA4C8E97E2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_8" ID="{0A62F068-2EC0-4538-9FE1-CD940B829B8D}" ShortID="956237778">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_8" ID="{23EEC5F3-2144-4AD3-A8B1-880DC29295CD}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1025191512"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_8" ID="{23EEC5F3-2144-4AD3-A8B1-880DC29295CD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_9" ID="{28C150F1-04C7-4CDC-BEA5-607901125B11}" ShortID="988744539">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_9" ID="{FF5649DA-261E-4793-95D5-378C5221ED35}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="772142962"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_9" ID="{FF5649DA-261E-4793-95D5-378C5221ED35}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_10" ID="{143CDD39-7870-475A-A791-C72DBBEF6344}" ShortID="155320826">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_10" ID="{DEC24F6C-BD4C-43EF-98AE-C24AC51AF9A2}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="290359522"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_10" ID="{DEC24F6C-BD4C-43EF-98AE-C24AC51AF9A2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_11" ID="{9C116968-8F65-4D4E-B317-3437164EACD6}" ShortID="674504391">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_11" ID="{D2A50775-A9BE-4D32-BB74-BBBDBDF8AC24}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="550945558"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_11" ID="{D2A50775-A9BE-4D32-BB74-BBBDBDF8AC24}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="KS_Basic Cloth_12" ID="{F662A95B-2D2C-4A7D-A1BD-DB3A3AA2B9D8}" ShortID="158945782">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="KS_Basic Cloth_12" ID="{1108A7DF-8F7C-4AD8-8997-79353691FF75}">
+													<PropertyList>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>KS_Basic Cloth_12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="252771747"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="KS_Basic Cloth_12" ID="{1108A7DF-8F7C-4AD8-8997-79353691FF75}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
 							<GroupingInfo>
 								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="PLYR_Cloth_Carpet" ID="{B7EF27A6-2DED-4C4B-8553-148D42CCB0B8}"/>
+									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="Dry" ID="{DF410EDC-BCAD-4F54-A862-A56494889067}"/>
 									</GroupingBehavior>
@@ -3902,12 +4789,14 @@
 									<Grouping>
 										<SwitchRef Name="Soaked" ID="{AAAC242B-1941-4177-8F58-51E397A5AB69}"/>
 										<ItemList>
+											<ItemRef Name="PLYR_Cloth_Carpet" ID="{B7EF27A6-2DED-4C4B-8553-148D42CCB0B8}"/>
 											<ItemRef Name="Dry" ID="{DF410EDC-BCAD-4F54-A862-A56494889067}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
 										<SwitchRef Name="Dry" ID="{CCF86448-9208-4769-9571-E0DF3966B47F}"/>
 										<ItemList>
+											<ItemRef Name="PLYR_Cloth_Carpet" ID="{B7EF27A6-2DED-4C4B-8553-148D42CCB0B8}"/>
 											<ItemRef Name="Dry" ID="{DF410EDC-BCAD-4F54-A862-A56494889067}"/>
 										</ItemList>
 									</Grouping>
@@ -3915,12 +4804,14 @@
 										<SwitchRef Name="Damp" ID="{845C7171-7141-48F3-B525-881F25069749}"/>
 										<ItemList>
 											<ItemRef Name="Dry" ID="{DF410EDC-BCAD-4F54-A862-A56494889067}"/>
+											<ItemRef Name="PLYR_Cloth_Carpet" ID="{B7EF27A6-2DED-4C4B-8553-148D42CCB0B8}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
 										<SwitchRef Name="Wet" ID="{58BEE4AA-7223-40A2-9396-725B99795769}"/>
 										<ItemList>
 											<ItemRef Name="Dry" ID="{DF410EDC-BCAD-4F54-A862-A56494889067}"/>
+											<ItemRef Name="PLYR_Cloth_Carpet" ID="{B7EF27A6-2DED-4C4B-8553-148D42CCB0B8}"/>
 										</ItemList>
 									</Grouping>
 								</GroupingList>

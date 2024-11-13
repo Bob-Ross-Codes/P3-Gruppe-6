@@ -87,6 +87,17 @@
 					</ChildrenList>
 				</Event>
 				<Event Name="Light_OnOff_Event" ID="{4F95B3BF-23A2-424F-8039-CBC2AE97C4B7}"/>
+				<Event Name="Flashlight_OnOff_Event" ID="{9542423E-EE3B-4B49-A41E-F142D93524E4}">
+					<ChildrenList>
+						<Action Name="" ID="{6E9016D3-B725-4761-A5F7-E9BDD4F5DDA5}" ShortID="313533461">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Flashlight_On_Off" ID="{46A62E55-DEE7-48B2-BBAB-B9ADD7ADC2F9}" WorkUnitID="{D14CE5F9-2FB5-4968-82BD-DE7C89FA95F4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -4,6 +4,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	967859696	Horror_Ambience			\Enviroment\Horror_Ambience	
 	1006235157	Light_OnOff_Event			\Enviroment\Light_OnOff_Event	
 	1093999139	Play_RainAndThunder			\Enviroment\Play_RainAndThunder	
+	1510976581	Flashlight_OnOff_Event			\Enviroment\Flashlight_OnOff_Event	
 	1856817241	Stop_Knocking_Event			\Enviroment\Stop_Knocking_Event	
 	2870446976	Play_WomanAmbience			\Enviroment\Play_WomanAmbience	
 	3483129277	Enter_Reverb_Zone			\Enviroment\Enter_Reverb_Zone	
@@ -11,11 +12,14 @@ Event	ID	Name			Wwise Object Path	Notes
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	83357616	WomanState			\Default Work Unit\WomanState	
+	423758775	FlashlightSwitch			\Default Work Unit\FlashlightSwitch	
 	2168380830	DoorSFXSwitch			\Default Work Unit\DoorSFXSwitch	
 
 Switch	ID	Name	Switch Group			Notes
 	1874288895	Idle	WomanState			
 	3782157712	HitDoor	WomanState			
+	930712164	Off	FlashlightSwitch			
+	1651971902	On	FlashlightSwitch			
 	136945955	Locked	DoorSFXSwitch			
 	3012222945	Closed	DoorSFXSwitch			
 	3072142513	Open	DoorSFXSwitch			
@@ -51,6 +55,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	505184733	HighKnock_5	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Hard With Fist_E9A302A9.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\HighKnock\HighKnock_5		356612
 	517767576	Intro Audio	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Intro Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Music\Intro Audio		5958240
 	528004408	Thunder Clap Heavy Impact Sound Effect	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Thunder Clap Heavy Impact Sound Effect_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\Outdoor\ThunderAmbience\Thunder Clap Heavy Impact Sound Effect		3855456
+	548334567	FlashlightOn	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Flashlight Sound Effect_818F3B66.wem		\Actor-Mixer Hierarchy\Items\Flashlight_On_Off\FlashlightOn		74280
 	582011132	HighKnock_3	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Door Knocking Slight Rattle_80EFC830.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\HighKnock\HighKnock_3		345144
 	617992626	KS__6	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS__6_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\DoorSounds\DoorLocked\KS__6		299104
 	658070560	Horror Sound Effects - Resonating Wires (1)	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Horror Sound Effects - Resonating Wires (1)_38E6A96D.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\HorrorDrones\Horror Sound Effects - Resonating Wires (1)		1145088
@@ -58,6 +63,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	755327924	KS_Eerie Transition_2	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Eerie Transition_2_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\HorrorDrones\KS_Eerie Transition_2		1146976
 	789622552	Thunder Clap Heavy Impact Explosive	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Thunder Clap Heavy Impact Explosive_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\Outdoor\ThunderAmbience\Thunder Clap Heavy Impact Explosive		1490016
 	889004069	HighKnock_2	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Hard With Fist_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\HighKnock\HighKnock_2		1771760
+	934252715	FlashlightOff	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Flashlight Sound Effect (1)_818F3B66.wem		\Actor-Mixer Hierarchy\Items\Flashlight_On_Off\FlashlightOff		81704
 	945887105	LowKnock	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Gentle Knock Wooden Door_FBC78EF0.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\LowKnock		4279412
 	958601778	Horror Sound Effects - Resonating Wires	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Horror Sound Effects - Resonating Wires_E6869E5F.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\HorrorDrones\Horror Sound Effects - Resonating Wires		783324
 	971489578	Metal Bangs Sound Effect	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Metal Bangs Sound Effect_B3251DE5.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\HorrorDrones\Metal Bangs Sound Effect		3615912

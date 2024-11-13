@@ -39,11 +39,23 @@ public class FlashlightOnOff : MonoBehaviour
             // Toggle light on/off
             isLightOn = !isLightOn;
             targetLight.enabled = isLightOn;
+
+                    // Play sound based on light state
+            if (isLightOn)
+            {
+                 AkSoundEngine.SetSwitch("FlashlightSwitch", "On", gameObject);
+                AkSoundEngine.PostEvent("Flashlight_OnOff_Event", gameObject);
+            }
+            else
+            {
+                AkSoundEngine.SetSwitch("FlashlightSwitch", "Off", gameObject);
+                AkSoundEngine.PostEvent("Flashlight_OnOff_Event", gameObject);
+            }
         }
 
 
 
-  // Calculate an offset based on the player's look direction
+        // Calculate an offset based on the player's look direction
         float swayX = Mathf.Sin(Time.time * swerveSpeed) * swerveAmount;
         float swayY = Mathf.Cos(Time.time * swerveSpeed) * swerveAmount;
 
@@ -52,5 +64,5 @@ public class FlashlightOnOff : MonoBehaviour
         transform.localRotation = initialRotation * swerveRotation;
 
 
-}
+    }
 }

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{D14CE5F9-2FB5-4968-82BD-DE7C89FA95F4}" SchemaVersion="119">
+	<AudioObjects>
+		<WorkUnit Name="Items" ID="{D14CE5F9-2FB5-4968-82BD-DE7C89FA95F4}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchContainer Name="Flashlight_On_Off" ID="{46A62E55-DEE7-48B2-BBAB-B9ADD7ADC2F9}" ShortID="909321377">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-22</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Off" ID="{507DCBAF-16AC-44E7-990B-3BC3FBC0EAA8}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="FlashlightSwitch" ID="{B258EA23-F552-4286-BDFB-EE8EF6614C6A}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="FlashlightOn" ID="{039598ED-00DD-4AE6-8FD5-B988E1B61534}" ShortID="559998637">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flashlight Sound Effect" ID="{DA4970E3-A164-4D15-887A-DDDC8BF61B0F}">
+									<Language>SFX</Language>
+									<AudioFile>Flashlight Sound Effect.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="548334567"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Flashlight Sound Effect" ID="{DA4970E3-A164-4D15-887A-DDDC8BF61B0F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="FlashlightOff" ID="{63BAF4B0-8AA1-4017-9329-7CAA82FA2B3B}" ShortID="188320696">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flashlight Sound Effect (1)" ID="{F98A104B-8257-451A-A954-AF7234C21BED}">
+									<Language>SFX</Language>
+									<AudioFile>Flashlight Sound Effect (1).wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="934252715"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Flashlight Sound Effect (1)" ID="{F98A104B-8257-451A-A954-AF7234C21BED}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="FlashlightOff" ID="{63BAF4B0-8AA1-4017-9329-7CAA82FA2B3B}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="FlashlightOn" ID="{039598ED-00DD-4AE6-8FD5-B988E1B61534}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Off" ID="{507DCBAF-16AC-44E7-990B-3BC3FBC0EAA8}"/>
+								<ItemList>
+									<ItemRef Name="FlashlightOff" ID="{63BAF4B0-8AA1-4017-9329-7CAA82FA2B3B}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="On" ID="{7E6BFEAF-2EBF-413D-9E21-A8CDB8354DCF}"/>
+								<ItemList>
+									<ItemRef Name="FlashlightOn" ID="{039598ED-00DD-4AE6-8FD5-B988E1B61534}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

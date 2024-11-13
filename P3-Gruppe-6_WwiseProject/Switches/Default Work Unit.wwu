@@ -206,6 +206,7 @@
 					<ChildrenList>
 						<Switch Name="On" ID="{F7F12C57-BB5B-4DE1-90F4-DB530A499080}"/>
 						<Switch Name="Off" ID="{9D9C3ADC-EDE8-44D7-84D9-E2E7B71E46E4}"/>
+						<Switch Name="Flick" ID="{956BDD2F-A3A7-4F03-9463-033B4926D275}"/>
 					</ChildrenList>
 					<SwitchOnRTPC>
 						<GameParameterRef Name="RTPC_LightState" ID="{239B8FB2-A4ED-4BA7-9F24-E061174CCF4A}"/>
@@ -220,18 +221,29 @@
 									<Flags>5</Flags>
 								</Point>
 								<Point>
-									<XPos>0.5</XPos>
+									<XPos>1</XPos>
 									<YPos>2</YPos>
 									<Flags>0</Flags>
 								</Point>
 								<Point>
-									<XPos>1</XPos>
-									<YPos>2</YPos>
+									<XPos>1.93293</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>2</XPos>
+									<YPos>3</YPos>
 									<Flags>37</Flags>
 								</Point>
 							</PointList>
 						</Curve>
 					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="FlashlightSwitch" ID="{B258EA23-F552-4286-BDFB-EE8EF6614C6A}">
+					<ChildrenList>
+						<Switch Name="On" ID="{7E6BFEAF-2EBF-413D-9E21-A8CDB8354DCF}"/>
+						<Switch Name="Off" ID="{507DCBAF-16AC-44E7-990B-3BC3FBC0EAA8}"/>
+					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
