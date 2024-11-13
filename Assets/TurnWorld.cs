@@ -12,12 +12,15 @@ public class TurnWorld : MonoBehaviour
 
     [SerializeField] private Transform player;
     [SerializeField] private Transform trigger;
+    [SerializeField] private Transform chaseSpawnPoint;
     [SerializeField] private Transform trigger2;
     [SerializeField] private GameObject hallway;
     [SerializeField] private GameObject handLight;
     [SerializeField] private GameObject exitSign;
     [SerializeField] private GameObject exitSign2;
     [SerializeField] private GameObject spawnAgain;
+    [SerializeField] private GameObject chaseScene;
+    //public RunHallwayChanger RunHallwayChanger;
     public FirstPersonController playerController; // Reference to the FirstPersonController scriptCloset
 
 
@@ -36,6 +39,7 @@ void Start()
     initialPlayerSpeed = playerController.MoveSpeed;
     triggeredToNormal = false;
     hallway.transform.localRotation = initialRotation;
+    chaseScene.SetActive(false);
     exitSign.SetActive(false);
     exitSign2.SetActive(false);
     SetLightsEnabled(RedLights, false);
@@ -164,7 +168,7 @@ void Start()
 
         exitSign2.SetActive(true);
 
-        hallway.transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
+        hallway.transform.localRotation = initialRotation;
         hallway.transform.localPosition = initialPosition;
 
         yield return new WaitForSeconds(duration / 4);
@@ -185,7 +189,13 @@ void Start()
 
         yield return new WaitForSeconds(duration / 2);
 
-        //!!!!!START CHASE!!!!!
+        StartChase();
+    }
+
+    private void StartChase()
+    {
+        //chaseScene.transform.position = chaseSpawnPoint.localPosition + new Vector3(15.9499998f,-24.3899994f,8.32999992f);
+        chaseScene.SetActive(true);
     }
 
     private void SetLightsEnabled(Light[] lights, bool enabled)
