@@ -29,7 +29,7 @@ public class Event1Sequence : MonoBehaviour
 
             while (distanceToWaypoint > 0.1f)
             {
-                Debug.Log("Moving to waypoint " + currentWaypointIndex);
+             //   Debug.Log("Moving to waypoint " + currentWaypointIndex);
                 transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, speed * Time.deltaTime);
                 distanceToWaypoint = Vector3.Distance(transform.position, targetWaypoint.position);
                 yield return null;
@@ -37,13 +37,13 @@ public class Event1Sequence : MonoBehaviour
 
             if (currentWaypointIndex == waypoints.Count - 1)
             {
-                Debug.Log("Rotating at last waypoint");
+              //  Debug.Log("Rotating at last waypoint");
                 transform.Rotate(0, rotationAmount, 0);
             }
 
             if (currentWaypointIndex == 1 || currentWaypointIndex == 4)
             {
-                Debug.Log("Idling at waypoint " + currentWaypointIndex);
+                //Debug.Log("Idling at waypoint " + currentWaypointIndex);
                 yield return new WaitForSeconds(6.0f); // Idle for 2 seconds
             }
 
