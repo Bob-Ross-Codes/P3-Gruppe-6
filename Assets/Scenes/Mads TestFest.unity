@@ -5230,7 +5230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345184457}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10074938, y: -0.2537086, z: 0.026580278, w: 0.9616523}
+  m_LocalRotation: {x: 0.06826457, y: -0.14387232, z: 0.009948838, w: 0.9871888}
   m_LocalPosition: {x: 0.3645, y: 1.792, z: -0.7885}
   m_LocalScale: {x: 0.5617978, y: 0.5617978, z: 0.5617978}
   m_ConstrainProportionsScale: 0
@@ -7066,6 +7066,7 @@ MonoBehaviour:
   objectToEnableHallwayOne: {fileID: 0}
   leftDoorAnimator: {fileID: 481738502}
   rightDoorAnimator: {fileID: 1738367088}
+  doorHingeAnimator: {fileID: 0}
   player: {fileID: 619165570}
   interactionRange: 3
   sequenceController: {fileID: 618473479}
@@ -22287,7 +22288,7 @@ Transform:
   m_GameObject: {fileID: 1562459246}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 55, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
