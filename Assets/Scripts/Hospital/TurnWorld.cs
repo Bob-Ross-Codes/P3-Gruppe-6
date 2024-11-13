@@ -183,6 +183,12 @@ void Start()
 
         SetLightsEnabled(AllLights, true);
 
+        //MARIUS: Sluk alt lyd
+
+        yield return new WaitForSeconds(duration / 2);
+
+        //MARIUS: Start monster lyd
+
         yield return new WaitForSeconds(duration / 2);
 
         //!!!!!START CHASE!!!!!
