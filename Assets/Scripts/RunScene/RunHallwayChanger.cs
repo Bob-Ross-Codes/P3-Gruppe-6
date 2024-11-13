@@ -9,7 +9,10 @@ public class RunHallwayChanger : MonoBehaviour
     private GameObject currentObject; // Reference to the currently instantiated object
     private int currentIndex = 0; // Index to track the current object in the list
     private bool isCooldownActive = false; // Track if delay is active
-  private bool isFirstSpawn = true; // Track if it's the first spawn
+    private bool isFirstSpawn = true; // Track if it's the first spawn
+
+
+
 
 
 // instantiate the first object in the list
@@ -24,6 +27,7 @@ public class RunHallwayChanger : MonoBehaviour
     }
 
 
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player") && !isCooldownActive) // Check if player exits and cooldown is not active
@@ -31,6 +35,10 @@ public class RunHallwayChanger : MonoBehaviour
             StartCoroutine(SpawnNextObjectWithDelay());
         }
     }
+
+
+
+
 
     private IEnumerator SpawnNextObjectWithDelay()
     {
@@ -42,8 +50,10 @@ public class RunHallwayChanger : MonoBehaviour
             Destroy(currentObject);
         }
 
+
         // Wait for 4 seconds
         yield return new WaitForSeconds(4f);
+
 
         // Check if it's the first spawn
         if (isFirstSpawn)
