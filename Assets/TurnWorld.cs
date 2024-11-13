@@ -1,5 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using StarterAssets;
+using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
 
 public class TurnWorld : MonoBehaviour
 {
@@ -13,6 +16,10 @@ public class TurnWorld : MonoBehaviour
     [SerializeField] private GameObject hallway;
     [SerializeField] private GameObject handLight;
     [SerializeField] private GameObject exitSign;
+    [SerializeField] private GameObject exitSign2;
+    [SerializeField] private GameObject spawnAgain;
+    public FirstPersonController playerController; // Reference to the FirstPersonController scriptCloset
+
 
     private Quaternion initialRotation = Quaternion.Euler(0f, 0f, 0f);
     private Quaternion targetRotation = Quaternion.Euler(90f, 0f, 0f);
@@ -21,13 +28,16 @@ public class TurnWorld : MonoBehaviour
     private float interactionRange = 6f; // Set the interaction range
     private bool triggered;
     private bool triggeredToNormal; // Flag for TurnToNormal coroutine
+    private bool handLightDead = false;
+    float initialPlayerSpeed;
 
 void Start()
 {
-    triggered = false;
+    initialPlayerSpeed = playerController.MoveSpeed;
     triggeredToNormal = false;
     hallway.transform.localRotation = initialRotation;
     exitSign.SetActive(false);
+    exitSign2.SetActive(false);
     SetLightsEnabled(RedLights, false);
     SetLightsEnabled(AllLights, true);
 
@@ -40,10 +50,7 @@ void Start()
     private void FixedUpdate()
     {
         float distanceToPlayer = Vector3.Distance(player.position, trigger.position);
-        Debug.Log("Distance to trigger 1: " + distanceToPlayer);
-        //Debug.Log("Distance to Player: " + distanceToPlayer);
 
-        // Start TurnToRed coroutine if within range and not triggered
         if (distanceToPlayer < interactionRange && !triggered)
         {
             StartCoroutine(TurnToRed(4f)); // Start TurnToRed coroutine
@@ -52,8 +59,7 @@ void Start()
         }
 
         float distanceToPlayer2 = Vector3.Distance(player.position, trigger2.position);
-        Debug.Log("Distance to trigger 2: " + distanceToPlayer2);
-        // Start TurnToNormal coroutine if within range and not triggered to normal
+
         if (distanceToPlayer2 < interactionRange && !triggeredToNormal)
         {
             Debug.Log("TurningToNormal");
@@ -101,38 +107,87 @@ void Start()
         hallway.transform.localRotation = targetRotation;
         hallway.transform.localPosition = targetPosition;
 
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(duration/2);
 
-        AkSoundEngine.PostEvent("Light_OnOff_Event", gameObject);
-        SetLightsEnabled(RedLights, true);
-        exitSign.SetActive(true);
+        playerController.MoveSpeed = 0;
+        StartCoroutine(TurnRedLights());
+
+
+        while (handLightDead == false)  
+        {
+            float darkInterval = Random.Range(0.1f, 0.4f);
+            float lightInterval = Random.Range(0.05f, 0.1f);
+
+            handLight.SetActive(true);
+            yield return new WaitForSeconds(darkInterval);
+            handLight.SetActive(false);
+            yield return new WaitForSeconds(lightInterval);
+        }
         Destroy(handLight);
+        //MARIUS: En eller anden lyd fordi lommelygten går ud. Evt. bare flickering Lights
+    }
+
+    private IEnumerator TurnRedLights (){
+        
+        yield return new WaitForSeconds(1f);
+        handLightDead = true;
+
+        //MARIUS: Kan vi starte en masse stemmer her. Vi Slukker dem senere
+
+        // Assuming RedLights is a list or array of Light components
+        for (int i = 0; i < RedLights.Length; i += 2) {
+            // Turn on two lights at a time
+            if (i < RedLights.Length) {
+                RedLights[i].enabled = true;  // Turn on the first light
+            }
+            if (i + 1 < RedLights.Length) {
+                RedLights[i + 1].enabled = true;  // Turn on the second light
+            }
+
+            // MARIUS: Spil stor lys tænder
+            AkSoundEngine.PostEvent("Light_OnOff_Event", gameObject);
+
+            // Wait for 1 second before moving to the next pair
+            yield return new WaitForSeconds(1f);
+        }
+        playerController.MoveSpeed = initialPlayerSpeed;
+        exitSign.SetActive(true);
+        //MARIUS: Måske et lille 'tick'
     }
 
 
     private IEnumerator TurnToNormal(float duration)
     {
+        Debug.Log("TurningToNormal");
+        //MARIUS: Sluk alle stemmer
         yield return new WaitForSeconds(duration / 4);
+
+        exitSign2.SetActive(true);
 
         hallway.transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
         hallway.transform.localPosition = initialPosition;
 
         yield return new WaitForSeconds(duration / 4);
 
-
-        player.transform.localPosition = trigger2.transform.localPosition;
-
+        player.transform.position = spawnAgain.transform.position;
 
         AkSoundEngine.PostEvent("Light_OnOff_Event", gameObject);
         SetLightsEnabled(RedLights, false);
         exitSign.SetActive(false);
 
+        player.transform.position = spawnAgain.transform.position;
+
         yield return new WaitForSeconds(duration / 2);
+       
+        player.transform.position = spawnAgain.transform.position;
 
         SetLightsEnabled(AllLights, true);
+
+        yield return new WaitForSeconds(duration / 2);
+
+        //!!!!!START CHASE!!!!!
     }
 
-    // Helper method to enable/disable lights in an array
     private void SetLightsEnabled(Light[] lights, bool enabled)
     {
         foreach (var light in lights)
@@ -141,4 +196,3 @@ void Start()
         }
     }
 }
-//TRigger 2 virker ikke
