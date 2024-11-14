@@ -11,6 +11,7 @@ public class ClosetHide : MonoBehaviour
     public FirstPersonController playerController; // Reference to the FirstPersonController script
     public GameObject objectToDisableHallwayOne; // Reference to the GameObject to disable when hiding
     public GameObject objectToEnableHallwayOne;
+    public Animator doorHingeAnimator;
     public Animator leftDoorAnimator; // Animator for the left door
     public Animator rightDoorAnimator; // Animator for the right door
     public Transform player; // Reference to the player's transform
@@ -51,6 +52,10 @@ public class ClosetHide : MonoBehaviour
 
             // Disable the specified GameObject (only once)
             objectToDisableHallwayOne.SetActive(false);
+
+            // indset logic der timer det ordenligt før følgende kode
+            doorHingeAnimator.SetTrigger("broken");
+
 
             // Player entered the closet
             sequenceController.OnPlayerHidden();
