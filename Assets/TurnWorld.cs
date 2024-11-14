@@ -19,7 +19,6 @@ public class TurnWorld : MonoBehaviour
     [SerializeField] private GameObject exitSign;
     [SerializeField] private GameObject exitSign2;
     [SerializeField] private GameObject spawnAgain;
-    [SerializeField] private GameObject chaseScene;
     //public RunHallwayChanger RunHallwayChanger;
     public FirstPersonController playerController; // Reference to the FirstPersonController scriptCloset
 
@@ -39,7 +38,6 @@ void Start()
     initialPlayerSpeed = playerController.MoveSpeed;
     triggeredToNormal = false;
     hallway.transform.localRotation = initialRotation;
-    chaseScene.SetActive(false);
     exitSign.SetActive(false);
     exitSign2.SetActive(false);
     SetLightsEnabled(RedLights, false);
@@ -189,14 +187,9 @@ void Start()
 
         yield return new WaitForSeconds(duration / 2);
 
-        StartChase();
     }
 
-    private void StartChase()
-    {
-        //chaseScene.transform.position = chaseSpawnPoint.localPosition + new Vector3(15.9499998f,-24.3899994f,8.32999992f);
-        chaseScene.SetActive(true);
-    }
+  
 
     private void SetLightsEnabled(Light[] lights, bool enabled)
     {

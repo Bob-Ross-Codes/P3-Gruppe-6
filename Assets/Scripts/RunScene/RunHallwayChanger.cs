@@ -52,7 +52,7 @@ public class RunHallwayChanger : MonoBehaviour
 
 
         // Wait for 4 seconds
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(1f);
 
 
         // Check if it's the first spawn
