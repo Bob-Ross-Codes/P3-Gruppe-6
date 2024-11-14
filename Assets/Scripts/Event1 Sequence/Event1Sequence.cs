@@ -10,6 +10,8 @@ public class Event1Sequence : MonoBehaviour
 
     private int currentWaypointIndex = 0;
 
+    public bool agro = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,5 +51,8 @@ public class Event1Sequence : MonoBehaviour
 
             currentWaypointIndex++;
         }
+
+        agro = true;
+      
     }
 }

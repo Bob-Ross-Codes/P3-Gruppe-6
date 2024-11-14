@@ -62,6 +62,8 @@ public class ClosetHide : MonoBehaviour
             // Player entered the closet
             sequenceController.OnPlayerHidden();
             Debug.Log("Player is hiding in the closet");
+
+
         }
         else
         {
