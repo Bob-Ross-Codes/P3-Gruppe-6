@@ -11,6 +11,7 @@ public class Event1Sequence : MonoBehaviour
     [SerializeField] private int currentWaypointIndex = 0;
 
     public GameObject agroControlller;
+    public GameObject deAgro;
 
     // Start is called before the first frame update
     void Start()
@@ -63,5 +64,6 @@ public class Event1Sequence : MonoBehaviour
         Debug.Log("Sequence complete");
 
         agroControlller.SetActive(true);
+        deAgro.SetActive(true);
     }
 }
