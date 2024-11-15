@@ -13,6 +13,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
     private int currentTargetIndex = 0;  // To keep track of the current target (BoxCollider)
     private bool isMoving = true;        // Flag to control the movement
     [SerializeField] int finalHallwayCount = 20;
+    
 
     void Start()
     {
@@ -36,10 +37,10 @@ public class MonsterChaseMvmnt : MonoBehaviour
             MoveToTarget();
             LookAtPlayer();
         }
-        if(isMoving && targetBoxes.Length == finalHallwayCount)
+        /*if(isMoving && targetBoxes.Length == finalHallwayCount)
         {
             //runHallwayChanger.finalHallway();
-        }
+        }*/
 
         if (distanceToPlayer < 5)
         {
@@ -51,6 +52,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
     // Function to move the object towards the current target BoxCollider
     private void MoveToTarget()
     {
+        Debug.Log("Moving Towards " + currentTargetIndex);
         // Get the position of the current target BoxCollider
         Vector3 targetPosition = targetBoxes[currentTargetIndex].transform.position;
 
@@ -60,8 +62,11 @@ public class MonsterChaseMvmnt : MonoBehaviour
         // Check if the object has reached the target position
         if (transform.position == targetPosition)
         {
+            Debug.Log("Index " + currentTargetIndex + "is done");
             // Move to the next target BoxCollider (loop back to 0 if we reach the last one)
             currentTargetIndex = (currentTargetIndex + 1) % targetBoxes.Length;
+
+            Debug.Log("Moving on to index:" + currentTargetIndex );
         }
     }
 
