@@ -149,7 +149,6 @@ public class JournalEyeDetector : GazeActivation
             }
 
             if (flickerCount == 3) finish = true; 
-        //}
     }
 
     void FixedUpdate()

@@ -18,6 +18,7 @@ public class TurnWorld : MonoBehaviour
     [SerializeField] private GameObject exitSign;
     [SerializeField] private GameObject exitSign2;
     [SerializeField] private GameObject spawnAgain;
+    [SerializeField] private GameObject monster;
     public FirstPersonController playerController; // Reference to the FirstPersonController scriptCloset
 
 
@@ -40,6 +41,7 @@ void Start()
     exitSign2.SetActive(false);
     SetLightsEnabled(RedLights, false);
     SetLightsEnabled(AllLights, true);
+    monster.SetActive(false);
 
     // Set the class-level initialPosition and targetPosition (not local variables)
     initialPosition = hallway.transform.localPosition; // Store initial position
@@ -78,7 +80,7 @@ void Start()
             float t = elapsedTime / duration; // Normalized time (0 to 1)
 
             // Smoothly interpolate the rotation and position
-            hallway.transform.localRotation = Quaternion.Lerp(initialRotation, targetRotation, t);
+            hallway.transform.rotation = Quaternion.Lerp(initialRotation, targetRotation, t);
             hallway.transform.localPosition = Vector3.Lerp(initialPosition, targetPosition, t);
 
             elapsedTime += Time.deltaTime;
@@ -104,7 +106,7 @@ void Start()
         }
 
         // Ensure hallway finishes at the final target position and rotation
-        hallway.transform.localRotation = targetRotation;
+        hallway.transform.rotation = targetRotation;
         hallway.transform.localPosition = targetPosition;
 
         yield return new WaitForSeconds(duration/2);
@@ -185,7 +187,7 @@ void Start()
 
         yield return new WaitForSeconds(duration / 2);
 
-        //!!!!!START CHASE!!!!!
+        monster.SetActive(false);
     }
 
     private void SetLightsEnabled(Light[] lights, bool enabled)
