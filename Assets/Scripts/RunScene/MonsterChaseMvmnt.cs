@@ -1,0 +1,118 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MonsterChaseMvmnt : MonoBehaviour
+{
+    public GameObject[] targetBoxes; // Array to store the four BoxColliders
+    public Transform player;
+    [SerializeField] private Transform monster;
+
+    [SerializeField] private float _moveSpeed = 20f;      // Private backing field for moveSpeed
+    [SerializeField] private float monsterMaxSpeed = 15;
+    private int currentTargetIndex = 0;  // To keep track of the current target (BoxCollider)
+    private bool isMoving = true;        // Flag to control the movement
+    [SerializeField] int finalHallwayCount = 20;
+    
+
+    void Start()
+    {
+        // Ensure we have exactly 4 BoxColliders assigned in the inspector
+        if (targetBoxes.Length != 4)
+        {
+            Debug.LogError("Please assign exactly 4 BoxColliders.");
+        }
+    }
+
+    void Update()
+    {
+        // Calculate the distance to the player
+        float distanceToPlayer = Vector3.Distance(player.position, monster.position);
+
+        // Set the moveSpeed based on the distance to the player, but cap it at monsterMaxSpeed
+        MoveSpeed = distanceToPlayer / 2;
+
+        if (isMoving && targetBoxes.Length == 4)
+        {
+            MoveToTarget();
+            LookAtPlayer();
+        }
+        /*if(isMoving && targetBoxes.Length == finalHallwayCount)
+        {
+            //runHallwayChanger.finalHallway();
+        }*/
+
+        if (distanceToPlayer < 5)
+        {
+            // Player is close enough, triggering death or something else
+            Debug.Log("Player is dead");
+        }
+    }
+
+    // Function to move the object towards the current target BoxCollider
+    private void MoveToTarget()
+    {
+        Debug.Log("Moving Towards " + currentTargetIndex);
+        // Get the position of the current target BoxCollider
+        Vector3 targetPosition = targetBoxes[currentTargetIndex].transform.position;
+
+        // Move towards the target using MoveTowards for smooth movement
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, MoveSpeed * Time.deltaTime);
+
+        // Check if the object has reached the target position
+        if (transform.position == targetPosition)
+        {
+            Debug.Log("Index " + currentTargetIndex + "is done");
+            // Move to the next target BoxCollider (loop back to 0 if we reach the last one)
+            currentTargetIndex = (currentTargetIndex + 1) % targetBoxes.Length;
+
+            Debug.Log("Moving on to index:" + currentTargetIndex );
+        }
+    }
+
+    // Function to rotate the object to face the player
+    private void LookAtPlayer()
+    {
+        if (player != null)
+        {
+            // Calculate the direction from the object to the player
+            Vector3 directionToPlayer = player.transform.position - transform.position;
+
+            // Calculate the rotation needed to look at the player
+            Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
+
+            // Smoothly rotate the object towards the player using Slerp
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
+        }
+    }
+
+    // Getter and Setter for moveSpeed with a cap of 30
+    public float MoveSpeed
+    {
+        get { return _moveSpeed; }
+        set { _moveSpeed = Mathf.Clamp(value, 5f, monsterMaxSpeed); }  // Clamps the speed between 5 and monsterMaxSpeed
+    }
+
+    // Method to reverse the target path (this method will reverse the order of targets in the array)
+    public void ReverseTargetPath()
+    {
+        // Reverse the order of the targetBoxes array
+        System.Array.Reverse(targetBoxes);
+
+        // Find the next target index in the original array (before reversing)
+        int nextTargetIndex = (currentTargetIndex + 1) % targetBoxes.Length;
+
+        // Set the new starting index to be one less than the next target index (or wrap around to 3 if next is 0)
+        currentTargetIndex = (nextTargetIndex - 1 + targetBoxes.Length) % targetBoxes.Length;
+
+        // If the next target was 0, move to the last target (index 3)
+        if (currentTargetIndex == 0)
+        {
+            currentTargetIndex = targetBoxes.Length - 1;
+        }
+
+        // Debug log to check the target reversal and new index
+        Debug.Log($"Target path reversed. New starting index: {currentTargetIndex}");
+}
+
+}
