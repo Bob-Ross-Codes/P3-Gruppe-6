@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: dff32b0ad9afd04ea95d396192fb97ba
     GuidInternal: 
-    m_lastTime: -8584712316606441770
+    m_lastTime: -8584712247478520342
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 8f74c11f6ba88142833ff2a081eb0f2f
     GuidInternal: 
-    m_lastTime: -8584701941224440362
+    m_lastTime: -8584700804646885979
     List:
     - name: 2DAmbience
       guid: 47c5d0fb2456804fad814c18859c1d1d
@@ -405,7 +405,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: ece3f43672e3594588fdf363796094af
     GuidInternal: 
-    m_lastTime: -8584712316618175075
+    m_lastTime: -8584712247497859281
     List: []
   - PhysicalPath: Events\Enviroment.wwu
     PathAndIcons:
@@ -418,7 +418,7 @@ MonoBehaviour:
     ParentPath: Events\Enviroment
     guid: dfdd45dc075dd0439b42b35985878514
     GuidInternal: 
-    m_lastTime: -8584701941242150887
+    m_lastTime: -8584700804659758646
     List:
     - name: Door_SFX_Event
       guid: c08fa549c659aa4c9b5e1d1105274359
@@ -454,6 +454,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Flashlight_OnOff_Event
+      guid: 3e4242953bee494ba41ef142d93524e4
+      id: 1510976581
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Enviroment
+        ObjectType: 12
+        guid: dfdd45dc075dd0439b42b35985878514
+      - ElementName: Flashlight_OnOff_Event
+        ObjectType: 3
+        guid: 3e4242953bee494ba41ef142d93524e4
+      Path: Events\Enviroment\Flashlight_OnOff_Event
+      maxAttenuation: 0
+      maxDuration: 0.42504168
+      minDuration: 0.386375
     - name: Horror_Ambience
       guid: a41db81080c81d44a911aaba9f72794f
       id: 967859696
@@ -567,7 +584,7 @@ MonoBehaviour:
     ParentPath: Events\Locomotion
     guid: 5d12444c80736d4aa4183b439461e315
     GuidInternal: 
-    m_lastTime: -8584712316618154721
+    m_lastTime: -8584712247497822091
     List: []
   - PhysicalPath: Events\Music.wwu
     PathAndIcons:
@@ -610,7 +627,7 @@ MonoBehaviour:
     ParentPath: Events\NPC
     guid: 02ecd6ad61d6b64281cc12bfd98682a1
     GuidInternal: 
-    m_lastTime: -8584712316618154721
+    m_lastTime: -8584712247497822091
     List: []
   - PhysicalPath: Events\Player.wwu
     PathAndIcons:
@@ -688,7 +705,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: ea837575837ad2429fa23f0890dcd34c
     GuidInternal: 
-    m_lastTime: -8584701941242130787
+    m_lastTime: -8584700804659748647
     List:
     - name: RTPC_Distance
       guid: 8f713afc3c692048aa47cad6aeb38d71
@@ -856,7 +873,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 84cae74749a41b4cafaecbed2d4b0e7f
     GuidInternal: 
-    m_lastTime: -8584712316606461858
+    m_lastTime: -8584712247478550355
     List:
     - name: AreaState
       guid: 5a385b9de0b5714f9a552b09a52084ef
@@ -1102,7 +1119,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: f26415a28a873a438edb3ff2f246b1ad
     GuidInternal: 
-    m_lastTime: -8584701941212064973
+    m_lastTime: -8584700804643258549
     List:
     - name: DoorSFXSwitch
       guid: e5193861724f2444a084b729641b5d08
@@ -1167,6 +1184,56 @@ MonoBehaviour:
         - ElementName: Open
           ObjectType: 10
           guid: 338c5b9a85a7de4bae5f28dc41abacd1
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: FlashlightSwitch
+      guid: 23ea58b252f58642bdfbee8ef6614c6a
+      id: 423758775
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f26415a28a873a438edb3ff2f246b1ad
+      - ElementName: FlashlightSwitch
+        ObjectType: 11
+        guid: 23ea58b252f58642bdfbee8ef6614c6a
+      Path: Switches\Default Work Unit\FlashlightSwitch
+      values:
+      - name: Off
+        guid: afcb7d50ac16e744990b3bc3fbc0eaa8
+        id: 930712164
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f26415a28a873a438edb3ff2f246b1ad
+        - ElementName: FlashlightSwitch
+          ObjectType: 11
+          guid: 23ea58b252f58642bdfbee8ef6614c6a
+        - ElementName: Off
+          ObjectType: 10
+          guid: afcb7d50ac16e744990b3bc3fbc0eaa8
+      - name: On
+        guid: affe6b7ebf2e3d419e21a8cdb8354dcf
+        id: 1651971902
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f26415a28a873a438edb3ff2f246b1ad
+        - ElementName: FlashlightSwitch
+          ObjectType: 11
+          guid: 23ea58b252f58642bdfbee8ef6614c6a
+        - ElementName: On
+          ObjectType: 10
+          guid: affe6b7ebf2e3d419e21a8cdb8354dcf
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -1333,6 +1400,22 @@ MonoBehaviour:
         guid: a052e87dea39cb48af0173fdf8c363dd
       Path: Switches\Default Work Unit\LightSwitch
       values:
+      - name: Flick
+        guid: 2fdd6b95a7a3034f9463033b4926d275
+        id: 1558276990
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: f26415a28a873a438edb3ff2f246b1ad
+        - ElementName: LightSwitch
+          ObjectType: 11
+          guid: a052e87dea39cb48af0173fdf8c363dd
+        - ElementName: Flick
+          ObjectType: 10
+          guid: 2fdd6b95a7a3034f9463033b4926d275
       - name: Off
         guid: dc3a9c9de8edd74484d9e2e7b71e46e4
         id: 930712164
@@ -1628,7 +1711,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 06448c3d07cb8d4c89714159dd6e5e14
     GuidInternal: 
-    m_lastTime: -8584712316606441770
+    m_lastTime: -8584712247478520342
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 02000000030000000400000005000000070000001e0000001f0000002f000000300000004500000047000000
