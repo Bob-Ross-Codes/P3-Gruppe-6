@@ -11,6 +11,7 @@ public class ClosetHide : MonoBehaviour
     public FirstPersonController playerController; // Reference to the FirstPersonController script
     public GameObject objectToDisableHallwayOne; // Reference to the GameObject to disable when hiding
     public GameObject objectToEnableHallwayOne;
+    public Transform roomDoor;
 
     public Animator leftDoorAnimator; // Animator for the left door
     public Animator rightDoorAnimator; // Animator for the right door
@@ -42,7 +43,6 @@ public class ClosetHide : MonoBehaviour
         if (isHiding)
         {
 
-
             // Switch to ClosetCamera, disable player movement, and open the doors
             mainCamera.Priority = 0;
             closetCamera.Priority = 10;
@@ -65,6 +65,7 @@ public class ClosetHide : MonoBehaviour
         }
         else
         {
+            player.LookAt(roomDoor); 
             // Return to MainCamera, enable player movement, and close the doors
             mainCamera.Priority = 10;
             closetCamera.Priority = 0;

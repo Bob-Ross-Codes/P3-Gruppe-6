@@ -14,12 +14,18 @@ public abstract class GazeActivation : MonoBehaviour
 
     public void UpdateLookTime(float deltaTime)
     {
+        //if (isActivated) return; // If already activated, do nothing
 
-        lookTime += deltaTime;
+        lookTime += deltaTime; // Accumulate look time
+
+        if (lookTime >= ActivationTime) // Check if the look time exceeds the threshold
+        {
             OnLookedAt();
             isActivated = true; // Mark as activated
-            lookTime = 0.0f;
+            lookTime = 0.0f; // Reset the look time after activation
+        }
     }
+
     public void ResetLookTime()
     {
         lookTime = 0.0f;

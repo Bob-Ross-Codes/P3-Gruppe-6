@@ -5,7 +5,7 @@ using UnityEngine;
 public class JournalEyeDetector : GazeActivation
 {
     //Eyetracking elements
-    public override float ActivationTime => 2f;
+    public override float ActivationTime => 3f;
     public GameObject EyeDetector;
 
     //Flickering lights
