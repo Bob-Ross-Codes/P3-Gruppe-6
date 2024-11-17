@@ -42100,7 +42100,7 @@ PrefabInstance:
     - target: {fileID: 5439409775913542315, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: journalEyeDetector
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1652613005}
     - target: {fileID: 5620860548423769935, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: player
       value: 
@@ -42218,6 +42218,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8126362893271579743, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 21.139664
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126362893271579743, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
       value: 24.89
       objectReference: {fileID: 0}
@@ -42303,15 +42307,43 @@ PrefabInstance:
       objectReference: {fileID: 875882303}
     - target: {fileID: 8743617689129875553, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.854
+      value: -5.792
       objectReference: {fileID: 0}
     - target: {fileID: 8743617689129875553, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.243
+      value: -4.201
       objectReference: {fileID: 0}
     - target: {fileID: 8743617689129875553, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 48.307
+      value: 48.231
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743617689129875553, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9834216
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743617689129875553, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.10201897
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743617689129875553, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.14815913
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743617689129875553, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.022868851
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743617689129875553, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 11.972
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743617689129875553, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 17.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743617689129875553, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.864
       objectReference: {fileID: 0}
     - target: {fileID: 8756421851963369672, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -42428,6 +42460,7 @@ MonoBehaviour:
   lightInterval: 0
   flickerCount: 1
   flickering: 0
+  countForJumpscare: 4
   jumpScare: 0
   patient: {fileID: 1652613004}
   blurryText: {fileID: 1652613003}

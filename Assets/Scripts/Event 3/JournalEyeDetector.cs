@@ -5,7 +5,7 @@ using UnityEngine;
 public class JournalEyeDetector : GazeActivation
 {
     //Eyetracking elements
-    public override float ActivationTime => 5f;
+    public override float ActivationTime => 2f;
     public GameObject EyeDetector;
 
     //Flickering lights
@@ -16,7 +16,8 @@ public class JournalEyeDetector : GazeActivation
     public int flickerCount = 1;
     public bool flickering;
     private bool finish;
-    
+    public int countForJumpscare = 4;
+
     //Jumpscare
     public bool jumpScare;
     private Vector3 humanPosition1 = new Vector3(0.340000004f, -0.113922141f, 5.99638224f);
@@ -54,11 +55,11 @@ public class JournalEyeDetector : GazeActivation
         patient.SetActive(true);
         patient.transform.localPosition = humanPosition1;
 
-        if (patient != null && flickerCount != 3)
+        if (patient != null && flickerCount != countForJumpscare)
         {
             flickerDuration = 4;
         }
-        else if (patient != null && flickerCount == 3)
+        else if (patient != null && flickerCount == countForJumpscare)
         {
             flickerDuration = 15;
         }else
@@ -149,7 +150,7 @@ public class JournalEyeDetector : GazeActivation
                 light.enabled = true;
             }
 
-            if (flickerCount == 3) finish = true; 
+            if (flickerCount == countForJumpscare) finish = true; 
     }
 
     void FixedUpdate()
