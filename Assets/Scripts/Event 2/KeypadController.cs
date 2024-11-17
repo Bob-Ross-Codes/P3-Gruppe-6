@@ -5,7 +5,6 @@ using Cinemachine;
 public class KeypadController : MonoBehaviour
 {
     public GameObject keypadUI; // Assign your keypad UI GameObject
-    public TextMeshProUGUI[] digitDisplays; // Array of TextMeshProUGUI for each digit
     public TextMeshProUGUI inputDisplay; // TextMeshProUGUI to show the player’s input
     public GameObject door; // Door GameObject to open when correct code is entered
     public GameObject player; // Player GameObject with the movement script
@@ -13,51 +12,49 @@ public class KeypadController : MonoBehaviour
     public CinemachineVirtualCamera mainCameraVCam; // Main gameplay camera
     public CinemachineVirtualCamera keypadVCam; // Keypad camera
 
-    public string correctCode = "12345"; // Initial correct code
-    private string playerInput = "";
-    private char[] displayedCode;
-    private int maxCodeChanges = 6;
-    private int changesCount = 0;
+    [System.Serializable]
+    public class CodeWithPicture
+    {
+        public string code;              // Password for this picture
+        public GameObject pictureObject; // GameObject for each picture
+    }
 
+    public CodeWithPicture[] codesWithPictures; // Array of codes and corresponding pictures
+
+    private string correctCode;         // Current correct code
+    private string playerInput = "";    // Player's input
+    private int currentCodeIndex = 0;   // Tracks the current picture/password index
     private bool isKeypadOpen = false;
-    private bool isPlayerInRange = false; // Track if the player is within range of the keypad
-    private MonoBehaviour FirstPersonController; // Reference to player movement script
-
-    private KeypadCameraController keypadCameraController; // Reference to the keypad camera controller
+    private bool isPlayerInRange = false; // Tracks if the player is near the keypad
+    private MonoBehaviour FirstPersonController; // Reference to the player's movement script
 
     void Start()
     {
-        keypadUI.SetActive(true); // Always visible
-        displayedCode = correctCode.ToCharArray();
-        UpdateDigitDisplays();
-
-        Cursor.visible = false; // Hide cursor at the start
-        Cursor.lockState = CursorLockMode.Locked;
-
+        keypadUI.SetActive(false); // Start with keypad UI hidden
         FirstPersonController = player.GetComponent<MonoBehaviour>();
 
-        // Ensure the main camera is active at start
+        // Ensure the main camera is active at the start
         mainCameraVCam.Priority = 10;
         keypadVCam.Priority = 0;
 
-        // Get the keypad camera controller
-        keypadCameraController = keypadVCam.GetComponent<KeypadCameraController>();
+        // Initialize with the first code and picture
+        LoadCodeAndPicture(0);
     }
 
     void Update()
     {
-        // Only allow interaction if player is close to the keypad
+        // Allow interaction only if the player is near the keypad
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
             ToggleKeypadInputMode();
         }
 
-        // Test LookAtPassword and LookAtKeypad functionality
-        if (Input.GetKeyDown(KeyCode.Alpha1) && isKeypadOpen)
+        if (isKeypadOpen && Input.GetKeyDown(KeyCode.Alpha1)) // Look at password
         {
             LookAtPassword();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && isKeypadOpen)
+
+        if (isKeypadOpen && Input.GetKeyDown(KeyCode.Alpha2)) // Look at keypad
         {
             LookAtKeypad();
         }
@@ -78,6 +75,8 @@ public class KeypadController : MonoBehaviour
             DisableCursorAndUnlockPlayer();
             SwitchToMainCamera();
         }
+
+        keypadUI.SetActive(isKeypadOpen); // Show or hide the keypad UI
     }
 
     void EnableCursorAndLockPlayer()
@@ -104,14 +103,56 @@ public class KeypadController : MonoBehaviour
 
     void SwitchToKeypadCamera()
     {
-        mainCameraVCam.Priority = 5; // Lower priority for the main camera
-        keypadVCam.Priority = 10; // Higher priority for the keypad camera
+        mainCameraVCam.Priority = 5; // Lower priority for main camera
+        keypadVCam.Priority = 10;   // Higher priority for keypad camera
     }
 
     void SwitchToMainCamera()
     {
-        mainCameraVCam.Priority = 10; // Higher priority for the main camera
-        keypadVCam.Priority = 0; // Lower priority for the keypad camera
+        mainCameraVCam.Priority = 10; // Higher priority for main camera
+        keypadVCam.Priority = 0;     // Lower priority for keypad camera
+    }
+
+    void LoadCodeAndPicture(int index)
+    {
+        if (index >= 0 && index < codesWithPictures.Length)
+        {
+            currentCodeIndex = index;
+            correctCode = codesWithPictures[index].code;
+
+            // Set the correct picture active, and deactivate all others
+            for (int i = 0; i < codesWithPictures.Length; i++)
+            {
+                codesWithPictures[i].pictureObject.SetActive(i == currentCodeIndex);
+            }
+        }
+        else
+        {
+            Debug.LogError("Invalid code index!");
+        }
+    }
+
+    public void LookAtPassword()
+    {
+        // Advance to the next picture, if possible
+        if (currentCodeIndex < codesWithPictures.Length - 1)
+        {
+            codesWithPictures[currentCodeIndex].pictureObject.SetActive(false); // Hide current picture
+            currentCodeIndex++;
+            codesWithPictures[currentCodeIndex].pictureObject.SetActive(true); // Show next picture
+            Debug.Log("Looking at password: Changed to next picture");
+        }
+        else
+        {
+            Debug.Log("No more pictures to cycle through.");
+        }
+    }
+
+    public void LookAtKeypad()
+    {
+        // Update the password to match the current picture
+        correctCode = codesWithPictures[currentCodeIndex].code;
+        Debug.Log("Looking at keypad: Correct code updated to " + correctCode);
     }
 
     public void AddDigit(string digit)
@@ -153,66 +194,6 @@ public class KeypadController : MonoBehaviour
         door.SetActive(false); // Disable or open the door
     }
 
-    public void LookAtPassword()
-    {
-        if (changesCount < maxCodeChanges)
-        {
-            ChangeDisplayedCode();
-            changesCount++;
-        }
-    }
-
-    public void LookAtKeypad()
-    {
-        correctCode = new string(displayedCode); // Update correctCode to the last displayedCode
-        UpdateDigitDisplays();
-    }
-
-    void ChangeDisplayedCode()
-    {
-        // Select a random index to change
-        int randomIndex = Random.Range(0, displayedCode.Length);
-
-        // Ensure the new digit is different from the original correct digit
-        char originalDigit = displayedCode[randomIndex];
-        char newDigit;
-        do
-        {
-            newDigit = (char)Random.Range(48, 58); // ASCII for '0' to '9'
-        } while (newDigit == originalDigit);
-
-        // Replace the selected digit with the new random digit
-        displayedCode[randomIndex] = newDigit;
-
-        // Update the displayed code
-        UpdateDigitDisplays();
-    }
-
-    void UpdateDigitDisplays()
-    {
-        for (int i = 0; i < digitDisplays.Length; i++)
-        {
-            if (i < displayedCode.Length)
-            {
-                digitDisplays[i].text = displayedCode[i].ToString();
-                digitDisplays[i].gameObject.SetActive(true); // Ensure digit is visible
-            }
-            else
-            {
-                digitDisplays[i].gameObject.SetActive(false); // Hide extra digits
-            }
-        }
-    }
-
-    public void SetHoveringOverKeypad(bool isHovering)
-    {
-        if (keypadCameraController != null)
-        {
-            keypadCameraController.SetHoveringOverKeypad(isHovering);
-        }
-    }
-
-    // Detect when player enters keypad range
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
@@ -221,7 +202,6 @@ public class KeypadController : MonoBehaviour
         }
     }
 
-    // Detect when player exits keypad range
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject == player)
