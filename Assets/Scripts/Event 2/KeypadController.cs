@@ -52,14 +52,14 @@ public class KeypadController : MonoBehaviour
             ToggleKeypadInputMode();
         }
 
-        // Test LookAway and LookBack functionality
+        // Test LookAtPassword and LookAtKeypad functionality
         if (Input.GetKeyDown(KeyCode.Alpha1) && isKeypadOpen)
         {
-            LookAway();
+            LookAtPassword();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && isKeypadOpen)
         {
-            LookBack();
+            LookAtKeypad();
         }
     }
 
@@ -153,7 +153,7 @@ public class KeypadController : MonoBehaviour
         door.SetActive(false); // Disable or open the door
     }
 
-    public void LookAway()
+    public void LookAtPassword()
     {
         if (changesCount < maxCodeChanges)
         {
@@ -162,7 +162,7 @@ public class KeypadController : MonoBehaviour
         }
     }
 
-    public void LookBack()
+    public void LookAtKeypad()
     {
         correctCode = new string(displayedCode); // Update correctCode to the last displayedCode
         UpdateDigitDisplays();
