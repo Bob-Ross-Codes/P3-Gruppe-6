@@ -4,42 +4,49 @@ using UnityEngine;
 
 public class RunHallwayChanger : MonoBehaviour
 {
+
+
+    [Header("Spawn Settings")]
     public List<GameObject> objectsToSpawn; // List of objects to spawn
     public Transform spawnPoint; // Reference to the spawn point
+    public GameObject finalPrefab; // The specific prefab to spawn when the trigger counter hits the max
+
+
+
+    // Constants for configuration
+    private const int FIRST_SPAWN_INDEX = 0;
+    private const int MIN_RANDOM_INDEX = 1;
+    private const int MID_SECTION_TRIGGER_THRESHOLD = 5;
+    private const int MID_SECTION_START_INDEX = 4;
+    private const int FINAL_TRIGGER_THRESHOLD = 6;
+    private const float SPAWN_DELAY = 2f;
+
+
+
     private GameObject currentObject; // Reference to the currently instantiated object
-    private int currentIndex = 0; // Index to track the current object in the list
-    private bool isCooldownActive = false; // Track if delay is active
-    private bool isFirstSpawn = true; // Track if it's the first spawn
-    private int triggerCounter = 0; // Counter to track how many times the trigger has been entered
-    private int SpawnPartOneMax = 3; // Number of times before spawning the last object in the list 
+    private int triggerCounter = 0; // Counter for trigger events
+    private bool isCooldownActive = false; // Track if cooldown is active
 
 
-
-
-
-
-
-// instantiate the first object in the list
-    public void StartChase()
-    {
-        if (objectsToSpawn.Count > 0)
-        {
-            currentObject = Instantiate(objectsToSpawn[currentIndex], spawnPoint.position, spawnPoint.rotation);
-            currentIndex++;
-            isFirstSpawn = false; // Track if it's the first spawn
-        }
-    }
 
     private void Start()
     {
         StartChase();
     }
 
+    // Start spawning process with the first object
+    public void StartChase()
+    {
+        if (objectsToSpawn.Count > 0)
+        {
+            currentObject = Instantiate(objectsToSpawn[FIRST_SPAWN_INDEX], spawnPoint.position, spawnPoint.rotation);
+        }
+    }
 
-//Trigger the next object
+    // Trigger event to handle object spawning when player exits the trigger
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && !isCooldownActive) // Check if player exits and cooldown is not active
+        if (other.CompareTag("Player") && !isCooldownActive)
         {
             StartCoroutine(SpawnNextObjectWithDelay());
             triggerCounter++;
@@ -47,56 +54,56 @@ public class RunHallwayChanger : MonoBehaviour
         }
     }
 
-
-
-
-
+    // Coroutine to spawn the next object with a delay
     private IEnumerator SpawnNextObjectWithDelay()
     {
-        isCooldownActive = true; // Set cooldown to active
+        isCooldownActive = true;
+        yield return new WaitForSeconds(SPAWN_DELAY);
 
-        // Destroy the currently instantiated object if it exists
+        // Destroy the current object if it exists
         if (currentObject != null)
         {
             Destroy(currentObject);
         }
 
-
-        // Wait for 4 seconds
-        yield return new WaitForSeconds(2f);
-
-
-        // Check if it's the first spawn
-        if (isFirstSpawn)
+        // Determine the next object index to spawn
+        int nextIndex = DetermineNextIndex();
+        if (nextIndex == -2) // Special case for final prefab
         {
-            currentObject = Instantiate(objectsToSpawn[0], spawnPoint.position, spawnPoint.rotation);
-            isFirstSpawn = false; // Set to false after the first spawn
+            currentObject = Instantiate(finalPrefab, spawnPoint.position, spawnPoint.rotation);
+        }
+        else if (nextIndex >= 0)
+        {
+            currentObject = Instantiate(objectsToSpawn[nextIndex], spawnPoint.position, spawnPoint.rotation);
         }
         else
         {
-            // Instantiate a random object from the list from 1 to 5 if the triggerCounter is less than 6, excluding the first one
-            if (triggerCounter < 6 && objectsToSpawn.Count > 1)
-            {
-            int randomIndex = Random.Range(1, Mathf.Min(objectsToSpawn.Count, 6)); // Only from index 1 to 5, as index 0 is used for the first spawn
-            currentObject = Instantiate(objectsToSpawn[randomIndex], spawnPoint.position, spawnPoint.rotation);
-            }
-            else if (triggerCounter >= 6 && objectsToSpawn.Count > 6)
-            {
-            int randomIndex = Random.Range(6, objectsToSpawn.Count); // Only from index 6 and up
-            currentObject = Instantiate(objectsToSpawn[randomIndex], spawnPoint.position, spawnPoint.rotation);
-            }
-            else if (objectsToSpawn.Count > 1)
-            {
-            int randomIndex = Random.Range(1, objectsToSpawn.Count); // Only from index 1 and up, as index 0 is used for the first spawn
-            currentObject = Instantiate(objectsToSpawn[randomIndex], spawnPoint.position, spawnPoint.rotation);
-            }
-            else
-            {
-            Debug.Log("No objects to spawn.");
-            }
+            Debug.Log("No valid object to spawn.");
         }
 
-        isCooldownActive = false; // Reset cooldown
+        isCooldownActive = false;
+    }
+
+    // Determine the next object index based on trigger count and object list length
+    private int DetermineNextIndex()
+    {
+        if (objectsToSpawn.Count <= 1) return -1;
+
+        if (triggerCounter == FINAL_TRIGGER_THRESHOLD)
+        {
+            return -2; // Special code to signal the final prefab should be spawned
+        }
+        else if (triggerCounter < MID_SECTION_TRIGGER_THRESHOLD && objectsToSpawn.Count > 1)
+        {
+            return Random.Range(MIN_RANDOM_INDEX, Mathf.Min(objectsToSpawn.Count, MID_SECTION_START_INDEX));
+        }
+        else if (triggerCounter >= MID_SECTION_TRIGGER_THRESHOLD && objectsToSpawn.Count > MID_SECTION_START_INDEX)
+        {
+            return Random.Range(MID_SECTION_START_INDEX, objectsToSpawn.Count);
+        }
+        else
+        {
+            return Random.Range(MIN_RANDOM_INDEX, objectsToSpawn.Count);
+        }
     }
 }
-
