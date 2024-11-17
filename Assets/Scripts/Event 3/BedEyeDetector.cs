@@ -35,9 +35,9 @@ public class BedEyeDetector : GazeActivation
     {
         blurryText.PauseFadeOut(false);
 
-        if (journalEyeDetector.flickerCount == 3 && journalEyeDetector.jumpScare == false)
+        if (journalEyeDetector.flickerCount == journalEyeDetector.countForJumpscare && journalEyeDetector.jumpScare == false)
         {
-            Debug.Log("flickerCount = 3, triggering JumpScare");
+            Debug.Log("flickerCount = countForJumpscare, triggering JumpScare");
             journalEyeDetector.StartJumpScare();
         }
         else if (journalEyeDetector.flickering && journalEyeDetector.jumpScare == false)

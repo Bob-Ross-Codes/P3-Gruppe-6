@@ -1281,6 +1281,7 @@ MonoBehaviour:
   objectToEnableHallwayOne: {fileID: 0}
   leftDoorAnimator: {fileID: 1814340460}
   rightDoorAnimator: {fileID: 853092203}
+  doorHingeAnimator: {fileID: 0}
   player: {fileID: 0}
   interactionRange: 3
   sequenceController: {fileID: 416598312}
@@ -6850,15 +6851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6807483806b9cde429193f147eb4aa23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterPrefab: {fileID: 3645309420975060564, guid: 185cdf5237761c24b9b5a683c1c6eb79, type: 3}
-  waypoints:
-  - {fileID: 1115795109}
-  - {fileID: 2082653696}
-  - {fileID: 308721303}
-  - {fileID: 1809289197}
-  monsterSpeed: 2
-  doorBustSound: {fileID: 0}
-  SpawnRotation: 270
+  monster: {fileID: 0}
+  event1Sequence: {fileID: 0}
 --- !u!65 &416598313
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7039,6 +7033,7 @@ MonoBehaviour:
   - {fileID: 7007928546085220954, guid: e1777023f832a4f40ba880bf372bb76e, type: 3}
   - {fileID: 3586942796797013440, guid: 093c955348f1f0043becc88f3f1610a2, type: 3}
   - {fileID: 5140412524290206558, guid: ca143d04cdefc2f4b9d2ec1032e48115, type: 3}
+  - {fileID: 3585693410148329070, guid: f065e5e2eca5a794ba9bda9f9a9d06ef, type: 3}
   spawnPoint: {fileID: 1367610228}
 --- !u!65 &430198499
 BoxCollider:
@@ -7940,6 +7935,7 @@ MonoBehaviour:
   - {fileID: 3586942796797013440, guid: 093c955348f1f0043becc88f3f1610a2, type: 3}
   - {fileID: 5140412524290206558, guid: ca143d04cdefc2f4b9d2ec1032e48115, type: 3}
   - {fileID: 7007928546085220954, guid: e1777023f832a4f40ba880bf372bb76e, type: 3}
+  - {fileID: 3585693410148329070, guid: f065e5e2eca5a794ba9bda9f9a9d06ef, type: 3}
   spawnPoint: {fileID: 1643499868}
 --- !u!65 &529232531
 BoxCollider:
@@ -14707,6 +14703,7 @@ MonoBehaviour:
   - {fileID: 3586942796797013440, guid: 093c955348f1f0043becc88f3f1610a2, type: 3}
   - {fileID: 5140412524290206558, guid: ca143d04cdefc2f4b9d2ec1032e48115, type: 3}
   - {fileID: 3586942796797013440, guid: 093c955348f1f0043becc88f3f1610a2, type: 3}
+  - {fileID: 3585693410148329070, guid: f065e5e2eca5a794ba9bda9f9a9d06ef, type: 3}
   spawnPoint: {fileID: 1522998846}
 --- !u!65 &1038504418
 BoxCollider:
@@ -22757,6 +22754,7 @@ MonoBehaviour:
   - {fileID: 3586942796797013440, guid: 093c955348f1f0043becc88f3f1610a2, type: 3}
   - {fileID: 5140412524290206558, guid: ca143d04cdefc2f4b9d2ec1032e48115, type: 3}
   - {fileID: 7007928546085220954, guid: e1777023f832a4f40ba880bf372bb76e, type: 3}
+  - {fileID: 3585693410148329070, guid: f065e5e2eca5a794ba9bda9f9a9d06ef, type: 3}
   spawnPoint: {fileID: 1871320909}
 --- !u!65 &1637393924
 BoxCollider:
