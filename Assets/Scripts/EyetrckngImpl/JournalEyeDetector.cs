@@ -36,6 +36,7 @@ public class JournalEyeDetector : GazeActivation
 
     public override void OnLookedAt()
     {
+        Debug.Log("Journal Eye detector looked at");
         blurryText.PauseFadeOut(true);
         //Only run if no flickering
         if (!flickering && !finish)

@@ -7,7 +7,7 @@ public class HallwayEnabler : MonoBehaviour
 {
     [SerializeField] private GameObject[] hallways; // Reference to an array of hallway GameObjects.
     [SerializeField] private GameObject[] hallwayEnablers; // Reference to an array of hallway GameObjects.
-    [SerializeField] private int hallwayToEnable = 0; // Number of hallways to enable.
+    [SerializeField] private int hallwayToEnable = 1; // Number of hallways to enable.
 
     private void Start()
     {
@@ -32,7 +32,7 @@ public class HallwayEnabler : MonoBehaviour
                 {
                     if (hallways[hallwayToEnable] != null)
                     {
-                        hallways[hallwayToEnable].SetActive(true);
+                        hallways[hallwayToEnable + 1].SetActive(true);
                     }
                 }
 

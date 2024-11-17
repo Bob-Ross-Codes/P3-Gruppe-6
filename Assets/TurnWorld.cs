@@ -19,6 +19,7 @@ public class TurnWorld : MonoBehaviour
     [SerializeField] private GameObject exitSign2;
     [SerializeField] private GameObject spawnAgain;
     [SerializeField] private GameObject monster;
+    [SerializeField] private RunHallwayChanger hallwayChanger;
     public FirstPersonController playerController; // Reference to the FirstPersonController scriptCloset
 
 
@@ -166,7 +167,7 @@ void Start()
 
         exitSign2.SetActive(true);
 
-        hallway.transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
+        hallway.transform.localRotation = initialRotation;
         hallway.transform.localPosition = initialPosition;
 
         yield return new WaitForSeconds(duration / 4);
@@ -176,6 +177,7 @@ void Start()
         AkSoundEngine.PostEvent("Light_OnOff_Event", gameObject);
         SetLightsEnabled(RedLights, false);
         exitSign.SetActive(false);
+        hallwayChanger.StartChase();
 
         player.transform.position = spawnAgain.transform.position;
 
@@ -187,7 +189,7 @@ void Start()
 
         yield return new WaitForSeconds(duration / 2);
 
-        monster.SetActive(false);
+        monster.SetActive(true);
     }
 
     private void SetLightsEnabled(Light[] lights, bool enabled)
