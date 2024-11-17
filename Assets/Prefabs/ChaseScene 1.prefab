@@ -335,8 +335,9 @@ MonoBehaviour:
   - {fileID: 3586942796797013440, guid: 093c955348f1f0043becc88f3f1610a2, type: 3}
   - {fileID: 5140412524290206558, guid: ca143d04cdefc2f4b9d2ec1032e48115, type: 3}
   - {fileID: 7007928546085220954, guid: e1777023f832a4f40ba880bf372bb76e, type: 3}
-  - {fileID: 3585693410148329070, guid: f065e5e2eca5a794ba9bda9f9a9d06ef, type: 3}
+  - {fileID: 2257961177953939082, guid: ba0476a41b3cbf04fb50904aa11360fd, type: 3}
   spawnPoint: {fileID: 5485300872016320202}
+  finalPrefab: {fileID: 2952895082568081095, guid: 3545eb21c15e9a04897006848f0042cb, type: 3}
 --- !u!1 &1984981606506880351
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,10 +498,11 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 5140412524290206558, guid: ca143d04cdefc2f4b9d2ec1032e48115, type: 3}
   - {fileID: 7007928546085220954, guid: e1777023f832a4f40ba880bf372bb76e, type: 3}
-  - {fileID: 3586942796797013440, guid: 093c955348f1f0043becc88f3f1610a2, type: 3}
-  - {fileID: 5140412524290206558, guid: ca143d04cdefc2f4b9d2ec1032e48115, type: 3}
   - {fileID: 3585693410148329070, guid: f065e5e2eca5a794ba9bda9f9a9d06ef, type: 3}
+  - {fileID: 5140412524290206558, guid: ca143d04cdefc2f4b9d2ec1032e48115, type: 3}
+  - {fileID: 2257961177953939082, guid: ba0476a41b3cbf04fb50904aa11360fd, type: 3}
   spawnPoint: {fileID: 7711843003564745573}
+  finalPrefab: {fileID: 2952895082568081095, guid: 3545eb21c15e9a04897006848f0042cb, type: 3}
 --- !u!1 &2991457722526275955
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,8 +626,9 @@ MonoBehaviour:
   - {fileID: 3586942796797013440, guid: 093c955348f1f0043becc88f3f1610a2, type: 3}
   - {fileID: 5140412524290206558, guid: ca143d04cdefc2f4b9d2ec1032e48115, type: 3}
   - {fileID: 3586942796797013440, guid: 093c955348f1f0043becc88f3f1610a2, type: 3}
-  - {fileID: 3585693410148329070, guid: f065e5e2eca5a794ba9bda9f9a9d06ef, type: 3}
+  - {fileID: 2991457722526275955}
   spawnPoint: {fileID: 6969890045323350777}
+  finalPrefab: {fileID: 2952895082568081095, guid: 3545eb21c15e9a04897006848f0042cb, type: 3}
 --- !u!1 &4207553241295135531
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,11 +781,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToSpawn:
   - {fileID: 3586942796797013440, guid: 093c955348f1f0043becc88f3f1610a2, type: 3}
-  - {fileID: 3586942796797013440, guid: 093c955348f1f0043becc88f3f1610a2, type: 3}
+  - {fileID: 3585693410148329070, guid: f065e5e2eca5a794ba9bda9f9a9d06ef, type: 3}
   - {fileID: 5140412524290206558, guid: ca143d04cdefc2f4b9d2ec1032e48115, type: 3}
   - {fileID: 7007928546085220954, guid: e1777023f832a4f40ba880bf372bb76e, type: 3}
-  - {fileID: 3585693410148329070, guid: f065e5e2eca5a794ba9bda9f9a9d06ef, type: 3}
+  - {fileID: 1179121044075671627, guid: 23cf4eb99f8cb7f4085980715bfdc024, type: 3}
+  - {fileID: 2257961177953939082, guid: ba0476a41b3cbf04fb50904aa11360fd, type: 3}
   spawnPoint: {fileID: 7416888416285396855}
+  finalPrefab: {fileID: 2952895082568081095, guid: 3545eb21c15e9a04897006848f0042cb, type: 3}
 --- !u!1 &5140034012000680748
 GameObject:
   m_ObjectHideFlags: 0
