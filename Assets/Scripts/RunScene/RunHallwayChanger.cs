@@ -20,7 +20,7 @@ public class RunHallwayChanger : MonoBehaviour
 
 
 // instantiate the first object in the list
-    private void StartChase()
+    public void StartChase()
     {
         if (objectsToSpawn.Count > 0)
         {
