@@ -10,7 +10,7 @@ public class JournalEyeDetector : GazeActivation
 
     //Flickering lights
     public Light[] lightsToFlicker;  // Array of lights to flicker
-    public float flickerDuration = 4f;  // Total duration of flickering effect (2 seconds)
+    public float flickerDuration = 5f;  // Total duration of flickering effect (2 seconds)
     public float darkInterval;  // Interval when lights are off
     public float lightInterval;  // Interval when lights are on
     public int flickerCount = 1;
@@ -52,16 +52,16 @@ public class JournalEyeDetector : GazeActivation
         flickering = true;                      //Keep track of flickering
         Debug.Log("Running flickerCount " + flickerCount);
 
-        patient.SetActive(true);
         patient.transform.localPosition = humanPosition1;
 
         if (patient != null && flickerCount != countForJumpscare)
         {
-            flickerDuration = 4;
+            flickerDuration = 5;
         }
-        else if (patient != null && flickerCount == countForJumpscare)
+        else if (flickerCount == countForJumpscare)
         {
             flickerDuration = 15;
+            Debug.Log("FLickering for 15 seconds");
         }else
         {
             Debug.LogError("Patient is not assigned!");
@@ -91,12 +91,19 @@ public class JournalEyeDetector : GazeActivation
                 light.enabled = true;
                 AkSoundEngine.PostEvent("Flickering_Lights", gameObject);
             }
+            bool randomBool = Random.value > 0.5f;
+            if (randomBool == true && flickering == true)
+            {
+                patient.SetActive(true);
+            }
 
             // Wait for the light interval
             yield return new WaitForSeconds(lightInterval);
             elapsedTime += lightInterval;
+            patient.SetActive(false);
         }
         
+        if (jumpScare)
         StartCoroutine(patientGone());
 
         // Increment flickerCount after completing the loop
@@ -118,6 +125,7 @@ public class JournalEyeDetector : GazeActivation
 
     public IEnumerator JumpScare()
     {
+
         Debug.Log("Running jumpscare");
         jumpScare = true;
         Debug.Log("Jumpscare running, waiting 2 seconds");
@@ -125,8 +133,6 @@ public class JournalEyeDetector : GazeActivation
         Debug.Log("Jumpscare done, patient leaving");
         StartCoroutine(patientGone());
         Destroy(patient);
-        flickerCount++;
-
     }
 
     private IEnumerator patientGone()
