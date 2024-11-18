@@ -1,7 +1,5 @@
 using AK.Wwise;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +15,7 @@ public class FlashingImages : MonoBehaviour
 
     void Start()
     {
-        // start by disabling the canvas image
+        // Start by disabling the canvas image
         canvasImage.enabled = false;
         // Ensure the canvasImage and images array are set
         if (canvasImage == null || images.Length == 0)
@@ -36,36 +34,25 @@ public class FlashingImages : MonoBehaviour
                 canvasImage.enabled = true;
                 // Start the coroutine
                 flashCoroutine = StartCoroutine(FlashImages());
-
             }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player") && flashCoroutine != null)
-        {
-            StopCoroutine(flashCoroutine);
-            flashCoroutine = null;
-            canvasImage.enabled = false;
         }
     }
 
     private IEnumerator FlashImages()
     {
-        while (true)
+        for (int i = 0; i < 4; i++)
         {
             // Set the current image
             canvasImage.sprite = images[currentImage];
             // Move to the next image
             currentImage = (currentImage + 1) % images.Length;
-            // Wait for one frame
-            yield return null;
             // Wait for the specified flash speed
-            canvasImage.enabled = false;
-
             yield return new WaitForSeconds(UnityEngine.Random.Range(minFlashSpeed, maxFlashSpeed));
-            canvasImage.enabled = true;
+            // Toggle the canvas image
+            canvasImage.enabled = !canvasImage.enabled;
         }
+        // Disable the GameObject after flashing
+        gameObject.SetActive(false);
+        flashCoroutine = null;
     }
 }
