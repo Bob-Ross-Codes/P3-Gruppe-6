@@ -52,6 +52,7 @@ public class PictureOpen : MonoBehaviour
             else if (isHandIn && !isHandFlipped)
             {
                 // Trigger the HandFlip animation
+                animator.ResetTrigger("HandIn");
                 animator.SetTrigger("HandFlip");
                 Debug.Log ("Flip!!!");
                 isHandFlipped = true;
