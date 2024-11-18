@@ -62,6 +62,8 @@ public class NextPassword : MonoBehaviour
         float timer = 0f;
         Color originalColor = spriteRenderer.color;
 
+        Debug.Log("Fader ud!");
+
         while (timer < fadeDuration)
         {
             if (isPaused)

@@ -50,6 +50,9 @@ public class KeypadController : MonoBehaviour
 
     void Update()
     {
+        float distanceToPlayer = Vector3.Distance(player.transform.position, keypadUI.transform.position);
+        if (distanceToPlayer <= activationDistance)
+            isPlayerInRange = true;
         // Allow interaction only if the player is near the keypad
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
@@ -65,61 +68,29 @@ public class KeypadController : MonoBehaviour
         {
             LookAtKeypad();
         }
-
-        float distanceToPlayer = Vector3.Distance(player.transform.position, keypadUI.transform.position);
-        if (distanceToPlayer <= activationDistance)
-            isPlayerInRange = true;
-
-
     }
-
-    void ToggleKeypadInputMode()
-    {
-        isKeypadOpen = !isKeypadOpen;
-        if (isKeypadOpen)
+        void ToggleKeypadInputMode()
         {
-            Debug.Log("Keypad Is Open!!!");
-            EnableCursorAndLockPlayer();
-            SwitchToKeypadCamera();
-            playerCollider.SetActive(false);
-            ResetInput();
+            isKeypadOpen = !isKeypadOpen;
+            if (isKeypadOpen)
+            {
+                Debug.Log("Keypad Is Open!!!");
+                EnableCursorAndLockPlayer();
+                SwitchToKeypadCamera();
+                playerCollider.SetActive(false);
+                ResetInput();
+            }
+            else
+            {
+                DisableCursorAndUnlockPlayer();
+                SwitchToMainCamera();
+                playerCollider.SetActive(true);
+            }
 
-            // Trigger the fade effect once the keypad is open
-            nextPasswordScript.StartFadeOut();
-        }
-        else
-        {
-            DisableCursorAndUnlockPlayer();
-            SwitchToMainCamera();
-            playerCollider.SetActive(true);
-        }
-
-        keypadUI.SetActive(isKeypadOpen); // Show or hide the keypad UI
-    }
-
-
-    /*void ToggleKeypadInputMode()
-    {
-        isKeypadOpen = !isKeypadOpen;
-        if (isKeypadOpen)
-        {
-            Debug.Log("Keypad Is Open!!!");
-            EnableCursorAndLockPlayer();
-            SwitchToKeypadCamera();
-            playerCollider.SetActive(false);
-            ResetInput();
-        }
-        else
-        {
-            DisableCursorAndUnlockPlayer();
-            SwitchToMainCamera();
-            playerCollider.SetActive(true);
+            keypadUI.SetActive(isKeypadOpen); // Show or hide the keypad UI
         }
 
-        keypadUI.SetActive(isKeypadOpen); // Show or hide the keypad UI
-    }*/
-
-    void EnableCursorAndLockPlayer()
+        void EnableCursorAndLockPlayer()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -177,6 +148,7 @@ public class KeypadController : MonoBehaviour
         // Advance to the next picture, if possible
         if (currentCodeIndex < codesWithPictures.Length - 1)
         {
+            //nextPasswordScript.StartFadeOut();
             codesWithPictures[currentCodeIndex].pictureObject.SetActive(false); // Hide current picture
             currentCodeIndex++;
             codesWithPictures[currentCodeIndex].pictureObject.SetActive(true); // Show next picture
