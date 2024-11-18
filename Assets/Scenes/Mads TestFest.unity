@@ -5230,7 +5230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345184457}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06826454, y: -0.14387232, z: 0.009948834, w: 0.9871888}
+  m_LocalRotation: {x: 0.06826457, y: -0.14387232, z: 0.009948838, w: 0.9871888}
   m_LocalPosition: {x: 0.3645, y: 1.792, z: -0.7885}
   m_LocalScale: {x: 0.5617978, y: 0.5617978, z: 0.5617978}
   m_ConstrainProportionsScale: 0
@@ -7059,6 +7059,7 @@ MonoBehaviour:
   playerController: {fileID: 619165557}
   objectToDisableHallwayOne: {fileID: 717948882}
   objectToEnableHallwayOne: {fileID: 0}
+  roomDoor: {fileID: 0}
   leftDoorAnimator: {fileID: 481738502}
   rightDoorAnimator: {fileID: 1738367088}
   doorHingeAnimator: {fileID: 1259312030}
@@ -23820,6 +23821,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 571675989}
+    - target: {fileID: 1452977605687183059, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_VersionIndex
+      value: 20029
+      objectReference: {fileID: 0}
     - target: {fileID: 1454969007111733272, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: player
       value: 
@@ -23864,6 +23869,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1491936490}
+    - target: {fileID: 3533265089466232974, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_VersionIndex
+      value: 3603
+      objectReference: {fileID: 0}
     - target: {fileID: 3717776003722848492, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -23960,6 +23969,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1783341333}
+    - target: {fileID: 5707609383969126177, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_VersionIndex
+      value: 3606
+      objectReference: {fileID: 0}
     - target: {fileID: 5722074617766176428, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
       value: 24.89
@@ -23972,10 +23985,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1237614151}
+    - target: {fileID: 7389513210358294148, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_VersionIndex
+      value: 3603
+      objectReference: {fileID: 0}
     - target: {fileID: 7595065989343770988, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 637289523}
+    - target: {fileID: 7595065989343770988, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
+      propertyPath: m_VersionIndex
+      value: 3603
+      objectReference: {fileID: 0}
     - target: {fileID: 7607330741195578777, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
       propertyPath: m_Mesh
       value: 
