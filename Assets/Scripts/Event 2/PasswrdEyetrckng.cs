@@ -9,5 +9,6 @@ public class PasswrdEyetrckng : GazeActivation
     public override void OnLookedAt()
     {
         keypadController.LookAtPassword();
+        Debug.Log("Looked At Password");
     }
 }
