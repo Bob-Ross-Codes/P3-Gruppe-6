@@ -33,9 +33,9 @@ public class KeypadController : MonoBehaviour
         keypadUI.SetActive(false); // Start with keypad UI hidden
         FirstPersonController = player.GetComponent<MonoBehaviour>();
 
-        // Ensure the main camera is active at the start
-        mainCameraVCam.Priority = 10;
-        keypadVCam.Priority = 0;
+        // Set camera priorities for initial state
+        mainCameraVCam.Priority = 10; // Main camera has higher priority initially
+        keypadVCam.Priority = 0;     // Keypad camera is inactive
 
         // Initialize with the first code and picture
         LoadCodeAndPicture(0);
@@ -66,6 +66,7 @@ public class KeypadController : MonoBehaviour
 
         if (isKeypadOpen)
         {
+            Debug.Log("Keypad Is Open!!!");
             EnableCursorAndLockPlayer();
             SwitchToKeypadCamera();
             ResetInput();
@@ -103,7 +104,7 @@ public class KeypadController : MonoBehaviour
 
     void SwitchToKeypadCamera()
     {
-        mainCameraVCam.Priority = 5; // Lower priority for main camera
+        mainCameraVCam.Priority = 0; // Lower priority for main camera
         keypadVCam.Priority = 10;   // Higher priority for keypad camera
     }
 

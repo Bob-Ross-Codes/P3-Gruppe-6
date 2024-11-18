@@ -116,7 +116,7 @@ void Start()
         StartCoroutine(TurnRedLights());
 
 
-        while (handLightDead == false)  
+        while (handLightDead == true)  
         {
             float darkInterval = Random.Range(0.1f, 0.4f);
             float lightInterval = Random.Range(0.05f, 0.1f);
@@ -186,6 +186,7 @@ void Start()
         player.transform.position = spawnAgain.transform.position;
 
         SetLightsEnabled(AllLights, true);
+        handLight.SetActive(true);
         exitSign.SetActive(false);
 
         yield return new WaitForSeconds(duration / 2);

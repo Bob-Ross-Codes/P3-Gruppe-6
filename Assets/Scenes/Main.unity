@@ -22489,7 +22489,7 @@ Transform:
   m_GameObject: {fileID: 1488396841}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -42.73, y: 0, z: 0.07}
+  m_LocalPosition: {x: 20, y: 0, z: -6.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45890,6 +45890,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.09
       objectReference: {fileID: 0}
+    - target: {fileID: 3906251374551838562, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4410898209928833865, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -45911,6 +45915,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4571599383576733737, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 455533820}
+    - target: {fileID: 4571599383576733737, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 875882298}
+    - target: {fileID: 4571599383576733737, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
+      propertyPath: mainCameraVCam
+      value: 
+      objectReference: {fileID: 1968876638}
+    - target: {fileID: 4571599383576733737, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: codesWithPictures.Array.data[0].code
       value: 82253221
       objectReference: {fileID: 0}
@@ -45929,6 +45945,10 @@ PrefabInstance:
     - target: {fileID: 4648609650371616779, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: m_Lens.m_SensorSize.y
       value: 18.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652544567154762669, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4929032836786056815, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45973,6 +45993,14 @@ PrefabInstance:
     - target: {fileID: 5047814845107234441, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: m_Name
       value: Event 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611642477640913821, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636943793612734329, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.978
       objectReference: {fileID: 0}
     - target: {fileID: 7772431127375740532, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: m_LocalScale.x

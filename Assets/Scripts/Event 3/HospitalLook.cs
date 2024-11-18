@@ -10,7 +10,7 @@ public class HospitalLook : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera doorCamera;
     public FirstPersonController playerController; // Reference to the FirstPersonController script
     public Transform player; // Reference to the player's transform
-    public float interactionRange = 3.0f; // Set the interaction range
+    public float interactionRange = 1.0f; // Set the interaction range
     private bool isHiding = false;
 
     void Start()
