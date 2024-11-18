@@ -10,6 +10,7 @@ public class FlashingImages : MonoBehaviour
     [SerializeField] private float minFlashSpeed = 0.1f;
     [SerializeField] private float maxFlashSpeed = 0.5f;
     [SerializeField] private int currentImage = 0;
+    [SerializeField] private int blinkings = 4;
 
     private Coroutine flashCoroutine;
 
@@ -40,7 +41,7 @@ public class FlashingImages : MonoBehaviour
 
     private IEnumerator FlashImages()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < blinkings; i++)
         {
             // Set the current image
             canvasImage.sprite = images[currentImage];
