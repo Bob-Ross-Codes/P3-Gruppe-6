@@ -104,7 +104,7 @@ public class DissolveObject : MonoBehaviour
     }
 }*/
 
-{
+/*{
     public Material dissolveMaterial; // The dissolve shader material
     public float dissolveSpeed = 0.1f; // Speed of dissolve animation
 
@@ -178,5 +178,67 @@ public class DissolveObject : MonoBehaviour
         isDissolving = true;
         _CutoffHeight = 0f; // Reset dissolve
     }
+}*/
+
+
+{
+    public Material dissolveMaterial; // The dissolve shader material
+    public float dissolveSpeed = 0.1f; // Speed of dissolve animation
+
+    private Renderer[] renderers; // Array of all renderers in the object
+    private Material[] dissolveMaterials; // Unique dissolve materials for each renderer
+    private bool isDissolving = false;
+    private float _CutoffHeight = 10f;
+
+    void Start()
+    {
+        // Get all renderers in this object and its children
+        renderers = GetComponentsInChildren<Renderer>();
+        dissolveMaterials = new Material[renderers.Length];
+
+        // Create unique dissolve materials for each renderer
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            // Clone dissolve material
+            dissolveMaterials[i] = new Material(dissolveMaterial);
+
+            // Transfer textures from the original material
+            Material originalMaterial = renderers[i].material;
+            if (originalMaterial.HasProperty("_MainTex"))
+            {
+                dissolveMaterials[i].SetTexture("_MainTex", originalMaterial.GetTexture("_MainTex"));
+            }
+
+            // Assign the new dissolve material to the renderer
+            renderers[i].material = dissolveMaterials[i];
+        }
+    }
+
+    void Update()
+    {
+        if (isDissolving)
+        {
+            _CutoffHeight += Time.deltaTime * dissolveSpeed;
+
+            foreach (var mat in dissolveMaterials)
+            {
+                mat.SetFloat("_CutoffHeight", _CutoffHeight);
+            }
+
+            if (_CutoffHeight >= 1.0f)
+            {
+                isDissolving = false;
+                Debug.Log("Dissolve complete.");
+            }
+        }
+    }
+
+    public void StartDissolve()
+    {
+        Debug.Log("Dissolve started.");
+        isDissolving = true;
+        _CutoffHeight = 0f; // Reset dissolve
+    }
 }
+
 
