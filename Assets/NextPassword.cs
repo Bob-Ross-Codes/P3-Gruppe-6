@@ -4,7 +4,7 @@ using System.Collections;
 public class NextPassword : MonoBehaviour
 {
     public SpriteRenderer[] spriteRenderers; // Array of SpriteRenderers to fade sequentially
-    public float fadeDuration = 12f; // Duration of fade-out in seconds
+    public float fadeDuration = 4f; // Duration of fade-out in seconds
     private int currentSpriteIndex = 0; // Index of the sprite currently being faded
     private Coroutine fadeCoroutine;
     private bool isPaused = false;
