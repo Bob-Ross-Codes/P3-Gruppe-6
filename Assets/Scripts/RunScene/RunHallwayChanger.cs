@@ -15,9 +15,9 @@ public class RunHallwayChanger : MonoBehaviour
 
     // Constants for configuration
 
-    [serializeField] bool isBlinking = gaze.Blinking;
-    private gaze gaze;
-    
+    private Gaze gaze;
+    [SerializeField] bool isBlinking;
+
     private const int FIRST_SPAWN_INDEX = 0;
     private const int MIN_RANDOM_INDEX = 1;
     private const int MID_SECTION_TRIGGER_THRESHOLD = 5;
@@ -36,6 +36,7 @@ public class RunHallwayChanger : MonoBehaviour
     private void Start()
     {
         StartChase();
+        isBlinking = gaze.Blinking;
     }
 
     // Start spawning process with the first object

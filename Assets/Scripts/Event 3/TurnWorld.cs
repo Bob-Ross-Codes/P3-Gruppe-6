@@ -126,7 +126,7 @@ void Start()
             handLight.SetActive(false);
             yield return new WaitForSeconds(lightInterval);
         }
-        Destroy(handLight);
+        handLight.SetActive(false);
         //MARIUS: En eller anden lyd fordi lommelygten går ud. Evt. bare flickering Lights
     }
 
@@ -170,14 +170,14 @@ void Start()
         hallway.transform.localRotation = initialRotation;
         hallway.transform.localPosition = initialPosition;
 
-        yield return new WaitForSeconds(duration / 4);
-
         player.transform.position = spawnAgain.transform.position;
+
+        yield return new WaitForSeconds(duration / 4);
 
         AkSoundEngine.PostEvent("Light_OnOff_Event", gameObject);
         SetLightsEnabled(RedLights, false);
         exitSign.SetActive(false);
-        hallwayChanger.StartChase();
+        hallwayChanger.StartChase();                                    //STARTERCHASEEE!!!! JAAAA! LIGE HER BÆTCH
 
         player.transform.position = spawnAgain.transform.position;
 
@@ -186,6 +186,7 @@ void Start()
         player.transform.position = spawnAgain.transform.position;
 
         SetLightsEnabled(AllLights, true);
+        exitSign.SetActive(false);
 
         yield return new WaitForSeconds(duration / 2);
 
