@@ -21,7 +21,7 @@ public class KeypadController : MonoBehaviour
 
     public CodeWithPicture[] codesWithPictures; // Array of codes and corresponding pictures
 
-    public float interactionDistance = 2f; // Distance within which the player can interact with the keypad
+    public float interactionDistance = 4f; // Distance within which the player can interact with the keypad
 
     private string correctCode;         // Current correct code
     private string playerInput = "";    // Player's input
@@ -137,7 +137,7 @@ public class KeypadController : MonoBehaviour
         }
     }
 
-    public void LookAtPassword()
+    public void LookAtKeypad()
     {
         // Advance to the next picture, if possible
         if (currentCodeIndex < codesWithPictures.Length - 1)
@@ -153,7 +153,7 @@ public class KeypadController : MonoBehaviour
         }
     }
 
-    public void LookAtKeypad()
+    public void LookAtPassword()
     {
         // Update the password to match the current picture
         correctCode = codesWithPictures[currentCodeIndex].code;
