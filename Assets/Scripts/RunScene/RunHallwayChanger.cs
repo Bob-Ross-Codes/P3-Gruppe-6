@@ -10,12 +10,14 @@ public class RunHallwayChanger : MonoBehaviour
     public List<GameObject> objectsToSpawn; // List of objects to spawn
     public Transform spawnPoint; // Reference to the spawn point
     public GameObject finalPrefab; // The specific prefab to spawn when the trigger counter hits the max
-    private Gaze gaze;
-    [SerializeField] bool isBlinking;
 
 
 
     // Constants for configuration
+
+    private Gaze gaze;
+    [SerializeField] bool isBlinking;
+
     private const int FIRST_SPAWN_INDEX = 0;
     private const int MIN_RANDOM_INDEX = 1;
     private const int MID_SECTION_TRIGGER_THRESHOLD = 5;
@@ -28,18 +30,14 @@ public class RunHallwayChanger : MonoBehaviour
     private GameObject currentObject; // Reference to the currently instantiated object
     private int triggerCounter = 0; // Counter for trigger events
     private bool isCooldownActive = false; // Track if cooldown is active
-    private float blinkingTime = 0f; // Timer to track how long isBlinking is true
 
 
 
-
-    
     private void Start()
     {
         StartChase();
         isBlinking = gaze.Blinking;
     }
-
 
     // Start spawning process with the first object
     public void StartChase()
@@ -49,26 +47,6 @@ public class RunHallwayChanger : MonoBehaviour
             currentObject = Instantiate(objectsToSpawn[FIRST_SPAWN_INDEX], spawnPoint.position, spawnPoint.rotation);
         }
     }
-
-
-//trigger next scene if isBlinking bool is true for more then 3 seconds
-    private void Update()
-    {
-        if (isBlinking)
-        {
-            blinkingTime += Time.deltaTime; // Increment timer if isBlinking is true
-            if (blinkingTime > 3f && triggerCounter > 1) // Check both conditions
-            {
-                Debug.Log("Blinking time: " + blinkingTime);
-            }
-        }
-        else
-        {
-            blinkingTime = 0f; // Reset timer if isBlinking is false
-            Debug.Log("Blinking time reset");
-        }
-    }
-
 
     // Trigger event to handle object spawning when player exits the trigger
     private void OnTriggerExit(Collider other)
