@@ -42885,6 +42885,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662407866}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1676544616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7104975159769254344, guid: 8caca8a5b8fc29241857185d3e2fbaa6, type: 3}
+  m_PrefabInstance: {fileID: 531911719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1682210024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46513,6 +46518,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 875882298}
     - target: {fileID: 4571599383576733737, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
+      propertyPath: playCollider
+      value: 
+      objectReference: {fileID: 2108666185}
+    - target: {fileID: 4571599383576733737, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: mainCameraVCam
       value: 
       objectReference: {fileID: 1968876638}
@@ -46542,11 +46551,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4571599383576733737, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: codesWithPictures.Array.data[4].code
-      value: 67895578
+      value: 67895776
       objectReference: {fileID: 0}
     - target: {fileID: 4571599383576733737, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: codesWithPictures.Array.data[5].code
-      value: 67895578
+      value: 67895776
       objectReference: {fileID: 0}
     - target: {fileID: 4571599383576733737, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: codesWithPictures.Array.data[3].pictureObject
@@ -50679,7 +50688,7 @@ PrefabInstance:
     - target: {fileID: 3003725516617531147, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: handLight
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1676544616}
     - target: {fileID: 3003725516617531147, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: playerController
       value: 
