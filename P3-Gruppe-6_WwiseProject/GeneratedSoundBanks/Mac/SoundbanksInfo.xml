@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{8D9A085B-2D26-5EC3-5AE3-2CE5C6E9E0D8}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{263194A8-8B3A-8F6D-C9F5-E522F22AB60A}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -40,6 +40,10 @@
 				<File Id="199820693" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hard With Fist.wav</ShortName>
 					<CachePath>SFX/Hard With Fist_BE733C9D.wem</CachePath>
+				</File>
+				<File Id="207794992" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Into_audio_v2.wav</ShortName>
+					<CachePath>SFX/Into_audio_v2_818F3B66.wem</CachePath>
 				</File>
 				<File Id="220019224" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Door Knocking Slight Rattle.wav</ShortName>
@@ -84,10 +88,6 @@
 				<File Id="505184733" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hard With Fist.wav</ShortName>
 					<CachePath>SFX/Hard With Fist_E9A302A9.wem</CachePath>
-				</File>
-				<File Id="517767576" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Intro Audio.wav</ShortName>
-					<CachePath>SFX/Intro Audio_818F3B66.wem</CachePath>
 				</File>
 				<File Id="528004408" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Thunder Clap Heavy Impact Sound Effect.wav</ShortName>
@@ -212,9 +212,9 @@
 					</PluginRefs>
 				</Event>
 				<Event Id="1006235157" Name="Light_OnOff_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="3582431873" Name="Play_IntroMusic" DurationType="OneShot" DurationMin="31.032" DurationMax="31.032">
+				<Event Id="3582431873" Name="Play_IntroMusic" DurationType="OneShot" DurationMin="37.10373" DurationMax="37.10373">
 					<MediaRefs>
-						<MediaRef Id="517767576"/>
+						<MediaRef Id="207794992"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1093999139" Name="Play_RainAndThunder" MaxAttenuation="10" DurationType="Infinite">
@@ -1602,5 +1602,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F7DD8EB9-A754-1E3A-EB50-1A186B031B1F}</FileHash>
+	<FileHash>{2DD496F9-32F5-F423-20B7-F40C79197EB0}</FileHash>
 </SoundBanksInfo>

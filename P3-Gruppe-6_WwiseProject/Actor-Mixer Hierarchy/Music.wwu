@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="Music" ID="{12AF9D7E-3CA7-476C-ADBC-19C22B268385}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Intro Audio" ID="{9CBCAD41-6D1C-48BA-9275-421DB20507A1}" ShortID="730645797">
+				<Sound Name="Into_audio" ID="{B3A10212-BA9D-4507-9019-74608494BCEE}" ShortID="843006215">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
@@ -13,16 +13,16 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="Intro Audio" ID="{9E8753FD-4082-4866-BAC9-51EFE50C81BE}">
+						<AudioFileSource Name="Into_audio_v2" ID="{B594C3A2-3152-4530-B302-CF74E0725C1B}">
 							<Language>SFX</Language>
-							<AudioFile>Intro Audio.wav</AudioFile>
+							<AudioFile>Into_audio_v2.wav</AudioFile>
 							<MediaIDList>
-								<MediaID ID="517767576"/>
+								<MediaID ID="207794992"/>
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="Intro Audio" ID="{9E8753FD-4082-4866-BAC9-51EFE50C81BE}" Platform="Linked"/>
+						<ActiveSource Name="Into_audio_v2" ID="{B594C3A2-3152-4530-B302-CF74E0725C1B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>
