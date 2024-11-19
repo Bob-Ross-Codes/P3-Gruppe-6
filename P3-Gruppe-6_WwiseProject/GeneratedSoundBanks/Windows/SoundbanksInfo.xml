@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{263194A8-8B3A-8F6D-C9F5-E522F22AB60A}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{3596E8F9-9E10-70A6-5AA2-DBB98CC73187}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -121,6 +121,10 @@
 					<ShortName>Thunder Clap Heavy Impact Explosive.wav</ShortName>
 					<CachePath>SFX/Thunder Clap Heavy Impact Explosive_818F3B66.wem</CachePath>
 				</File>
+				<File Id="860442225" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EndingVideo.wav</ShortName>
+					<CachePath>SFX/EndingVideo_818F3B66.wem</CachePath>
+				</File>
 				<File Id="889004069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hard With Fist.wav</ShortName>
 					<CachePath>SFX/Hard With Fist_818F3B66.wem</CachePath>
@@ -212,6 +216,11 @@
 					</PluginRefs>
 				</Event>
 				<Event Id="1006235157" Name="Light_OnOff_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1755859644" Name="Play_EndingMusic" DurationType="OneShot" DurationMin="27.59425" DurationMax="27.59425">
+					<MediaRefs>
+						<MediaRef Id="860442225"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3582431873" Name="Play_IntroMusic" DurationType="OneShot" DurationMin="37.10373" DurationMax="37.10373">
 					<MediaRefs>
 						<MediaRef Id="207794992"/>
@@ -1602,5 +1611,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BE13B0D2-D721-6F9D-0C28-9F3BA0FD32BC}</FileHash>
+	<FileHash>{54BAC33D-EF59-4F78-E593-54F3CF639894}</FileHash>
 </SoundBanksInfo>

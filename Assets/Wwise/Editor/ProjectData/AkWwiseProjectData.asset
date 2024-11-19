@@ -597,8 +597,25 @@ MonoBehaviour:
     ParentPath: Events\Music
     guid: 338cc34d50efa449ad2c2d8b0d0854a8
     GuidInternal: 
-    m_lastTime: -8584695982306402661
+    m_lastTime: -8584695954237893510
     List:
+    - name: Play_EndingMusic
+      guid: 7116acc69187394ea03aea0e6e6f069c
+      id: 1755859644
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Music
+        ObjectType: 12
+        guid: 338cc34d50efa449ad2c2d8b0d0854a8
+      - ElementName: Play_EndingMusic
+        ObjectType: 3
+        guid: 7116acc69187394ea03aea0e6e6f069c
+      Path: Events\Music\Play_EndingMusic
+      maxAttenuation: 0
+      maxDuration: 27.59425
+      minDuration: 27.59425
     - name: Play_IntroMusic
       guid: b344ce14837a7049990177cf79f920a2
       id: 3582431873
