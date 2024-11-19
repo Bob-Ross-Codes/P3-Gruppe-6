@@ -310,7 +310,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{F04FB085-EE43-740C-E47D-F795B2EA02AC}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{F66ED608-3641-885B-CD92-3D6B7B3EFBCE}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -722,6 +722,10 @@
 					<ShortName>Footsteps_PLYR_Wood_Wet_11.wav</ShortName>
 					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_11_818F3B66.wem</CachePath>
 				</File>
+				<File Id="640223223" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hurt Sound Low Intensity.wav</ShortName>
+					<CachePath>SFX/Hurt Sound Low Intensity_818F3B66.wem</CachePath>
+				</File>
 				<File Id="641470713" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_PLYR_Wood_Wet_15.wav</ShortName>
 					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_15_818F3B66.wem</CachePath>
@@ -966,6 +970,11 @@
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
+				</Event>
+				<Event Id="887999531" Name="Play_Player_Hurt" DurationType="OneShot" DurationMin="0.496" DurationMax="0.496">
+					<MediaRefs>
+						<MediaRef Id="640223223"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="673033979" Name="Play_PLYR_Footsteps" DurationType="OneShot" DurationMin="0.5" DurationMax="2.4746666">
 					<SwitchContainers>
@@ -1611,5 +1620,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9EAFD1A4-56C6-622A-516C-E8A86511DEF0}</FileHash>
+	<FileHash>{D43C3C9D-CC55-DEE1-9A05-2D24663EB09E}</FileHash>
 </SoundBanksInfo>

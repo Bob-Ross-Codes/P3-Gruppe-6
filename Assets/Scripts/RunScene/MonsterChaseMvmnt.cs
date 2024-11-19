@@ -47,6 +47,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
         {
             // Player is close enough, triggering death or something else
             Debug.Log("Player is dead");
+            AkSoundEngine.PostEvent("Play_player_Hurt", gameObject);
         }
     }
 

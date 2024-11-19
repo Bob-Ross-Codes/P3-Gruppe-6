@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID PLAY_ENDINGMUSIC = 1755859644U;
         static const AkUniqueID PLAY_INTROMUSIC = 3582431873U;
         static const AkUniqueID PLAY_MONSTER_SOUNDS = 324561159U;
+        static const AkUniqueID PLAY_PLAYER_HURT = 887999531U;
         static const AkUniqueID PLAY_PLYR_FOOTSTEPS = 673033979U;
         static const AkUniqueID PLAY_RAINANDTHUNDER = 1093999139U;
         static const AkUniqueID PLAY_WOMANAMBIENCE = 2870446976U;
