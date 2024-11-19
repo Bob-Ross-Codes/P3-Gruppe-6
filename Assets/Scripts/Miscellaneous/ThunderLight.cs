@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightFlicker : MonoBehaviour
+public class ThunderLight : MonoBehaviour
 {
-      private Light pointLight;
+    private Light pointLight;
 
     // Minimum and maximum intensity values
     public float minIntensity = 0f;
@@ -25,7 +25,6 @@ public class LightFlicker : MonoBehaviour
     {
         pointLight = GetComponent<Light>();
         flickerTimer = GetNextPauseDuration();
-         pointLight.intensity = minIntensity; // Ensure the light starts off
     }
 
     void Update()
