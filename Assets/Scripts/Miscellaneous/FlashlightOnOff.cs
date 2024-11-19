@@ -43,7 +43,7 @@ public class FlashlightOnOff : MonoBehaviour
                     // Play sound based on light state
             if (isLightOn)
             {
-                 AkSoundEngine.SetSwitch("FlashlightSwitch", "On", gameObject);
+                AkSoundEngine.SetSwitch("FlashlightSwitch", "On", gameObject);
                 AkSoundEngine.PostEvent("Flashlight_OnOff_Event", gameObject);
             }
             else
