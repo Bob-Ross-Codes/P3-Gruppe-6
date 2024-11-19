@@ -5,10 +5,18 @@ using UnityEngine;
 public class KeypdEyetrckng : GazeActivation
 {
     public KeypadController keypadController;
-    public override float ActivationTime => 2f;
+
+    private float activationFloat;
+    private void Awake()
+    {
+        activationFloat = 2f;
+    }
+    public override float ActivationTime => activationFloat;
     public override void OnLookedAt()
     { 
         keypadController.LookAtKeypad();
         Debug.Log("Looked At Keypad");
+
+        activationFloat += 0.5f;
     }
 }

@@ -8,6 +8,7 @@ public class KeypadController : MonoBehaviour
     public TextMeshProUGUI inputDisplay; // TextMeshProUGUI to show the player’s input
     public GameObject door; // Door GameObject to open when correct code is entered
     public GameObject player; // Player GameObject with the movement script
+    public GameObject playCollider;
 
     public CinemachineVirtualCamera mainCameraVCam; // Main gameplay camera
     public CinemachineVirtualCamera keypadVCam; // Keypad camera
@@ -33,6 +34,8 @@ public class KeypadController : MonoBehaviour
     {
         keypadUI.SetActive(false); // Start with keypad UI hidden
         FirstPersonController = player.GetComponent<MonoBehaviour>();
+
+        playCollider.SetActive(true);
 
         // Ensure the main camera is active at the start
         mainCameraVCam.Priority = 10;
@@ -67,6 +70,7 @@ public class KeypadController : MonoBehaviour
 
     void ToggleKeypadInputMode()
     {
+
         isKeypadOpen = !isKeypadOpen;
 
         if (isKeypadOpen)
@@ -74,11 +78,13 @@ public class KeypadController : MonoBehaviour
             EnableCursorAndLockPlayer();
             SwitchToKeypadCamera();
             ResetInput();
+            playCollider.SetActive(false);
         }
         else
         {
             DisableCursorAndUnlockPlayer();
             SwitchToMainCamera();
+            playCollider.SetActive(true);
         }
 
         keypadUI.SetActive(isKeypadOpen); // Show or hide the keypad UI
