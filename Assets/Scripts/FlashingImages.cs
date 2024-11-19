@@ -7,12 +7,13 @@ public class FlashingImages : MonoBehaviour
 {
     [SerializeField] private Image canvasImage;
     [SerializeField] private Sprite[] images;
-    [SerializeField] private float minFlashSpeed = 0.1f;
-    [SerializeField] private float maxFlashSpeed = 0.5f;
+    [SerializeField] private float minFlashSpeed = 0.01f;
+    [SerializeField] private float maxFlashSpeed = 0.05f;
     [SerializeField] private int currentImage = 0;
-    [SerializeField] private int blinkings = 4;
+    [SerializeField] private int blinks = 3; // Number of times to loop
 
     private Coroutine flashCoroutine;
+    private bool playerInTrigger = false;
 
     void Start()
     {
@@ -29,7 +30,8 @@ public class FlashingImages : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("BLINKING ACITVATED");
+            Debug.Log("BLINKING ACTIVATED");
+            playerInTrigger = true;
             if (flashCoroutine == null)
             {
                 // Enable the canvas image
@@ -40,21 +42,51 @@ public class FlashingImages : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("BLINKING DEACTIVATED");
+            playerInTrigger = false;
+            if (flashCoroutine != null)
+            {
+                StopCoroutine(flashCoroutine);
+                flashCoroutine = null;
+                // Disable the canvas image
+                canvasImage.enabled = false;
+            }
+        }
+    }
+
     private IEnumerator FlashImages()
     {
-        for (int i = 0; i < blinkings; i++)
+        int currentLoop = 0;
+
+        while (playerInTrigger && currentLoop < blinks)
         {
             // Set the current image
             canvasImage.sprite = images[currentImage];
+            Debug.Log($"Displaying image {currentImage}");
             // Move to the next image
             currentImage = (currentImage + 1) % images.Length;
-            // Wait for the specified flash speed
+            // Show the image for one frame
+            yield return null;
+            // Disable the canvas image
+            canvasImage.enabled = false;
+            // Wait for the specified flash speed before showing the next image
             yield return new WaitForSeconds(UnityEngine.Random.Range(minFlashSpeed, maxFlashSpeed));
-            // Toggle the canvas image
-            canvasImage.enabled = !canvasImage.enabled;
+            // Enable the canvas image for the next frame
+            canvasImage.enabled = true;
+
+            // Increment the loop counter
+            currentLoop++;
         }
+
+        // Ensure the canvas image is disabled when the player leaves the trigger or loop count is reached
+        canvasImage.enabled = false;
+        flashCoroutine = null;
+
         // Disable the GameObject after flashing
         gameObject.SetActive(false);
-        flashCoroutine = null;
     }
 }
