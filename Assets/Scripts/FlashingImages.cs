@@ -8,9 +8,9 @@ public class FlashingImages : MonoBehaviour
     [SerializeField] private Image canvasImage;
     [SerializeField] private Sprite[] images;
     [SerializeField] private float minFlashSpeed = 0.01f;
-    [SerializeField] private float maxFlashSpeed = 0.05f;
+    [SerializeField] private float maxFlashSpeed = 0.1f;
     [SerializeField] private int currentImage = 0;
-    [SerializeField] private int blinks = 3; // Number of times to loop
+    [SerializeField] private int blinks; // Number of times to loop
 
     private Coroutine flashCoroutine;
     private bool playerInTrigger = false;
@@ -28,18 +28,18 @@ public class FlashingImages : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("BLINKING ACTIVATED");
-            playerInTrigger = true;
-            if (flashCoroutine == null)
-            {
-                // Enable the canvas image
-                canvasImage.enabled = true;
-                // Start the coroutine
-                flashCoroutine = StartCoroutine(FlashImages());
-            }
-        }
+        //if (other.CompareTag("Player"))
+        //{
+        //    Debug.Log("BLINKING ACTIVATED");
+        //    playerInTrigger = true;
+        //    if (flashCoroutine == null)
+        //    {
+        //        // Enable the canvas image
+        //        canvasImage.enabled = true;
+        //        // Start the coroutine
+        //        flashCoroutine = StartCoroutine(FlashImages());
+        //    }
+        //}
     }
 
     private void OnTriggerExit(Collider other)
