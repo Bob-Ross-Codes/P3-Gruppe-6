@@ -24587,7 +24587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864bf2a1735a21e41ab84f7e85e35514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WetnessLevel: 0
+  WetnessLevel: 0.041
 --- !u!1 &1592208932
 GameObject:
   m_ObjectHideFlags: 0
@@ -25139,6 +25139,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 729015011}
     m_Modifications:
+    - target: {fileID: 5111589119522822885, guid: 794323b9527ce28468c928b2036ae536, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: afb2a94cafd426d4b8417591140fc79a, type: 2}
     - target: {fileID: 5895939759894623020, guid: 794323b9527ce28468c928b2036ae536, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -42666,6 +42670,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409d45c164e2ba94085cf19a2b329757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EyeDetector: {fileID: 0}
+  lightsToFlicker: []
+  flickerDuration: 5
+  darkInterval: 0
+  lightInterval: 0
+  flickerCount: 1
+  flickering: 0
+  countForJumpscare: 4
+  jumpScare: 0
+  patient: {fileID: 0}
+  blurryText: {fileID: 0}
 --- !u!1 &1662045962
 GameObject:
   m_ObjectHideFlags: 0
