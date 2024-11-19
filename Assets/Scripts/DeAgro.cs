@@ -5,6 +5,7 @@ public class DeAgro : GazeActivation
 {
     public Animator monsteranimater; // Animator reference
     public GameObject monsterPrefab; // Monster prefab reference
+    public ClosetHide closetHideScript; // Reference to ClosetHide script
 
     private float lookAtTime = 0f; // Tracks how long the collider is being looked at
     private Coroutine deAgroCoroutine = null; // Reference to the countdown coroutine
@@ -45,6 +46,12 @@ public class DeAgro : GazeActivation
                 Debug.Log("Player looked away from DeAgro collider.");
                 ResetDeAgroTimer();
             }
+        }
+
+        // Set the canToggleHiding flag based on the presence of the monsterPrefab
+        if (closetHideScript != null)
+        {
+            closetHideScript.canToggleHiding = monsterPrefab == null;
         }
     }
 
@@ -97,6 +104,8 @@ public class DeAgro : GazeActivation
         return isBeingLookedAt;
     }
 }
+
+
 
 
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine; // Include the Cinemachine namespace
-using StarterAssets; // for FirstPersonController
+using StarterAssets; // For FirstPersonController
 
 public class ClosetHide : MonoBehaviour
 {
@@ -20,9 +20,10 @@ public class ClosetHide : MonoBehaviour
     public float interactionRange = 2.0f; // Set the interaction range
     public MonsterSequenceController sequenceController; // Reference to the MonsterSequenceController script
 
-    // Måske den mest GOATede bool i hele spillet
+    public DeAgro deAgroScript; // Reference to the DeAgro script
     public bool isHiding = false;
-    private bool canToggleHiding = true; // Flag to control the cooldown
+    public bool canToggleHiding = true; // Flag to control hiding
+    private bool hasEnteredClosetOnce = false; // Tracks if the player has entered the closet at least once
 
     void Update()
     {
@@ -31,7 +32,13 @@ public class ClosetHide : MonoBehaviour
             if (isNearCloset()) // Check if player is near the closet
             {
                 ToggleHiding();
-                StartCoroutine(HidingCooldown()); // Start the cooldown coroutine
+
+                if (!hasEnteredClosetOnce)
+                {
+                    // Disable hiding after the first entry
+                    hasEnteredClosetOnce = true;
+                    canToggleHiding = false; // Lock hiding until the monster is destroyed
+                }
             }
         }
     }
@@ -42,30 +49,23 @@ public class ClosetHide : MonoBehaviour
 
         if (isHiding)
         {
-
             // Switch to ClosetCamera, disable player movement, and open the doors
             mainCamera.Priority = 0;
             closetCamera.Priority = 10;
-            // the following line sets the first person controller to be speed to be 0
             playerController.MoveSpeed = 0;
-
 
             leftDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the left door
             rightDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the right door
 
-            // Disable the specified GameObject (only once)
             objectToDisableHallwayOne.SetActive(false);
 
-            // indset logic der timer det ordenligt
-
             doorHingeAnimator.SetTrigger("broken");
-            // Player entered the closet
             sequenceController.OnPlayerHidden();
             Debug.Log("Player is hiding in the closet");
         }
         else
         {
-            player.LookAt(roomDoor); 
+            player.LookAt(roomDoor);
             // Return to MainCamera, enable player movement, and close the doors
             mainCamera.Priority = 10;
             closetCamera.Priority = 0;
@@ -83,11 +83,21 @@ public class ClosetHide : MonoBehaviour
         return distanceToPlayer <= interactionRange;
     }
 
-    private IEnumerator HidingCooldown()
+    public IEnumerator WaitForMonsterToBeDestroyed()
     {
+        Debug.Log("Hiding locked. Waiting for monster to be destroyed.");
+
+        // Wait until the monsterPrefab is destroyed (null)
+        while (deAgroScript != null && deAgroScript.monsterPrefab != null)
+        {
+            yield return null; // Wait for the next frame
+        }
+
+        // Once the monster is destroyed, allow the player to leave
+        Debug.Log("Monster destroyed. Hiding unlocked.");
         canToggleHiding = false;
-        yield return new WaitForSeconds(20);
-        canToggleHiding = true;
     }
 }
+
+
 
