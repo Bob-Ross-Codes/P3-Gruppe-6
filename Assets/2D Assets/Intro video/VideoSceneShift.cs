@@ -11,6 +11,14 @@ public class VideoSceneShift : MonoBehaviour
 
     void Start()
     {
+
+           
+        // Lock the cursor to the center of the screen
+        Cursor.lockState = CursorLockMode.Locked;
+        
+        // Hide the cursor
+        Cursor.visible = false;
+    
         // Make sure we have a reference to the VideoPlayer component
         if (videoPlayer == null)
         {
