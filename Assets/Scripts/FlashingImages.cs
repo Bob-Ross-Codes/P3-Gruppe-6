@@ -29,6 +29,7 @@ public class FlashingImages : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("BLINKING ACITVATED");
             if (flashCoroutine == null)
             {
                 // Enable the canvas image
