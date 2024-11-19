@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 7596501569450903959}
   - component: {fileID: 4540588381609279137}
   - component: {fileID: 9042536148089584062}
+  - component: {fileID: 8314915791810512064}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -564,3 +565,24 @@ MonoBehaviour:
   _moveSpeed: 20
   monsterMaxSpeed: 15
   finalHallwayCount: 20
+--- !u!95 &8314915791810512064
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004858409715873190}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
