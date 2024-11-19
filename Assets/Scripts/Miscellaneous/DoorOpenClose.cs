@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 public class DoorOpenClose : MonoBehaviour
 {
     public float interactionRange = 5f; // Range within which the player can interact with the door
@@ -62,8 +61,12 @@ public class DoorOpenClose : MonoBehaviour
     }
 
 
-   
+
 }
+
+
+
+
 
 
 
