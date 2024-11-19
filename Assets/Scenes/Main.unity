@@ -42649,45 +42649,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1652613005}
   m_SourcePrefab: {fileID: 100100000, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
---- !u!108 &1652612998 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 2966573766616656910, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
-  m_PrefabInstance: {fileID: 1652612997}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &1652612999 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 2353693247050331719, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
-  m_PrefabInstance: {fileID: 1652612997}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &1652613000 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 2044715977701854840, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
-  m_PrefabInstance: {fileID: 1652612997}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &1652613001 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 140442423193292710, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
-  m_PrefabInstance: {fileID: 1652612997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1652613002 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3453761177706892840, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
-  m_PrefabInstance: {fileID: 1652612997}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1652613003 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1722205037963634661, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
-  m_PrefabInstance: {fileID: 1652612997}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c27285f43c331f543a927709d75c8b20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1652613004 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3428255231459419562, guid: d557f96aea2e2e647a1be0532126c797, type: 3}
   m_PrefabInstance: {fileID: 1652612997}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1652613005
@@ -42702,21 +42666,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409d45c164e2ba94085cf19a2b329757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EyeDetector: {fileID: 1652613002}
-  lightsToFlicker:
-  - {fileID: 1652613001}
-  - {fileID: 1652613000}
-  - {fileID: 1652612999}
-  - {fileID: 1652612998}
-  flickerDuration: 4
-  darkInterval: 0
-  lightInterval: 0
-  flickerCount: 1
-  flickering: 0
-  countForJumpscare: 4
-  jumpScare: 0
-  patient: {fileID: 1652613004}
-  blurryText: {fileID: 1652613003}
 --- !u!1 &1662045962
 GameObject:
   m_ObjectHideFlags: 0
@@ -43267,6 +43216,22 @@ PrefabInstance:
     - target: {fileID: 956484560352223927, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117818791906148169, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
+      propertyPath: m_Size.x
+      value: 0.716299
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117818791906148169, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
+      propertyPath: m_Size.z
+      value: 0.16624545
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117818791906148169, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
+      propertyPath: m_Center.x
+      value: -0.031701084
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117818791906148169, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
+      propertyPath: m_Center.y
+      value: 0.6221078
       objectReference: {fileID: 0}
     - target: {fileID: 3062263374332797618, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
       propertyPath: player

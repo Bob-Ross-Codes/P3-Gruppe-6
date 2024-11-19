@@ -96,7 +96,7 @@ public class ClosetHide : MonoBehaviour
         // Once the monster is destroyed, allow the player to leave
         Debug.Log("Monster destroyed. Hiding unlocked.");
         AkSoundEngine.PostEvent("Stop_Monster_Sounds", gameObject);
-        canToggleHiding = false;
+        canToggleHiding = true; // Set canToggleHiding to true
     }
 }
 
