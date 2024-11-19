@@ -310,7 +310,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{F66ED608-3641-885B-CD92-3D6B7B3EFBCE}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{1D3D3EA5-D42F-4766-796C-2BD18AFFA4E2}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -1414,10 +1414,12 @@
 				<Event Id="2630587137" Name="Stop_Monster_Sounds" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
+				<GameParameter Id="293784726" Name="RTPC_MonsterState"/>
 				<GameParameter Id="870672907" Name="RTPC_GroundWetness"/>
 			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="687366024" Name="MonsterState">
+					<GameParameterRef Id="293784726"/>
 					<Switches>
 						<Switch Id="155822580" Name="MonsterChasing"/>
 						<Switch Id="2362879642" Name="MonsterWalking"/>
@@ -1441,7 +1443,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{6D7FEAF9-3870-D48E-3A65-634FE67F593C}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{09C576B6-6BED-02B8-EDF5-C233121FB1BF}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -1512,6 +1514,7 @@
 				<GameParameter Id="191147360" Name="RTPC_LightState"/>
 				<GameParameter Id="257272959" Name="RTPC_TimeOfDay"/>
 				<GameParameter Id="262290038" Name="RTPC_Distance"/>
+				<GameParameter Id="293784726" Name="RTPC_MonsterState"/>
 				<GameParameter Id="870672907" Name="RTPC_GroundWetness"/>
 				<GameParameter Id="1294084109" Name="RTPC_RainAmount"/>
 				<GameParameter Id="1318719891" Name="RTPC_FlyCount"/>
@@ -1571,6 +1574,7 @@
 					</Switches>
 				</SwitchGroup>
 				<SwitchGroup Id="687366024" Name="MonsterState">
+					<GameParameterRef Id="293784726"/>
 					<Switches>
 						<Switch Id="155822580" Name="MonsterChasing"/>
 						<Switch Id="2362879642" Name="MonsterWalking"/>
@@ -1620,5 +1624,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D43C3C9D-CC55-DEE1-9A05-2D24663EB09E}</FileHash>
+	<FileHash>{EADF3235-97C8-712C-CB22-DFDA13B0D4C3}</FileHash>
 </SoundBanksInfo>

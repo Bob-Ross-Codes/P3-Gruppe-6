@@ -22,6 +22,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
         {
             Debug.LogError("Please assign exactly 4 BoxColliders.");
         }
+        AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, gameObject);
         AkSoundEngine.PostEvent("Play_Monster_Sounds", gameObject);
     }
 

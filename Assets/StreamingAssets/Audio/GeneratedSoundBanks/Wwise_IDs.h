@@ -199,6 +199,7 @@ namespace AK
         static const AkUniqueID RTPC_GROUNDWETNESS = 870672907U;
         static const AkUniqueID RTPC_KNOCKINGINTENSITY = 2692556666U;
         static const AkUniqueID RTPC_LIGHTSTATE = 191147360U;
+        static const AkUniqueID RTPC_MONSTERSTATE = 293784726U;
         static const AkUniqueID RTPC_PLAYERSPEED = 2653406601U;
         static const AkUniqueID RTPC_RAINAMOUNT = 1294084109U;
         static const AkUniqueID RTPC_REVERB = 4143461479U;
