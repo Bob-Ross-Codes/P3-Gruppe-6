@@ -12,14 +12,16 @@ public class Gaze : MonoBehaviour
     #region Private values
     // Mads' super ændringer
     private float timer = 0;
-    private float updateInterval = 0.3f;
-    private float calibrateY = 0.5f;
+    private float updateInterval = 0.1f;
+    //private float calibrateY = 0.5f;
 
     private AOIManager _aoiManager = new AOIManager();
     private List<string> aoiNameList = new List<string>();
 
     private bool _drowsy;
-    private bool _blinking;
+
+    public bool _blinking; // Great wall of china!
+
     private float _distance;
 
     private Rect gazeUI = new Rect(Screen.height * 0.05f, Screen.height * 0.08f, Screen.width * 0.5f, Screen.height * 0.82f);
@@ -216,6 +218,8 @@ public class Gaze : MonoBehaviour
         {
             timer = 0;
             PerformGazeUpdate();
+            Debug.Log("Is brother blinking? "+_blinking);
+            Debug.Log("Is  "+_eyeHelper);
         }
     }
 
@@ -242,7 +246,7 @@ public class Gaze : MonoBehaviour
         gazeLocation = SmoothGazeLocation(gazeLocation, _filtering);
 
         // Apply custom multiplier to the gaze location on the Y axis
-        gazeLocation.y *= calibrateY;
+      //  gazeLocation.y *= calibrateY;
 
         //Update last gaze location timestamp
         var now = System.DateTime.Now;
