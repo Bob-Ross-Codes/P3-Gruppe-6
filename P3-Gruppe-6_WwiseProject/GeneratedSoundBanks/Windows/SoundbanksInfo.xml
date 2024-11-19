@@ -310,7 +310,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{F04FB085-EE43-740C-E47D-F795B2EA02AC}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{1D3D3EA5-D42F-4766-796C-2BD18AFFA4E2}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -722,6 +722,10 @@
 					<ShortName>Footsteps_PLYR_Wood_Wet_11.wav</ShortName>
 					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_11_818F3B66.wem</CachePath>
 				</File>
+				<File Id="640223223" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hurt Sound Low Intensity.wav</ShortName>
+					<CachePath>SFX/Hurt Sound Low Intensity_818F3B66.wem</CachePath>
+				</File>
 				<File Id="641470713" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_PLYR_Wood_Wet_15.wav</ShortName>
 					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_15_818F3B66.wem</CachePath>
@@ -966,6 +970,11 @@
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
+				</Event>
+				<Event Id="887999531" Name="Play_Player_Hurt" DurationType="OneShot" DurationMin="0.496" DurationMax="0.496">
+					<MediaRefs>
+						<MediaRef Id="640223223"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="673033979" Name="Play_PLYR_Footsteps" DurationType="OneShot" DurationMin="0.5" DurationMax="2.4746666">
 					<SwitchContainers>
@@ -1405,10 +1414,12 @@
 				<Event Id="2630587137" Name="Stop_Monster_Sounds" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
+				<GameParameter Id="293784726" Name="RTPC_MonsterState"/>
 				<GameParameter Id="870672907" Name="RTPC_GroundWetness"/>
 			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="687366024" Name="MonsterState">
+					<GameParameterRef Id="293784726"/>
 					<Switches>
 						<Switch Id="155822580" Name="MonsterChasing"/>
 						<Switch Id="2362879642" Name="MonsterWalking"/>
@@ -1432,7 +1443,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A3FA4AC3-B0BE-08D6-0F83-9E7B6D0696BA}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{0121C933-CD1D-292E-6B8C-5A4334B79A72}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -1503,6 +1514,7 @@
 				<GameParameter Id="191147360" Name="RTPC_LightState"/>
 				<GameParameter Id="257272959" Name="RTPC_TimeOfDay"/>
 				<GameParameter Id="262290038" Name="RTPC_Distance"/>
+				<GameParameter Id="293784726" Name="RTPC_MonsterState"/>
 				<GameParameter Id="870672907" Name="RTPC_GroundWetness"/>
 				<GameParameter Id="1294084109" Name="RTPC_RainAmount"/>
 				<GameParameter Id="1318719891" Name="RTPC_FlyCount"/>
@@ -1562,6 +1574,7 @@
 					</Switches>
 				</SwitchGroup>
 				<SwitchGroup Id="687366024" Name="MonsterState">
+					<GameParameterRef Id="293784726"/>
 					<Switches>
 						<Switch Id="155822580" Name="MonsterChasing"/>
 						<Switch Id="2362879642" Name="MonsterWalking"/>
@@ -1611,5 +1624,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{54BAC33D-EF59-4F78-E593-54F3CF639894}</FileHash>
+	<FileHash>{9341FD42-0E89-15CC-B9AC-17031CB8434B}</FileHash>
 </SoundBanksInfo>

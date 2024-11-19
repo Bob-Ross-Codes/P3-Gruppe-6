@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0E1DF790-B6D1-436D-97E1-9D048CD6C735}" SchemaVersion="119">
+	<AudioObjects>
+		<WorkUnit Name="Player_SFX" ID="{0E1DF790-B6D1-436D-97E1-9D048CD6C735}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Hurt Sound Low Intensity" ID="{F90CDE86-6547-4911-B1F6-648C70D7D9F9}" ShortID="104709375">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Hurt Sound Low Intensity" ID="{AF33931D-1CB0-4BB2-8435-41A4EDC086A5}">
+							<Language>SFX</Language>
+							<AudioFile>Hurt Sound Low Intensity.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="640223223"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Hurt Sound Low Intensity" ID="{AF33931D-1CB0-4BB2-8435-41A4EDC086A5}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

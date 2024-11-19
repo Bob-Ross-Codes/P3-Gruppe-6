@@ -22,6 +22,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
         {
             Debug.LogError("Please assign exactly 4 BoxColliders.");
         }
+        AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, gameObject);
         AkSoundEngine.PostEvent("Play_Monster_Sounds", gameObject);
     }
 
@@ -47,6 +48,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
         {
             // Player is close enough, triggering death or something else
             Debug.Log("Player is dead");
+            AkSoundEngine.PostEvent("Play_player_Hurt", gameObject);
         }
     }
 

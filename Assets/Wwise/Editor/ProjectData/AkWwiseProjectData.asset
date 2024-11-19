@@ -657,7 +657,7 @@ MonoBehaviour:
     ParentPath: Events\Player
     guid: 2b7de7ded8cfaf4f903d6114676b19ae
     GuidInternal: 
-    m_lastTime: -8584701078109152893
+    m_lastTime: -8584695895227827337
     List:
     - name: Play_Monster_Sounds
       guid: 1e5c3acaa4928a4d9f5d71fbea2648a6
@@ -676,6 +676,23 @@ MonoBehaviour:
       maxAttenuation: 10
       maxDuration: -1
       minDuration: -1
+    - name: Play_Player_Hurt
+      guid: f0019191ee36dd4a932fe971b9be54ea
+      id: 887999531
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Player
+        ObjectType: 12
+        guid: 2b7de7ded8cfaf4f903d6114676b19ae
+      - ElementName: Play_Player_Hurt
+        ObjectType: 3
+        guid: f0019191ee36dd4a932fe971b9be54ea
+      Path: Events\Player\Play_Player_Hurt
+      maxAttenuation: 0
+      maxDuration: 0.496
+      minDuration: 0.496
     - name: Play_PLYR_Footsteps
       guid: ed202411db5a4141bcb0d37d3376673c
       id: 673033979

@@ -146,6 +146,12 @@
 									<ItemRef Name="MonsterWalking" ID="{75EB2059-44C4-4B4D-9C47-702CC111C258}"/>
 								</ItemList>
 							</Grouping>
+							<Grouping>
+								<SwitchRef Name="MonsterChasing" ID="{CF442881-A432-4F4B-9424-C13FBD0CD797}"/>
+								<ItemList>
+									<ItemRef Name="MonsterChasing" ID="{31787F1D-BD2E-47C5-AAE6-5BE32167A9FD}"/>
+								</ItemList>
+							</Grouping>
 						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
