@@ -19,6 +19,7 @@ public class Event1Sequence : MonoBehaviour
         if (waypoints.Count > 0)
         {
             StartCoroutine(MoveToNextWaypoint());
+            AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, gameObject);
             AkSoundEngine.PostEvent("Play_Monster_Sounds", gameObject);
         }
     }
@@ -63,7 +64,6 @@ public class Event1Sequence : MonoBehaviour
         }
 
         Debug.Log("Sequence complete");
-        AkSoundEngine.PostEvent("Stop_Monster_Sounds", gameObject);
         agroControlller.SetActive(true);
         deAgro.SetActive(true);
     }
