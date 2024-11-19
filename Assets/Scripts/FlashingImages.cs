@@ -28,18 +28,18 @@ public class FlashingImages : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.CompareTag("Player"))
-        //{
-        //    Debug.Log("BLINKING ACTIVATED");
-        //    playerInTrigger = true;
-        //    if (flashCoroutine == null)
-        //    {
-        //        // Enable the canvas image
-        //        canvasImage.enabled = true;
-        //        // Start the coroutine
-        //        flashCoroutine = StartCoroutine(FlashImages());
-        //    }
-        //}
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("BLINKING ACTIVATED");
+            playerInTrigger = true;
+            if (flashCoroutine == null)
+            {
+                // Enable the canvas image
+                canvasImage.enabled = true;
+                // Start the coroutine
+                flashCoroutine = StartCoroutine(FlashImages());
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
