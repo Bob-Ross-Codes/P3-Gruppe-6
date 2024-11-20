@@ -10,7 +10,15 @@ public class RunHallwayChanger : MonoBehaviour
     public List<GameObject> objectsToSpawn; // List of objects to spawn
     public Transform spawnPoint; // Reference to the spawn point
     public GameObject finalPrefab; // The specific prefab to spawn when the trigger counter hits the max
-    private Gaze gaze;
+
+
+
+    private Gaze gaze; // Simon du kan ikke refere til gaze i denne klasse, da den ikke er defineret her, du skal lave en reference til Gaze scriptet inspektøren.
+    // public Gaze gaze;
+    // [SerializeField] private Gaze gaze;
+
+
+
     [SerializeField] bool isBlinking;
 
 

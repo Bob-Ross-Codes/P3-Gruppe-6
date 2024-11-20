@@ -18673,15 +18673,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
       propertyPath: blinks
-      value: 10
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: waitTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
       propertyPath: canvasImage
       value: 
       objectReference: {fileID: 496968106}
     - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: maxFlashSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: minFlashSpeed
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
       propertyPath: images.Array.size
-      value: 5
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
       propertyPath: images.Array.data[2]
@@ -18695,6 +18707,38 @@ PrefabInstance:
       propertyPath: images.Array.data[4]
       value: 
       objectReference: {fileID: 21300000, guid: de287636f92b4d64aabbb35618d2024b, type: 3}
+    - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 968895644af43b14d820a7ea2fa15048, type: 3}
+    - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: de287636f92b4d64aabbb35618d2024b, type: 3}
+    - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: eb2a84a9a6b491846848b3d9e0cbbf2c, type: 3}
+    - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: images.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 968895644af43b14d820a7ea2fa15048, type: 3}
+    - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: images.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: eb2a84a9a6b491846848b3d9e0cbbf2c, type: 3}
+    - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: images.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: eb2a84a9a6b491846848b3d9e0cbbf2c, type: 3}
+    - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: images.Array.data[11]
+      value: 
+      objectReference: {fileID: 21300000, guid: eb2a84a9a6b491846848b3d9e0cbbf2c, type: 3}
+    - target: {fileID: 2379819052198599373, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: images.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: 968895644af43b14d820a7ea2fa15048, type: 3}
     - target: {fileID: 2640420669560282401, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -18714,6 +18758,22 @@ PrefabInstance:
     - target: {fileID: 2765489910387773741, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475281402137052968, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: m_Size.z
+      value: 1.1826195
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475281402137052968, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: m_Center.x
+      value: -4e-45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475281402137052968, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: m_Center.y
+      value: -8.075253e-28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475281402137052968, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+      propertyPath: m_Center.z
+      value: 0.09131063
       objectReference: {fileID: 0}
     - target: {fileID: 4415055377762684293, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
       propertyPath: m_Camera
@@ -18741,7 +18801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7791954013941653012, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.901878
+      value: 16.42
       objectReference: {fileID: 0}
     - target: {fileID: 7791954013941653012, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22538,7 +22598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3128903029877491951, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
       propertyPath: webCamName
-      value: Camo
+      value: AMD Privacy View camera
       objectReference: {fileID: 0}
     - target: {fileID: 3485875271603776584, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
       propertyPath: m_Name
@@ -25472,22 +25532,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 794323b9527ce28468c928b2036ae536, type: 3}
---- !u!1 &1624532875 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8894592330547298001, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
-  m_PrefabInstance: {fileID: 1705299273}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1624532876 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5830674357994930059, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
-  m_PrefabInstance: {fileID: 1705299273}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624532875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a641e529c96f4a149a97fd4b2da6115b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1628486391
 GameObject:
   m_ObjectHideFlags: 0
@@ -43559,7 +43603,7 @@ PrefabInstance:
     - target: {fileID: 3062263374332797618, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
       propertyPath: deAgroScript
       value: 
-      objectReference: {fileID: 1624532876}
+      objectReference: {fileID: 0}
     - target: {fileID: 3062263374332797618, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
       propertyPath: playerController
       value: 
@@ -46470,7 +46514,7 @@ PrefabInstance:
     - target: {fileID: 5193723755069332285, guid: 2dba2a9015c95b94994b7ad6d5bdd28d, type: 3}
       propertyPath: deAgro
       value: 
-      objectReference: {fileID: 1624532875}
+      objectReference: {fileID: 0}
     - target: {fileID: 5193723755069332285, guid: 2dba2a9015c95b94994b7ad6d5bdd28d, type: 3}
       propertyPath: agroControlller
       value: 
@@ -51069,6 +51113,10 @@ PrefabInstance:
     - target: {fileID: 2594875971815257158, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_Lens.m_SensorSize.y
       value: 18.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854194452035476920, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3003725516617531147, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: player

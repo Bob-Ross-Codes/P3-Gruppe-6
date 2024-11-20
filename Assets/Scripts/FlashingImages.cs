@@ -11,6 +11,7 @@ public class FlashingImages : MonoBehaviour
     [SerializeField] private float maxFlashSpeed = 0.1f;
     [SerializeField] private int currentImage = 0;
     [SerializeField] private int blinks; // Number of times to loop
+    [SerializeField] private float waitTime;
 
     private Coroutine flashCoroutine;
     private bool playerInTrigger = false;
@@ -60,6 +61,9 @@ public class FlashingImages : MonoBehaviour
 
     private IEnumerator FlashImages()
     {
+
+        yield return new WaitForSeconds(waitTime); // Hvis du vil ahve flashing timet til at starte efter et bestemt tidspunkt, spaghetti kode
+
         int currentLoop = 0;
 
         while (playerInTrigger && currentLoop < blinks)

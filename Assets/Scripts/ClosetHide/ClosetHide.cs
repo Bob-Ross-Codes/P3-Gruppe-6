@@ -45,6 +45,13 @@ public class ClosetHide : MonoBehaviour
                 }
             }
         }
+
+        //////////////////////////////////////////// CONSOLE DEBUGGING
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ToggleHiding();
+        }
+        //////////////////////////////////////////// CONSOLE DEBUGGING
     }
 
     private void ToggleHiding()
@@ -88,8 +95,6 @@ public class ClosetHide : MonoBehaviour
         return distanceToPlayer <= interactionRange;
     }
 
-
-
     [SerializeField] private float blinkTime = 0f; 
     public IEnumerator WaitForMonsterToBeDestroyed()
     {
@@ -120,6 +125,3 @@ public class ClosetHide : MonoBehaviour
     }
 
 }
-
-
-
