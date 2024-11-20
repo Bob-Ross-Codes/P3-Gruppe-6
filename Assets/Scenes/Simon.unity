@@ -7316,7 +7316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.298
+      value: -3.359
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28387,22 +28387,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 794323b9527ce28468c928b2036ae536, type: 3}
---- !u!1 &1624532875 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8894592330547298001, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
-  m_PrefabInstance: {fileID: 1705299273}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1624532876 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5830674357994930059, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
-  m_PrefabInstance: {fileID: 1705299273}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624532875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a641e529c96f4a149a97fd4b2da6115b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1624655085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1278006150642576567, guid: 27d1c7c1bba7610428ef7060e042118d, type: 3}
@@ -29849,7 +29833,7 @@ PrefabInstance:
     - target: {fileID: 3062263374332797618, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
       propertyPath: deAgroScript
       value: 
-      objectReference: {fileID: 1624532876}
+      objectReference: {fileID: 0}
     - target: {fileID: 3062263374332797618, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
       propertyPath: playerController
       value: 
@@ -32877,7 +32861,7 @@ PrefabInstance:
     - target: {fileID: 5193723755069332285, guid: 2dba2a9015c95b94994b7ad6d5bdd28d, type: 3}
       propertyPath: deAgro
       value: 
-      objectReference: {fileID: 1624532875}
+      objectReference: {fileID: 0}
     - target: {fileID: 5193723755069332285, guid: 2dba2a9015c95b94994b7ad6d5bdd28d, type: 3}
       propertyPath: agroControlller
       value: 
