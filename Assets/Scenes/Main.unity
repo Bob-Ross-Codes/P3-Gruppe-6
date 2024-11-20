@@ -4073,6 +4073,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1484012940}
     m_Modifications:
+    - target: {fileID: 1646468328987619519, guid: c4de0bafc4e42f646a8d0e8c56ecace8, type: 3}
+      propertyPath: m_positionOffsetData.positionOffset.x
+      value: 0.0006746202
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646468328987619519, guid: c4de0bafc4e42f646a8d0e8c56ecace8, type: 3}
+      propertyPath: m_positionOffsetData.positionOffset.y
+      value: 0.28650764
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646468328987619519, guid: c4de0bafc4e42f646a8d0e8c56ecace8, type: 3}
+      propertyPath: m_positionOffsetData.positionOffset.z
+      value: -0.00892385
+      objectReference: {fileID: 0}
     - target: {fileID: 4927525431770526449, guid: c4de0bafc4e42f646a8d0e8c56ecace8, type: 3}
       propertyPath: player
       value: 
@@ -17964,6 +17976,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: ec76018f0451c4f92990270e558b2f55, type: 2}
   intensityIncreaseRate: 1
+  animator: {fileID: 255985083}
 --- !u!65 &1221357323
 BoxCollider:
   m_ObjectHideFlags: 0

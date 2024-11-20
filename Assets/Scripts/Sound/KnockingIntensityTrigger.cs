@@ -3,13 +3,15 @@ using AK.Wwise;
 
 public class KnockingIntensityTrigger : MonoBehaviour
 {
-    
+
     private ClosetHide closetHide; // Reference to the ClosetHide script
     public AK.Wwise.RTPC knockingIntensityParameter; // Game Parameter for intensity control
     public float intensityIncreaseRate = 10.0f;      // Rate of intensity increase
 
     private float currentIntensity = 0;              // Current intensity level
     private bool isPlayerInside = false;             // Track if player is in the room
+
+    [SerializeField] private Animator animator;
 
     void Start()
     {
@@ -44,12 +46,15 @@ public class KnockingIntensityTrigger : MonoBehaviour
             currentIntensity += intensityIncreaseRate * Time.deltaTime;
             currentIntensity = Mathf.Clamp(currentIntensity, 0, 100); // Cap at 100
             knockingIntensityParameter.SetGlobalValue(currentIntensity); // Update the parameter value
+            animator.SetTrigger("Knocking");
+
+
             if (closetHide != null && closetHide.isHiding)
             {
                 Destroy(gameObject);
 
                 // Stop the knocking sound when the player hides in the closet after 2 seconds
-                
+
                 AkSoundEngine.PostEvent("Stop_Knocking_Event", gameObject);
             }
         }
