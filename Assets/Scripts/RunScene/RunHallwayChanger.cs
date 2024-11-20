@@ -13,13 +13,15 @@ public class RunHallwayChanger : MonoBehaviour
 
 
 
-    private Gaze gaze; // Simon du kan ikke refere til gaze i denne klasse, da den ikke er defineret her, du skal lave en reference til Gaze scriptet inspektøren.
-    // public Gaze gaze;
-    // [SerializeField] private Gaze gaze;
+   // Simon du kan ikke refere til gaze i denne klasse, da den ikke er defineret her, du skal lave en reference til Gaze scriptet inspektï¿½ren.
+   //okay my nigger
+
+    [Header("Gaze Settings")]
+    [SerializeField] private Gaze gaze; // Reference to the Gaze script
+    [SerializeField] bool isBlinking; // Flag to track if the player is blinking
+     [SerializeField] private float blinkTime = 0f; // Timer to track how long isBlinking is true
 
 
-
-    [SerializeField] bool isBlinking;
 
 
 
@@ -30,6 +32,8 @@ public class RunHallwayChanger : MonoBehaviour
     private const int MID_SECTION_START_INDEX = 4;
     private const int FINAL_TRIGGER_THRESHOLD = 6;
     private const float SPAWN_DELAY = 2f;
+
+
 
 
 
@@ -45,7 +49,7 @@ public class RunHallwayChanger : MonoBehaviour
     private void Start()
     {
         StartChase();
-    //    isBlinking = gaze.Blinking;   // Simon du kan ikke refere til gaze i denne klasse, da den ikke er defineret her, du skal lave en reference til Gaze scriptet inspektøren.
+    //    isBlinking = gaze.Blinking;   // Simon du kan ikke refere til gaze i denne klasse, da den ikke er defineret her, du skal lave en reference til Gaze scriptet inspektï¿½ren.
     }
 
 
@@ -62,18 +66,18 @@ public class RunHallwayChanger : MonoBehaviour
 //trigger next scene if isBlinking bool is true for more then 3 seconds
     private void Update()
     {
-        if (isBlinking)
+        if (gaze.Blinking && blinkTime)
         {
-            blinkingTime += Time.deltaTime; // Increment timer if isBlinking is true
-            if (blinkingTime > 3f && triggerCounter > 1) // Check both conditions
+            blinkTime += Time.deltaTime; // Increment timer if isBlinking is true
+            if (blinkTime > 3f && triggerCounter > 1) // Check both conditions
             {
                 Debug.Log("Blinking time: " + blinkingTime);
             }
         }
+       
         else
         {
-            blinkingTime = 0f; // Reset timer if isBlinking is false
-            Debug.Log("Blinking time reset");
+            blinkTime = 0f; // Reset timer if isBlinking is false
         }
     }
 
