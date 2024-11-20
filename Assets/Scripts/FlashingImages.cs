@@ -36,7 +36,7 @@ public class FlashingImages : MonoBehaviour
             if (flashCoroutine == null)
             {
                 // Enable the canvas image
-                canvasImage.enabled = true;
+              
                 // Start the coroutine
                 flashCoroutine = StartCoroutine(FlashImages());
             }
@@ -62,8 +62,8 @@ public class FlashingImages : MonoBehaviour
     private IEnumerator FlashImages()
     {
 
-        yield return new WaitForSeconds(waitTime); // Hvis du vil ahve flashing timet til at starte efter et bestemt tidspunkt, spaghetti kode
-
+        yield return new WaitForSeconds(waitTime); // Hvis du vil have flashing timet til at starte efter et bestemt tidspunkt, spaghetti kode
+        canvasImage.enabled = true;
         int currentLoop = 0;
 
         while (playerInTrigger && currentLoop < blinks)

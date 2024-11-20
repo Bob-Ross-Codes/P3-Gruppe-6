@@ -45,7 +45,7 @@ public class RunHallwayChanger : MonoBehaviour
     private void Start()
     {
         StartChase();
-        isBlinking = gaze.Blinking;
+    //    isBlinking = gaze.Blinking;   // Simon du kan ikke refere til gaze i denne klasse, da den ikke er defineret her, du skal lave en reference til Gaze scriptet inspektøren.
     }
 
 
