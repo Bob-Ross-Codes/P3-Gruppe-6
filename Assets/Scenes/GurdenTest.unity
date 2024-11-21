@@ -44280,6 +44280,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1461957278}
     - target: {fileID: 4731339218394488387, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
+      propertyPath: closetHide
+      value: 
+      objectReference: {fileID: 1705299275}
+    - target: {fileID: 4731339218394488387, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
+      propertyPath: monsterprefab
+      value: 
+      objectReference: {fileID: 1275371070}
+    - target: {fileID: 4731339218394488387, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
       propertyPath: monsteranimater
       value: 
       objectReference: {fileID: 1912678639}
@@ -47169,6 +47177,10 @@ PrefabInstance:
     - target: {fileID: 1865868195134509072, guid: 2dba2a9015c95b94994b7ad6d5bdd28d, type: 3}
       propertyPath: m_Name
       value: MonsterPrefab Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193723755069332285, guid: 2dba2a9015c95b94994b7ad6d5bdd28d, type: 3}
+      propertyPath: speed
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5193723755069332285, guid: 2dba2a9015c95b94994b7ad6d5bdd28d, type: 3}
       propertyPath: deAgro

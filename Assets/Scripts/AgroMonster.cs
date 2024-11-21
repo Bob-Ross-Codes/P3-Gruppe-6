@@ -9,7 +9,8 @@ public class AgroMonster : GazeActivation
     [SerializeField] private Gaze gaze;
     [SerializeField] private float timeToScare;
     [SerializeField] private JumpscareManager scaryMonsterPrefab;
-
+    [SerializeField] private GameObject monsterprefab;
+    [SerializeField] private ClosetHide closetHide;
     public override void OnLookedAt()
     {
         timeToScare += Time.deltaTime;
@@ -18,6 +19,9 @@ public class AgroMonster : GazeActivation
         if (timeToScare >= 1f)
         {
             scaryMonsterPrefab.TriggerJumpscare();
+            Destroy(gameObject);
+            Destroy(monsterprefab);
+            closetHide.canToggleHiding = true;
         }
         if (gaze._blinking)
             timeToScare = 0;
