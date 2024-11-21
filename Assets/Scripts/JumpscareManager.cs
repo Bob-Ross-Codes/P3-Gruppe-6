@@ -8,15 +8,9 @@ public class JumpscareManager : MonoBehaviour
 
     private void Start()
     {
-        // Ensure the prefab is disabled at the start
-        if (jumpscarePrefab != null)
-        {
-            jumpscarePrefab.SetActive(false);
-        }
-        else
-        {
-            Debug.LogError("Jumpscare prefab is not assigned!");
-        }
+
+        jumpscarePrefab.SetActive(false);
+
     }
 
     public void TriggerJumpscare()

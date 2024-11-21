@@ -9334,6 +9334,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7064399662572544394, guid: da3832c88b4f1fb49bced3e3fef47e41, type: 3}
   m_PrefabInstance: {fileID: 612425654}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &615912043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7958843618604976577, guid: 43e48bbf463e9044e9ab64ebef34b5b5, type: 3}
+  m_PrefabInstance: {fileID: 950694052}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &628058396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7151957241616024286, guid: c84f91f325a3343cf8de80bc303105ea, type: 3}
@@ -11166,7 +11171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6745563c51b68d04f89d03f1af8ca375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpscarePrefab: {fileID: 7958843618604976577, guid: 43e48bbf463e9044e9ab64ebef34b5b5, type: 3}
+  jumpscarePrefab: {fileID: 615912043}
   scareDuration: 2
 --- !u!1 &807860156
 GameObject:
@@ -44271,6 +44276,10 @@ PrefabInstance:
       value: 18.66
       objectReference: {fileID: 0}
     - target: {fileID: 4731339218394488387, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
+      propertyPath: gaze
+      value: 
+      objectReference: {fileID: 1461957278}
+    - target: {fileID: 4731339218394488387, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
       propertyPath: monsteranimater
       value: 
       objectReference: {fileID: 1912678639}
@@ -44278,6 +44287,10 @@ PrefabInstance:
       propertyPath: jumpscareManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4731339218394488387, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
+      propertyPath: scaryMonsterPrefab
+      value: 
+      objectReference: {fileID: 785072211}
     - target: {fileID: 5830674357994930059, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
       propertyPath: monsterPrefab
       value: 

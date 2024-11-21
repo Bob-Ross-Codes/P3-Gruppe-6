@@ -14,6 +14,7 @@ public class AgroMonster : GazeActivation
     {
         timeToScare += Time.deltaTime;
         monsteranimater.SetTrigger("Agro");
+        Debug.Log("scary time soon?" + timeToScare + " YES! at 1f");
         if (timeToScare >= 1f)
         {
             scaryMonsterPrefab.TriggerJumpscare();
