@@ -24,36 +24,6 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="LowKnock" ID="{08A8E4B9-CF6D-46BE-9AF2-B57431904C99}" ShortID="208615589">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-9</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Gentle Knock Wooden Door" ID="{C08D7B32-7D4D-424D-8AF2-AB7FFCB5DD4D}">
-									<Language>SFX</Language>
-									<AudioFile>Gentle Knock Wooden Door.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="945887105"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Gentle Knock Wooden Door" ID="{C08D7B32-7D4D-424D-8AF2-AB7FFCB5DD4D}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="MediumKnock" ID="{ECC81499-82FD-4A1F-8358-1E08349F104D}" ShortID="4059649">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
@@ -89,6 +59,7 @@
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-6</Value>
@@ -367,27 +338,18 @@
 							</ReferenceList>
 							<BlendTrackAssocList>
 								<BlendTrackAssoc>
-									<ItemRef Name="LowKnock" ID="{08A8E4B9-CF6D-46BE-9AF2-B57431904C99}"/>
-									<CrossfadingInfo>
-										<LeftEdgePos>2.4812030075188</LeftEdgePos>
-										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>9.45710123281646</RightEdgePos>
-										<RightFadingMode>Automatic</RightFadingMode>
-									</CrossfadingInfo>
-								</BlendTrackAssoc>
-								<BlendTrackAssoc>
 									<ItemRef Name="MediumKnock" ID="{ECC81499-82FD-4A1F-8358-1E08349F104D}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>8.48697835389662</LeftEdgePos>
+										<LeftEdgePos>0</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>18.7983757613618</RightEdgePos>
+										<RightEdgePos>8.10619066933348</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
 								<BlendTrackAssoc>
 									<ItemRef Name="HighKnock" ID="{5CC16092-C986-45BE-A005-468F070AD57F}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>17.7755399807736</LeftEdgePos>
+										<LeftEdgePos>7.34674978169244</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
 										<RightEdgePos>30</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
@@ -1609,195 +1571,6 @@
 										<ActiveSource Name="Flickering Sound Effect" ID="{93BD2832-C418-4486-B688-4694F8DED511}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="Flick_09" ID="{51DBFEBC-C68D-41A8-9FE3-E0E156E11664}" ShortID="770702809">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Flickering Sound Effect" ID="{96D1280F-C81C-4916-AC60-67C5303030F6}">
-											<PropertyList>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="9.9643367815275"/>
-												<Property Name="TrimEnd" Type="Real64" Value="10.7869906892751"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Flickering Sound Effect.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="279398897"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Flickering Sound Effect" ID="{96D1280F-C81C-4916-AC60-67C5303030F6}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Flick_10" ID="{C749BE54-283D-4B12-A17C-6DA8739864EE}" ShortID="852805842">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Flickering Sound Effect" ID="{978C5452-7790-428A-88F1-95BE41EAC8EB}">
-											<PropertyList>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="9.9643367815275"/>
-												<Property Name="TrimEnd" Type="Real64" Value="10.7869906892751"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Flickering Sound Effect.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="279398897"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Flickering Sound Effect" ID="{978C5452-7790-428A-88F1-95BE41EAC8EB}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Flick_11" ID="{96EEB9A2-9698-444F-A339-7E8A3E08279A}" ShortID="69471871">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Flickering Sound Effect" ID="{DFEF41BA-8C02-410A-9CE2-260E608DC226}">
-											<PropertyList>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="12.6652192478506"/>
-												<Property Name="TrimEnd" Type="Real64" Value="13.2126954234566"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Flickering Sound Effect.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="264251318"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Flickering Sound Effect" ID="{DFEF41BA-8C02-410A-9CE2-260E608DC226}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Flick_12" ID="{40F391CF-FA14-462A-8094-8901127DDE25}" ShortID="1065274742">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Flickering Sound Effect" ID="{6A5B24E7-90DE-4A6D-9E72-82F75F1B1DC7}">
-											<PropertyList>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="13.1629248620379"/>
-												<Property Name="TrimEnd" Type="Real64" Value="13.7601715990627"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Flickering Sound Effect.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="177655080"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Flickering Sound Effect" ID="{6A5B24E7-90DE-4A6D-9E72-82F75F1B1DC7}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Flick_13" ID="{66D5DC1A-AC7E-4DAD-9A39-FD85AB34469B}" ShortID="845195676">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Flickering Sound Effect" ID="{D135B136-5106-4F1C-A8EC-7780C5515EDF}">
-											<PropertyList>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="14.2597967390347"/>
-												<Property Name="TrimEnd" Type="Real64" Value="14.8904980683079"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Flickering Sound Effect.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="597176862"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Flickering Sound Effect" ID="{D135B136-5106-4F1C-A8EC-7780C5515EDF}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Flick_14" ID="{68EDFDD5-F93C-4DA4-82EA-4DDA70BF3AA0}" ShortID="1066597259">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Flickering Sound Effect" ID="{F3570AF9-DFF8-49E6-B172-F5FE6158B00C}">
-											<PropertyList>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="16.8274740874591"/>
-												<Property Name="TrimEnd" Type="Real64" Value="17.5753412763206"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Flickering Sound Effect.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="407529346"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Flickering Sound Effect" ID="{F3570AF9-DFF8-49E6-B172-F5FE6158B00C}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Flick_15" ID="{E2B2458C-3ECA-4CF6-B19B-95CE0603E82A}" ShortID="596280899">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Flickering Sound Effect" ID="{533B1602-9913-47D3-AE4A-60248A1A984E}">
-											<PropertyList>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="19.1159245014923"/>
-												<Property Name="TrimEnd" Type="Real64" Value="20.3605203407034"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Flickering Sound Effect.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="174929362"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Flickering Sound Effect" ID="{533B1602-9913-47D3-AE4A-60248A1A984E}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<Sound Name="Light_Flick_Sweetener" ID="{A3166AA8-0913-47F5-A3E1-A2CF38842EEB}" ShortID="314456414">
@@ -1874,6 +1647,115 @@
 						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
+				<RandomSequenceContainer Name="DoorSlam" ID="{625AB658-5927-4120-A986-7106C6B54B54}" ShortID="887208308">
+					<PropertyList>
+						<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="10"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="ES_Slam, Squeak - Epidemic Sound - 0000-0593" ID="{2D5A9D10-573A-4785-8FD0-6B22EA7B469C}" ShortID="1040417689">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>34</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-830</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ES_Slam, Squeak - Epidemic Sound - 0000-0593" ID="{45820E55-E809-442E-9FDD-543988F8AEDF}">
+									<Language>SFX</Language>
+									<AudioFile>ES_Slam, Squeak - Epidemic Sound - 0000-0593.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="914059636"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{991B76C8-21D2-4AE9-BAD4-B0BDA839D3DF}" ShortID="522257933">
+												<ReferenceList>
+													<Reference Name="Effect">
+														<Custom>
+															<Effect Name="Time Stretch (Custom)" ID="{6A975C4D-B466-495D-88E3-36EEAC91BC84}" ShortID="863344862" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+																<PropertyList>
+																	<Property Name="QualityEnable" Type="int16" Value="1"/>
+																	<Property Name="TimeStretch" Type="Real32" Value="205"/>
+																	<Property Name="WindowSize" Type="int32" Value="8192"/>
+																</PropertyList>
+															</Effect>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="ES_Slam, Squeak - Epidemic Sound - 0000-0593" ID="{45820E55-E809-442E-9FDD-543988F8AEDF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ES_70's, Kick Out - Epidemic Sound" ID="{67623CFE-B81B-4C4A-B291-4E9D3E75175C}" ShortID="230955794">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ES_70's, Kick Out - Epidemic Sound" ID="{8ABD2D33-241F-4DF1-A6E1-C903155D86C7}">
+									<Language>SFX</Language>
+									<AudioFile>ES_70's, Kick Out - Epidemic Sound.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="390649072"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ES_70's, Kick Out - Epidemic Sound" ID="{8ABD2D33-241F-4DF1-A6E1-C903155D86C7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Playlist">
+							<Reference>
+								<ObjectRef Name="ES_70's, Kick Out - Epidemic Sound" ID="{67623CFE-B81B-4C4A-B291-4E9D3E75175C}" WorkUnitID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}"/>
+							</Reference>
+							<Reference>
+								<ObjectRef Name="ES_Slam, Squeak - Epidemic Sound - 0000-0593" ID="{2D5A9D10-573A-4785-8FD0-6B22EA7B469C}" WorkUnitID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}"/>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
