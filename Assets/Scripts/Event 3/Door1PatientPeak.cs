@@ -8,6 +8,7 @@ public class Door1PatientPeak : MonoBehaviour
     [SerializeField] private Transform door;
     [SerializeField] private GameObject patient;
     [SerializeField] private LightManager lightManager;
+    [SerializeField] private JournalEyeDetector journalEyeDetector;
 
     private Vector3 initialPosition = new Vector3(0.189999998f, -0.0900000036f, 0.529999971f);
     private Vector3 newPosition = new Vector3(0.313501358f, -1.13949442f, -9.2357254f);

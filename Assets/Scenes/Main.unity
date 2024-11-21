@@ -31804,7 +31804,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 457282176387007397, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 804686355741061006, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: player
@@ -31832,7 +31832,7 @@ PrefabInstance:
       objectReference: {fileID: 321885353}
     - target: {fileID: 937544302998684249, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1035387467987242469, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: camera
@@ -32111,6 +32111,10 @@ PrefabInstance:
       value: 18.66
       objectReference: {fileID: 0}
     - target: {fileID: 7566049267654205481, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: patient
+      value: 
+      objectReference: {fileID: 8222160126292069970}
+    - target: {fileID: 7566049267654205481, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: lightManager
       value: 
       objectReference: {fileID: 1450975409}
@@ -32231,6 +32235,11 @@ GameObject:
 --- !u!1 &8222160126292069969 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5688160880871807608, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+  m_PrefabInstance: {fileID: 8222160126292069965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8222160126292069970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7097613148299748601, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
   m_PrefabInstance: {fileID: 8222160126292069965}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8622277479471843412
