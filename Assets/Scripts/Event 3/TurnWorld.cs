@@ -202,28 +202,4 @@ void Start()
             light.enabled = enabled;
         }
     }
-
-    private void WwisePlayFlickeringSound()
-    {
-        AkSoundEngine.SetRTPCValue("RTPC_LightState", 2, gameObject);
-        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
-    }
-
-    private void WwisePlayTurnOnSound()
-    {
-        AkSoundEngine.SetRTPCValue("RTPC_LightState", 1, gameObject);
-        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
-    }
-
-    private void WwisePlayTurnOffSound()
-    {
-        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, gameObject);
-        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
-    }
-
-    private void WwiseStopLightsSounds()
-    {
-        AkSoundEngine.PostEvent("Stop_Light_OnOff_Event", gameObject);
-    }
-
 }

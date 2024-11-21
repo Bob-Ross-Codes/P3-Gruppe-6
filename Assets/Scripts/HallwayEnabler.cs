@@ -7,6 +7,7 @@ public class HallwayEnabler : MonoBehaviour
     [SerializeField] private GameObject[] hallways; // Reference to an array of hallway GameObjects.
     [SerializeField] private GameObject[] hallwayEnablers; // Reference to an array of hallway GameObjects.
     [SerializeField] private int hallwayToEnable = 1; // Number of hallways to enable.
+    [SerializeField] private LightManager lightManager;
 
     private void Start()
     {
@@ -23,6 +24,8 @@ public class HallwayEnabler : MonoBehaviour
         // Check if the collided object has the tag "HallwayEnabler".
         if (other.CompareTag("HallwayEnabler"))
         {
+            lightManager.allLights = FindObjectsOfType<Light>();
+
             // Ensure the array is not null and has at least one element.
             if (hallways != null && hallways.Length >= hallwayToEnable)
             {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightManager : MonoBehaviour
 {
-    [SerializeField] private Light[] allLights;  // Array of lights
+    [SerializeField] public Light[] allLights;  // Array of lights
     private Light[] lightsToFlicker;  // Time elapsed since flickering started
     [SerializeField] private Light handlight;  // Time elapsed since flickering started
 
@@ -14,17 +14,22 @@ public class LightManager : MonoBehaviour
     public bool flickeringOn;
     public bool lightsOn = false;
 
+    void FixedUpdate()
+    {
+        allLights = FindObjectsOfType<Light>();
+    }
+
     public void StartFlicker(float duration, float speed, bool handLight)
     {
         if (handlight)
-    {
-        lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
-        List<Light> tempList = new List<Light>(lightsToFlicker); // Optionally use List later if needed
-        tempList.Add(handlight); // Add handlight to temp list
-        lightsToFlicker = tempList.ToArray(); // Convert back to array
-    }
-    else
-        lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
+        {
+            lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
+            List<Light> tempList = new List<Light>(lightsToFlicker); // Optionally use List later if needed
+            tempList.Add(handlight); // Add handlight to temp list
+            lightsToFlicker = tempList.ToArray(); // Convert back to array
+        }
+        else
+            lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
 
         StartCoroutine(Flickering(duration, speed, handLight));
         flickeringOn = true;
@@ -48,9 +53,10 @@ public class LightManager : MonoBehaviour
 
                 // Turn off all lights (darker state)
                 foreach (var light in lightsToFlicker)
-                light.enabled = false;
+                    light.enabled = false;
+                WwiseStopLightsSounds();
                 lightsOn = false;
-                
+
                 yield return new WaitForSeconds(darkInterval * speed);
                 elapsedTime += darkInterval;
 
@@ -60,16 +66,44 @@ public class LightManager : MonoBehaviour
                     light.enabled = true;
                     AkSoundEngine.PostEvent("Flickering_Lights", gameObject);
                 }
+                WwisePlayFlickeringSound();
                 lightsOn = true;
 
                 yield return new WaitForSeconds(lightInterval * speed);
                 elapsedTime += lightInterval;
             }
-            foreach (var light in lightsToFlicker){
-                    light.enabled = true; lightsOn = true;}
-                
+            foreach (var light in lightsToFlicker)
+            {
+                light.enabled = true; lightsOn = true;
+            }
+
             flickeringOn = false;
         }
-        else {flickeringOn = false; yield break;}
+        else { flickeringOn = false; yield break; }
+    }
+
+
+    //Flickering sounds
+    private void WwisePlayFlickeringSound()
+    {
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 2, gameObject);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
+    }
+
+    private void WwisePlayTurnOnSound()
+    {
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 1, gameObject);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
+    }
+
+    private void WwisePlayTurnOffSound()
+    {
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, gameObject);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
+    }
+
+    private void WwiseStopLightsSounds()
+    {
+        AkSoundEngine.PostEvent("Stop_Light_OnOff_Event", gameObject);
     }
 }
