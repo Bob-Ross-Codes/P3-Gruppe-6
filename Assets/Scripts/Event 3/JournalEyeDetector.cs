@@ -9,6 +9,8 @@ public class JournalEyeDetector : GazeActivation
     public GameObject EyeDetector;
     //Flickering lights
     public LightManager lightManager;  // Reference to the LightManager script
+    [SerializeField] Light[] staticLights;
+
     public int flickerCount = 1;
     public int countForJumpscare = 4;
 
@@ -34,28 +36,27 @@ public class JournalEyeDetector : GazeActivation
 
     public override void OnLookedAt()
     {
+        if (flickering || finish) return; // Prevent duplicate calls
+        patient.SetActive(false);
         Debug.Log("Journal Eye detector looked at");
         blurryText.PauseFadeOut(true);
-        //Only run if no flickering
-        if (!flickering && !finish)
-        {
-            Debug.Log("Eyes detected, starting to flicker");
-            StartCoroutine(FlickerLight());     // Start the flickering coroutine
-        }
+        Debug.Log("Eyes detected, starting to flicker");
+        StartCoroutine(FlickerLight());     // Start the flickering coroutine
     }
 
-    private IEnumerator FlickerLight()
+private IEnumerator FlickerLight()
     {
         flickering = true;
         patient.transform.localPosition = humanPosition1;
 
+        Debug.Log("Flickercount: " + flickerCount);
             if (patient != null && flickerCount != countForJumpscare)
             {            
                 lightManager.StartFlicker(5, 1, false);
                 yield return null;
                 while (lightManager.flickeringOn == false)
                 {
-                    if (lightManager.lightsOn == false)
+                if (lightManager.lightsOn == false)
                         patient.SetActive(Random.Range(0, 2) == 0);
                     else
                         patient.SetActive(false);
@@ -122,5 +123,7 @@ public class JournalEyeDetector : GazeActivation
             float speed = 10f; // Units per second
             patient.transform.localPosition = Vector3.MoveTowards(patient.transform.localPosition, humanPosition2, speed * Time.deltaTime);
         }
+
+        foreach (var light in staticLights) light.enabled = true; //keep these lights on
     }
 }

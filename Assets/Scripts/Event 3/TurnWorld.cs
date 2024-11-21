@@ -30,6 +30,7 @@ public class TurnWorld : MonoBehaviour
     private bool triggered;
     private bool triggeredToNormal; // Flag for TurnToNormal coroutine
     private bool handLightDead = false;
+    private bool redLightsOn;
     float initialPlayerSpeed;
 
 void Start()
@@ -42,7 +43,7 @@ void Start()
     SetLightsEnabled(RedLights, false);
     SetLightsEnabled(AllLights, true);
 
-    // Set the class-level initialPosition and targetPosition (not local variables)
+        // Set the class-level initialPosition and targetPosition (not local variables)
     initialPosition = hallway.transform.localPosition; // Store initial position
     targetPosition = initialPosition + new Vector3(0f, -12f, -25f); // Target position down and back
 }
@@ -50,6 +51,9 @@ void Start()
 
     private void FixedUpdate()
     {
+        if(triggered == false)
+        SetLightsEnabled(RedLights, false);
+
         float distanceToPlayer = Vector3.Distance(player.position, trigger.position);
 
         if (distanceToPlayer < interactionRange && !triggered)
@@ -72,7 +76,6 @@ void Start()
     private IEnumerator TurnToRed(float duration)
     {
         float elapsedTime = 0f;
-
         // Smooth rotation and movement over time
         while (elapsedTime < duration)
         {

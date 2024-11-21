@@ -63,6 +63,6 @@ public class Event1Sequence : MonoBehaviour
 
         Debug.Log("Sequence complete");
         agroControlller.SetActive(true);
-        deAgro.SetActive(true);
+        //deAgro.SetActive(true);
     }
 }

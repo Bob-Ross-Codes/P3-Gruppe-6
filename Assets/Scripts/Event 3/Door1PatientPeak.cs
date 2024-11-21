@@ -15,7 +15,7 @@ public class Door1PatientPeak : MonoBehaviour
     private Vector3 newPosition = new Vector3(0.313501358f, -1.13949442f, -9.2357254f);
 
     private float distanceToPlayer;
-    private float interactionRange = 3f;                        // Set the interaction range
+    private float interactionRange = 4f;                        // Set the interaction range
     private bool triggered;
 
     void Start()
@@ -44,7 +44,7 @@ public class Door1PatientPeak : MonoBehaviour
                 light.enabled = false;
                 AkSoundEngine.PostEvent("Flickering_Lights", gameObject);
             }
-            StartCoroutine(WaitAndLight(3f));                                       //Start waiter
+            StartCoroutine(WaitAndLight(2f));                                       //Start waiter
             triggered = true;
         }
     }
