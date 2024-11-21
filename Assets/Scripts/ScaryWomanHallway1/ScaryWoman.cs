@@ -7,29 +7,20 @@ public class ScaryWoman : MonoBehaviour
     public Animator targetAnimator; // Reference to the Animator component on another GameObject
     public string Hide; // The name of the trigger parameter in the Animator
 
-    private void OnCollisionEnter(Collision collision)
+   private void OnTriggerEnter(Collider other)
+{
+    // Ensure only the player triggers this
+    if (other.CompareTag("Player"))
     {
         if (targetAnimator != null)
         {
             // Trigger the animation
-            targetAnimator.SetTrigger(Hide);
+            targetAnimator.SetTrigger("Hide");
         }
         else
         {
             Debug.LogError("Target Animator is not assigned!");
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (targetAnimator != null)
-        {
-            // Trigger the animation
-            targetAnimator.SetTrigger(Hide);
-        }
-        else
-        {
-            Debug.LogError("Target Animator is not assigned!");
-        }
-    }
+}
 }

@@ -7316,7 +7316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.359
+      value: -3.453
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7536,23 +7536,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4102736948640468551, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92237467
+      value: 0.9170966
       objectReference: {fileID: 0}
     - target: {fileID: 4102736948640468551, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.015347424
+      value: -0.29003662
       objectReference: {fileID: 0}
     - target: {fileID: 4102736948640468551, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.114603154
+      value: 0.01737348
       objectReference: {fileID: 0}
     - target: {fileID: 4102736948640468551, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.36858594
+      value: -0.2729667
       objectReference: {fileID: 0}
     - target: {fileID: 4102736948640468551, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 3.22
+      value: -31.5
       objectReference: {fileID: 0}
     - target: {fileID: 4102736948640468551, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -7560,7 +7560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4102736948640468551, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -43.2
+      value: -36.8
       objectReference: {fileID: 0}
     - target: {fileID: 4206323707005056816, guid: cdf60e0f37a56954082256c627d3da18, type: 3}
       propertyPath: m_IsActive
@@ -19980,6 +19980,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: ec76018f0451c4f92990270e558b2f55, type: 2}
   intensityIncreaseRate: 1
+  animator: {fileID: 0}
 --- !u!65 &1221357323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34371,7 +34372,7 @@ Animator:
   m_GameObject: {fileID: 1987526946}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 925de918c9311d0489337c8b0f644872, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0076c0ecf6836c9439d696a6436f2502, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
