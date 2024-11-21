@@ -29,19 +29,11 @@ public class JournalEyeDetector : GazeActivation
     {        
         // Find blurryText in children
         blurryText = GetComponentInChildren<BlurryText>();
-        finish = false;
-        jumpScare = false;
-        flickering = false;
     }
 
     public override void OnLookedAt()
     {
-        if (flickering || finish) return; // Prevent duplicate calls
-        patient.SetActive(false);
-        Debug.Log("Journal Eye detector looked at");
         blurryText.PauseFadeOut(true);
-        Debug.Log("Eyes detected, starting to flicker");
-        StartCoroutine(FlickerLight());     // Start the flickering coroutine
     }
 
 private IEnumerator FlickerLight()

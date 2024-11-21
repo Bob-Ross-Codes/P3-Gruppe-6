@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class Door1PatientPeak : MonoBehaviour
 {
-
-    public Light[] lightsToFlicker;                             // Array of lights to flicker
-
     [SerializeField] private Transform player;
     [SerializeField] private Transform door;
     [SerializeField] private GameObject patient;
+    [SerializeField] private LightManager lightManager;
 
     private Vector3 initialPosition = new Vector3(0.189999998f, -0.0900000036f, 0.529999971f);
     private Vector3 newPosition = new Vector3(0.313501358f, -1.13949442f, -9.2357254f);
 
     private float distanceToPlayer;
-    private float interactionRange = 4f;                        // Set the interaction range
+    private float interactionRange = 3f;                        // Set the interaction range
     private bool triggered;
 
     void Start()
@@ -23,13 +21,6 @@ public class Door1PatientPeak : MonoBehaviour
         triggered = false;
         patient.SetActive(true);
         patient.transform.localPosition = initialPosition;
-        Debug.Log("Patient at: " + patient.transform.position);
-        Debug.Log("Target position: " + initialPosition);
-
-        foreach (var light in lightsToFlicker)
-        {
-            light.enabled = true;                                                   //Turn on lights
-        }
     }
 
     private void FixedUpdate()
@@ -38,27 +29,9 @@ public class Door1PatientPeak : MonoBehaviour
 
         if (distanceToPlayer < interactionRange && !triggered)
         {
-            Debug.Log("Patient dissapearing");
-            foreach (var light in lightsToFlicker)                                  //Turn off lights
-            {
-                light.enabled = false;
-                AkSoundEngine.PostEvent("Flickering_Lights", gameObject);
-            }
-            StartCoroutine(WaitAndLight(2f));                                       //Start waiter
+            lightManager.StartFlicker(2f, 0.9f, false);
             triggered = true;
-            patient.SetActive (false);
-        }
-    }
-
-
-    private IEnumerator WaitAndLight(float time)
-    {
-        yield return new WaitForSeconds(time);                  //Wait
-        patient.SetActive(false);                               //Patient dissapears
-        patient.transform.localPosition = newPosition;
-        foreach (var light in lightsToFlicker)
-        {   if(light != null)
-            light.enabled = true;                               //Turn on lights
+            patient.SetActive(false);                               //Patient dissapears
         }
     }
 }
