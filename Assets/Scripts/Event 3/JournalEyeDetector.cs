@@ -17,13 +17,15 @@ public class JournalEyeDetector : GazeActivation
     public BlurryText blurryText;  // Reference to the SpriteFade script
 
     public int lookAtCount;
-    public int jumpScareCount;  
+    public int jumpScareCount;
+    public bool jumpScare;
 
     void Start()
     {
         // Find blurryText in children
         blurryText = GetComponentInChildren<BlurryText>();
-        jumpScareCount = 4;
+        jumpScareCount = 3;
+        jumpScare = false;
     }
 
     public void ActivateEyetracking()
@@ -41,12 +43,14 @@ public class JournalEyeDetector : GazeActivation
             blurryText.PauseFadeOut(true);
 
             Debug.Log("Checking looked at count");
-            if (lookAtCount != jumpScareCount)
+            if (lookAtCount < jumpScareCount)
             {
                 lightManager.StartFlicker(4f, 1f, true);
                 Debug.Log("lookAtCount: " + lookAtCount);
-                patient.transform.position = humanPosition2;
+                patient.transform.localPosition = humanPosition1;
             }
+            else if (lookAtCount > jumpScareCount)
+                Destroy(patient);
             else { lightManager.StartFlicker(15f, 1f, true); Debug.Log("JumpScare"); }
             lookAtCount++;
         }
@@ -55,18 +59,23 @@ public class JournalEyeDetector : GazeActivation
 
     void FixedUpdate()
     {
-        if(lightManager.flickeringOn && lookAtCount > 0)
+        int randomNumber = Random.Range(0, 3);
+        if(lightManager.flickeringOn && lookAtCount > 0 && !jumpScare)
         {
             Debug.Log("lightsOn value: " + lightManager.lightsOn);
-            if (lightManager.lightsOn == false && Random.Range(0, 1) == 0)
+            Debug.Log("random NUmber: " + randomNumber);
+            if (lightManager.lightsOn == false && randomNumber == 0)
                 patient.SetActive(true);
             else patient.SetActive(false);
         }
-        /*
+        if(!lightManager.flickeringOn)
+            patient.SetActive(false);
+        
         if (jumpScare && patient != null)
         {
+            patient.SetActive(true);
             float speed = 10f; // Units per second
             patient.transform.localPosition = Vector3.MoveTowards(patient.transform.localPosition, humanPosition2, speed * Time.deltaTime);
-        }*/
+        }
     }
 }

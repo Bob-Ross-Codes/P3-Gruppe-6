@@ -33,8 +33,9 @@ public class BedEyeDetector : GazeActivation
         Debug.Log("Looked at Bed");
         blurryText.PauseFadeOut(false);
 
-        if (journalEyeDetector.lookAtCount < journalEyeDetector.jumpScareCount)
-        lightManager.StopFlicker();
+        if (journalEyeDetector.lookAtCount != journalEyeDetector.jumpScareCount)
+            lightManager.StopFlicker();
+        else journalEyeDetector.jumpScare = true;
 
         // Start blurring the journal
         blurryText.StartFadeOut();
