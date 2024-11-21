@@ -44,7 +44,7 @@ public class KnockingIntensityTrigger : MonoBehaviour
         if (isPlayerInside)
         {
             currentIntensity += intensityIncreaseRate * Time.deltaTime;
-            currentIntensity = Mathf.Clamp(currentIntensity, 0, 100); // Cap at 100
+            currentIntensity = Mathf.Clamp(currentIntensity, 0, 30); // Cap at 100
             knockingIntensityParameter.SetGlobalValue(currentIntensity); // Update the parameter value
             animator.SetTrigger("Knocking");
 
