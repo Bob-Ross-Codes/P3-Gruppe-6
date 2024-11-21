@@ -86,7 +86,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Light_OnOff_Event" ID="{4F95B3BF-23A2-424F-8039-CBC2AE97C4B7}">
+				<Event Name="Play_Light_OnOff_Event" ID="{4F95B3BF-23A2-424F-8039-CBC2AE97C4B7}">
 					<ChildrenList>
 						<Action Name="" ID="{8EDBA63F-3E19-442E-ACE0-44BC842229BA}" ShortID="314185450">
 							<ReferenceList>
@@ -103,6 +103,20 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Flashlight_On_Off" ID="{46A62E55-DEE7-48B2-BBAB-B9ADD7ADC2F9}" WorkUnitID="{D14CE5F9-2FB5-4968-82BD-DE7C89FA95F4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Light_OnOff_Event" ID="{E530B490-8E22-4BC3-BBA2-3846887ED13E}">
+					<ChildrenList>
+						<Action Name="" ID="{4AE31651-50E6-4E8E-9488-75126129BAB5}" ShortID="138945469">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="LightSwitch" ID="{1FAA47EC-7995-4CF8-AC44-30FED172EA0A}" WorkUnitID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

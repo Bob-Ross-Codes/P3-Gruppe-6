@@ -31,17 +31,6 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<SwitchContainer Name="MonsterChasing" ID="{31787F1D-BD2E-47C5-AAE6-5BE32167A9FD}" ShortID="229851061">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-								</Reference>
-							</ReferenceList>
-							<GroupingInfo/>
-						</SwitchContainer>
 						<RandomSequenceContainer Name="MonsterWalking" ID="{75EB2059-44C4-4B4D-9C47-702CC111C258}" ShortID="540273443">
 							<PropertyList>
 								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
@@ -125,8 +114,14 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
-						<BlendContainer Name="New Blend Container" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}" ShortID="1018558968">
+						<BlendContainer Name="MonsterChasing" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}" ShortID="1018558968">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="att_Generic_10m" ID="{F8F8E3F7-3660-43BA-ABAE-F4304371F83E}" WorkUnitID="{1F542FE1-08B3-4235-A78D-0E1B87E0581B}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
 								</Reference>
@@ -138,6 +133,11 @@
 								<Sound Name="fast-heartbeat-1-hour" ID="{E9F2D0F3-55E5-41EE-947B-6A54A07F148F}" ShortID="635215216">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
@@ -290,10 +290,7 @@
 								<ItemRef Name="MonsterWalkingSweetener" ID="{4E8BCE01-68DB-4767-8E85-4BE35069DACC}"/>
 							</GroupingBehavior>
 							<GroupingBehavior>
-								<ItemRef Name="MonsterChasing" ID="{31787F1D-BD2E-47C5-AAE6-5BE32167A9FD}"/>
-							</GroupingBehavior>
-							<GroupingBehavior>
-								<ItemRef Name="New Blend Container" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}"/>
+								<ItemRef Name="MonsterChasing" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}"/>
 							</GroupingBehavior>
 							<GroupingBehavior>
 								<ItemRef Name="MonsterWalking" ID="{75EB2059-44C4-4B4D-9C47-702CC111C258}"/>
@@ -310,7 +307,7 @@
 							<Grouping>
 								<SwitchRef Name="MonsterChasing" ID="{CF442881-A432-4F4B-9424-C13FBD0CD797}"/>
 								<ItemList>
-									<ItemRef Name="MonsterChasing" ID="{31787F1D-BD2E-47C5-AAE6-5BE32167A9FD}"/>
+									<ItemRef Name="MonsterChasing" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}"/>
 								</ItemList>
 							</Grouping>
 						</GroupingList>
