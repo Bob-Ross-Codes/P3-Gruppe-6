@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyOnGaze : GazeActivation
 {
-    public override float ActivationTime => 1.0f; // Time required to look at the object before destruction
+    public override float ActivationTime => 2.0f; // Time required to look at the object before destruction
 
     public Animator targetAnimator; // Reference to the Animator component on another GameObject
 
