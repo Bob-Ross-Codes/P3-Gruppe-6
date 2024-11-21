@@ -104,7 +104,32 @@ using UnityEngine;
     }
 
     public void AssignTextures(Texture2D baseMap, Texture2D normalMap)
+{
+    foreach (var material in materials)
     {
+        if (material.HasProperty("_MainTex")) // Base Map
+        {
+            Debug.Log($"Assigning Base Map: {baseMap?.name} to {material.name}");
+            material.SetTexture("_MainTex", baseMap);
+        }
+        else
+        {
+            Debug.LogWarning($"{material.name} does not have a _MainTex property!");
+        }
+
+        if (material.HasProperty("_BumpMap")) // Normal Map
+        {
+            Debug.Log($"Assigning Normal Map: {normalMap?.name} to {material.name}");
+            material.SetTexture("_BumpMap", normalMap);
+        }
+        else
+        {
+            Debug.LogWarning($"{material.name} does not have a _BumpMap property!");
+        }
+    }
+    Debug.Log($"Textures assigned to {gameObject.name}");
+}
+    /*{
         foreach (var material in materials)
         {
             if (material.HasProperty("_BaseMap"))
@@ -117,7 +142,7 @@ using UnityEngine;
             }
         }
         Debug.Log($"Textures assigned to {gameObject.name}");
-    }
+    }*/
 
     public void ActivateDissolve()
     {

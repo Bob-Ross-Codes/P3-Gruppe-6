@@ -8,29 +8,28 @@ public class OverallDissolveController : MonoBehaviour
     public class DissolvableObject
     {
         public GameObject targetObject; // The object to dissolve
-        public Texture2D baseMap; // Base map for this object
-        public Texture2D normalMap; // Normal map for this object
+        public Texture2D baseMap;       // Base map for this object
+        public Texture2D normalMap;     // Normal map for this object
     }
 
     public List<DissolvableObject> dissolvableObjects = new List<DissolvableObject>();
-
-    public Texture2D defaultBaseMap; // Assign a default Base Map in the Inspector
-    public Texture2D defaultNormalMap; // Assign a default Normal Map in the Inspector
+    public Texture2D defaultBaseMap; // Default Base Map (assigned in Inspector)
+    public Texture2D defaultNormalMap; // Default Normal Map (assigned in Inspector)
 
     private void Start()
     {
-        // Automatically populate the list with child objects
+        // Automatically populate dissolvable objects from children
         foreach (Transform child in transform)
         {
             Renderer renderer = child.GetComponent<Renderer>();
             if (renderer != null)
             {
-                // Create a new dissolvable object
+                // Create a new dissolvable object and assign defaults
                 DissolvableObject dissolvable = new DissolvableObject
                 {
                     targetObject = child.gameObject,
-                    baseMap = defaultBaseMap, // Use default Base Map
-                    normalMap = defaultNormalMap // Use default Normal Map
+                    baseMap = defaultBaseMap,
+                    normalMap = defaultNormalMap
                 };
 
                 dissolvableObjects.Add(dissolvable);
@@ -39,6 +38,7 @@ public class OverallDissolveController : MonoBehaviour
 
         Debug.Log($"Added {dissolvableObjects.Count} children to the dissolve list.");
     }
+    
 
     public void TriggerDissolve()
     {
@@ -46,12 +46,14 @@ public class OverallDissolveController : MonoBehaviour
         {
             if (dissolvable.targetObject != null)
             {
+                // Get the dissolve script on the object
                 var dissolveScript = dissolvable.targetObject.GetComponent<DissolveOffest>();
                 if (dissolveScript != null)
                 {
-                    // Assign the textures dynamically
+                    // Assign the textures (defaults if not overridden)
                     dissolveScript.AssignTextures(dissolvable.baseMap, dissolvable.normalMap);
-                    // Start the dissolve effect
+
+                    // Trigger dissolve
                     dissolveScript.ActivateDissolve();
                 }
                 else
@@ -62,6 +64,3 @@ public class OverallDissolveController : MonoBehaviour
         }
     }
 }
-
-
-
