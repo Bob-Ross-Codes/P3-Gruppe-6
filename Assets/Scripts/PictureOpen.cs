@@ -7,18 +7,18 @@ public class PictureOpen : MonoBehaviour
     public Animator animator;
     private bool isHandIn = false;        // Tracks if the hand is in
     private bool isHandFlipped = false;  // Tracks if the hand is flipped
-    public Canvas introTutorial;
+    public GameObject ArrrrSprite;
     void Start()
     {
         animator.SetTrigger("HandIn");
-        introTutorial.enabled = true;
+      
         isHandIn = true;
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            introTutorial.enabled = false;
+            Destroy(ArrrrSprite);
 
             if (!isHandIn)
             {
