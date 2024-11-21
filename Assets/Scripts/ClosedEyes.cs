@@ -14,9 +14,11 @@ public class ClosedEyes : MonoBehaviour
         if (gaze._blinking)
         {
             // Marius gør din ting!
-
+            AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
+            
             // Storede fede pølsepatter
         }
+        AkSoundEngine.PostEvent("Stop_Eyes_Closed", gameObject);
 
 
     }
