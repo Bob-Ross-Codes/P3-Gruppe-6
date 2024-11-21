@@ -96,13 +96,13 @@ void Start()
                 }
             }
             if (elapsedTime > 0.2f && elapsedTime <= 0.6f) { SetLightsEnabled(AllLights, false); }
-            else if (elapsedTime > 0.6f && elapsedTime <= 0.8f) { SetLightsEnabled(AllLights, true); AkSoundEngine.PostEvent("Flickering_Lights", gameObject); }
+            else if (elapsedTime > 0.6f && elapsedTime <= 0.8f) { SetLightsEnabled(AllLights, true);}
             else if (elapsedTime > 0.8f && elapsedTime <= 1.2f) { SetLightsEnabled(AllLights, false); }
-            else if (elapsedTime > 1.2f && elapsedTime <= 1.3f) { SetLightsEnabled(AllLights, true); AkSoundEngine.PostEvent("Flickering_Lights", gameObject); }
+            else if (elapsedTime > 1.2f && elapsedTime <= 1.3f) { SetLightsEnabled(AllLights, true);}
             else if (elapsedTime > 1.3f && elapsedTime <= 1.6f) { SetLightsEnabled(AllLights, false); }
-            else if (elapsedTime > 1.6f && elapsedTime <= 1.8f) { SetLightsEnabled(AllLights, true); AkSoundEngine.PostEvent("Flickering_Lights", gameObject); }
+            else if (elapsedTime > 1.6f && elapsedTime <= 1.8f) { SetLightsEnabled(AllLights, true);}
             else if (elapsedTime > 1.8f && elapsedTime <= 3.2f) { SetLightsEnabled(AllLights, false); }
-            else if (elapsedTime > 3.2f && elapsedTime <= 3.4f) { SetLightsEnabled(AllLights, true); AkSoundEngine.PostEvent("Flickering_Lights", gameObject); }
+            else if (elapsedTime > 3.2f && elapsedTime <= 3.4f) { SetLightsEnabled(AllLights, true); }
             else if (elapsedTime > 3.4f && elapsedTime <= 3.9f) { SetLightsEnabled(AllLights, false); }
         }
 
@@ -148,6 +148,7 @@ void Start()
             }
 
             // MARIUS: Spil stor lys tænder
+            AkSoundEngine.SetRTPCValue("RTPC_LightState", 1, gameObject);
             AkSoundEngine.PostEvent("Light_OnOff_Event", gameObject);
 
             // Wait for 1 second before moving to the next pair
@@ -201,4 +202,28 @@ void Start()
             light.enabled = enabled;
         }
     }
+
+    private void WwisePlayFlickeringSound()
+    {
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 2, gameObject);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
+    }
+
+    private void WwisePlayTurnOnSound()
+    {
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 1, gameObject);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
+    }
+
+    private void WwisePlayTurnOffSound()
+    {
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, gameObject);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
+    }
+
+    private void WwiseStopLightsSounds()
+    {
+        AkSoundEngine.PostEvent("Stop_Light_OnOff_Event", gameObject);
+    }
+
 }
