@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClosedEyes : MonoBehaviour
 {
 
-    [SerializedField] private Gaze gaze;
+    public Gaze gaze;
 
     // Måske vi skal sætte det her script på playeren således det altid er til stede?
     void Update()
