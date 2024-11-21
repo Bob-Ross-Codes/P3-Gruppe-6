@@ -31,7 +31,7 @@ public class FlashingImages : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("BLINKING ACTIVATED");
+          //  Debug.Log("BLINKING ACTIVATED");
             playerInTrigger = true;
             if (flashCoroutine == null)
             {
@@ -47,7 +47,7 @@ public class FlashingImages : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("BLINKING DEACTIVATED");
+           // Debug.Log("BLINKING DEACTIVATED");
             playerInTrigger = false;
             if (flashCoroutine != null)
             {
@@ -70,7 +70,7 @@ public class FlashingImages : MonoBehaviour
         {
             // Set the current image
             canvasImage.sprite = images[currentImage];
-            Debug.Log($"Displaying image {currentImage}");
+        //    Debug.Log($"Displaying image {currentImage}");
             // Move to the next image
             currentImage = (currentImage + 1) % images.Length;
             // Show the image for one frame
