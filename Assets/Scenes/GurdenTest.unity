@@ -9334,11 +9334,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7064399662572544394, guid: da3832c88b4f1fb49bced3e3fef47e41, type: 3}
   m_PrefabInstance: {fileID: 612425654}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &615912043 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7958843618604976577, guid: 43e48bbf463e9044e9ab64ebef34b5b5, type: 3}
-  m_PrefabInstance: {fileID: 950694052}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &628058396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7151957241616024286, guid: c84f91f325a3343cf8de80bc303105ea, type: 3}
@@ -11136,7 +11131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 785072210}
-  - component: {fileID: 785072209}
+  - component: {fileID: 785072211}
   m_Layer: 0
   m_Name: JumpscareManager
   m_TagString: Untagged
@@ -11144,20 +11139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &785072209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785072208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dff67e309a74b34abff0afc02f8ca02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpscarePrefab: {fileID: 615912043}
-  scareDuration: 2
 --- !u!4 &785072210
 Transform:
   m_ObjectHideFlags: 0
@@ -11173,6 +11154,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &785072211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785072208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6745563c51b68d04f89d03f1af8ca375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpscarePrefab: {fileID: 7958843618604976577, guid: 43e48bbf463e9044e9ab64ebef34b5b5, type: 3}
+  scareDuration: 2
 --- !u!1 &807860156
 GameObject:
   m_ObjectHideFlags: 0
@@ -44282,7 +44277,7 @@ PrefabInstance:
     - target: {fileID: 4731339218394488387, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
       propertyPath: jumpscareManager
       value: 
-      objectReference: {fileID: 785072209}
+      objectReference: {fileID: 0}
     - target: {fileID: 5830674357994930059, guid: c2a0135477be41e428fe4ad349a55e73, type: 3}
       propertyPath: monsterPrefab
       value: 
