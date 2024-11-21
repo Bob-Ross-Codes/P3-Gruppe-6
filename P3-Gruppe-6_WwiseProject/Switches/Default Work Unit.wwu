@@ -5,7 +5,6 @@
 			<ChildrenList>
 				<SwitchGroup Name="GroundMaterialSwitch" ID="{30762E12-6426-4496-A2BC-B71121A2E2F1}">
 					<ChildrenList>
-						<Switch Name="Carpet" ID="{16295B59-B691-4C58-BC0A-7078B6FB1DC2}"/>
 						<Switch Name="Wood" ID="{1740B1A9-E11E-43A1-8B66-044111452342}"/>
 						<Switch Name="Tile" ID="{E0CE004B-FA50-419D-9EE4-F3345A726725}"/>
 					</ChildrenList>
@@ -115,10 +114,38 @@
 					</SwitchOnRTPC>
 				</SwitchGroup>
 				<SwitchGroup Name="MonsterState" ID="{981F2EC9-290F-48CB-B188-E8DB5996CA58}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
 						<Switch Name="MonsterWalking" ID="{FD101D2B-A22D-4E17-AFCD-43C345EDD538}"/>
 						<Switch Name="MonsterChasing" ID="{CF442881-A432-4F4B-9424-C13FBD0CD797}"/>
 					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_MonsterState" ID="{1065F977-542C-42AB-A7F4-29AF31CFCC7C}"/>
+						<Curve Name="" ID="{9401A9A0-2AB5-4007-89DA-904BA5B61362}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>2</XPos>
+									<YPos>2</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
 				</SwitchGroup>
 				<SwitchGroup Name="DoorSFXSwitch" ID="{613819E5-4F72-4424-A084-B729641B5D08}">
 					<PropertyList>
@@ -217,16 +244,16 @@
 							<PointList>
 								<Point>
 									<XPos>0</XPos>
-									<YPos>1</YPos>
+									<YPos>2</YPos>
 									<Flags>5</Flags>
 								</Point>
 								<Point>
 									<XPos>1</XPos>
-									<YPos>2</YPos>
+									<YPos>1</YPos>
 									<Flags>0</Flags>
 								</Point>
 								<Point>
-									<XPos>1.93293</XPos>
+									<XPos>1.999</XPos>
 									<YPos>3</YPos>
 									<Flags>0</Flags>
 								</Point>

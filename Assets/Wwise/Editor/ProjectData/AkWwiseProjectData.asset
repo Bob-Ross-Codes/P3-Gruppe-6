@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 8f74c11f6ba88142833ff2a081eb0f2f
     GuidInternal: 
-    m_lastTime: -8584700804646885979
+    m_lastTime: -8584700353894775808
     List:
     - name: 2DAmbience
       guid: 47c5d0fb2456804fad814c18859c1d1d
@@ -418,7 +418,7 @@ MonoBehaviour:
     ParentPath: Events\Enviroment
     guid: dfdd45dc075dd0439b42b35985878514
     GuidInternal: 
-    m_lastTime: -8584700804659758646
+    m_lastTime: -8584694266032931261
     List:
     - name: Door_SFX_Event
       guid: c08fa549c659aa4c9b5e1d1105274359
@@ -597,7 +597,7 @@ MonoBehaviour:
     ParentPath: Events\Music
     guid: 338cc34d50efa449ad2c2d8b0d0854a8
     GuidInternal: 
-    m_lastTime: -8584695954237893510
+    m_lastTime: -8584695715474775808
     List:
     - name: Play_EndingMusic
       guid: 7116acc69187394ea03aea0e6e6f069c
@@ -657,7 +657,7 @@ MonoBehaviour:
     ParentPath: Events\Player
     guid: 2b7de7ded8cfaf4f903d6114676b19ae
     GuidInternal: 
-    m_lastTime: -8584701078109152893
+    m_lastTime: -8584695715474775808
     List:
     - name: Play_Monster_Sounds
       guid: 1e5c3acaa4928a4d9f5d71fbea2648a6
@@ -676,6 +676,23 @@ MonoBehaviour:
       maxAttenuation: 10
       maxDuration: -1
       minDuration: -1
+    - name: Play_Player_Hurt
+      guid: f0019191ee36dd4a932fe971b9be54ea
+      id: 887999531
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Player
+        ObjectType: 12
+        guid: 2b7de7ded8cfaf4f903d6114676b19ae
+      - ElementName: Play_Player_Hurt
+        ObjectType: 3
+        guid: f0019191ee36dd4a932fe971b9be54ea
+      Path: Events\Player\Play_Player_Hurt
+      maxAttenuation: 0
+      maxDuration: 0.496
+      minDuration: 0.496
     - name: Play_PLYR_Footsteps
       guid: ed202411db5a4141bcb0d37d3376673c
       id: 673033979
@@ -722,7 +739,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: ea837575837ad2429fa23f0890dcd34c
     GuidInternal: 
-    m_lastTime: -8584700804659748647
+    m_lastTime: -8584694273329675743
     List:
     - name: RTPC_Distance
       guid: 8f713afc3c692048aa47cad6aeb38d71
@@ -808,6 +825,20 @@ MonoBehaviour:
         ObjectType: 13
         guid: b28f9b23eda4a74b9f24e061174ccf4a
       Path: Game Parameters\Default Work Unit\RTPC_LightState
+    - name: RTPC_MonsterState
+      guid: 77f965102c54ab42a7f429af31cfcc7c
+      id: 293784726
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ea837575837ad2429fa23f0890dcd34c
+      - ElementName: RTPC_MonsterState
+        ObjectType: 13
+        guid: 77f965102c54ab42a7f429af31cfcc7c
+      Path: Game Parameters\Default Work Unit\RTPC_MonsterState
     - name: RTPC_PlayerSpeed
       guid: f567d7fb8347c24b8570a764cd7f7bb8
       id: 2653406601
@@ -1136,7 +1167,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: f26415a28a873a438edb3ff2f246b1ad
     GuidInternal: 
-    m_lastTime: -8584700804643258549
+    m_lastTime: -8584694255198801206
     List:
     - name: DoorSFXSwitch
       guid: e5193861724f2444a084b729641b5d08
@@ -1269,22 +1300,6 @@ MonoBehaviour:
         guid: 122e763026649644a2bcb71121a2e2f1
       Path: Switches\Default Work Unit\GroundMaterialSwitch
       values:
-      - name: Carpet
-        guid: 595b291691b6584cbc0a7078b6fb1dc2
-        id: 2412606308
-        PathAndIcons:
-        - ElementName: Switches
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: f26415a28a873a438edb3ff2f246b1ad
-        - ElementName: GroundMaterialSwitch
-          ObjectType: 11
-          guid: 122e763026649644a2bcb71121a2e2f1
-        - ElementName: Carpet
-          ObjectType: 10
-          guid: 595b291691b6584cbc0a7078b6fb1dc2
       - name: Tile
         guid: 4b00cee050fa9d419ee4f3345a726725
         id: 2637588553
@@ -1731,7 +1746,7 @@ MonoBehaviour:
     m_lastTime: -8584701078037760893
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 010000000200000003000000040000000500000006000000070000001300000015000000160000001e0000001f0000002f000000300000004500000047000000f2000000ff00000040010000bc010000bd010000e5020000
+  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000130000001500000016000000170000001c0000001d0000001e0000001f00000020000000210000002200000023000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f0000003000000031000000330000003500000036000000440000004500000046000000470000004b0000004c000000f2000000ff00000040010000bc010000bd010000e5020000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0

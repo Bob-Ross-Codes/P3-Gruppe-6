@@ -182,6 +182,7 @@ public class Gaze : MonoBehaviour
         }
     }
 
+
     public virtual void OnValidate()
     {
         //Update filter values
@@ -219,7 +220,7 @@ public class Gaze : MonoBehaviour
             timer = 0;
             PerformGazeUpdate();
             Debug.Log("Is brother blinking? "+_blinking);
-            Debug.Log("Is  "+_eyeHelper);
+            //Debug.Log("Is  "+_eyeHelper);
         }
     }
 

@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{ADD6EC02-D661-42B6-81CC-12BFD98682A1}" SchemaVersion="119">
 	<Events>
-		<WorkUnit Name="NPC" ID="{ADD6EC02-D661-42B6-81CC-12BFD98682A1}" PersistMode="Standalone"/>
+		<WorkUnit Name="NPC" ID="{ADD6EC02-D661-42B6-81CC-12BFD98682A1}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Monster_Sounds" ID="{CA3A5C1E-92A4-4D8A-9F5D-71FBEA2648A6}">
+					<ChildrenList>
+						<Action Name="" ID="{BCB4D07B-4122-4D12-9DFA-07E33A726402}" ShortID="533825952">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MonsterSounds" ID="{E2F40C31-2872-4972-956F-AA2264D67D3E}" WorkUnitID="{BBDCF3BA-B56E-4C38-A149-E1049ADD6DCD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

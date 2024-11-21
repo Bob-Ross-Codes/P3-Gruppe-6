@@ -5,11 +5,12 @@ public class DeAgro : GazeActivation
 {
     public Animator monsteranimater; // Animator reference
     public GameObject monsterPrefab; // Monster prefab reference
-    public ClosetHide closetHideScript; // Reference to ClosetHide script
 
     private float lookAtTime = 0f; // Tracks how long the collider is being looked at
     private Coroutine deAgroCoroutine = null; // Reference to the countdown coroutine
     private bool isBeingLookedAt = false; // Tracks if the player is looking at the collider
+
+    public ClosetHide closetHideScript; // Reference to the ClosetHide script
 
     public override float ActivationTime => 0.1f; // Defines how quickly `OnLookedAt()` activates
 
@@ -38,20 +39,11 @@ public class DeAgro : GazeActivation
     private void Update()
     {
         // Continuously check if the player is still looking at the collider
-        if (!IsLookingAt())
+        if (!IsLookingAt() && isBeingLookedAt)
         {
-            if (isBeingLookedAt)
-            {
-                // Player stopped looking at the collider
-                Debug.Log("Player looked away from DeAgro collider.");
-                ResetDeAgroTimer();
-            }
-        }
-
-        // Set the canToggleHiding flag based on the presence of the monsterPrefab
-        if (closetHideScript != null)
-        {
-            closetHideScript.canToggleHiding = monsterPrefab == null;
+            // Player stopped looking at the collider
+            Debug.Log("Player looked away from DeAgro collider.");
+            ResetDeAgroTimer();
         }
     }
 
@@ -79,6 +71,7 @@ public class DeAgro : GazeActivation
         if (monsterPrefab != null)
         {
             Destroy(monsterPrefab);
+            closetHideScript.StartCoroutine(closetHideScript.WaitForMonsterToBeDestroyed());
         }
 
         deAgroCoroutine = null; // Clean up the coroutine reference
@@ -95,15 +88,21 @@ public class DeAgro : GazeActivation
             StopCoroutine(deAgroCoroutine);
             deAgroCoroutine = null;
         }
+
+        Debug.Log("DeAgro timer reset.");
     }
 
     private bool IsLookingAt()
     {
         // Replace this with your actual gaze detection logic.
-        // For now, it's assumed that `OnLookedAt()` keeps `isBeingLookedAt` true.
+        // For now, it's assumed that `OnLookedAt()` sets `isBeingLookedAt` to true,
+        // and we reset `isBeingLookedAt` to false dynamically when the player looks away.
         return isBeingLookedAt;
     }
 }
+
+
+
 
 
 

@@ -17,9 +17,9 @@ namespace AK
         static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
         static const AkUniqueID FLASHLIGHT_ONOFF_EVENT = 1510976581U;
         static const AkUniqueID HORROR_AMBIENCE = 967859696U;
-        static const AkUniqueID LIGHT_ONOFF_EVENT = 1006235157U;
         static const AkUniqueID PLAY_ENDINGMUSIC = 1755859644U;
         static const AkUniqueID PLAY_INTROMUSIC = 3582431873U;
+        static const AkUniqueID PLAY_LIGHT_ONOFF_EVENT = 511968160U;
         static const AkUniqueID PLAY_MONSTER_SOUNDS = 324561159U;
         static const AkUniqueID PLAY_PLAYER_HURT = 887999531U;
         static const AkUniqueID PLAY_PLYR_FOOTSTEPS = 673033979U;
@@ -27,6 +27,7 @@ namespace AK
         static const AkUniqueID PLAY_WOMANAMBIENCE = 2870446976U;
         static const AkUniqueID STARTKNOCKINGEVENT = 152670193U;
         static const AkUniqueID STOP_KNOCKING_EVENT = 1856817241U;
+        static const AkUniqueID STOP_LIGHT_ONOFF_EVENT = 2797432074U;
         static const AkUniqueID STOP_MONSTER_SOUNDS = 2630587137U;
     } // namespace EVENTS
 
@@ -111,7 +112,6 @@ namespace AK
 
             namespace SWITCH
             {
-                static const AkUniqueID CARPET = 2412606308U;
                 static const AkUniqueID TILE = 2637588553U;
                 static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH
@@ -199,6 +199,7 @@ namespace AK
         static const AkUniqueID RTPC_GROUNDWETNESS = 870672907U;
         static const AkUniqueID RTPC_KNOCKINGINTENSITY = 2692556666U;
         static const AkUniqueID RTPC_LIGHTSTATE = 191147360U;
+        static const AkUniqueID RTPC_MONSTERSTATE = 293784726U;
         static const AkUniqueID RTPC_PLAYERSPEED = 2653406601U;
         static const AkUniqueID RTPC_RAINAMOUNT = 1294084109U;
         static const AkUniqueID RTPC_REVERB = 4143461479U;
@@ -210,6 +211,7 @@ namespace AK
     {
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID AMBIENCE = 85412153U;
+        static const AkUniqueID MONSTER = 2376328173U;
         static const AkUniqueID PLAYER = 1069431850U;
     } // namespace BANKS
 

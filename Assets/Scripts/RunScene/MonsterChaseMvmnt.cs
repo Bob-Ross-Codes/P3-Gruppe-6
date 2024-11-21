@@ -13,7 +13,8 @@ public class MonsterChaseMvmnt : MonoBehaviour
     private int currentTargetIndex = 0;  // To keep track of the current target (BoxCollider)
     private bool isMoving = true;        // Flag to control the movement
     [SerializeField] int finalHallwayCount = 20;
-    
+
+    [SerializeField] private float rotationSpeed = 5f; // New variable to control rotation speed
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
         {
             Debug.LogError("Please assign exactly 4 BoxColliders.");
         }
+        AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, gameObject);
         AkSoundEngine.PostEvent("Play_Monster_Sounds", gameObject);
     }
 
@@ -31,7 +33,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(player.position, monster.position);
 
         // Set the moveSpeed based on the distance to the player, but cap it at monsterMaxSpeed
-        MoveSpeed = distanceToPlayer / 2;
+        MoveSpeed = distanceToPlayer / 1.2f;
 
         if (isMoving && targetBoxes.Length == 4)
         {
@@ -68,7 +70,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
             // Move to the next target BoxCollider (loop back to 0 if we reach the last one)
             currentTargetIndex = (currentTargetIndex + 1) % targetBoxes.Length;
 
-            Debug.Log("Moving on to index:" + currentTargetIndex );
+            Debug.Log("Moving on to index:" + currentTargetIndex);
         }
     }
 
@@ -80,11 +82,14 @@ public class MonsterChaseMvmnt : MonoBehaviour
             // Calculate the direction from the object to the player
             Vector3 directionToPlayer = player.transform.position - transform.position;
 
-            // Calculate the rotation needed to look at the player
-            Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
+            // Calculate the rotation needed to look at the player only on the y axis
+            Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer, Vector3.up);
 
-            // Smoothly rotate the object towards the player using Slerp
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
+            // Adjust the rotation by -90 degrees on the y-axis
+            targetRotation *= Quaternion.Euler(0, 90, 0);
+
+            // Smoothly rotate the object towards the player using Slerp with increased rotation speed
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
     }
 
@@ -115,6 +120,5 @@ public class MonsterChaseMvmnt : MonoBehaviour
 
         // Debug log to check the target reversal and new index
         Debug.Log($"Target path reversed. New starting index: {currentTargetIndex}");
-}
-
+    }
 }

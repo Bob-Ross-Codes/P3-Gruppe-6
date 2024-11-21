@@ -7,6 +7,8 @@ public class RayCastAtSight : MonoBehaviour
     public Gaze gazeScript; // Reference to the Gaze script
     public Camera mainCamera; // Reference to the main camera
 
+    public bool deBug = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,8 +23,12 @@ public class RayCastAtSight : MonoBehaviour
             // Perform the raycast
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                // Log the hit object
-                Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
+                if (deBug)
+                { // Log the hit object
+                    Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
+                }
+               
+             
 
                 // Check if the hit object has a GazeActivation component
                 GazeActivation gazeActivation = hit.collider.GetComponent<GazeActivation>();

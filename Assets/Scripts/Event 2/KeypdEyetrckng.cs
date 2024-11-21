@@ -17,6 +17,6 @@ public class KeypdEyetrckng : GazeActivation
         keypadController.LookAtKeypad();
         Debug.Log("Looked At Keypad");
 
-        activationFloat += 0.5f;
+        activationFloat += 1f;
     }
 }

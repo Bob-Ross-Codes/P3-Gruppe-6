@@ -1,12 +1,13 @@
 Event	ID	Name			Wwise Object Path	Notes
 	152670193	startKnockingEvent			\Enviroment\startKnockingEvent	
+	511968160	Play_Light_OnOff_Event			\Enviroment\Play_Light_OnOff_Event	
 	842992288	Door_SFX_Event			\Enviroment\Door_SFX_Event	
 	967859696	Horror_Ambience			\Enviroment\Horror_Ambience	
-	1006235157	Light_OnOff_Event			\Enviroment\Light_OnOff_Event	
 	1093999139	Play_RainAndThunder			\Enviroment\Play_RainAndThunder	
 	1510976581	Flashlight_OnOff_Event			\Enviroment\Flashlight_OnOff_Event	
 	1755859644	Play_EndingMusic			\Music\Play_EndingMusic	
 	1856817241	Stop_Knocking_Event			\Enviroment\Stop_Knocking_Event	
+	2797432074	Stop_Light_OnOff_Event			\Enviroment\Stop_Light_OnOff_Event	
 	2870446976	Play_WomanAmbience			\Enviroment\Play_WomanAmbience	
 	3483129277	Enter_Reverb_Zone			\Enviroment\Enter_Reverb_Zone	
 	3582431873	Play_IntroMusic			\Music\Play_IntroMusic	
@@ -14,6 +15,7 @@ Event	ID	Name			Wwise Object Path	Notes
 Switch Group	ID	Name			Wwise Object Path	Notes
 	83357616	WomanState			\Default Work Unit\WomanState	
 	423758775	FlashlightSwitch			\Default Work Unit\FlashlightSwitch	
+	1504742439	LightSwitch			\Default Work Unit\LightSwitch	
 	2168380830	DoorSFXSwitch			\Default Work Unit\DoorSFXSwitch	
 
 Switch	ID	Name	Switch Group			Notes
@@ -21,11 +23,15 @@ Switch	ID	Name	Switch Group			Notes
 	3782157712	HitDoor	WomanState			
 	930712164	Off	FlashlightSwitch			
 	1651971902	On	FlashlightSwitch			
+	930712164	Off	LightSwitch			
+	1558276990	Flick	LightSwitch			
+	1651971902	On	LightSwitch			
 	136945955	Locked	DoorSFXSwitch			
 	3012222945	Closed	DoorSFXSwitch			
 	3072142513	Open	DoorSFXSwitch			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	191147360	RTPC_LightState			\Default Work Unit\RTPC_LightState	
 	1863449742	RTPC_DoorState			\Default Work Unit\RTPC_DoorState	
 	2692556666	RTPC_KnockingIntensity			\Default Work Unit\RTPC_KnockingIntensity	
 	3666827266	RTPC_WomanState			\Default Work Unit\RTPC_WomanState	
@@ -38,31 +44,47 @@ Effect plug-ins	ID	Name	Type				Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	2028515	KS_Rain On Surfaces_2	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\KS_Rain On Surfaces_2_0D5EE4C7.wem		\Actor-Mixer Hierarchy\Enviroment\Outdoor\KS_Rain On Surfaces_2		6726464
 	13641386	Female Scream Intense 03	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Female Scream Intense 03_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\WomanAmbience\Female Scream Intense 03		713412
+	27212775	Light_Flick_Sweetener	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Fluorescent Light Buzz Soft_47C90923.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick_Sweetener		9250628
 	41071332	WomanCrying	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Distant Crying Sound Effect_FBC78EF0.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\WomanAmbience\WomanCrying		7303608
 	48546062	Distant Thunder No Rain	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Distant Thunder No Rain_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\Outdoor\ThunderAmbience\Distant Thunder No Rain		3522756
 	139150290	DoorClose	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\KS_Bedroom Door_2_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\DoorSounds\DoorClose		297056
 	161921007	HighKnock_7	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Hard With Fist_E9E08B95.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\HighKnock\HighKnock_7		331144
+	174929362	Flick_15	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_E9488619.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_15		119576
+	177655080	Flick_12	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_82A3E2F6.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_12		57432
 	199820693	HighKnock_4	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Hard With Fist_BE733C9D.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\HighKnock\HighKnock_4		527592
 	207794992	Into_audio	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Into_audio_v2_818F3B66.wem		\Actor-Mixer Hierarchy\Music\Into_audio		7124012
 	220019224	HighKnock_1	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Door Knocking Slight Rattle_FEB3E9FC.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\HighKnock\HighKnock_1		375464
+	264251318	Flick_11	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_2F483217.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_11		52656
 	268669544	MediumKnock	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Wood Door Knock_FBC78EF0.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\MediumKnock		1294432
+	279398897	Flick_10	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_D6B7382C.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_10		79072
+	293863672	Flick_08	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_4A47FA62.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_08		84888
 	328603660	DoorOpen	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\KS_Bedroom Door_1_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\DoorSounds\DoorOpen		305248
 	388144728	KS__4	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\KS__4_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\DoorSounds\DoorLocked\KS__4		313440
 	397420369	Thunder Clap Heavy Impact Sound Effect (1)	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Thunder Clap Heavy Impact Sound Effect (1)_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\Outdoor\ThunderAmbience\Thunder Clap Heavy Impact Sound Effect (1)		4193376
 	398871403	Thunder Clap Sound Effect	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Thunder Clap Sound Effect_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\Outdoor\ThunderAmbience\Thunder Clap Sound Effect		1812576
+	407529346	Flick_14	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_B269DA3E.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_14		71892
 	454425690	Knock on wood	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Knock on wood_A6BD9C50.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\HorrorDrones\Knock on wood		1336140
 	464104037	Thunder Sound Effects	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Thunder Sound Effects_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\Outdoor\ThunderAmbience\Thunder Sound Effects		1834132
 	483948221	Thunder Clap Heavy Impact Explosive (1)	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Thunder Clap Heavy Impact Explosive (1)_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\Outdoor\ThunderAmbience\Thunder Clap Heavy Impact Explosive (1)		2572896
 	491737182	HighKnock_6	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Hard With Fist_42B80C69.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\HighKnock\HighKnock_6		440284
 	505184733	HighKnock_5	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Hard With Fist_E9A302A9.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\HighKnock\HighKnock_5		356612
 	528004408	Thunder Clap Heavy Impact Sound Effect	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Thunder Clap Heavy Impact Sound Effect_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\Outdoor\ThunderAmbience\Thunder Clap Heavy Impact Sound Effect		3855456
+	534559345	Flick_04	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_2B32CE91.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_04		50876
+	545541678	Flick_05	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_3978DF83.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_05		50444
 	548334567	FlashlightOn	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flashlight Sound Effect_818F3B66.wem		\Actor-Mixer Hierarchy\Items\Flashlight_On_Off\FlashlightOn		74280
 	582011132	HighKnock_3	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Door Knocking Slight Rattle_80EFC830.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\HighKnock\HighKnock_3		345144
+	597176862	Flick_13	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_F7D0827C.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_13		60644
 	617992626	KS__6	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\KS__6_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\DoorSounds\DoorLocked\KS__6		299104
+	625393619	Light_On	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Light Switch On Reverb Warehouse_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_On		1489080
 	658070560	Horror Sound Effects - Resonating Wires (1)	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Horror Sound Effects - Resonating Wires (1)_38E6A96D.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\HorrorDrones\Horror Sound Effects - Resonating Wires (1)		1145088
+	702419230	Flick_02	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_A2010E43.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_02		54572
 	754791402	KS__5	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\KS__5_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\DoorSounds\DoorLocked\KS__5		303200
 	755327924	KS_Eerie Transition_2	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\KS_Eerie Transition_2_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\HorrorDrones\KS_Eerie Transition_2		1146976
+	788948668	Flick_03	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_6CC595A3.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_03		48120
 	789622552	Thunder Clap Heavy Impact Explosive	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Thunder Clap Heavy Impact Explosive_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\Outdoor\ThunderAmbience\Thunder Clap Heavy Impact Explosive		1490016
+	802834040	Flick_07	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_0B73E82C.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_07		57432
+	813595595	Flick_06	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_730B9724.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_06		55480
+	819551825	Light_Off	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Large Switch Sound Effect_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Off		1410748
 	860442225	EndingVideo	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\EndingVideo_818F3B66.wem		\Actor-Mixer Hierarchy\Music\EndingVideo		5298192
 	889004069	HighKnock_2	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Hard With Fist_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\MonsterKnock\HighKnock\HighKnock_2		1771760
 	934252715	FlashlightOff	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flashlight Sound Effect (1)_818F3B66.wem		\Actor-Mixer Hierarchy\Items\Flashlight_On_Off\FlashlightOff		81704
@@ -70,4 +92,5 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	958601778	Horror Sound Effects - Resonating Wires	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Horror Sound Effects - Resonating Wires_E6869E5F.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\HorrorDrones\Horror Sound Effects - Resonating Wires		783324
 	971489578	Metal Bangs Sound Effect	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Metal Bangs Sound Effect_B3251DE5.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\HorrorDrones\Metal Bangs Sound Effect		3615912
 	973496908	KS_Eerie Transition_1	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\KS_Eerie Transition_1_818F3B66.wem		\Actor-Mixer Hierarchy\Enviroment\HorrorAmbience\HorrorDrones\KS_Eerie Transition_1		727136
+	1058052366	Flick_01	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Flickering Sound Effect_3CD25A16.wem		\Actor-Mixer Hierarchy\Enviroment\LightSwitch\Light_Flick\Flick_01		63596
 
