@@ -423,7 +423,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{58CE1E79-CF39-08FB-6CB1-18764EEDB8F5}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{0C3E886D-C683-D5C9-89AB-25E253CB9391}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -538,10 +538,6 @@
 				<File Id="226653637" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (18).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (18)_818F3B66.wem</CachePath>
-				</File>
-				<File Id="227180245" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Monster Demo Dallas.wav</ShortName>
-					<CachePath>SFX/Monster Demo Dallas_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="230173218" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_16.wav</ShortName>
@@ -754,10 +750,6 @@
 				<File Id="588982511" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Basic Cloth_3.wav</ShortName>
 					<CachePath>SFX/KS_Basic Cloth_3_00225573.wem</CachePath>
-				</File>
-				<File Id="595643602" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Breathy Rhythmic Tonal Growl 03.wav</ShortName>
-					<CachePath>SFX/Breathy Rhythmic Tonal Growl 03_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="600309618" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Concrete Urban Boots_02_28.wav</ShortName>
@@ -997,17 +989,6 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="324561159" Name="Play_Monster_Sounds" MaxAttenuation="10" DurationType="Infinite">
-					<SwitchContainers>
-						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="687366024" Id="2362879642" Default="true"/>
-							<MediaRefs>
-								<MediaRef Id="227180245"/>
-								<MediaRef Id="595643602"/>
-							</MediaRefs>
-						</SwitchContainer>
-					</SwitchContainers>
-				</Event>
 				<Event Id="887999531" Name="Play_Player_Hurt" DurationType="OneShot" DurationMin="0.496" DurationMax="0.496">
 					<MediaRefs>
 						<MediaRef Id="640223223"/>
@@ -1306,17 +1287,9 @@
 				<Event Id="2630587137" Name="Stop_Monster_Sounds" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
-				<GameParameter Id="293784726" Name="RTPC_MonsterState"/>
 				<GameParameter Id="870672907" Name="RTPC_GroundWetness"/>
 			</GameParameters>
 			<SwitchGroups>
-				<SwitchGroup Id="687366024" Name="MonsterState">
-					<GameParameterRef Id="293784726"/>
-					<Switches>
-						<Switch Id="155822580" Name="MonsterChasing"/>
-						<Switch Id="2362879642" Name="MonsterWalking"/>
-					</Switches>
-				</SwitchGroup>
 				<SwitchGroup Id="1044534455" Name="GroundMaterialSwitch">
 					<Switches>
 						<Switch Id="2058049674" Name="Wood"/>
@@ -1513,6 +1486,70 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
+		<SoundBank Id="2376328173" Type="User" Language="SFX" Hash="{04A845CA-378B-F42E-A87B-0EBBD831AF94}">
+			<ShortName>Monster</ShortName>
+			<Path>Monster.bnk</Path>
+			<Media>
+				<File Id="80601441" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ES_Monster Vocal, Screams 03 - Epidemic Sound.wav</ShortName>
+					<CachePath>SFX/ES_Monster Vocal, Screams 03 - Epidemic Sound_818F3B66.wem</CachePath>
+				</File>
+				<File Id="227180245" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Monster Demo Dallas.wav</ShortName>
+					<CachePath>SFX/Monster Demo Dallas_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="423317710" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound.wav</ShortName>
+					<CachePath>SFX/ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound_818F3B66.wem</CachePath>
+				</File>
+				<File Id="444902598" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>fast-heartbeat-1-hour.wav</ShortName>
+					<CachePath>SFX/fast-heartbeat-1-hour_818F3B66.wem</CachePath>
+				</File>
+				<File Id="469435164" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Chase (Loop ved 1 3A36).wav</ShortName>
+					<CachePath>SFX/Chase (Loop ved 1 3A36)_E43F83CE.wem</CachePath>
+				</File>
+				<File Id="595643602" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Breathy Rhythmic Tonal Growl 03.wav</ShortName>
+					<CachePath>SFX/Breathy Rhythmic Tonal Growl 03_FBC78EF0.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="324561159" Name="Play_Monster_Sounds" MaxAttenuation="10" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="687366024" Id="2362879642" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="227180245"/>
+								<MediaRef Id="595643602"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="687366024" Id="155822580"/>
+							<MediaRefs>
+								<MediaRef Id="80601441"/>
+								<MediaRef Id="423317710"/>
+								<MediaRef Id="444902598"/>
+								<MediaRef Id="469435164"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="293784726" Name="RTPC_MonsterState"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="687366024" Name="MonsterState">
+					<GameParameterRef Id="293784726"/>
+					<Switches>
+						<Switch Id="155822580" Name="MonsterChasing"/>
+						<Switch Id="2362879642" Name="MonsterWalking"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
 	</SoundBanks>
-	<FileHash>{13B34BF1-36E9-6741-976C-49D840180B36}</FileHash>
+	<FileHash>{442EC983-C08F-7BC7-EEA7-EA44C0000D55}</FileHash>
 </SoundBanksInfo>

@@ -71,7 +71,6 @@ public class DeAgro : GazeActivation
         if (monsterPrefab != null)
         {
             Destroy(monsterPrefab);
-            AkSoundEngine.PostEvent("Stop_Monster_Sounds", gameObject);
             closetHideScript.StartCoroutine(closetHideScript.WaitForMonsterToBeDestroyed());
         }
 

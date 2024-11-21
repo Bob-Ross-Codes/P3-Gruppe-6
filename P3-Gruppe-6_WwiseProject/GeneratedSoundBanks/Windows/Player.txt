@@ -1,17 +1,13 @@
 Event	ID	Name			Wwise Object Path	Notes
-	324561159	Play_Monster_Sounds			\Player\Play_Monster_Sounds	
 	673033979	Play_PLYR_Footsteps			\Player\Play_PLYR_Footsteps	
 	887999531	Play_Player_Hurt			\Player\Play_Player_Hurt	
 	2630587137	Stop_Monster_Sounds			\Player\Stop_Monster_Sounds	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
-	687366024	MonsterState			\Default Work Unit\MonsterState	
 	1044534455	GroundMaterialSwitch			\Default Work Unit\GroundMaterialSwitch	
 	3968804893	GroundWetnessSwitch			\Default Work Unit\GroundWetnessSwitch	
 
 Switch	ID	Name	Switch Group			Notes
-	155822580	MonsterChasing	MonsterState			
-	2362879642	MonsterWalking	MonsterState			
 	2058049674	Wood	GroundMaterialSwitch			
 	2637588553	Tile	GroundMaterialSwitch			
 	630539344	Dry	GroundWetnessSwitch			
@@ -20,7 +16,6 @@ Switch	ID	Name	Switch Group			Notes
 	1905651656	Soaked	GroundWetnessSwitch			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
-	293784726	RTPC_MonsterState			\Default Work Unit\RTPC_MonsterState	
 	870672907	RTPC_GroundWetness			\Default Work Unit\RTPC_GroundWetness	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
@@ -52,7 +47,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	208235474	Footstep_Walking_Wood_01	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Footstep_Walking_Wood_01_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Wood_WetnessSwitch\Dry\Footstep_Walking_Wood_01		88296
 	218395995	Footsteps_PLYR_Wood_Wet_5	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Footsteps_PLYR_Wood_Wet_5_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Wood_WetnessSwitch\Wet\Footsteps_PLYR_Wood_Wet_5		389216
 	226653637	Player_Footstel_Tile_Damp_18	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Player_Footstel_Tile_Damp (18)_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Damp\Player_Footstel_Tile_Damp_18		303456
-	227180245	Monster Demo Dallas	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Monster Demo Dallas_FBC78EF0.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterWalking\Monster Demo Dallas		3256764
 	230173218	Player_Footstep_Tile_Wet_16	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Concrete Urban Boots_02_16_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Wet\Player_Footstep_Tile_Wet_16		305376
 	231573665	Player_Footstep_Tile_Wet_19	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Concrete Urban Boots_02_19_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Wet\Player_Footstep_Tile_Wet_19		299616
 	239619982	Player_Footstep_Tile_Wet_4	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Concrete Urban Boots_02_4_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Wet\Player_Footstep_Tile_Wet_4		305376
@@ -106,7 +100,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	578815000	Player_Footstel_Tile_Damp_14	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Player_Footstel_Tile_Damp (14)_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Damp\Player_Footstel_Tile_Damp_14		303456
 	588335916	Footsteps_PLYR_Wood_Soaked_9	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Footsteps_PLYR_Wood_Soaked_9_00225573.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Wood_WetnessSwitch\Soaked\Footsteps_PLYR_Wood_Soaked_9		96096
 	588982511	KS_Basic Cloth_3	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Basic Cloth_3_00225573.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\PLYR_Cloth_Tile\KS_Basic Cloth_3		96096
-	595643602	Breathy Rhythmic Tonal Growl 03	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Breathy Rhythmic Tonal Growl 03_FBC78EF0.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterWalkingSweetener\Breathy Rhythmic Tonal Growl 03		2474080
 	600309618	Player_Footstep_Tile_Soaked_28	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\KS_Concrete Urban Boots_02_28_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Soaked\Player_Footstep_Tile_Soaked_28		301536
 	601902653	Footsteps_PLYR_Wood_Soaked_11	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Footsteps_PLYR_Wood_Soaked_11_00225573.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Wood_WetnessSwitch\Soaked\Footsteps_PLYR_Wood_Soaked_11		96096
 	614057529	Player_Footstel_Tile_Damp_8	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Player_Footstel_Tile_Damp (8)_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Damp\Player_Footstel_Tile_Damp_8		305376

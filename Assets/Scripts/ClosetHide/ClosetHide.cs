@@ -49,7 +49,11 @@ public class ClosetHide : MonoBehaviour
         //////////////////////////////////////////// CONSOLE DEBUGGING
         if (Input.GetKeyDown(KeyCode.M))
         {
-            ToggleHiding();
+            Debug.Log("Monster destroyed. Hiding unlocked.");
+                AkSoundEngine.PostEvent("Stop_Monster_Sounds", monsterPrefab);
+                Destroy(monsterPrefab);
+                canToggleHiding = true;
+            
         }
         //////////////////////////////////////////// CONSOLE DEBUGGING
     }
@@ -73,7 +77,12 @@ public class ClosetHide : MonoBehaviour
             doorHingeAnimator.SetTrigger("broken");
             sequenceController.OnPlayerHidden();
             Debug.Log("Player is hiding in the closet");
+
+            AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, monsterPrefab);
+            AkSoundEngine.PostEvent("Play_Monster_Sounds", monsterPrefab);
+
             StartCoroutine(WaitForMonsterToBeDestroyed());
+
         }
         else
         {
@@ -110,7 +119,7 @@ public class ClosetHide : MonoBehaviour
             else if (gaze._blinking && blinkTime > 5)
             {
                 Debug.Log("Monster destroyed. Hiding unlocked.");
-                AkSoundEngine.PostEvent("Stop_Monster_Sounds", gameObject);
+                AkSoundEngine.PostEvent("Stop_Monster_Sounds", monsterPrefab);
                 Destroy(monsterPrefab);
                 canToggleHiding = true;
                 yield break; 

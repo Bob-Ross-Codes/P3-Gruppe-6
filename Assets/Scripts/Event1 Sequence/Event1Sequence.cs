@@ -19,8 +19,6 @@ public class Event1Sequence : MonoBehaviour
         if (waypoints.Count > 0)
         {
             StartCoroutine(MoveToNextWaypoint());
-            AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, gameObject);
-            AkSoundEngine.PostEvent("Play_Monster_Sounds", gameObject);
         }
     }
 

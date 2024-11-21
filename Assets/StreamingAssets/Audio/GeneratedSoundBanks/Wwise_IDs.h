@@ -211,6 +211,7 @@ namespace AK
     {
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID AMBIENCE = 85412153U;
+        static const AkUniqueID MONSTER = 2376328173U;
         static const AkUniqueID PLAYER = 1069431850U;
     } // namespace BANKS
 
