@@ -29,19 +29,22 @@ public class LightManager : MonoBehaviour
 
     public void StartFlicker(float duration, float speed, bool handLight)
     {
-        flickeringOn = true;
-        Debug.Log("Starting Flicker");
-        if (handLight)
+        if (!flickeringOn)
         {
-            lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
-            List<Light> tempList = new List<Light>(lightsToFlicker); // Optionally use List later if needed
-            tempList.Add(handlight); // Add handlight to temp list
-            lightsToFlicker = tempList.ToArray(); // Convert back to array
-        }
-        else
-            lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
+            flickeringOn = true;
+            Debug.Log("Starting Flicker");
+            if (handLight)
+            {
+                lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
+                List<Light> tempList = new List<Light>(lightsToFlicker); // Optionally use List later if needed
+                tempList.Add(handlight); // Add handlight to temp list
+                lightsToFlicker = tempList.ToArray(); // Convert back to array
+            }
+            else
+                lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
 
-        StartCoroutine(Flickering(duration, speed, handLight));
+            StartCoroutine(Flickering(duration, speed, handLight));
+        }
     }
 
     public void StopFlicker()

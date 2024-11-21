@@ -22617,6 +22617,17 @@ Light:
   m_CorrespondingSourceObject: {fileID: 3105496877796952144, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
   m_PrefabInstance: {fileID: 8222160126292069965}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1537104495 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888514592678763083, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+  m_PrefabInstance: {fileID: 8222160126292069965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409d45c164e2ba94085cf19a2b329757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1539770733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7151957241616024286, guid: c84f91f325a3343cf8de80bc303105ea, type: 3}
@@ -32061,6 +32072,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1450975409}
     - target: {fileID: 804686355741061006, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: journalEyeDetector
+      value: 
+      objectReference: {fileID: 1537104495}
+    - target: {fileID: 804686355741061006, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: lightsToFlicker.Array.data[3]
       value: 
       objectReference: {fileID: 0}
@@ -32432,6 +32447,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 875882299}
+    - target: {fileID: 8643743279128076253, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: capsule
+      value: 
+      objectReference: {fileID: 2108666185}
     - target: {fileID: 8643743279128076253, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: mainCamera
       value: 
