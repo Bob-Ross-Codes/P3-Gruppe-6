@@ -1,25 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class LightManager : MonoBehaviour
 {
     [SerializeField] public Light[] allLights;  // Array of lights
-    private Light[] lightsToFlicker;  // Time elapsed since flickering started
-    [SerializeField] private Light handlight;  // Time elapsed since flickering started
+    private Light[] lightsToFlicker;
+    [SerializeField] private Light handlight;
 
-    private float flickerDuration;  // Total duration of flickering effect (2 seconds)
-    private float darkInterval;  // Interval when lights are off
-    private float lightInterval;  // Interval when lights are on
+    private float flickerDuration;  // Total duration of flickering effect
+    private float darkInterval;
+    private float lightInterval;
     public bool flickeringOn;
     public bool lightsOn = false;
 
-    void FixedUpdate()
-    {
-        allLights = FindObjectsOfType<Light>();
-    }
+public void FixedUpdate()
+{
+    // Find all lights in the scene
+    var allSceneLights = FindObjectsOfType<Light>();
 
-    public void StartFlicker(float duration, float speed, bool handLight)
+    // Exclude the handLight from the array
+    allLights = allSceneLights.Where(light => light != handlight).ToArray();
+}
+
+
+public void StartFlicker(float duration, float speed, bool handLight)
     {
         if (handlight)
         {
