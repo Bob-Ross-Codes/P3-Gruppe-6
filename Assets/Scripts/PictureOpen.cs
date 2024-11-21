@@ -3,46 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PictureOpen : MonoBehaviour
-/*{
-    public GameObject picture;
-    private bool isPictureActive = false;
-    private bool isPictureRotated = false;
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (!isPictureActive)
-            {
-                picture.SetActive(true);
-                isPictureActive = true;
-            }
-            else
-            {
-                picture.transform.Rotate(0, 180, 0);
-                isPictureRotated = true;
-                isPictureActive = false;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && isPictureRotated)
-        {
-            isPictureRotated = false;
-            picture.SetActive(false);
-
-        }
-
-    }
-}*/
-
 {
     public Animator animator;
     private bool isHandIn = false;        // Tracks if the hand is in
     private bool isHandFlipped = false;  // Tracks if the hand is flipped
-
+    public Canvas introTutorial;
+    void Start()
+    {
+        animator.SetTrigger("HandIn");
+        introTutorial.enabled = true;
+        isHandIn = true;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            introTutorial.enabled = false;
+
             if (!isHandIn)
             {
                 // Trigger the HandIn animation
