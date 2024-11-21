@@ -142,21 +142,170 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{13425990-5139-4181-B645-570E1D526EF5}" ShortID="118323511">
+						<Action Name="" ID="{DF5165F0-24BC-4AC7-9708-3AE3D997F84A}" ShortID="188220354">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+									<ObjectRef Name="AmbientMaster" ID="{9F7EDE03-E241-4F47-8FD5-2A0C7ADB98E2}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+								<Reference Name="TargetEffect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<ObjectRef Name="LowPassHeartBeat" ID="{0B0DD4F7-2FDD-4572-BC69-55F588813731}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{66717D31-4785-4A64-B4E9-04856ED3AAA1}" ShortID="801768228">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2DAmbience" ID="{FBD0C547-5624-4F80-AD81-4C18859C1D1D}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A76BE916-4DAF-42F9-A91F-8BA92ED3B318}" ShortID="866751661">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="3DAmbience" ID="{0F1CAC6B-CAE9-4EA7-BC22-C89A47FD88FE}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8C55F71D-6104-42E9-BF21-94C5654E7A53}" ShortID="149179342">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambientbeds" ID="{59E4A4E7-6072-4B7C-90AE-6ECEF2C4090B}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B92B5E82-BFBC-4173-8D97-9FECFE4292A0}" ShortID="571281882">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2DAmbientBeds" ID="{206E0CF0-8045-4328-BEA3-E1D60AD32029}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{439385A0-A9F8-42EA-8694-45449849B836}" ShortID="396227905">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Enviroment" ID="{BA960780-456F-4E51-9C5D-648BACD38AA1}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{33368D55-8CC1-4065-992E-965C47F8B5F2}" ShortID="765243685">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{3EE36B39-C638-412C-9CAB-7F80AA1271A6}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FEEE0CD0-5B40-4BA3-8CBE-F99D82C925B1}" ShortID="200454654">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="NPCMaster" ID="{9FE3CD53-4473-484A-9556-FE5AFF6F814A}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8060FFA1-AE40-4EDE-A6A0-9C212B484421}" ShortID="268293278">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerMaster" ID="{68AD7D22-D5B8-4309-9A69-CB2A71D46EAA}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{16360A9F-E707-49BA-846C-65C3CFE830D4}" ShortID="104366406">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerLocomotion" ID="{5DC8B999-12F9-4B55-A0C9-68FF6C345028}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{37114425-D43D-47D9-95F7-857A1DE3467A}" ShortID="1055356716">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerSFX" ID="{5C777CBD-6193-42AF-A447-89F80BACB058}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F155D016-1C50-4C6B-B549-0057141B0F53}" ShortID="867409163">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerCloth" ID="{72C0F481-F157-46FF-942F-5DC39458CC62}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6B3D9A62-8893-4F5C-8CDF-E201D95DD111}" ShortID="13716009">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="35"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerFootsteps" ID="{9FBE93F7-E3B2-4BE8-BDE0-E49E1F18433D}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Stop_Eyes_Closed" ID="{76A1D565-6741-431F-865E-0786B3B25E65}">
+				<Event Name="Stop_Eyes_Closed" ID="{59C328C1-36BF-408B-8C62-DE669EE77319}">
 					<ChildrenList>
-						<Action Name="" ID="{D104F4C6-5372-48BB-B8F2-83395C6BCD0B}" ShortID="768186050">
+						<Action Name="" ID="{4C49A945-BD65-40AC-A560-B6E161BE7399}" ShortID="186386471">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 							</PropertyList>
@@ -166,15 +315,13 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{B4442F02-4E1E-4099-BFBA-AE4212AAA542}" ShortID="425021589">
+						<Action Name="" ID="{CDA55D5C-EE01-4F51-BE4E-3D127F9A92BA}" ShortID="374857351">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="ActionType" Type="int16" Value="28"/>
+								<Property Name="Lowpass" Type="int16" Value="83"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-								</Reference>
-							</ReferenceList>
+							<ReferenceList/>
 						</Action>
 					</ChildrenList>
 				</Event>

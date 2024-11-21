@@ -9,11 +9,7 @@ public class BedEyeDetector : GazeActivation
 
     public GameObject targetGameObject;  // Reference to the GameObject with SpriteFade attached
     private BlurryText blurryText;       // Reference to the SpriteFade script
-
-    private void Awake()
-    {
-        
-    }
+    [SerializeField] private GameObject patient;
 
     void Start()
     {
@@ -36,16 +32,8 @@ public class BedEyeDetector : GazeActivation
     {
         blurryText.PauseFadeOut(false);
 
-        if (journalEyeDetector.flickerCount == journalEyeDetector.countForJumpscare && journalEyeDetector.jumpScare == false)
-        {
-            Debug.Log("flickerCount = countForJumpscare, triggering JumpScare");
-            journalEyeDetector.StartJumpScare();
-        }
-        else if (lightManager.flickeringOn && journalEyeDetector.jumpScare == false)
-        {
-            //journalEyeDetector.StartPatientGone();
-            lightManager.flickeringOn = false;
-        }
+        if (journalEyeDetector.lookAtCount < journalEyeDetector.jumpScareCount)
+        lightManager.StopFlicker();
 
         // Start blurring the journal
         blurryText.StartFadeOut();

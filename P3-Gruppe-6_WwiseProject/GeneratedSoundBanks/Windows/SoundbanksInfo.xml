@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{33942272-1856-517B-D0B6-123AA10641A6}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{C55C3E12-E197-D9EE-9B27-5C32F0D79F14}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -208,6 +208,7 @@
 				</Custom>
 				<ShareSets>
 					<Plugin Id="1008402193" Name="Low_Pass_20KHz" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="1514749290" Name="LowPassHeartBeat" LibName="Wwise Parametric EQ" LibId="6881283"/>
 					<Plugin Id="1990128658" Name="Room_Medium" LibName="Wwise RoomVerb" LibId="7733251"/>
 					<Plugin Id="2995775460" Name="Room_Small" LibName="Wwise RoomVerb" LibId="7733251"/>
 				</ShareSets>
@@ -290,6 +291,11 @@
 					<MediaRefs>
 						<MediaRef Id="446409488"/>
 					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="1514749290"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 				<Event Id="3582431873" Name="Play_IntroMusic" DurationType="OneShot" DurationMin="37.10373" DurationMax="37.10373">
 					<MediaRefs>
@@ -1552,5 +1558,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{764A7038-4B42-9852-1AF9-10BF1FAF2738}</FileHash>
+	<FileHash>{F7EA76DB-30D2-EED0-77F4-AA2DB8D1D60F}</FileHash>
 </SoundBanksInfo>

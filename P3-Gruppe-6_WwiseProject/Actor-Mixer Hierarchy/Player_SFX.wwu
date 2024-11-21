@@ -38,9 +38,16 @@
 				</Sound>
 				<Sound Name="ES_Clicky, 45 BPM - Epidemic Sound" ID="{E8D0D6A7-F853-429E-81E0-7C556DDAFA2B}" ShortID="291799266">
 					<PropertyList>
+						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 						<Property Name="Lowpass" Type="int16">
 							<ValueList>
 								<Value>61</Value>
+							</ValueList>
+						</Property>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
 							</ValueList>
 						</Property>
 						<Property Name="Volume" Type="Real64">
@@ -66,6 +73,21 @@
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{1BC13112-1AA9-45FC-A2C0-90D44084815A}" ShortID="131426802">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+												<ObjectRef Name="LowPassHeartBeat" ID="{0B0DD4F7-2FDD-4572-BC69-55F588813731}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
 					<ActiveSourceList>
 						<ActiveSource Name="ES_Clicky, 45 BPM - Epidemic Sound" ID="{3B12FADA-A9B8-4821-9C90-BFDB9A1330F0}" Platform="Linked"/>
 					</ActiveSourceList>

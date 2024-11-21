@@ -4,23 +4,53 @@ using UnityEngine;
 
 public class ScaryWoman : MonoBehaviour
 {
-    public Animator targetAnimator; // Reference to the Animator component on another GameObject
-    public string Hide; // The name of the trigger parameter in the Animator
+    [SerializeField] private GameObject targetObject; // Object to spawn
+    [SerializeField] private LightManager lightManager; // Reference to the LightManager
+    [SerializeField] private float flickerDuration = 2f; // Duration of flickering
+    [SerializeField] private float flickerSpeed = 1f; // Speed of flickering
+    [SerializeField] private bool includeHandLight = true; // Whether to include the handlight in the flicker
 
-   private void OnTriggerEnter(Collider other)
-{
-    // Ensure only the player triggers this
-    if (other.CompareTag("Player"))
+    private bool objectSpawned = false; // Ensure the object spawns only once
+
+
+    private void Start()
     {
-        if (targetAnimator != null)
+        targetObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && !objectSpawned)
         {
-            // Trigger the animation
-            targetAnimator.SetTrigger("Hide");
+            if (lightManager != null)
+            {
+                // Start the flicker effect
+                lightManager.StartFlicker(flickerDuration, flickerSpeed, includeHandLight);
+
+                // Spawn the object after the flicker effect is done
+                StartCoroutine(SpawnAfterFlicker());
+            }
+            else
+            {
+                Debug.LogError("LightManager is not assigned!");
+            }
+        }
+    }
+
+    private System.Collections.IEnumerator SpawnAfterFlicker()
+    {
+        // Wait until the flickering is complete
+        yield return new WaitForSeconds(flickerDuration);
+
+        // Spawn the object
+        if (targetObject != null)
+        {
+            targetObject.SetActive(true);
+            objectSpawned = true;
         }
         else
         {
-            Debug.LogError("Target Animator is not assigned!");
+            Debug.LogError("Target Object is not assigned!");
         }
     }
-}
 }

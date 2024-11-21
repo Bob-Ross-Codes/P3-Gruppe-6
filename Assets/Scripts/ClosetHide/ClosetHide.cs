@@ -119,7 +119,7 @@ public class ClosetHide : MonoBehaviour
                 blinkTime += Time.deltaTime;
                 Debug.Log("Countdown started." + blinkTime);
             }
-            else if (gaze._blinking && blinkTime > 5)
+            else if (gaze._blinking && blinkTime >= 5)
             {
                 Debug.Log("Monster destroyed. Hiding unlocked.");
                 AkSoundEngine.PostEvent("Stop_Monster_Sounds", monsterPrefab);

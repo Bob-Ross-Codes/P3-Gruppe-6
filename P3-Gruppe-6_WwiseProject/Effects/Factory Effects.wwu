@@ -621,9 +621,18 @@
 									<PropertyList>
 										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
 										<Property Name="FilterTypeBand3" Type="int32" Value="0"/>
-										<Property Name="FrequencyBand3" Type="Real32" Value="1354"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="723"/>
 										<Property Name="OnOffBand1" Type="bool" Value="False"/>
 										<Property Name="OnOffBand2" Type="bool" Value="False"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="LowPassHeartBeat" ID="{0B0DD4F7-2FDD-4572-BC69-55F588813731}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand2" Type="int32" Value="0"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="361"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="834"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="79"/>
+										<Property Name="OnOffBand1" Type="bool" Value="False"/>
 									</PropertyList>
 								</Effect>
 							</ChildrenList>

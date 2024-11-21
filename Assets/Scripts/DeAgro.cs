@@ -16,9 +16,9 @@ public class DeAgro : GazeActivation
 
     public override void OnLookedAt()
     {
-        if (!isBeingLookedAt)
+         if (!isBeingLookedAt)
         {
-            // Player started looking at the collider
+            // Playerstarted looking at the collider
             isBeingLookedAt = true;
             Debug.Log("Player started looking at DeAgro collider.");
 

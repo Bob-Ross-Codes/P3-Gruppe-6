@@ -7,19 +7,26 @@ public class ClosedEyes : MonoBehaviour
 
     public Gaze gaze;
 
-    // Måske vi skal sætte det her script på playeren således det altid er til stede?
+    // Mï¿½ske vi skal sï¿½tte det her script pï¿½ playeren sï¿½ledes det altid er til stede?
+    private bool isBlinking = false;
+
     void Update()
     {
-
-        if (gaze._blinking)
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            // Marius gør din ting!
+            Debug.Log("BlinkingSound");
             AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
-            
-            // Storede fede pølsepatter
         }
-        AkSoundEngine.PostEvent("Stop_Eyes_Closed", gameObject);
+        else if (Input.GetKeyDown(KeyCode.N))
+        {
+            AkSoundEngine.PostEvent("Stop_Eyes_Closed", gameObject);
+        }
 
-
+        if (gaze._blinking && !isBlinking)
+        {
+            // Marius gï¿½r din ting!
+            AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
+            isBlinking = true;
+        }
     }
 }
