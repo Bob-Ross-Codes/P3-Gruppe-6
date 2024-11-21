@@ -172,9 +172,9 @@ void Start()
         hallway.transform.localRotation = initialRotation;
         hallway.transform.localPosition = initialPosition;
 
-        player.transform.position = spawnAgain.transform.position;
-
         yield return new WaitForSeconds(duration / 4);
+
+        player.transform.position = spawnAgain.transform.position;
 
         AkSoundEngine.PostEvent("Light_OnOff_Event", gameObject);
         SetLightsEnabled(RedLights, false);

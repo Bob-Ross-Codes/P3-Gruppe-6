@@ -46,6 +46,7 @@ public class Door1PatientPeak : MonoBehaviour
             }
             StartCoroutine(WaitAndLight(2f));                                       //Start waiter
             triggered = true;
+            patient.SetActive (false);
         }
     }
 

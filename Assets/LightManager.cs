@@ -6,6 +6,7 @@ using System.Linq;
 public class LightManager : MonoBehaviour
 {
     [SerializeField] public Light[] allLights;  // Array of lights
+    [SerializeField] private Light[] excludedLights; // Array of lights to exclude
     private Light[] lightsToFlicker;
     [SerializeField] private Light handlight;
 
@@ -15,19 +16,22 @@ public class LightManager : MonoBehaviour
     public bool flickeringOn;
     public bool lightsOn = false;
 
-public void FixedUpdate()
-{
-    // Find all lights in the scene
-    var allSceneLights = FindObjectsOfType<Light>();
-
-    // Exclude the handLight from the array
-    allLights = allSceneLights.Where(light => light != handlight).ToArray();
-}
-
-
-public void StartFlicker(float duration, float speed, bool handLight)
+    public void FixedUpdate()
     {
-        if (handlight)
+        // Find all lights in the scene
+        var allSceneLights = FindObjectsOfType<Light>();
+
+        // Exclude the handLight and lights in the excludedLights array
+        allLights = allSceneLights
+            .Where(light => light != handlight && !excludedLights.Contains(light))
+            .ToArray();
+    }
+
+    public void StartFlicker(float duration, float speed, bool handLight)
+    {
+        flickeringOn = true;
+        Debug.Log("Starting Flicker");
+        if (handLight)
         {
             lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
             List<Light> tempList = new List<Light>(lightsToFlicker); // Optionally use List later if needed
@@ -38,8 +42,8 @@ public void StartFlicker(float duration, float speed, bool handLight)
             lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
 
         StartCoroutine(Flickering(duration, speed, handLight));
-        flickeringOn = true;
     }
+
     public void StopFlicker()
     {
         flickeringOn = false;
@@ -47,6 +51,7 @@ public void StartFlicker(float duration, float speed, bool handLight)
 
     public IEnumerator Flickering(float duration, float speed, bool handLight)
     {
+        Debug.Log("Now Flickering");
         float elapsedTime = 0;
         if (flickeringOn)
         {
@@ -88,8 +93,7 @@ public void StartFlicker(float duration, float speed, bool handLight)
         else { flickeringOn = false; yield break; }
     }
 
-
-    //Flickering sounds
+    // Flickering sounds
     private void WwisePlayFlickeringSound()
     {
         AkSoundEngine.SetRTPCValue("RTPC_LightState", 2, gameObject);

@@ -96,7 +96,7 @@ private IEnumerator FlickerLight()
         Debug.Log("Jumpscare done, patient leaving");
         
         StartCoroutine(patientGone());
-        Destroy(patient);
+        //Destroy(patient);
     }
 
     private IEnumerator patientGone()
@@ -108,8 +108,8 @@ private IEnumerator FlickerLight()
         yield return new WaitForSeconds(2);
         while (lightManager.flickeringOn == false)
         {
-            if (lightManager.lightsOn == false)
-                patient.SetActive(Random.Range(0, 2) == 0);
+            if (lightManager.lightsOn == false) {
+                patient.SetActive(Random.Range(0, 2) == 0); yield return new WaitForSeconds(0.1f);}
             else
                 patient.SetActive(false);                
             patient.SetActive(false);
@@ -123,7 +123,9 @@ private IEnumerator FlickerLight()
             float speed = 10f; // Units per second
             patient.transform.localPosition = Vector3.MoveTowards(patient.transform.localPosition, humanPosition2, speed * Time.deltaTime);
         }
-
+    }
+    private void Update()
+    {
         foreach (var light in staticLights) light.enabled = true; //keep these lights on
     }
 }
