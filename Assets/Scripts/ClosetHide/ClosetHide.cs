@@ -75,6 +75,9 @@ public class ClosetHide : MonoBehaviour
             objectToDisableHallwayOne.SetActive(false);
 
             doorHingeAnimator.SetTrigger("broken");
+
+            AkSoundEngine.PostEvent("Play_DoorSlamOpen", gameObject);
+
             sequenceController.OnPlayerHidden();
             Debug.Log("Player is hiding in the closet");
 
