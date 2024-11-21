@@ -5,7 +5,7 @@ public class BedEyeDetector : GazeActivation
 {
     public JournalEyeDetector journalEyeDetector;
     public LightManager lightManager;  // Reference to the LightManager script
-    public override float ActivationTime => 0.1f;
+    public override float ActivationTime => 0.2f;
 
     public GameObject targetGameObject;  // Reference to the GameObject with SpriteFade attached
     private BlurryText blurryText;       // Reference to the SpriteFade script
@@ -30,6 +30,7 @@ public class BedEyeDetector : GazeActivation
 
     public override void OnLookedAt()
     {
+        Debug.Log("Looked at Bed");
         blurryText.PauseFadeOut(false);
 
         if (journalEyeDetector.lookAtCount < journalEyeDetector.jumpScareCount)
