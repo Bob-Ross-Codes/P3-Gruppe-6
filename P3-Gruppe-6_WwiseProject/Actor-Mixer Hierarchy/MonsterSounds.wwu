@@ -24,7 +24,7 @@
 							<ObjectRef Name="MonsterWalking" ID="{FD101D2B-A22D-4E17-AFCD-43C345EDD538}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+							<ObjectRef Name="NPCMaster" ID="{9FE3CD53-4473-484A-9556-FE5AFF6F814A}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
 						</Reference>
 						<Reference Name="SwitchGroupOrStateGroup">
 							<ObjectRef Name="MonsterState" ID="{981F2EC9-290F-48CB-B188-E8DB5996CA58}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>

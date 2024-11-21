@@ -17,7 +17,9 @@ namespace AK
         static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
         static const AkUniqueID FLASHLIGHT_ONOFF_EVENT = 1510976581U;
         static const AkUniqueID HORROR_AMBIENCE = 967859696U;
+        static const AkUniqueID PLAY_DOORSLAMOPEN = 1188660949U;
         static const AkUniqueID PLAY_ENDINGMUSIC = 1755859644U;
+        static const AkUniqueID PLAY_EYES_CLOSED = 3074142683U;
         static const AkUniqueID PLAY_INTROMUSIC = 3582431873U;
         static const AkUniqueID PLAY_LIGHT_ONOFF_EVENT = 511968160U;
         static const AkUniqueID PLAY_MONSTER_SOUNDS = 324561159U;
@@ -222,12 +224,16 @@ namespace AK
         static const AkUniqueID _3DAMBIENCE = 1301074112U;
         static const AkUniqueID AMBIENTBEDS = 1182634443U;
         static const AkUniqueID AMBIENTMASTER = 1459460693U;
+        static const AkUniqueID ENVIROMENT = 3909959462U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID NPCMASTER = 2033911932U;
         static const AkUniqueID PLAYERCLOTH = 765206498U;
         static const AkUniqueID PLAYERFOOTSTEPS = 1681012287U;
         static const AkUniqueID PLAYERLOCOMOTION = 2343802269U;
         static const AkUniqueID PLAYERMASTER = 3538689948U;
+        static const AkUniqueID PLAYERSFX = 4283257371U;
+        static const AkUniqueID STANDALONE = 383168768U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES

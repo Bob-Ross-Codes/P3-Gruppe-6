@@ -20,7 +20,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+							<ObjectRef Name="3DAmbience" ID="{0F1CAC6B-CAE9-4EA7-BC22-C89A47FD88FE}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -378,7 +378,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+							<ObjectRef Name="3DAmbience" ID="{0F1CAC6B-CAE9-4EA7-BC22-C89A47FD88FE}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -649,7 +649,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+							<ObjectRef Name="2DAmbience" ID="{FBD0C547-5624-4F80-AD81-4C18859C1D1D}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1099,7 +1099,7 @@
 							<ObjectRef Name="Open" ID="{9A5B8C33-A785-4BDE-AE5F-28DC41ABACD1}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+							<ObjectRef Name="Enviroment" ID="{BA960780-456F-4E51-9C5D-648BACD38AA1}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
 						</Reference>
 						<Reference Name="SwitchGroupOrStateGroup">
 							<ObjectRef Name="DoorSFXSwitch" ID="{613819E5-4F72-4424-A084-B729641B5D08}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
@@ -1275,7 +1275,7 @@
 							<ObjectRef Name="On" ID="{F7F12C57-BB5B-4DE1-90F4-DB530A499080}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+							<ObjectRef Name="Enviroment" ID="{BA960780-456F-4E51-9C5D-648BACD38AA1}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
 						</Reference>
 						<Reference Name="SwitchGroupOrStateGroup">
 							<ObjectRef Name="LightSwitch" ID="{7DE852A0-39EA-48CB-AF01-73FDF8C363DD}" WorkUnitID="{A21564F2-878A-433A-8EDB-3FF2F246B1AD}"/>
@@ -1660,7 +1660,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+							<ObjectRef Name="Enviroment" ID="{BA960780-456F-4E51-9C5D-648BACD38AA1}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1723,6 +1723,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="ES_70's, Kick Out - Epidemic Sound" ID="{67623CFE-B81B-4C4A-B291-4E9D3E75175C}" ShortID="230955794">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-11</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>

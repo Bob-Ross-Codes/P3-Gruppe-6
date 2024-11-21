@@ -13,6 +13,11 @@
 						<Bus Name="PlayerMaster" ID="{68AD7D22-D5B8-4309-9A69-CB2A71D46EAA}">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="2"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>93</Value>
+									</ValueList>
+								</Property>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
@@ -22,17 +27,28 @@
 										<Bus Name="PlayerCloth" ID="{72C0F481-F157-46FF-942F-5DC39458CC62}"/>
 									</ChildrenList>
 								</Bus>
+								<Bus Name="PlayerSFX" ID="{5C777CBD-6193-42AF-A447-89F80BACB058}"/>
 							</ChildrenList>
 						</Bus>
 						<Bus Name="NPCMaster" ID="{9FE3CD53-4473-484A-9556-FE5AFF6F814A}">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>93</Value>
+									</ValueList>
+								</Property>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 						</Bus>
 						<Bus Name="AmbientMaster" ID="{9F7EDE03-E241-4F47-8FD5-2A0C7ADB98E2}">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="12"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>93</Value>
+									</ValueList>
+								</Property>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
@@ -156,6 +172,35 @@
 								</AuxBus>
 							</ChildrenList>
 						</AuxBus>
+						<Bus Name="Music" ID="{3EE36B39-C638-412C-9CAB-7F80AA1271A6}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>93</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</Bus>
+						<Bus Name="Enviroment" ID="{BA960780-456F-4E51-9C5D-648BACD38AA1}">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>93</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+						</Bus>
+						<Bus Name="Standalone" ID="{19FEB31B-D214-4ED8-855C-78528957AA7D}">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>
