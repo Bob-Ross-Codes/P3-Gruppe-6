@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{1C80C92A-9E58-5102-7DD4-AE6757DF5D38}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{33942272-1856-517B-D0B6-123AA10641A6}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -378,6 +378,7 @@
 						<MediaRef Id="889004069"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2196500881" Name="Stop_Eyes_Closed" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1856817241" Name="Stop_Knocking_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2797432074" Name="Stop_Light_OnOff_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
@@ -1303,7 +1304,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{4D28D245-732F-5ACA-B3A9-5C8BB1186FC7}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{E8DB825D-2519-FE97-7731-EA2721F255E7}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -1551,5 +1552,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C003423D-8805-E308-5E0A-F1B60FCA48B2}</FileHash>
+	<FileHash>{A80BC91B-55EF-5FDF-20FB-B1431745FA14}</FileHash>
 </SoundBanksInfo>

@@ -154,6 +154,30 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Stop_Eyes_Closed" ID="{76A1D565-6741-431F-865E-0786B3B25E65}">
+					<ChildrenList>
+						<Action Name="" ID="{D104F4C6-5372-48BB-B8F2-83395C6BCD0B}" ShortID="768186050">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ES_Clicky, 45 BPM - Epidemic Sound" ID="{E8D0D6A7-F853-429E-81E0-7C556DDAFA2B}" WorkUnitID="{0E1DF790-B6D1-436D-97E1-9D048CD6C735}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B4442F02-4E1E-4099-BFBA-AE4212AAA542}" ShortID="425021589">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

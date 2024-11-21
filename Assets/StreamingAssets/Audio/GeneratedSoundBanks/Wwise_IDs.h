@@ -28,6 +28,7 @@ namespace AK
         static const AkUniqueID PLAY_RAINANDTHUNDER = 1093999139U;
         static const AkUniqueID PLAY_WOMANAMBIENCE = 2870446976U;
         static const AkUniqueID STARTKNOCKINGEVENT = 152670193U;
+        static const AkUniqueID STOP_EYES_CLOSED = 2196500881U;
         static const AkUniqueID STOP_KNOCKING_EVENT = 1856817241U;
         static const AkUniqueID STOP_LIGHT_ONOFF_EVENT = 2797432074U;
         static const AkUniqueID STOP_MONSTER_SOUNDS = 2630587137U;
