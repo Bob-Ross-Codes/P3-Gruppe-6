@@ -7,19 +7,15 @@ public class JournalEyeDetector : GazeActivation
     //Eyetracking elements
     public override float ActivationTime => 3f;
     public GameObject EyeDetector;
-
     //Flickering lights
-    public Light[] lightsToFlicker;  // Array of lights to flicker
-    public float flickerDuration = 5f;  // Total duration of flickering effect (2 seconds)
-    public float darkInterval;  // Interval when lights are off
-    public float lightInterval;  // Interval when lights are on
+    public LightManager lightManager;  // Reference to the LightManager script
     public int flickerCount = 1;
-    public bool flickering;
-    private bool finish;
     public int countForJumpscare = 4;
 
     //Jumpscare
     public bool jumpScare;
+    private bool finish;
+    private bool flickering;
     private Vector3 humanPosition1 = new Vector3(0.340000004f, -0.113922141f, 5.99638224f);
     private Vector3 humanPosition2 = new Vector3(0.349999994f, -0.0900000036f, 0.629999995f);
     public GameObject patient; // Prefab to instantiate when flickering starts
@@ -33,6 +29,7 @@ public class JournalEyeDetector : GazeActivation
         blurryText = GetComponentInChildren<BlurryText>();
         finish = false;
         jumpScare = false;
+        flickering = false;
     }
 
     public override void OnLookedAt()
@@ -49,69 +46,35 @@ public class JournalEyeDetector : GazeActivation
 
     private IEnumerator FlickerLight()
     {
-        flickering = true;                      //Keep track of flickering
-        Debug.Log("Running flickerCount " + flickerCount);
-
+        flickering = true;
         patient.transform.localPosition = humanPosition1;
 
-        if (patient != null && flickerCount != countForJumpscare)
-        {
-            flickerDuration = 5;
-        }
-        else if (flickerCount == countForJumpscare)
-        {
-            flickerDuration = 15;
-            Debug.Log("FLickering for 15 seconds");
-        }else
-        {
-            Debug.LogError("Patient is not assigned!");
-        }
-
-        float elapsedTime = 0f;  // Track the total time of flickering
-
-        // Loop for the flicker effect until the duration is reached
-        while (elapsedTime < flickerDuration && flickering)
-        {
-            darkInterval = Random.Range(0.1f, 0.4f);
-            lightInterval = Random.Range(0.05f, 0.1f);
-
-            // Turn off all lights (darker state)
-            foreach (var light in lightsToFlicker)
-            {
-                light.enabled = false;
+            if (patient != null && flickerCount != countForJumpscare)
+            {            
+                lightManager.StartFlicker(5, 1, false);
+                yield return null;
+                while (lightManager.flickeringOn == false)
+                {
+                    if (lightManager.lightsOn == false)
+                        patient.SetActive(Random.Range(0, 2) == 0);
+                    else
+                        patient.SetActive(false);
+                }
             }
-
-            // Wait for the dark interval
-            yield return new WaitForSeconds(darkInterval);
-            elapsedTime += darkInterval;
-
-            // Turn on all lights (brief light state)
-            foreach (var light in lightsToFlicker)
+            else if (flickerCount == countForJumpscare)
             {
-                light.enabled = true;
-                AkSoundEngine.PostEvent("Flickering_Lights", gameObject);
+                lightManager.StartFlicker(15f, 0.7f, false);
+                StartCoroutine(JumpScare());
+                yield return null;
+                while (lightManager.flickeringOn == false)
+                        patient.SetActive(Random.Range(0, 2) == 0);
             }
-            bool randomBool = Random.value > 0.5f;
-            if (randomBool == true && flickering == true)
-            {
-                patient.SetActive(true);
-            }
-
-            // Wait for the light interval
-            yield return new WaitForSeconds(lightInterval);
-            elapsedTime += lightInterval;
-            patient.SetActive(false);
-        }
-        
-        if (jumpScare)
-        StartCoroutine(patientGone());
 
         // Increment flickerCount after completing the loop
         flickerCount++;
-        Debug.Log("FlickerCount " + (flickerCount-1) + " is done,next up is " + flickerCount);
-
         flickering = false;
     }
+
     public void StartPatientGone()
     {
         StartCoroutine(patientGone());
@@ -125,38 +88,31 @@ public class JournalEyeDetector : GazeActivation
 
     public IEnumerator JumpScare()
     {
-
         Debug.Log("Running jumpscare");
         jumpScare = true;
         Debug.Log("Jumpscare running, waiting 2 seconds");
         yield return new WaitForSeconds(2);
         Debug.Log("Jumpscare done, patient leaving");
+        
         StartCoroutine(patientGone());
         Destroy(patient);
     }
 
     private IEnumerator patientGone()
     {
-            // Ensure all lights are on when the flickering stops (optional)
-            foreach (var light in lightsToFlicker)
-            {
-                light.enabled = false;
-            }
+        //Flicker light and pateint gone
+        if (flickerCount == countForJumpscare) finish = true;
+        lightManager.StartFlicker(4, 1, false);
 
-            yield return new WaitForSeconds(0.5f);  // Wait for 0.5 seconds
-
-            // Now, deactivate the flicker effect prefab after the last darkInterval
+        yield return new WaitForSeconds(2);
+        while (lightManager.flickeringOn == false)
+        {
+            if (lightManager.lightsOn == false)
+                patient.SetActive(Random.Range(0, 2) == 0);
+            else
+                patient.SetActive(false);                
             patient.SetActive(false);
-
-            yield return new WaitForSeconds(0.2f);  // Wait for 0.2 seconds
-
-            // Turn off all lights after the wait
-            foreach (var light in lightsToFlicker)
-            {
-                light.enabled = true;
-            }
-
-            if (flickerCount == countForJumpscare) finish = true; 
+        }
     }
 
     void FixedUpdate()

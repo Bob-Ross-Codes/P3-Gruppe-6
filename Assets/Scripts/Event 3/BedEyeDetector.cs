@@ -4,6 +4,7 @@ using UnityEngine;
 public class BedEyeDetector : GazeActivation
 {
     public JournalEyeDetector journalEyeDetector;
+    public LightManager lightManager;  // Reference to the LightManager script
     public override float ActivationTime => 0.1f;
 
     public GameObject targetGameObject;  // Reference to the GameObject with SpriteFade attached
@@ -40,10 +41,10 @@ public class BedEyeDetector : GazeActivation
             Debug.Log("flickerCount = countForJumpscare, triggering JumpScare");
             journalEyeDetector.StartJumpScare();
         }
-        else if (journalEyeDetector.flickering && journalEyeDetector.jumpScare == false)
+        else if (lightManager.flickeringOn && journalEyeDetector.jumpScare == false)
         {
             //journalEyeDetector.StartPatientGone();
-            journalEyeDetector.flickering = false;
+            lightManager.flickeringOn = false;
         }
 
         // Start blurring the journal
