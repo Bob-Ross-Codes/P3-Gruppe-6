@@ -14,13 +14,15 @@ public class Door1PatientPeak : MonoBehaviour
     private Vector3 newPosition = new Vector3(0.313501358f, -1.13949442f, -9.2357254f);
 
     private float distanceToPlayer;
-    private float interactionRange = 3f;                        // Set the interaction range
+    private float interactionRange = 2f;                        // Set the interaction range
     private bool triggered;
+    private bool finish;
 
     void Start()
     {
         triggered = false;
         patient.SetActive(true);
+        finish = false;
         patient.transform.localPosition = initialPosition;
     }
 
@@ -30,9 +32,16 @@ public class Door1PatientPeak : MonoBehaviour
 
         if (distanceToPlayer < interactionRange && !triggered)
         {
-            lightManager.StartFlicker(2f, 0.9f, false);
+            lightManager.StartFlicker(3f, 0.9f, true);
             triggered = true;
+            finish = true;
+        }
+        if (finish && lightManager.flickeringOn == false)
+        {
+            lightManager.StartFlicker(1f, 1.3f, true);
+            if (lightManager.lightsOn == false)
             patient.SetActive(false);                               //Patient dissapears
+            finish = false;
         }
     }
 }
