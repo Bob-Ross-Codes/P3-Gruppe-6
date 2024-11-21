@@ -18,7 +18,6 @@ public class TurnWorld : MonoBehaviour
     [SerializeField] private GameObject exitSign;
     [SerializeField] private GameObject exitSign2;
     [SerializeField] private GameObject spawnAgain;
-    [SerializeField] private GameObject monster;
     [SerializeField] private RunHallwayChanger hallwayChanger;
     public FirstPersonController playerController; // Reference to the FirstPersonController scriptCloset
 
@@ -42,7 +41,6 @@ void Start()
     exitSign2.SetActive(false);
     SetLightsEnabled(RedLights, false);
     SetLightsEnabled(AllLights, true);
-    monster.SetActive(false);
 
     // Set the class-level initialPosition and targetPosition (not local variables)
     initialPosition = hallway.transform.localPosition; // Store initial position
@@ -180,19 +178,13 @@ void Start()
         exitSign.SetActive(false);
         hallwayChanger.StartChase();                                    //STARTERCHASEEE!!!! JAAAA! LIGE HER BÆTCH
 
-        player.transform.position = spawnAgain.transform.position;
-
         yield return new WaitForSeconds(duration / 2);
        
-        player.transform.position = spawnAgain.transform.position;
-
         SetLightsEnabled(AllLights, true);
         handLight.SetActive(true);
         exitSign.SetActive(false);
 
         yield return new WaitForSeconds(duration / 2);
-
-        monster.SetActive(true);
     }
 
     private void SetLightsEnabled(Light[] lights, bool enabled)
