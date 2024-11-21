@@ -219,16 +219,8 @@ public class Gaze : MonoBehaviour
         {
             timer = 0;
             PerformGazeUpdate();
-            Debug.Log("Is brother blinking? "+_blinking);
-
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                _blinking = true;
-            }
-            
+            Debug.Log("Is brother blinking? " + _blinking);       
         }
-        
-
     }
 
 
