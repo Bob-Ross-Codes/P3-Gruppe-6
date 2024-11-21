@@ -12,6 +12,7 @@ public class HospitalLook : MonoBehaviour
     public Transform player; // Reference to the player's transform
     public float interactionRange = 1.0f; // Set the interaction range
     private bool isHiding = false;
+    [SerializeField] private GameObject capsule;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class HospitalLook : MonoBehaviour
 
         if (isHiding)
         {
+            capsule.SetActive(false);
             // Switch to DoorCamera, disable player movement
             mainCamera.gameObject.SetActive(false);
             doorCamera.gameObject.SetActive(true);
@@ -43,6 +45,7 @@ public class HospitalLook : MonoBehaviour
         }
         else
         {
+            capsule.SetActive(true);
             // Return to MainCamera, enable player movement
             mainCamera.gameObject.SetActive(true);
             doorCamera.gameObject.SetActive(false);

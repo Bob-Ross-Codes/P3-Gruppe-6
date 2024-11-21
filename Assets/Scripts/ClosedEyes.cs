@@ -14,7 +14,7 @@ public class ClosedEyes : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            Debug.Log("BlinkingSound");
+           // Debug.Log("BlinkingSound");
             AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
         }
         else if (Input.GetKeyDown(KeyCode.N))

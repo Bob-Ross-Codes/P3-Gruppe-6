@@ -17,7 +17,7 @@ public class JournalEyeDetector : GazeActivation
     public BlurryText blurryText;  // Reference to the SpriteFade script
 
     public int lookAtCount;
-    public int jumpScareCount;
+    public int jumpScareCount;  
 
     void Start()
     {
@@ -29,6 +29,7 @@ public class JournalEyeDetector : GazeActivation
     public void ActivateEyetracking()
     {
         patient.transform.position = humanPosition1;
+        Debug.Log("Moving patient");
     }
 
     public override void OnLookedAt()
@@ -56,7 +57,8 @@ public class JournalEyeDetector : GazeActivation
     {
         if(lightManager.flickeringOn && lookAtCount > 0)
         {
-            if (lightManager.lightsOn == false && Random.Range(0, 2) == 0)
+            Debug.Log("lightsOn value: " + lightManager.lightsOn);
+            if (lightManager.lightsOn == false && Random.Range(0, 1) == 0)
                 patient.SetActive(true);
             else patient.SetActive(false);
         }
