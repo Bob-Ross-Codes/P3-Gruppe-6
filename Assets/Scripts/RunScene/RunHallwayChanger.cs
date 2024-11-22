@@ -66,12 +66,15 @@ public class RunHallwayChanger : MonoBehaviour
 //trigger next scene if isBlinking bool is true for more then 3 seconds
     private void Update()
     {
-        if (gaze.Blinking && blinkTime <= 2)
+        if (gaze.Blinking && blinkTime >= 2)
         {
             blinkTime += Time.deltaTime; // Increment timer if isBlinking is true
             if (blinkTime > 3f && triggerCounter > 1) // Check both conditions
             {
                 Debug.Log("Blinking time: " + blinkingTime);
+                // trigger end game and win
+
+
             }
         }
        

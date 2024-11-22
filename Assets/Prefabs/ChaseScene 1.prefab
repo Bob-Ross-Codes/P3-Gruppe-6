@@ -338,7 +338,9 @@ MonoBehaviour:
   - {fileID: 2257961177953939082, guid: ba0476a41b3cbf04fb50904aa11360fd, type: 3}
   spawnPoint: {fileID: 5485300872016320202}
   finalPrefab: {fileID: 2952895082568081095, guid: 3545eb21c15e9a04897006848f0042cb, type: 3}
+  gaze: {fileID: 3128903029877491944, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
   isBlinking: 0
+  blinkTime: 0
 --- !u!1 &1984981606506880351
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +507,9 @@ MonoBehaviour:
   - {fileID: 2257961177953939082, guid: ba0476a41b3cbf04fb50904aa11360fd, type: 3}
   spawnPoint: {fileID: 7711843003564745573}
   finalPrefab: {fileID: 2952895082568081095, guid: 3545eb21c15e9a04897006848f0042cb, type: 3}
+  gaze: {fileID: 3128903029877491944, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
   isBlinking: 0
+  blinkTime: 0
 --- !u!1 &2991457722526275955
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +636,9 @@ MonoBehaviour:
   - {fileID: 2991457722526275955}
   spawnPoint: {fileID: 6969890045323350777}
   finalPrefab: {fileID: 2952895082568081095, guid: 3545eb21c15e9a04897006848f0042cb, type: 3}
+  gaze: {fileID: 3128903029877491944, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
   isBlinking: 0
+  blinkTime: 0
 --- !u!1 &4207553241295135531
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,7 +939,9 @@ MonoBehaviour:
   - {fileID: 2257961177953939082, guid: ba0476a41b3cbf04fb50904aa11360fd, type: 3}
   spawnPoint: {fileID: 7416888416285396855}
   finalPrefab: {fileID: 2952895082568081095, guid: 3545eb21c15e9a04897006848f0042cb, type: 3}
+  gaze: {fileID: 3128903029877491944, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
   isBlinking: 0
+  blinkTime: 0
 --- !u!1 &5140034012000680748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,6 +1998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newWalkSpeed: 11.81
   camera: {fileID: 0}
+  monster: {fileID: 0}
   objectToDestroy: {fileID: 6162454067164790879}
 --- !u!1 &8777537194087711939
 GameObject:

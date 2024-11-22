@@ -13,6 +13,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
     private int currentTargetIndex = 0;  // To keep track of the current target (BoxCollider)
     private bool isMoving = true;        // Flag to control the movement
     [SerializeField] int finalHallwayCount = 20;
+    public JumpscareManager jumpscareManager;
 
     [SerializeField] private float rotationSpeed = 5f; // New variable to control rotation speed
 
@@ -48,8 +49,11 @@ public class MonsterChaseMvmnt : MonoBehaviour
         if (distanceToPlayer < 5)
         {
             // Player is close enough, triggering death or something else
-            Debug.Log("Player is dead");
+            
             AkSoundEngine.PostEvent("Play_player_Hurt", gameObject);
+            jumpscareManager.TriggerJumpscare();
+            Destroy(gameObject);
+
         }
     }
 
