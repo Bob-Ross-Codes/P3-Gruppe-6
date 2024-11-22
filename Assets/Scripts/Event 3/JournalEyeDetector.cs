@@ -74,7 +74,7 @@ public class JournalEyeDetector : GazeActivation
         if (jumpScare && patient != null)
         {
             patient.SetActive(true);
-            float speed = 10f; // Units per second
+            float speed = 20f; // Units per second
             patient.transform.localPosition = Vector3.MoveTowards(patient.transform.localPosition, humanPosition2, speed * Time.deltaTime);
         }
     }
