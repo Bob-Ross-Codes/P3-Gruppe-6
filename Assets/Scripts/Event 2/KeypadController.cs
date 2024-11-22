@@ -180,6 +180,11 @@ public class KeypadController : MonoBehaviour
         }
     }
 
+    public void ClearInput()
+    {
+        ResetInput();
+    }
+
     void CheckCode()
     {
         if (playerInput == correctCode)

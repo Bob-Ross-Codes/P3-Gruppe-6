@@ -2654,6 +2654,7 @@ MonoBehaviour:
   inputDisplay: {fileID: 1148024848862536155}
   door: {fileID: 0}
   player: {fileID: 0}
+  playCollider: {fileID: 0}
   mainCameraVCam: {fileID: 0}
   keypadVCam: {fileID: 4648609650371616779}
   codesWithPictures:
@@ -2669,6 +2670,7 @@ MonoBehaviour:
     pictureObject: {fileID: 1988356536700441876}
   - code: 12645
     pictureObject: {fileID: 2420687991857532436}
+  interactionDistance: 4
 --- !u!1 &6412468037375107316
 GameObject:
   m_ObjectHideFlags: 0
@@ -2734,7 +2736,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: C
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4121,7 +4123,7 @@ GameObject:
   - component: {fileID: 1441741722804750383}
   - component: {fileID: 5949668950885848038}
   m_Layer: 5
-  m_Name: 0
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4231,14 +4233,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4571599383576733737}
         m_TargetAssemblyTypeName: KeypadController, Assembly-CSharp
-        m_MethodName: AddDigit
-        m_Mode: 5
+        m_MethodName: ClearInput
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8918101939242306719
