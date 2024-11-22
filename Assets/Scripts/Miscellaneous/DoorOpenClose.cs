@@ -32,11 +32,13 @@ public class DoorOpenClose : MonoBehaviour
         doorAnimator.SetBool("IsOpen", false);
     }
 
+
     public void PlayOpenSound()
     {
         AkSoundEngine.SetRTPCValue("RTPC_DoorState", 0); // 0 for open
         AkSoundEngine.PostEvent("Door_SFX_Event", gameObject);
     }
+
 
     // Called at the start of the closing phase of the animation
     public void PlayCloseSound()
@@ -44,6 +46,7 @@ public class DoorOpenClose : MonoBehaviour
         AkSoundEngine.SetRTPCValue("RTPC_DoorState", 1); // 1 for closed
         AkSoundEngine.PostEvent("Door_SFX_Event", gameObject);
     }
+
 
     // Check if the player is within interaction range
     void CheckPlayerDistance()
@@ -59,9 +62,6 @@ public class DoorOpenClose : MonoBehaviour
             isInRange = false;
         }
     }
-
-
-
 }
 
 
