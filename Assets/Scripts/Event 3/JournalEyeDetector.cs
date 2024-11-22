@@ -19,17 +19,20 @@ public class JournalEyeDetector : GazeActivation
     public int lookAtCount;
     public int jumpScareCount;
     public bool jumpScare;
+    private bool eyetrackingActivated;
 
     void Start()
     {
         // Find blurryText in children
         blurryText = GetComponentInChildren<BlurryText>();
+        eyetrackingActivated = false;
         jumpScareCount = 3;
         jumpScare = false;
     }
 
     public void ActivateEyetracking()
     {
+        eyetrackingActivated = true;
         patient.transform.position = humanPosition1;
         Debug.Log("Moving patient");
     }
@@ -59,22 +62,25 @@ public class JournalEyeDetector : GazeActivation
 
     void FixedUpdate()
     {
-        int randomNumber = Random.Range(0, 3);
-        if(lightManager.flickeringOn && lookAtCount > 0 && !jumpScare)
+        if (eyetrackingActivated)
         {
-            Debug.Log("lightsOn value: " + lightManager.lightsOn);
-            Debug.Log("random NUmber: " + randomNumber);
-            if (lightManager.lightsOn == false && randomNumber == 0)
-                patient.SetActive(true);
-            else patient.SetActive(false);
+            int randomNumber = Random.Range(0, 3);
+            if (lightManager.flickeringOn && !jumpScare)
+            {
+                Debug.Log("lightsOn value: " + lightManager.lightsOn);
+                Debug.Log("random NUmber: " + randomNumber);
+                if (lightManager.lightsOn == false && randomNumber == 0)
+                    patient.SetActive(true);
+                else patient.SetActive(false);
+            }
+            if (!lightManager.flickeringOn)
+                patient.SetActive(false);
         }
-        if(!lightManager.flickeringOn)
-            patient.SetActive(false);
-        
+
         if (jumpScare && patient != null)
         {
             patient.SetActive(true);
-            float speed = 20f; // Units per second
+            float speed = 300f; // Units per second
             patient.transform.localPosition = Vector3.MoveTowards(patient.transform.localPosition, humanPosition2, speed * Time.deltaTime);
         }
     }

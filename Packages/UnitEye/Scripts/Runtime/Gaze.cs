@@ -219,7 +219,7 @@ public class Gaze : MonoBehaviour
         {
             timer = 0;
             PerformGazeUpdate();
-            Debug.Log("Is brother blinking? " + _blinking);       
+            //Debug.Log("Is brother blinking? " + _blinking);       
         }
     }
 

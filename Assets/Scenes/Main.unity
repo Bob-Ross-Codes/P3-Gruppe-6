@@ -5296,8 +5296,8 @@ Transform:
   m_GameObject: {fileID: 344840610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.093, y: 2.2211, z: -0.014}
-  m_LocalScale: {x: 0.6432345, y: 1.0538, z: 0.1}
+  m_LocalPosition: {x: -0.108, y: 2.2211, z: -0.079}
+  m_LocalScale: {x: 0.7655777, y: 1.0538, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 178609090}
@@ -5329,7 +5329,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -21666,7 +21666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3128903029877491951, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
       propertyPath: webCamName
-      value: AMD Privacy View camera
+      value: HD WebCam
       objectReference: {fileID: 0}
     - target: {fileID: 3485875271603776584, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
       propertyPath: m_Name
@@ -32086,7 +32086,7 @@ Transform:
   m_GameObject: {fileID: 2130109367}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5984, y: 2.2211, z: -0.014}
+  m_LocalPosition: {x: 0.5984, y: 2.2211, z: -0.079}
   m_LocalScale: {x: 0.6432345, y: 1.0538, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32107,7 +32107,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -32899,6 +32899,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MetalObj
       objectReference: {fileID: 0}
+    - target: {fileID: 4169565936790610645, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.63
+      objectReference: {fileID: 0}
     - target: {fileID: 4175146568526722860, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
       value: 24.89
@@ -32949,15 +32953,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4643881663040260755, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.701
+      value: -5.654
       objectReference: {fileID: 0}
     - target: {fileID: 4643881663040260755, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.225
+      value: -4.226
       objectReference: {fileID: 0}
     - target: {fileID: 4643881663040260755, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 48.32
+      value: 48.308
       objectReference: {fileID: 0}
     - target: {fileID: 4643881663040260755, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33109,15 +33113,15 @@ PrefabInstance:
       objectReference: {fileID: 3586942796797013440, guid: 0332342d5958ca143b69fb266f326fe1, type: 3}
     - target: {fileID: 7123946948430855166, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.912
+      value: -23.91
       objectReference: {fileID: 0}
     - target: {fileID: 7123946948430855166, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.048
+      value: -4.18
       objectReference: {fileID: 0}
     - target: {fileID: 7123946948430855166, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45.68
+      value: 45.46
       objectReference: {fileID: 0}
     - target: {fileID: 7123946948430855166, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalRotation.w
