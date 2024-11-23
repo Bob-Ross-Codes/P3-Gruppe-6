@@ -10,7 +10,7 @@ public class ClosetHide : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera mainCamera;
     [SerializeField] private CinemachineVirtualCamera closetCamera;
     public FirstPersonController playerController; // Reference to the FirstPersonController script
-    //public GameObject objectToDisableHallwayOne; // Reference to the GameObject to disable when hiding
+    public GameObject objectToDisableHallwayOne; // Reference to the GameObject to disable when hiding
     //public GameObject objectToEnableHallwayOne;
     public Transform roomDoor;
 
@@ -72,7 +72,7 @@ public class ClosetHide : MonoBehaviour
             leftDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the left door
             rightDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the right door
 
-            //objectToDisableHallwayOne.SetActive(false);
+            objectToDisableHallwayOne.SetActive(false);
 
             doorHingeAnimator.SetTrigger("broken");
 
