@@ -24,27 +24,29 @@ public class HallwayEnabler : MonoBehaviour
         // Check if the collided object has the tag "HallwayEnabler".
         if (other.CompareTag("HallwayEnabler"))
         {
+            Destroy(hallwayEnablers[hallwayToEnable]);
             lightManager.allLights = FindObjectsOfType<Light>();
 
             // Ensure the array is not null and has at least one element.
             if (hallways != null && hallways.Length >= hallwayToEnable)
             {
+                Debug.Log("You are in hallway: " + hallways[hallwayToEnable]);
 
                 if (hallwayToEnable <= hallways.Length)
                 {
                     if (hallways[hallwayToEnable] != null)
                     {
                         hallways[hallwayToEnable + 1].SetActive(true);
+                        Debug.Log("Enabling hallway: " + hallways[hallwayToEnable + 1]);
                     }
                 }
 
                 if (hallwayToEnable > 0)
                 {
                     hallways[hallwayToEnable - 1].SetActive(false);
+                    Debug.Log("Disabling hallway: " + hallways[hallwayToEnable - 1]);
+
                 }
-
-                Destroy(hallwayEnablers[hallwayToEnable]);
-
                 hallwayToEnable++;
             }
             else
