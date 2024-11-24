@@ -16,7 +16,7 @@ public class DestroyOnGaze : GazeActivation
                 {
                     // Trigger the animation
                     targetAnimator.SetTrigger("Hide");
-                    targetObject.SetActive(false);
+                    killWoman();
                 }
                 else
                 {
@@ -24,5 +24,9 @@ public class DestroyOnGaze : GazeActivation
                 }
     
     }
-    
+    private IEnumerator killWoman()
+    {
+        yield return new WaitForSeconds(1f);Destroy(targetObject);
+    }
+
 }

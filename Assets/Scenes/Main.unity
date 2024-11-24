@@ -383,6 +383,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 207442515291225447, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 207442515291225447, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.18
+      objectReference: {fileID: 0}
     - target: {fileID: 1468809851694066847, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
       propertyPath: swingAngleMax
       value: 1
@@ -507,6 +515,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4194752176468470405, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194752176468470405, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194752176468470405, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.22
+      objectReference: {fileID: 0}
     - target: {fileID: 4264844499027888589, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -515,6 +535,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 875882299}
+    - target: {fileID: 5142343578925537252, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142343578925537252, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142343578925537252, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 5482735149180144990, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
       propertyPath: m_Name
       value: ScaryWoman
@@ -578,7 +610,27 @@ PrefabInstance:
     - target: {fileID: 9014245736977674896, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
       propertyPath: targetObject
       value: 
-      objectReference: {fileID: 847593771}
+      objectReference: {fileID: 1116947198}
+    - target: {fileID: 9198548162455693886, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.7062707
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198548162455693886, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.884
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198548162455693886, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.339
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198548162455693886, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.037
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198548162455693886, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2991905344098120617, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
@@ -5566,6 +5618,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1045260892}
   m_SourcePrefab: {fileID: 100100000, guid: 8caca8a5b8fc29241857185d3e2fbaa6, type: 3}
+--- !u!1 &1116947198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5482735149180144990, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+  m_PrefabInstance: {fileID: 96149832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1117747522 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2383143944031541868, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
@@ -10441,7 +10498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 717068868199197568, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1526607448800714260, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_LocalScale.x
@@ -10505,15 +10562,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2382797228765989782, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3181437577470147718, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3750474948305050373, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3882024305543827196, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_LocalScale.y
@@ -10545,7 +10602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5178675122650859296, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6666999384281394864, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_Name
@@ -10553,11 +10610,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6666999384281394864, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8746399333589404353, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2448398799657205990, guid: 9e7e44184173740f98c33879fc444a8a, type: 3}
