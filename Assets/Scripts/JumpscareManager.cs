@@ -24,14 +24,6 @@ public class JumpscareManager : MonoBehaviour
             StartCoroutine(HandleJumpscare());
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(HandleJumpscare());
-        }
-    }
     
 
     private IEnumerator HandleJumpscare()
