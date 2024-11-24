@@ -12,6 +12,7 @@ public class HospitalLook : MonoBehaviour
     public Transform player; // Reference to the player's transform
     public float interactionRange = 1.0f; // Set the interaction range
     private bool isHiding = false;
+
     [SerializeField] private GameObject capsule;
 
     void Start()

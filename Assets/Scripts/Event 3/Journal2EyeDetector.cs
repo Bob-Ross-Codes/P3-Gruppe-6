@@ -11,10 +11,10 @@ public class Journal2EyeDetector : GazeActivation
     }
     public void StopSound()
     {
-        Debug.Log("StopWhispers");
+        AkSoundEngine.PostEvent("Stop_Whispers", gameObject);
     }
     public void StartSound()
     {
-        Debug.Log("StartWhispers");
+        AkSoundEngine.PostEvent("Play_Whispers", gameObject);
     }
 }

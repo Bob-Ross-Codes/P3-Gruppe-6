@@ -9,6 +9,11 @@
 						<Property Name="BlendBehavior" Type="int16" Value="1"/>
 						<Property Name="Color" Type="int16" Value="24"/>
 						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+						<Property Name="InitialDelay" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
 						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
@@ -24,36 +29,6 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="MediumKnock" ID="{ECC81499-82FD-4A1F-8358-1E08349F104D}" ShortID="4059649">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-7</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Wood Door Knock" ID="{137F5636-AF1B-4F11-8699-2C34758A3A8E}">
-									<Language>SFX</Language>
-									<AudioFile>Wood Door Knock.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="268669544"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Wood Door Knock" ID="{137F5636-AF1B-4F11-8699-2C34758A3A8E}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<RandomSequenceContainer Name="HighKnock" ID="{5CC16092-C986-45BE-A005-468F070AD57F}" ShortID="523627403">
 							<PropertyList>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
@@ -338,18 +313,9 @@
 							</ReferenceList>
 							<BlendTrackAssocList>
 								<BlendTrackAssoc>
-									<ItemRef Name="MediumKnock" ID="{ECC81499-82FD-4A1F-8358-1E08349F104D}"/>
-									<CrossfadingInfo>
-										<LeftEdgePos>0</LeftEdgePos>
-										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>8.10619066933348</RightEdgePos>
-										<RightFadingMode>Automatic</RightFadingMode>
-									</CrossfadingInfo>
-								</BlendTrackAssoc>
-								<BlendTrackAssoc>
 									<ItemRef Name="HighKnock" ID="{5CC16092-C986-45BE-A005-468F070AD57F}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>7.34674978169244</LeftEdgePos>
+										<LeftEdgePos>0</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
 										<RightEdgePos>30</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
@@ -1081,6 +1047,58 @@
 								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
+						<Sound Name="ES_Reaction, Male, Perspective Whispering - Epidemic Sound" ID="{48BDC722-60E7-43F2-824E-A5E600A7331A}" ShortID="471718312">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ES_Reaction, Male, Perspective Whispering - Epidemic Sound" ID="{48A128DB-ADC1-4979-B34D-8153BEC7CD81}">
+									<Language>SFX</Language>
+									<AudioFile>ES_Reaction, Male, Perspective Whispering - Epidemic Sound.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="268532535"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{4DEB3E6F-0CE8-4823-B751-51C97931F3B1}" ShortID="558342167">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
+														<ObjectRef Name="Fear_no_Evil" ID="{A1F17D99-0801-4F32-B74E-ADB2D9ACC556}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{AD3F1FBE-CCA4-489E-AD47-3679DFC7BFE7}" ShortID="133679254">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
+														<ObjectRef Name="Repeat_after_me" ID="{7A0568D0-BE8B-4233-B3E8-200344DB7AE0}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="ES_Reaction, Male, Perspective Whispering - Epidemic Sound" ID="{48A128DB-ADC1-4979-B34D-8153BEC7CD81}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</BlendContainer>
 				<SwitchContainer Name="DoorSounds" ID="{8EECA336-7799-49FE-AB03-B2CF1C7C4617}" ShortID="739220371">
