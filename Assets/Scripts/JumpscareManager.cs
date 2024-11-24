@@ -22,6 +22,7 @@ public class JumpscareManager : MonoBehaviour
         if (jumpscarePrefab != null)
         {
             StartCoroutine(HandleJumpscare());
+            StartCoroutine(HandleDeath());
         }
     }
     
@@ -33,7 +34,7 @@ public class JumpscareManager : MonoBehaviour
 
         // Wait for the scare duration
         yield return new WaitForSeconds(scareDuration);
-        StartCoroutine(HandleDeath());
+        
         // Disable the prefab
         jumpscarePrefab.SetActive(false);
     }
