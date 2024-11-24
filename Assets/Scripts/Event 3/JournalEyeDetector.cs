@@ -5,7 +5,7 @@ using UnityEngine;
 public class JournalEyeDetector : GazeActivation
 {
     //Eyetracking elements
-    public override float ActivationTime => 2.5f;
+    public override float ActivationTime => 2f;
     public GameObject EyeDetector;
     //Flickering lights
     public LightManager lightManager;  // Reference to the LightManager script
@@ -20,7 +20,6 @@ public class JournalEyeDetector : GazeActivation
     public int jumpScareCount;
     public bool jumpScare;
     private bool eyetrackingActivated;
-    private int rCount;
 
     void Start()
     {
@@ -29,7 +28,6 @@ public class JournalEyeDetector : GazeActivation
         eyetrackingActivated = false;
         jumpScareCount = 3;
         jumpScare = false;
-        rCount = 0;
     }
 
     public void ActivateEyetracking()
@@ -59,18 +57,7 @@ public class JournalEyeDetector : GazeActivation
             else { lightManager.StartFlicker(15f, 1f, true); Debug.Log("JumpScare"); }
             lookAtCount++;
         }
-        
 
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-            rCount++;
-
-        if (rCount == 3 && !jumpScare && eyetrackingActivated)
-        {
-            jumpScare = true;
-        }
     }
 
     void FixedUpdate()
