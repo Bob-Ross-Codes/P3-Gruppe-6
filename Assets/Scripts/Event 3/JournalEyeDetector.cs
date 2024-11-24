@@ -69,8 +69,15 @@ public class JournalEyeDetector : GazeActivation
 
         if (rCount == 3 && !jumpScare && eyetrackingActivated)
         {
+            StartCoroutine(destroyPatient());
             jumpScare = true;
         }
+    }
+
+    private IEnumerator destroyPatient()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(patient);
     }
 
     void FixedUpdate()
