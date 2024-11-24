@@ -35,8 +35,7 @@ public class JumpscareManager : MonoBehaviour
         // Wait for the scare duration
         yield return new WaitForSeconds(scareDuration);
         
-        // Disable the prefab
-        jumpscarePrefab.SetActive(false);
+       
     }
 
     private IEnumerator HandleDeath()
@@ -53,6 +52,8 @@ public class JumpscareManager : MonoBehaviour
             deathCanvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsedTime / duration);
             yield return null;
         }
+        // Disable the prefab
+        jumpscarePrefab.SetActive(false);
         duration = 5f;
         elapsedTime = 0f;
         while (elapsedTime < duration)
