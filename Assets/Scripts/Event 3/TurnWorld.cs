@@ -10,6 +10,8 @@ public class TurnWorld : MonoBehaviour
     public Light[] RedLights;       // Array of lights to turn on
     public GameObject[] Journals;   // Array of journals to destroy
 
+    public GameObject Player;
+
     [SerializeField] private Transform player;
     [SerializeField] private Transform trigger;
     [SerializeField] private Transform trigger2;
@@ -106,6 +108,8 @@ void Start()
             else if (elapsedTime > 3.2f && elapsedTime <= 3.4f) { SetLightsEnabled(AllLights, true); }
             else if (elapsedTime > 3.4f && elapsedTime <= 3.9f) { SetLightsEnabled(AllLights, false); }
         }
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player); 
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
 
         // Ensure hallway finishes at the final target position and rotation
         hallway.transform.rotation = targetRotation;
@@ -149,8 +153,8 @@ void Start()
             }
 
             // MARIUS: Spil stor lys tænder
-            AkSoundEngine.SetRTPCValue("RTPC_LightState", 1, gameObject);
-            AkSoundEngine.PostEvent("Light_OnOff_Event", gameObject);
+            AkSoundEngine.SetRTPCValue("RTPC_LightState", 1, Player);
+            AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
 
             // Wait for 1 second before moving to the next pair
             yield return new WaitForSeconds(1f);
@@ -175,7 +179,7 @@ void Start()
 
         yield return new WaitForSeconds(duration / 4);
 
-        AkSoundEngine.PostEvent("Light_OnOff_Event", gameObject);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
         SetLightsEnabled(RedLights, false);
         exitSign.SetActive(false);
         hallwayChanger.StartChase();                                    //STARTERCHASEEE!!!! JAAAA! LIGE HER BÆTCH
