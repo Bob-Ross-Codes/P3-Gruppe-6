@@ -152,9 +152,6 @@
 								<Reference Name="Target">
 									<ObjectRef Name="AmbientMaster" ID="{9F7EDE03-E241-4F47-8FD5-2A0C7ADB98E2}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
 								</Reference>
-								<Reference Name="TargetEffect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-									<ObjectRef Name="LowPassHeartBeat" ID="{0B0DD4F7-2FDD-4572-BC69-55F588813731}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-								</Reference>
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{66717D31-4785-4A64-B4E9-04856ED3AAA1}" ShortID="801768228">
@@ -322,6 +319,39 @@
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ClickButton" ID="{A51EB1E2-39EF-44C5-A341-30CF6A7E2B05}">
+					<ChildrenList>
+						<Action Name="" ID="{94D3584B-6406-4345-9DD1-92421B30D6ED}" ShortID="678206044">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Button_Click_SFX" ID="{69C42DF6-22BA-4EE7-BE6C-C9A663589BE7}" WorkUnitID="{D14CE5F9-2FB5-4968-82BD-DE7C89FA95F4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Keypad_Error" ID="{689FD68F-3651-4C24-8ADA-16A409F5880E}">
+					<ChildrenList>
+						<Action Name="" ID="{445FF50D-2245-417F-B13A-52247AF52D73}" ShortID="284489361">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Keypad_Error_SFX" ID="{FE036E1F-0539-432C-9060-111992559789}" WorkUnitID="{D14CE5F9-2FB5-4968-82BD-DE7C89FA95F4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Keypad_Correct" ID="{9A1BA2BC-A674-4E63-9D9B-DA924EB83274}">
+					<ChildrenList>
+						<Action Name="" ID="{9E98549C-A0E6-417A-BEFC-624DCEA9F64F}" ShortID="407755145">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Keypad_Correct_Door_SFX" ID="{ED979D37-86DC-40FE-AD94-F69FD5F07880}" WorkUnitID="{D14CE5F9-2FB5-4968-82BD-DE7C89FA95F4}"/>
+								</Reference>
+							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>

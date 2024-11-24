@@ -172,6 +172,7 @@ public class KeypadController : MonoBehaviour
         {
             playerInput += digit;
             inputDisplay.text = playerInput;
+            AkSoundEngine.PostEvent("Play_ButtonClick", gameObject);
 
             if (playerInput.Length == correctCode.Length)
             {
@@ -189,17 +190,20 @@ public class KeypadController : MonoBehaviour
     {
         if (playerInput == correctCode)
         {
+            AkSoundEngine.PostEvent("Play_Keypad_Correct",gameObject);
             OpenDoor();
             ToggleKeypadInputMode(); // Exit input mode after entering the correct code
         }
         else
         {
+            AkSoundEngine.PostEvent("Play_Keypad_Error", gameObject);
             ResetInput(); // Clear input if code is incorrect
         }
     }
 
     void ResetInput()
     {
+        AkSoundEngine.PostEvent("KeypadButton", gameObject);
         playerInput = "";
         inputDisplay.text = playerInput;
     }

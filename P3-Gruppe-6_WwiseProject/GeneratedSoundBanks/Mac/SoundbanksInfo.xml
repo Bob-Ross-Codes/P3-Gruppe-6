@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{C55C3E12-E197-D9EE-9B27-5C32F0D79F14}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{803EE815-9091-D193-9DB8-3DA319865129}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -41,6 +41,10 @@
 					<ShortName>Hard With Fist.wav</ShortName>
 					<CachePath>SFX/Hard With Fist_E9E08B95.wem</CachePath>
 				</File>
+				<File Id="171181839" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KS_Security Door_1.wav</ShortName>
+					<CachePath>SFX/KS_Security Door_1_64116160.wem</CachePath>
+				</File>
 				<File Id="199820693" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hard With Fist.wav</ShortName>
 					<CachePath>SFX/Hard With Fist_BE733C9D.wem</CachePath>
@@ -61,6 +65,10 @@
 					<ShortName>Flickering Sound Effect.wav</ShortName>
 					<CachePath>SFX/Flickering Sound Effect_4A47FA62.wem</CachePath>
 				</File>
+				<File Id="300613286" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Button Click Sound Effect.wav</ShortName>
+					<CachePath>SFX/Button Click Sound Effect_204010C3.wem</CachePath>
+				</File>
 				<File Id="328603660" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Bedroom Door_1.wav</ShortName>
 					<CachePath>SFX/KS_Bedroom Door_1_818F3B66.wem</CachePath>
@@ -80,6 +88,10 @@
 				<File Id="398871403" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Thunder Clap Sound Effect.wav</ShortName>
 					<CachePath>SFX/Thunder Clap Sound Effect_818F3B66.wem</CachePath>
+				</File>
+				<File Id="442763405" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Keypad Error Sound Effect.wav</ShortName>
+					<CachePath>SFX/Keypad Error Sound Effect_818F3B66.wem</CachePath>
 				</File>
 				<File Id="446409488" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ES_Clicky, 45 BPM - Epidemic Sound.wav</ShortName>
@@ -271,6 +283,11 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
+				<Event Id="1445251746" Name="Play_ClickButton" DurationType="OneShot" DurationMin="0.6123602" DurationMax="0.6123602">
+					<MediaRefs>
+						<MediaRef Id="300613286"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1188660949" Name="Play_DoorSlamOpen" DurationType="OneShot" DurationMin="2.3044496" DurationMax="2.3044496">
 					<MediaRefs>
 						<MediaRef Id="390649072"/>
@@ -300,6 +317,16 @@
 				<Event Id="3582431873" Name="Play_IntroMusic" DurationType="OneShot" DurationMin="37.10373" DurationMax="37.10373">
 					<MediaRefs>
 						<MediaRef Id="207794992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2660246561" Name="Play_Keypad_Correct" DurationType="OneShot" DurationMin="3.1910658" DurationMax="3.1910658">
+					<MediaRefs>
+						<MediaRef Id="171181839"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="431971085" Name="Play_Keypad_Error" DurationType="OneShot" DurationMin="0.5973333" DurationMax="0.5973333">
+					<MediaRefs>
+						<MediaRef Id="442763405"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="511968160" Name="Play_Light_OnOff_Event" DurationType="Infinite">
@@ -426,33 +453,13 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{6D8F1DE3-58D0-DBA1-F1AB-CE4BAC32F99C}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{E71F6BBD-7B5C-7970-FB61-63B3023C04BE}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
-				<File Id="6699438" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_1.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_1_818F3B66.wem</CachePath>
-				</File>
-				<File Id="9904137" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_17.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_17_00225573.wem</CachePath>
-				</File>
 				<File Id="15300385" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (5).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (5)_818F3B66.wem</CachePath>
-				</File>
-				<File Id="25819813" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_10.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_10_00225573.wem</CachePath>
-				</File>
-				<File Id="30913372" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_15.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_15_00225573.wem</CachePath>
-				</File>
-				<File Id="34152555" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_13.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_13_818F3B66.wem</CachePath>
 				</File>
 				<File Id="35673001" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (5).wav</ShortName>
@@ -470,22 +477,6 @@
 					<ShortName>Player_Footstep_Tile_Dry (10).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (10)_00225573.wem</CachePath>
 				</File>
-				<File Id="83530304" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_20.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_20_00225573.wem</CachePath>
-				</File>
-				<File Id="89009750" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_21.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_21_818F3B66.wem</CachePath>
-				</File>
-				<File Id="101067048" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_12.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_12_818F3B66.wem</CachePath>
-				</File>
-				<File Id="105063444" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_36.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_36_818F3B66.wem</CachePath>
-				</File>
 				<File Id="106214123" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (4).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (4)_00225573.wem</CachePath>
@@ -498,29 +489,13 @@
 					<ShortName>Player_Footstep_Tile_Dry (3).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (3)_00225573.wem</CachePath>
 				</File>
-				<File Id="121099714" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_2.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_2_00225573.wem</CachePath>
-				</File>
 				<File Id="121458811" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (11).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (11)_00225573.wem</CachePath>
 				</File>
-				<File Id="125274872" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_13.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_13_818F3B66.wem</CachePath>
-				</File>
-				<File Id="140296482" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_20.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_20_818F3B66.wem</CachePath>
-				</File>
 				<File Id="156896936" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footstep_Walking_Wood_07.wav</ShortName>
 					<CachePath>SFX/Footstep_Walking_Wood_07_818F3B66.wem</CachePath>
-				</File>
-				<File Id="164302814" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_38.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_38_818F3B66.wem</CachePath>
 				</File>
 				<File Id="170153259" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (13).wav</ShortName>
@@ -534,33 +509,9 @@
 					<ShortName>Footstep_Walking_Wood_01.wav</ShortName>
 					<CachePath>SFX/Footstep_Walking_Wood_01_818F3B66.wem</CachePath>
 				</File>
-				<File Id="218395995" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_5.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_5_818F3B66.wem</CachePath>
-				</File>
 				<File Id="226653637" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (18).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (18)_818F3B66.wem</CachePath>
-				</File>
-				<File Id="230173218" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_16.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_16_818F3B66.wem</CachePath>
-				</File>
-				<File Id="231573665" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_19.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_19_818F3B66.wem</CachePath>
-				</File>
-				<File Id="239619982" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_4.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_4_818F3B66.wem</CachePath>
-				</File>
-				<File Id="244850067" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_3.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_3_818F3B66.wem</CachePath>
-				</File>
-				<File Id="245985132" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_37.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_37_818F3B66.wem</CachePath>
 				</File>
 				<File Id="247214371" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Basic Cloth_1.wav</ShortName>
@@ -570,22 +521,6 @@
 					<ShortName>KS_Basic Cloth_12.wav</ShortName>
 					<CachePath>SFX/KS_Basic Cloth_12_00225573.wem</CachePath>
 				</File>
-				<File Id="256643354" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_24.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_24_818F3B66.wem</CachePath>
-				</File>
-				<File Id="263279070" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_4.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_4_818F3B66.wem</CachePath>
-				</File>
-				<File Id="275401289" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_10.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_10_818F3B66.wem</CachePath>
-				</File>
-				<File Id="289147205" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_13.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_13_818F3B66.wem</CachePath>
-				</File>
 				<File Id="290359522" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Basic Cloth_10.wav</ShortName>
 					<CachePath>SFX/KS_Basic Cloth_10_00225573.wem</CachePath>
@@ -594,25 +529,9 @@
 					<ShortName>Footstep_Walking_Wood_04.wav</ShortName>
 					<CachePath>SFX/Footstep_Walking_Wood_04_818F3B66.wem</CachePath>
 				</File>
-				<File Id="301961315" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_1.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_1_818F3B66.wem</CachePath>
-				</File>
-				<File Id="304242188" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_18.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_18_00225573.wem</CachePath>
-				</File>
-				<File Id="305296248" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_8.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_8_818F3B66.wem</CachePath>
-				</File>
 				<File Id="314059817" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (7).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (7)_818F3B66.wem</CachePath>
-				</File>
-				<File Id="315301018" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_3.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_3_818F3B66.wem</CachePath>
 				</File>
 				<File Id="316398608" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footstep_Walking_Wood_02.wav</ShortName>
@@ -626,81 +545,21 @@
 					<ShortName>Player_Footstel_Tile_Damp (16).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (16)_818F3B66.wem</CachePath>
 				</File>
-				<File Id="325718814" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_5.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_5_818F3B66.wem</CachePath>
-				</File>
 				<File Id="331117371" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (15).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (15)_818F3B66.wem</CachePath>
-				</File>
-				<File Id="336920738" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_11.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_11_818F3B66.wem</CachePath>
-				</File>
-				<File Id="338966987" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_27.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_27_818F3B66.wem</CachePath>
 				</File>
 				<File Id="346498203" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footstep_Walking_Wood_06.wav</ShortName>
 					<CachePath>SFX/Footstep_Walking_Wood_06_818F3B66.wem</CachePath>
 				</File>
-				<File Id="350301638" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_25.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_25_818F3B66.wem</CachePath>
-				</File>
 				<File Id="359313372" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (9).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (9)_818F3B66.wem</CachePath>
 				</File>
-				<File Id="361486622" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_4.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_4_00225573.wem</CachePath>
-				</File>
-				<File Id="363358676" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_19.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_19_818F3B66.wem</CachePath>
-				</File>
-				<File Id="368225329" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_12.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_12_00225573.wem</CachePath>
-				</File>
-				<File Id="377797308" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_6.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_6_818F3B66.wem</CachePath>
-				</File>
 				<File Id="382763038" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (15).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (15)_00225573.wem</CachePath>
-				</File>
-				<File Id="384067176" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_3.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_3_00225573.wem</CachePath>
-				</File>
-				<File Id="423372344" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_17.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_17_818F3B66.wem</CachePath>
-				</File>
-				<File Id="456146811" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_33.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_33_818F3B66.wem</CachePath>
-				</File>
-				<File Id="466382625" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_41.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_41_818F3B66.wem</CachePath>
-				</File>
-				<File Id="477133610" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_7.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_7_818F3B66.wem</CachePath>
-				</File>
-				<File Id="493854963" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_20.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_20_818F3B66.wem</CachePath>
-				</File>
-				<File Id="498835283" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_29.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_29_818F3B66.wem</CachePath>
 				</File>
 				<File Id="503163526" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (18).wav</ShortName>
@@ -714,17 +573,9 @@
 					<ShortName>Player_Footstel_Tile_Damp (6).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (6)_818F3B66.wem</CachePath>
 				</File>
-				<File Id="507200884" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_5.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_5_00225573.wem</CachePath>
-				</File>
 				<File Id="507202270" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (6).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (6)_00225573.wem</CachePath>
-				</File>
-				<File Id="510470499" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_31.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_31_818F3B66.wem</CachePath>
 				</File>
 				<File Id="550945558" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Basic Cloth_11.wav</ShortName>
@@ -746,109 +597,37 @@
 					<ShortName>Player_Footstel_Tile_Damp (14).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (14)_818F3B66.wem</CachePath>
 				</File>
-				<File Id="588335916" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_9.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_9_00225573.wem</CachePath>
-				</File>
 				<File Id="588982511" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Basic Cloth_3.wav</ShortName>
 					<CachePath>SFX/KS_Basic Cloth_3_00225573.wem</CachePath>
-				</File>
-				<File Id="600309618" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_28.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_28_818F3B66.wem</CachePath>
-				</File>
-				<File Id="601902653" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_11.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_11_00225573.wem</CachePath>
 				</File>
 				<File Id="614057529" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (8).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (8)_818F3B66.wem</CachePath>
 				</File>
-				<File Id="622247894" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_34.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_34_818F3B66.wem</CachePath>
-				</File>
-				<File Id="633873879" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_26.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_26_818F3B66.wem</CachePath>
-				</File>
-				<File Id="635873838" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_11.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_11_818F3B66.wem</CachePath>
-				</File>
 				<File Id="640223223" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hurt Sound Low Intensity.wav</ShortName>
 					<CachePath>SFX/Hurt Sound Low Intensity_818F3B66.wem</CachePath>
-				</File>
-				<File Id="641470713" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_15.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_15_818F3B66.wem</CachePath>
 				</File>
 				<File Id="652941499" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (21).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (21)_00225573.wem</CachePath>
 				</File>
-				<File Id="653855659" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_19.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_19_00225573.wem</CachePath>
-				</File>
-				<File Id="667477372" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_2.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_2_818F3B66.wem</CachePath>
-				</File>
 				<File Id="671508290" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (14).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (14)_00225573.wem</CachePath>
-				</File>
-				<File Id="680130858" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_7.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_7_818F3B66.wem</CachePath>
-				</File>
-				<File Id="683537340" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_9.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_9_818F3B66.wem</CachePath>
-				</File>
-				<File Id="684835219" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_14.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_14_818F3B66.wem</CachePath>
 				</File>
 				<File Id="687770181" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (9).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (9)_00225573.wem</CachePath>
 				</File>
-				<File Id="688941080" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_16.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_16_818F3B66.wem</CachePath>
-				</File>
-				<File Id="693068841" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_35.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_35_818F3B66.wem</CachePath>
-				</File>
-				<File Id="728129499" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_6.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_6_00225573.wem</CachePath>
-				</File>
 				<File Id="732568592" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (1).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (1)_818F3B66.wem</CachePath>
 				</File>
-				<File Id="734629008" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_15.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_15_818F3B66.wem</CachePath>
-				</File>
-				<File Id="734722867" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_8.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_8_00225573.wem</CachePath>
-				</File>
 				<File Id="742058496" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Basic Cloth_6.wav</ShortName>
 					<CachePath>SFX/KS_Basic Cloth_6_00225573.wem</CachePath>
-				</File>
-				<File Id="767248591" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_10.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_10_818F3B66.wem</CachePath>
 				</File>
 				<File Id="767999004" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (4).wav</ShortName>
@@ -858,41 +637,13 @@
 					<ShortName>KS_Basic Cloth_9.wav</ShortName>
 					<CachePath>SFX/KS_Basic Cloth_9_00225573.wem</CachePath>
 				</File>
-				<File Id="772367830" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_9.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_9_818F3B66.wem</CachePath>
-				</File>
-				<File Id="780659638" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_12.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_12_818F3B66.wem</CachePath>
-				</File>
 				<File Id="782123406" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (17).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (17)_818F3B66.wem</CachePath>
 				</File>
-				<File Id="782554550" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_22.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_22_818F3B66.wem</CachePath>
-				</File>
-				<File Id="783193596" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_14.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_14_818F3B66.wem</CachePath>
-				</File>
-				<File Id="784577032" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_39.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_39_818F3B66.wem</CachePath>
-				</File>
-				<File Id="790808487" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_40.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_40_818F3B66.wem</CachePath>
-				</File>
 				<File Id="799158447" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (13).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (13)_818F3B66.wem</CachePath>
-				</File>
-				<File Id="812104707" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_1.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_1_00225573.wem</CachePath>
 				</File>
 				<File Id="824672086" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (8).wav</ShortName>
@@ -902,57 +653,21 @@
 					<ShortName>Player_Footstel_Tile_Damp (12).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (12)_818F3B66.wem</CachePath>
 				</File>
-				<File Id="848390862" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_30.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_30_818F3B66.wem</CachePath>
-				</File>
 				<File Id="855700326" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (2).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (2)_00225573.wem</CachePath>
-				</File>
-				<File Id="865189581" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_23.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_23_818F3B66.wem</CachePath>
-				</File>
-				<File Id="889931974" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_2.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_2_818F3B66.wem</CachePath>
 				</File>
 				<File Id="895441352" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstep_Tile_Dry (20).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (20)_00225573.wem</CachePath>
 				</File>
-				<File Id="901321490" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_14.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_14_00225573.wem</CachePath>
-				</File>
-				<File Id="911109294" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_18.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_18_818F3B66.wem</CachePath>
-				</File>
-				<File Id="918618391" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Soaked_7.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Soaked_7_00225573.wem</CachePath>
-				</File>
 				<File Id="920286750" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (2).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (2)_818F3B66.wem</CachePath>
 				</File>
-				<File Id="923483898" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Footsteps_PLYR_Wood_Wet_17.wav</ShortName>
-					<CachePath>SFX/Footsteps_PLYR_Wood_Wet_17_818F3B66.wem</CachePath>
-				</File>
-				<File Id="969174434" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_8.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_8_818F3B66.wem</CachePath>
-				</File>
 				<File Id="969195855" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footstep_Walking_Wood_03.wav</ShortName>
 					<CachePath>SFX/Footstep_Walking_Wood_03_818F3B66.wem</CachePath>
-				</File>
-				<File Id="992924945" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_18.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_18_818F3B66.wem</CachePath>
 				</File>
 				<File Id="995827658" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (19).wav</ShortName>
@@ -982,10 +697,6 @@
 					<ShortName>Footstep_Walking_Wood_05.wav</ShortName>
 					<CachePath>SFX/Footstep_Walking_Wood_05_818F3B66.wem</CachePath>
 				</File>
-				<File Id="1066712174" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>KS_Concrete Urban Boots_02_6.wav</ShortName>
-					<CachePath>SFX/KS_Concrete Urban Boots_02_6_818F3B66.wem</CachePath>
-				</File>
 				<File Id="1070261709" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Basic Cloth_4.wav</ShortName>
 					<CachePath>SFX/KS_Basic Cloth_4_00225573.wem</CachePath>
@@ -997,7 +708,7 @@
 						<MediaRef Id="640223223"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="673033979" Name="Play_PLYR_Footsteps" DurationType="OneShot" DurationMin="0.5" DurationMax="2.4746666">
+				<Event Id="673033979" Name="Play_PLYR_Footsteps" DurationType="OneShot" DurationMin="0.5" DurationMax="1.6">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1044534455" Id="2637588553"/>
@@ -1005,35 +716,15 @@
 								<SwitchContainer>
 									<SwitchValue GroupType="Switch" GroupId="3968804893" Id="1905651656"/>
 									<MediaRefs>
-										<MediaRef Id="89009750"/>
-										<MediaRef Id="105063444"/>
-										<MediaRef Id="164302814"/>
-										<MediaRef Id="245985132"/>
 										<MediaRef Id="247214371"/>
 										<MediaRef Id="252771747"/>
-										<MediaRef Id="256643354"/>
 										<MediaRef Id="290359522"/>
-										<MediaRef Id="338966987"/>
-										<MediaRef Id="350301638"/>
-										<MediaRef Id="456146811"/>
-										<MediaRef Id="466382625"/>
-										<MediaRef Id="498835283"/>
-										<MediaRef Id="510470499"/>
 										<MediaRef Id="550945558"/>
 										<MediaRef Id="556473669"/>
 										<MediaRef Id="566132583"/>
 										<MediaRef Id="588982511"/>
-										<MediaRef Id="600309618"/>
-										<MediaRef Id="622247894"/>
-										<MediaRef Id="633873879"/>
-										<MediaRef Id="693068841"/>
 										<MediaRef Id="742058496"/>
 										<MediaRef Id="772142962"/>
-										<MediaRef Id="782554550"/>
-										<MediaRef Id="784577032"/>
-										<MediaRef Id="790808487"/>
-										<MediaRef Id="848390862"/>
-										<MediaRef Id="865189581"/>
 										<MediaRef Id="1025191512"/>
 										<MediaRef Id="1070261709"/>
 									</MediaRefs>
@@ -1114,36 +805,16 @@
 								<SwitchContainer>
 									<SwitchValue GroupType="Switch" GroupId="3968804893" Id="1181096339"/>
 									<MediaRefs>
-										<MediaRef Id="6699438"/>
-										<MediaRef Id="101067048"/>
-										<MediaRef Id="140296482"/>
-										<MediaRef Id="230173218"/>
-										<MediaRef Id="231573665"/>
-										<MediaRef Id="239619982"/>
-										<MediaRef Id="244850067"/>
 										<MediaRef Id="247214371"/>
 										<MediaRef Id="252771747"/>
-										<MediaRef Id="275401289"/>
-										<MediaRef Id="289147205"/>
 										<MediaRef Id="290359522"/>
-										<MediaRef Id="325718814"/>
-										<MediaRef Id="336920738"/>
-										<MediaRef Id="423372344"/>
-										<MediaRef Id="477133610"/>
 										<MediaRef Id="550945558"/>
 										<MediaRef Id="556473669"/>
 										<MediaRef Id="566132583"/>
 										<MediaRef Id="588982511"/>
-										<MediaRef Id="667477372"/>
-										<MediaRef Id="734629008"/>
 										<MediaRef Id="742058496"/>
 										<MediaRef Id="772142962"/>
-										<MediaRef Id="772367830"/>
-										<MediaRef Id="783193596"/>
-										<MediaRef Id="969174434"/>
-										<MediaRef Id="992924945"/>
 										<MediaRef Id="1025191512"/>
-										<MediaRef Id="1066712174"/>
 										<MediaRef Id="1070261709"/>
 									</MediaRefs>
 								</SwitchContainer>
@@ -1155,37 +826,18 @@
 								<SwitchContainer>
 									<SwitchValue GroupType="Switch" GroupId="3968804893" Id="1905651656"/>
 									<MediaRefs>
-										<MediaRef Id="9904137"/>
-										<MediaRef Id="25819813"/>
-										<MediaRef Id="30913372"/>
-										<MediaRef Id="34152555"/>
-										<MediaRef Id="83530304"/>
-										<MediaRef Id="121099714"/>
 										<MediaRef Id="156896936"/>
 										<MediaRef Id="247214371"/>
 										<MediaRef Id="252771747"/>
 										<MediaRef Id="290359522"/>
 										<MediaRef Id="291790555"/>
-										<MediaRef Id="304242188"/>
 										<MediaRef Id="346498203"/>
-										<MediaRef Id="361486622"/>
-										<MediaRef Id="368225329"/>
-										<MediaRef Id="384067176"/>
-										<MediaRef Id="507200884"/>
 										<MediaRef Id="550945558"/>
 										<MediaRef Id="556473669"/>
 										<MediaRef Id="566132583"/>
-										<MediaRef Id="588335916"/>
 										<MediaRef Id="588982511"/>
-										<MediaRef Id="601902653"/>
-										<MediaRef Id="653855659"/>
-										<MediaRef Id="728129499"/>
-										<MediaRef Id="734722867"/>
 										<MediaRef Id="742058496"/>
 										<MediaRef Id="772142962"/>
-										<MediaRef Id="812104707"/>
-										<MediaRef Id="901321490"/>
-										<MediaRef Id="918618391"/>
 										<MediaRef Id="969195855"/>
 										<MediaRef Id="1006303981"/>
 										<MediaRef Id="1025191512"/>
@@ -1244,38 +896,18 @@
 								<SwitchContainer>
 									<SwitchValue GroupType="Switch" GroupId="3968804893" Id="1181096339"/>
 									<MediaRefs>
-										<MediaRef Id="125274872"/>
 										<MediaRef Id="156896936"/>
-										<MediaRef Id="218395995"/>
 										<MediaRef Id="247214371"/>
 										<MediaRef Id="252771747"/>
-										<MediaRef Id="263279070"/>
 										<MediaRef Id="290359522"/>
 										<MediaRef Id="291790555"/>
-										<MediaRef Id="301961315"/>
-										<MediaRef Id="305296248"/>
-										<MediaRef Id="315301018"/>
 										<MediaRef Id="346498203"/>
-										<MediaRef Id="363358676"/>
-										<MediaRef Id="377797308"/>
-										<MediaRef Id="493854963"/>
 										<MediaRef Id="550945558"/>
 										<MediaRef Id="556473669"/>
 										<MediaRef Id="566132583"/>
 										<MediaRef Id="588982511"/>
-										<MediaRef Id="635873838"/>
-										<MediaRef Id="641470713"/>
-										<MediaRef Id="680130858"/>
-										<MediaRef Id="683537340"/>
-										<MediaRef Id="684835219"/>
-										<MediaRef Id="688941080"/>
 										<MediaRef Id="742058496"/>
-										<MediaRef Id="767248591"/>
 										<MediaRef Id="772142962"/>
-										<MediaRef Id="780659638"/>
-										<MediaRef Id="889931974"/>
-										<MediaRef Id="911109294"/>
-										<MediaRef Id="923483898"/>
 										<MediaRef Id="969195855"/>
 										<MediaRef Id="1006303981"/>
 										<MediaRef Id="1025191512"/>
@@ -1558,5 +1190,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{062FE549-F85F-2537-DF2A-F5AC1D41EE36}</FileHash>
+	<FileHash>{1270B013-93A3-A787-CC3A-7E77BE8E5C52}</FileHash>
 </SoundBanksInfo>

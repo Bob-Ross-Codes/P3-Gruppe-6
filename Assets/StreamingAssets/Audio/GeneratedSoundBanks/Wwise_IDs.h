@@ -17,10 +17,13 @@ namespace AK
         static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
         static const AkUniqueID FLASHLIGHT_ONOFF_EVENT = 1510976581U;
         static const AkUniqueID HORROR_AMBIENCE = 967859696U;
+        static const AkUniqueID PLAY_CLICKBUTTON = 1445251746U;
         static const AkUniqueID PLAY_DOORSLAMOPEN = 1188660949U;
         static const AkUniqueID PLAY_ENDINGMUSIC = 1755859644U;
         static const AkUniqueID PLAY_EYES_CLOSED = 3074142683U;
         static const AkUniqueID PLAY_INTROMUSIC = 3582431873U;
+        static const AkUniqueID PLAY_KEYPAD_CORRECT = 2660246561U;
+        static const AkUniqueID PLAY_KEYPAD_ERROR = 431971085U;
         static const AkUniqueID PLAY_LIGHT_ONOFF_EVENT = 511968160U;
         static const AkUniqueID PLAY_MONSTER_SOUNDS = 324561159U;
         static const AkUniqueID PLAY_PLAYER_HURT = 887999531U;

@@ -96,6 +96,85 @@
 						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
+				<Folder Name="Keypad_SFX" ID="{44E57084-3998-4443-8BCC-66379681A441}" ShortID="165206978">
+					<ChildrenList>
+						<Sound Name="Button_Click_SFX" ID="{69C42DF6-22BA-4EE7-BE6C-C9A663589BE7}" ShortID="316767550">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Button Click Sound Effect" ID="{D04A53AE-29B1-40B9-AFE3-DD41F9C549CC}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.88606935123042"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.49842953020134"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Button Click Sound Effect.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="300613286"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Button Click Sound Effect" ID="{D04A53AE-29B1-40B9-AFE3-DD41F9C549CC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Keypad_Error_SFX" ID="{FE036E1F-0539-432C-9060-111992559789}" ShortID="469055804">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Keypad Error Sound Effect" ID="{9FE8ACF5-37FB-42D2-AAA4-0E2F9D7DBCE5}">
+									<Language>SFX</Language>
+									<AudioFile>Keypad Error Sound Effect.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="442763405"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Keypad Error Sound Effect" ID="{9FE8ACF5-37FB-42D2-AAA4-0E2F9D7DBCE5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Keypad_Correct_Door_SFX" ID="{ED979D37-86DC-40FE-AD94-F69FD5F07880}" ShortID="241171053">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="KS_Security Door_1" ID="{AB4A7176-C9BD-4391-8155-0B88B2FBB0AA}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.19106577181209"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>KS_Security Door_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="171181839"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="KS_Security Door_1" ID="{AB4A7176-C9BD-4391-8155-0B88B2FBB0AA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
