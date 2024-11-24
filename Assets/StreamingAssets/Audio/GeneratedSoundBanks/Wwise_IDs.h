@@ -154,6 +154,7 @@ namespace AK
 
             namespace SWITCH
             {
+                static const AkUniqueID JUMPSCARE = 3520998787U;
                 static const AkUniqueID MONSTERCHASING = 155822580U;
                 static const AkUniqueID MONSTERWALKING = 2362879642U;
             } // namespace SWITCH

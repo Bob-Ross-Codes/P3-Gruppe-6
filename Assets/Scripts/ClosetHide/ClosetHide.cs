@@ -56,6 +56,7 @@ public class ClosetHide : MonoBehaviour
                 canToggleHiding = true;
             
         }
+        
         //////////////////////////////////////////// CONSOLE DEBUGGING
     }
 

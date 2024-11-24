@@ -1,5 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	324561159	Play_Monster_Sounds			\NPC\Play_Monster_Sounds	
+	2630587137	Stop_Monster_Sounds			\NPC\Stop_Monster_Sounds	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	687366024	MonsterState			\Default Work Unit\MonsterState	
@@ -7,15 +8,17 @@ Switch Group	ID	Name			Wwise Object Path	Notes
 Switch	ID	Name	Switch Group			Notes
 	155822580	MonsterChasing	MonsterState			
 	2362879642	MonsterWalking	MonsterState			
+	3520998787	Jumpscare	MonsterState			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	293784726	RTPC_MonsterState			\Default Work Unit\RTPC_MonsterState	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	80601441	ES_Monster Vocal, Screams 03 - Epidemic Sound	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\ES_Monster Vocal, Screams 03 - Epidemic Sound_818F3B66.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterChasing\MonsterScreams\ES_Monster Vocal, Screams 03 - Epidemic Sound		618612
-	227180245	Monster Demo Dallas	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Monster Demo Dallas_FBC78EF0.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterWalking\Monster Demo Dallas		3256764
-	423317710	ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound_818F3B66.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterChasing\MonsterScreams\ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound		651784
-	444902598	fast-heartbeat-1-hour	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\fast-heartbeat-1-hour_818F3B66.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterChasing\fast-heartbeat-1-hour		69120096
-	469435164	Chase (Loop ved 1 3A36)	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Chase (Loop ved 1 3A36)_E43F83CE.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterChasing\Chase (Loop ved 1 3A36)		5212012
-	595643602	Breathy Rhythmic Tonal Growl 03	Y:\Documents\GitHub\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Breathy Rhythmic Tonal Growl 03_FBC78EF0.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterWalkingSweetener\Breathy Rhythmic Tonal Growl 03		2474080
+	80601441	ES_Monster Vocal, Screams 03 - Epidemic Sound	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\ES_Monster Vocal, Screams 03 - Epidemic Sound_818F3B66.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterChasing\MonsterScreams\ES_Monster Vocal, Screams 03 - Epidemic Sound		618612
+	227180245	Monster Demo Dallas	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Monster Demo Dallas_FBC78EF0.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterWalking\Monster Demo Dallas		3256764
+	241509505	sfx_theMaw_screech	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\sfx_theMaw_screech_6B4DBBAE.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\sfx_theMaw_screech		624616
+	423317710	ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound_818F3B66.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterChasing\MonsterScreams\ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound		651784
+	444902598	fast-heartbeat-1-hour	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\fast-heartbeat-1-hour_818F3B66.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterChasing\fast-heartbeat-1-hour		69120096
+	469435164	Chase (Loop ved 1 3A36)	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Chase (Loop ved 1 3A36)_E43F83CE.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterChasing\Chase (Loop ved 1 3A36)		5212012
+	595643602	Breathy Rhythmic Tonal Growl 03	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Windows\SFX\Breathy Rhythmic Tonal Growl 03_FBC78EF0.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\MonsterWalkingSweetener\Breathy Rhythmic Tonal Growl 03		2474080
 

@@ -120,6 +120,7 @@
 					<ChildrenList>
 						<Switch Name="MonsterWalking" ID="{FD101D2B-A22D-4E17-AFCD-43C345EDD538}"/>
 						<Switch Name="MonsterChasing" ID="{CF442881-A432-4F4B-9424-C13FBD0CD797}"/>
+						<Switch Name="Jumpscare" ID="{C1C11ABE-B9F3-420F-8348-103C16728188}"/>
 					</ChildrenList>
 					<SwitchOnRTPC>
 						<GameParameterRef Name="RTPC_MonsterState" ID="{1065F977-542C-42AB-A7F4-29AF31CFCC7C}"/>
@@ -140,6 +141,11 @@
 								</Point>
 								<Point>
 									<XPos>2</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>3</XPos>
 									<YPos>2</YPos>
 									<Flags>37</Flags>
 								</Point>

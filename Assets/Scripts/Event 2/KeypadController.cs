@@ -172,7 +172,7 @@ public class KeypadController : MonoBehaviour
         {
             playerInput += digit;
             inputDisplay.text = playerInput;
-            AkSoundEngine.PostEvent("Play_ButtonClick", gameObject);
+            AkSoundEngine.PostEvent("Play_ClickButton", gameObject);
 
             if (playerInput.Length == correctCode.Length)
             {

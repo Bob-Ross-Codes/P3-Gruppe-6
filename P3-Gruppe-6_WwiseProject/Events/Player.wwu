@@ -14,22 +14,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Stop_Monster_Sounds" ID="{C2F490C0-657C-47BC-8C27-9A7DB53EC60B}">
-					<ChildrenList>
-						<Action Name="" ID="{2A658881-D970-4747-A4DC-EC6A03FB8600}" ShortID="449213431">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-								<Property Name="FadeOutCurve" Type="int16" Value="2"/>
-								<Property Name="FadeTime" Type="Real64" Value="2.5"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="MonsterSounds" ID="{E2F40C31-2872-4972-956F-AA2264D67D3E}" WorkUnitID="{BBDCF3BA-B56E-4C38-A149-E1049ADD6DCD}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Play_Player_Hurt" ID="{919101F0-36EE-4ADD-932F-E971B9BE54EA}">
 					<ChildrenList>
 						<Action Name="" ID="{874B44D3-7A03-4813-8DA6-6E158DA8DF8A}" ShortID="549412551">

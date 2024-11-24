@@ -11,10 +11,15 @@ public class JumpscareManager : MonoBehaviour
 
     private void Start()
     {
-
         jumpscarePrefab.SetActive(false);
+    }
 
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TriggerJumpscare();
+        }
     }
 
     public void TriggerJumpscare()

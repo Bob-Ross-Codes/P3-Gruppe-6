@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{803EE815-9091-D193-9DB8-3DA319865129}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{22B2C778-8125-E9CE-AFB8-33091432C99B}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -43,7 +43,7 @@
 				</File>
 				<File Id="171181839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Security Door_1.wav</ShortName>
-					<CachePath>SFX/KS_Security Door_1_64116160.wem</CachePath>
+					<CachePath>SFX/KS_Security Door_1_0A4C61DF.wem</CachePath>
 				</File>
 				<File Id="199820693" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hard With Fist.wav</ShortName>
@@ -67,7 +67,7 @@
 				</File>
 				<File Id="300613286" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Button Click Sound Effect.wav</ShortName>
-					<CachePath>SFX/Button Click Sound Effect_204010C3.wem</CachePath>
+					<CachePath>SFX/Button Click Sound Effect_E9CB954B.wem</CachePath>
 				</File>
 				<File Id="328603660" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Bedroom Door_1.wav</ShortName>
@@ -453,7 +453,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{E71F6BBD-7B5C-7970-FB61-63B3023C04BE}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{54450635-EA22-141B-6596-5FE3B2B7F75E}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -919,7 +919,6 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="2630587137" Name="Stop_Monster_Sounds" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="870672907" Name="RTPC_GroundWetness"/>
@@ -942,7 +941,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F336645F-07B7-F668-A899-71DF29DEE5FF}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{182C01C6-393E-0492-3B89-262820A4C6F9}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -1081,6 +1080,7 @@
 					<Switches>
 						<Switch Id="155822580" Name="MonsterChasing"/>
 						<Switch Id="2362879642" Name="MonsterWalking"/>
+						<Switch Id="3520998787" Name="Jumpscare"/>
 					</Switches>
 				</SwitchGroup>
 				<SwitchGroup Id="1044534455" Name="GroundMaterialSwitch">
@@ -1125,7 +1125,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2376328173" Type="User" Language="SFX" Hash="{12E1F1BC-5937-117A-DD18-9AFD1EE04A0E}">
+		<SoundBank Id="2376328173" Type="User" Language="SFX" Hash="{25E7BD4F-B74E-9030-8B91-2DAF40A1A76A}">
 			<ShortName>Monster</ShortName>
 			<Path>Monster.bnk</Path>
 			<Media>
@@ -1136,6 +1136,10 @@
 				<File Id="227180245" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Monster Demo Dallas.wav</ShortName>
 					<CachePath>SFX/Monster Demo Dallas_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="241509505" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_theMaw_screech.wav</ShortName>
+					<CachePath>SFX/sfx_theMaw_screech_6B4DBBAE.wem</CachePath>
 				</File>
 				<File Id="423317710" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound.wav</ShortName>
@@ -1173,8 +1177,15 @@
 								<MediaRef Id="469435164"/>
 							</MediaRefs>
 						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="687366024" Id="3520998787"/>
+							<MediaRefs>
+								<MediaRef Id="241509505"/>
+							</MediaRefs>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="2630587137" Name="Stop_Monster_Sounds" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="293784726" Name="RTPC_MonsterState"/>
@@ -1185,10 +1196,11 @@
 					<Switches>
 						<Switch Id="155822580" Name="MonsterChasing"/>
 						<Switch Id="2362879642" Name="MonsterWalking"/>
+						<Switch Id="3520998787" Name="Jumpscare"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7BEF25D2-A11A-1F0B-0780-C4FEF555CD21}</FileHash>
+	<FileHash>{0F17A416-43BD-1ED4-C164-996AC9A0D678}</FileHash>
 </SoundBanksInfo>
