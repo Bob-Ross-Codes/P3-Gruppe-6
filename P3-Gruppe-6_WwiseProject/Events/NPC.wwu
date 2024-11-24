@@ -30,6 +30,34 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Whispers" ID="{6CD3400D-E93C-45A7-A850-D929389F23B2}">
+					<ChildrenList>
+						<Action Name="" ID="{6E2019D7-4B9E-4409-91EC-FEEF3C8B5C6C}" ShortID="319391683">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="7.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ES_Reaction, Male, Perspective Whispering - Epidemic Sound" ID="{48BDC722-60E7-43F2-824E-A5E600A7331A}" WorkUnitID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Whispers" ID="{EF0DB748-EF97-46A3-8BC8-58AC26D8DCB4}">
+					<ChildrenList>
+						<Action Name="" ID="{EA92D53D-7613-4C46-B31E-3AE2EA220351}" ShortID="969487188">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ES_Reaction, Male, Perspective Whispering - Epidemic Sound" ID="{48BDC722-60E7-43F2-824E-A5E600A7331A}" WorkUnitID="{C18D599E-5E64-4BEA-8433-DE90AA19CD64}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

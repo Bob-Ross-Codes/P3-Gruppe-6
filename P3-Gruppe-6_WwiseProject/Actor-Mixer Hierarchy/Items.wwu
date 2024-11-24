@@ -111,7 +111,7 @@
 								<AudioFileSource Name="Button Click Sound Effect" ID="{D04A53AE-29B1-40B9-AFE3-DD41F9C549CC}">
 									<PropertyList>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="1.88606935123042"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.99516264833187"/>
 										<Property Name="TrimEnd" Type="Real64" Value="2.49842953020134"/>
 									</PropertyList>
 									<Language>SFX</Language>
@@ -148,6 +148,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Keypad_Correct_Door_SFX" ID="{ED979D37-86DC-40FE-AD94-F69FD5F07880}" ShortID="241171053">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>

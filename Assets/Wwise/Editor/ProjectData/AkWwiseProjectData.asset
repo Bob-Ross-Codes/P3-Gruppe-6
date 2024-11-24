@@ -848,7 +848,7 @@ MonoBehaviour:
     ParentPath: Events\NPC
     guid: 02ecd6ad61d6b64281cc12bfd98682a1
     GuidInternal: 
-    m_lastTime: -8584691276329146277
+    m_lastTime: -8584691225173476467
     List:
     - name: Play_Monster_Sounds
       guid: 1e5c3acaa4928a4d9f5d71fbea2648a6
@@ -865,6 +865,23 @@ MonoBehaviour:
         guid: 1e5c3acaa4928a4d9f5d71fbea2648a6
       Path: Events\NPC\Play_Monster_Sounds
       maxAttenuation: 10
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Whispers
+      guid: 0d40d36c3ce9a745a850d929389f23b2
+      id: 1781039267
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: NPC
+        ObjectType: 12
+        guid: 02ecd6ad61d6b64281cc12bfd98682a1
+      - ElementName: Play_Whispers
+        ObjectType: 3
+        guid: 0d40d36c3ce9a745a850d929389f23b2
+      Path: Events\NPC\Play_Whispers
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: Stop_Monster_Sounds
@@ -884,6 +901,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_Whispers
+      guid: 48b70def97efa3468bc858ac26d8dcb4
+      id: 1761541297
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: NPC
+        ObjectType: 12
+        guid: 02ecd6ad61d6b64281cc12bfd98682a1
+      - ElementName: Stop_Whispers
+        ObjectType: 3
+        guid: 48b70def97efa3468bc858ac26d8dcb4
+      Path: Events\NPC\Stop_Whispers
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Player.wwu
     PathAndIcons:
     - ElementName: Events

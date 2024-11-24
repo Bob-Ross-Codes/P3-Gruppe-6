@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{22B2C778-8125-E9CE-AFB8-33091432C99B}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{CC46661B-F779-C358-DCBD-F29C0FA6646C}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -56,10 +56,6 @@
 				<File Id="220019224" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Door Knocking Slight Rattle.wav</ShortName>
 					<CachePath>SFX/Door Knocking Slight Rattle_FEB3E9FC.wem</CachePath>
-				</File>
-				<File Id="268669544" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Wood Door Knock.wav</ShortName>
-					<CachePath>SFX/Wood Door Knock_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="293863672" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Flickering Sound Effect.wav</ShortName>
@@ -404,7 +400,6 @@
 						<MediaRef Id="161921007"/>
 						<MediaRef Id="199820693"/>
 						<MediaRef Id="220019224"/>
-						<MediaRef Id="268669544"/>
 						<MediaRef Id="491737182"/>
 						<MediaRef Id="505184733"/>
 						<MediaRef Id="582011132"/>
@@ -1125,7 +1120,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2376328173" Type="User" Language="SFX" Hash="{25E7BD4F-B74E-9030-8B91-2DAF40A1A76A}">
+		<SoundBank Id="2376328173" Type="User" Language="SFX" Hash="{C5DDA55B-60E5-48A8-B65D-B6CECD2A02FD}">
 			<ShortName>Monster</ShortName>
 			<Path>Monster.bnk</Path>
 			<Media>
@@ -1139,7 +1134,7 @@
 				</File>
 				<File Id="241509505" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_theMaw_screech.wav</ShortName>
-					<CachePath>SFX/sfx_theMaw_screech_6B4DBBAE.wem</CachePath>
+					<CachePath>SFX/sfx_theMaw_screech_E0D1BF34.wem</CachePath>
 				</File>
 				<File Id="423317710" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound.wav</ShortName>
@@ -1202,5 +1197,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4455F50B-B080-0846-BFC4-B6F36AB7C4FC}</FileHash>
+	<FileHash>{538E0042-DB3B-9E6F-B0B3-40AA288E323D}</FileHash>
 </SoundBanksInfo>

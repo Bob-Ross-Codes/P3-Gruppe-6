@@ -10,6 +10,8 @@ public class LightManager : MonoBehaviour
     private Light[] lightsToFlicker;
     [SerializeField] private Light handlight;
 
+    public GameObject Player;
+
     private float flickerDuration;  // Total duration of flickering effect
     private float darkInterval;
     private float lightInterval;
@@ -68,6 +70,7 @@ public class LightManager : MonoBehaviour
                 // Turn off all lights (darker state)
                 foreach (var light in lightsToFlicker)
                     light.enabled = false;
+
                 WwiseStopLightsSounds();
                 lightsOn = false;
 
@@ -78,7 +81,6 @@ public class LightManager : MonoBehaviour
                 foreach (var light in lightsToFlicker)
                 {
                     light.enabled = true;
-                    AkSoundEngine.PostEvent("Flickering_Lights", gameObject);
                 }
                 WwisePlayFlickeringSound();
                 lightsOn = true;
@@ -92,6 +94,7 @@ public class LightManager : MonoBehaviour
             }
 
             flickeringOn = false;
+            WwiseStopLightsSounds();
         }
         else { flickeringOn = false; yield break; }
     }
@@ -99,24 +102,24 @@ public class LightManager : MonoBehaviour
     // Flickering sounds
     private void WwisePlayFlickeringSound()
     {
-        AkSoundEngine.SetRTPCValue("RTPC_LightState", 2, gameObject);
-        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 2, Player);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
     }
 
     private void WwisePlayTurnOnSound()
     {
-        AkSoundEngine.SetRTPCValue("RTPC_LightState", 1, gameObject);
-        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 1, Player);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
     }
 
     private void WwisePlayTurnOffSound()
     {
-        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, gameObject);
-        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", gameObject);
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
     }
 
     private void WwiseStopLightsSounds()
     {
-        AkSoundEngine.PostEvent("Stop_Light_OnOff_Event", gameObject);
+        AkSoundEngine.PostEvent("Stop_Light_OnOff_Event", Player);
     }
 }

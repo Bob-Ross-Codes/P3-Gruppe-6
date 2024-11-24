@@ -297,8 +297,9 @@
 								<AudioFileSource Name="sfx_theMaw_screech" ID="{5B80CD58-CFF7-4F97-BBA9-0CD861CFAB55}">
 									<PropertyList>
 										<Property Name="FadeOutDuration" Type="Real64" Value="0.722826086956522"/>
+										<Property Name="LoopBegin" Type="Real64" Value="3.25271739130435"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="3.25271739130435"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.63315217391303"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>sfx_theMaw_screech.wav</AudioFile>

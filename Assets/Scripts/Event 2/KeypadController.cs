@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using Cinemachine;
+using StarterAssets;
 
 public class KeypadController : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class KeypadController : MonoBehaviour
     private string playerInput = "";    // Player's input
     private int currentCodeIndex = 0;   // Tracks the current picture/password index
     private bool isKeypadOpen = false;  // Tracks if keypad UI is open
+
+    public FirstPersonController playerController; // Reference to the player's movement script
     private MonoBehaviour FirstPersonController; // Reference to the player's movement script
 
     void Start()
@@ -97,7 +100,8 @@ public class KeypadController : MonoBehaviour
 
         if (FirstPersonController != null)
         {
-            FirstPersonController.enabled = false; // Lock player movement
+            playerController.MoveSpeed = 0;
+
         }
     }
 
@@ -108,7 +112,8 @@ public class KeypadController : MonoBehaviour
 
         if (FirstPersonController != null)
         {
-            FirstPersonController.enabled = true; // Unlock player movement
+            playerController.MoveSpeed = 3.5f;
+
         }
     }
 

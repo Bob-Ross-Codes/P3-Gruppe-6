@@ -10,6 +10,7 @@ public class RunEnableTrigger : MonoBehaviour
     //when player hits the box collider, enable change the run value of the player controller script
     public float newWalkSpeed = 2.0f;
     public CinemachineVirtualCamera camera;
+    private FootstepSoundController footstepSoundController;
     public GameObject monster;
 
 
@@ -21,6 +22,7 @@ public class RunEnableTrigger : MonoBehaviour
             if (controller != null)
             {
                 controller.MoveSpeed = newWalkSpeed; // Ensure FirstPersonController has a MoveSpeed property
+                footstepSoundController.stepInterval = 0.3f;
                 StartCoroutine(SmoothTransition(camera.m_Lens.FieldOfView, 90, 1.0f)); // 1 second transition
             }
             monster.SetActive(true);
