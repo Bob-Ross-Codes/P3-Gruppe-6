@@ -63,11 +63,8 @@ public class JumpscareManager : MonoBehaviour
         }
 
 
-        // Ensure the final alpha is set to 1
-        deathCanvasGroup.alpha = 1f;
-
         // Wait for 5 seconds
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
 
         // Disable the canvas
         deathCanvas.gameObject.SetActive(false);
