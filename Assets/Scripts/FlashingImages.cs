@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FlashingImages : MonoBehaviour
 {
-    [SerializeField] private Image canvasImage;
+    [SerializeField] public Image canvasImage;
     [SerializeField] private Sprite[] images;
     [SerializeField] private float minFlashSpeed = 0.01f;
     [SerializeField] private float maxFlashSpeed = 0.1f;
@@ -15,6 +15,7 @@ public class FlashingImages : MonoBehaviour
 
     private Coroutine flashCoroutine;
     private bool playerInTrigger = false;
+    public bool flashing;                       //Jeg bruger den ikke endnu. Ville gerne, men kan ikke få til at fungere endnu
 
     void Start()
     {
@@ -61,7 +62,7 @@ public class FlashingImages : MonoBehaviour
 
     private IEnumerator FlashImages()
     {
-
+        flashing = true;
         yield return new WaitForSeconds(waitTime); // Hvis du vil have flashing timet til at starte efter et bestemt tidspunkt, spaghetti kode
         canvasImage.enabled = true;
         int currentLoop = 0;
@@ -88,6 +89,7 @@ public class FlashingImages : MonoBehaviour
 
         // Ensure the canvas image is disabled when the player leaves the trigger or loop count is reached
         canvasImage.enabled = false;
+        flashing = false;
         flashCoroutine = null;
 
         // Disable the GameObject after flashing
