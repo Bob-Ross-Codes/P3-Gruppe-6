@@ -21,28 +21,15 @@ public class JumpscareManager : MonoBehaviour
     {
         if (jumpscarePrefab != null)
         {
-            StartCoroutine(HandleJumpscare());
             StartCoroutine(HandleDeath());
         }
     }
     
-
-    private IEnumerator HandleJumpscare()
-    {
-        // Enable the prefab
-        jumpscarePrefab.SetActive(true);
-
-        // Wait for the scare duration
-        yield return new WaitForSeconds(scareDuration);
-        
-       
-    }
-
     private IEnumerator HandleDeath()
     {
         // Enable the canvas
         deathCanvas.gameObject.SetActive(true);
-
+        jumpscarePrefab.SetActive(true);
         float duration = 5f;
         float elapsedTime = 0f;
 
@@ -52,6 +39,7 @@ public class JumpscareManager : MonoBehaviour
             deathCanvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsedTime / duration);
             yield return null;
         }
+        yield return new WaitForSeconds(scareDuration);
         // Disable the prefab
         jumpscarePrefab.SetActive(false);
         duration = 5f;
