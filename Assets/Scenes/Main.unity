@@ -2811,7 +2811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionRange: 3
-  player: {fileID: 0}
+  player: {fileID: 875882299}
   doorAnimator: {fileID: 0}
   isLocked: 1
 --- !u!108 &625853937 stripped
@@ -6528,6 +6528,7 @@ MonoBehaviour:
   - {fileID: 1528359097}
   - {fileID: 625853937}
   handlight: {fileID: 1918878309}
+  Player: {fileID: 875882298}
   flickeringOn: 0
   lightsOn: 0
 --- !u!4 &1450975410
@@ -8193,6 +8194,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2108666185}
+    - target: {fileID: 4571599383576733737, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 875882303}
     - target: {fileID: 4571599383576733737, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: interactionDistance
       value: 4
