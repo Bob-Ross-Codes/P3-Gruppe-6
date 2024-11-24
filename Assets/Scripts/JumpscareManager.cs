@@ -53,7 +53,7 @@ public class JumpscareManager : MonoBehaviour
 
 
         // Wait for 5 seconds
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2); // Redundent tror jeg.
 
         // Disable the canvas
         deathCanvas.gameObject.SetActive(false);
