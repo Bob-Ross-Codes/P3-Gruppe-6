@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Polycount
   m_EditorClassIdentifier: 
   elements:
-  - visible: 0
+  - visible: 1
     position: 0
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  - visible: 0
+  - visible: 1
     position: 0
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  - visible: 0
+  - visible: 1
     position: 0
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
@@ -1172,7 +1172,7 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
     translationScale: {x: 1, y: 1}
-    m_LocalIntensity: 0.03
+    m_LocalIntensity: 0.05
     lensFlareTexture: {fileID: 0}
     uniformScale: 1.1
     sizeXY: {x: 0.1, y: 0.1}

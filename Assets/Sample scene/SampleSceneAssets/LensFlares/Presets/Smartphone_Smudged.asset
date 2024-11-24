@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Smartphone_Smudged
   m_EditorClassIdentifier: 
   elements:
-  - visible: 0
+  - visible: 1
     position: 0
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  - visible: 0
+  - visible: 1
     position: 0
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  - visible: 0
+  - visible: 1
     position: 0.02
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  - visible: 0
+  - visible: 1
     position: 0.01
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
@@ -657,7 +657,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  - visible: 0
+  - visible: 1
     position: 0.01
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
@@ -1140,7 +1140,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  - visible: 0
+  - visible: 1
     position: 0
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
@@ -1462,24 +1462,24 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  - visible: 1
-    position: 0.99
+  - visible: 0
+    position: 0
     positionOffset: {x: 0, y: 0}
     angularOffset: 0
     translationScale: {x: 1, y: 1}
-    m_LocalIntensity: 0.13
+    m_LocalIntensity: 1
     lensFlareTexture: {fileID: 0}
-    uniformScale: 1.21
+    uniformScale: 1
     sizeXY: {x: 1, y: 1}
     allowMultipleElement: 0
     m_Count: 5
     preserveAspectRatio: 0
     rotation: 0
-    tint: {r: 0.32941177, g: 0.9058824, b: 0.5058824, a: 0.5}
+    tint: {r: 1, g: 1, b: 1, a: 0.5}
     blendMode: 0
     autoRotate: 0
     flareType: 1
-    modulateByLightColor: 1
+    modulateByLightColor: 0
     isFoldOpened: 0
     distribution: 0
     lengthSpread: 1
@@ -1562,10 +1562,10 @@ MonoBehaviour:
       m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    m_IntensityVariation: 0
-    positionVariation: {x: 0, y: 0}
-    scaleVariation: 0
-    rotationVariation: 0
+    m_IntensityVariation: 0.75
+    positionVariation: {x: 1, y: 0}
+    scaleVariation: 1
+    rotationVariation: 180
     enableRadialDistortion: 0
     targetSizeDistortion: {x: 1, y: 1}
     distortionCurve:
@@ -1593,8 +1593,8 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     distortionRelativeToCenter: 0
-    m_FallOff: 0.702
-    m_EdgeOffset: 1
+    m_FallOff: 1
+    m_EdgeOffset: 0.1
     m_SideCount: 6
     m_SdfRoundness: 0
     inverseSDF: 0
