@@ -298,8 +298,8 @@ MonoBehaviour:
   maxIntensity: 10
   minFlickerDelay: 0.02
   maxFlickerDelay: 0.19
-  minThunderPause: 0.32
-  maxThunderPause: 0.99
+  minThunderPause: 3
+  maxThunderPause: 8
 --- !u!108 &94569702 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 9203907179793585638, guid: 8caca8a5b8fc29241857185d3e2fbaa6, type: 3}
@@ -3379,8 +3379,8 @@ MonoBehaviour:
   maxIntensity: 5
   minFlickerDelay: 0.02
   maxFlickerDelay: 0.19
-  minThunderPause: 0.32
-  maxThunderPause: 0.7
+  minThunderPause: 3
+  maxThunderPause: 8
 --- !u!1 &852944803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5283757129863241143, guid: 641c5764965f85545a315f8b5dbf98e6, type: 3}
@@ -4570,8 +4570,8 @@ MonoBehaviour:
   maxIntensity: 8
   minFlickerDelay: 0.02
   maxFlickerDelay: 0.19
-  minThunderPause: 0.32
-  maxThunderPause: 0.99
+  minThunderPause: 3
+  maxThunderPause: 8
 --- !u!108 &1045260896 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 9203907179793585638, guid: 8caca8a5b8fc29241857185d3e2fbaa6, type: 3}
@@ -10307,6 +10307,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -9.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5332140968676212535, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.046366513
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332140968676212535, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.060537882
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332140968676212535, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalScale.z
+      value: -0.07004289
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332140968676212535, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0155
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332140968676212535, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.0776
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332140968676212535, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5335345254229817362, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_TagString
       value: MetalObj
@@ -10397,7 +10421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7123946948430855166, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45.46
+      value: 45.238
       objectReference: {fileID: 0}
     - target: {fileID: 7123946948430855166, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalRotation.w
