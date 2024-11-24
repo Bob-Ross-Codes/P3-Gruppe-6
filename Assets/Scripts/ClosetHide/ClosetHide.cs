@@ -28,6 +28,7 @@ public class ClosetHide : MonoBehaviour
     public bool isHiding = false;
     public bool canToggleHiding = true; // Flag to control hiding
     private bool hasEnteredClosetOnce = false; // Tracks if the player has entered the closet at least once
+    [SerializeField] private float blinkTimer = 3f;
 
     void Update()
     {
@@ -114,12 +115,12 @@ public class ClosetHide : MonoBehaviour
 
         while (true)
         {
-            if (gaze._blinking && blinkTime <= 5)
+            if (gaze._blinking && blinkTime <= blinkTimer)
             {
                 blinkTime += Time.deltaTime;
-            //    Debug.Log("Countdown started." + blinkTime);
+                Debug.Log("Countdown started." + blinkTime);
             }
-            else if (gaze._blinking && blinkTime >= 5)
+            else if (gaze._blinking && blinkTime >= blinkTimer)
             {
            //     Debug.Log("Monster destroyed. Hiding unlocked.");
                 AkSoundEngine.PostEvent("Stop_Monster_Sounds", monsterPrefab);
