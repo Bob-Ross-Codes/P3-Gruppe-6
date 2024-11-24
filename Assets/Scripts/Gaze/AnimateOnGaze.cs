@@ -7,6 +7,7 @@ public class DestroyOnGaze : GazeActivation
     public override float ActivationTime => 0.2f; // Time required to look at the object before destruction
 
     public Animator targetAnimator; // Reference to the Animator component on another GameObject
+    public Animator targetDoorAnimator; // Reference to the Animator component on another GameObject
 
     public GameObject targetObject; // Object to destroy
 
@@ -16,6 +17,7 @@ public class DestroyOnGaze : GazeActivation
                 {
                     // Trigger the animation
                     targetAnimator.SetTrigger("Hide");
+                    targetDoorAnimator.SetTrigger("DoorOpen");
                     killWoman();
                 }
                 else
