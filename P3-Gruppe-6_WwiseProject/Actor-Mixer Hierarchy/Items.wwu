@@ -182,6 +182,265 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<RandomSequenceContainer Name="CartSFX" ID="{6EBDD892-B558-4F03-8825-B3B95252C773}" ShortID="388356207">
+					<PropertyList>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Metal Door Impact Rattle" ID="{90FAC2A8-EF20-434F-9F38-6DEBFA74F54B}" ShortID="797964156">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Metal Door Impact Rattle" ID="{FA06A142-D2FD-4F53-AF1F-113B0304352D}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.33013527684563"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Metal Door Impact Rattle.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="450189280"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Metal Door Impact Rattle" ID="{FA06A142-D2FD-4F53-AF1F-113B0304352D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Metal Door Impact Rattle_01" ID="{4C499EF7-6660-4B2E-B903-9A9656DF47BF}" ShortID="58394379">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Metal Door Impact Rattle" ID="{2837B950-153D-402B-B59E-C12BFFF8AFDC}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="3.10364897930649"/>
+										<Property Name="TrimEnd" Type="Real64" Value="4.96583836689039"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Metal Door Impact Rattle.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="9317777"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Metal Door Impact Rattle" ID="{2837B950-153D-402B-B59E-C12BFFF8AFDC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Metal Door Impact Rattle_02" ID="{0F97C4D3-81ED-4373-B401-F63A0917E29D}" ShortID="206644411">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Metal Door Impact Rattle" ID="{1D7EF191-5F88-4B8F-83C5-04EB5929218D}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="6.38464932885905"/>
+										<Property Name="TrimEnd" Type="Real64" Value="7.89213597595078"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Metal Door Impact Rattle.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="840080063"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Metal Door Impact Rattle" ID="{1D7EF191-5F88-4B8F-83C5-04EB5929218D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Metal Door Impact Rattle_03" ID="{35AA0CDB-4F11-4C18-B18B-20019AF90C0B}" ShortID="641434017">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Metal Door Impact Rattle" ID="{76DB0DDF-B33A-48C3-A77A-A4487074FC22}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="9.48829830816555"/>
+										<Property Name="TrimEnd" Type="Real64" Value="10.8184335850112"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Metal Door Impact Rattle.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="750065596"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Metal Door Impact Rattle" ID="{76DB0DDF-B33A-48C3-A77A-A4487074FC22}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Metal Door Impact Rattle_04" ID="{215C2E26-6EB6-4739-9BDA-EC92FE2A0D7D}" ShortID="925811862">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Metal Door Impact Rattle" ID="{56FDB282-805D-422F-B1BF-482CB5216A61}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="12.414595917226"/>
+										<Property Name="TrimEnd" Type="Real64" Value="14.1881096196868"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Metal Door Impact Rattle.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="6275261"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Metal Door Impact Rattle" ID="{56FDB282-805D-422F-B1BF-482CB5216A61}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Metal Door Impact Rattle_05" ID="{F3FBE624-6BB1-4D38-AE6F-9F8B8362DDD3}" ShortID="532787355">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Metal Door Impact Rattle" ID="{09215D1D-035A-4377-8EE6-15F62245AB29}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="15.6955962667785"/>
+										<Property Name="TrimEnd" Type="Real64" Value="17.3804342841163"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Metal Door Impact Rattle.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="718711344"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Metal Door Impact Rattle" ID="{09215D1D-035A-4377-8EE6-15F62245AB29}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Metal Door Impact Rattle_06" ID="{868C4E6E-FAC4-4B68-AAC9-7681B8786044}" ShortID="886170070">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Metal Door Impact Rattle" ID="{B98D7DF6-1706-4B2F-B5CC-2FEE3FE4E1BE}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="18.9765966163311"/>
+										<Property Name="TrimEnd" Type="Real64" Value="20.1293805229307"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Metal Door Impact Rattle.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="404617882"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Metal Door Impact Rattle" ID="{B98D7DF6-1706-4B2F-B5CC-2FEE3FE4E1BE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Metal Door Impact Rattle_07" ID="{5627A913-03CF-428D-98B2-14FC65A00F5F}" ShortID="541660300">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Metal Door Impact Rattle" ID="{DAB0F175-E3E1-4B89-A2D7-B5E75564ACAC}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="21.4595157997763"/>
+										<Property Name="TrimEnd" Type="Real64" Value="22.4349483361298"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Metal Door Impact Rattle.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="669849089"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Metal Door Impact Rattle" ID="{DAB0F175-E3E1-4B89-A2D7-B5E75564ACAC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Metal Door Impact Rattle_08" ID="{D0558141-D58D-444F-B7AB-E97EAD072A8D}" ShortID="988163418">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Metal Door Impact Rattle" ID="{FA3510FF-43D0-47DE-BFFB-CCCA7894C76C}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="23.9424349832215"/>
+										<Property Name="TrimEnd" Type="Real64" Value="25.095218889821"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Metal Door Impact Rattle.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="388213813"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Metal Door Impact Rattle" ID="{FA3510FF-43D0-47DE-BFFB-CCCA7894C76C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
