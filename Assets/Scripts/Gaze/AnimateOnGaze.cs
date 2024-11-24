@@ -8,12 +8,15 @@ public class DestroyOnGaze : GazeActivation
 
     public Animator targetAnimator; // Reference to the Animator component on another GameObject
 
+    public GameObject targetObject; // Object to destroy
+
     public override void OnLookedAt()
     {
        if (targetAnimator != null)
                 {
                     // Trigger the animation
                     targetAnimator.SetTrigger("Hide");
+                    targetObject.SetActive(false);
                 }
                 else
                 {
