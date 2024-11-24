@@ -5,7 +5,7 @@ using UnityEngine;
 public class JournalEyeDetector : GazeActivation
 {
     //Eyetracking elements
-    public override float ActivationTime => 2.5f;
+    public override float ActivationTime => 3.5f;
     public GameObject EyeDetector;
     //Flickering lights
     public LightManager lightManager;  // Reference to the LightManager script
@@ -27,7 +27,7 @@ public class JournalEyeDetector : GazeActivation
         // Find blurryText in children
         blurryText = GetComponentInChildren<BlurryText>();
         eyetrackingActivated = false;
-        jumpScareCount = 3;
+        jumpScareCount = 4;
         jumpScare = false;
         rCount = 0;
     }
@@ -100,7 +100,8 @@ public class JournalEyeDetector : GazeActivation
         if (jumpScare && patient != null)
         {
             patient.SetActive(true);
-            float speed = 300f; // Units per second
+            float speed = 30f; // Units per second
+            AkSoundEngine.PostEvent("Play_Cell_Jumpscare", patient);
             patient.transform.localPosition = Vector3.MoveTowards(patient.transform.localPosition, humanPosition2, speed * Time.deltaTime);
         }
     }

@@ -22,6 +22,7 @@ public class TurnWorld : MonoBehaviour
     [SerializeField] private GameObject spawnAgain;
     [SerializeField] private RunHallwayChanger hallwayChanger;
     public FirstPersonController playerController; // Reference to the FirstPersonController scriptCloset
+    public LightManager lightManager;
 
 
     private Quaternion initialRotation = Quaternion.Euler(0f, 0f, 0f);
@@ -87,26 +88,14 @@ void Start()
             hallway.transform.rotation = Quaternion.Lerp(initialRotation, targetRotation, t);
             hallway.transform.localPosition = Vector3.Lerp(initialPosition, targetPosition, t);
 
-            elapsedTime += Time.deltaTime;
             yield return null;
 
-            // Destroy journals and manage flickering lights during the transition
-            if (elapsedTime >= 0.3f && elapsedTime <= 0.5f)
+            lightManager.StartFlicker(4f, 0.6f, false);
+            foreach (var journal in Journals)
             {
-                foreach (var journal in Journals)
-                {
-                    Destroy(journal);
-                }
+                Destroy(journal);
             }
-            if (elapsedTime > 0.2f && elapsedTime <= 0.6f) { SetLightsEnabled(AllLights, false); }
-            else if (elapsedTime > 0.6f && elapsedTime <= 0.8f) { SetLightsEnabled(AllLights, true);}
-            else if (elapsedTime > 0.8f && elapsedTime <= 1.2f) { SetLightsEnabled(AllLights, false); }
-            else if (elapsedTime > 1.2f && elapsedTime <= 1.3f) { SetLightsEnabled(AllLights, true);}
-            else if (elapsedTime > 1.3f && elapsedTime <= 1.6f) { SetLightsEnabled(AllLights, false); }
-            else if (elapsedTime > 1.6f && elapsedTime <= 1.8f) { SetLightsEnabled(AllLights, true);}
-            else if (elapsedTime > 1.8f && elapsedTime <= 3.2f) { SetLightsEnabled(AllLights, false); }
-            else if (elapsedTime > 3.2f && elapsedTime <= 3.4f) { SetLightsEnabled(AllLights, true); }
-            else if (elapsedTime > 3.4f && elapsedTime <= 3.9f) { SetLightsEnabled(AllLights, false); }
+            elapsedTime += Time.deltaTime;
         }
         AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player); 
         AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
@@ -163,8 +152,6 @@ void Start()
         exitSign.SetActive(true);
         //MARIUS: Måske et lille 'tick'
     }
-
-
     private IEnumerator TurnToNormal(float duration)
     {
         Debug.Log("TurningToNormal");
