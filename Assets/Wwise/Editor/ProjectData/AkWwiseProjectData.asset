@@ -503,7 +503,7 @@ MonoBehaviour:
     ParentPath: Events/Enviroment
     guid: dfdd45dc075dd0439b42b35985878514
     GuidInternal: 
-    m_lastTime: -8584693842791504727
+    m_lastTime: -8584691320818638492
     List:
     - name: Door_SFX_Event
       guid: c08fa549c659aa4c9b5e1d1105274359
@@ -573,6 +573,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 18.832373
       minDuration: 4.0793147
+    - name: Play_ClickButton
+      guid: e2b11ea5ef39c544a34130cf6a7e2b05
+      id: 1445251746
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Enviroment
+        ObjectType: 12
+        guid: dfdd45dc075dd0439b42b35985878514
+      - ElementName: Play_ClickButton
+        ObjectType: 3
+        guid: e2b11ea5ef39c544a34130cf6a7e2b05
+      Path: Events/Enviroment/Play_ClickButton
+      maxAttenuation: 0
+      maxDuration: 0.6123602
+      minDuration: 0.6123602
     - name: Play_DoorSlamOpen
       guid: 95aa80f079216d4cb71c8c403848914e
       id: 1188660949
@@ -607,6 +624,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 60
       minDuration: 60
+    - name: Play_Keypad_Correct
+      guid: bca21b9a74a6634e9d9bda924eb83274
+      id: 2660246561
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Enviroment
+        ObjectType: 12
+        guid: dfdd45dc075dd0439b42b35985878514
+      - ElementName: Play_Keypad_Correct
+        ObjectType: 3
+        guid: bca21b9a74a6634e9d9bda924eb83274
+      Path: Events/Enviroment/Play_Keypad_Correct
+      maxAttenuation: 0
+      maxDuration: 3.1910658
+      minDuration: 3.1910658
+    - name: Play_Keypad_Error
+      guid: 8fd69f685136244c8ada16a409f5880e
+      id: 431971085
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Enviroment
+        ObjectType: 12
+        guid: dfdd45dc075dd0439b42b35985878514
+      - ElementName: Play_Keypad_Error
+        ObjectType: 3
+        guid: 8fd69f685136244c8ada16a409f5880e
+      Path: Events/Enviroment/Play_Keypad_Error
+      maxAttenuation: 0
+      maxDuration: 0.5973333
+      minDuration: 0.5973333
     - name: Play_Light_OnOff_Event
       guid: bfb3954fa2234f428039cbc2ae97c4b7
       id: 511968160
@@ -861,7 +912,7 @@ MonoBehaviour:
         guid: ed202411db5a4141bcb0d37d3376673c
       Path: Events/Player/Play_PLYR_Footsteps
       maxAttenuation: 0
-      maxDuration: 2.4746666
+      maxDuration: 1.6
       minDuration: 0.5
     - name: Stop_Monster_Sounds
       guid: c090f4c27c65bc478c279a7db53ec60b

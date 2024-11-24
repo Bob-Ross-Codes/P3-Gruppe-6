@@ -86,105 +86,53 @@ using UnityEngine;
     
 }*/
 
+
 {
-    private List<Material> materials = new List<Material>();
+    private Material material;
     private bool isDissolving = false;
-    private float dissolveValue = -0.5f;
-    public float dissolveSpeed = 0.5f;
+    private float dissolveValue = -300f; // Start at the "intact" value
+    public float dissolveSpeed = 10f;   // Adjust dissolve speed
+    public float maxDissolve = 1f;      // Fully dissolved value
 
     void Start()
     {
-        var renders = GetComponentsInChildren<Renderer>();
-        foreach (var renderer in renders)
+        Renderer renderer = GetComponent<Renderer>();
+        if (renderer != null)
         {
-            materials.AddRange(renderer.materials);
+            material = renderer.material; // Ensure a unique instance of the material
         }
 
-        Debug.Log($"Collected {materials.Count} materials for {gameObject.name}");
-    }
-
-    public void AssignTextures(Texture2D baseMap, Texture2D normalMap)
-{
-    foreach (var material in materials)
-    {
-        if (material.HasProperty("_MainTex")) // Base Map
+        if (material == null)
         {
-            Debug.Log($"Assigning Base Map: {baseMap?.name} to {material.name}");
-            material.SetTexture("_MainTex", baseMap);
-        }
-        else
-        {
-            Debug.LogWarning($"{material.name} does not have a _MainTex property!");
-        }
-
-        if (material.HasProperty("_BumpMap")) // Normal Map
-        {
-            Debug.Log($"Assigning Normal Map: {normalMap?.name} to {material.name}");
-            material.SetTexture("_BumpMap", normalMap);
-        }
-        else
-        {
-            Debug.LogWarning($"{material.name} does not have a _BumpMap property!");
+            Debug.LogError($"No material found on {gameObject.name}!");
         }
     }
-    Debug.Log($"Textures assigned to {gameObject.name}");
-}
-    /*{
-        foreach (var material in materials)
-        {
-            if (material.HasProperty("_BaseMap"))
-            {
-                material.SetTexture("_BaseMap", baseMap);
-            }
-            if (material.HasProperty("_NormalMap"))
-            {
-                material.SetTexture("_NormalMap", normalMap);
-            }
-        }
-        Debug.Log($"Textures assigned to {gameObject.name}");
-    }*/
 
     public void ActivateDissolve()
     {
-        if (!isDissolving)
+        if (!isDissolving && material != null)
         {
             Debug.Log($"Dissolve activated for {gameObject.name}");
-            StartCoroutine(DissolveOnce());
+            StartCoroutine(DissolveCoroutine());
         }
     }
 
-    private IEnumerator DissolveOnce()
+    private IEnumerator DissolveCoroutine()
     {
         isDissolving = true;
 
-        while (dissolveValue < 1.1f)
+        while (dissolveValue <= maxDissolve) // Progress dissolve until fully dissolved
         {
             dissolveValue += Time.deltaTime * dissolveSpeed;
-            SetValue(dissolveValue);
+            material.SetFloat("_Dissolve", dissolveValue); // Update dissolve value
             yield return null;
         }
 
-        SetValue(1.1f);
+        material.SetFloat("_Dissolve", maxDissolve); // Ensure fully dissolved at the end
         Debug.Log($"Dissolve completed for {gameObject.name}");
         isDissolving = false;
     }
-
-    public void SetValue(float value)
-    {
-        foreach (var material in materials)
-        {
-            if (material.HasProperty("_DissolveOffest"))
-            {
-                material.SetVector("_DissolveOffest", new Vector4(0f, value, 0f, 0f));
-            }
-            else
-            {
-                Debug.LogWarning($"Material {material.name} does not have _DissolveOffest property!");
-            }
-        }
-    }
 }
-
 
 
 

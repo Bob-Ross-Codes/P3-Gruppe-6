@@ -68,7 +68,6 @@ namespace DissolveExample
 }*/
 
 
-
 {
     public Texture2D baseMap; // Base Map texture to apply
     public Texture2D normalMap; // Normal Map texture to apply
