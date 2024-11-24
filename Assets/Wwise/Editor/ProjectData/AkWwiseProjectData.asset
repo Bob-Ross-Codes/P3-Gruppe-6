@@ -848,8 +848,25 @@ MonoBehaviour:
     ParentPath: Events\NPC
     guid: 02ecd6ad61d6b64281cc12bfd98682a1
     GuidInternal: 
-    m_lastTime: -8584691216283735909
+    m_lastTime: -8584691190434272553
     List:
+    - name: Play_Monster_Chase
+      guid: a80186606b1c824aa66a0c89822e8caf
+      id: 563051919
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: NPC
+        ObjectType: 12
+        guid: 02ecd6ad61d6b64281cc12bfd98682a1
+      - ElementName: Play_Monster_Chase
+        ObjectType: 3
+        guid: a80186606b1c824aa66a0c89822e8caf
+      Path: Events\NPC\Play_Monster_Chase
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Monster_Sounds
       guid: 1e5c3acaa4928a4d9f5d71fbea2648a6
       id: 324561159

@@ -58,6 +58,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Monster_Chase" ID="{608601A8-1C6B-4A82-A66A-0C89822E8CAF}">
+					<ChildrenList>
+						<Action Name="" ID="{B91C2FD1-3EE4-4BCE-8AB0-BC7A7ABCE50A}" ShortID="301366049">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_theMaw_running" ID="{AD5DA3F9-0B3F-40AB-A3CF-FF98B3668D6F}" WorkUnitID="{BBDCF3BA-B56E-4C38-A149-E1049ADD6DCD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

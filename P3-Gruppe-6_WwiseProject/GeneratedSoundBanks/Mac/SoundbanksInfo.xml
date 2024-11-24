@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{CC46661B-F779-C358-DCBD-F29C0FA6646C}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{011DE0CB-C185-7FAD-6C0F-CA549C389A78}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -63,7 +63,7 @@
 				</File>
 				<File Id="300613286" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Button Click Sound Effect.wav</ShortName>
-					<CachePath>SFX/Button Click Sound Effect_E9CB954B.wem</CachePath>
+					<CachePath>SFX/Button Click Sound Effect_A5BEF21E.wem</CachePath>
 				</File>
 				<File Id="328603660" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Bedroom Door_1.wav</ShortName>
@@ -279,7 +279,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="1445251746" Name="Play_ClickButton" DurationType="OneShot" DurationMin="0.6123602" DurationMax="0.6123602">
+				<Event Id="1445251746" Name="Play_ClickButton" DurationType="OneShot" DurationMin="0.5032669" DurationMax="0.5032669">
 					<MediaRefs>
 						<MediaRef Id="300613286"/>
 					</MediaRefs>
@@ -936,7 +936,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{DC4F50A2-D010-B15E-E0B4-8EDFE9BF8442}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{81EC0E35-9EC3-E2CA-20D9-47C97460E402}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -1120,25 +1120,17 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2376328173" Type="User" Language="SFX" Hash="{C5DDA55B-60E5-48A8-B65D-B6CECD2A02FD}">
+		<SoundBank Id="2376328173" Type="User" Language="SFX" Hash="{ECB9F43A-4F42-D1EE-A488-C8958F747552}">
 			<ShortName>Monster</ShortName>
 			<Path>Monster.bnk</Path>
 			<Media>
-				<File Id="80601441" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>ES_Monster Vocal, Screams 03 - Epidemic Sound.wav</ShortName>
-					<CachePath>SFX/ES_Monster Vocal, Screams 03 - Epidemic Sound_818F3B66.wem</CachePath>
-				</File>
-				<File Id="227180245" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Monster Demo Dallas.wav</ShortName>
-					<CachePath>SFX/Monster Demo Dallas_FBC78EF0.wem</CachePath>
-				</File>
 				<File Id="241509505" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_theMaw_screech.wav</ShortName>
 					<CachePath>SFX/sfx_theMaw_screech_E0D1BF34.wem</CachePath>
 				</File>
-				<File Id="423317710" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound.wav</ShortName>
-					<CachePath>SFX/ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound_818F3B66.wem</CachePath>
+				<File Id="268532535" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ES_Reaction, Male, Perspective Whispering - Epidemic Sound.wav</ShortName>
+					<CachePath>SFX/ES_Reaction, Male, Perspective Whispering - Epidemic Sound_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="444902598" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>fast-heartbeat-1-hour.wav</ShortName>
@@ -1152,22 +1144,39 @@
 					<ShortName>Breathy Rhythmic Tonal Growl 03.wav</ShortName>
 					<CachePath>SFX/Breathy Rhythmic Tonal Growl 03_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="656644254" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_theMaw_walkingScreech.wav</ShortName>
+					<CachePath>SFX/sfx_theMaw_walkingScreech_088CF021.wem</CachePath>
+				</File>
+				<File Id="836245360" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_theMaw_running.wav</ShortName>
+					<CachePath>SFX/sfx_theMaw_running_4C63198F.wem</CachePath>
+				</File>
 			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="819943492" Name="Fear_no_Evil" LibName="Wwise Harmonizer" LibId="9043971"/>
+					<Plugin Id="4202347640" Name="Repeat_after_me" LibName="Wwise Harmonizer" LibId="9043971"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
-				<Event Id="324561159" Name="Play_Monster_Sounds" MaxAttenuation="10" DurationType="Infinite">
+				<Event Id="563051919" Name="Play_Monster_Chase" MaxAttenuation="20" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="836245360"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="324561159" Name="Play_Monster_Sounds" MaxAttenuation="20" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="687366024" Id="2362879642" Default="true"/>
 							<MediaRefs>
-								<MediaRef Id="227180245"/>
 								<MediaRef Id="595643602"/>
+								<MediaRef Id="656644254"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="687366024" Id="155822580"/>
 							<MediaRefs>
-								<MediaRef Id="80601441"/>
-								<MediaRef Id="423317710"/>
 								<MediaRef Id="444902598"/>
 								<MediaRef Id="469435164"/>
 							</MediaRefs>
@@ -1180,7 +1189,19 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="1781039267" Name="Play_Whispers" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="268532535"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="819943492"/>
+							<PluginRef Id="4202347640"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
 				<Event Id="2630587137" Name="Stop_Monster_Sounds" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1761541297" Name="Stop_Whispers" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="293784726" Name="RTPC_MonsterState"/>
@@ -1197,5 +1218,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{538E0042-DB3B-9E6F-B0B3-40AA288E323D}</FileHash>
+	<FileHash>{1252DCC0-B2F2-6A92-3301-EE21DED83A97}</FileHash>
 </SoundBanksInfo>

@@ -25,6 +25,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Death_Jumpscare" ID="{263F9FED-5F3D-439D-AACF-E908543FE28A}">
+					<ChildrenList>
+						<Action Name="" ID="{EF172D6B-B47E-4A9A-989B-6319B376B7EE}" ShortID="596673982">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Death_Jumpscare" ID="{B78064C7-4A20-45F0-ADCB-3B90F60B95E2}" WorkUnitID="{BBDCF3BA-B56E-4C38-A149-E1049ADD6DCD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

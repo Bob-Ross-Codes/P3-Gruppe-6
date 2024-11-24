@@ -14,6 +14,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
     private bool isMoving = true;        // Flag to control the movement
     [SerializeField] int finalHallwayCount = 20;
     public JumpscareManager jumpscareManager;
+    public GameObject Player;
 
     [SerializeField] private float rotationSpeed = 5f; // New variable to control rotation speed
 
@@ -24,8 +25,9 @@ public class MonsterChaseMvmnt : MonoBehaviour
         {
             Debug.LogError("Please assign exactly 4 BoxColliders.");
         }
-        AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, gameObject);
-        AkSoundEngine.PostEvent("Play_Monster_Sounds", gameObject);
+        AkSoundEngine.PostEvent("Play_Monster_Chase", gameObject);
+        AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 1, Player);
+        AkSoundEngine.PostEvent("Play_Monster_Sounds", Player);
     }
 
     void Update()
@@ -50,7 +52,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
         {
             // Player is close enough, triggering death or something else
             
-            AkSoundEngine.PostEvent("Play_player_Hurt", gameObject);
+            AkSoundEngine.PostEvent("Play_DeathJumpscare", Player);
             jumpscareManager.TriggerJumpscare();
             Destroy(gameObject);
 

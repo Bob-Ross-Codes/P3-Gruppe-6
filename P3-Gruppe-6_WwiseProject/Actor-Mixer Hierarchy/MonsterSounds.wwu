@@ -45,9 +45,14 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="Monster Demo Dallas" ID="{94C357B1-895C-44A4-8BFA-254206C1462D}" ShortID="143113380">
+								<Sound Name="sfx_theMaw_walkingScreech" ID="{22C7AEB0-7277-4A92-B2C1-205293E4D729}" ShortID="78721276">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -58,16 +63,21 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Monster Demo Dallas" ID="{17E66C99-DD5F-454E-A3F1-77FA9D30454E}">
+										<AudioFileSource Name="sfx_theMaw_walkingScreech" ID="{31A5D6DA-A210-45F7-A92A-04F4303714F9}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.34030344202898"/>
+												<Property Name="TrimEnd" Type="Real64" Value="23.8937432065217"/>
+											</PropertyList>
 											<Language>SFX</Language>
-											<AudioFile>Monster Demo Dallas.wav</AudioFile>
+											<AudioFile>sfx_theMaw_walkingScreech.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="227180245"/>
+												<MediaID ID="656644254"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="Monster Demo Dallas" ID="{17E66C99-DD5F-454E-A3F1-77FA9D30454E}" Platform="Linked"/>
+										<ActiveSource Name="sfx_theMaw_walkingScreech" ID="{31A5D6DA-A210-45F7-A92A-04F4303714F9}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -87,7 +97,7 @@
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-11</Value>
+												<Value>-36</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -114,7 +124,7 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
-						<BlendContainer Name="MonsterChasing" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}" ShortID="1018558968">
+						<BlendContainer Name="MonsterChase" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}" ShortID="1018558968">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 							</PropertyList>
@@ -166,6 +176,11 @@
 								<Sound Name="Chase (Loop ved 1 3A36)" ID="{FED1F15D-E085-4722-99BE-3C522A68010D}" ShortID="681668276">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -195,96 +210,19 @@
 										<ActiveSource Name="Chase (Loop ved 1 3A36)" ID="{26948A44-B636-4E4B-9B9F-69223BE1FE0C}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<RandomSequenceContainer Name="MonsterScreams" ID="{C3CCCB5F-0D14-43A3-BDFB-B412B258ED23}" ShortID="577488690">
-									<PropertyList>
-										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
-										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
-										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound" ID="{0BFC9F58-3AC8-4A5C-8D84-E54ABC0662BA}" ShortID="134384884">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="InitialDelay" Type="Real64">
-													<ValueList>
-														<Value>4</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="att_Generic_10m" ID="{F8F8E3F7-3660-43BA-ABAE-F4304371F83E}" WorkUnitID="{1F542FE1-08B3-4235-A78D-0E1B87E0581B}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound" ID="{D3650716-EEE0-440C-A091-8993367E827B}">
-													<PropertyList>
-														<Property Name="LoopBegin" Type="Real64" Value="0"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="423317710"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="ES_Jump Scares, Scream, Distortion, Horror 01 - Epidemic Sound" ID="{D3650716-EEE0-440C-A091-8993367E827B}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="ES_Monster Vocal, Screams 03 - Epidemic Sound" ID="{7CD98CD1-B130-4713-8712-660B2C7C1D79}" ShortID="694352344">
-											<PropertyList>
-												<Property Name="InitialDelay" Type="Real64">
-													<ValueList>
-														<Value>4</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="ES_Monster Vocal, Screams 03 - Epidemic Sound" ID="{503713E1-61CC-4696-910E-E74849D167B1}">
-													<Language>SFX</Language>
-													<AudioFile>ES_Monster Vocal, Screams 03 - Epidemic Sound.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="80601441"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="ES_Monster Vocal, Screams 03 - Epidemic Sound" ID="{503713E1-61CC-4696-910E-E74849D167B1}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
-								</RandomSequenceContainer>
 							</ChildrenList>
 							<BlendTrackList>
 								<BlendTrack Name="New Blend Track" ID="{2AC864CA-71AC-487E-963B-8D1173F3D3A8}" ShortID="994622412"/>
 							</BlendTrackList>
 						</BlendContainer>
 						<Sound Name="sfx_theMaw_screech" ID="{41D58DB5-E773-47E8-9CF5-C6EE37913D4E}" ShortID="358667244">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
@@ -312,6 +250,79 @@
 								<ActiveSource Name="sfx_theMaw_screech" ID="{5B80CD58-CFF7-4F97-BBA9-0CD861CFAB55}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="sfx_theMaw_running" ID="{AD5DA3F9-0B3F-40AB-A3CF-FF98B3668D6F}" ShortID="787541531">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="att_Generic_20" ID="{8EBCF89B-3991-4F5E-8C69-D242F657128C}" WorkUnitID="{1F542FE1-08B3-4235-A78D-0E1B87E0581B}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_theMaw_running" ID="{A27EBE38-FF7B-4D31-820D-1E06FF8D7DD4}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0569611922554348"/>
+										<Property Name="TrimEnd" Type="Real64" Value="8.30494183084239"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_theMaw_running.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="836245360"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_theMaw_running" ID="{A27EBE38-FF7B-4D31-820D-1E06FF8D7DD4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Death_Jumpscare" ID="{B78064C7-4A20-45F0-ADCB-3B90F60B95E2}" ShortID="628617473">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_theMaw_screech" ID="{6949CAEB-F0A7-4C2C-AB5B-9E6D2FF4A72A}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.722826086956522"/>
+										<Property Name="LoopBegin" Type="Real64" Value="3.25271739130435"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sfx_theMaw_screech.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="908554931"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_theMaw_screech" ID="{6949CAEB-F0A7-4C2C-AB5B-9E6D2FF4A72A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<GroupingInfo>
 						<GroupingBehaviorList>
@@ -319,13 +330,19 @@
 								<ItemRef Name="MonsterWalkingSweetener" ID="{4E8BCE01-68DB-4767-8E85-4BE35069DACC}"/>
 							</GroupingBehavior>
 							<GroupingBehavior>
-								<ItemRef Name="MonsterChasing" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}"/>
+								<ItemRef Name="MonsterChase" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}"/>
 							</GroupingBehavior>
 							<GroupingBehavior>
 								<ItemRef Name="MonsterWalking" ID="{75EB2059-44C4-4B4D-9C47-702CC111C258}"/>
 							</GroupingBehavior>
 							<GroupingBehavior>
 								<ItemRef Name="sfx_theMaw_screech" ID="{41D58DB5-E773-47E8-9CF5-C6EE37913D4E}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Death_Jumpscare" ID="{B78064C7-4A20-45F0-ADCB-3B90F60B95E2}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_theMaw_running" ID="{AD5DA3F9-0B3F-40AB-A3CF-FF98B3668D6F}"/>
 							</GroupingBehavior>
 						</GroupingBehaviorList>
 						<GroupingList>
@@ -339,7 +356,7 @@
 							<Grouping>
 								<SwitchRef Name="MonsterChasing" ID="{CF442881-A432-4F4B-9424-C13FBD0CD797}"/>
 								<ItemList>
-									<ItemRef Name="MonsterChasing" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}"/>
+									<ItemRef Name="MonsterChase" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}"/>
 								</ItemList>
 							</Grouping>
 							<Grouping>
