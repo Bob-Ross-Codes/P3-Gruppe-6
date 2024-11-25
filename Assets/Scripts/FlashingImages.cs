@@ -66,10 +66,12 @@ public class FlashingImages : MonoBehaviour
     private IEnumerator FlashImages()
     {
         flashing = true;
-        // Start wishper man.
-        AkSoundEngine.PostEvent("Play_Whispers", player);
+       
 
         yield return new WaitForSeconds(waitTime); // Hvis du vil have flashing timet til at starte efter et bestemt tidspunkt, spaghetti kode
+                                                   // Start wishper man.
+        AkSoundEngine.PostEvent("Play_Whispers", player);
+
         canvasImage.enabled = true;
         int currentLoop = 0;
 
