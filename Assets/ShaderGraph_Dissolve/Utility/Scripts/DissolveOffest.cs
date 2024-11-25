@@ -86,51 +86,91 @@ using UnityEngine;
     
 }*/
 
-
 {
+    [Header("Dissolve Settings")]
+    [SerializeField] private float defaultDissolveValue = -300f; // Default dissolve state for this hallway
+    [SerializeField] private float goalDissolveValue = 300f;    // Target dissolve state
+    [SerializeField] private float dissolveSpeed = 10f;         // Speed of dissolve
+
     private Material material;
-    private bool isDissolving = false;
-    private float dissolveValue = -300f; // Start at the "intact" value
-    public float dissolveSpeed = 10f;   // Adjust dissolve speed
-    public float maxDissolve = 300f;      // Fully dissolved value
+    private bool isDissolving = false; // Flag to track if dissolve is active
+    private float currentDissolveValue; // Tracks the current dissolve value
 
     void Start()
     {
+        // Get the material and initialize dissolve value
         Renderer renderer = GetComponent<Renderer>();
         if (renderer != null)
         {
-            material = renderer.material; // Ensure a unique instance of the material
+            material = renderer.material; // Ensure unique instance of material
         }
 
         if (material == null)
         {
             Debug.LogError($"No material found on {gameObject.name}!");
+            return;
         }
+
+        // Initialize the dissolve value to the default state
+        currentDissolveValue = defaultDissolveValue;
+        material.SetFloat("_Dissolve", currentDissolveValue);
     }
 
+    /// <summary>
+    /// Activates the dissolve effect, moving towards the specified goal.
+    /// </summary>
     public void ActivateDissolve()
     {
         if (!isDissolving && material != null)
         {
             Debug.Log($"Dissolve activated for {gameObject.name}");
-            StartCoroutine(DissolveCoroutine());
+            StartCoroutine(DissolveCoroutine(goalDissolveValue));
         }
     }
 
-    private IEnumerator DissolveCoroutine()
+    /// <summary>
+    /// Activates the dissolve effect, specifying a custom goal dissolve value.
+    /// </summary>
+    /// <param name="targetDissolveValue">The desired end dissolve value.</param>
+    public void ActivateDissolve(float targetDissolveValue)
+    {
+        if (!isDissolving && material != null)
+        {
+            Debug.Log($"Dissolve activated for {gameObject.name} towards goal: {targetDissolveValue}");
+            StartCoroutine(DissolveCoroutine(targetDissolveValue));
+        }
+    }
+
+    /// <summary>
+    /// Coroutine to handle the dissolve effect.
+    /// </summary>
+    /// <param name="targetValue">The target dissolve value to reach.</param>
+    private IEnumerator DissolveCoroutine(float targetValue)
     {
         isDissolving = true;
 
-        while (dissolveValue <= maxDissolve) // Progress dissolve until fully dissolved
+        while (!Mathf.Approximately(currentDissolveValue, targetValue))
         {
-            dissolveValue += Time.deltaTime * dissolveSpeed;
-            material.SetFloat("_Dissolve", dissolveValue); // Update dissolve value
+            // Lerp towards the target dissolve value
+            currentDissolveValue = Mathf.MoveTowards(currentDissolveValue, targetValue, Time.deltaTime * dissolveSpeed);
+            material.SetFloat("_Dissolve", currentDissolveValue);
             yield return null;
         }
 
-        material.SetFloat("_Dissolve", maxDissolve); // Ensure fully dissolved at the end
-        Debug.Log($"Dissolve completed for {gameObject.name}");
+        Debug.Log($"Dissolve completed for {gameObject.name}, reached: {currentDissolveValue}");
         isDissolving = false;
+    }
+
+    /// <summary>
+    /// Resets the dissolve effect to the default state.
+    /// </summary>
+    public void ResetDissolve()
+    {
+        if (!isDissolving && material != null)
+        {
+            Debug.Log($"Dissolve reset for {gameObject.name}");
+            StartCoroutine(DissolveCoroutine(defaultDissolveValue));
+        }
     }
 }
 
