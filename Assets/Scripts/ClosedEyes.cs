@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClosedEyes : MonoBehaviour
 {
 
-    public Gaze gaze;
+    [SerializeField] private Gaze gaze;
     [SerializeField] private float blinkOffSet;
     private float blinkTime;
     
