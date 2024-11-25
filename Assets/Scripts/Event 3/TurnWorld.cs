@@ -71,18 +71,17 @@ public class TurnWorld : MonoBehaviour
 
         if (redLightsOn && !playingMonsterSound)
         {
-            if (distanceToPlayer > 5f && distanceToPlayer < 15f)
+            if (distanceToPlayer > 5f && distanceToPlayer < 10f)
             {
                 AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, MonsterSound);
                 AkSoundEngine.PostEvent("Play_Monster_Sounds", MonsterSound);
                 playingMonsterSound = true;
             }
-            else if (distanceToPlayer > 15)
+            else if (distanceToPlayer > 10f)
             {
-                AkSoundEngine.PostEvent("Stor_Monster_Sounds", MonsterSound);
+                AkSoundEngine.PostEvent("Stop_Monster_Sounds", MonsterSound);
                 playingMonsterSound = false;
             }
-
         }
 
         float distanceToPlayer2 = Vector3.Distance(player.position, trigger2.position);
@@ -146,6 +145,8 @@ public class TurnWorld : MonoBehaviour
         handLight.SetActive(false);
 
         redLightsOn = true;
+
+        SetLightsEnabled(AllLights, false);
     }
 
     private IEnumerator TurnRedLights()
