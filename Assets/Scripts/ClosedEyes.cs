@@ -9,14 +9,15 @@ public class ClosedEyes : MonoBehaviour
     [SerializeField] private float blinkOffSet;
     private float blinkTime;
 
-   private void FixedUpdate()
+   private void Update()
     {
+        //Debug.Log(" is brother blinking "+ gaze._blinking);
         if (Input.GetKeyDown(KeyCode.B) || gaze._blinking)
         {
             blinkTime += Time.deltaTime;
             if (blinkTime >= blinkOffSet)
                 AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
-            // Debug.Log("BlinkingSound");
+          //   Debug.Log("BlinkingSound");
 
         }
         else AkSoundEngine.PostEvent("Stop_Eyes_Closed", gameObject); blinkTime = 0;
