@@ -20,15 +20,10 @@ public class FlashingImages : MonoBehaviour
     private bool playerInTrigger = false;
     public bool flashing; //Jeg bruger den ikke endnu. Ville gerne, men kan ikke f� til at fungere endnu
 
-    void Start()
+
+    private void Start()
     {
-        // Start by disabling the canvas image
         canvasImage.enabled = false;
-        // Ensure the canvasImage and images array are set
-        if (canvasImage == null || images.Length == 0)
-        {
-            Debug.LogError("Canvas Image or Images array not set.");
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,14 +44,14 @@ public class FlashingImages : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-             startSoundEvent.Stop(gameObject);
+            
             playerInTrigger = false;
             if (flashCoroutine != null)
             {
-                StopCoroutine(flashCoroutine);
+             
                 flashCoroutine = null;
                 // Disable the canvas image
-                canvasImage.enabled = false;
+
             }
         }
     }

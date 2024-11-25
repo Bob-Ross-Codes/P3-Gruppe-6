@@ -390,14 +390,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534089760f1979942b1b20807550636a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightsToFlicker:
-  - {fileID: 4349910314090361899}
-  - {fileID: 3277843825241688763}
-  - {fileID: 7554566033272321969}
-  - {fileID: 0}
   player: {fileID: 0}
   door: {fileID: 4169565936790610645}
   patient: {fileID: 7097613148299748601}
+  lightManager: {fileID: 0}
+  journalEyeDetector: {fileID: 0}
 --- !u!114 &8643743279128076253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,6 +412,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   player: {fileID: 0}
   interactionRange: 5
+  capsule: {fileID: 0}
 --- !u!65 &2297384901652111304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1760,7 +1758,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   journalEyeDetector: {fileID: 888514592678763083}
+  lightManager: {fileID: 0}
   targetGameObject: {fileID: 2698422152982737303}
+  patient: {fileID: 0}
 --- !u!1 &498902194221521182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,6 +2464,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   player: {fileID: 0}
   interactionRange: 4
+  capsule: {fileID: 0}
 --- !u!65 &6813987044406691264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3251,20 +3252,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EyeDetector: {fileID: 937544302998684249}
-  lightsToFlicker:
-  - {fileID: 4349910314090361899}
-  - {fileID: 3277843825241688763}
-  - {fileID: 7554566033272321969}
-  - {fileID: 1443572768305430964}
-  flickerDuration: 4
-  darkInterval: 0
-  lightInterval: 0
-  flickerCount: 1
-  flickering: 0
-  countForJumpscare: 4
-  jumpScare: 0
+  lightManager: {fileID: 0}
+  staticLights: []
   patient: {fileID: 7097613148299748601}
   blurryText: {fileID: 5983160534349868849}
+  lookAtCount: 0
+  jumpScareCount: 0
+  jumpScare: 0
 --- !u!1 &966815016574618297
 GameObject:
   m_ObjectHideFlags: 0
@@ -14571,6 +14565,7 @@ MonoBehaviour:
   - {fileID: 4697710477394126596}
   - {fileID: 7723847445262930581}
   - {fileID: 3834745187585115543}
+  Player: {fileID: 0}
   player: {fileID: 0}
   trigger: {fileID: 6818219099118805813}
   trigger2: {fileID: 7413471017112383660}
@@ -14579,9 +14574,10 @@ MonoBehaviour:
   exitSign: {fileID: 2559568316358840756}
   exitSign2: {fileID: 2101592896770591543}
   spawnAgain: {fileID: 5583277285797888980}
-  monster: {fileID: 0}
   hallwayChanger: {fileID: 6620988944393998660}
   playerController: {fileID: 0}
+  lightManager: {fileID: 0}
+  MonsterSound: {fileID: 0}
 --- !u!1 &6173638444668622539
 GameObject:
   m_ObjectHideFlags: 0
@@ -17104,6 +17100,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   player: {fileID: 0}
   interactionRange: 4
+  capsule: {fileID: 0}
 --- !u!65 &6191818755829974259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18475,6 +18472,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   player: {fileID: 0}
   interactionRange: 5
+  capsule: {fileID: 0}
 --- !u!65 &3429517163514506214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21542,6 +21540,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 828808184711096088, guid: da3832c88b4f1fb49bced3e3fef47e41, type: 3}
+      propertyPath: canvasImage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1621156655111808269, guid: da3832c88b4f1fb49bced3e3fef47e41, type: 3}
       propertyPath: m_LocalPosition.z
       value: 3.3
@@ -21627,7 +21629,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4822936574775547477, guid: da3832c88b4f1fb49bced3e3fef47e41, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3832c88b4f1fb49bced3e3fef47e41, type: 3}
