@@ -899,8 +899,25 @@ MonoBehaviour:
     ParentPath: Events\NPC
     guid: 02ecd6ad61d6b64281cc12bfd98682a1
     GuidInternal: 
-    m_lastTime: -8584691171917809629
+    m_lastTime: -8584691111232572179
     List:
+    - name: Play_Cell_Jumpscare
+      guid: e762fddd3a778e4cac7231da9db09b75
+      id: 1165312063
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: NPC
+        ObjectType: 12
+        guid: 02ecd6ad61d6b64281cc12bfd98682a1
+      - ElementName: Play_Cell_Jumpscare
+        ObjectType: 3
+        guid: e762fddd3a778e4cac7231da9db09b75
+      Path: Events\NPC\Play_Cell_Jumpscare
+      maxAttenuation: 10
+      maxDuration: 4.255
+      minDuration: 4.255
     - name: Play_Monster_Chase
       guid: a80186606b1c824aa66a0c89822e8caf
       id: 563051919
