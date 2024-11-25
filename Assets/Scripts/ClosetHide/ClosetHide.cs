@@ -10,6 +10,7 @@ public class ClosetHide : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera mainCamera;
     [SerializeField] private CinemachineVirtualCamera closetCamera;
     public FirstPersonController playerController; // Reference to the FirstPersonController script
+    public LightManager lightManager;
     public GameObject objectToDisableHallwayOne; // Reference to the GameObject to disable when hiding
     //public GameObject objectToEnableHallwayOne;
     public Transform roomDoor;
@@ -21,6 +22,7 @@ public class ClosetHide : MonoBehaviour
     public Transform player; // Reference to the player's transform
     public float interactionRange = 2.0f; // Set the interaction range
     public MonsterSequenceController sequenceController; // Reference to the MonsterSequenceController script
+    public GameObject RoomLight;
 
     [SerializeField] private Gaze gaze;
 
@@ -56,7 +58,11 @@ public class ClosetHide : MonoBehaviour
                 canToggleHiding = true;
             
         }
-        
+
+        if (isHiding && !lightManager.flickeringOn)
+            Destroy(RoomLight);
+
+
         //////////////////////////////////////////// CONSOLE DEBUGGING
     }
 
@@ -66,6 +72,8 @@ public class ClosetHide : MonoBehaviour
 
         if (isHiding)
         {
+            lightManager.StartFlicker(2f, 0.8f, false);
+
             // Switch to ClosetCamera, disable player movement, and open the doors
             mainCamera.Priority = 0;
             closetCamera.Priority = 10;
