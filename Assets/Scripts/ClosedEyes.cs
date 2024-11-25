@@ -17,21 +17,20 @@ public class ClosedEyes : MonoBehaviour
         {
             if (blinking == false)
             {
-                blinking = true;
-
                 blinkTime += Time.deltaTime;
                 if (blinkTime >= blinkOffSet)
+                {
+                    blinking = true;
                     AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
+                }
                 //   Debug.Log("BlinkingSound");
-
             }
-
-            else
-            {
-                AkSoundEngine.PostEvent("Stop_Eyes_Closed", gameObject);
-                blinkTime = 0;
-                blinking = false;
-            }
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Stop_Eyes_Closed", gameObject);
+            blinkTime = 0;
+            blinking = false;
         }
     }
 }
