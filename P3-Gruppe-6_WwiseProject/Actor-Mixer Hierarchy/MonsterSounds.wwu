@@ -33,10 +33,14 @@
 					<ChildrenList>
 						<RandomSequenceContainer Name="MonsterWalking" ID="{75EB2059-44C4-4B4D-9C47-702CC111C258}" ShortID="540273443">
 							<PropertyList>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="att_Generic_10m" ID="{F8F8E3F7-3660-43BA-ABAE-F4304371F83E}" WorkUnitID="{1F542FE1-08B3-4235-A78D-0E1B87E0581B}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
 								</Reference>
@@ -293,7 +297,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>6</Value>
+										<Value>12</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -309,8 +313,8 @@
 								<AudioFileSource Name="sfx_theMaw_screech" ID="{6949CAEB-F0A7-4C2C-AB5B-9E6D2FF4A72A}">
 									<PropertyList>
 										<Property Name="FadeOutDuration" Type="Real64" Value="0.722826086956522"/>
-										<Property Name="LoopBegin" Type="Real64" Value="3.25271739130435"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.570652173913044"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>sfx_theMaw_screech.wav</AudioFile>
@@ -323,11 +327,43 @@
 								<ActiveSource Name="sfx_theMaw_screech" ID="{6949CAEB-F0A7-4C2C-AB5B-9E6D2FF4A72A}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Jumpscare Sound Effects" ID="{49252D34-720E-4DE1-BC26-BD1D8336FE16}" ShortID="728303400">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Jumpscare Sound Effects" ID="{90E3D1D2-5BC4-4CD8-AA7E-19CA7A63D534}">
+									<Language>SFX</Language>
+									<AudioFile>Jumpscare Sound Effects.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="39380538"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Jumpscare Sound Effects" ID="{90E3D1D2-5BC4-4CD8-AA7E-19CA7A63D534}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<GroupingInfo>
 						<GroupingBehaviorList>
 							<GroupingBehavior>
 								<ItemRef Name="MonsterWalkingSweetener" ID="{4E8BCE01-68DB-4767-8E85-4BE35069DACC}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Jumpscare Sound Effects" ID="{49252D34-720E-4DE1-BC26-BD1D8336FE16}"/>
 							</GroupingBehavior>
 							<GroupingBehavior>
 								<ItemRef Name="MonsterChase" ID="{AD6C603D-A214-4B5F-8B95-11ED109ED2FE}"/>

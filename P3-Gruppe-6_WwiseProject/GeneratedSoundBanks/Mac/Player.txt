@@ -1,12 +1,17 @@
 Event	ID	Name			Wwise Object Path	Notes
 	673033979	Play_PLYR_Footsteps			\Player\Play_PLYR_Footsteps	
 	887999531	Play_Player_Hurt			\Player\Play_Player_Hurt	
+	3258971333	Play_Death_Jumpscare			\Player\Play_Death_Jumpscare	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
+	687366024	MonsterState			\Default Work Unit\MonsterState	
 	1044534455	GroundMaterialSwitch			\Default Work Unit\GroundMaterialSwitch	
 	3968804893	GroundWetnessSwitch			\Default Work Unit\GroundWetnessSwitch	
 
 Switch	ID	Name	Switch Group			Notes
+	155822580	MonsterChasing	MonsterState			
+	2362879642	MonsterWalking	MonsterState			
+	3520998787	Jumpscare	MonsterState			
 	2058049674	Wood	GroundMaterialSwitch			
 	2637588553	Tile	GroundMaterialSwitch			
 	630539344	Dry	GroundWetnessSwitch			
@@ -15,6 +20,7 @@ Switch	ID	Name	Switch Group			Notes
 	1905651656	Soaked	GroundWetnessSwitch			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	293784726	RTPC_MonsterState			\Default Work Unit\RTPC_MonsterState	
 	870672907	RTPC_GroundWetness			\Default Work Unit\RTPC_GroundWetness	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
@@ -69,6 +75,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	830929974	Player_Footstel_Tile_Damp_12	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Player_Footstel_Tile_Damp (12)_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Damp\Player_Footstel_Tile_Damp_12		303456
 	855700326	Player_Footstep_Tile_Dry (2)	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Player_Footstep_Tile_Dry (2)_00225573.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Dry\Player_Footstep_Tile_Dry (2)		96096
 	895441352	Player_Footstep_Tile_Dry (20)	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Player_Footstep_Tile_Dry (20)_00225573.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Dry\Player_Footstep_Tile_Dry (20)		96096
+	908554931	Death_Jumpscare	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\sfx_theMaw_screech_E5455621.wem		\Actor-Mixer Hierarchy\MonsterSounds\MonsterSounds\Death_Jumpscare		2578532
 	920286750	Player_Footstel_Tile_Damp_2	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Player_Footstel_Tile_Damp (2)_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Damp\Player_Footstel_Tile_Damp_2		299616
 	969195855	Footstep_Walking_Wood_03	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Footstep_Walking_Wood_03_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Wood_WetnessSwitch\Dry_Sweetener\Footstep_Walking_Wood_03		88296
 	995827658	Player_Footstel_Tile_Damp_19	E:\Github\P3-Gruppe-6\P3-Gruppe-6_WwiseProject\.cache\Mac\SFX\Player_Footstel_Tile_Damp (19)_818F3B66.wem		\Actor-Mixer Hierarchy\PlayerFootsteps\PLYR_Footsteps_MaterialSwitch\Tile_WetnessSwitch\Damp\Player_Footstel_Tile_Damp_19		301536

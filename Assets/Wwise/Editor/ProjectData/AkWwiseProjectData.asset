@@ -490,8 +490,25 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: ece3f43672e3594588fdf363796094af
     GuidInternal: 
-    m_lastTime: -8584701078109177943
-    List: []
+    m_lastTime: -8584691133922735429
+    List:
+    - name: Post_Event_Play_Cart_Impact
+      guid: 345500f825bf2c4c962140d09e22ebd0
+      id: 2327413173
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ece3f43672e3594588fdf363796094af
+      - ElementName: Post_Event_Play_Cart_Impact
+        ObjectType: 3
+        guid: 345500f825bf2c4c962140d09e22ebd0
+      Path: Events\Default Work Unit\Post_Event_Play_Cart_Impact
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Enviroment.wwu
     PathAndIcons:
     - ElementName: Events
@@ -503,7 +520,7 @@ MonoBehaviour:
     ParentPath: Events\Enviroment
     guid: dfdd45dc075dd0439b42b35985878514
     GuidInternal: 
-    m_lastTime: -8584691204065815153
+    m_lastTime: -8584691133922730421
     List:
     - name: Door_SFX_Event
       guid: c08fa549c659aa4c9b5e1d1105274359
@@ -573,6 +590,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 18.832373
       minDuration: 4.0793147
+    - name: Play_Cart_Impact
+      guid: 6b628831ae32ee438622ec0b4fa8b33c
+      id: 3777065537
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Enviroment
+        ObjectType: 12
+        guid: dfdd45dc075dd0439b42b35985878514
+      - ElementName: Play_Cart_Impact
+        ObjectType: 3
+        guid: 6b628831ae32ee438622ec0b4fa8b33c
+      Path: Events\Enviroment\Play_Cart_Impact
+      maxAttenuation: 0
+      maxDuration: 1.8621894
+      minDuration: 0.9754325
     - name: Play_ClickButton
       guid: e2b11ea5ef39c544a34130cf6a7e2b05
       id: 1445251746
@@ -588,8 +622,8 @@ MonoBehaviour:
         guid: e2b11ea5ef39c544a34130cf6a7e2b05
       Path: Events\Enviroment\Play_ClickButton
       maxAttenuation: 0
-      maxDuration: 0.6123602
-      minDuration: 0.6123602
+      maxDuration: 0.5032669
+      minDuration: 0.5032669
     - name: Play_DoorSlamOpen
       guid: 95aa80f079216d4cb71c8c403848914e
       id: 1188660949
@@ -726,6 +760,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Stop_Cart_Impact
+      guid: 65cd3e45f1ce6f48abccfec0a267cb3e
+      id: 2136054971
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Enviroment
+        ObjectType: 12
+        guid: dfdd45dc075dd0439b42b35985878514
+      - ElementName: Stop_Cart_Impact
+        ObjectType: 3
+        guid: 65cd3e45f1ce6f48abccfec0a267cb3e
+      Path: Events\Enviroment\Stop_Cart_Impact
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Stop_Eyes_Closed
       guid: c128c359bf368b408c62de669ee77319
       id: 2196500881
@@ -848,7 +899,7 @@ MonoBehaviour:
     ParentPath: Events\NPC
     guid: 02ecd6ad61d6b64281cc12bfd98682a1
     GuidInternal: 
-    m_lastTime: -8584691190434272553
+    m_lastTime: -8584691171917809629
     List:
     - name: Play_Monster_Chase
       guid: a80186606b1c824aa66a0c89822e8caf
@@ -864,7 +915,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: a80186606b1c824aa66a0c89822e8caf
       Path: Events\NPC\Play_Monster_Chase
-      maxAttenuation: 0
+      maxAttenuation: 20
       maxDuration: -1
       minDuration: -1
     - name: Play_Monster_Sounds
@@ -881,7 +932,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 1e5c3acaa4928a4d9f5d71fbea2648a6
       Path: Events\NPC\Play_Monster_Sounds
-      maxAttenuation: 10
+      maxAttenuation: 20
       maxDuration: -1
       minDuration: -1
     - name: Play_Whispers
@@ -933,8 +984,8 @@ MonoBehaviour:
         guid: 48b70def97efa3468bc858ac26d8dcb4
       Path: Events\NPC\Stop_Whispers
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
   - PhysicalPath: Events\Player.wwu
     PathAndIcons:
     - ElementName: Events
@@ -946,8 +997,25 @@ MonoBehaviour:
     ParentPath: Events\Player
     guid: 2b7de7ded8cfaf4f903d6114676b19ae
     GuidInternal: 
-    m_lastTime: -8584691276329272392
+    m_lastTime: -8584691171917799512
     List:
+    - name: Play_Death_Jumpscare
+      guid: ed9f3f263d5f9d43aacfe908543fe28a
+      id: 3258971333
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Player
+        ObjectType: 12
+        guid: 2b7de7ded8cfaf4f903d6114676b19ae
+      - ElementName: Play_Death_Jumpscare
+        ObjectType: 3
+        guid: ed9f3f263d5f9d43aacfe908543fe28a
+      Path: Events\Player\Play_Death_Jumpscare
+      maxAttenuation: 10
+      maxDuration: 13.429348
+      minDuration: 13.429348
     - name: Play_Player_Hurt
       guid: f0019191ee36dd4a932fe971b9be54ea
       id: 887999531
@@ -2017,8 +2085,8 @@ MonoBehaviour:
     m_lastTime: -8584701078037760893
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
-  AutoSyncSelection: 0
+  ExpandedWaapiItemIds: 0600000009000000
+  AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0
   CurrentPluginConfig: 

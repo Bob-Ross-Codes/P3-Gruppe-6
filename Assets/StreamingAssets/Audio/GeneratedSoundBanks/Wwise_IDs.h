@@ -17,7 +17,10 @@ namespace AK
         static const AkUniqueID ENTER_REVERB_ZONE = 3483129277U;
         static const AkUniqueID FLASHLIGHT_ONOFF_EVENT = 1510976581U;
         static const AkUniqueID HORROR_AMBIENCE = 967859696U;
+        static const AkUniqueID PLAY_CART_IMPACT = 3777065537U;
+        static const AkUniqueID PLAY_CELL_JUMPSCARE = 1165312063U;
         static const AkUniqueID PLAY_CLICKBUTTON = 1445251746U;
+        static const AkUniqueID PLAY_DEATH_JUMPSCARE = 3258971333U;
         static const AkUniqueID PLAY_DOORSLAMOPEN = 1188660949U;
         static const AkUniqueID PLAY_ENDINGMUSIC = 1755859644U;
         static const AkUniqueID PLAY_EYES_CLOSED = 3074142683U;
@@ -33,6 +36,7 @@ namespace AK
         static const AkUniqueID PLAY_WHISPERS = 1781039267U;
         static const AkUniqueID PLAY_WOMANAMBIENCE = 2870446976U;
         static const AkUniqueID STARTKNOCKINGEVENT = 152670193U;
+        static const AkUniqueID STOP_CART_IMPACT = 2136054971U;
         static const AkUniqueID STOP_EYES_CLOSED = 2196500881U;
         static const AkUniqueID STOP_KNOCKING_EVENT = 1856817241U;
         static const AkUniqueID STOP_LIGHT_ONOFF_EVENT = 2797432074U;

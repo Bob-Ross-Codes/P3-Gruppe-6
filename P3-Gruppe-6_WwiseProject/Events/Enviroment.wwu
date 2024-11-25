@@ -356,6 +356,31 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Cart_Impact" ID="{3188626B-32AE-43EE-8622-EC0B4FA8B33C}">
+					<ChildrenList>
+						<Action Name="" ID="{1C86DF73-C054-4A4C-9E10-16D2851F79C9}" ShortID="47562208">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CartSFX" ID="{6EBDD892-B558-4F03-8825-B3B95252C773}" WorkUnitID="{D14CE5F9-2FB5-4968-82BD-DE7C89FA95F4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Cart_Impact" ID="{453ECD65-CEF1-486F-ABCC-FEC0A267CB3E}">
+					<ChildrenList>
+						<Action Name="" ID="{A59DC4A1-D33F-4F51-AE3B-3832470E4D0B}" ShortID="635032279">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CartSFX" ID="{6EBDD892-B558-4F03-8825-B3B95252C773}" WorkUnitID="{D14CE5F9-2FB5-4968-82BD-DE7C89FA95F4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

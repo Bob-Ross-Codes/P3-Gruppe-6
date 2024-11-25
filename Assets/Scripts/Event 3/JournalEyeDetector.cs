@@ -21,6 +21,7 @@ public class JournalEyeDetector : GazeActivation
     public bool jumpScare;
     private bool eyetrackingActivated;
     private int rCount;
+    private bool jumpScareTriggered;
 
     void Start()
     {
@@ -103,7 +104,12 @@ public class JournalEyeDetector : GazeActivation
         {
             patient.SetActive(true);
             float speed = 30f; // Units per second
-            AkSoundEngine.PostEvent("Play_Cell_Jumpscare", patient);
+
+            if (jumpScareTriggered == false)
+            {
+                AkSoundEngine.PostEvent("Play_Cell_Jumpscare", patient);
+                jumpScareTriggered = true;
+            }
             patient.transform.localPosition = Vector3.MoveTowards(patient.transform.localPosition, humanPosition2, speed * Time.deltaTime);
         }
     }

@@ -34,7 +34,9 @@ public class TurnWorld : MonoBehaviour
     private bool triggeredToNormal; // Flag for TurnToNormal coroutine
     private bool handLightDead = false;
     private bool redLightsOn;
+    private bool runningOnce = false;
     float initialPlayerSpeed;
+    public GameObject MonsterSound;
 
 void Start()
 {
@@ -83,7 +85,6 @@ void Start()
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration; // Normalized time (0 to 1)
-            bool runningOnce = false;
 
             // Smoothly interpolate the rotation and position
             hallway.transform.rotation = Quaternion.Lerp(initialRotation, targetRotation, t);
@@ -98,7 +99,7 @@ void Start()
                 Destroy(journal);
             }
             elapsedTime += Time.deltaTime;
-            runningOnce
+            runningOnce = true;
         }
         SetLightsEnabled(AllLights, false);
         AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player); 
@@ -133,7 +134,9 @@ void Start()
         yield return new WaitForSeconds(1f);
         handLightDead = true;
 
-        //MARIUS: Kan vi starte en masse stemmer her. Vi Slukker dem senere
+        //MARIUS: MONSTERLYDE
+        // AkSoundEngine.PostEvent("Play_Monster_Sounds", MonsterSound);
+        // AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, MonsterSound);
 
         // Assuming RedLights is a list or array of Light components
         for (int i = 0; i < RedLights.Length; i += 2) {

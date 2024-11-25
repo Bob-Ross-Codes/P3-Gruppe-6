@@ -52,7 +52,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
         {
             // Player is close enough, triggering death or something else
             
-            AkSoundEngine.PostEvent("Play_DeathJumpscare", Player);
+            AkSoundEngine.PostEvent("Play_Death_Jumpscare", Player);
             jumpscareManager.TriggerJumpscare();
             Destroy(gameObject);
 

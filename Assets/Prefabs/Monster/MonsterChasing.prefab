@@ -1549,7 +1549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7082617770900531748
 Transform:
   m_ObjectHideFlags: 0
@@ -1589,6 +1589,8 @@ MonoBehaviour:
   _moveSpeed: 10
   monsterMaxSpeed: 15
   finalHallwayCount: 20
+  jumpscareManager: {fileID: 0}
+  Player: {fileID: 0}
   rotationSpeed: 5
 --- !u!95 &4257189534412758773
 Animator:

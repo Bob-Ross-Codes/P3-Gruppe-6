@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{36F4E3EC-E372-4559-88FD-F363796094AF}" SchemaVersion="119">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{36F4E3EC-E372-4559-88FD-F363796094AF}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{36F4E3EC-E372-4559-88FD-F363796094AF}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Post_Event_Play_Cart_Impact" ID="{F8005534-BF25-4C2C-9621-40D09E22EBD0}">
+					<ChildrenList>
+						<Action Name="" ID="{F35F1CFF-1250-4144-9ACD-3EEA44D741AE}" ShortID="415566499">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Play_Cart_Impact" ID="{3188626B-32AE-43EE-8622-EC0B4FA8B33C}" WorkUnitID="{DC45DDDF-5D07-43D0-9B42-B35985878514}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

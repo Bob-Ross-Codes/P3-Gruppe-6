@@ -99,6 +99,13 @@
 				<Folder Name="Keypad_SFX" ID="{44E57084-3998-4443-8BCC-66379681A441}" ShortID="165206978">
 					<ChildrenList>
 						<Sound Name="Button_Click_SFX" ID="{69C42DF6-22BA-4EE7-BE6C-C9A663589BE7}" ShortID="316767550">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-11</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
@@ -126,6 +133,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Keypad_Error_SFX" ID="{FE036E1F-0539-432C-9060-111992559789}" ShortID="469055804">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
@@ -151,7 +165,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-10</Value>
+										<Value>-9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -184,8 +198,12 @@
 				</Folder>
 				<RandomSequenceContainer Name="CartSFX" ID="{6EBDD892-B558-4F03-8825-B3B95252C773}" ShortID="388356207">
 					<PropertyList>
-						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">

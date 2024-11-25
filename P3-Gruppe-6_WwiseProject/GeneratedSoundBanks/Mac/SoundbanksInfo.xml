@@ -9,13 +9,21 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{011DE0CB-C185-7FAD-6C0F-CA549C389A78}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{6572C967-E4C3-B977-311D-2DC7650FDDFD}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
 				<File Id="2028515" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS_Rain On Surfaces_2.wav</ShortName>
 					<CachePath>SFX/KS_Rain On Surfaces_2_0D5EE4C7.wem</CachePath>
+				</File>
+				<File Id="6275261" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Door Impact Rattle.wav</ShortName>
+					<CachePath>SFX/Metal Door Impact Rattle_E255D981.wem</CachePath>
+				</File>
+				<File Id="9317777" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Door Impact Rattle.wav</ShortName>
+					<CachePath>SFX/Metal Door Impact Rattle_92FAB653.wem</CachePath>
 				</File>
 				<File Id="13641386" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Female Scream Intense 03.wav</ShortName>
@@ -73,6 +81,10 @@
 					<ShortName>KS__4.wav</ShortName>
 					<CachePath>SFX/KS__4_818F3B66.wem</CachePath>
 				</File>
+				<File Id="388213813" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Door Impact Rattle.wav</ShortName>
+					<CachePath>SFX/Metal Door Impact Rattle_98E3060B.wem</CachePath>
+				</File>
 				<File Id="390649072" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ES_70's, Kick Out - Epidemic Sound.wav</ShortName>
 					<CachePath>SFX/ES_70's, Kick Out - Epidemic Sound_818F3B66.wem</CachePath>
@@ -85,6 +97,10 @@
 					<ShortName>Thunder Clap Sound Effect.wav</ShortName>
 					<CachePath>SFX/Thunder Clap Sound Effect_818F3B66.wem</CachePath>
 				</File>
+				<File Id="404617882" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Door Impact Rattle.wav</ShortName>
+					<CachePath>SFX/Metal Door Impact Rattle_4BC03989.wem</CachePath>
+				</File>
 				<File Id="442763405" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Keypad Error Sound Effect.wav</ShortName>
 					<CachePath>SFX/Keypad Error Sound Effect_818F3B66.wem</CachePath>
@@ -92,6 +108,10 @@
 				<File Id="446409488" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ES_Clicky, 45 BPM - Epidemic Sound.wav</ShortName>
 					<CachePath>SFX/ES_Clicky, 45 BPM - Epidemic Sound_818F3B66.wem</CachePath>
+				</File>
+				<File Id="450189280" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Door Impact Rattle.wav</ShortName>
+					<CachePath>SFX/Metal Door Impact Rattle_53322EB0.wem</CachePath>
 				</File>
 				<File Id="454425690" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Knock on wood.wav</ShortName>
@@ -145,9 +165,21 @@
 					<ShortName>Horror Sound Effects - Resonating Wires (1).wav</ShortName>
 					<CachePath>SFX/Horror Sound Effects - Resonating Wires (1)_38E6A96D.wem</CachePath>
 				</File>
+				<File Id="669849089" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Door Impact Rattle.wav</ShortName>
+					<CachePath>SFX/Metal Door Impact Rattle_05D36572.wem</CachePath>
+				</File>
 				<File Id="702419230" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Flickering Sound Effect.wav</ShortName>
 					<CachePath>SFX/Flickering Sound Effect_A2010E43.wem</CachePath>
+				</File>
+				<File Id="718711344" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Door Impact Rattle.wav</ShortName>
+					<CachePath>SFX/Metal Door Impact Rattle_825B855E.wem</CachePath>
+				</File>
+				<File Id="750065596" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Door Impact Rattle.wav</ShortName>
+					<CachePath>SFX/Metal Door Impact Rattle_E1859428.wem</CachePath>
 				</File>
 				<File Id="754791402" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>KS__5.wav</ShortName>
@@ -176,6 +208,10 @@
 				<File Id="819551825" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Large Switch Sound Effect.wav</ShortName>
 					<CachePath>SFX/Large Switch Sound Effect_818F3B66.wem</CachePath>
+				</File>
+				<File Id="840080063" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Door Impact Rattle.wav</ShortName>
+					<CachePath>SFX/Metal Door Impact Rattle_A8013AC3.wem</CachePath>
 				</File>
 				<File Id="860442225" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EndingVideo.wav</ShortName>
@@ -216,6 +252,7 @@
 				</Custom>
 				<ShareSets>
 					<Plugin Id="1008402193" Name="Low_Pass_20KHz" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="1159390747" Name="Room_Medium_Tiled" LibName="Wwise RoomVerb" LibId="7733251"/>
 					<Plugin Id="1514749290" Name="LowPassHeartBeat" LibName="Wwise Parametric EQ" LibId="6881283"/>
 					<Plugin Id="1990128658" Name="Room_Medium" LibName="Wwise RoomVerb" LibId="7733251"/>
 					<Plugin Id="2995775460" Name="Room_Small" LibName="Wwise RoomVerb" LibId="7733251"/>
@@ -278,6 +315,19 @@
 							<PluginRef Id="1990128658"/>
 						</ShareSets>
 					</PluginRefs>
+				</Event>
+				<Event Id="3777065537" Name="Play_Cart_Impact" DurationType="OneShot" DurationMin="0.9754325" DurationMax="1.8621894">
+					<MediaRefs>
+						<MediaRef Id="6275261"/>
+						<MediaRef Id="9317777"/>
+						<MediaRef Id="388213813"/>
+						<MediaRef Id="404617882"/>
+						<MediaRef Id="450189280"/>
+						<MediaRef Id="669849089"/>
+						<MediaRef Id="718711344"/>
+						<MediaRef Id="750065596"/>
+						<MediaRef Id="840080063"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="1445251746" Name="Play_ClickButton" DurationType="OneShot" DurationMin="0.5032669" DurationMax="0.5032669">
 					<MediaRefs>
@@ -346,6 +396,11 @@
 							<MediaRefs>
 								<MediaRef Id="625393619"/>
 							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="1159390747"/>
+								</ShareSets>
+							</PluginRefs>
 						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="1504742439" Id="930712164"/>
@@ -406,6 +461,7 @@
 						<MediaRef Id="889004069"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2136054971" Name="Stop_Cart_Impact" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2196500881" Name="Stop_Eyes_Closed" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1856817241" Name="Stop_Knocking_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2797432074" Name="Stop_Light_OnOff_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -448,7 +504,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{54450635-EA22-141B-6596-5FE3B2B7F75E}">
+		<SoundBank Id="1069431850" Type="User" Language="SFX" Hash="{FB7F2137-8C14-B560-4DF6-E7600E74A601}">
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<Media>
@@ -656,6 +712,10 @@
 					<ShortName>Player_Footstep_Tile_Dry (20).wav</ShortName>
 					<CachePath>SFX/Player_Footstep_Tile_Dry (20)_00225573.wem</CachePath>
 				</File>
+				<File Id="908554931" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_theMaw_screech.wav</ShortName>
+					<CachePath>SFX/sfx_theMaw_screech_E5455621.wem</CachePath>
+				</File>
 				<File Id="920286750" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Player_Footstel_Tile_Damp (2).wav</ShortName>
 					<CachePath>SFX/Player_Footstel_Tile_Damp (2)_818F3B66.wem</CachePath>
@@ -698,6 +758,11 @@
 				</File>
 			</Media>
 			<Events>
+				<Event Id="3258971333" Name="Play_Death_Jumpscare" MaxAttenuation="10" DurationType="OneShot" DurationMin="13.429348" DurationMax="13.429348">
+					<MediaRefs>
+						<MediaRef Id="908554931"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="887999531" Name="Play_Player_Hurt" DurationType="OneShot" DurationMin="0.496" DurationMax="0.496">
 					<MediaRefs>
 						<MediaRef Id="640223223"/>
@@ -916,9 +981,18 @@
 				</Event>
 			</Events>
 			<GameParameters>
+				<GameParameter Id="293784726" Name="RTPC_MonsterState"/>
 				<GameParameter Id="870672907" Name="RTPC_GroundWetness"/>
 			</GameParameters>
 			<SwitchGroups>
+				<SwitchGroup Id="687366024" Name="MonsterState">
+					<GameParameterRef Id="293784726"/>
+					<Switches>
+						<Switch Id="155822580" Name="MonsterChasing"/>
+						<Switch Id="2362879642" Name="MonsterWalking"/>
+						<Switch Id="3520998787" Name="Jumpscare"/>
+					</Switches>
+				</SwitchGroup>
 				<SwitchGroup Id="1044534455" Name="GroundMaterialSwitch">
 					<Switches>
 						<Switch Id="2058049674" Name="Wood"/>
@@ -1120,10 +1194,14 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2376328173" Type="User" Language="SFX" Hash="{ECB9F43A-4F42-D1EE-A488-C8958F747552}">
+		<SoundBank Id="2376328173" Type="User" Language="SFX" Hash="{A6878C46-7E48-E792-0784-FD245A0773EE}">
 			<ShortName>Monster</ShortName>
 			<Path>Monster.bnk</Path>
 			<Media>
+				<File Id="39380538" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Jumpscare Sound Effects.wav</ShortName>
+					<CachePath>SFX/Jumpscare Sound Effects_818F3B66.wem</CachePath>
+				</File>
 				<File Id="241509505" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_theMaw_screech.wav</ShortName>
 					<CachePath>SFX/sfx_theMaw_screech_E0D1BF34.wem</CachePath>
@@ -1160,6 +1238,11 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
+				<Event Id="1165312063" Name="Play_Cell_Jumpscare" MaxAttenuation="10" DurationType="OneShot" DurationMin="4.255" DurationMax="4.255">
+					<MediaRefs>
+						<MediaRef Id="39380538"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="563051919" Name="Play_Monster_Chase" MaxAttenuation="20" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="836245360"/>
@@ -1218,5 +1301,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1252DCC0-B2F2-6A92-3301-EE21DED83A97}</FileHash>
+	<FileHash>{534377DB-DB83-268B-AB3B-301F4421D668}</FileHash>
 </SoundBanksInfo>
