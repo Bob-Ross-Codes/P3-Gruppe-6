@@ -6,27 +6,21 @@ public class ClosedEyes : MonoBehaviour
 {
 
     public Gaze gaze;
+    [SerializeField] private float blinkOffSet;
+    private float blinkTime;
 
-    // M�ske vi skal s�tte det her script p� playeren s�ledes det altid er til stede?
-    private bool isBlinking = false;
-
-    void Update()
+   private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) || gaze._blinking)
         {
-           // Debug.Log("BlinkingSound");
-            AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
-        }
-        else if (Input.GetKeyDown(KeyCode.N))
-        {
-            AkSoundEngine.PostEvent("Stop_Eyes_Closed", gameObject);
-        }
+            blinkTime += Time.deltaTime;
+            if (blinkTime >= blinkOffSet)
+                AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
+            // Debug.Log("BlinkingSound");
 
-        if (gaze._blinking && !isBlinking)
-        {
-            // Marius g�r din ting!
-            AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
-            isBlinking = true;
         }
+        else AkSoundEngine.PostEvent("Stop_Eyes_Closed", gameObject); blinkTime = 0;
+
+
     }
 }
