@@ -92,7 +92,7 @@ using UnityEngine;
     private bool isDissolving = false;
     private float dissolveValue = -300f; // Start at the "intact" value
     public float dissolveSpeed = 10f;   // Adjust dissolve speed
-    public float maxDissolve = 1f;      // Fully dissolved value
+    public float maxDissolve = 300f;      // Fully dissolved value
 
     void Start()
     {
@@ -133,6 +133,4 @@ using UnityEngine;
         isDissolving = false;
     }
 }
-
-
 
