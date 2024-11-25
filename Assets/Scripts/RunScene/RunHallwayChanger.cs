@@ -72,9 +72,10 @@ public class RunHallwayChanger : MonoBehaviour
             if (blinkTime > 3f && triggerCounter > 1) // Check both conditions
             {
                 Debug.Log("Blinking time: " + blinkingTime);
+
+
                 // trigger end game and win
-
-
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
             }
         }
        
