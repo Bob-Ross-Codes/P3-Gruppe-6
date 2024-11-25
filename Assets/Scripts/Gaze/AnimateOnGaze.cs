@@ -9,26 +9,21 @@ public class DestroyOnGaze : GazeActivation
     public Animator targetAnimator; // Reference to the Animator component on another GameObject
     public Animator targetDoorAnimator; // Reference to the Animator component on another GameObject
 
-    public GameObject targetObject; // Object to destroy
+
 
     public override void OnLookedAt()
     {
-       if (targetAnimator != null)
-                {
-                    // Trigger the animation
-                    targetAnimator.SetTrigger("Hide");
-                    targetDoorAnimator.SetTrigger("DoorOpen");
-                    killWoman();
-                }
-                else
-                {
-                    Debug.LogError("Target Animator is not assigned!");
-                }
-    
-    }
-    private IEnumerator killWoman()
-    {
-        yield return new WaitForSeconds(1f);Destroy(targetObject);
+        if (targetAnimator != null && targetDoorAnimator != null)
+        {
+            // Trigger both animations
+            targetAnimator.SetTrigger("Hide");
+            targetDoorAnimator.SetTrigger("DoorOpen");
+          
+        }
+        else
+        {
+            Debug.LogError("Target Animator or Target Door Animator is not assigned!");
+        }
     }
 
 }
