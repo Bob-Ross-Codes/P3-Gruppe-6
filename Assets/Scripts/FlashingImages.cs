@@ -49,7 +49,7 @@ public class FlashingImages : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            startSoundEvent.Stop(gameObject);
+             startSoundEvent.Stop(gameObject);
             playerInTrigger = false;
             if (flashCoroutine != null)
             {
