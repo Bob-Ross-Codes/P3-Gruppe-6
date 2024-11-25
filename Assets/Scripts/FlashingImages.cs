@@ -14,11 +14,11 @@ public class FlashingImages : MonoBehaviour
     [SerializeField] private float waitTime;
 
     [SerializeField] private GameObject player;
-
+    [SerializeField] private AK.Wwise.Event startSoundEvent;
 
     private Coroutine flashCoroutine;
     private bool playerInTrigger = false;
-    public bool flashing;                       //Jeg bruger den ikke endnu. Ville gerne, men kan ikke få til at fungere endnu
+    public bool flashing; //Jeg bruger den ikke endnu. Ville gerne, men kan ikke fï¿½ til at fungere endnu
 
     void Start()
     {
@@ -35,12 +35,10 @@ public class FlashingImages : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-          //  Debug.Log("BLINKING ACTIVATED");
             playerInTrigger = true;
             if (flashCoroutine == null)
             {
                 // Enable the canvas image
-              
                 // Start the coroutine
                 flashCoroutine = StartCoroutine(FlashImages());
             }
@@ -51,7 +49,6 @@ public class FlashingImages : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-           // Debug.Log("BLINKING DEACTIVATED");
             playerInTrigger = false;
             if (flashCoroutine != null)
             {
@@ -66,11 +63,10 @@ public class FlashingImages : MonoBehaviour
     private IEnumerator FlashImages()
     {
         flashing = true;
-       
 
         yield return new WaitForSeconds(waitTime); // Hvis du vil have flashing timet til at starte efter et bestemt tidspunkt, spaghetti kode
                                                    // Start wishper man.
-        AkSoundEngine.PostEvent("Play_Whispers", player);
+        startSoundEvent.Post(gameObject);
 
         canvasImage.enabled = true;
         int currentLoop = 0;
@@ -79,7 +75,6 @@ public class FlashingImages : MonoBehaviour
         {
             // Set the current image
             canvasImage.sprite = images[currentImage];
-        //    Debug.Log($"Displaying image {currentImage}");
             // Move to the next image
             currentImage = (currentImage + 1) % images.Length;
             // Show the image for one frame
@@ -101,7 +96,7 @@ public class FlashingImages : MonoBehaviour
         flashCoroutine = null;
 
         // Slut whisper man.
-        AkSoundEngine.PostEvent("Stop_Whispers", player);
+        startSoundEvent.Stop(gameObject);
 
         // Disable the GameObject after flashing
         gameObject.SetActive(false);

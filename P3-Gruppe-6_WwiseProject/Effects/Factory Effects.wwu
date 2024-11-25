@@ -132,7 +132,7 @@
 						<Effect Name="One_Tap_Half_Second" ID="{B8FE0D3B-7AAB-4344-89FE-177602B7BF19}" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3"/>
 						<Effect Name="One_Tap_Quarter_Second" ID="{6BD2D67D-601A-45A6-AD4C-2C089078EBED}" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
 							<PropertyList>
-								<Property Name="DelayTime" Type="Real32" Value="0.25"/>
+								<Property Name="DelayTime" Type="Real32" Value="0.1"/>
 							</PropertyList>
 						</Effect>
 						<Effect Name="Nearly_Forever" ID="{38550FDA-9236-4FC5-8AE0-68DB08164B25}" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
@@ -1687,10 +1687,10 @@
 					<ChildrenList>
 						<Effect Name="Fear_no_Evil" ID="{A1F17D99-0801-4F32-B74E-ADB2D9ACC556}" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
 							<PropertyList>
-								<Property Name="DryLevel" Type="Real32" Value="-8"/>
-								<Property Name="Voice1Gain" Type="Real32" Value="-6"/>
-								<Property Name="Voice1Pitch" Type="Real32" Value="300"/>
+								<Property Name="DryLevel" Type="Real32" Value="-3"/>
+								<Property Name="Voice1Pitch" Type="Real32" Value="-300"/>
 								<Property Name="Voice2Enable" Type="bool" Value="True"/>
+								<Property Name="Voice2Pitch" Type="Real32" Value="-300"/>
 								<Property Name="WetLevel" Type="Real32" Value="4"/>
 								<Property Name="WindowSize" Type="int32" Value="1792"/>
 							</PropertyList>
@@ -1724,11 +1724,11 @@
 								<Property Name="DryLevel" Type="Real32" Value="-4"/>
 								<Property Name="Voice1FilterFrequency" Type="Real32" Value="620"/>
 								<Property Name="Voice1FilterType" Type="int32" Value="4"/>
-								<Property Name="Voice1Pitch" Type="Real32" Value="100"/>
+								<Property Name="Voice1Pitch" Type="Real32" Value="-900"/>
 								<Property Name="Voice2Enable" Type="bool" Value="True"/>
 								<Property Name="Voice2FilterFrequency" Type="Real32" Value="361"/>
 								<Property Name="Voice2FilterType" Type="int32" Value="4"/>
-								<Property Name="Voice2Pitch" Type="Real32" Value="-100"/>
+								<Property Name="Voice2Pitch" Type="Real32" Value="-900"/>
 								<Property Name="WetLevel" Type="Real32" Value="-1"/>
 								<Property Name="WindowSize" Type="int32" Value="4096"/>
 							</PropertyList>
