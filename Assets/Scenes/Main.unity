@@ -1095,6 +1095,11 @@ Light:
   m_CorrespondingSourceObject: {fileID: 2289681395573985042, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
   m_PrefabInstance: {fileID: 8222160126292069965}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &327191616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1134614583682938174, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+  m_PrefabInstance: {fileID: 8222160126292069965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &329946585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1215,6 +1220,11 @@ Transform:
 --- !u!108 &333555159 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 8257668626272489217, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+  m_PrefabInstance: {fileID: 8222160126292069965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &340684933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5479434889423360726, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
   m_PrefabInstance: {fileID: 8222160126292069965}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &344840610
@@ -5135,6 +5145,11 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!1 &1169457515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5688160880871807608, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+  m_PrefabInstance: {fileID: 8222160126292069965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1172997975
 GameObject:
   m_ObjectHideFlags: 3
@@ -7453,6 +7468,11 @@ Transform:
   - {fileID: 910203057}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1637265822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8724599882937133113, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+  m_PrefabInstance: {fileID: 8222160126292069965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1638311773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 613dbfebf2b11444fa1bced6751f6cbb, type: 3}
@@ -8599,7 +8619,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a43bc5b211ea1b43a2e4243f73075ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetBoxes: []
+  targetBoxes:
+  - {fileID: 1169457515}
+  - {fileID: 340684933}
+  - {fileID: 1637265822}
+  - {fileID: 327191616}
   player: {fileID: 875882299}
   monster: {fileID: 508790212}
   _moveSpeed: 20
