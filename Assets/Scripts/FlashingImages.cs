@@ -13,6 +13,9 @@ public class FlashingImages : MonoBehaviour
     [SerializeField] private int blinks; // Number of times to loop
     [SerializeField] private float waitTime;
 
+    [SerializeField] private GameObject player;
+
+
     private Coroutine flashCoroutine;
     private bool playerInTrigger = false;
     public bool flashing;                       //Jeg bruger den ikke endnu. Ville gerne, men kan ikke få til at fungere endnu
@@ -63,6 +66,9 @@ public class FlashingImages : MonoBehaviour
     private IEnumerator FlashImages()
     {
         flashing = true;
+        // Start wishper man.
+        AkSoundEngine.PostEvent("Play_Whispers", player);
+
         yield return new WaitForSeconds(waitTime); // Hvis du vil have flashing timet til at starte efter et bestemt tidspunkt, spaghetti kode
         canvasImage.enabled = true;
         int currentLoop = 0;
@@ -91,6 +97,9 @@ public class FlashingImages : MonoBehaviour
         canvasImage.enabled = false;
         flashing = false;
         flashCoroutine = null;
+
+        // Slut whisper man.
+        AkSoundEngine.PostEvent("Stop_Whispers", player);
 
         // Disable the GameObject after flashing
         gameObject.SetActive(false);
