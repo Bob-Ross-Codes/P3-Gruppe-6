@@ -69,7 +69,7 @@ public class JournalEyeDetector : GazeActivation
         if (Input.GetKeyDown(KeyCode.R))
             rCount++;
 
-        if (rCount == 3 && !jumpScare && eyetrackingActivated)
+        if (rCount > 2 && !jumpScare && eyetrackingActivated)
         {
             StartCoroutine(destroyPatient());
             jumpScare = true;

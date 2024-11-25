@@ -23,6 +23,7 @@ public class TurnWorld : MonoBehaviour
     [SerializeField] private RunHallwayChanger hallwayChanger;
     public FirstPersonController playerController; // Reference to the FirstPersonController scriptCloset
     public LightManager lightManager;
+    bool playingMonsterSound;
 
 
     private Quaternion initialRotation = Quaternion.Euler(0f, 0f, 0f);
@@ -38,26 +39,26 @@ public class TurnWorld : MonoBehaviour
     float initialPlayerSpeed;
     public GameObject MonsterSound;
 
-void Start()
-{
-    initialPlayerSpeed = playerController.MoveSpeed;
-    triggeredToNormal = false;
-    hallway.transform.localRotation = initialRotation;
-    exitSign.SetActive(false);
-    exitSign2.SetActive(false);
-    SetLightsEnabled(RedLights, false);
-    SetLightsEnabled(AllLights, true);
+    void Start()
+    {
+        initialPlayerSpeed = playerController.MoveSpeed;
+        triggeredToNormal = false;
+        hallway.transform.localRotation = initialRotation;
+        exitSign.SetActive(false);
+        exitSign2.SetActive(false);
+        SetLightsEnabled(RedLights, false);
+        playingMonsterSound = false;
+
 
         // Set the class-level initialPosition and targetPosition (not local variables)
-    initialPosition = hallway.transform.localPosition; // Store initial position
-    targetPosition = initialPosition + new Vector3(0f, -12f, -25f); // Target position down and back
-}
-
+        initialPosition = hallway.transform.localPosition; // Store initial position
+        targetPosition = initialPosition + new Vector3(0f, -12f, -25f); // Target position down and back
+    }
 
     private void FixedUpdate()
     {
-        if(triggered == false)
-        SetLightsEnabled(RedLights, false);
+        if (triggered == false)
+            SetLightsEnabled(RedLights, false);
 
         float distanceToPlayer = Vector3.Distance(player.position, trigger.position);
 
@@ -66,6 +67,22 @@ void Start()
             StartCoroutine(TurnToRed(4f)); // Start TurnToRed coroutine
             Debug.Log("TurningRed");
             triggered = true;
+        }
+
+        if (redLightsOn && !playingMonsterSound)
+        {
+            if (distanceToPlayer > 5f && distanceToPlayer < 15f)
+            {
+                AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, MonsterSound);
+                AkSoundEngine.PostEvent("Play_Monster_Sounds", MonsterSound);
+                playingMonsterSound = true;
+            }
+            else if (distanceToPlayer > 15)
+            {
+                AkSoundEngine.PostEvent("Stor_Monster_Sounds", MonsterSound);
+                playingMonsterSound = false;
+            }
+
         }
 
         float distanceToPlayer2 = Vector3.Distance(player.position, trigger2.position);
@@ -93,7 +110,7 @@ void Start()
             yield return null;
 
             if (runningOnce)
-            lightManager.StartFlicker(duration, 0.6f, false);
+                lightManager.StartFlicker(duration, 0.6f, false);
             foreach (var journal in Journals)
             {
                 Destroy(journal);
@@ -102,20 +119,21 @@ void Start()
             runningOnce = true;
         }
         SetLightsEnabled(AllLights, false);
-        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player); 
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player);
         AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
 
         // Ensure hallway finishes at the final target position and rotation
         hallway.transform.rotation = targetRotation;
         hallway.transform.localPosition = targetPosition;
 
-        yield return new WaitForSeconds(duration/2);
+        yield return new WaitForSeconds(duration / 2);
+        SetLightsEnabled(AllLights, false);
 
         playerController.MoveSpeed = 0;
         StartCoroutine(TurnRedLights());
 
 
-        while (handLightDead == true)  
+        while (handLightDead == true)
         {
             float darkInterval = Random.Range(0.1f, 0.4f);
             float lightInterval = Random.Range(0.05f, 0.1f);
@@ -126,25 +144,26 @@ void Start()
             yield return new WaitForSeconds(lightInterval);
         }
         handLight.SetActive(false);
-        //MARIUS: En eller anden lyd fordi lommelygten går ud. Evt. bare flickering Lights
+
+        redLightsOn = true;
     }
 
-    private IEnumerator TurnRedLights (){
-        
+    private IEnumerator TurnRedLights()
+    {
+
         yield return new WaitForSeconds(1f);
         handLightDead = true;
 
-        //MARIUS: MONSTERLYDE
-        // AkSoundEngine.PostEvent("Play_Monster_Sounds", MonsterSound);
-        // AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, MonsterSound);
-
         // Assuming RedLights is a list or array of Light components
-        for (int i = 0; i < RedLights.Length; i += 2) {
+        for (int i = 0; i < RedLights.Length; i += 2)
+        {
             // Turn on two lights at a time
-            if (i < RedLights.Length) {
+            if (i < RedLights.Length)
+            {
                 RedLights[i].enabled = true;  // Turn on the first light
             }
-            if (i + 1 < RedLights.Length) {
+            if (i + 1 < RedLights.Length)
+            {
                 RedLights[i + 1].enabled = true;  // Turn on the second light
             }
 
@@ -164,6 +183,7 @@ void Start()
         Debug.Log("TurningToNormal");
         //MARIUS: Sluk alle stemmer
         yield return new WaitForSeconds(duration / 4);
+        AkSoundEngine.PostEvent("Stop_Monster_Sounds", MonsterSound);
 
         exitSign2.SetActive(true);
 
@@ -179,7 +199,7 @@ void Start()
         hallwayChanger.StartChase();                                    //STARTERCHASEEE!!!! JAAAA! LIGE HER BÆTCH
 
         yield return new WaitForSeconds(duration / 2);
-       
+
         SetLightsEnabled(AllLights, true);
         handLight.SetActive(true);
         exitSign.SetActive(false);
