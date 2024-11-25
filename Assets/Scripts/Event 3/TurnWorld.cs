@@ -83,6 +83,7 @@ void Start()
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration; // Normalized time (0 to 1)
+            bool runningOnce = false;
 
             // Smoothly interpolate the rotation and position
             hallway.transform.rotation = Quaternion.Lerp(initialRotation, targetRotation, t);
@@ -90,13 +91,16 @@ void Start()
 
             yield return null;
 
-            lightManager.StartFlicker(4f, 0.6f, false);
+            if (runningOnce)
+            lightManager.StartFlicker(duration, 0.6f, false);
             foreach (var journal in Journals)
             {
                 Destroy(journal);
             }
             elapsedTime += Time.deltaTime;
+            runningOnce
         }
+        SetLightsEnabled(AllLights, false);
         AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player); 
         AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
 

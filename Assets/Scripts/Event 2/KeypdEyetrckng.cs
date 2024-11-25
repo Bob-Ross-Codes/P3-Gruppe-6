@@ -20,6 +20,6 @@ public class KeypdEyetrckng : GazeActivation
         flashingImages.SetActive(false);
         Debug.Log("Looked At Keypad");
 
-        activationFloat += 1.5f;
+        activationFloat += 1f;
     }
 }

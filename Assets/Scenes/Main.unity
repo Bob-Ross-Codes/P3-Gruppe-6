@@ -329,6 +329,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 11.18
       objectReference: {fileID: 0}
+    - target: {fileID: 1044650120538322426, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 875882299}
     - target: {fileID: 1468809851694066847, guid: d3f12565f7bd7c74eb07ed6e73128d6f, type: 3}
       propertyPath: swingAngleMax
       value: 1
@@ -2405,6 +2409,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7082617770900531748, guid: da176659f3e9ec24185215f1f6c968c7, type: 3}
   m_PrefabInstance: {fileID: 508790211}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &518670942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 915496883939099465, guid: f07aa19e378848b4f9bc4a2ff74a86e3, type: 3}
+  m_PrefabInstance: {fileID: 1467710511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &528618174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3995495870832584746, guid: 8caca8a5b8fc29241857185d3e2fbaa6, type: 3}
@@ -2683,7 +2692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keypadController: {fileID: 597607917}
-  flashingImages: {fileID: 0}
+  flashingImages: {fileID: 518670942}
 --- !u!4 &568989672 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8613866506843142048, guid: 794323b9527ce28468c928b2036ae536, type: 3}
@@ -2723,7 +2732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keypadController: {fileID: 597607917}
-  flashingImages: {fileID: 0}
+  flashingImages: {fileID: 518670942}
 --- !u!1 &609711263
 GameObject:
   m_ObjectHideFlags: 0
@@ -6164,12 +6173,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3924618, y: 0.5013889, z: 1}
+  m_Center: {x: -0.19623089, y: -0.24930564, z: 0.000000011399724}
 --- !u!23 &1401312578
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7540,6 +7549,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662407866}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1670994761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 457282176387007397, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+  m_PrefabInstance: {fileID: 8222160126292069965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1670994767
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670994761}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 3.574918e-14, z: 10.000002}
+  m_Center: {x: 0, y: 0.000030517578, z: 0.0000076293945}
 --- !u!4 &1676045998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 613dbfebf2b11444fa1bced6751f6cbb, type: 3}
@@ -10163,6 +10198,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1676544616}
     - target: {fileID: 3003725516617531147, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: lightManager
+      value: 
+      objectReference: {fileID: 1450975409}
+    - target: {fileID: 3003725516617531147, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: playerController
       value: 
       objectReference: {fileID: 875882303}
@@ -10655,6 +10694,9 @@ PrefabInstance:
       insertIndex: 9
       addedObject: {fileID: 1958613323}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 457282176387007397, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1670994767}
     - targetCorrespondingSourceObject: {fileID: 7727982180790458409, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 796525795}

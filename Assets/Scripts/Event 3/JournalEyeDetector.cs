@@ -5,7 +5,7 @@ using UnityEngine;
 public class JournalEyeDetector : GazeActivation
 {
     //Eyetracking elements
-    public override float ActivationTime => 3.5f;
+    public override float ActivationTime => 2.5f;
     public GameObject EyeDetector;
     //Flickering lights
     public LightManager lightManager;  // Reference to the LightManager script
@@ -52,6 +52,7 @@ public class JournalEyeDetector : GazeActivation
             {
                 lightManager.StartFlicker(4f, 1f, true);
                 Debug.Log("lookAtCount: " + lookAtCount);
+                if (patient != null)
                 patient.transform.localPosition = humanPosition1;
             }
             else if (lookAtCount > jumpScareCount)
@@ -84,7 +85,7 @@ public class JournalEyeDetector : GazeActivation
     {
         if (eyetrackingActivated)
         {
-            int randomNumber = Random.Range(0, 3);
+            int randomNumber = Random.Range(0, 2);
             if (lightManager.flickeringOn && !jumpScare)
             {
                 Debug.Log("lightsOn value: " + lightManager.lightsOn);
@@ -94,6 +95,7 @@ public class JournalEyeDetector : GazeActivation
                 else patient.SetActive(false);
             }
             if (!lightManager.flickeringOn)
+                if(patient != null)
                 patient.SetActive(false);
         }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Door2EyeDetector : GazeActivation
 {
-    public override float ActivationTime => 0.2f;
+    public override float ActivationTime => 0.01f;
     [SerializeField] private Journal2EyeDetector journal2EyeDetector;
 
     public override void OnLookedAt()
