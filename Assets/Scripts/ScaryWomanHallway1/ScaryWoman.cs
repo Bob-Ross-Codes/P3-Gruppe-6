@@ -10,14 +10,12 @@ public class ScaryWoman : MonoBehaviour
     [SerializeField] private float flickerSpeed = 1f; // Speed of flickering
     [SerializeField] private bool includeHandLight = true; // Whether to include the handlight in the flicker
 
-    
-
     private bool objectSpawned = false; // Ensure the object spawns only once
 
 
     private void Start()
     {
-        targetObject.SetActive(false);
+        targetObject.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
