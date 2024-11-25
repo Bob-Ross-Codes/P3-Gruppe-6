@@ -8,7 +8,7 @@ public class ClosedEyes : MonoBehaviour
     public Gaze gaze;
     [SerializeField] private float blinkOffSet;
     private float blinkTime;
-
+    
    private void Update()
     {
         //Debug.Log(" is brother blinking "+ gaze._blinking);
