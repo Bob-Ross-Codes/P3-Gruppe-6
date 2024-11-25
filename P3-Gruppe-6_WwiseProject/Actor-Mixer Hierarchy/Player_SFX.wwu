@@ -52,7 +52,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-10</Value>
+								<Value>-4</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -81,6 +81,23 @@
 										<ReferenceList>
 											<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
 												<ObjectRef Name="LowPassHeartBeat" ID="{0B0DD4F7-2FDD-4572-BC69-55F588813731}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{5547992E-F459-4611-8A16-6E61F5DE7560}" ShortID="911051103">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Time Stretch (Custom)" ID="{5A1125C1-2C57-4735-BA21-219FAC618B7B}" ShortID="600233208" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+														<PropertyList>
+															<Property Name="TimeStretch" Type="Real32" Value="50"/>
+														</PropertyList>
+													</Effect>
+												</Custom>
 											</Reference>
 										</ReferenceList>
 									</EffectSlot>
