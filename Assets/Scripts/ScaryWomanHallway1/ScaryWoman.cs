@@ -9,6 +9,7 @@ public class ScaryWoman : MonoBehaviour
     [SerializeField] private float flickerDuration = 2f; // Duration of flickering
     [SerializeField] private float flickerSpeed = 1f; // Speed of flickering
     [SerializeField] private bool includeHandLight = true; // Whether to include the handlight in the flicker
+    [SerializeField] private GameObject GazeCollider;
 
     private bool objectSpawned = false; // Ensure the object spawns only once
 
@@ -16,6 +17,7 @@ public class ScaryWoman : MonoBehaviour
     private void Start()
     {
         targetObject.SetActive(true);
+        GazeCollider.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,6 +48,7 @@ public class ScaryWoman : MonoBehaviour
         if (targetObject != null)
         {
             targetObject.SetActive(true);
+            GazeCollider.SetActive(true);
             objectSpawned = true;
         }
         else

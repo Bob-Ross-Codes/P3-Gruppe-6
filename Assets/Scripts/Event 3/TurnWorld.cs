@@ -82,6 +82,8 @@ public class TurnWorld : MonoBehaviour
                 AkSoundEngine.PostEvent("Stop_Monster_Sounds", MonsterSound);
                 playingMonsterSound = false;
             }
+            else
+                Debug.Log("Cannot play monster sound");
         }
 
         float distanceToPlayer2 = Vector3.Distance(player.position, trigger2.position);
@@ -144,14 +146,13 @@ public class TurnWorld : MonoBehaviour
         }
         handLight.SetActive(false);
 
-        redLightsOn = true;
-
         SetLightsEnabled(AllLights, false);
     }
 
     private IEnumerator TurnRedLights()
     {
-
+        redLightsOn = true;
+        SetLightsEnabled(AllLights, false);
         yield return new WaitForSeconds(1f);
         handLightDead = true;
 

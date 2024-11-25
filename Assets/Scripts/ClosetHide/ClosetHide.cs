@@ -65,6 +65,11 @@ public class ClosetHide : MonoBehaviour
 
         //////////////////////////////////////////// CONSOLE DEBUGGING
     }
+    public IEnumerator FlickeringLight(float duration, float speed, bool handlight)
+    {
+        yield return new WaitForSeconds(1);
+        lightManager.StartFlicker(duration, speed, handlight);
+    }
 
     private void ToggleHiding()
     {
@@ -72,7 +77,7 @@ public class ClosetHide : MonoBehaviour
 
         if (isHiding)
         {
-            lightManager.StartFlicker(2f, 0.8f, false);
+            StartCoroutine(FlickeringLight(2f, 0.8f, false));
 
             // Switch to ClosetCamera, disable player movement, and open the doors
             mainCamera.Priority = 0;

@@ -54,21 +54,23 @@ public class JournalEyeDetector : GazeActivation
                 lightManager.StartFlicker(4f, 1f, true);
                 Debug.Log("lookAtCount: " + lookAtCount);
                 if (patient != null)
-                patient.transform.localPosition = humanPosition1;
+                    patient.transform.localPosition = humanPosition1;
             }
             else if (lookAtCount > jumpScareCount)
                 Destroy(patient);
             else { lightManager.StartFlicker(15f, 1f, true); Debug.Log("JumpScare"); }
             lookAtCount++;
         }
-        
+
 
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
+        {
             rCount++;
-
+            lookAtCount = -1;
+        }
         if (rCount > 2 && !jumpScare && eyetrackingActivated)
         {
             StartCoroutine(destroyPatient());
@@ -96,8 +98,8 @@ public class JournalEyeDetector : GazeActivation
                 else patient.SetActive(false);
             }
             if (!lightManager.flickeringOn)
-                if(patient != null)
-                patient.SetActive(false);
+                if (patient != null)
+                    patient.SetActive(false);
         }
 
         if (jumpScare && patient != null)
