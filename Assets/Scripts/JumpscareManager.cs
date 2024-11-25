@@ -26,10 +26,11 @@ public class JumpscareManager : MonoBehaviour
     {
         if (jumpscarePrefab != null)
         {
+            AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 2);
             StartCoroutine(HandleDeath());
         }
     }
-    
+
     private IEnumerator HandleDeath()
     {
         // Enable the canvas

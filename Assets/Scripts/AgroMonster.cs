@@ -18,7 +18,6 @@ public class AgroMonster : GazeActivation
         Debug.Log("scary time soon?" + timeToScare + " YES! at 1f");
         if (timeToScare >= 1f)
         {
-            AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 2);
             
             scaryMonsterPrefab.TriggerJumpscare();
             Destroy(gameObject);
