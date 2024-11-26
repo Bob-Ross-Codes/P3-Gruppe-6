@@ -15916,6 +15916,10 @@ PrefabInstance:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7907164165800898700, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7953537434885409092, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: objectsToSpawn.Array.size
       value: 8
@@ -15964,6 +15968,30 @@ PrefabInstance:
       propertyPath: objectsToSpawn.Array.data[7]
       value: 
       objectReference: {fileID: 3586942796797013440, guid: 0332342d5958ca143b69fb266f326fe1, type: 3}
+    - target: {fileID: 8352368112587680086, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352368112587680086, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352368112587680086, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.997075
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352368112587680086, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.07642961
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352368112587680086, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352368112587680086, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 8.766998
+      objectReference: {fileID: 0}
     - target: {fileID: 8589575952301473856, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_Name
       value: Flashing Canvas
