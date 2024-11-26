@@ -6,13 +6,10 @@ public class KeypdEyetrckng : GazeActivation
 {
     public KeypadController keypadController;
 
-    private float activationFloat;
     [SerializeField] private GameObject flashingImages;
-    private void Awake()
-    {
-        activationFloat = 2f;
-    }
-    public override float ActivationTime => activationFloat;
+
+    public override float ActivationTime => 2.5f;
+
     public override void OnLookedAt()
     { 
         keypadController.LookAtKeypad();
@@ -20,6 +17,5 @@ public class KeypdEyetrckng : GazeActivation
         flashingImages.SetActive(false);
         Debug.Log("Looked At Keypad");
 
-        activationFloat += 2f;
     }
 }

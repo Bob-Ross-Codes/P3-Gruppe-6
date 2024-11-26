@@ -59,9 +59,6 @@ public class ClosetHide : MonoBehaviour
             
         }
 
-        if (isHiding && !lightManager.flickeringOn)
-            Destroy(RoomLight);
-
 
         //////////////////////////////////////////// CONSOLE DEBUGGING
     }
@@ -69,6 +66,8 @@ public class ClosetHide : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         lightManager.StartFlicker(duration, speed, handlight);
+        yield return new WaitForSeconds(duration);
+        Destroy(RoomLight);
     }
 
     private void ToggleHiding()
