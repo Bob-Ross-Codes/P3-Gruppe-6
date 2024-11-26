@@ -88,9 +88,9 @@ using UnityEngine;
 
 {
     [Header("Dissolve Settings")]
-    [SerializeField] private float defaultDissolveValue = -300f; // Default dissolve state for this hallway
-    [SerializeField] private float goalDissolveValue = 300f;    // Target dissolve state
-    [SerializeField] private float dissolveSpeed = 10f;         // Speed of dissolve
+    [SerializeField] private float defaultDissolveValue; // Default dissolve state for this hallway
+    [SerializeField] private float goalDissolveValue;    // Target dissolve state
+    [SerializeField] private float dissolveSpeed;         // Speed of dissolve
 
     private Material material;
     private bool isDissolving = false; // Flag to track if dissolve is active

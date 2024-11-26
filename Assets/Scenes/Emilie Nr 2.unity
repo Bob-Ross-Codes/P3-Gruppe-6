@@ -1560,8 +1560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74df1da90448a4c49ac2b7f0673eed53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultDissolveValue: 6000
-  goalDissolveValue: -6000
+  defaultDissolveValue: -6000
+  goalDissolveValue: 6000
   dissolveSpeed: 500
 --- !u!1 &2008877876
 GameObject:
@@ -1764,11 +1764,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107943651385639475, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 107943651385639475, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 120357435202044102, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -1776,11 +1776,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 120357435202044102, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 120357435202044102, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 148594663014813130, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -1788,11 +1788,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 148594663014813130, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 148594663014813130, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 202694059292547201, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -1800,11 +1800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 202694059292547201, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 202694059292547201, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 270334980350109554, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -1812,11 +1812,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 270334980350109554, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 270334980350109554, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 313993061322980803, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -1834,17 +1834,21 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 188.88332
       objectReference: {fileID: 0}
+    - target: {fileID: 346182634075149401, guid: f6ae165d89734468a959af86b6a96716, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 423491645410014227, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 423491645410014227, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 423491645410014227, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 423528904707519932, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -1852,11 +1856,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 423528904707519932, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 423528904707519932, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 707506288947112528, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -1876,11 +1880,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 781543844450555745, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 781543844450555745, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 805626425928476877, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -1892,11 +1896,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 820321271235917881, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 820321271235917881, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 984067049679008198, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -1932,11 +1936,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1278195582612271913, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 1278195582612271913, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 1440454585159471909, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -1944,11 +1948,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1440454585159471909, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 1440454585159471909, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 1470240017345387002, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -1970,6 +1974,10 @@ PrefabInstance:
       propertyPath: defaultDissolveValue
       value: -6000
       objectReference: {fileID: 0}
+    - target: {fileID: 1791305589412723518, guid: f6ae165d89734468a959af86b6a96716, type: 3}
+      propertyPath: targetParent
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1791483454411961356, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
       value: 500
@@ -1988,11 +1996,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1845558381604952881, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 1845558381604952881, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 1877130235809014873, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2000,11 +2008,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1877130235809014873, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 1877130235809014873, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 1887097380938677419, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2012,15 +2020,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1887097380938677419, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 1887097380938677419, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 1900764228306672244, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
       value: 148.34862
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052556411129601323, guid: f6ae165d89734468a959af86b6a96716, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2159598012755335407, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -2032,11 +2044,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2242131927150959425, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 2242131927150959425, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 2270467399392976086, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2056,11 +2068,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2279263312977868256, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 2279263312977868256, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 2333634746580081926, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2068,11 +2080,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2333634746580081926, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 2333634746580081926, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 2429020331582807223, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2080,11 +2092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2429020331582807223, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 2429020331582807223, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 2448485791619716966, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2092,11 +2104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2448485791619716966, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 2448485791619716966, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 2606082388403216770, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2104,11 +2116,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2606082388403216770, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 2606082388403216770, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 2606719659277668299, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -2128,11 +2140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3019337808839708689, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 3019337808839708689, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 3179186838288725871, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2140,11 +2152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3179186838288725871, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 3179186838288725871, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 3193477353800212227, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2158,17 +2170,21 @@ PrefabInstance:
       propertyPath: defaultDissolveValue
       value: -6000
       objectReference: {fileID: 0}
+    - target: {fileID: 3330367716199491985, guid: f6ae165d89734468a959af86b6a96716, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3354640085408779406, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3354640085408779406, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 3354640085408779406, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 3366913514986158856, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2192,11 +2208,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3418732640274794004, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 3418732640274794004, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 3651331766769459445, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2204,11 +2220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3651331766769459445, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 3651331766769459445, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 3723796472971784850, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2216,11 +2232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3723796472971784850, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 3723796472971784850, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 3747351739305023962, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -2232,11 +2248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3831512638451035209, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 3831512638451035209, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 4226628623375113736, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2244,11 +2260,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4226628623375113736, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 4226628623375113736, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 4445830972618961456, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2256,11 +2272,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4445830972618961456, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 4445830972618961456, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 4490684447722524084, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2268,11 +2284,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4490684447722524084, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 4490684447722524084, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 4714208305778095429, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2320,11 +2336,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4757728040300545769, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 4757728040300545769, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 4767023617758027076, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2332,11 +2348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4767023617758027076, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 4767023617758027076, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 4774721321954469317, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2344,11 +2360,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774721321954469317, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 4774721321954469317, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 4832584641982686546, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2356,11 +2372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4832584641982686546, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 4832584641982686546, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 4872499664717112200, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -2372,11 +2388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4916073408038421379, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 4916073408038421379, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 4940270430287496032, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -2388,11 +2404,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5356892819745244237, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 5356892819745244237, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 5468591672811362704, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2428,11 +2444,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5986738159339036478, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 5986738159339036478, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 6036292429970600468, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2440,11 +2456,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6036292429970600468, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 6036292429970600468, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094095754273933682, guid: f6ae165d89734468a959af86b6a96716, type: 3}
+      propertyPath: targetParent
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6233553796405353068, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2452,11 +2472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6233553796405353068, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 6233553796405353068, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 6277392412178682097, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2464,11 +2484,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6277392412178682097, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 6277392412178682097, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 6428084519077098030, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2476,11 +2496,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6428084519077098030, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 6428084519077098030, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 6437730124989411755, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2512,11 +2532,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6483358488750787821, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 6483358488750787821, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 6627312874742120637, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2524,11 +2544,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6627312874742120637, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 6627312874742120637, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 6635939067967288623, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2536,11 +2556,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6635939067967288623, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 6635939067967288623, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 7072291423043029490, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -2552,11 +2572,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7205758180359953699, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 7205758180359953699, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 7627744508044800176, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -2568,11 +2588,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7644479931514216048, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 7644479931514216048, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 7672840374345839647, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -2600,16 +2620,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7872101420180635149, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 7872101420180635149, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 7985281190867540417, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
       value: 188.88332
       objectReference: {fileID: 0}
+    - target: {fileID: 8021654209125227969, guid: f6ae165d89734468a959af86b6a96716, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -80.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8148338071801872831, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
       value: 500
@@ -2628,11 +2652,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8249689034993302619, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 8249689034993302619, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 8293416854614308191, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -2672,11 +2696,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8478946659994261800, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 8478946659994261800, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 8542769178608594672, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Intensity
@@ -2688,11 +2712,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8545089411074592483, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 8545089411074592483, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 8562733761745148084, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_Name
@@ -2732,11 +2756,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9081029442390297470, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 9081029442390297470, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     - target: {fileID: 9177996707961561764, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -2756,11 +2780,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9199850814068726314, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: goalDissolveValue
-      value: -6000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 9199850814068726314, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
-      value: 6000
+      value: -6000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
