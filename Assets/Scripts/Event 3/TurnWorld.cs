@@ -120,8 +120,6 @@ public class TurnWorld : MonoBehaviour
             runningOnce = true;
         }
         SetLightsEnabled(AllLights, false);
-        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player);
-        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
 
         // Ensure hallway finishes at the final target position and rotation
         hallway.transform.rotation = targetRotation;
@@ -152,9 +150,15 @@ public class TurnWorld : MonoBehaviour
     private IEnumerator TurnRedLights()
     {
         redLightsOn = true;
-        SetLightsEnabled(AllLights, false);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         handLightDead = true;
+
+        SetLightsEnabled(AllLights, false);
+
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
+
+        yield return new WaitForSeconds(2f);
 
         // Assuming RedLights is a list or array of Light components
         for (int i = 0; i < RedLights.Length; i += 2)
@@ -183,7 +187,7 @@ public class TurnWorld : MonoBehaviour
     private IEnumerator TurnToNormal(float duration)
     {
         Debug.Log("TurningToNormal");
-        //MARIUS: Sluk alle stemmer
+        lightManager.StartFlicker(1f, 1.5f, true);
         yield return new WaitForSeconds(duration / 4);
         AkSoundEngine.PostEvent("Stop_Monster_Sounds", MonsterSound);
 
