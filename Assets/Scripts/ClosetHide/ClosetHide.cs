@@ -24,7 +24,7 @@ public class ClosetHide : MonoBehaviour
     public MonsterSequenceController sequenceController; // Reference to the MonsterSequenceController script
     public GameObject RoomLight;
 
-    [SerializeField] private Gaze gaze;
+    [SerializeField] private ClosedEyes gaze;
 
 
     public bool isHiding = false;

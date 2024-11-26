@@ -6,7 +6,7 @@ public class AgroMonster : GazeActivation
 {
     public override float ActivationTime => 0.1f;
     public  Animator monsteranimater;
-    [SerializeField] private Gaze gaze;
+    [SerializeField] private ClosedEyes gaze;
     [SerializeField] private float timeToScare;
     [SerializeField] private JumpscareManager scaryMonsterPrefab;
     [SerializeField] private GameObject monsterprefab;

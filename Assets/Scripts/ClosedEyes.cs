@@ -5,32 +5,34 @@ using UnityEngine;
 public class ClosedEyes : MonoBehaviour
 {
 
-    [SerializeField] private Gaze gaze;
     [SerializeField] private float blinkOffSet;
     private float blinkTime;
 
-    private bool blinking;
+    public bool _blinking;
     private void Update()
     {
         //Debug.Log(" is brother blinking "+ gaze._blinking);
-        if (Input.GetKeyDown(KeyCode.B) || gaze._blinking)
+        while (Input.GetKeyDown(KeyCode.B))
         {
-            if (blinking == false)
+            _blinking = true;
+            Debug.Log(_blinking);
+
+            if (_blinking == true)
             {
                 blinkTime += Time.deltaTime;
                 if (blinkTime >= blinkOffSet)
                 {
-                    blinking = true;
+
                     AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
                 }
                 //   Debug.Log("BlinkingSound");
             }
         }
-        else
+       
         {
             AkSoundEngine.PostEvent("Stop_Eyes_Closed", gameObject);
             blinkTime = 0;
-            blinking = false;
+            _blinking = false;
         }
     }
 }

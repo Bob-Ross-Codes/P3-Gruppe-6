@@ -17,8 +17,7 @@ public class RunHallwayChanger : MonoBehaviour
    //okay my nigger
 
     [Header("Gaze Settings")]
-    [SerializeField] private Gaze gaze; // Reference to the Gaze script
-    [SerializeField] bool isBlinking; // Flag to track if the player is blinking
+    [SerializeField] private ClosedEyes gaze; // Reference to the Gaze script
      [SerializeField] private float blinkTime = 0f; // Timer to track how long isBlinking is true
 
 
@@ -66,7 +65,7 @@ public class RunHallwayChanger : MonoBehaviour
 //trigger next scene if isBlinking bool is true for more then 3 seconds
     private void Update()
     {
-        if (gaze.Blinking && blinkTime >= 2)
+        if (gaze._blinking && blinkTime >= 2)
         {
             blinkTime += Time.deltaTime; // Increment timer if isBlinking is true
             if (blinkTime > 3f && triggerCounter > 1) // Check both conditions
