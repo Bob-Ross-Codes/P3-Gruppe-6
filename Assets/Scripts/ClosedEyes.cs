@@ -14,7 +14,7 @@ public class ClosedEyes : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             _blinking = true;
             StartCoroutine(FadeCanvas(1f, 1f)); // Fade to black over 1 second
@@ -27,7 +27,7 @@ public class ClosedEyes : MonoBehaviour
             // Optional: Add logic here if you need to trigger other behaviors based on blinkTime
         }
 
-        if (Input.GetKeyUp(KeyCode.B))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             _blinking = false;
             blinkTime = 0;

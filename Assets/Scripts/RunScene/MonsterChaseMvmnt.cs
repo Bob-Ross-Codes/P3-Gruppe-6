@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class MonsterChaseMvmnt : MonoBehaviour
@@ -15,6 +16,11 @@ public class MonsterChaseMvmnt : MonoBehaviour
     [SerializeField] int finalHallwayCount = 20;
     public JumpscareManager jumpscareManager;
     public GameObject Player;
+
+    private bool timerIsRunning = false;
+    private float loadTimer = 3f;
+
+
 
     [SerializeField] private float rotationSpeed = 5f; // New variable to control rotation speed
 
@@ -51,12 +57,29 @@ public class MonsterChaseMvmnt : MonoBehaviour
         if (distanceToPlayer < 5)
         {
             // Player is close enough, triggering death or something else
-            
-            AkSoundEngine.PostEvent("Play_Death_Jumpscare", Player);
-            jumpscareManager.TriggerJumpscare();
-            Destroy(gameObject);
+            if (timerIsRunning == false)
+            {
 
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
+
+                AkSoundEngine.PostEvent("Play_Death_Jumpscare", Player);
+                jumpscareManager.TriggerJumpscare();
+
+
+                timerIsRunning = true;
+            }
+        }
+
+        if (timerIsRunning == true)
+        {
+            loadTimer -= Time.deltaTime;
+
+
+            if (loadTimer <= 0)
+            {
+
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
+
+            }
 
         }
     }
