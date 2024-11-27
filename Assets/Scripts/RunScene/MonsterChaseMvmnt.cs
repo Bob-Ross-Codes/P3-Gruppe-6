@@ -18,6 +18,9 @@ public class MonsterChaseMvmnt : MonoBehaviour
 
     [SerializeField] private float rotationSpeed = 5f; // New variable to control rotation speed
 
+    private float destroyTimer = 3f; // Timer before the gameobject gets destroyed
+    private bool isTimerRunning = false; // Flag to check if the timer is running
+
     void Start()
     {
         // Ensure we have exactly 4 BoxColliders assigned in the inspector
@@ -51,12 +54,22 @@ public class MonsterChaseMvmnt : MonoBehaviour
         if (distanceToPlayer < 5)
         {
             // Player is close enough, triggering death or something else
-            
+
             AkSoundEngine.PostEvent("Play_Death_Jumpscare", Player);
             jumpscareManager.TriggerJumpscare();
-            Destroy(gameObject);
 
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
+            isTimerRunning = true; // Start the timer
+        }
+
+        if (isTimerRunning)
+        {
+            destroyTimer -= Time.deltaTime; // Decrease the timer
+
+            if (destroyTimer <= 0)
+            {
+                Destroy(gameObject); // Destroy the gameobject
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Ending"); // Load the ending scene
+            }
         }
     }
 
