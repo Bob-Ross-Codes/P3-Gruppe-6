@@ -5702,6 +5702,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 95603383624662547, guid: f6ae165d89734468a959af86b6a96716, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.86
+      objectReference: {fileID: 0}
     - target: {fileID: 107943651385639475, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: defaultDissolveValue
       value: -6000
@@ -6104,7 +6108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4714208305778095429, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.7
+      value: 24.31
       objectReference: {fileID: 0}
     - target: {fileID: 4714208305778095429, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6454,6 +6458,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 5062068065667308088, guid: f6ae165d89734468a959af86b6a96716, type: 3}
     - {fileID: 381755747764166604, guid: f6ae165d89734468a959af86b6a96716, type: 3}
+    - {fileID: 1275562665528749968, guid: f6ae165d89734468a959af86b6a96716, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4714208305778095429, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       insertIndex: 2
@@ -9496,7 +9501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3128903029877491951, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
       propertyPath: webCamName
-      value: HD WebCam
+      value: Integrated Camera
       objectReference: {fileID: 0}
     - target: {fileID: 3485875271603776584, guid: c867664103475714cac8279aaaf7f6f2, type: 3}
       propertyPath: m_Name
