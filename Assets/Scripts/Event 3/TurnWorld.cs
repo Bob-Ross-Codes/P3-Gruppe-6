@@ -23,8 +23,6 @@ public class TurnWorld : MonoBehaviour
     [SerializeField] private RunHallwayChanger hallwayChanger;
     public FirstPersonController playerController; // Reference to the FirstPersonController scriptCloset
     public LightManager lightManager;
-    bool playingMonsterSound;
-
 
     private Quaternion initialRotation = Quaternion.Euler(0f, 0f, 0f);
     private Quaternion targetRotation = Quaternion.Euler(90f, 0f, 0f);
@@ -47,8 +45,6 @@ public class TurnWorld : MonoBehaviour
         exitSign.SetActive(false);
         exitSign2.SetActive(false);
         SetLightsEnabled(RedLights, false);
-        playingMonsterSound = false;
-
 
         // Set the class-level initialPosition and targetPosition (not local variables)
         initialPosition = hallway.transform.localPosition; // Store initial position
@@ -67,23 +63,6 @@ public class TurnWorld : MonoBehaviour
             StartCoroutine(TurnToRed(4f)); // Start TurnToRed coroutine
             Debug.Log("TurningRed");
             triggered = true;
-        }
-
-        if (redLightsOn && !playingMonsterSound)
-        {
-            if (distanceToPlayer > 5f && distanceToPlayer < 10f)
-            {
-                AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, MonsterSound);
-                AkSoundEngine.PostEvent("Play_Monster_Sounds", MonsterSound);
-                playingMonsterSound = true;
-            }
-            else if (distanceToPlayer > 10f)
-            {
-                AkSoundEngine.PostEvent("Stop_Monster_Sounds", MonsterSound);
-                playingMonsterSound = false;
-            }
-            else
-                Debug.Log("Cannot play monster sound");
         }
 
         float distanceToPlayer2 = Vector3.Distance(player.position, trigger2.position);
@@ -120,8 +99,6 @@ public class TurnWorld : MonoBehaviour
             runningOnce = true;
         }
         SetLightsEnabled(AllLights, false);
-        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player);
-        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
 
         // Ensure hallway finishes at the final target position and rotation
         hallway.transform.rotation = targetRotation;
@@ -132,7 +109,6 @@ public class TurnWorld : MonoBehaviour
 
         playerController.MoveSpeed = 0;
         StartCoroutine(TurnRedLights());
-
 
         while (handLightDead == true)
         {
@@ -152,9 +128,15 @@ public class TurnWorld : MonoBehaviour
     private IEnumerator TurnRedLights()
     {
         redLightsOn = true;
-        SetLightsEnabled(AllLights, false);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         handLightDead = true;
+
+        SetLightsEnabled(AllLights, false);
+
+        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player);
+        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
+
+        yield return new WaitForSeconds(2f);
 
         // Assuming RedLights is a list or array of Light components
         for (int i = 0; i < RedLights.Length; i += 2)
@@ -176,6 +158,9 @@ public class TurnWorld : MonoBehaviour
             // Wait for 1 second before moving to the next pair
             yield return new WaitForSeconds(1f);
         }
+
+        MonsterSound.SetActive(true);
+
         playerController.MoveSpeed = initialPlayerSpeed;
         exitSign.SetActive(true);
         //MARIUS: Måske et lille 'tick'
@@ -183,9 +168,10 @@ public class TurnWorld : MonoBehaviour
     private IEnumerator TurnToNormal(float duration)
     {
         Debug.Log("TurningToNormal");
-        //MARIUS: Sluk alle stemmer
+        lightManager.StartFlicker(1f, 1.5f, true);
         yield return new WaitForSeconds(duration / 4);
         AkSoundEngine.PostEvent("Stop_Monster_Sounds", MonsterSound);
+        MonsterSound.SetActive(false);
 
         exitSign2.SetActive(true);
 

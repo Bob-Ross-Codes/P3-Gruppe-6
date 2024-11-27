@@ -12,6 +12,10 @@ public class HospitalLook : MonoBehaviour
     public Transform player; // Reference to the player's transform
     public float interactionRange = 1.0f; // Set the interaction range
     private bool isHiding = false;
+    [SerializeField] private GameObject note;
+    private Vector3 initialScaleNote;
+    private Vector3 initialPositionNote;
+    private Vector3 noteTransformation = new Vector3(0.119999997f, -0.0799999982f, 0.317999989f);
 
     [SerializeField] private GameObject capsule;
 
@@ -19,6 +23,8 @@ public class HospitalLook : MonoBehaviour
     {
         mainCamera.gameObject.SetActive(true);
         doorCamera.gameObject.SetActive(false);
+        initialScaleNote = note.transform.localScale;
+        initialPositionNote = note.transform.localPosition;
     }
 
     void Update()
@@ -31,7 +37,12 @@ public class HospitalLook : MonoBehaviour
             }
         }
     }
-
+    private IEnumerator Note()
+    {
+        yield return new WaitForSeconds(0.5f);
+        note.transform.localScale = initialScaleNote / 2.5f;
+        note.transform.localPosition = noteTransformation;
+    }
     private void ToggleHiding()
     {
         isHiding = !isHiding;
@@ -43,6 +54,7 @@ public class HospitalLook : MonoBehaviour
             mainCamera.gameObject.SetActive(false);
             doorCamera.gameObject.SetActive(true);
             playerController.MoveSpeed = 0;
+            StartCoroutine(Note());
         }
         else
         {
@@ -51,6 +63,8 @@ public class HospitalLook : MonoBehaviour
             mainCamera.gameObject.SetActive(true);
             doorCamera.gameObject.SetActive(false);
             playerController.MoveSpeed = 3.5f;
+            note.transform.localScale = initialScaleNote;
+            note.transform.localPosition = initialPositionNote;
         }
     }
 

@@ -8,7 +8,7 @@
 						<Action Name="" ID="{17F2AE8E-8FCF-42F3-94C5-F87A56BAFD29}" ShortID="488771925">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Into_audio" ID="{B3A10212-BA9D-4507-9019-74608494BCEE}" WorkUnitID="{12AF9D7E-3CA7-476C-ADBC-19C22B268385}"/>
+									<ObjectRef Name="Intro-audio-v3" ID="{A22C577D-75AB-4C65-ADE9-1FED5D688739}" WorkUnitID="{12AF9D7E-3CA7-476C-ADBC-19C22B268385}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -20,6 +20,33 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="EndingVideo" ID="{170EBEBF-51AF-4EDC-8147-C9852BBECA93}" WorkUnitID="{12AF9D7E-3CA7-476C-ADBC-19C22B268385}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MenuMusic" ID="{03DBC6DA-22AA-46E5-B625-201122A2C639}">
+					<ChildrenList>
+						<Action Name="" ID="{27234CDB-1435-4C9A-AC14-55AB27431501}" ShortID="506805776">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MenuAudio" ID="{97D0DCE7-8174-478C-B866-F2BB50F33238}" WorkUnitID="{12AF9D7E-3CA7-476C-ADBC-19C22B268385}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_MenuMusic" ID="{EC01CD32-2B73-4D33-AF7A-D6466F98C158}">
+					<ChildrenList>
+						<Action Name="" ID="{24DB4D31-6ECB-46BF-8B8F-7F5854547FEB}" ShortID="747461397">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MenuAudio" ID="{97D0DCE7-8174-478C-B866-F2BB50F33238}" WorkUnitID="{12AF9D7E-3CA7-476C-ADBC-19C22B268385}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

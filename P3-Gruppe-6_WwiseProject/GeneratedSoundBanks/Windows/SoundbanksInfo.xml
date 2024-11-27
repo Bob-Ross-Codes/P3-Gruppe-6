@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{6572C967-E4C3-B977-311D-2DC7650FDDFD}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{3B4DEB7F-A868-5DF8-16CE-1779E9ADC95B}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -57,10 +57,6 @@
 					<ShortName>Hard With Fist.wav</ShortName>
 					<CachePath>SFX/Hard With Fist_BE733C9D.wem</CachePath>
 				</File>
-				<File Id="207794992" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Into_audio_v2.wav</ShortName>
-					<CachePath>SFX/Into_audio_v2_818F3B66.wem</CachePath>
-				</File>
 				<File Id="220019224" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Door Knocking Slight Rattle.wav</ShortName>
 					<CachePath>SFX/Door Knocking Slight Rattle_FEB3E9FC.wem</CachePath>
@@ -100,6 +96,10 @@
 				<File Id="404617882" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Metal Door Impact Rattle.wav</ShortName>
 					<CachePath>SFX/Metal Door Impact Rattle_4BC03989.wem</CachePath>
+				</File>
+				<File Id="418357145" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mansion Hallways Loop 2 40.wav</ShortName>
+					<CachePath>SFX/Mansion Hallways Loop 2 40_C2D14406.wem</CachePath>
 				</File>
 				<File Id="442763405" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Keypad Error Sound Effect.wav</ShortName>
@@ -221,6 +221,10 @@
 					<ShortName>Hard With Fist.wav</ShortName>
 					<CachePath>SFX/Hard With Fist_818F3B66.wem</CachePath>
 				</File>
+				<File Id="901884485" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Intro-audio-v3.wav</ShortName>
+					<CachePath>SFX/Intro-audio-v3_818F3B66.wem</CachePath>
+				</File>
 				<File Id="914059636" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ES_Slam, Squeak - Epidemic Sound - 0000-0593.wav</ShortName>
 					<CachePath>SFX/ES_Slam, Squeak - Epidemic Sound - 0000-0593_818F3B66.wem</CachePath>
@@ -248,6 +252,7 @@
 			</Media>
 			<Plugins>
 				<Custom>
+					<Plugin Id="600233208" Name="Time Stretch (Custom)" LibName="Wwise Time Stretch" LibId="8519683"/>
 					<Plugin Id="863344862" Name="Time Stretch (Custom)" LibName="Wwise Time Stretch" LibId="8519683"/>
 				</Custom>
 				<ShareSets>
@@ -355,14 +360,17 @@
 						<MediaRef Id="446409488"/>
 					</MediaRefs>
 					<PluginRefs>
+						<Custom>
+							<PluginRef Id="600233208"/>
+						</Custom>
 						<ShareSets>
 							<PluginRef Id="1514749290"/>
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="3582431873" Name="Play_IntroMusic" DurationType="OneShot" DurationMin="37.10373" DurationMax="37.10373">
+				<Event Id="3582431873" Name="Play_IntroMusic" DurationType="OneShot" DurationMin="44.77806" DurationMax="44.77806">
 					<MediaRefs>
-						<MediaRef Id="207794992"/>
+						<MediaRef Id="901884485"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2660246561" Name="Play_Keypad_Correct" DurationType="OneShot" DurationMin="3.1910658" DurationMax="3.1910658">
@@ -409,6 +417,11 @@
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
+				</Event>
+				<Event Id="2570041344" Name="Play_MenuMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="418357145"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="1093999139" Name="Play_RainAndThunder" MaxAttenuation="10" DurationType="Infinite">
 					<MediaRefs>
@@ -465,6 +478,7 @@
 				<Event Id="2196500881" Name="Stop_Eyes_Closed" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1856817241" Name="Stop_Knocking_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2797432074" Name="Stop_Light_OnOff_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2753202630" Name="Stop_MenuMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="191147360" Name="RTPC_LightState"/>
@@ -1194,17 +1208,17 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2376328173" Type="User" Language="SFX" Hash="{02AC1675-0AA8-0247-D9FA-2F3AC168DEE6}">
+		<SoundBank Id="2376328173" Type="User" Language="SFX" Hash="{B66D8188-3A45-9FE1-26E2-431C3B89EE8F}">
 			<ShortName>Monster</ShortName>
 			<Path>Monster.bnk</Path>
 			<Media>
 				<File Id="39380538" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Jumpscare Sound Effects.wav</ShortName>
-					<CachePath>SFX/Jumpscare Sound Effects_818F3B66.wem</CachePath>
+					<CachePath>SFX/Jumpscare Sound Effects_8A40696E.wem</CachePath>
 				</File>
 				<File Id="241509505" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_theMaw_screech.wav</ShortName>
-					<CachePath>SFX/sfx_theMaw_screech_F9A26F56.wem</CachePath>
+					<CachePath>SFX/sfx_theMaw_screech_5E445D5F.wem</CachePath>
 				</File>
 				<File Id="268532535" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ES_Reaction, Male, Perspective Whispering - Epidemic Sound.wav</ShortName>
@@ -1242,7 +1256,7 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
-				<Event Id="1165312063" Name="Play_Cell_Jumpscare" MaxAttenuation="10" DurationType="OneShot" DurationMin="4.255" DurationMax="4.255">
+				<Event Id="1165312063" Name="Play_Cell_Jumpscare" MaxAttenuation="10" DurationType="OneShot" DurationMin="4.1740627" DurationMax="4.1740627">
 					<MediaRefs>
 						<MediaRef Id="39380538"/>
 					</MediaRefs>
@@ -1309,5 +1323,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9FFD53EC-7946-1DCC-B909-5BEE835F00B0}</FileHash>
+	<FileHash>{B8708CD5-B4CD-44C9-CDBE-5A2B7F41C31F}</FileHash>
 </SoundBanksInfo>

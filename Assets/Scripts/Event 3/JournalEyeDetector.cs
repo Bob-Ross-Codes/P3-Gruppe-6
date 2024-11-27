@@ -5,14 +5,16 @@ using UnityEngine;
 public class JournalEyeDetector : GazeActivation
 {
     //Eyetracking elements
-    public override float ActivationTime => 2.5f;
+    public override float ActivationTime => 3f;
     public GameObject EyeDetector;
     //Flickering lights
     public LightManager lightManager;  // Reference to the LightManager script
     [SerializeField] Light[] staticLights;
 
-    private Vector3 humanPosition1 = new Vector3(0.340000004f, -0.113922141f, 5.99638224f);
-    private Vector3 humanPosition2 = new Vector3(0.349999994f, -0.0900000036f, 0.629999995f);
+    private Vector3 humanPosition1 = new Vector3(0.189999998f, 1.429f, 6.21000004f);
+    private Vector3 humanPosition2 = new Vector3(0.349999994f, 1.2f, 0.629999995f);
+
+
     public GameObject patient;
     public BlurryText blurryText;  // Reference to the SpriteFade script
 
@@ -66,15 +68,17 @@ public class JournalEyeDetector : GazeActivation
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            rCount++;
-            lookAtCount = -1;
-        }
-        if (rCount > 2 && !jumpScare && eyetrackingActivated)
-        {
-            StartCoroutine(destroyPatient());
-            jumpScare = true;
+        if(eyetrackingActivated) {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                rCount++;
+                lookAtCount = -1;
+            }
+            if (rCount > 2 && !jumpScare && eyetrackingActivated)
+            {
+                StartCoroutine(destroyPatient());
+                jumpScare = true;
+            }
         }
     }
 
@@ -88,14 +92,18 @@ public class JournalEyeDetector : GazeActivation
     {
         if (eyetrackingActivated)
         {
-            int randomNumber = Random.Range(0, 2);
+            int randomNumber = Random.Range(0, 3);
             if (lightManager.flickeringOn && !jumpScare)
             {
                 Debug.Log("lightsOn value: " + lightManager.lightsOn);
                 Debug.Log("random NUmber: " + randomNumber);
                 if (lightManager.lightsOn == false && randomNumber == 0)
                     patient.SetActive(true);
-                else patient.SetActive(false);
+                else if (lightManager.lightsOn == true && randomNumber == 0)
+                    patient.SetActive(true);
+                else
+                    patient.SetActive(false);
+
             }
             if (!lightManager.flickeringOn)
                 if (patient != null)
