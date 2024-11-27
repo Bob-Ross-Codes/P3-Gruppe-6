@@ -5987,7 +5987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4714208305778095429, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.7
+      value: 24.04
       objectReference: {fileID: 0}
     - target: {fileID: 4714208305778095429, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9646,6 +9646,16 @@ PrefabInstance:
 Light:
   m_CorrespondingSourceObject: {fileID: 6015702000844121307, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
   m_PrefabInstance: {fileID: 8222160126292069965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1478275030 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 89324749557534856, guid: b2a8f5b7bd8cb6c4ebe4bf14bb3f3db4, type: 3}
+  m_PrefabInstance: {fileID: 234460124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1478275036 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8264530849804771998, guid: b2a8f5b7bd8cb6c4ebe4bf14bb3f3db4, type: 3}
+  m_PrefabInstance: {fileID: 234460124}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1488396841
 GameObject:
@@ -15457,6 +15467,14 @@ PrefabInstance:
       propertyPath: blinkOffSet
       value: 1.3
       objectReference: {fileID: 0}
+    - target: {fileID: 7416706377003769559, guid: 271e0a72a914318498691cdb279e6052, type: 3}
+      propertyPath: deathCanvas
+      value: 
+      objectReference: {fileID: 1478275036}
+    - target: {fileID: 7416706377003769559, guid: 271e0a72a914318498691cdb279e6052, type: 3}
+      propertyPath: deathCanvasGroup
+      value: 
+      objectReference: {fileID: 1478275030}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6018312802138030225, guid: 271e0a72a914318498691cdb279e6052, type: 3}

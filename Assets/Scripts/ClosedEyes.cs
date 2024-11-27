@@ -1,45 +1,68 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ClosedEyes : MonoBehaviour
 {
-    [SerializeField] private float blinkOffSet;
-    private float blinkTime;
+    [SerializeField] private float blinkOffSet = 0.5f; // Delay before fade starts (optional)
+    private float blinkTime; // Tracks how long the player is holding down 'B'
 
+    [SerializeField] private Canvas deathCanvas; // Canvas to fade in and out
+    [SerializeField] private CanvasGroup deathCanvasGroup; // CanvasGroup for controlling fade transparency
 
+    public bool _blinking; // Tracks if the player is blinking
+    private bool isFading; // Ensures fade coroutine is not restarted unnecessarily
 
-
-    public bool _blinking;
-
-    private bool soundPlaying;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
             _blinking = true;
-            Debug.Log(_blinking);
-            soundPlaying = true;
+            StartCoroutine(FadeCanvas(1f, 1f)); // Fade to black over 1 second
         }
 
         if (_blinking)
         {
             blinkTime += Time.deltaTime;
-            if (blinkTime >= blinkOffSet && soundPlaying == true)
-            {
-                
-                AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
-                soundPlaying = false;
-            }
+
+            // Optional: Add logic here if you need to trigger other behaviors based on blinkTime
         }
-     
+
         if (Input.GetKeyUp(KeyCode.B))
         {
-            AkSoundEngine.PostEvent("Stop_Eyes_Closed", gameObject);
-            blinkTime = 0;
             _blinking = false;
-            Debug.Log(_blinking);
-            soundPlaying = false;
+            blinkTime = 0;
+            StartCoroutine(FadeCanvas(0f, 1f)); // Fade back to normal over 1 second
         }
+    }
+
+    private IEnumerator FadeCanvas(float targetAlpha, float duration)
+    {
+        if (isFading) yield break; // Prevent multiple fade coroutines from running simultaneously
+
+        isFading = true;
+
+        // Ensure the canvas is active while fading
+        deathCanvas.gameObject.SetActive(true);
+
+        float startAlpha = deathCanvasGroup.alpha;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            deathCanvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / duration);
+            yield return null;
+        }
+
+        // Ensure the final alpha value is set (to avoid small inaccuracies)
+        deathCanvasGroup.alpha = targetAlpha;
+
+        // Disable the canvas once fade out is complete
+        if (targetAlpha == 0f)
+        {
+            deathCanvas.gameObject.SetActive(false);
+        }
+
+        isFading = false;
     }
 }
