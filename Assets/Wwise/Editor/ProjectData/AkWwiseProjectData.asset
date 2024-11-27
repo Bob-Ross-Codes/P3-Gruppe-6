@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 8f74c11f6ba88142833ff2a081eb0f2f
     GuidInternal: 
-    m_lastTime: -8584694047216679701
+    m_lastTime: -8584689083356917080
     List:
     - name: 2DAmbience
       guid: 47c5d0fb2456804fad814c18859c1d1d
@@ -434,7 +434,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 95272e37ee2ea749a4f4ba5abfa5dea7
     GuidInternal: 
-    m_lastTime: -8584694112895020222
+    m_lastTime: -8584689083268787256
     List:
     - name: Ambience
       guid: 869d7f5182692b4185e08f8b92ecc8f8
@@ -490,7 +490,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: ece3f43672e3594588fdf363796094af
     GuidInternal: 
-    m_lastTime: -8584690848715387057
+    m_lastTime: -8584689083480225248
     List:
     - name: Post_Event_Play_Cart_Impact
       guid: 345500f825bf2c4c962140d09e22ebd0
@@ -520,7 +520,7 @@ MonoBehaviour:
     ParentPath: Events\Enviroment
     guid: dfdd45dc075dd0439b42b35985878514
     GuidInternal: 
-    m_lastTime: -8584689575975985408
+    m_lastTime: -8584689083480130713
     List:
     - name: Door_SFX_Event
       guid: c08fa549c659aa4c9b5e1d1105274359
@@ -852,7 +852,7 @@ MonoBehaviour:
     ParentPath: Events\Music
     guid: 338cc34d50efa449ad2c2d8b0d0854a8
     GuidInternal: 
-    m_lastTime: -8584689579165268827
+    m_lastTime: -8584689062133375995
     List:
     - name: Play_EndingMusic
       guid: 7116acc69187394ea03aea0e6e6f069c
@@ -888,6 +888,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 44.77806
       minDuration: 44.77806
+    - name: Play_MenuMusic
+      guid: dac6db03aa22e546b625201122a2c639
+      id: 2570041344
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Music
+        ObjectType: 12
+        guid: 338cc34d50efa449ad2c2d8b0d0854a8
+      - ElementName: Play_MenuMusic
+        ObjectType: 3
+        guid: dac6db03aa22e546b625201122a2c639
+      Path: Events\Music\Play_MenuMusic
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_MenuMusic
+      guid: 32cd01ec732b334daf7ad6466f98c158
+      id: 2753202630
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Music
+        ObjectType: 12
+        guid: 338cc34d50efa449ad2c2d8b0d0854a8
+      - ElementName: Stop_MenuMusic
+        ObjectType: 3
+        guid: 32cd01ec732b334daf7ad6466f98c158
+      Path: Events\Music\Stop_MenuMusic
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   - PhysicalPath: Events\NPC.wwu
     PathAndIcons:
     - ElementName: Events
@@ -899,7 +933,7 @@ MonoBehaviour:
     ParentPath: Events\NPC
     guid: 02ecd6ad61d6b64281cc12bfd98682a1
     GuidInternal: 
-    m_lastTime: -8584690848715367508
+    m_lastTime: -8584689083480006822
     List:
     - name: Play_Cell_Jumpscare
       guid: e762fddd3a778e4cac7231da9db09b75
@@ -1014,7 +1048,7 @@ MonoBehaviour:
     ParentPath: Events\Player
     guid: 2b7de7ded8cfaf4f903d6114676b19ae
     GuidInternal: 
-    m_lastTime: -8584690848715357003
+    m_lastTime: -8584689083479898454
     List:
     - name: Play_Death_Jumpscare
       guid: ed9f3f263d5f9d43aacfe908543fe28a
@@ -1079,7 +1113,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: ea837575837ad2429fa23f0890dcd34c
     GuidInternal: 
-    m_lastTime: -8584690848715357003
+    m_lastTime: -8584689083479823514
     List:
     - name: RTPC_Distance
       guid: 8f713afc3c692048aa47cad6aeb38d71
@@ -1507,7 +1541,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: f26415a28a873a438edb3ff2f246b1ad
     GuidInternal: 
-    m_lastTime: -8584690848670725555
+    m_lastTime: -8584689083268572294
     List:
     - name: DoorSFXSwitch
       guid: e5193861724f2444a084b729641b5d08
@@ -2101,9 +2135,9 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584701078037760893
     List: []
-  ExpandedFileSystemItemIds: 
+  ExpandedFileSystemItemIds: 050000001f00000026000000
   ExpandedWaapiItemIds: 050000001f00000026000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 

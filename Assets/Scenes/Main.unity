@@ -7039,7 +7039,7 @@ Transform:
   m_GameObject: {fileID: 1103253997}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.22, y: 0, z: 0}
+  m_LocalPosition: {x: 14.76, y: 0, z: 0.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15482,6 +15482,14 @@ PrefabInstance:
       propertyPath: MoveSpeed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4774102531788569563, guid: 271e0a72a914318498691cdb279e6052, type: 3}
+      propertyPath: SprintSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774102531788569563, guid: 271e0a72a914318498691cdb279e6052, type: 3}
+      propertyPath: RotationSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6594949870001133524, guid: 271e0a72a914318498691cdb279e6052, type: 3}
       propertyPath: lightManager
       value: 
@@ -16070,11 +16078,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7413471017112383660, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.063
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 7413471017112383660, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.15
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 7543847223376838172, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: m_Lens.FieldOfView
