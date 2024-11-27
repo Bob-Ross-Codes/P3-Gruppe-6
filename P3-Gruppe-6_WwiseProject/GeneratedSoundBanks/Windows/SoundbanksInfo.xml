@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{621AB3B3-BF6F-CEC6-21EA-D332DFAA5849}">
+		<SoundBank Id="85412153" Type="User" Language="SFX" Hash="{3B4DEB7F-A868-5DF8-16CE-1779E9ADC95B}">
 			<ShortName>Ambience</ShortName>
 			<Path>Ambience.bnk</Path>
 			<Media>
@@ -96,6 +96,10 @@
 				<File Id="404617882" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Metal Door Impact Rattle.wav</ShortName>
 					<CachePath>SFX/Metal Door Impact Rattle_4BC03989.wem</CachePath>
+				</File>
+				<File Id="418357145" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mansion Hallways Loop 2 40.wav</ShortName>
+					<CachePath>SFX/Mansion Hallways Loop 2 40_C2D14406.wem</CachePath>
 				</File>
 				<File Id="442763405" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Keypad Error Sound Effect.wav</ShortName>
@@ -414,6 +418,11 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="2570041344" Name="Play_MenuMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="418357145"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1093999139" Name="Play_RainAndThunder" MaxAttenuation="10" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="2028515"/>
@@ -469,6 +478,7 @@
 				<Event Id="2196500881" Name="Stop_Eyes_Closed" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1856817241" Name="Stop_Knocking_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2797432074" Name="Stop_Light_OnOff_Event" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2753202630" Name="Stop_MenuMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="191147360" Name="RTPC_LightState"/>
@@ -1313,5 +1323,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A706601D-BA2D-A52E-3475-08D29D4A700F}</FileHash>
+	<FileHash>{B8708CD5-B4CD-44C9-CDBE-5A2B7F41C31F}</FileHash>
 </SoundBanksInfo>

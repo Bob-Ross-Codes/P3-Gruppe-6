@@ -47,6 +47,92 @@
 						<ActiveSource Name="Intro-audio-v3" ID="{D0F8AD5D-9414-4464-8B26-D76E4DD2B742}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="MenuAudio" ID="{97D0DCE7-8174-478C-B866-F2BB50F33238}" ShortID="251027704">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FCF3A005-4ED3-4329-9C83-E99EA5127E40}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1FC1748F-A86B-4281-833F-F2A081EB0F2F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Mansion Hallways Loop 2 40" ID="{93F85DB2-0D2C-4414-91C6-F857ED3289F2}">
+							<PropertyList>
+								<Property Name="OverrideConversion" Type="bool" Value="True"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="106.475245880368"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<Custom CreatedFrom="{AD876647-70E5-492F-86C9-FFDED7CB6C9E}">
+										<Conversion Name="Vorbis Quality Low (Custom)" ID="{8C3BAF22-509C-4F0E-A5FB-0AD695321552}">
+											<PropertyList>
+												<Property Name="Channels" Type="int32">
+													<ValueList>
+														<Value Platform="Windows">4</Value>
+														<Value Platform="Mac">4</Value>
+													</ValueList>
+												</Property>
+												<Property Name="LRMix" Type="Real64">
+													<ValueList>
+														<Value Platform="Windows">0</Value>
+														<Value Platform="Mac">0</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MaxSampleRate" Type="int32">
+													<ValueList>
+														<Value Platform="Windows">0</Value>
+														<Value Platform="Mac">0</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MinSampleRate" Type="int32">
+													<ValueList>
+														<Value Platform="Windows">0</Value>
+														<Value Platform="Mac">0</Value>
+													</ValueList>
+												</Property>
+												<Property Name="SampleRate" Type="int32">
+													<ValueList>
+														<Value Platform="Windows">0</Value>
+														<Value Platform="Mac">0</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ConversionPluginInfoList>
+												<ConversionPluginInfo Platform="Windows">
+													<ConversionPlugin Name="" ID="{BB5DEDE5-8E24-450F-9847-F2FECA8FC45D}" PluginName="Vorbis" CompanyID="0" PluginID="4">
+														<PropertyList>
+															<Property Name="QualityFactor" Type="Real32" Value="0"/>
+														</PropertyList>
+													</ConversionPlugin>
+												</ConversionPluginInfo>
+												<ConversionPluginInfo Platform="Mac">
+													<ConversionPlugin Name="" ID="{050F9261-7BB0-4FC8-BFE2-A8AE64813B4A}" PluginName="Vorbis" CompanyID="0" PluginID="4">
+														<PropertyList>
+															<Property Name="QualityFactor" Type="Real32" Value="0"/>
+														</PropertyList>
+													</ConversionPlugin>
+												</ConversionPluginInfo>
+											</ConversionPluginInfoList>
+										</Conversion>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+							<Language>SFX</Language>
+							<AudioFile>Mansion Hallways Loop 2 40.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="418357145"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Mansion Hallways Loop 2 40" ID="{93F85DB2-0D2C-4414-91C6-F857ED3289F2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

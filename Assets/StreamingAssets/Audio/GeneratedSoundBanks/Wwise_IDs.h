@@ -28,6 +28,7 @@ namespace AK
         static const AkUniqueID PLAY_KEYPAD_CORRECT = 2660246561U;
         static const AkUniqueID PLAY_KEYPAD_ERROR = 431971085U;
         static const AkUniqueID PLAY_LIGHT_ONOFF_EVENT = 511968160U;
+        static const AkUniqueID PLAY_MENUMUSIC = 2570041344U;
         static const AkUniqueID PLAY_MONSTER_CHASE = 563051919U;
         static const AkUniqueID PLAY_MONSTER_SOUNDS = 324561159U;
         static const AkUniqueID PLAY_PLAYER_HURT = 887999531U;
@@ -40,6 +41,7 @@ namespace AK
         static const AkUniqueID STOP_EYES_CLOSED = 2196500881U;
         static const AkUniqueID STOP_KNOCKING_EVENT = 1856817241U;
         static const AkUniqueID STOP_LIGHT_ONOFF_EVENT = 2797432074U;
+        static const AkUniqueID STOP_MENUMUSIC = 2753202630U;
         static const AkUniqueID STOP_MONSTER_SOUNDS = 2630587137U;
         static const AkUniqueID STOP_WHISPERS = 1761541297U;
     } // namespace EVENTS
