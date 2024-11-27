@@ -56,6 +56,8 @@ public class MonsterChaseMvmnt : MonoBehaviour
             jumpscareManager.TriggerJumpscare();
             Destroy(gameObject);
 
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
+
         }
     }
 
