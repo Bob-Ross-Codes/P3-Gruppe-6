@@ -48,20 +48,9 @@ public class ClosetHide : MonoBehaviour
                 }
             }
         }
-
-        //////////////////////////////////////////// CONSOLE DEBUGGING
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            Debug.Log("Monster destroyed. Hiding unlocked.");
-                AkSoundEngine.PostEvent("Stop_Monster_Sounds", monsterPrefab);
-                Destroy(monsterPrefab);
-                canToggleHiding = true;
-            
-        }
-
-
-        //////////////////////////////////////////// CONSOLE DEBUGGING
     }
+
+     
     public IEnumerator FlickeringLight(float duration, float speed, bool handlight)
     {
         yield return new WaitForSeconds(1);

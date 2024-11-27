@@ -7,6 +7,9 @@ public class ClosedEyes : MonoBehaviour
     [SerializeField] private float blinkOffSet;
     private float blinkTime;
 
+
+
+
     public bool _blinking;
 
     private bool soundPlaying;

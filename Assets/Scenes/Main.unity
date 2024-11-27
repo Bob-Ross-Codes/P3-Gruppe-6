@@ -4748,6 +4748,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7039b1ec2701c48a115b6e5cf3ec20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &875882312 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7416706377003769559, guid: 271e0a72a914318498691cdb279e6052, type: 3}
+  m_PrefabInstance: {fileID: 8052158206010470642}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875882298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc300b4d8080a74e8000296d122b440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &880667946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d7a507327820394cb4ec66e7ee110d1, type: 3}
@@ -14882,7 +14893,7 @@ PrefabInstance:
     - target: {fileID: 664563306452700901, guid: 641c5764965f85545a315f8b5dbf98e6, type: 3}
       propertyPath: gaze
       value: 
-      objectReference: {fileID: 7416706377003769559, guid: 271e0a72a914318498691cdb279e6052, type: 3}
+      objectReference: {fileID: 875882312}
     - target: {fileID: 664563306452700901, guid: 641c5764965f85545a315f8b5dbf98e6, type: 3}
       propertyPath: player
       value: 
@@ -15579,7 +15590,7 @@ PrefabInstance:
     - target: {fileID: 4790779085149886331, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: gaze
       value: 
-      objectReference: {fileID: 7416706377003769559, guid: 271e0a72a914318498691cdb279e6052, type: 3}
+      objectReference: {fileID: 875882312}
     - target: {fileID: 4790779085149886331, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: objectsToSpawn.Array.size
       value: 8
@@ -15695,7 +15706,7 @@ PrefabInstance:
     - target: {fileID: 6620988944393998660, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: gaze
       value: 
-      objectReference: {fileID: 7416706377003769559, guid: 271e0a72a914318498691cdb279e6052, type: 3}
+      objectReference: {fileID: 875882312}
     - target: {fileID: 6620988944393998660, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: objectsToSpawn.Array.size
       value: 10
@@ -15843,7 +15854,7 @@ PrefabInstance:
     - target: {fileID: 7953537434885409092, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: gaze
       value: 
-      objectReference: {fileID: 7416706377003769559, guid: 271e0a72a914318498691cdb279e6052, type: 3}
+      objectReference: {fileID: 875882312}
     - target: {fileID: 7953537434885409092, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: objectsToSpawn.Array.size
       value: 8
@@ -15867,7 +15878,7 @@ PrefabInstance:
     - target: {fileID: 8164966622177099888, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: gaze
       value: 
-      objectReference: {fileID: 7416706377003769559, guid: 271e0a72a914318498691cdb279e6052, type: 3}
+      objectReference: {fileID: 875882312}
     - target: {fileID: 8164966622177099888, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: objectsToSpawn.Array.size
       value: 8
