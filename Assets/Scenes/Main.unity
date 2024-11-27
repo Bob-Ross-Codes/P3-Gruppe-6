@@ -7964,12 +7964,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8613866506843142048, guid: 794323b9527ce28468c928b2036ae536, type: 3}
   m_PrefabInstance: {fileID: 1623699202}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &573063863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8989547006694616346, guid: 794323b9527ce28468c928b2036ae536, type: 3}
+  m_PrefabInstance: {fileID: 1623699202}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &573063864 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6882160787307489141, guid: 794323b9527ce28468c928b2036ae536, type: 3}
   m_PrefabInstance: {fileID: 1623699202}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 573063863}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6309a290d4828614bbe3484d34a4af41, type: 3}
@@ -24926,25 +24931,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 875882299}
     - target: {fileID: 6142362759937281139, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: note
+      value: 
+      objectReference: {fileID: 573063863}
+    - target: {fileID: 6142362759937281139, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 875882299}
     - target: {fileID: 6142362759937281139, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142362759937281139, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1968876638}
+    - target: {fileID: 6142362759937281139, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: pictureOpen
+      value: 
+      objectReference: {fileID: 573063864}
     - target: {fileID: 6142362759937281139, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: playerController
       value: 
       objectReference: {fileID: 875882303}
     - target: {fileID: 6314301515363193278, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: note
+      value: 
+      objectReference: {fileID: 573063863}
+    - target: {fileID: 6314301515363193278, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 875882299}
     - target: {fileID: 6314301515363193278, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314301515363193278, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1968876638}
+    - target: {fileID: 6314301515363193278, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
+      propertyPath: pictureOpen
+      value: 
+      objectReference: {fileID: 573063864}
     - target: {fileID: 6314301515363193278, guid: 7d3a5720952c5024abc406c813e7b9ce, type: 3}
       propertyPath: playerController
       value: 
