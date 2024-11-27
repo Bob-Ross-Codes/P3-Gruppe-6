@@ -18,7 +18,7 @@ public class LightManager : MonoBehaviour
     public bool flickeringOn;
     public bool lightsOn = false;
 
-    public void FixedUpdate()
+    public void Update()
     {
         // Find all lights in the scene
         var allSceneLights = FindObjectsOfType<Light>();
