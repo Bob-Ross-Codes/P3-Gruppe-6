@@ -67,6 +67,7 @@ public class MonsterChaseMvmnt : MonoBehaviour
 
             if (destroyTimer <= 0)
             {
+                AkSoundEngine.PostEvent("Stop_Whispers", Player);
                 Destroy(gameObject); // Destroy the gameobject
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Ending"); // Load the ending scene
             }

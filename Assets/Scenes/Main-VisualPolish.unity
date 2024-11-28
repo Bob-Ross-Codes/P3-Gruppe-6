@@ -4540,7 +4540,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 64d1a755398c2a14385b45c4f04bc3b4, type: 2}
     - target: {fileID: 3793422733067527314, guid: 798ebca2fb2c1724f83031ffcdd38d9f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.93
+      value: 59.43
       objectReference: {fileID: 0}
     - target: {fileID: 3793422733067527314, guid: 798ebca2fb2c1724f83031ffcdd38d9f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4584,7 +4584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4606937554356403752, guid: 798ebca2fb2c1724f83031ffcdd38d9f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 767931534327604146, guid: 798ebca2fb2c1724f83031ffcdd38d9f, type: 3}
@@ -7077,8 +7077,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.000001, y: 2.2204459e-16, z: 10.000001}
-  m_Center: {x: -0.000015258789, y: -0.00000047683716, z: 0.00000011920929}
+  m_Size: {x: 10.000001, y: 0, z: 11.051663}
+  m_Center: {x: -0.000015404059, y: -0.00000047683716, z: -0.5258325}
 --- !u!4 &806546042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7cb586dbb016ff041a516f2fcda1a916, type: 3}
@@ -120735,7 +120735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774102531788569563, guid: 271e0a72a914318498691cdb279e6052, type: 3}
       propertyPath: SprintSpeed
-      value: 12.83
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4774102531788569563, guid: 271e0a72a914318498691cdb279e6052, type: 3}
       propertyPath: RotationSpeed
