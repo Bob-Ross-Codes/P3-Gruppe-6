@@ -16,6 +16,7 @@ public class HospitalLook : MonoBehaviour
     private Vector3 initialScaleNote;
     private Vector3 initialPositionNote;
     private Vector3 noteTransformation = new Vector3(0.119999997f, -0.0799999982f, 0.317999989f);
+    [SerializeField] private PictureOpen pictureOpen;
 
     [SerializeField] private GameObject capsule;
 
@@ -49,6 +50,7 @@ public class HospitalLook : MonoBehaviour
 
         if (isHiding)
         {
+            pictureOpen.simulateKeyPress = true;
             capsule.SetActive(false);
             // Switch to DoorCamera, disable player movement
             mainCamera.gameObject.SetActive(false);

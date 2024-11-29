@@ -8,6 +8,7 @@ public class PictureOpen : MonoBehaviour
     private bool isHandIn = false;        // Tracks if the hand is in
     private bool isHandFlipped = false;  // Tracks if the hand is flipped
     public GameObject ArrrrSprite;
+    public bool simulateKeyPress;
     void Start()
     {
         animator.SetTrigger("HandIn");
@@ -16,8 +17,10 @@ public class PictureOpen : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || simulateKeyPress)
         {
+            if (simulateKeyPress) simulateKeyPress = false;
+
             Destroy(ArrrrSprite);
 
             if (!isHandIn)

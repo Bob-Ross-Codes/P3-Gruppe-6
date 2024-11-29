@@ -74,7 +74,7 @@ public class JournalEyeDetector : GazeActivation
                 rCount++;
                 lookAtCount = -1;
             }
-            if (rCount > 2 && !jumpScare && eyetrackingActivated)
+            if (rCount > 1 && !jumpScare && eyetrackingActivated)
             {
                 StartCoroutine(destroyPatient());
                 jumpScare = true;

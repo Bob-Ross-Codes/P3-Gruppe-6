@@ -258,7 +258,7 @@ MonoBehaviour:
   invertFaceCulling: 0
   probeLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   hasPersistentHistory: 0
   screenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
   screenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
@@ -411,7 +411,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372097695}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: f9dd7b3febeaf174c95e211021878222, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 99487df1612ae4f45ac7fade52f870a1, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 974579631}
@@ -420,7 +420,7 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 1
-  m_AspectRatio: 2
+  m_AspectRatio: 4
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1372097696}
-  sceneToLoad: Main
+  sceneToLoad: Main-VisualPolish
 --- !u!114 &1372097699
 MonoBehaviour:
   m_ObjectHideFlags: 0

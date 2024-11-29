@@ -18,7 +18,7 @@ public class LightManager : MonoBehaviour
     public bool flickeringOn;
     public bool lightsOn = false;
 
-    public void FixedUpdate()
+    public void Update()
     {
         // Find all lights in the scene
         var allSceneLights = FindObjectsOfType<Light>();
@@ -69,7 +69,9 @@ public class LightManager : MonoBehaviour
 
                 // Turn off all lights (darker state)
                 foreach (var light in lightsToFlicker)
+                {if (light != null)
                     light.enabled = false;
+                }
 
                 WwiseStopLightsSounds();
                 lightsOn = false;
@@ -80,7 +82,8 @@ public class LightManager : MonoBehaviour
                 // Turn on all lights (brief light state)
                 foreach (var light in lightsToFlicker)
                 {
-                    light.enabled = true;
+                    if (light != null)
+                        light.enabled = true;
                 }
                 WwisePlayFlickeringSound();
                 lightsOn = true;
@@ -90,8 +93,10 @@ public class LightManager : MonoBehaviour
             }
             foreach (var light in lightsToFlicker)
             {
-                light.enabled = true; lightsOn = true;
+                if (light != null)
+                light.enabled = true; 
             }
+            lightsOn = true;
 
             flickeringOn = false;
             WwiseStopLightsSounds();
