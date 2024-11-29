@@ -11,58 +11,42 @@ public class ClosedEyes : MonoBehaviour
 
     public bool _blinking; // Tracks if the player is blinking
     private bool isFading; // Ensures fade coroutine is not restarted unnecessarily
+    public float fadeSpeed = 2f;
+    private float targetAlpha = 0f;
 
-    private void Update()
+    private bool hasPlayedSound = false; // Flag to ensure the sound is played once
+
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        // If the spacebar is pressed, set the target alpha to 1 (eyes closed)
+        if (Input.GetKey(KeyCode.Space))
         {
+            targetAlpha = 1f;
             _blinking = true;
-            StartCoroutine(FadeCanvas(1f, 1f)); // Fade to black over 1 second
-        }
-
-        if (_blinking)
-        {
             blinkTime += Time.deltaTime;
 
-            // Optional: Add logic here if you need to trigger other behaviors based on blinkTime
+            // Play sound only once when space is first pressed
+            if (!hasPlayedSound)
+            {
+                AkSoundEngine.PostEvent("Play_Eyes_Closed", gameObject);
+                hasPlayedSound = true; // Mark that the sound has been played
+            }
         }
-
-        if (Input.GetKeyUp(KeyCode.Space))
+        else // If the spacebar is not pressed, set the target alpha to 0 (eyes open)
         {
+            targetAlpha = 0f;
             _blinking = false;
             blinkTime = 0;
-            StartCoroutine(FadeCanvas(0f, 1f)); // Fade back to normal over 1 second
-        }
-    }
 
-    private IEnumerator FadeCanvas(float targetAlpha, float duration)
-    {
-        if (isFading) yield break; // Prevent multiple fade coroutines from running simultaneously
-
-        isFading = true;
-
-        // Ensure the canvas is active while fading
-        deathCanvas.gameObject.SetActive(true);
-
-        float startAlpha = deathCanvasGroup.alpha;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-            deathCanvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / duration);
-            yield return null;
+            // Stop the sound when the spacebar is released
+            if (hasPlayedSound)
+            {
+                AkSoundEngine.PostEvent("Stop_Eyes_Closed", gameObject);
+                hasPlayedSound = false; // Reset the sound flag
+            }
         }
 
-        // Ensure the final alpha value is set (to avoid small inaccuracies)
-        deathCanvasGroup.alpha = targetAlpha;
-
-        // Disable the canvas once fade out is complete
-        if (targetAlpha == 0f)
-        {
-            deathCanvas.gameObject.SetActive(false);
-        }
-
-        isFading = false;
+        // Smoothly interpolate the canvas alpha toward the target alpha
+        deathCanvasGroup.alpha = Mathf.MoveTowards(deathCanvasGroup.alpha, targetAlpha, fadeSpeed * Time.deltaTime);
     }
 }
