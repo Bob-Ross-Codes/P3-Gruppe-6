@@ -9671,7 +9671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3774939921679324408, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -127.06
+      value: -124.8
       objectReference: {fileID: 0}
     - target: {fileID: 3774939921679324408, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10751,11 +10751,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8021654209125227969, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -142.96
+      value: -140.7
       objectReference: {fileID: 0}
     - target: {fileID: 8021654209125227969, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.7
+      value: -22
       objectReference: {fileID: 0}
     - target: {fileID: 8038295696646482624, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       propertyPath: dissolveSpeed
@@ -11094,6 +11094,7 @@ PrefabInstance:
     - {fileID: 5995723301194042797, guid: f6ae165d89734468a959af86b6a96716, type: 3}
     - {fileID: 413036463467880101, guid: f6ae165d89734468a959af86b6a96716, type: 3}
     - {fileID: 1275562665528749968, guid: f6ae165d89734468a959af86b6a96716, type: 3}
+    - {fileID: 2052556411129601323, guid: f6ae165d89734468a959af86b6a96716, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4714208305778095429, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       insertIndex: -1
@@ -11132,9 +11133,6 @@ PrefabInstance:
       insertIndex: 13
       addedObject: {fileID: 1639847238}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2052556411129601323, guid: f6ae165d89734468a959af86b6a96716, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1032225107}
     - targetCorrespondingSourceObject: {fileID: 3838802925454685025, guid: f6ae165d89734468a959af86b6a96716, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1032225106}
@@ -11179,11 +11177,6 @@ GameObject:
 --- !u!1 &1032225102 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5404709476982980619, guid: f6ae165d89734468a959af86b6a96716, type: 3}
-  m_PrefabInstance: {fileID: 1032225096}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1032225103 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2052556411129601323, guid: f6ae165d89734468a959af86b6a96716, type: 3}
   m_PrefabInstance: {fileID: 1032225096}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &1032225104
@@ -11237,21 +11230,6 @@ MonoBehaviour:
   baseMap: {fileID: 2800000, guid: 6a8e8c7b9176d4a0c8784419579ebcf1, type: 3}
   normalMap: {fileID: 2800000, guid: 4e34d5f165e50449eb4b34902b79318e, type: 3}
   dissolveShader: {fileID: -6465566751694194690, guid: 6a8ca8e0a694942f5bd6e21d47a5691f, type: 3}
---- !u!114 &1032225107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032225103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74df1da90448a4c49ac2b7f0673eed53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultDissolveValue: -6000
-  goalDissolveValue: 6000
-  dissolveSpeed: 500
 --- !u!1001 &1032236971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18656,11 +18634,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4648609650371616779, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 24.89
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4648609650371616779, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: m_Lens.m_SensorSize.y
-      value: 18.66
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4652544567154762669, guid: eb30c58d8ae23254db435b39d7027f8e, type: 3}
       propertyPath: m_Name
@@ -27971,11 +27949,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 89777c57e448943439338a5ab2851332, type: 2}
     - target: {fileID: 1647744006445396433, guid: 641c5764965f85545a315f8b5dbf98e6, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 24.89
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1647744006445396433, guid: 641c5764965f85545a315f8b5dbf98e6, type: 3}
       propertyPath: m_Lens.m_SensorSize.y
-      value: 18.66
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1700194149203836624, guid: 641c5764965f85545a315f8b5dbf98e6, type: 3}
       propertyPath: m_IsActive
