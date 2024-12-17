@@ -4,6 +4,7 @@ using UnityEngine;
 /// Triggers a dissolve effect for all child objects and gradually increases the intensity of specified lights
 /// when the player enters the trigger zone.
 /// </summary>
+/// Copilot was used to refine this script
 public class TriggerDissolve : MonoBehaviour
 {
     [Header("Target Settings")]

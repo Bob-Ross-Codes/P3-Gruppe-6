@@ -4,6 +4,7 @@ using UnityEngine;
 /// <summary>
 /// Controls the dissolve effect for all child objects with materials supporting the dissolve shader.
 /// </summary>
+///  Copilot was used to refine this script
 public class DissolveChilds : MonoBehaviour
 {
     [Header("Dissolve Settings")]

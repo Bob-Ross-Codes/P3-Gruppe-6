@@ -1,5 +1,8 @@
 using System.Collections;
 using UnityEngine;
+/// <summary>
+/// Copilot was used to refine this script
+/// </summary>
 
 public class EnableGroupWithBlink : MonoBehaviour
 {

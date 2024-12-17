@@ -6,6 +6,7 @@ using UnityEngine;
 /// Controls the dissolve effect on a material by gradually changing its "_Dissolve" property.
 /// Allows activation, customization of target dissolve values, and resetting to a default state.
 /// </summary>
+/// Copilot was used to refine this script
 public class DissolveOffset : MonoBehaviour
 {
     [Header("Dissolve Settings")]

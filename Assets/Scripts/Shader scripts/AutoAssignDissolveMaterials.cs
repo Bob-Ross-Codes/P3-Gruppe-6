@@ -6,6 +6,7 @@ namespace DissolveExample
     /// <summary>
     /// Automatically assigns Base Map and Normal Map textures to materials using a Dissolve shader.
     /// </summary>
+    /// Copilot was used to refine this script
     public class AutoAssignDissolveMaterials : MonoBehaviour
     {
         [Header("Texture Settings")]
