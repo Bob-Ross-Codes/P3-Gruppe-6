@@ -1,41 +1,62 @@
 using UnityEngine;
 
+/// <summary>
+/// Controls the rotation of the keypad camera based on mouse movement.
+/// Limits the rotation to a specified range and disables movement when hovering over the keypad.
+/// </summary>
 public class KeypadCameraController : MonoBehaviour
 {
-    public float sensitivity = 0.1f; // Sensitivity of camera movement
-    public float maxAngle = 30f; // Maximum angle the camera can rotate to the right
+    [Header("Camera Settings")]
+    [Tooltip("Sensitivity of the camera's movement.")]
+    public float sensitivity = 0.1f;
+
+    [Tooltip("Maximum angle the camera can rotate to the right.")]
+    public float maxAngle = 30f;
+
     private float currentAngle = 0f; // Current rotation angle of the camera
-    private float startAngle;
+    private float startAngle; // The initial rotation angle of the camera
+    private bool isHoveringOverKeypad = false; // Tracks if the cursor is hovering over the keypad
 
-    private bool isHoveringOverKeypad = false; // Track if the cursor is over the keypad
-
+    /// <summary>
+    /// Stores the initial angle of the camera for relative rotation calculations.
+    /// </summary>
     void Start()
     {
-        // Store the initial angle to ensure relative rotation
-        startAngle = transform.localEulerAngles.y;
+        startAngle = transform.localEulerAngles.y; // Initialize the starting angle
     }
 
+    /// <summary>
+    /// Updates the camera's rotation based on mouse movement,
+    /// unless the cursor is hovering over the keypad.
+    /// </summary>
     void Update()
     {
-        if (isHoveringOverKeypad) return; // Do not move the camera if hovering over the keypad
+        if (isHoveringOverKeypad) return; // Prevent camera movement when hovering over the keypad
 
-        // Get the mouse movement
+        // Get horizontal mouse movement
         float mouseX = Input.GetAxis("Mouse X");
 
-        // Calculate the desired angle
+        // Calculate the desired rotation angle
         float desiredAngle = currentAngle + mouseX * sensitivity;
 
-        // Clamp the angle to the allowed range
+        // Clamp the desired angle within the allowed range
         desiredAngle = Mathf.Clamp(desiredAngle, 0f, maxAngle);
 
-        // Apply the rotation
-        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, startAngle + desiredAngle, transform.localEulerAngles.z);
+        // Apply the rotation to the camera
+        transform.localEulerAngles = new Vector3(
+            transform.localEulerAngles.x, 
+            startAngle + desiredAngle, 
+            transform.localEulerAngles.z
+        );
 
-        // Update the current angle
+        // Update the current angle to reflect the applied rotation
         currentAngle = desiredAngle;
     }
 
-    // Methods to enable/disable camera movement
+    /// <summary>
+    /// Enables or disables camera movement based on whether the cursor is over the keypad.
+    /// </summary>
+    /// <param name="isHovering">True if the cursor is hovering over the keypad; otherwise, false.</param>
     public void SetHoveringOverKeypad(bool isHovering)
     {
         isHoveringOverKeypad = isHovering;

@@ -1,26 +1,26 @@
-using System.Collections;
+/// <summary>
+/// Detects when the player looks at the bed and triggers the associated effects.
+/// </summary>
 using UnityEngine;
 
 public class BedEyeDetector : GazeActivation
 {
-    public JournalEyeDetector journalEyeDetector;
-    public LightManager lightManager;  // Reference to the LightManager script
-    public override float ActivationTime => 0.2f;
+    public JournalEyeDetector journalEyeDetector; // Reference to the JournalEyeDetector script
+    public LightManager lightManager; // Reference to the LightManager script
+    public override float ActivationTime => 0.2f; // Time required to trigger the effect
 
-    public GameObject targetGameObject;  // Reference to the GameObject with SpriteFade attached
-    private BlurryText blurryText;       // Reference to the SpriteFade script
-    [SerializeField] private GameObject patient;
+    public GameObject targetGameObject; // GameObject with the BlurryText script
+    private BlurryText blurryText; // Reference to the BlurryText component
+    [SerializeField] private GameObject patient; // Reference to the patient GameObject
 
-    void Start()
+    private void Start()
     {
+        // Ensure the targetGameObject is assigned and has a BlurryText component
         if (targetGameObject != null)
         {
             blurryText = targetGameObject.GetComponent<BlurryText>();
-
             if (blurryText == null)
-            {
-                Debug.LogError("SpriteFade component not found on " + targetGameObject.name);
-            }
+                Debug.LogError($"BlurryText component not found on {targetGameObject.name}");
         }
         else
         {
@@ -28,16 +28,27 @@ public class BedEyeDetector : GazeActivation
         }
     }
 
+    /// <summary>
+    /// Triggers the bed's effect when the player looks at it.
+    /// </summary>
     public override void OnLookedAt()
     {
-        Debug.Log("Looked at Bed");
+        Debug.Log("Player looked at the bed");
+
+        // Resume blurry text fade if applicable
         blurryText.PauseFadeOut(false);
 
+        // Handle light flickering and journal jumpscare logic
         if (journalEyeDetector.lookAtCount != journalEyeDetector.jumpScareCount)
+        {
             lightManager.StopFlicker();
-        else journalEyeDetector.jumpScare = true;
+        }
+        else
+        {
+            journalEyeDetector.jumpScare = true;
+        }
 
-        // Start blurring the journal
+        // Start blurry text fade effect
         blurryText.StartFadeOut();
     }
 }

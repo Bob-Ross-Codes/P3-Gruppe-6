@@ -1,34 +1,42 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Handles de-agro behavior for the monster when the player looks at the collider for a specified duration.
+/// </summary>
 public class DeAgro : GazeActivation
 {
-    public Animator monsteranimater; // Animator reference
-    public GameObject monsterPrefab; // Monster prefab reference
+    [Header("Monster Settings")]
+    [SerializeField] private Animator monsterAnimator; // Animator for the monster
+    [SerializeField] private GameObject monsterPrefab; // Monster prefab to destroy
 
-    private float lookAtTime = 0f; // Tracks how long the collider is being looked at
-    private Coroutine deAgroCoroutine = null; // Reference to the countdown coroutine
+    [Header("Closet Interaction")]
+    [SerializeField] public ClosetHide closetHideScript; // Reference to the ClosetHide script
+
+    private float lookAtTime = 0f; // Tracks how long the player has been looking
+    private Coroutine deAgroCoroutine = null; // Reference to the active countdown coroutine
     private bool isBeingLookedAt = false; // Tracks if the player is looking at the collider
 
-    public ClosetHide closetHideScript; // Reference to the ClosetHide script
+    /// <summary>
+    /// Time required to detect player gaze activation.
+    /// </summary>
+    public override float ActivationTime => 0.1f;
 
-    public override float ActivationTime => 0.1f; // Defines how quickly `OnLookedAt()` activates
-
+    /// <summary>
+    /// Called when the player starts looking at the collider.
+    /// Triggers the monster animation and starts the de-agro countdown.
+    /// </summary>
     public override void OnLookedAt()
     {
-         if (!isBeingLookedAt)
+        if (!isBeingLookedAt)
         {
-            // Playerstarted looking at the collider
             isBeingLookedAt = true;
             Debug.Log("Player started looking at DeAgro collider.");
 
-            // Trigger the monster animation
-            if (monsteranimater != null)
-            {
-                monsteranimater.SetTrigger("DeAgro");
-            }
+            // Trigger the monster's de-agro animation
+            monsterAnimator?.SetTrigger("DeAgro");
 
-            // Start the countdown coroutine if not already running
+            // Start countdown coroutine if it's not already running
             if (deAgroCoroutine == null)
             {
                 deAgroCoroutine = StartCoroutine(StartDeAgroCountdown());
@@ -36,37 +44,42 @@ public class DeAgro : GazeActivation
         }
     }
 
+    /// <summary>
+    /// Continuously checks if the player is still looking at the collider.
+    /// Resets the de-agro timer if the player looks away.
+    /// </summary>
     private void Update()
     {
-        // Continuously check if the player is still looking at the collider
         if (!IsLookingAt() && isBeingLookedAt)
         {
-            // Player stopped looking at the collider
             Debug.Log("Player looked away from DeAgro collider.");
             ResetDeAgroTimer();
         }
     }
 
+    /// <summary>
+    /// Starts a countdown to de-agro the monster.
+    /// Destroys the monster if the player looks at the collider for 7 continuous seconds.
+    /// </summary>
     private IEnumerator StartDeAgroCountdown()
     {
-        lookAtTime = 0f; // Reset the timer
-        Debug.Log("Countdown started.");
+        lookAtTime = 0f;
+        Debug.Log("DeAgro countdown started.");
 
         while (lookAtTime < 7f)
         {
             lookAtTime += Time.deltaTime;
 
-            // If the player stops looking, exit the coroutine
+            // Exit coroutine if the player stops looking
             if (!isBeingLookedAt)
             {
-                Debug.Log("Player interrupted gaze. Stopping countdown.");
+                Debug.Log("Player interrupted gaze. Countdown stopped.");
                 yield break;
             }
 
             yield return null;
         }
 
-        // Destroy the monster after 7 continuous seconds of looking
         Debug.Log("7 seconds reached. Destroying monster...");
         if (monsterPrefab != null)
         {
@@ -74,12 +87,14 @@ public class DeAgro : GazeActivation
             closetHideScript.StartCoroutine(closetHideScript.WaitForMonsterToBeDestroyed());
         }
 
-        deAgroCoroutine = null; // Clean up the coroutine reference
+        deAgroCoroutine = null; // Clear the coroutine reference
     }
 
+    /// <summary>
+    /// Resets the de-agro timer and stops any ongoing countdown coroutine.
+    /// </summary>
     private void ResetDeAgroTimer()
     {
-        // Reset the state and stop the coroutine
         isBeingLookedAt = false;
         lookAtTime = 0f;
 
@@ -92,21 +107,13 @@ public class DeAgro : GazeActivation
         Debug.Log("DeAgro timer reset.");
     }
 
+    /// <summary>
+    /// Determines if the player is still looking at the collider.
+    /// Replace this with actual gaze detection logic.
+    /// </summary>
+    /// <returns>True if the player is looking at the collider; otherwise, false.</returns>
     private bool IsLookingAt()
     {
-        // Replace this with your actual gaze detection logic.
-        // For now, it's assumed that `OnLookedAt()` sets `isBeingLookedAt` to true,
-        // and we reset `isBeingLookedAt` to false dynamically when the player looks away.
         return isBeingLookedAt;
     }
 }
-
-
-
-
-
-
-
-
-
-

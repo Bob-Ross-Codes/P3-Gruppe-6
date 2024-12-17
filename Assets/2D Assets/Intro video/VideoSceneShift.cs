@@ -1,43 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
+/// <summary>
+/// Plays a video and switches to the next scene when the video ends.
+/// </summary>
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 
 public class VideoSceneShift : MonoBehaviour
 {
-    public VideoPlayer videoPlayer; // Reference to the VideoPlayer component
-    public string sceneToLoad; // Name of the scene to load after the video ends
+    public VideoPlayer videoPlayer; // VideoPlayer component reference
+    public string sceneToLoad; // Scene to load after the video ends
 
-    void Start()
+    private void Start()
     {
-
-           
-        // Lock the cursor to the center of the screen
+        // Lock and hide the cursor
         Cursor.lockState = CursorLockMode.Locked;
-        
-        // Hide the cursor
         Cursor.visible = false;
-    
-        // Make sure we have a reference to the VideoPlayer component
-        if (videoPlayer == null)
-        {
-            videoPlayer = GetComponent<VideoPlayer>();
-        }
 
-        // Register for the video end event
+        // Assign VideoPlayer if not already assigned
+        if (videoPlayer == null)
+            videoPlayer = GetComponent<VideoPlayer>();
+
+        // Register the event for when the video ends
         videoPlayer.loopPointReached += OnVideoEnd;
     }
 
-    // This function will be called when the video finishes playing
-    void OnVideoEnd(VideoPlayer vp)
+    private void OnVideoEnd(VideoPlayer vp)
     {
+        // Load the specified scene when the video ends
         SceneManager.LoadScene(sceneToLoad);
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
-        // Unregister the event when the object is destroyed
+        // Unregister the video end event
         videoPlayer.loopPointReached -= OnVideoEnd;
     }
 }

@@ -1,107 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-//namespace DissolveExample
+/// <summary>
+/// Controls the dissolve effect for all child objects with materials supporting the dissolve shader.
+/// </summary>
+public class DissolveChilds : MonoBehaviour
+{
+    [Header("Dissolve Settings")]
+    private List<Material> materials = new List<Material>(); // List of materials for dissolve effect
 
-/*{
-    public class DissolveChilds : MonoBehaviour
+    /// <summary>
+    /// Initializes the list of materials from all child objects.
+    /// </summary>
+    private void Start()
     {
-        // Start is called before the first frame update
-        List<Material> materials = new List<Material>();
-        bool PingPong = false;
-        void Start()
+        // Get all renderers from child objects
+        var renderers = GetComponentsInChildren<Renderer>();
+
+        // Collect materials from each renderer
+        foreach (var renderer in renderers)
         {
-            var renders = GetComponentsInChildren<Renderer>();
-            for (int i = 0; i < renders.Length; i++)
-            {
-                materials.AddRange(renders[i].materials);
-            }
-        }
-
-        private void Reset()
-        {
-            Start();
-            SetValue(0);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-            var value = Mathf.PingPong(Time.time * 0.5f, 1f);
-            SetValue(value);
-        }
-
-        //IEnumerator enumerator()
-        //{
-
-        //    //float value =         while (true)
-        //    //{
-        //    //    Mathf.PingPong(value, 1f);
-        //    //    value += Time.deltaTime;
-        //    //    SetValue(value);
-        //    //    yield return new WaitForEndOfFrame();
-        //    //}
-        //}
-
-        public void SetValue(float value)
-        {
-            for (int i = 0; i < materials.Count; i++)
-            {
-                materials[i].SetFloat("_Dissolve", value);
-            }
+            materials.AddRange(renderer.materials);
         }
     }
-}*/
 
-//namespace DissolveExample
-
-    public class DissolveChilds : MonoBehaviour
+    /// <summary>
+    /// Updates the dissolve value dynamically over time.
+    /// </summary>
+    private void Update()
     {
-        List<Material> materials = new List<Material>();
+        // Calculate a dissolve value oscillating between 0 and 1 based on time
+        float dissolveValue = Mathf.PingPong(Time.time * 0.5f, 1f);
+        SetValue(dissolveValue);
+    }
 
-        void Start()
+    /// <summary>
+    /// Sets the dissolve value for all materials with a "_Dissolve" property.
+    /// </summary>
+    /// <param name="value">The dissolve value to set (0 to 1).</param>
+    public void SetValue(float value)
+    {
+        foreach (var material in materials)
         {
-            var renderers = GetComponentsInChildren<Renderer>();
-            foreach (var renderer in renderers)
+            // Check if the material supports the "_Dissolve" property
+            if (material.HasProperty("_Dissolve"))
             {
-                materials.AddRange(renderer.materials);
+                material.SetFloat("_Dissolve", value); // Update dissolve value
             }
-        }
-
-        void Update()
-        {
-            // Example dissolve effect: X-axis based dissolve
-            float dissolveValue = Mathf.PingPong(Time.time * 0.5f, 1f);
-            SetValue(dissolveValue);
-        }
-
-/*public void SetValue(float value)
-{
-    foreach (var material in materials)
-    {
-        if (material.HasProperty("_DissolveOffset"))
-        {
-            material.SetVector("_DissolveOffset", new Vector4(value, 0, 0, 0));
-        }
-        else if (material.HasProperty("_DissolveDirection"))
-        {
-            material.SetVector("_DissolveDirection", new Vector3(value, 0, 0));
         }
     }
 }
-*/
-
-        public void SetValue(float value)
-        {
-            foreach (var material in materials)
-            {
-                if (material.HasProperty("_Dissolve"))
-                {
-                    material.SetFloat("_Dissolve", value); // Adjust dissolve value
-                }
-            }
-        }
-    }
-

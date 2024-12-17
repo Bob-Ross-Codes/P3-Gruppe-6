@@ -1,3 +1,7 @@
+/// <summary>
+/// Handles flickering lights in the scene and plays sound effects using Wwise.
+/// </summary>
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,124 +9,106 @@ using System.Linq;
 
 public class LightManager : MonoBehaviour
 {
-    [SerializeField] public Light[] allLights;  // Array of lights
-    [SerializeField] private Light[] excludedLights; // Array of lights to exclude
-    private Light[] lightsToFlicker;
-    [SerializeField] private Light handlight;
+    [SerializeField] public Light[] allLights; // All lights in the scene
+    [SerializeField] private Light[] excludedLights; // Lights to exclude from flickering
+    private Light[] lightsToFlicker; // Lights that will flicker
+    [SerializeField] private Light handlight; // Optional handlight to include in flickering
+    public GameObject Player; // Player object for sound control
 
-    public GameObject Player;
+    private float flickerDuration; // How long the flickering lasts
+    private float darkInterval; // How long lights stay off
+    private float lightInterval; // How long lights stay on
 
-    private float flickerDuration;  // Total duration of flickering effect
-    private float darkInterval;
-    private float lightInterval;
-    public bool flickeringOn;
-    public bool lightsOn = false;
+    public bool flickeringOn; // Is the flickering active?
+    public bool lightsOn = false; // Are the lights currently on?
 
+    /// <summary>
+    /// Updates the list of lights to exclude handlight and excluded lights.
+    /// </summary>
     public void Update()
     {
-        // Find all lights in the scene
-        var allSceneLights = FindObjectsOfType<Light>();
-
-        // Exclude the handLight and lights in the excludedLights array
-        allLights = allSceneLights
+        allLights = FindObjectsOfType<Light>()
             .Where(light => light != handlight && !excludedLights.Contains(light))
             .ToArray();
     }
 
+    /// <summary>
+    /// Starts flickering lights.
+    /// </summary>
+    /// <param name="duration">How long to flicker.</param>
+    /// <param name="speed">Flickering speed.</param>
+    /// <param name="handLight">Include handlight in flickering?</param>
     public void StartFlicker(float duration, float speed, bool handLight)
     {
         if (!flickeringOn)
         {
             flickeringOn = true;
             Debug.Log("Starting Flicker");
-            if (handLight)
-            {
-                lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
-                List<Light> tempList = new List<Light>(lightsToFlicker); // Optionally use List later if needed
-                tempList.Add(handlight); // Add handlight to temp list
-                lightsToFlicker = tempList.ToArray(); // Convert back to array
-            }
-            else
-                lightsToFlicker = new List<Light>(allLights).ToArray();  // Convert to array
 
-            StartCoroutine(Flickering(duration, speed, handLight));
+            lightsToFlicker = new List<Light>(allLights).ToArray();
+            if (handLight) lightsToFlicker = lightsToFlicker.Append(handlight).ToArray();
+
+            StartCoroutine(Flickering(duration, speed));
         }
     }
 
+    /// <summary>
+    /// Stops flickering lights.
+    /// </summary>
     public void StopFlicker()
     {
         flickeringOn = false;
     }
 
-    public IEnumerator Flickering(float duration, float speed, bool handLight)
+    /// <summary>
+    /// Flickers lights on and off at random intervals.
+    /// </summary>
+    /// <param name="duration">How long to flicker.</param>
+    /// <param name="speed">Flickering speed.</param>
+    private IEnumerator Flickering(float duration, float speed)
     {
         Debug.Log("Now Flickering");
         float elapsedTime = 0;
-        if (flickeringOn)
+        flickerDuration = duration;
+
+        while (elapsedTime < flickerDuration && flickeringOn)
         {
-            flickerDuration = duration;
+            darkInterval = Random.Range(0.1f, 0.4f);
+            lightInterval = Random.Range(0.05f, 0.1f);
 
-            while (elapsedTime < flickerDuration && flickeringOn)
-            {
-                darkInterval = Random.Range(0.1f, 0.4f);
-                lightInterval = Random.Range(0.05f, 0.1f);
+            foreach (var light in lightsToFlicker) if (light != null) light.enabled = false;
+            WwiseStopLightsSounds();
+            lightsOn = false;
 
-                // Turn off all lights (darker state)
-                foreach (var light in lightsToFlicker)
-                {if (light != null)
-                    light.enabled = false;
-                }
+            yield return new WaitForSeconds(darkInterval * speed);
+            elapsedTime += darkInterval;
 
-                WwiseStopLightsSounds();
-                lightsOn = false;
-
-                yield return new WaitForSeconds(darkInterval * speed);
-                elapsedTime += darkInterval;
-
-                // Turn on all lights (brief light state)
-                foreach (var light in lightsToFlicker)
-                {
-                    if (light != null)
-                        light.enabled = true;
-                }
-                WwisePlayFlickeringSound();
-                lightsOn = true;
-
-                yield return new WaitForSeconds(lightInterval * speed);
-                elapsedTime += lightInterval;
-            }
-            foreach (var light in lightsToFlicker)
-            {
-                if (light != null)
-                light.enabled = true; 
-            }
+            foreach (var light in lightsToFlicker) if (light != null) light.enabled = true;
+            WwisePlayFlickeringSound();
             lightsOn = true;
 
-            flickeringOn = false;
-            WwiseStopLightsSounds();
+            yield return new WaitForSeconds(lightInterval * speed);
+            elapsedTime += lightInterval;
         }
-        else { flickeringOn = false; yield break; }
+
+        foreach (var light in lightsToFlicker) if (light != null) light.enabled = true;
+        lightsOn = true;
+        flickeringOn = false;
+        WwiseStopLightsSounds();
     }
 
-    // Flickering sounds
+    /// <summary>
+    /// Plays flickering sound.
+    /// </summary>
     private void WwisePlayFlickeringSound()
     {
         AkSoundEngine.SetRTPCValue("RTPC_LightState", 2, Player);
         AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
     }
 
-    private void WwisePlayTurnOnSound()
-    {
-        AkSoundEngine.SetRTPCValue("RTPC_LightState", 1, Player);
-        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
-    }
-
-    private void WwisePlayTurnOffSound()
-    {
-        AkSoundEngine.SetRTPCValue("RTPC_LightState", 0, Player);
-        AkSoundEngine.PostEvent("Play_Light_OnOff_Event", Player);
-    }
-
+    /// <summary>
+    /// Stops light sounds.
+    /// </summary>
     private void WwiseStopLightsSounds()
     {
         AkSoundEngine.PostEvent("Stop_Light_OnOff_Event", Player);

@@ -3,77 +3,102 @@ using TMPro;
 using Cinemachine;
 using StarterAssets;
 
+/// <summary>
+/// Controls the keypad functionality, including player interaction, code input, and door unlocking.
+/// Manages cameras, UI, and gameplay interaction logic.
+/// </summary>
 public class KeypadController : MonoBehaviour
 {
-    public GameObject keypadUI; // Assign your keypad UI GameObject
-    public TextMeshProUGUI inputDisplay; // TextMeshProUGUI to show the player’s input
-    public GameObject door; // Door GameObject to open when correct code is entered
-    public GameObject player; // Player GameObject with the movement script
+    [Header("UI and Gameplay References")]
+    [Tooltip("The keypad UI GameObject.")]
+    public GameObject keypadUI;
+
+    [Tooltip("The TextMeshProUGUI element to display the player's input.")]
+    public TextMeshProUGUI inputDisplay;
+
+    [Tooltip("The door GameObject to open when the correct code is entered.")]
+    public GameObject door;
+
+    [Tooltip("The player GameObject.")]
+    public GameObject player;
+
+    [Tooltip("The collider to enable/disable during keypad interaction.")]
     public GameObject playCollider;
 
-    public CinemachineVirtualCamera mainCameraVCam; // Main gameplay camera
-    public CinemachineVirtualCamera keypadVCam; // Keypad camera
+    [Header("Camera References")]
+    [Tooltip("The main gameplay camera.")]
+    public CinemachineVirtualCamera mainCameraVCam;
+
+    [Tooltip("The keypad interaction camera.")]
+    public CinemachineVirtualCamera keypadVCam;
+
+    [Header("Code and Picture Settings")]
+    [Tooltip("Array of codes and associated pictures.")]
+    public CodeWithPicture[] codesWithPictures;
+
+    [Tooltip("Interaction distance for the keypad.")]
+    public float interactionDistance = 4f;
+
+    [Header("Player Movement Settings")]
+    [Tooltip("Reference to the player's movement controller.")]
+    public FirstPersonController playerController;
 
     [System.Serializable]
     public class CodeWithPicture
     {
-        public string code;              // Password for this picture
-        public GameObject pictureObject; // GameObject for each picture
+        [Tooltip("The password associated with this picture.")]
+        public string code;
+
+        [Tooltip("The GameObject for the picture.")]
+        public GameObject pictureObject;
     }
 
-    public CodeWithPicture[] codesWithPictures; // Array of codes and corresponding pictures
+    private string correctCode; // The currently active correct code
+    private string playerInput = ""; // Tracks the player's input
+    private int currentCodeIndex = 0; // The index of the current code and picture
+    private bool isKeypadOpen = false; // Whether the keypad UI is currently open
 
-    public float interactionDistance = 4f; // Distance within which the player can interact with the keypad
-
-    private string correctCode;         // Current correct code
-    private string playerInput = "";    // Player's input
-    private int currentCodeIndex = 0;   // Tracks the current picture/password index
-    private bool isKeypadOpen = false;  // Tracks if keypad UI is open
-
-    public FirstPersonController playerController; // Reference to the player's movement script
-    private MonoBehaviour FirstPersonController; // Reference to the player's movement script
-
+    /// <summary>
+    /// Initializes the keypad UI, cameras, and gameplay elements.
+    /// </summary>
     void Start()
     {
-        keypadUI.SetActive(false); // Start with keypad UI hidden
-        FirstPersonController = player.GetComponent<MonoBehaviour>();
-
+        keypadUI.SetActive(false);
         playCollider.SetActive(true);
-
-        // Ensure the main camera is active at the start
         mainCameraVCam.Priority = 10;
         keypadVCam.Priority = 0;
 
-        // Initialize with the first code and picture
-        LoadCodeAndPicture(0);
+        LoadCodeAndPicture(0); // Load the first code and picture
     }
 
+    /// <summary>
+    /// Monitors player interaction with the keypad and handles input logic.
+    /// </summary>
     void Update()
     {
-        // Check if the player is within interaction distance
         float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
 
-        // Allow interaction only if the player is near the keypad
         if (distanceToPlayer <= interactionDistance && Input.GetKeyDown(KeyCode.E))
         {
             ToggleKeypadInputMode();
         }
 
-        // Handle additional keypad functionality
-        if (isKeypadOpen && Input.GetKeyDown(KeyCode.Alpha1)) // Look at password
+        if (isKeypadOpen && Input.GetKeyDown(KeyCode.Alpha1))
         {
             LookAtPassword();
         }
 
-        if (isKeypadOpen && Input.GetKeyDown(KeyCode.Alpha2)) // Look at keypad
+        if (isKeypadOpen && Input.GetKeyDown(KeyCode.Alpha2))
         {
             LookAtKeypad();
         }
     }
 
+    /// <summary>
+    /// Toggles the keypad input mode, managing the UI, cameras, and player controls.
+    /// </summary>
     void ToggleKeypadInputMode()
     {
-
         isKeypadOpen = !isKeypadOpen;
 
         if (isKeypadOpen)
@@ -90,45 +115,59 @@ public class KeypadController : MonoBehaviour
             playCollider.SetActive(true);
         }
 
-        keypadUI.SetActive(isKeypadOpen); // Show or hide the keypad UI
+        keypadUI.SetActive(isKeypadOpen);
     }
 
+    /// <summary>
+    /// Enables the cursor and locks player movement.
+    /// </summary>
     void EnableCursorAndLockPlayer()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        if (FirstPersonController != null)
+        if (playerController != null)
         {
             playerController.MoveSpeed = 0;
-
         }
     }
 
+    /// <summary>
+    /// Disables the cursor and unlocks player movement.
+    /// </summary>
     void DisableCursorAndUnlockPlayer()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        if (FirstPersonController != null)
+        if (playerController != null)
         {
             playerController.MoveSpeed = 3.5f;
-
         }
     }
 
+    /// <summary>
+    /// Switches to the keypad camera.
+    /// </summary>
     void SwitchToKeypadCamera()
     {
-        mainCameraVCam.Priority = 5; // Lower priority for main camera
-        keypadVCam.Priority = 10;   // Higher priority for keypad camera
+        mainCameraVCam.Priority = 5;
+        keypadVCam.Priority = 10;
     }
 
+    /// <summary>
+    /// Switches to the main gameplay camera.
+    /// </summary>
     void SwitchToMainCamera()
     {
-        mainCameraVCam.Priority = 10; // Higher priority for main camera
-        keypadVCam.Priority = 0;     // Lower priority for keypad camera
+        mainCameraVCam.Priority = 10;
+        keypadVCam.Priority = 0;
     }
 
+    /// <summary>
+    /// Loads a specific code and associated picture.
+    /// </summary>
+    /// <param name="index">The index of the code and picture to load.</param>
     void LoadCodeAndPicture(int index)
     {
         if (index >= 0 && index < codesWithPictures.Length)
@@ -136,7 +175,6 @@ public class KeypadController : MonoBehaviour
             currentCodeIndex = index;
             correctCode = codesWithPictures[index].code;
 
-            // Set the correct picture active, and deactivate all others
             for (int i = 0; i < codesWithPictures.Length; i++)
             {
                 codesWithPictures[i].pictureObject.SetActive(i == currentCodeIndex);
@@ -148,15 +186,16 @@ public class KeypadController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Cycles to the next picture in the sequence.
+    /// </summary>
     public void LookAtKeypad()
     {
-        // Advance to the next picture, if possible
         if (currentCodeIndex < codesWithPictures.Length - 1)
         {
-            codesWithPictures[currentCodeIndex].pictureObject.SetActive(false); // Hide current picture
+            codesWithPictures[currentCodeIndex].pictureObject.SetActive(false);
             currentCodeIndex++;
-            codesWithPictures[currentCodeIndex].pictureObject.SetActive(true); // Show next picture
-            Debug.Log("Looking at password: Changed to next picture");
+            codesWithPictures[currentCodeIndex].pictureObject.SetActive(true);
         }
         else
         {
@@ -164,20 +203,24 @@ public class KeypadController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the current code to match the active picture.
+    /// </summary>
     public void LookAtPassword()
     {
-        // Update the password to match the current picture
         correctCode = codesWithPictures[currentCodeIndex].code;
-        Debug.Log("Looking at keypad: Correct code updated to " + correctCode);
     }
 
+    /// <summary>
+    /// Adds a digit to the player's input and checks the code when input is complete.
+    /// </summary>
+    /// <param name="digit">The digit to add to the input.</param>
     public void AddDigit(string digit)
     {
         if (playerInput.Length < correctCode.Length)
         {
             playerInput += digit;
             inputDisplay.text = playerInput;
-            AkSoundEngine.PostEvent("Play_ClickButton", gameObject);
 
             if (playerInput.Length == correctCode.Length)
             {
@@ -186,256 +229,44 @@ public class KeypadController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Clears the player's input.
+    /// </summary>
     public void ClearInput()
     {
         ResetInput();
     }
 
+    /// <summary>
+    /// Checks if the player's input matches the correct code.
+    /// </summary>
     void CheckCode()
     {
         if (playerInput == correctCode)
         {
-            AkSoundEngine.PostEvent("Play_Keypad_Correct",gameObject);
             OpenDoor();
-            ToggleKeypadInputMode(); // Exit input mode after entering the correct code
-        }
-        else
-        {
-            AkSoundEngine.PostEvent("Play_Keypad_Error", gameObject);
-            ResetInput(); // Clear input if code is incorrect
-        }
-    }
-
-    void ResetInput()
-    {
-        AkSoundEngine.PostEvent("KeypadButton", gameObject);
-        playerInput = "";
-        inputDisplay.text = playerInput;
-    }
-
-    void OpenDoor()
-    {
-        Debug.Log("Door is opened!");
-        door.SetActive(false); // Disable or open the door
-    }
-}
-
-
-
-
-/*using UnityEngine;
-using TMPro;
-using Cinemachine;
-
-public class KeypadController : MonoBehaviour
-{
-    public GameObject keypadUI; // Assign your keypad UI GameObject
-    public TextMeshProUGUI inputDisplay; // TextMeshProUGUI to show the player’s input
-    public GameObject door; // Door GameObject to open when correct code is entered
-    public GameObject player; // Player GameObject with the movement script
-
-    public CinemachineVirtualCamera mainCameraVCam; // Main gameplay camera
-    public CinemachineVirtualCamera keypadVCam; // Keypad camera
-
-    [System.Serializable]
-    public class CodeWithPicture
-    {
-        public string code;              // Password for this picture
-        public GameObject pictureObject; // GameObject for each picture
-    }
-
-    public CodeWithPicture[] codesWithPictures; // Array of codes and corresponding pictures
-
-    private string correctCode;         // Current correct code
-    private string playerInput = "";    // Player's input
-    private int currentCodeIndex = 0;   // Tracks the current picture/password index
-    private bool isKeypadOpen = false;
-    private bool isPlayerInRange = false; // Tracks if the player is near the keypad
-    private MonoBehaviour FirstPersonController; // Reference to the player's movement script
-
-    void Start()
-    {
-        keypadUI.SetActive(false); // Start with keypad UI hidden
-        FirstPersonController = player.GetComponent<MonoBehaviour>();
-
-        // Ensure the main camera is active at the start
-        mainCameraVCam.Priority = 10;
-        keypadVCam.Priority = 0;
-
-        // Initialize with the first code and picture
-        LoadCodeAndPicture(0);
-    }
-
-    void Update()
-    {
-        // Allow interaction only if the player is near the keypad
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
-        {
             ToggleKeypadInputMode();
         }
-
-        if (isKeypadOpen && Input.GetKeyDown(KeyCode.Alpha1)) // Look at password
+        else
         {
-            LookAtPassword();
-        }
-
-        if (isKeypadOpen && Input.GetKeyDown(KeyCode.Alpha2)) // Look at keypad
-        {
-            LookAtKeypad();
-        }
-    }
-
-    void ToggleKeypadInputMode()
-    {
-        isKeypadOpen = !isKeypadOpen;
-
-        if (isKeypadOpen)
-        {
-            EnableCursorAndLockPlayer();
-            SwitchToKeypadCamera();
             ResetInput();
         }
-        else
-        {
-            DisableCursorAndUnlockPlayer();
-            SwitchToMainCamera();
-        }
-
-        keypadUI.SetActive(isKeypadOpen); // Show or hide the keypad UI
     }
 
-    void EnableCursorAndLockPlayer()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-
-        if (FirstPersonController != null)
-        {
-            FirstPersonController.enabled = false; // Lock player movement
-        }
-    }
-
-    void DisableCursorAndUnlockPlayer()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-
-        if (FirstPersonController != null)
-        {
-            FirstPersonController.enabled = true; // Unlock player movement
-        }
-    }
-
-    void SwitchToKeypadCamera()
-    {
-        mainCameraVCam.Priority = 5; // Lower priority for main camera
-        keypadVCam.Priority = 10;   // Higher priority for keypad camera
-    }
-
-    void SwitchToMainCamera()
-    {
-        mainCameraVCam.Priority = 10; // Higher priority for main camera
-        keypadVCam.Priority = 0;     // Lower priority for keypad camera
-    }
-
-    void LoadCodeAndPicture(int index)
-    {
-        if (index >= 0 && index < codesWithPictures.Length)
-        {
-            currentCodeIndex = index;
-            correctCode = codesWithPictures[index].code;
-
-            // Set the correct picture active, and deactivate all others
-            for (int i = 0; i < codesWithPictures.Length; i++)
-            {
-                codesWithPictures[i].pictureObject.SetActive(i == currentCodeIndex);
-            }
-        }
-        else
-        {
-            Debug.LogError("Invalid code index!");
-        }
-    }
-
-    public void LookAtPassword()
-    {
-        // Advance to the next picture, if possible
-        if (currentCodeIndex < codesWithPictures.Length - 1)
-        {
-            codesWithPictures[currentCodeIndex].pictureObject.SetActive(false); // Hide current picture
-            currentCodeIndex++;
-            codesWithPictures[currentCodeIndex].pictureObject.SetActive(true); // Show next picture
-            Debug.Log("Looking at password: Changed to next picture");
-        }
-        else
-        {
-            Debug.Log("No more pictures to cycle through.");
-        }
-    }
-
-    public void LookAtKeypad()
-    {
-        // Update the password to match the current picture
-        correctCode = codesWithPictures[currentCodeIndex].code;
-        Debug.Log("Looking at keypad: Correct code updated to " + correctCode);
-    }
-
-    public void AddDigit(string digit)
-    {
-        if (playerInput.Length < correctCode.Length)
-        {
-            playerInput += digit;
-            inputDisplay.text = playerInput;
-
-            if (playerInput.Length == correctCode.Length)
-            {
-                CheckCode();
-            }
-        }
-    }
-
-    void CheckCode()
-    {
-        if (playerInput == correctCode)
-        {
-            OpenDoor();
-            ToggleKeypadInputMode(); // Exit input mode after entering the correct code
-        }
-        else
-        {
-            ResetInput(); // Clear input if code is incorrect
-        }
-    }
-
+    /// <summary>
+    /// Resets the player's input to an empty string.
+    /// </summary>
     void ResetInput()
     {
         playerInput = "";
         inputDisplay.text = playerInput;
     }
 
+    /// <summary>
+    /// Opens the door when the correct code is entered.
+    /// </summary>
     void OpenDoor()
     {
-        Debug.Log("Door is opened!");
-        door.SetActive(false); // Disable or open the door
+        door.SetActive(false);
     }
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == player)
-        {
-            isPlayerInRange = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == player)
-        {
-            isPlayerInRange = false;
-            if (isKeypadOpen)
-            {
-                ToggleKeypadInputMode(); // Automatically exit input mode when player leaves range
-            }
-        }
-    }
-}*/
+}

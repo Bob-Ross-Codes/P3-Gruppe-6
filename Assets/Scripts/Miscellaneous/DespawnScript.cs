@@ -2,14 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles despawning objects and spawning a new prefab when the player exits a trigger area.
+/// </summary>
 public class DespawnScript : MonoBehaviour
 {
-    public GameObject objectToSpawn; // The prefab to instantiate
-    public Transform spawnPoint; // The empty GameObject to take position and rotation from
+    [Header("Spawn Settings")]
+    [SerializeField] private GameObject objectToSpawn; // The prefab to instantiate
+    [SerializeField] private Transform spawnPoint; // The position and rotation for the new prefab
 
+    /// <summary>
+    /// Called when an object exits the trigger collider.
+    /// Despawns tagged objects and spawns a new prefab if the exiting object is the player.
+    /// </summary>
+    /// <param name="other">The collider that exited the trigger area.</param>
     private void OnTriggerExit(Collider other)
     {
-        // Check if the exiting object has the "Player" tag
+        // Check if the exiting object is the player
         if (other.CompareTag("Player"))
         {
             // Find and destroy all objects with the "DespawnOnTrigger" tag
@@ -19,11 +28,11 @@ public class DespawnScript : MonoBehaviour
                 Destroy(obj);
             }
 
-            // Spawn a new object with the specified prefab, position, and rotation from the spawnPoint
+            // Spawn a new object at the specified spawn point
             if (objectToSpawn != null && spawnPoint != null)
             {
                 GameObject spawnedObject = Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
-                Destroy(spawnedObject, 4f); // Destroy the instantiated prefab after 4 seconds
+                Destroy(spawnedObject, 4f); // Automatically destroy the spawned object after 4 seconds
             }
             else
             {

@@ -1,108 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- public class DissolveOffest : MonoBehaviour
 
-/*
-
-{  
-        // Start is called before the first frame update
-        List<Material> materials = new List<Material>();
-        bool PingPong = false;
-        void Start()
-        {
-            var renders = GetComponents<Renderer>();
-            for (int i = 0; i < renders.Length; i++)
-            {
-                materials.AddRange(renders[i].materials);
-            }
-        }
-
-        private void Reset()
-        {
-            Start();
-            SetValue(0);
-        }
-
-        // when the player enters the trigger the corutine will start
-
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                //StartCoroutine(enumerator());
-                PingPong = true;
-            }
-            if (PingPong)
-            {
-                var value = Mathf.PingPong(Time.time * 0.5f, 1.6f);
-                value -= 0.5f;
-                SetValue(value);
-            }
-        }
-
-        
-          private IEnumerator DissolveCoroutine()
-    {
-        while (true)
-        {
-            float value = Mathf.PingPong(Time.time * 0.5f, 1.6f) - 0.5f;
-            SetValue(value);
-            yield return new WaitForEndOfFrame();
-        }
-    }
-        
-     //  IEnumerator enumerator()
-     
-     //   {
-        
-     //       float value = while (true)
-     //       {
-     //           Mathf.PingPong(value, 1f);
-     //           value += Time.deltaTime;
-     //           SetValue(value);
-     //          yield return new WaitForEndOfFrame();
-     //       }
-     //   }
-
-          IEnumerator enumerator()
-    {
-        float value = 0f; // Initialize the value
-        while (true)
-        {
-            value = Mathf.PingPong(Time.time * 0.5f, 1f);
-            SetValue(value);
-            yield return new WaitForEndOfFrame();
-        }
-    }
-
-        public void SetValue(float value)
-        {
-            for (int i = 0; i < materials.Count; i++)
-            {
-                materials[i].SetVector("_DissolveOffest", new Vector4(0f,value,0f,0f));
-            }
-        }
-    
-}*/
-
+/// <summary>
+/// Controls the dissolve effect on a material by gradually changing its "_Dissolve" property.
+/// Allows activation, customization of target dissolve values, and resetting to a default state.
+/// </summary>
+public class DissolveOffset : MonoBehaviour
 {
     [Header("Dissolve Settings")]
-    [SerializeField] private float defaultDissolveValue; // Default dissolve state for this hallway
-    [SerializeField] private float goalDissolveValue;    // Target dissolve state
-    [SerializeField] private float dissolveSpeed;         // Speed of dissolve
+    [Tooltip("The default dissolve value used when resetting or initializing.")]
+    [SerializeField] private float defaultDissolveValue;
 
-    private Material material;
-    private bool isDissolving = false; // Flag to track if dissolve is active
-    private float currentDissolveValue; // Tracks the current dissolve value
+    [Tooltip("The target dissolve value the object should reach when activated.")]
+    [SerializeField] private float goalDissolveValue;
 
+    [Tooltip("The speed at which the dissolve value moves toward the target.")]
+    [SerializeField] private float dissolveSpeed;
+
+    private Material material;           // The object's material instance
+    private bool isDissolving = false;   // Tracks whether the object is currently dissolving
+    private float currentDissolveValue;  // Tracks the current dissolve value of the material
+
+    /// <summary>
+    /// Initializes the material and sets the initial dissolve value to the default state.
+    /// Logs an error if no suitable material is found.
+    /// </summary>
     void Start()
     {
-        // Get the material and initialize dissolve value
         Renderer renderer = GetComponent<Renderer>();
         if (renderer != null)
         {
-            material = renderer.material; // Ensure unique instance of material
+            material = renderer.material; // Ensures a unique material instance
         }
 
         if (material == null)
@@ -111,13 +40,13 @@ using UnityEngine;
             return;
         }
 
-        // Initialize the dissolve value to the default state
         currentDissolveValue = defaultDissolveValue;
         material.SetFloat("_Dissolve", currentDissolveValue);
     }
 
     /// <summary>
-    /// Activates the dissolve effect, moving towards the specified goal.
+    /// Activates the dissolve effect towards the predetermined goalDissolveValue.
+    /// Starts a coroutine if not already dissolving.
     /// </summary>
     public void ActivateDissolve()
     {
@@ -129,9 +58,10 @@ using UnityEngine;
     }
 
     /// <summary>
-    /// Activates the dissolve effect, specifying a custom goal dissolve value.
+    /// Activates the dissolve effect towards a specified target dissolve value.
+    /// Useful if you need a custom dissolve end state.
     /// </summary>
-    /// <param name="targetDissolveValue">The desired end dissolve value.</param>
+    /// <param name="targetDissolveValue">The desired final dissolve value.</param>
     public void ActivateDissolve(float targetDissolveValue)
     {
         if (!isDissolving && material != null)
@@ -142,27 +72,8 @@ using UnityEngine;
     }
 
     /// <summary>
-    /// Coroutine to handle the dissolve effect.
-    /// </summary>
-    /// <param name="targetValue">The target dissolve value to reach.</param>
-    private IEnumerator DissolveCoroutine(float targetValue)
-    {
-        isDissolving = true;
-
-        while (!Mathf.Approximately(currentDissolveValue, targetValue))
-        {
-            // Lerp towards the target dissolve value
-            currentDissolveValue = Mathf.MoveTowards(currentDissolveValue, targetValue, Time.deltaTime * dissolveSpeed);
-            material.SetFloat("_Dissolve", currentDissolveValue);
-            yield return null;
-        }
-
-        Debug.Log($"Dissolve completed for {gameObject.name}, reached: {currentDissolveValue}");
-        isDissolving = false;
-    }
-
-    /// <summary>
-    /// Resets the dissolve effect to the default state.
+    /// Resets the dissolve effect back to the default state.
+    /// Only activates if the object is not already dissolving.
     /// </summary>
     public void ResetDissolve()
     {
@@ -172,5 +83,24 @@ using UnityEngine;
             StartCoroutine(DissolveCoroutine(defaultDissolveValue));
         }
     }
-}
 
+    /// <summary>
+    /// Coroutine that smoothly transitions the dissolve value from the current level to the target level.
+    /// Updates the material's "_Dissolve" parameter each frame until the target is reached.
+    /// </summary>
+    /// <param name="targetValue">The target dissolve value to reach.</param>
+    private IEnumerator DissolveCoroutine(float targetValue)
+    {
+        isDissolving = true;
+
+        while (!Mathf.Approximately(currentDissolveValue, targetValue))
+        {
+            currentDissolveValue = Mathf.MoveTowards(currentDissolveValue, targetValue, Time.deltaTime * dissolveSpeed);
+            material.SetFloat("_Dissolve", currentDissolveValue);
+            yield return null;
+        }
+
+        Debug.Log($"Dissolve completed for {gameObject.name}, reached: {currentDissolveValue}");
+        isDissolving = false;
+    }
+}

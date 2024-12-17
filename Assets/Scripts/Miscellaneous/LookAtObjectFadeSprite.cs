@@ -2,43 +2,67 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the fading of a sprite based on whether the player is looking at a specified target object.
+/// The sprite becomes visible when the target is in the player's view and fades out otherwise.
+/// </summary>
 public class LookAtObjectFadeSprite : MonoBehaviour
 {
-    public Camera mainCamera; // The camera from which the ray is cast
-    public Transform targetObject; // The object to check if the player is looking at (e.g., a door)
-    public float fadeSpeed = 2f; // Speed of fading in and out
-    public float maxDistance = 10f; // Maximum distance for the ray to detect the object
+    [Header("References")]
+    [Tooltip("The camera from which the ray is cast.")]
+    public Camera mainCamera;
 
-    private SpriteRenderer spriteRenderer; // SpriteRenderer for changing color alpha
-    private bool isLookingAtTarget;
+    [Tooltip("The object to check if the player is looking at (e.g., a door).")]
+    public Transform targetObject;
 
+    [Header("Fade Settings")]
+    [Tooltip("The speed at which the sprite fades in and out.")]
+    public float fadeSpeed = 2f;
+
+    [Tooltip("The maximum distance for the ray to detect the target object.")]
+    public float maxDistance = 10f;
+
+    private SpriteRenderer spriteRenderer; // SpriteRenderer for changing the alpha value of the sprite
+    private bool isLookingAtTarget; // Tracks whether the player is looking at the target object
+
+    /// <summary>
+    /// Initializes the sprite renderer, ensures the sprite starts fully transparent,
+    /// and assigns the main camera if none is specified.
+    /// </summary>
     void Start()
     {
-        // Get the SpriteRenderer component attached to this object
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         // Ensure the sprite starts fully transparent
         SetSpriteAlpha(0f);
-        
-        // If no camera is assigned, automatically find the main camera
+
+        // Automatically assign the main camera if none is specified
         if (mainCamera == null)
         {
             mainCamera = Camera.main;
         }
     }
 
+    /// <summary>
+    /// Updates the script each frame by checking if the player is looking at the target,
+    /// handling the sprite's fade effect, and allowing object destruction with the 'E' key.
+    /// </summary>
     void Update()
     {
         CheckIfLookingAtTarget();
         HandleSpriteFade();
 
-           //when the player presses E, destroy the object
+        // Destroy the object if the player presses 'E'
         if (Input.GetKeyDown(KeyCode.E))
         {
             Destroy(gameObject);
         }
     }
 
+    /// <summary>
+    /// Checks if the player is looking at the target object by casting a ray from the camera.
+    /// Updates the `isLookingAtTarget` variable based on the raycast result.
+    /// </summary>
     private void CheckIfLookingAtTarget()
     {
         if (targetObject == null || spriteRenderer == null)
@@ -47,10 +71,11 @@ public class LookAtObjectFadeSprite : MonoBehaviour
             return;
         }
 
+        // Cast a ray from the center of the screen
         Ray ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
 
-        // Check if the ray hits the targetObject
+        // Check if the ray hits the target object
         if (Physics.Raycast(ray, out hit, maxDistance))
         {
             isLookingAtTarget = hit.transform == targetObject;
@@ -60,24 +85,30 @@ public class LookAtObjectFadeSprite : MonoBehaviour
             isLookingAtTarget = false;
         }
 
+        // Debug visualization for the ray
         Debug.DrawRay(ray.origin, ray.direction * maxDistance, Color.red);
     }
 
+    /// <summary>
+    /// Handles the fading of the sprite by adjusting its alpha value.
+    /// The sprite fades in if the player is looking at the target and fades out otherwise.
+    /// </summary>
     private void HandleSpriteFade()
     {
-        // Determine target alpha based on whether looking at the target
+        // Target alpha based on whether the player is looking at the target
         float targetAlpha = isLookingAtTarget ? 1f : 0f;
 
         // Smoothly transition to the target alpha value
         float currentAlpha = Mathf.MoveTowards(spriteRenderer.color.a, targetAlpha, fadeSpeed * Time.deltaTime);
-        
-        // Set the sprite's color with the new alpha value
+
+        // Set the sprite's color with the updated alpha value
         SetSpriteAlpha(currentAlpha);
     }
 
-
-
-    // Helper method to set the alpha of the sprite's color
+    /// <summary>
+    /// Sets the alpha value of the sprite's color.
+    /// </summary>
+    /// <param name="alpha">The desired alpha value (0 to 1).</param>
     private void SetSpriteAlpha(float alpha)
     {
         Color color = spriteRenderer.color;

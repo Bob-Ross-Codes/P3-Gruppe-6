@@ -2,64 +2,88 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwingSimon : MonoBehaviour
+/// <summary>
+/// Controls the swinging and twisting motion of a GameObject by applying randomized angles and speeds.
+/// The object will swing around a specified axis and twist around another axis, creating dynamic and varied movements.
+/// </summary>
+public class Swing_simon : MonoBehaviour
 {
-    // Range for the maximum swing angle (degrees)
-    [SerializeField, Range(1f, 10f)] private float swingAngleMin;
-    [SerializeField, Range(1f, 10f)] private float swingAngleMax;
+    [Header("Swing Angle Settings")]
+    [Tooltip("Minimum angle (in degrees) for the swinging motion.")]
+    [SerializeField, Range(1f, 30f)] private float swingAngleMin = 5f;
 
-    // Range for the speed of the swinging motion
-    [SerializeField, Range(1f, 6f)] private float swingSpeedMin;
-    [SerializeField, Range(1f, 6f)] private float swingSpeedMax;
+    [Tooltip("Maximum angle (in degrees) for the swinging motion.")]
+    [SerializeField, Range(1f, 30f)] private float swingAngleMax = 15f;
 
-    // Range for the maximum twist angle (degrees)
-    [SerializeField, Range(1f, 10f)] private float twistAngleMin;
-    [SerializeField, Range(1f, 10f)] private float twistAngleMax;
+    [Header("Swing Speed Settings")]
+    [Tooltip("Minimum speed for the swinging motion.")]
+    [SerializeField, Range(1f, 30f)] private float swingSpeedMin = 1f;
 
-    // Range for the speed of the twisting motion
-    [SerializeField, Range(1f, 6f)] private float twistSpeedMin;
-    [SerializeField, Range(1f, 6f)] private float twistSpeedMax;
+    [Tooltip("Maximum speed for the swinging motion.")]
+    [SerializeField, Range(1f, 30f)] private float swingSpeedMax = 5f;
 
-    // Swing axis (around which the light will swing)
+    [Header("Twist Angle Settings")]
+    [Tooltip("Minimum angle (in degrees) for the twisting motion.")]
+    [SerializeField, Range(1f, 30f)] private float twistAngleMin = 5f;
+
+    [Tooltip("Maximum angle (in degrees) for the twisting motion.")]
+    [SerializeField, Range(1f, 30f)] private float twistAngleMax = 15f;
+
+    [Header("Twist Speed Settings")]
+    [Tooltip("Minimum speed for the twisting motion.")]
+    [SerializeField, Range(1f, 30f)] private float twistSpeedMin = 1f;
+
+    [Tooltip("Maximum speed for the twisting motion.")]
+    [SerializeField, Range(1f, 30f)] private float twistSpeedMax = 5f;
+
+    [Header("Axis Settings")]
+    [Tooltip("Axis around which the object will swing.")]
     [SerializeField] private Vector3 swingAxis = Vector3.forward;
 
-    // Twist axis (around which the light will twist)
+    [Tooltip("Axis around which the object will twist.")]
     [SerializeField] private Vector3 twistAxis = Vector3.up;
 
-    // Starting rotation of the light
+    // Starting rotation of the object to maintain the original orientation
     private Quaternion initialRotation;
 
-    // Actual swing and twist values
+    // Current swing and twist angles and speeds
     private float swingAngle;
     private float swingSpeed;
     private float twistAngle;
     private float twistSpeed;
 
+    /// <summary>
+    /// Initializes the object's rotation and sets randomized swing and twist angles and speeds within specified ranges.
+    /// </summary>
     void Start()
     {
         // Store the initial rotation of the object
         initialRotation = transform.localRotation;
 
-        // Apply random values to the swing and twist angles and speeds within the specified ranges
+        // Assign random values within the specified ranges for swing and twist
         swingAngle = Random.Range(swingAngleMin, swingAngleMax);
         swingSpeed = Random.Range(swingSpeedMin, swingSpeedMax);
         twistAngle = Random.Range(twistAngleMin, twistAngleMax);
         twistSpeed = Random.Range(twistSpeedMin, twistSpeedMax);
     }
 
+    /// <summary>
+    /// Updates the object's rotation each frame to create swinging and twisting motions.
+    /// The swing and twist are calculated using sine waves for smooth, oscillating movement.
+    /// </summary>
     void Update()
     {
-        // Calculate the swing angle using a sine wave over time
+        // Calculate the current swing angle using a sine wave based on time and swing speed
         float swing = Mathf.Sin(Time.time * swingSpeed) * swingAngle;
 
-        // Calculate the twist angle using a different sine wave over time
+        // Calculate the current twist angle using a sine wave based on time and twist speed
         float twist = Mathf.Sin(Time.time * twistSpeed) * twistAngle;
 
-        // Apply both the swing and twist to the local rotation, relative to its original position
+        // Create rotation quaternions for swinging and twisting around their respective axes
         Quaternion swingRotation = Quaternion.AngleAxis(swing, swingAxis);
         Quaternion twistRotation = Quaternion.AngleAxis(twist, twistAxis);
 
-        // Combine the two rotations (swing and twist) and apply to the object's local rotation
+        // Combine the initial rotation with the swing and twist rotations
         transform.localRotation = initialRotation * swingRotation * twistRotation;
     }
 }

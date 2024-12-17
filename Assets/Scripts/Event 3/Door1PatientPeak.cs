@@ -1,56 +1,83 @@
-using System.Collections;
-//using UnityEditor.EventSystems;
+/// <summary>
+/// Handles door interaction and patient disappearance based on player proximity.
+/// When the player is near the door, this script triggers light flickering and eventually makes the patient disappear.
+/// It also activates eye-tracking after the sequence finishes.
+/// </summary>
 using UnityEngine;
 
 public class Door1PatientPeak : MonoBehaviour
 {
+    [Header("References")]
+    [Tooltip("Reference to the player's transform.")]
     [SerializeField] private Transform player;
+
+    [Tooltip("Reference to the door's transform.")]
     [SerializeField] private Transform door;
+
+    [Tooltip("The patient GameObject that will be made visible and then disappear.")]
     [SerializeField] private GameObject patient;
+
+    [Tooltip("Reference to the LightManager script controlling the flickering lights.")]
     [SerializeField] private LightManager lightManager;
+
+    [Tooltip("Reference to the JournalEyeDetector script for activating eye-tracking.")]
     [SerializeField] private JournalEyeDetector journalEyeDetector;
 
-    private Vector3 initialPosition = new Vector3(0.189999998f, -0.0900000036f, 0.529999971f);
-    private Vector3 newPosition = new Vector3(0.313501358f, -1.13949442f, -9.2357254f);
+    [Header("Patient Position Settings")]
+    [Tooltip("The patient's initial position relative to its parent.")]
+    private Vector3 initialPosition = new Vector3(0.19f, -0.09f, 0.53f);
 
-    private float distanceToPlayer;
-    private float interactionRange = 3f;                        // Set the interaction range
-    private bool triggered;
-    private bool finish;
+    [Tooltip("A new position for the patient (currently unused).")]
+    private Vector3 newPosition = new Vector3(0.31f, -1.14f, -9.24f); // Not used in this script
 
-    void Start()
+    [Header("Interaction Settings")]
+    [Tooltip("Distance from the door at which the interaction is triggered.")]
+    [SerializeField] private float interactionRange = 3f;
+
+    private bool triggered = false; // Has the interaction sequence started?
+    private bool finish = false;    // Is the flicker sequence finished and ready for the next step?
+
+    /// <summary>
+    /// Sets the patient active and positions it at the initial location when the game starts.
+    /// </summary>
+    private void Start()
     {
-        triggered = false;
         patient.SetActive(true);
-        finish = false;
         patient.transform.localPosition = initialPosition;
     }
 
+    /// <summary>
+    /// Checks the distance between the player and the door every fixed frame.
+    /// Triggers light flickering when the player is close enough and handles the sequence after flickering stops.
+    /// </summary>
     private void FixedUpdate()
     {
-        distanceToPlayer = Vector3.Distance(player.position, door.position);   //If close to the door
+        float distanceToPlayer = Vector3.Distance(player.position, door.position);
 
+        // Trigger interaction if the player is close and not yet triggered
         if (distanceToPlayer < interactionRange && !triggered)
         {
+            // Start the initial flicker sequence
             lightManager.StartFlicker(3.5f, 0.9f, true);
             triggered = true;
             finish = true;
         }
-        if (finish && lightManager.flickeringOn == false)
+
+        // After the flicker stops, run the next flicker and make the patient disappear
+        if (finish && !lightManager.flickeringOn)
         {
             lightManager.StartFlicker(1f, 1.3f, true);
-            if (lightManager.lightsOn == false)
-            patient.SetActive(false);                               //Patient dissapears
+
+            // When lights are off, hide the patient
+            if (!lightManager.lightsOn)
+            {
+                patient.SetActive(false);
+            }
+
             finish = false;
+
+            // Activate eye-tracking after completing the sequence
             journalEyeDetector.ActivateEyetracking();
         }
     }
 }
-/* FirstPersonController at hospital
- * Vector3(-1.70000005,3.56999993,0.899999976)
- * Quaternion(0,0.707106829,0,0.707106829)
- * 
- * FirstPersonController at Mainsion
- * Vector3(-148.600006,3.56999993,83.8000031)
- * Quaternion(0,0.707106829,0,-0.707106829)
- */

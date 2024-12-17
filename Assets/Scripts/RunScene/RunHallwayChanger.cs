@@ -2,28 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages object spawning as the player progresses through a run scene.
+/// Spawns a sequence of objects at a defined spawn point as triggers are hit.
+/// Also monitors player blinking (via the Gaze script) to determine if the ending scene should load.
+/// </summary>
 public class RunHallwayChanger : MonoBehaviour
 {
-
-
     [Header("Spawn Settings")]
-    public List<GameObject> objectsToSpawn; // List of objects to spawn
-    public Transform spawnPoint; // Reference to the spawn point
-    public GameObject finalPrefab; // The specific prefab to spawn when the trigger counter hits the max
+    [Tooltip("List of objects to spawn at each trigger event.")]
+    public List<GameObject> objectsToSpawn;
 
+    [Tooltip("Reference to the spawn point Transform where objects will appear.")]
+    public Transform spawnPoint;
 
-
-   // Simon du kan ikke refere til gaze i denne klasse, da den ikke er defineret her, du skal lave en reference til Gaze scriptet inspekt�ren.
-   //okay my nigger
+    [Tooltip("The prefab to spawn when the trigger counter hits the final threshold.")]
+    public GameObject finalPrefab;
 
     [Header("Gaze Settings")]
-    [SerializeField] private Gaze gaze; // Reference to the Gaze script
-    [SerializeField] bool isBlinking; // Flag to track if the player is blinking
-     [SerializeField] private float blinkTime = 0f; // Timer to track how long isBlinking is true
+    [Tooltip("Reference to the Gaze script for detecting blinking.")]
+    [SerializeField] private Gaze gaze;
 
+    [Tooltip("Is the player currently blinking? (Tracked via Gaze)")]
+    [SerializeField] private bool isBlinking;
 
-
-
+    [Tooltip("Timer for how long the player has been blinking.")]
+    [SerializeField] private float blinkTime = 0f;
 
     // Constants for configuration
     private const int FIRST_SPAWN_INDEX = 0;
@@ -33,27 +37,22 @@ public class RunHallwayChanger : MonoBehaviour
     private const int FINAL_TRIGGER_THRESHOLD = 6;
     private const float SPAWN_DELAY = 2f;
 
+    private GameObject currentObject; // Reference to the currently spawned object
+    private int triggerCounter = 0;   // Counts how many times the player triggered spawns
+    private bool isCooldownActive = false; // Ensures a delay between spawns
+    private float blinkingTime = 0f;       // Tracks how long the player is blinking
 
-
-
-
-    private GameObject currentObject; // Reference to the currently instantiated object
-    private int triggerCounter = 0; // Counter for trigger events
-    private bool isCooldownActive = false; // Track if cooldown is active
-    private float blinkingTime = 0f; // Timer to track how long isBlinking is true
-
-
-
-
-    
+    /// <summary>
+    /// Starts the initial chase by spawning the first object, if available.
+    /// </summary>
     private void Start()
     {
         StartChase();
-    //    isBlinking = gaze.Blinking;   // Simon du kan ikke refere til gaze i denne klasse, da den ikke er defineret her, du skal lave en reference til Gaze scriptet inspekt�ren.
     }
 
-
-    // Start spawning process with the first object
+    /// <summary>
+    /// Spawns the first object from the list to initiate the sequence.
+    /// </summary>
     public void StartChase()
     {
         if (objectsToSpawn.Count > 0)
@@ -62,31 +61,32 @@ public class RunHallwayChanger : MonoBehaviour
         }
     }
 
-
-//trigger next scene if isBlinking bool is true for more then 3 seconds
+    /// <summary>
+    /// Monitors player blinking and trigger counts each frame.
+    /// If the player blinks for more than 3 seconds and triggerCounter > 1, load the Ending scene.
+    /// </summary>
     private void Update()
     {
-        if (gaze.Blinking && blinkTime >= 2)
+        if (gaze.Blinking)
         {
-            blinkTime += Time.deltaTime; // Increment timer if isBlinking is true
-            if (blinkTime > 3f && triggerCounter > 1) // Check both conditions
+            blinkTime += Time.deltaTime;
+            if (blinkTime > 3f && triggerCounter > 1)
             {
-                Debug.Log("Blinking time: " + blinkingTime);
-
-
-                // trigger end game and win
+                Debug.Log("Blinking time: " + blinkTime);
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
             }
         }
-       
         else
         {
-            blinkTime = 0f; // Reset timer if isBlinking is false
+            blinkTime = 0f; // Reset the timer when player is not blinking
         }
     }
 
-
-    // Trigger event to handle object spawning when player exits the trigger
+    /// <summary>
+    /// Trigger event when the player exits a collider.
+    /// If the collider is the player and no cooldown is active, spawn the next object and increment triggerCounter.
+    /// </summary>
+    /// <param name="other">The collider that exited the trigger zone.</param>
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player") && !isCooldownActive)
@@ -97,7 +97,10 @@ public class RunHallwayChanger : MonoBehaviour
         }
     }
 
-    // Coroutine to spawn the next object with a delay
+    /// <summary>
+    /// Spawns the next object after a short delay, destroying the current object first.
+    /// Determines which object to spawn based on triggerCounter.
+    /// </summary>
     private IEnumerator SpawnNextObjectWithDelay()
     {
         isCooldownActive = true;
@@ -111,8 +114,9 @@ public class RunHallwayChanger : MonoBehaviour
 
         // Determine the next object index to spawn
         int nextIndex = DetermineNextIndex();
-        if (nextIndex == -2) // Special case for final prefab
+        if (nextIndex == -2)
         {
+            // Spawn the final prefab
             currentObject = Instantiate(finalPrefab, spawnPoint.position, spawnPoint.rotation);
         }
         else if (nextIndex >= 0)
@@ -127,14 +131,21 @@ public class RunHallwayChanger : MonoBehaviour
         isCooldownActive = false;
     }
 
-    // Determine the next object index based on trigger count and object list length
+    /// <summary>
+    /// Determines the index of the next object to spawn based on how many triggers have been activated.
+    /// </summary>
+    /// <returns>
+    /// An integer index representing the next object to spawn,
+    /// -2 if the final prefab should be spawned,
+    /// or -1 if no valid object is found.
+    /// </returns>
     private int DetermineNextIndex()
     {
         if (objectsToSpawn.Count <= 1) return -1;
 
         if (triggerCounter == FINAL_TRIGGER_THRESHOLD)
         {
-            return -2; // Special code to signal the final prefab should be spawned
+            return -2; // Special code to indicate final prefab should be spawned
         }
         else if (triggerCounter < MID_SECTION_TRIGGER_THRESHOLD && objectsToSpawn.Count > 1)
         {

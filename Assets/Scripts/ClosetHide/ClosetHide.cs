@@ -1,68 +1,67 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine; // Include the Cinemachine namespace
+using Cinemachine;
 using StarterAssets;
 
-
+/// <summary>
+/// Handles hiding mechanics in a closet and triggers related game events.
+/// </summary>
 public class ClosetHide : MonoBehaviour
 {
-    [SerializeField] private CinemachineVirtualCamera mainCamera;
-    [SerializeField] private CinemachineVirtualCamera closetCamera;
-    public FirstPersonController playerController; // Reference to the FirstPersonController script
-    public LightManager lightManager;
-    public GameObject objectToDisableHallwayOne; // Reference to the GameObject to disable when hiding
-    //public GameObject objectToEnableHallwayOne;
-    public Transform roomDoor;
+    [Header("Camera Setup")]
+    [SerializeField] private CinemachineVirtualCamera mainCamera; // Main gameplay camera
+    [SerializeField] private CinemachineVirtualCamera closetCamera; // Closet view camera
 
-    public GameObject monsterPrefab; // Reference to the monster prefab
-    public Animator leftDoorAnimator; // Animator for the left door
-    public Animator rightDoorAnimator; // Animator for the right door
-    public Animator doorHingeAnimator;
-    public Transform player; // Reference to the player's transform
-    public float interactionRange = 2.0f; // Set the interaction range
-    public MonsterSequenceController sequenceController; // Reference to the MonsterSequenceController script
-    public GameObject RoomLight;
+    [Header("Player and Monster Settings")]
+    public FirstPersonController playerController; // Reference to the player's movement controller
+    public GameObject monsterPrefab; // Monster GameObject
+    [SerializeField] private Transform player; // Player's position
+    [SerializeField] private Transform roomDoor; // Reference to the room door
+    public float interactionRange = 2.0f; // Distance to interact with the closet
 
-    [SerializeField] private Gaze gaze;
+    [Header("Closet Interaction")]
+    public Animator leftDoorAnimator; // Animator for the left closet door
+    public Animator rightDoorAnimator; // Animator for the right closet door
+    public Animator doorHingeAnimator; // Animator for the closet door hinge
+    [SerializeField] private GameObject objectToDisableHallwayOne; // Object to disable when hiding
+    public LightManager lightManager; // Controls the light flickering
+    public GameObject RoomLight; // Light in the room
+    public MonsterSequenceController sequenceController; // Handles monster sequences
 
+    [Header("Gaze and Blink Settings")]
+    [SerializeField] private Gaze gaze; // Gaze tracking for blinking
+    [SerializeField] private float blinkTimer = 3f; // Time to trigger monster destruction on blinking
+    private float blinkTime = 0f; // Tracks how long the player is blinking
 
-    public bool isHiding = false;
-    public bool canToggleHiding = true; // Flag to control hiding
-    private bool hasEnteredClosetOnce = false; // Tracks if the player has entered the closet at least once
-    [SerializeField] private float blinkTimer = 3f;
+    [Header("Hiding Logic")]
+    public bool isHiding = false; // Is the player currently hiding?
+    public bool canToggleHiding = true; // Can the player toggle hiding?
+    private bool hasEnteredClosetOnce = false; // Tracks if the player has hidden at least once
 
-    void Update()
+    /// <summary>
+    /// Updates player interaction with the closet and toggles hiding.
+    /// </summary>
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canToggleHiding)
+        if (Input.GetKeyDown(KeyCode.E) && canToggleHiding && IsNearCloset())
         {
-            if (isNearCloset()) // Check if player is near the closet
-            {
-                ToggleHiding();
+            ToggleHiding();
 
-                if (!hasEnteredClosetOnce)
-                {
-                    // Disable hiding after the first entry
-                    hasEnteredClosetOnce = true;
-                    canToggleHiding = false; // Lock hiding until the monster is destroyed
-                }
+            if (!hasEnteredClosetOnce)
+            {
+                hasEnteredClosetOnce = true;
+                canToggleHiding = false;
             }
         }
-
-        //////////////////////////////////////////// CONSOLE DEBUGGING
-        /*if (Input.GetKeyDown(KeyCode.M))
-        {
-            Debug.Log("Monster destroyed. Hiding unlocked.");
-                AkSoundEngine.PostEvent("Stop_Monster_Sounds", monsterPrefab);
-                Destroy(monsterPrefab);
-                canToggleHiding = true;
-            
-        }*/
-
-
-        //////////////////////////////////////////// CONSOLE DEBUGGING
     }
-    public IEnumerator FlickeringLight(float duration, float speed, bool handlight)
+
+    /// <summary>
+    /// Flickers the light in the room before turning it off.
+    /// </summary>
+    /// <param name="duration">Duration of the flickering.</param>
+    /// <param name="speed">Speed of the flickering.</param>
+    /// <param name="handlight">Should the handlight flicker?</param>
+    private IEnumerator FlickeringLight(float duration, float speed, bool handlight)
     {
         yield return new WaitForSeconds(1);
         lightManager.StartFlicker(duration, speed, handlight);
@@ -70,84 +69,109 @@ public class ClosetHide : MonoBehaviour
         Destroy(RoomLight);
     }
 
+    /// <summary>
+    /// Toggles the player's hiding state and updates related mechanics.
+    /// </summary>
     private void ToggleHiding()
     {
         isHiding = !isHiding;
 
         if (isHiding)
         {
-            StartCoroutine(FlickeringLight(2f, 0.8f, false));
-
-            // Switch to ClosetCamera, disable player movement, and open the doors
-            mainCamera.Priority = 0;
-            closetCamera.Priority = 10;
-            playerController.MoveSpeed = 0;
-
-            leftDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the left door
-            rightDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the right door
-
-            objectToDisableHallwayOne.SetActive(false);
-
-            doorHingeAnimator.SetTrigger("broken");
-
-            AkSoundEngine.PostEvent("Play_DoorSlamOpen", gameObject);
-
-            sequenceController.OnPlayerHidden();
-        //    Debug.Log("Player is hiding in the closet");
-
-            AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, monsterPrefab);
-            AkSoundEngine.PostEvent("Play_Monster_Sounds", monsterPrefab);
-
-            StartCoroutine(WaitForMonsterToBeDestroyed());
-
+            EnterCloset();
         }
         else
         {
-            player.LookAt(roomDoor);
-            // Return to MainCamera, enable player movement, and close the doors
-            mainCamera.Priority = 10;
-            closetCamera.Priority = 0;
-
-            playerController.MoveSpeed = 3.5f;
-
-            leftDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the left door
-            rightDoorAnimator.SetTrigger("ToggleDoor"); // Play open-close animation for the right door
+            ExitCloset();
         }
     }
 
-    private bool isNearCloset()
+    /// <summary>
+    /// Handles logic for entering the closet.
+    /// </summary>
+    private void EnterCloset()
     {
-        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
-        return distanceToPlayer <= interactionRange;
+        StartCoroutine(FlickeringLight(2f, 0.8f, false));
+
+        mainCamera.Priority = 0;
+        closetCamera.Priority = 10;
+        playerController.MoveSpeed = 0;
+
+        leftDoorAnimator.SetTrigger("ToggleDoor");
+        rightDoorAnimator.SetTrigger("ToggleDoor");
+        doorHingeAnimator.SetTrigger("broken");
+
+        objectToDisableHallwayOne.SetActive(false);
+
+        AkSoundEngine.PostEvent("Play_DoorSlamOpen", gameObject);
+        sequenceController.OnPlayerHidden();
+
+        AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 0, monsterPrefab);
+        AkSoundEngine.PostEvent("Play_Monster_Sounds", monsterPrefab);
+
+        StartCoroutine(WaitForMonsterToBeDestroyed());
     }
 
-    [SerializeField] private float blinkTime = 0f; 
+    /// <summary>
+    /// Handles logic for exiting the closet.
+    /// </summary>
+    private void ExitCloset()
+    {
+        player.LookAt(roomDoor);
+
+        mainCamera.Priority = 10;
+        closetCamera.Priority = 0;
+        playerController.MoveSpeed = 3.5f;
+
+        leftDoorAnimator.SetTrigger("ToggleDoor");
+        rightDoorAnimator.SetTrigger("ToggleDoor");
+    }
+
+    /// <summary>
+    /// Checks if the player is close enough to interact with the closet.
+    /// </summary>
+    /// <returns>True if the player is within interaction range, otherwise false.</returns>
+    private bool IsNearCloset()
+    {
+        return Vector3.Distance(player.position, transform.position) <= interactionRange;
+    }
+
+    /// <summary>
+    /// Waits for the player to blink long enough to destroy the monster.
+    /// </summary>
     public IEnumerator WaitForMonsterToBeDestroyed()
     {
         Debug.Log("Hiding locked. Waiting for monster to be destroyed.");
 
         while (true)
         {
-            if (gaze._blinking && blinkTime <= blinkTimer)
+            if (gaze._blinking)
             {
                 blinkTime += Time.deltaTime;
-                Debug.Log("Countdown started." + blinkTime);
-            }
-            else if (gaze._blinking && blinkTime >= blinkTimer)
-            {
-           //     Debug.Log("Monster destroyed. Hiding unlocked.");
-                AkSoundEngine.PostEvent("Stop_Monster_Sounds", monsterPrefab);
-                Destroy(monsterPrefab);
-                canToggleHiding = true;
-                yield break; 
+
+                if (blinkTime >= blinkTimer)
+                {
+                    DestroyMonster();
+                    yield break;
+                }
             }
             else
             {
                 blinkTime = 0f;
             }
 
-            yield return null; 
+            yield return null;
         }
     }
 
+    /// <summary>
+    /// Destroys the monster and unlocks hiding mechanics.
+    /// </summary>
+    private void DestroyMonster()
+    {
+        Debug.Log("Monster destroyed. Hiding unlocked.");
+        AkSoundEngine.PostEvent("Stop_Monster_Sounds", monsterPrefab);
+        Destroy(monsterPrefab);
+        canToggleHiding = true;
+    }
 }

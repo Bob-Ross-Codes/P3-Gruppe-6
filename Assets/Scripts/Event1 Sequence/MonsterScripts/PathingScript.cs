@@ -2,30 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the movement of a prefab along a series of waypoints with adjustable speed, acceleration, and deceleration.
+/// </summary>
 public class PathingScript : MonoBehaviour
 {
-    public Transform[] waypoints; // Array to store the waypoints
-    public float speed = 5f; // Speed of the prefab
-    public float acceleration = 2f; // Acceleration of the prefab
-    public float deceleration = 2f; // Deceleration of the prefab
+    [Header("Waypoints Settings")]
+    [Tooltip("Array of waypoints that the prefab will move between.")]
+    public Transform[] waypoints;
 
-    private int currentWaypointIndex = 0; // Index of the current waypoint
-    private bool isIdle = false; // Flag to indicate if the prefab is idle
+    [Header("Movement Settings")]
+    [Tooltip("The base speed of the prefab.")]
+    public float speed = 5f;
 
-    // Start is called before the first frame update
+    [Tooltip("The acceleration factor when approaching a waypoint.")]
+    public float acceleration = 2f;
+
+    [Tooltip("The deceleration factor when leaving a waypoint.")]
+    public float deceleration = 2f;
+
+    // Index of the current waypoint
+    private int currentWaypointIndex = 0;
+
+    // Flag to indicate if the prefab is idle
+    private bool isIdle = false;
+
+    /// <summary>
+    /// Sets the initial position of the prefab to the first waypoint.
+    /// </summary>
     void Start()
     {
-        // Set the initial position of the prefab to the first waypoint
-        transform.position = waypoints[0].position;
+        if (waypoints.Length > 0)
+        {
+            transform.position = waypoints[0].position;
+        }
+        else
+        {
+            Debug.LogWarning("Waypoints array is empty! The prefab cannot move.");
+        }
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Updates the prefab's movement along the waypoints.
+    /// </summary>
     void Update()
     {
-        // Check if the prefab is idle
-        if (isIdle)
+        if (isIdle || waypoints.Length == 0)
         {
-            // Do nothing if the prefab is idle
+            // Do nothing if the prefab is idle or there are no waypoints
             return;
         }
 
@@ -38,10 +62,9 @@ public class PathingScript : MonoBehaviour
         // Check if the prefab has reached the current waypoint
         if (distance <= 0.1f)
         {
-            // Check if the current waypoint is the second or last waypoint
+            // If at the second or last waypoint, set to idle
             if (currentWaypointIndex == 1 || currentWaypointIndex == waypoints.Length - 1)
             {
-                // Set the prefab to idle
                 isIdle = true;
                 return;
             }
@@ -50,43 +73,44 @@ public class PathingScript : MonoBehaviour
             currentWaypointIndex++;
         }
 
-        // Calculate the desired velocity based on the speed and direction
+        // Calculate the desired speed for the prefab
+        float desiredSpeed = CalculateDesiredSpeed(direction);
+
+        // Move the prefab towards the current waypoint
+        Vector3 velocity = direction.normalized * desiredSpeed;
+        transform.position += velocity * Time.deltaTime;
+    }
+
+    /// <summary>
+    /// Calculates the desired speed based on the prefab's position relative to the waypoints and its acceleration/deceleration.
+    /// </summary>
+    /// <param name="direction">The direction vector to the current waypoint.</param>
+    /// <returns>The calculated speed value.</returns>
+    private float CalculateDesiredSpeed(Vector3 direction)
+    {
         float desiredSpeed = speed;
 
-        // Check if the prefab is approaching or leaving an idle waypoint
+        // Adjust speed near idle waypoints
         if (currentWaypointIndex == 1 || currentWaypointIndex == waypoints.Length - 2)
         {
-            // Calculate the distance to the idle waypoint
             float idleDistance = Vector3.Distance(waypoints[1].position, waypoints[waypoints.Length - 2].position);
-
-            // Calculate the distance to the current waypoint
             float currentDistance = Vector3.Distance(waypoints[currentWaypointIndex].position, transform.position);
-
-            // Calculate the ratio of the current distance to the idle distance
             float ratio = currentDistance / idleDistance;
 
-            // Calculate the desired speed based on the ratio and acceleration/deceleration
-            desiredSpeed = speed * (1f - Mathf.Abs(2f * ratio - 1f));
+            // Adjust speed based on proximity to idle waypoint
+            desiredSpeed *= (1f - Mathf.Abs(2f * ratio - 1f));
 
-            // Check if the prefab is leaving the idle waypoint
             if (currentWaypointIndex == 1 && ratio > 0.5f)
             {
-                // Decelerate the prefab
-                desiredSpeed *= deceleration;
+                desiredSpeed *= deceleration; // Decelerate when leaving the first idle waypoint
             }
 
-            // Check if the prefab is approaching the idle waypoint
             if (currentWaypointIndex == waypoints.Length - 2 && ratio < 0.5f)
             {
-                // Accelerate the prefab
-                desiredSpeed *= acceleration;
+                desiredSpeed *= acceleration; // Accelerate when approaching the last idle waypoint
             }
         }
 
-        // Calculate the velocity based on the desired speed and direction
-        Vector3 velocity = direction.normalized * desiredSpeed;
-
-        // Move the prefab towards the current waypoint
-        transform.position += velocity * Time.deltaTime;
+        return desiredSpeed;
     }
 }

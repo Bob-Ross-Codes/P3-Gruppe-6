@@ -2,16 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+/// <summary>
+/// Handles menu functionality, including transitioning to the gameplay scene and exiting the application.
+/// </summary>
 public class Menu : MonoBehaviour
 {
-    // Called when we click the "Play" button.
-    public void OnPlayButton ()
+    /// <summary>
+    /// Called when the "Play" button is clicked.
+    /// Loads the gameplay scene.
+    /// </summary>
+    public void OnPlayButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1); // Load the scene with index 1
     }
-    // Called when we click the "Quit" button.
-    public void OnQuitButton ()
+
+    /// <summary>
+    /// Called when the "Quit" button is clicked.
+    /// Exits the application.
+    /// </summary>
+    public void OnQuitButton()
     {
-        Application.Quit();
+        Application.Quit(); // Quit the application
     }
 }

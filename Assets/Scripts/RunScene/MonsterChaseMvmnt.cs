@@ -2,43 +2,70 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the movement and behavior of a monster chasing the player.
+/// Handles waypoint navigation, rotation towards the player, and interaction with sound effects and jumpscares.
+/// </summary>
 public class MonsterChaseMvmnt : MonoBehaviour
 {
-    public GameObject[] targetBoxes; // Array to store the four BoxColliders
+    [Header("References")]
+    [Tooltip("Array of target BoxColliders for the monster to navigate.")]
+    public GameObject[] targetBoxes;
+
+    [Tooltip("Transform of the player.")]
     public Transform player;
+
+    [Tooltip("Transform of the monster.")]
     [SerializeField] private Transform monster;
 
-    [SerializeField] private float _moveSpeed = 20f;      // Private backing field for moveSpeed
-    [SerializeField] private float monsterMaxSpeed = 15;
-    private int currentTargetIndex = 0;  // To keep track of the current target (BoxCollider)
-    private bool isMoving = true;        // Flag to control the movement
-    [SerializeField] int finalHallwayCount = 20;
+    [Tooltip("Reference to the JumpscareManager for triggering events.")]
     public JumpscareManager jumpscareManager;
+
+    [Tooltip("Reference to the player GameObject.")]
     public GameObject Player;
 
-    [SerializeField] private float rotationSpeed = 5f; // New variable to control rotation speed
+    [Header("Movement Settings")]
+    [Tooltip("Movement speed of the monster.")]
+    [SerializeField] private float _moveSpeed = 20f;
 
-    private float destroyTimer = 3f; // Timer before the gameobject gets destroyed
-    private bool isTimerRunning = false; // Flag to check if the timer is running
+    [Tooltip("Maximum speed of the monster.")]
+    [SerializeField] private float monsterMaxSpeed = 15;
 
+    [Tooltip("Rotation speed for smoothly turning towards the player.")]
+    [SerializeField] private float rotationSpeed = 5f;
+
+    [Header("Sequence Settings")]
+    [Tooltip("Number of targets in the final hallway.")]
+    [SerializeField] private int finalHallwayCount = 20;
+
+    private int currentTargetIndex = 0; // Index of the current target in the navigation path
+    private bool isMoving = true; // Tracks if the monster is currently moving
+    private float destroyTimer = 3f; // Timer before destroying the monster
+    private bool isTimerRunning = false; // Tracks if the destroy timer is active
+
+    /// <summary>
+    /// Initializes the monster's movement and starts the chase sound effects.
+    /// </summary>
     void Start()
     {
-        // Ensure we have exactly 4 BoxColliders assigned in the inspector
         if (targetBoxes.Length != 4)
         {
             Debug.LogError("Please assign exactly 4 BoxColliders.");
         }
+
         AkSoundEngine.PostEvent("Play_Monster_Chase", gameObject);
         AkSoundEngine.SetRTPCValue("RTPC_MonsterState", 1, Player);
         AkSoundEngine.PostEvent("Play_Monster_Sounds", Player);
     }
 
+    /// <summary>
+    /// Updates the monster's position, rotation, and behavior based on proximity to the player.
+    /// </summary>
     void Update()
     {
-        // Calculate the distance to the player
         float distanceToPlayer = Vector3.Distance(player.position, monster.position);
 
-        // Set the moveSpeed based on the distance to the player, but cap it at monsterMaxSpeed
+        // Adjust the move speed based on distance to the player
         MoveSpeed = distanceToPlayer / 1.2f;
 
         if (isMoving && targetBoxes.Length == 4)
@@ -46,100 +73,83 @@ public class MonsterChaseMvmnt : MonoBehaviour
             MoveToTarget();
             LookAtPlayer();
         }
-        /*if(isMoving && targetBoxes.Length == finalHallwayCount)
-        {
-            //runHallwayChanger.finalHallway();
-        }*/
 
+        // Trigger jumpscare and ending sequence if player is within proximity
         if (distanceToPlayer < 5)
         {
-            // Player is close enough, triggering death or something else
-
             AkSoundEngine.PostEvent("Play_Death_Jumpscare", Player);
             jumpscareManager.TriggerJumpscare();
 
-            isTimerRunning = true; // Start the timer
+            isTimerRunning = true;
         }
 
+        // Handle destroy timer
         if (isTimerRunning)
         {
-            destroyTimer -= Time.deltaTime; // Decrease the timer
+            destroyTimer -= Time.deltaTime;
 
             if (destroyTimer <= 0)
             {
                 AkSoundEngine.PostEvent("Stop_Whispers", Player);
-                Destroy(gameObject); // Destroy the gameobject
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Ending"); // Load the ending scene
+                Destroy(gameObject);
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
             }
         }
     }
 
-    // Function to move the object towards the current target BoxCollider
+    /// <summary>
+    /// Moves the monster towards the current target in the navigation path.
+    /// Updates the target index when the current target is reached.
+    /// </summary>
     private void MoveToTarget()
     {
-        Debug.Log("Moving Towards " + currentTargetIndex);
-        // Get the position of the current target BoxCollider
         Vector3 targetPosition = targetBoxes[currentTargetIndex].transform.position;
-
-        // Move towards the target using MoveTowards for smooth movement
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, MoveSpeed * Time.deltaTime);
 
-        // Check if the object has reached the target position
         if (transform.position == targetPosition)
         {
-            Debug.Log("Index " + currentTargetIndex + "is done");
-            // Move to the next target BoxCollider (loop back to 0 if we reach the last one)
             currentTargetIndex = (currentTargetIndex + 1) % targetBoxes.Length;
-
-            Debug.Log("Moving on to index:" + currentTargetIndex);
         }
     }
 
-    // Function to rotate the object to face the player
+    /// <summary>
+    /// Rotates the monster to face the player smoothly.
+    /// </summary>
     private void LookAtPlayer()
     {
         if (player != null)
         {
-            // Calculate the direction from the object to the player
-            Vector3 directionToPlayer = player.transform.position - transform.position;
-
-            // Calculate the rotation needed to look at the player only on the y axis
+            Vector3 directionToPlayer = player.position - transform.position;
             Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer, Vector3.up);
-
-            // Adjust the rotation by -90 degrees on the y-axis
-            targetRotation *= Quaternion.Euler(0, 90, 0);
-
-            // Smoothly rotate the object towards the player using Slerp with increased rotation speed
+            targetRotation *= Quaternion.Euler(0, 90, 0); // Adjust rotation for alignment
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
     }
 
-    // Getter and Setter for moveSpeed with a cap of 30
-    public float MoveSpeed
-    {
-        get { return _moveSpeed; }
-        set { _moveSpeed = Mathf.Clamp(value, 5f, monsterMaxSpeed); }  // Clamps the speed between 5 and monsterMaxSpeed
-    }
-
-    // Method to reverse the target path (this method will reverse the order of targets in the array)
+    /// <summary>
+    /// Reverses the navigation path for the monster and updates the current target index.
+    /// </summary>
     public void ReverseTargetPath()
     {
-        // Reverse the order of the targetBoxes array
         System.Array.Reverse(targetBoxes);
 
-        // Find the next target index in the original array (before reversing)
         int nextTargetIndex = (currentTargetIndex + 1) % targetBoxes.Length;
-
-        // Set the new starting index to be one less than the next target index (or wrap around to 3 if next is 0)
         currentTargetIndex = (nextTargetIndex - 1 + targetBoxes.Length) % targetBoxes.Length;
 
-        // If the next target was 0, move to the last target (index 3)
         if (currentTargetIndex == 0)
         {
             currentTargetIndex = targetBoxes.Length - 1;
         }
 
-        // Debug log to check the target reversal and new index
         Debug.Log($"Target path reversed. New starting index: {currentTargetIndex}");
+    }
+
+    /// <summary>
+    /// Getter and setter for the monster's movement speed, clamped between 5 and the maximum speed.
+    /// </summary>
+    public float MoveSpeed
+    {
+        get { return _moveSpeed; }
+        set { _moveSpeed = Mathf.Clamp(value, 5f, monsterMaxSpeed); }
     }
 }
